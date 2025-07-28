@@ -1,0 +1,30 @@
+{
+	"name": "@ethos/ethos.xyz",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev --turbopack",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@ethos/ui": "workspace:*",
+		"@tanstack/react-query": "catalog:react19",
+		"next": "catalog:react19",
+		"porto": "catalog:react19",
+		"react": "catalog:react19",
+		"react-dom": "catalog:react19",
+		"viem": "catalog:react19",
+		"wagmi": "catalog:react19",
+		"ox": "catalog:react19"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "catalog:react19",
+		"@types/node": "catalog:react19",
+		"@types/react": "catalog:react19",
+		"@types/react-dom": "catalog:react19",
+		"tailwindcss": "catalog:react19",
+		"typescript": "catalog:react19"
+	}
+}
