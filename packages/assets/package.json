@@ -1,0 +1,30 @@
+{
+	"name": "@ethos/assets",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"react": "catalog:react19",
+		"react-dom": "catalog:react19",
+		"next": "catalog:react19",
+
+		"class-variance-authority": "^0.7.1",
+		"clsx": "^2.1.1",
+		"lucide-react": "^0.460.0",
+		"next-themes": "^0.4.4",
+		"tailwind-merge": "^3.0.1"
+	},
+	"devDependencies": {
+		"@ethos/config-typescript": "workspace:^",
+
+		"@types/node": "catalog:react19",
+		"@types/react": "catalog:react19",
+		"@types/react-dom": "catalog:react19",
+		"typescript": "catalog:react19",
+
+		"@tailwindcss/postcss": "catalog:react19",
+		"tailwindcss": "catalog:react19"
+	},
+	"peerDependencies": {
+		"next": "catalog:react19"
+	}
+}

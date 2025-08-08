@@ -3,8 +3,9 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"@/*": ["./src/*"],
-			"@ethos/ui/*": ["./src/*"]
+			"@ethos/core/*": ["./src/*"],
+			"@ethos/ui/*": ["../ui/src/*"],
+			"@ethos/assets/*": ["../assets/src/*"]
 		}
 	},
 	"include": ["."],

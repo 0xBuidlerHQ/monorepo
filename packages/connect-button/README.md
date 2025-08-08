@@ -1,0 +1,2 @@
+# `@ethos/connect-button`
+

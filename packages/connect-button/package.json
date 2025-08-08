@@ -1,0 +1,37 @@
+{
+	"name": "@ethos/connect-button",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"dependencies": {
+		"@ethos/core": "workspace:^",
+		"@ethos/ui": "workspace:^",
+
+		"@react-spring/web": "10.0.1",
+		"blo": "^1.2.0",
+		"deepmerge": "^4.3.1",
+		"lucide-react": "^0.460.0",
+		"react-use": "^17.6.0",
+		"type-fest": "^4.27.1",
+		"react": "catalog:react19",
+		"react-dom": "catalog:react19",
+		"viem": "catalog:react19",
+		"zod": "catalog:react19",
+		"zustand": "catalog:react19"
+	},
+	"devDependencies": {
+		"@ethos/config-typescript": "workspace:^",
+
+		"@types/node": "catalog:react19",
+		"@types/react": "catalog:react19",
+		"@types/react-dom": "catalog:react19",
+		"typescript": "catalog:react19",
+		"postcss": "catalog:react19",
+		"tailwindcss": "catalog:react19"
+	},
+	"exports": {
+		".": "./src/index.tsx"
+	}
+}

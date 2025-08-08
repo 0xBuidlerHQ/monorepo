@@ -1,5 +1,7 @@
 "use client";
 
+import { Web3 } from "@ethos/core/index";
+import type { NetworkMetadata } from "@ethos/core/web3/networks";
 import React from "react";
 import {
 	useAccount,
@@ -54,10 +56,13 @@ const useWeb3Primitive = () => {
 		undefined,
 	);
 
+	const [networkMetadata, setNetworkMetadata] = React.useState<NetworkMetadata>();
+
 	/**
 	 * @dev When the chain connected to the app change, update the network metadata.
 	 */
 	React.useEffect(() => {
+		setNetworkMetadata(Web3.Networks.networkMetadataByChainId(chain?.id));
 		setIsNetworkUnsupported(!chain);
 	}, [chain]);
 
@@ -112,6 +117,7 @@ const useWeb3Primitive = () => {
 		disconnect,
 		switchChain,
 		provider,
+		networkMetadata,
 	};
 };
 

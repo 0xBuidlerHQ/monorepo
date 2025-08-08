@@ -1,12 +1,11 @@
 {
 	"extends": "@ethos/config-typescript/react-library.json",
+	"include": ["."],
 	"compilerOptions": {
-		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"],
-			"@ethos/ui/*": ["./src/*"]
+			"@ethos/assets/*": ["./src/*"]
 		}
 	},
-	"include": ["."],
-	"exclude": ["node_modules", "dist"]
+	"exclude": ["dist", "build", "node_modules"]
 }

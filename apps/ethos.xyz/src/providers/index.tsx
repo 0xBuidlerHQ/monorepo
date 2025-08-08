@@ -1,18 +1,15 @@
 import type { PropsWithChildren } from "react";
 import { BlockchainProvider } from "@/providers/blockchain";
 import { QueryProvider } from "@/providers/query";
+import { ThemeProvider } from "@/providers/theme";
 import { Web3Provider } from "@/providers/web3";
 
-// /**
-//  * @dev Layout Providers.
-//  */
-// const LayoutProviders = ({ children }: PropsWithChildren) => {
-// 	return (
-// 		<ThemeProvider>
-// 			<TooltipProvider>{children}</TooltipProvider>
-// 		</ThemeProvider>
-// 	);
-// };
+/**
+ * @dev Layout Providers.
+ */
+const LayoutProviders = ({ children }: PropsWithChildren) => {
+	return <ThemeProvider>{children}</ThemeProvider>;
+};
 
 /**
  * @dev Layout Providers.
@@ -32,9 +29,9 @@ const LogicProviders = ({ children }: PropsWithChildren) => {
  */
 const Providers = ({ children }: PropsWithChildren) => {
 	return (
-		// <LayoutProviders>
-		<LogicProviders>{children}</LogicProviders>
-		// </LayoutProviders>
+		<LayoutProviders>
+			<LogicProviders>{children}</LogicProviders>
+		</LayoutProviders>
 	);
 };
 

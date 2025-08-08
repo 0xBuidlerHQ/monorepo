@@ -10,14 +10,18 @@
 	},
 	"dependencies": {
 		"@ethos/ui": "workspace:*",
+		"@ethos/core": "workspace:*",
+		"@ethos/connect-button": "workspace:*",
+
 		"@tanstack/react-query": "catalog:react19",
+		"lucide-react": "^0.475.0",
 		"next": "catalog:react19",
+		"ox": "catalog:react19",
 		"porto": "catalog:react19",
 		"react": "catalog:react19",
 		"react-dom": "catalog:react19",
 		"viem": "catalog:react19",
-		"wagmi": "catalog:react19",
-		"ox": "catalog:react19"
+		"wagmi": "catalog:react19"
 	},
 	"devDependencies": {
 		"@tailwindcss/postcss": "catalog:react19",

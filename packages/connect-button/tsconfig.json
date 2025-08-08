@@ -1,0 +1,13 @@
+{
+	"extends": "@ethos/config-typescript/react-library.json",
+	"include": ["."],
+	"compilerOptions": {
+		"paths": {
+			"@ethos/connect-button/*": ["./src/*"],
+			"@ethos/ui/*": ["../ui/src/*"],
+			"@ethos/assets/*": ["../assets/src/*"],
+			"@ethos/core/*": ["../core/src/*"]
+		}
+	},
+	"exclude": ["dist", "build", "node_modules"]
+}

@@ -1,0 +1,33 @@
+{
+	"name": "@ethos/core",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"dependencies": {
+		"type-fest": "^4.27.1",
+		"viem": "~2.21.55",
+		"zod": "^3.23.8",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"http-status-codes": "^2.3.0"
+	},
+	"devDependencies": {
+		"@ethos/config-typescript": "workspace:^",
+
+		"@types/node": "catalog:react19",
+		"@types/react": "catalog:react19",
+		"@types/react-dom": "catalog:react19",
+		"typescript": "catalog:react19",
+
+		"@biomejs/biome": "^1.6.4",
+		"tsup": "^8.0.2"
+	},
+	"peerDependencies": {
+		"@tanstack/react-query": "catalog:react19"
+	},
+	"exports": {
+		".": "./src/index.ts"
+	}
+}
