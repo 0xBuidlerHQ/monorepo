@@ -1,21 +1,15 @@
-import { Geist, Geist_Mono, Noto_Sans_Display as Inter } from "next/font/google";
+import { Noto_Sans_Display, Noto_Sans_Mono } from "next/font/google";
 
-const inter = Inter({
+const notoSans = Noto_Sans_Display({
 	subsets: ["latin"],
-	variable: "--font-inter",
+	variable: "--font-noto-sans-display",
 	display: "swap",
 });
 
-const geist = Geist({
+const notoSansMono = Noto_Sans_Mono({
 	subsets: ["latin"],
-	variable: "--font-geist",
+	variable: "--font-noto-sans-mono",
 	display: "swap",
 });
 
-const geistMono = Geist_Mono({
-	subsets: ["latin"],
-	variable: "--font-geist-mono",
-	display: "swap",
-});
-
-export { inter, geist, geistMono };
+export { notoSans, notoSansMono };

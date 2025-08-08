@@ -123,9 +123,8 @@
 }
 
 @theme inline {
-	--font-geist: var(--font-geist);
-	--font-geist-mono: var(--font-geist-mono);
-	--font-inter: var(--font-inter);
+	--font-noto-sans-mono: var(--font-noto-sans-mono);
+	--font-noto-sans-display: var(--font-noto-sans-display);
 }
 
 @layer base {

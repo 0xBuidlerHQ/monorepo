@@ -63,7 +63,7 @@ const Header = () => {
 				<Box className="border-x flex items-stretch bg-background">
 					{/*  */}
 					<Box className="flex grow basis-1">
-						<Box className="flex flex-end border-r *:not-last:border-l">
+						<Box className="flex flex-end border-r *:not-last:border-r">
 							<Box className="h-full flex items-center p-1">
 								<Box className="size-8 flex items-center justify-center">
 									<EthereumLogo className="size-6" />
@@ -82,14 +82,12 @@ const Header = () => {
 
 					<Box className="flex grow basis-1 justify-end">
 						<Box className="flex flex-end border-l *:not-last:border-r">
-							<Box>
-								<ConnectButtonWrapper />
-							</Box>
+							<ConnectButtonWrapper />
 
 							<Box className="group hover:bg-muted hover:cursor-pointer">
 								<Box className="h-full flex items-center p-1">
 									<Box className="size-8 flex items-center justify-center">
-										<Sun className="group-hover:rotate-45 size-4" />
+										<Sun className="transform transition-transform duration-300 group-hover:rotate-45 size-4" />
 									</Box>
 								</Box>
 							</Box>
