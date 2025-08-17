@@ -5,13 +5,15 @@
 @source "../../../packages/connect-button/src/**/*.{ts,tsx}";
 @source "../**/*.{ts,tsx}";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
 	--app-w: 1372px !important;
 	--app-px: 1rem !important;
 }
 
+.light,
+[data-theme="light"],
 :root {
 	--background: oklch(1 0 0);
 	--foreground: oklch(0.145 0 0);
@@ -25,7 +27,7 @@
 	--secondary-foreground: oklch(0.205 0 0);
 	--muted: oklch(0.97 0 0);
 	--muted-foreground: oklch(0.556 0 0);
-	--accent: oklch(0.97 0 0);
+	--accent: oklch(0.85 0 0);
 	--accent-foreground: oklch(0.205 0 0);
 	--destructive: oklch(0.577 0.245 27.325);
 	--destructive-foreground: oklch(0.577 0.245 27.325);
@@ -48,7 +50,9 @@
 	--sidebar-ring: oklch(0.708 0 0);
 }
 
-.dark {
+.dark,
+[data-theme="dark"],
+:root[class~="dark"] {
 	--background: oklch(0.145 0 0);
 	--foreground: oklch(0.985 0 0);
 	--card: oklch(0.145 0 0);
@@ -123,8 +127,10 @@
 }
 
 @theme inline {
-	--font-noto-sans-mono: var(--font-noto-sans-mono);
+	--font-noto-sans: var(--font-noto-sans);
 	--font-noto-sans-display: var(--font-noto-sans-display);
+	--font-noto-sans-mono: var(--font-noto-sans-mono);
+	--font-noto-sans-yi: var(--font-noto-sans-yi);
 }
 
 @layer base {

@@ -9,8 +9,7 @@ import type { PropsWithChildren } from "react";
 const ThemeProvider = ({ children }: PropsWithChildren) => (
 	<ThemeProviderPrimitive
 		attribute="class"
-		defaultTheme="light"
-		forcedTheme="light"
+		defaultTheme="system"
 		enableSystem
 		disableTransitionOnChange
 	>

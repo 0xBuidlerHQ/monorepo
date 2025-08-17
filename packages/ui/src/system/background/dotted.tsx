@@ -13,7 +13,7 @@ const DottedBackground: React.FC<DottedBackgroundProps> = ({
 		<div
 			className="min-h-screen w-full bg-background"
 			style={{
-				backgroundImage: `radial-gradient(circle, var(--muted) ${dotSize}px, transparent ${dotSize}px)`,
+				backgroundImage: `radial-gradient(circle, var(--accent) ${dotSize}px, transparent ${dotSize}px)`,
 				backgroundSize: `${dotSpacing}px ${dotSpacing}px`,
 			}}
 		>

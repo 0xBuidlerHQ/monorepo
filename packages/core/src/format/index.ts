@@ -1,4 +1,34 @@
 ///////////////////////////
+////////// UNITS //////////
+///////////////////////////
+
+/**
+ * @dev
+ */
+const FormatUSD = {
+	classic: (
+		value: Parameters<ReturnType<typeof Intl.NumberFormat>["format"]>[0],
+		config?: Parameters<typeof Intl.NumberFormat>[1],
+	) =>
+		new Intl.NumberFormat("en-US", {
+			style: "currency",
+			currency: "USD",
+			...config,
+		}).format(value),
+
+	full: (
+		value: Parameters<ReturnType<typeof Intl.NumberFormat>["format"]>[0],
+		config?: Parameters<typeof Intl.NumberFormat>[1],
+	) =>
+		new Intl.NumberFormat("en-US", {
+			style: "currency",
+			currency: "USD",
+			maximumFractionDigits: 100,
+			...config,
+		}).format(value),
+};
+
+///////////////////////////
 ////// HASH & ADDRESS /////
 ///////////////////////////
 
@@ -50,4 +80,4 @@ const FormatExplorerBlock = (
 	return `${blockExplorerUrl}/block/${blockNumber}`;
 };
 
-export { FormatExplorerAddress, FormatExplorerBlock, FormatExplorerTransaction };
+export { FormatExplorerAddress, FormatExplorerBlock, FormatExplorerTransaction, FormatUSD };

@@ -1,7 +1,7 @@
 import { Container } from "@ethos/ui/system/base/container";
 
 const Page = () => {
-	return <Container>Metrics</Container>;
+	return <Container>Create</Container>;
 };
 
 export default Page;

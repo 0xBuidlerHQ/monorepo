@@ -24,7 +24,7 @@ catalogs:
     "viem": 2.33.1
     "wagmi": 2.15.4
     "zod": 4.0.13
-    "porto": 0.0.58
+    "porto": 0.0.68
     "ox": 0.8.6
     "zustand": 5.0.7
 

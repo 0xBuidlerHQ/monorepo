@@ -7,10 +7,10 @@ import { Value } from "ox";
 import type { wallet_grantPermissions } from "porto/RpcSchema";
 import { erc20Abi } from "viem";
 import { useReadContract } from "wagmi";
-import { expContract, mockReceiver, mockServerAccount } from "@/constants";
+import { expContract, mockReceiver, mockServerAccount } from "@/configs/constants";
 import { usePorto, usePortoActions } from "@/hooks/porto";
 import { useWeb3 } from "@/providers/web3";
-import { executeOnBehalf, prepareServerAddy } from "@/server/actions/executeOnBehalf";
+import { mintOnBehalf } from "@/server/actions/mintOnBehalf";
 
 export const newPermissions: wallet_grantPermissions.Parameters = {
 	expiry: Math.floor(Date.now() / 1_000) + 60 * 60, // 1 hour
@@ -25,18 +25,14 @@ export const newPermissions: wallet_grantPermissions.Parameters = {
 	permissions: {
 		calls: [
 			{
+				signature: "mint()",
 				to: expContract.address,
-				signature: "approve(address,uint256)",
-			},
-			{
-				to: expContract.address,
-				signature: "transferFrom(address,uint256)",
 			},
 		],
 		spend: [
 			{
-				limit: Value.fromEther("10"),
-				period: "hour",
+				period: "minute",
+				limit: Value.fromEther("1000"),
 				token: expContract.address,
 			},
 		],
@@ -83,7 +79,7 @@ const Page = () => {
 				onClick={() =>
 					addFunds.mutate(
 						{
-							value: Value.from("1", 6),
+							value: "100",
 						},
 						{
 							onError: (err) => console.log("Err: ", err),
@@ -92,23 +88,15 @@ const Page = () => {
 					)
 				}
 			>
-				Add Funds
+				Add Exp
 			</Button>
 
 			<Button
 				onClick={async () => {
-					await prepareServerAddy();
+					await mintOnBehalf(eoa.address!);
 				}}
 			>
-				prepareServerAddy
-			</Button>
-
-			<Button
-				onClick={async () => {
-					await executeOnBehalf(eoa.address!);
-				}}
-			>
-				Execute on behalf
+				Mint on behalf
 			</Button>
 
 			<Box>

@@ -5,7 +5,6 @@ import {
 	type ConnectButtonStore,
 	useConnectButton,
 } from "@ethos/connect-button/hooks/useConnectButton";
-import "@ethos/ui/globals.css";
 import React from "react";
 
 /**

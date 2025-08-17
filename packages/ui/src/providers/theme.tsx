@@ -1,7 +1,13 @@
 "use client";
 
-import { ThemeProvider as NextThemesProvider, type ThemeProviderProps } from "next-themes";
+import {
+	ThemeProvider as NextThemesProvider,
+	type ThemeProviderProps,
+	useTheme,
+} from "next-themes";
 
-export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 	return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
 }
+
+export { useTheme, ThemeProvider };

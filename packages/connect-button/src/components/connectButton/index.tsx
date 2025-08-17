@@ -56,7 +56,7 @@ const DisconnectedButton = () => {
 			className="flex items-center gap-2 w-full h-full cursor-pointer rounded-none"
 		>
 			<Wallet2 className="size-4" />
-			<H5 className="-font-noto-sans-mono">Connect Wallet</H5>
+			<H5 className="font-normal">Connect Wallet</H5>
 		</Button>
 	);
 };

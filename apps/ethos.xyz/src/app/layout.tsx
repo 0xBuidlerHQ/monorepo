@@ -1,9 +1,9 @@
 import "@ethos/ui/globals.css";
+
 import "./system.css";
 
-import { notoSans, notoSansMono } from "@ethos/ui/fonts";
+import { notoSans, notoSansDisplay, notoSansMono, notoSansYi } from "@ethos/ui/fonts";
 import { cn } from "@ethos/ui/shadcn/lib/utils";
-import { DottedBackground } from "@ethos/ui/system/background/dotted";
 import { Box } from "@ethos/ui/system/base/box";
 import type { PropsWithChildren } from "react";
 import { Footer } from "@/components/layouts/footer";
@@ -18,19 +18,19 @@ const Layout = ({ children }: PropsWithChildren) => {
 				className={cn(
 					"antialiased",
 					"bg-background",
-					"font-noto-sans-display",
+					"font-noto-sans",
 					notoSans.variable,
+					notoSansDisplay.variable,
 					notoSansMono.variable,
+					notoSansYi.variable,
 				)}
 			>
 				<Providers>
-					<DottedBackground>
-						<Box className="flex flex-col min-h-[100dvh]">
-							<Header />
-							<main className="grow">{children}</main>
-							<Footer />
-						</Box>
-					</DottedBackground>
+					<Box className="flex flex-col min-h-[100dvh]">
+						<Header />
+						<main className="grow">{children}</main>
+						<Footer />
+					</Box>
 				</Providers>
 			</body>
 		</html>
