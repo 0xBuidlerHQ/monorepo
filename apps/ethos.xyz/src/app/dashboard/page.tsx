@@ -59,7 +59,7 @@ const Page = () => {
 					}}
 				>
 					<AreaSeries
-						data={data}
+						data={data as any}
 						options={{
 							lineColor: "black",
 							topColor: "rgba(35,37,38, 0.9)",

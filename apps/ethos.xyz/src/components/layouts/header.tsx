@@ -18,16 +18,8 @@ import { useTokenPricesBySymbol } from "@/hooks/queries/useTokenPricesBySymbol";
 import { useWeb3 } from "@/providers/web3";
 
 const ConnectButtonWrapper = () => {
-	const {
-		connect,
-		disconnect,
-		eoa,
-		networkMetadata,
-		status,
-		provider,
-		isNetworkUnsupported,
-		switchChain,
-	} = useWeb3();
+	const { connect, disconnect, eoa, networkMetadata, status, provider, isNetworkUnsupported } =
+		useWeb3();
 
 	return (
 		<ConnectButton
@@ -115,7 +107,7 @@ const Header = () => {
 
 						<HeaderCryptoPrice
 							Icon={SiEthereum}
-							price={Format.FormatUSD.classic(tokenPricesBySymbol?.[1].prices[0].value!)}
+							price={Format.FormatUSD.classic(Number(tokenPricesBySymbol?.[1].prices[0].value!))}
 						/>
 
 						<Box className="h-4">
@@ -124,7 +116,7 @@ const Header = () => {
 
 						<HeaderCryptoPrice
 							Icon={SiBitcoin}
-							price={Format.FormatUSD.classic(tokenPricesBySymbol?.[0].prices[0].value!)}
+							price={Format.FormatUSD.classic(Number(tokenPricesBySymbol?.[0].prices[0].value!))}
 						/>
 					</Box>
 

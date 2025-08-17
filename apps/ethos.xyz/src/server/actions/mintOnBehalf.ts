@@ -3,7 +3,7 @@
 import { Value } from "ox";
 import { Chains, Porto, ServerActions } from "porto";
 import { type Address, createClient, custom, encodeFunctionData } from "viem";
-import { expAbi, expContract, mockServerAccount } from "@/configs/constants";
+import { expAbi, expContract, mockServerKey } from "@/configs/constants";
 
 const porto = Porto.create({
 	chains: [Chains.baseSepolia],
@@ -24,11 +24,7 @@ const mintOnBehalf = async (address: Address) => {
 		account: address,
 		chain: Chains.baseSepolia,
 		calls: [{ to: expContract.address, data: dataMint }],
-		key: {
-			publicKey: mockServerAccount.publicKey,
-			type: "secp256k1",
-			chainId: Chains.baseSepolia.id,
-		},
+		key: mockServerKey,
 	});
 
 	console.log("Executed on behalf");

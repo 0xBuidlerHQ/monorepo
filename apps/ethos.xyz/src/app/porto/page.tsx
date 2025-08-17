@@ -7,21 +7,18 @@ import { Value } from "ox";
 import type { wallet_grantPermissions } from "porto/RpcSchema";
 import { erc20Abi } from "viem";
 import { useReadContract } from "wagmi";
-import { expContract, mockReceiver, mockServerAccount } from "@/configs/constants";
+import { expContract, mockReceiver, mockServerAccount, mockServerKey } from "@/configs/constants";
 import { usePorto, usePortoActions } from "@/hooks/porto";
 import { useWeb3 } from "@/providers/web3";
 import { mintOnBehalf } from "@/server/actions/mintOnBehalf";
 
-export const newPermissions: wallet_grantPermissions.Parameters = {
+const newPermissions: wallet_grantPermissions.Parameters = {
 	expiry: Math.floor(Date.now() / 1_000) + 60 * 60, // 1 hour
 	feeLimit: {
 		currency: "USD",
 		value: "1",
 	},
-	key: {
-		publicKey: mockServerAccount.address,
-		type: "secp256k1",
-	},
+	key: mockServerKey,
 	permissions: {
 		calls: [
 			{
@@ -128,8 +125,8 @@ const Page = () => {
 			<Box>
 				<h1 className="text-2xl">EXP Balance:</h1>
 				<Box className="flex flex-col">
-					<Box>[Sender] - EXP Balance: {Value.formatEther(balanceSender ?? 0n)}</Box>
-					<Box>[Receiver] - EXP Balance: {Value.formatEther(balanceReceiver ?? 0n)}</Box>
+					<Box>[Sender] - EXP Balance: {Value.formatEther(balanceSender ?? BigInt(0))}</Box>
+					<Box>[Receiver] - EXP Balance: {Value.formatEther(balanceReceiver ?? BigInt(0))}</Box>
 				</Box>
 			</Box>
 
