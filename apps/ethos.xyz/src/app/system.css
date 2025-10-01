@@ -1,11 +1,9 @@
 .light,
 [data-theme="light"],
 :root {
-	--border: oklch(0 0 0);
 }
 
 .dark,
 [data-theme="dark"],
 :root[class~="dark"] {
-	--border: oklch(1 0 0);
 }

@@ -1,1 +1,1 @@
-# @ethos/assets
+# @0xbuidlerhq/assets

@@ -1,11 +1,11 @@
 "use server";
 
-import { Env } from "@ethos/core/index";
-import { handleQueryResponse } from "@/hooks/queries/_utils";
+import { Env } from "@0xbuidlerhq/core/index";
+import { handleQueryResponse } from "@client/hooks/queries/_utils";
 import type {
 	TokenPricesBySymbolsQueryParams,
 	TokenPricesBySymbolsQueryResponse,
-} from "@/server/api/alchemy/types";
+} from "@server/api/alchemy/types";
 
 const tokenPricesBySymbols = async ({ symbols }: TokenPricesBySymbolsQueryParams) => {
 	if (!symbols || (Array.isArray(symbols) && symbols.length === 0)) {

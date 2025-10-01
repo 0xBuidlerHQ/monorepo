@@ -1,4 +1,4 @@
-import { type CachedStepState, createStepper } from "@ethos/ui/hooks/useStepper";
+import { type CachedStepState, createStepper } from "@0xbuidlerhq/ui/hooks/useStepper";
 
 /**
  * @dev Connect Button.

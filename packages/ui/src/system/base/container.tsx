@@ -1,5 +1,5 @@
-import { cn } from "@ethos/ui/shadcn/lib/utils";
-import { Box } from "@ethos/ui/system/base/box";
+import { cn } from "@0xbuidlerhq/ui/shadcn/lib/utils";
+import { Box } from "@0xbuidlerhq/ui/system/base/box";
 
 interface ContainerProps extends React.HTMLAttributes<HTMLElement> {}
 

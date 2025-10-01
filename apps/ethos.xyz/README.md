@@ -1,1 +1,1 @@
-# @ethos/apps/ethos.xyz
+# @0xbuidlerhq/apps/ethos.xyz

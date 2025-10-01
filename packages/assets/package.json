@@ -1,5 +1,5 @@
 {
-	"name": "@ethos/assets",
+	"name": "@0xbuidlerhq/assets",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
@@ -14,7 +14,7 @@
 		"tailwind-merge": "^3.0.1"
 	},
 	"devDependencies": {
-		"@ethos/config-typescript": "workspace:^",
+		"@0xbuidlerhq/config-typescript": "workspace:^",
 
 		"@types/node": "catalog:react19",
 		"@types/react": "catalog:react19",

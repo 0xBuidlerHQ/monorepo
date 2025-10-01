@@ -1,0 +1,42 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"display": "Node.js Library 2025",
+	"compilerOptions": {
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"inlineSources": true,
+
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"target": "ES2022",
+		"lib": ["ES2023"],
+		"types": ["node"],
+
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+
+
+		"strict": true,
+		"strictNullChecks": true,
+		"noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true,
+		"noFallthroughCasesInSwitch": true,
+		"exactOptionalPropertyTypes": true,
+
+		"isolatedModules": true,
+		"composite": false,
+		"skipLibCheck": true,
+
+		"outDir": "dist",
+		"removeComments": false,
+		"importHelpers": true,
+
+		"incremental": true,
+		"tsBuildInfoFile": ".tsbuildinfo"
+	},
+	"include": ["src"],
+	"exclude": ["node_modules", "dist", "test", "**/*.test.ts"]
+}

@@ -1,7 +1,7 @@
-import { EthereumLogo } from "@ethos/assets/crypto/ethereum/Logo";
-import { OptimismLogo } from "@ethos/assets/crypto/optimism/Logo";
-import { USDCLogo } from "@ethos/assets/crypto/usdc/Logo";
-import { USDTLogo } from "@ethos/assets/crypto/usdt/Logo";
+import { EthereumLogoCircle } from "@0xbuidlerhq/assets/crypto/ethereum/LogoCircle";
+import { OptimismLogo } from "@0xbuidlerhq/assets/crypto/optimism/Logo";
+import { USDCLogo } from "@0xbuidlerhq/assets/crypto/usdc/Logo";
+import { USDTLogo } from "@0xbuidlerhq/assets/crypto/usdt/Logo";
 import { z } from "zod";
 import { createZodSchemaFromObjectValues } from "../utils";
 import {
@@ -28,6 +28,7 @@ const PreUndefined = {
 	// Testnets.
 	anvil: undefined,
 	sepolia: undefined,
+	baseSepolia: undefined,
 } as const satisfies { [key in NetworkId]: undefined };
 
 /**
@@ -66,7 +67,7 @@ const zTokenTicker = createZodSchemaFromObjectValues(TokenTicker);
  * @dev List of all the {Tokens}'s logo.
  */
 const TokenLogo = {
-	eth: EthereumLogo,
+	eth: EthereumLogoCircle,
 
 	usdc: USDCLogo,
 	usdt: USDTLogo,

@@ -38,4 +38,5 @@ const AAVELogo = (props: SVGProps<SVGSVGElement>) => (
 		/>
 	</svg>
 );
+
 export { AAVELogo };

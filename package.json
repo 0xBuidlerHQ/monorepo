@@ -1,5 +1,5 @@
 {
-	"name": "@buidlerhq/ethos",
+	"name": "@0xbuidlerhq/monorepo",
 	"private": true,
 	"scripts": {
 		"build": "turbo run build",

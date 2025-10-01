@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-	transpilePackages: ["@ethos/ui", "@ethos/core", "@ethos/assets", "@ethos/connect-button"],
+	transpilePackages: [
+		"@0xbuidlerhq/ui",
+		"@0xbuidlerhq/core",
+		"@0xbuidlerhq/assets",
+		"@0xbuidlerhq/connect-button",
+	],
 };
 
 export default nextConfig;

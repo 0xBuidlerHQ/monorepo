@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@ethos/ui/shadcn/lib/utils";
+import { cn } from "@0xbuidlerhq/ui/shadcn/lib/utils";
 import * as SeparatorPrimitive from "@radix-ui/react-separator";
 
 import type * as React from "react";

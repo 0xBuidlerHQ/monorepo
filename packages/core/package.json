@@ -1,10 +1,14 @@
 {
-	"name": "@ethos/core",
+	"name": "@0xbuidlerhq/core",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
+	"scripts": {
+		"dev": "tsup --watch",
+		"build": "tsup"
+	},
 	"dependencies": {
 		"type-fest": "^4.27.1",
 		"viem": "~2.21.55",
@@ -14,20 +18,17 @@
 		"http-status-codes": "^2.3.0"
 	},
 	"devDependencies": {
-		"@ethos/config-typescript": "workspace:^",
+		"@0xbuidlerhq/config-typescript": "workspace:^",
 
 		"@types/node": "catalog:react19",
 		"@types/react": "catalog:react19",
 		"@types/react-dom": "catalog:react19",
 		"typescript": "catalog:react19",
+		"tsup": "^8.5.0",
 
-		"@biomejs/biome": "^1.6.4",
-		"tsup": "^8.0.2"
+		"@biomejs/biome": "^1.6.4"
 	},
 	"peerDependencies": {
 		"@tanstack/react-query": "catalog:react19"
-	},
-	"exports": {
-		".": "./src/index.ts"
 	}
 }

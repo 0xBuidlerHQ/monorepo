@@ -1,2 +1,2 @@
-# `@ethos/connect-button`
+# `@0xbuidlerhq/connect-button`
 

@@ -1,1 +1,1 @@
-# @ethos
+# @monorepo

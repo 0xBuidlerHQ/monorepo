@@ -1,16 +1,17 @@
-import { ArbitrumLogo } from "@ethos/assets/crypto/arbitrum/Logo";
-import { BaseLogo } from "@ethos/assets/crypto/base/Logo";
-import { EthereumLogo } from "@ethos/assets/crypto/ethereum/Logo";
-import { LineaLogo } from "@ethos/assets/crypto/linea/Logo";
-import { ModeLogo } from "@ethos/assets/crypto/mode/Logo";
-import { OptimismLogo } from "@ethos/assets/crypto/optimism/Logo";
-import { PolygonLogo } from "@ethos/assets/crypto/polygon/Logo";
-import { ZKsyncLogo } from "@ethos/assets/crypto/zksync/Logo";
-
+import { ArbitrumLogo } from "@0xbuidlerhq/assets/crypto/arbitrum/Logo";
+import { BaseLogo } from "@0xbuidlerhq/assets/crypto/base/Logo";
+import { EthereumLogo } from "@0xbuidlerhq/assets/crypto/ethereum/Logo";
+import { EthereumLogoCircle } from "@0xbuidlerhq/assets/crypto/ethereum/LogoCircle";
+import { LineaLogo } from "@0xbuidlerhq/assets/crypto/linea/Logo";
+import { ModeLogo } from "@0xbuidlerhq/assets/crypto/mode/Logo";
+import { OptimismLogo } from "@0xbuidlerhq/assets/crypto/optimism/Logo";
+import { PolygonLogo } from "@0xbuidlerhq/assets/crypto/polygon/Logo";
+import { ZKsyncLogo } from "@0xbuidlerhq/assets/crypto/zksync/Logo";
 import {
 	anvil,
 	arbitrum,
 	base,
+	baseSepolia,
 	type Chain,
 	linea,
 	mainnet,
@@ -20,9 +21,7 @@ import {
 	sepolia,
 	zksync,
 } from "viem/chains";
-
 import { z } from "zod";
-
 import { createZodSchemaFromObjectValues } from "../utils";
 
 /**
@@ -41,6 +40,7 @@ const zNetworkId = z.enum([
 	// Testnets.
 	"anvil",
 	"sepolia",
+	"baseSepolia",
 ]);
 type NetworkId = z.infer<typeof zNetworkId>;
 
@@ -60,6 +60,7 @@ const NetworkName = {
 	// Testnets.
 	anvil: "Anvil",
 	sepolia: "Sepolia",
+	baseSepolia: "Base Sepolia",
 } as const satisfies { [key in NetworkId]: string };
 type NetworkName = (typeof NetworkName)[keyof typeof NetworkName];
 const zNetworkName = createZodSchemaFromObjectValues(NetworkName);
@@ -69,7 +70,7 @@ const zNetworkName = createZodSchemaFromObjectValues(NetworkName);
  */
 const NetworkLogo = {
 	mode: ModeLogo,
-	ethereum: EthereumLogo,
+	ethereum: EthereumLogoCircle,
 	base: BaseLogo,
 	optimism: OptimismLogo,
 	arbitrum: ArbitrumLogo,
@@ -80,6 +81,7 @@ const NetworkLogo = {
 	// Testnets.
 	anvil: EthereumLogo,
 	sepolia: EthereumLogo,
+	baseSepolia: EthereumLogo,
 } as const satisfies { [key in NetworkId]: React.ElementType };
 
 /**
@@ -98,6 +100,7 @@ const NetworkChainId = {
 	// Testnets.
 	anvil: anvil.id,
 	sepolia: sepolia.id,
+	baseSepolia: baseSepolia.id,
 } as const satisfies { [key in NetworkId]: number };
 type NetworkChainId = (typeof NetworkChainId)[keyof typeof NetworkChainId];
 const zNetworkChainId = createZodSchemaFromObjectValues(NetworkChainId);
@@ -118,6 +121,7 @@ const NetworkViemChain = {
 	// Testnets.
 	anvil: { ...anvil, blockExplorers: { default: { name: "#", url: "#", apiUrl: "#" } } }, //
 	sepolia: sepolia,
+	baseSepolia: baseSepolia,
 } as const satisfies { [key in NetworkId]: Chain };
 
 /**

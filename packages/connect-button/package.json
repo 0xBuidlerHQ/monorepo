@@ -1,13 +1,13 @@
 {
-	"name": "@ethos/connect-button",
+	"name": "@0xbuidlerhq/connect-button",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"dependencies": {
-		"@ethos/core": "workspace:^",
-		"@ethos/ui": "workspace:^",
+		"@0xbuidlerhq/core": "workspace:^",
+		"@0xbuidlerhq/ui": "workspace:^",
 
 		"@react-spring/web": "10.0.1",
 		"blo": "^1.2.0",
@@ -22,7 +22,7 @@
 		"zustand": "catalog:react19"
 	},
 	"devDependencies": {
-		"@ethos/config-typescript": "workspace:^",
+		"@0xbuidlerhq/config-typescript": "workspace:^",
 
 		"@types/node": "catalog:react19",
 		"@types/react": "catalog:react19",

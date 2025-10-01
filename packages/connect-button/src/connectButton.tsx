@@ -1,10 +1,10 @@
 "use client";
 
-import { ConnectButton as ConnectButtonPrimitive } from "@ethos/connect-button/components/connectButton";
+import { ConnectButton as ConnectButtonPrimitive } from "@0xbuidlerhq/connect-button/components/connectButton";
 import {
 	type ConnectButtonStore,
 	useConnectButton,
-} from "@ethos/connect-button/hooks/useConnectButton";
+} from "@0xbuidlerhq/connect-button/hooks/useConnectButton";
 import React from "react";
 
 /**

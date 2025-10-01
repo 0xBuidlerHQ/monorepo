@@ -1,15 +1,15 @@
-import "@ethos/ui/globals.css";
+import "@0xbuidlerhq/ui/globals.css";
 
-import { ConnectButton } from "@ethos/connect-button/connectButton";
+import { ConnectButton } from "@0xbuidlerhq/connect-button/connectButton";
 
-import { useConnectButton } from "@ethos/connect-button/hooks/useConnectButton";
+import { useConnectButton } from "@0xbuidlerhq/connect-button/hooks/useConnectButton";
 
 import {
 	createConnectButtonStepper,
 	type DefaultActionStepBase,
 	type DefaultActionStepError,
 	type DefaultActionStepSuccess,
-} from "@ethos/connect-button/hooks/useConnectButtonActions";
+} from "@0xbuidlerhq/connect-button/hooks/useConnectButtonActions";
 
 type ConnectButtonActionsOptions = {
 	ActionStepBase: DefaultActionStepBase;

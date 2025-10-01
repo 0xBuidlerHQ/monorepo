@@ -1,7 +1,3 @@
-import { Container } from "@ethos/ui/system/base/container";
+import DashboardPage from "@app/(app)/dashboard/page";
 
-const Page = () => {
-	return <Container>hello</Container>;
-};
-
-export default Page;
+export default DashboardPage;

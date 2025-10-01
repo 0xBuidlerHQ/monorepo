@@ -1,1 +1,1 @@
-export { default } from "@ethos/ui/postcss.config";
+export { default } from "@0xbuidlerhq/ui/postcss.config";

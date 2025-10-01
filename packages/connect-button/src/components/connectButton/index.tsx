@@ -1,12 +1,12 @@
 "use client";
 
-import { useConnectButton } from "@ethos/connect-button/hooks/useConnectButton";
-import { Format } from "@ethos/core/index";
-// import { Format } from "@ethos/core";
-import { Button } from "@ethos/ui/shadcn/components/button";
-import { Box } from "@ethos/ui/system/base/box";
-// import { Desktop, Mobile } from "@ethos/ui/system/layouts/screens";
-import { H3, H5 } from "@ethos/ui/system/base/typography";
+import { useConnectButton } from "@0xbuidlerhq/connect-button/hooks/useConnectButton";
+import { Format } from "@0xbuidlerhq/core/index";
+// import { Format } from "@0xbuidlerhq/core";
+import { Button } from "@0xbuidlerhq/ui/shadcn/components/button";
+import { Box } from "@0xbuidlerhq/ui/system/base/box";
+// import { Desktop, Mobile } from "@0xbuidlerhq/ui/system/layouts/screens";
+import { H3, H5 } from "@0xbuidlerhq/ui/system/base/typography";
 import { animated, useSpring, useTransition } from "@react-spring/web";
 import { blo } from "blo";
 import { Wallet2 } from "lucide-react";
@@ -50,14 +50,17 @@ const DisconnectedButton = () => {
 	const connectButton = useConnectButton((s) => s.props);
 
 	return (
-		<Button
-			variant="secondary"
+		<Box
 			onClick={connectButton.cb.onConnect}
-			className="flex items-center gap-2 w-full h-full cursor-pointer rounded-none"
+			className="flex w-full h-full cursor-pointer rounded-none justify-center bg-primary text-primary-foreground"
 		>
-			<Wallet2 className="size-4" />
-			<H5 className="font-normal">Connect Wallet</H5>
-		</Button>
+			<Box className="flex items-center justify-center gap-1 m-auto">
+				<Wallet2 className="size-3" />
+				<H5 className="text-[13px]! font-semibold tracking-tighter font-montserrat">
+					Connect Wallet
+				</H5>
+			</Box>
+		</Box>
 	);
 };
 

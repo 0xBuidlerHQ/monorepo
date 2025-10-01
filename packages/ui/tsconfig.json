@@ -1,10 +1,9 @@
 {
-	"extends": "@ethos/config-typescript/react-library.json",
+	"extends": "@0xbuidlerhq/config-typescript/react-library.json",
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"@/*": ["./src/*"],
-			"@ethos/ui/*": ["./src/*"]
+			"@0xbuidlerhq/ui/*": ["./src/*"]
 		}
 	},
 	"include": ["."],

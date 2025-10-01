@@ -1,12 +1,12 @@
 {
-	"extends": "@ethos/config-typescript/react-library.json",
+	"extends": "@0xbuidlerhq/config-typescript/react-library.json",
 	"include": ["."],
 	"compilerOptions": {
 		"paths": {
-			"@ethos/connect-button/*": ["./src/*"],
-			"@ethos/ui/*": ["../ui/src/*"],
-			"@ethos/assets/*": ["../assets/src/*"],
-			"@ethos/core/*": ["../core/src/*"]
+			"@0xbuidlerhq/connect-button/*": ["./src/*"],
+			"@0xbuidlerhq/ui/*": ["../ui/src/*"],
+			"@0xbuidlerhq/assets/*": ["../assets/src/*"],
+			"@0xbuidlerhq/core/*": ["../core/src/*"]
 		}
 	},
 	"exclude": ["dist", "build", "node_modules"]

@@ -1,4 +1,4 @@
-import type { Web3 } from "@ethos/core";
+import type { Web3 } from "@0xbuidlerhq/core";
 import { create } from "zustand";
 
 type ConnectButtonStore = {

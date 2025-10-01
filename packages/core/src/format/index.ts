@@ -2,6 +2,8 @@
 ////////// UNITS //////////
 ///////////////////////////
 
+import { formatUnits, parseUnits } from "viem";
+
 /**
  * @dev
  */
@@ -26,6 +28,38 @@ const FormatUSD = {
 			maximumFractionDigits: 100,
 			...config,
 		}).format(value),
+};
+
+/**
+ * @dev
+ */
+const FormatPercent = new Intl.NumberFormat("en-US", {
+	style: "percent",
+	minimumFractionDigits: 2,
+	maximumFractionDigits: 2,
+});
+
+/**
+ * @dev
+ */
+const FormatNumber = new Intl.NumberFormat("en-US", {
+	style: "decimal",
+	roundingMode: "trunc",
+	maximumFractionDigits: 4,
+});
+
+/**
+ * @dev
+ */
+const FormatUnits = {
+	format: (value: bigint | undefined, decimals: number | undefined) => {
+		if (value === undefined || decimals === undefined) return "0";
+		return formatUnits(value, decimals);
+	},
+	parse: (value: string | undefined, decimals: number | undefined) => {
+		if (value === undefined || decimals === undefined) return 0n;
+		return parseUnits(value, decimals);
+	},
 };
 
 ///////////////////////////
@@ -80,4 +114,12 @@ const FormatExplorerBlock = (
 	return `${blockExplorerUrl}/block/${blockNumber}`;
 };
 
-export { FormatExplorerAddress, FormatExplorerBlock, FormatExplorerTransaction, FormatUSD };
+export {
+	FormatExplorerAddress,
+	FormatExplorerBlock,
+	FormatExplorerTransaction,
+	FormatUSD,
+	FormatPercent,
+	FormatNumber,
+	FormatUnits,
+};

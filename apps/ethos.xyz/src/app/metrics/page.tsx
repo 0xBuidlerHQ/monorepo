@@ -1,7 +1,0 @@
-import { Container } from "@ethos/ui/system/base/container";
-
-const Page = () => {
-	return <Container>Metrics</Container>;
-};
-
-export default Page;
