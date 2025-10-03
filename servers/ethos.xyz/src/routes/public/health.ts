@@ -1,9 +1,9 @@
 import { Hono } from "hono";
 import { MachineSnapshotDB } from "@/db/index.js";
 
-const healthRoute = new Hono();
+const health = new Hono();
 
-healthRoute.get("/", (c) => {
+health.get("/", (c) => {
 	const state = MachineSnapshotDB.getAllMachinesSnapshot();
 
 	return c.json({
@@ -11,4 +11,4 @@ healthRoute.get("/", (c) => {
 	});
 });
 
-export { healthRoute };
+export { health };

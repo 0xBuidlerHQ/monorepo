@@ -1,9 +1,9 @@
 import { Hono } from "hono";
 
-const metricsRoute = new Hono();
+const metrics = new Hono();
 
-metricsRoute.get("/", (c) => {
+metrics.get("/", (c) => {
 	return c.text("metricsRoute");
 });
 
-export { metricsRoute };
+export { metrics };

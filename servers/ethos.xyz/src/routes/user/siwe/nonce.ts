@@ -1,10 +1,10 @@
 import { Hono } from "hono";
 import { generateSiweNonce } from "viem/siwe";
 
-const nonceRoute = new Hono();
+const nonce = new Hono();
 
-nonceRoute.post("/", (c) => {
+nonce.post("/", (c) => {
 	return c.json({ nonce: generateSiweNonce() });
 });
 
-export { nonceRoute };
+export { nonce };

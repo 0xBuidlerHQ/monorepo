@@ -1,7 +1,7 @@
 // db.ts
 
 import { createActor, type SnapshotFrom } from "xstate";
-import { StrategyMachine } from "@/logic/machine.js";
+import { DaemonMachine } from "@/daemons/daemon.js";
 
 const store: Record<string, string> = {};
 
@@ -23,7 +23,7 @@ BigInt.prototype.toJSON = function () {
 const STORAGE_KEY = "machines";
 
 type MachineId = string;
-type MachineSnapshot = SnapshotFrom<typeof StrategyMachine>;
+type MachineSnapshot = SnapshotFrom<typeof DaemonMachine>;
 
 interface MachineSnapshotMap {
 	[id: MachineId]: MachineSnapshot;
@@ -72,8 +72,8 @@ const MachineSnapshotDB = {
  * @dev useMachine.
  */
 const useMachine = (id: MachineId) => {
-	const savedSnapshot = MachineSnapshotDB.getMachineSnapshot(id);
-	const machine = createActor(StrategyMachine, { snapshot: savedSnapshot });
+	const savedSnapshot = MachineSnapshotDB.getMachineSnapshot(id)!;
+	const machine = createActor(DaemonMachine, { snapshot: savedSnapshot });
 
 	machine.subscribe((state) => MachineSnapshotDB.saveMachineSnapshot(id, state));
 	machine.start();

@@ -54,7 +54,7 @@ const HeaderCryptoPrice = ({ Icon, price, isLoading }: HeaderCryptoPriceProps) =
 			<Icon className="size-[14px] rounded" />
 
 			<FallbackLoader isLoading={isLoading}>
-				<h6 className="font-medium text-[12px] font-noto-sans-display">{price}</h6>
+				<h6 className="font-medium text-[12px] font-numbers">{price}</h6>
 			</FallbackLoader>
 		</Box>
 	);
@@ -104,9 +104,9 @@ const TopTopHeader = () => {
 	});
 
 	return (
-		<Box className="bg-muted border-y border-accent">
+		<Box className="border-y border-accent bg-muted">
 			<HeaderPrimitive className="h-6">
-				<Box className="border-x border-accent flex items-stretch justify-between h-full">
+				<Box className="border-x border-accent flex items-stretch justify-between h-full bg-muted">
 					<Box className="flex items-center gap-3 px-3">
 						<HeaderCryptoPrice
 							Icon={SiEthereum}
@@ -165,9 +165,9 @@ const BottomHeader = () => {
 	const isScrolledDown = y > 32;
 
 	return (
-		<Box className="border-b border-accent">
+		<Box className="border-b border-accent bg-background">
 			<HeaderPrimitive className="h-10">
-				<Box className="border-x border-accent w-full bg-background backdrop-blur-xs h-full flex">
+				<Box className="border-x border-accent w-full h-full flex">
 					<Box className="flex border-r border-accent">
 						<Box className="flex flex-end border-r border-accent *:not-last:border-r *:not-last:border-accent">
 							<Box className="h-full flex items-center p-1 gap-1">
@@ -177,7 +177,12 @@ const BottomHeader = () => {
 							</Box>
 						</Box>
 
-						<Box className="my-auto px-2 flex gap-1">
+						<Box
+							className={cn(
+								"my-auto px-2 flex gap-1 transition-all duration-500",
+								isScrolledDown && "px-4",
+							)}
+						>
 							<H1 className="font-bold tracking-tighter font-montserrat">ethos.</H1>
 						</Box>
 					</Box>

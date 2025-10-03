@@ -3,127 +3,72 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { showRoutes } from "hono/dev";
 import { logger } from "hono/logger";
-
-import { internalStrategyEventsRoute } from "@/routes/internal/strategy/events.js";
-import { healthRoute } from "@/routes/public/health.js";
-import { metricsRoute } from "@/routes/public/metrics.js";
-import { strategyCreateRoute } from "@/routes/user/authenticated/strategy/create.js";
-import { strategyDeleteRoute } from "@/routes/user/authenticated/strategy/delete.js";
-import { strategyGetRoute } from "@/routes/user/authenticated/strategy/get.js";
-import { logoutRoute } from "@/routes/user/siwe/logoutRoute.js";
-import { nonceRoute } from "@/routes/user/siwe/nonceRoute.js";
-import { verifyRoute } from "@/routes/user/siwe/verifyRoute.js";
+import { InternalRoutes } from "@/routes/internal/index.js";
+import { PublicRoutes } from "@/routes/public/index.js";
+import { UserAuthenticatedRoutes } from "@/routes/user/authenticated/index.js";
+import { UserSiweRoutes } from "@/routes/user/siwe/index.js";
+import { buildRoutes } from "@/utils/buildRoutes.js";
 import { withJwt } from "@/utils/jwt.js";
 
 const app = new Hono();
 
 app.use("*", cors({ origin: ["https://id.porto.sh", "http://localhost:3000"], credentials: true }));
-
 app.use("*", logger());
 
 app.get("/", (c) => c.text("Hello World."));
 
-/**
- * @dev Public Routes.
- */
-app.route(
-	"/public",
-	new Hono()
+buildRoutes(
+	{
+		/**
+		 * @dev Public Routes.
+		 */
+		"/public": {
+			"/health": PublicRoutes.health,
+			"/metrics": PublicRoutes.metrics,
+		},
 
 		/**
-		 * @dev Health Routes.
+		 * @dev User Routes.
 		 */
-		.route("/health", healthRoute)
+		"/user": {
+			/**
+			 * @dev SIWE Routes.
+			 */
+			"/siwe": {
+				"/nonce": UserSiweRoutes.nonce,
+				"/verify": UserSiweRoutes.verify,
+				"/logout": UserSiweRoutes.logout,
+			},
 
-		/**
-		 * @dev Metrics Routes.
-		 */
-		.route("/metrics", metricsRoute),
-);
-
-/**
- * @dev User Routes.
- */
-app.route(
-	"/user",
-	new Hono()
-
-		/**
-		 * @dev SIWE Routes.
-		 */
-		.route(
-			"/siwe",
-			new Hono()
-
-				/**
-				 * @dev Nonce Route.
-				 */
-				.route("/nonce", nonceRoute)
-
-				/**
-				 * @dev Verify Route.
-				 */
-				.route("/verify", verifyRoute)
-
-				/**
-				 * @dev Logout Route.
-				 */
-				.route("/logout", withJwt(logoutRoute)),
-		)
-
-		/**
-		 * @dev Authenticated Routes.
-		 */
-		.route(
-			"/authenticated",
-			withJwt(
-				new Hono()
+			/**
+			 * @dev Authenticated Routes.
+			 */
+			"/authenticated": withJwt(
+				buildRoutes({
+					/**
+					 * @dev Nomos Routes.
+					 */
+					"/nomos": UserAuthenticatedRoutes.nomos,
 
 					/**
-					 * @dev Strategy Route.
+					 * @dev Daemons Routes.
 					 */
-					.route(
-						"/strategy",
-						new Hono()
-
-							/**
-							 * @dev Create Route.
-							 */
-							.route("/create", strategyCreateRoute)
-
-							/**
-							 * @dev Get Route.
-							 */
-							.route("/get", strategyGetRoute)
-
-							/**
-							 * @dev Delete Route.
-							 */
-							.route("/delete", strategyDeleteRoute),
-					),
+					"/daemons": UserAuthenticatedRoutes.daemons,
+				}),
 			),
-		),
-);
-
-/**
- * @dev Internal Routes.
- */
-app.route(
-	"/internal",
-	new Hono()
+		},
 
 		/**
-		 * @dev Strategy Routes.
+		 * @dev Internal Routes.
 		 */
-		.route(
-			"/strategy",
-			new Hono()
-
-				/**
-				 * @dev Event Route.
-				 */
-				.route("/event", internalStrategyEventsRoute),
-		),
+		"/internal": buildRoutes({
+			/**
+			 * @dev Daemons Routes.
+			 */
+			"/daemons": InternalRoutes.daemons,
+		}),
+	},
+	app,
 );
 
 showRoutes(app, { verbose: true });

@@ -1,11 +1,11 @@
 import { Hono } from "hono";
 import { deleteCookie } from "hono/cookie";
 
-const logoutRoute = new Hono();
+const logout = new Hono();
 
-logoutRoute.post("/", (c) => {
+logout.post("/", (c) => {
 	deleteCookie(c, "auth");
 	return c.json({ success: true });
 });
 
-export { logoutRoute };
+export { logout };

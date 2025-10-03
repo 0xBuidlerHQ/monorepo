@@ -5,10 +5,10 @@ import { RelayClient } from "porto/viem";
 import { parseSiweMessage, verifySiweMessage } from "viem/siwe";
 import { signJwt } from "@/utils/jwt.js";
 
-const verifyRoute = new Hono();
+const verify = new Hono();
 const porto = Porto.create();
 
-verifyRoute.post("/", async (c) => {
+verify.post("/", async (c) => {
 	const params = await c.req.json();
 	const siweMessage = parseSiweMessage(params.message);
 
@@ -34,4 +34,4 @@ verifyRoute.post("/", async (c) => {
 	return c.json({ message: "Authenticated" });
 });
 
-export { verifyRoute };
+export { verify };
