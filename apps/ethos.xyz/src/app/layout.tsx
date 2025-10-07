@@ -65,7 +65,7 @@ const Layout = ({ children }: PropsWithChildren) => {
 						<main className="flex flex-col grow">
 							<Header />
 
-							<Container>
+							<Container className="flex grow">
 								<Box className="relative border-x border-accent grow px-[1px]">
 									<Background />
 

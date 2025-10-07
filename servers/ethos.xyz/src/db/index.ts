@@ -1,7 +1,6 @@
 // db.ts
 
 import { createActor, type SnapshotFrom } from "xstate";
-import { DaemonMachine } from "@/daemons/daemon.js";
 
 const store: Record<string, string> = {};
 
@@ -23,7 +22,7 @@ BigInt.prototype.toJSON = function () {
 const STORAGE_KEY = "machines";
 
 type MachineId = string;
-type MachineSnapshot = SnapshotFrom<typeof DaemonMachine>;
+type MachineSnapshot = SnapshotFrom<any>;
 
 interface MachineSnapshotMap {
 	[id: MachineId]: MachineSnapshot;
@@ -73,7 +72,7 @@ const MachineSnapshotDB = {
  */
 const useMachine = (id: MachineId) => {
 	const savedSnapshot = MachineSnapshotDB.getMachineSnapshot(id)!;
-	const machine = createActor(DaemonMachine, { snapshot: savedSnapshot });
+	const machine = createActor({}, { snapshot: savedSnapshot });
 
 	machine.subscribe((state) => MachineSnapshotDB.saveMachineSnapshot(id, state));
 	machine.start();

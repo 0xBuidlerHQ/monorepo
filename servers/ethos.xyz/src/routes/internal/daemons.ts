@@ -1,29 +1,20 @@
+import { Nomos } from "@0xbuidlerhq/package-ethos.xyz";
 import { Hono } from "hono";
-import { AaveStates, DaemonEvent, sendEventAndWait } from "@/daemons/daemon.js";
-import { MachineSnapshotDB, useMachine } from "@/db/index.js";
+import { AaveDaemon } from "@/daemons/daemon.js";
+import { createDaemonMachine } from "@/daemons/factory.js";
 
 const daemons = new Hono();
 
+const aaveStrategy = Nomos.NomosRegistry["nomos-0x-aave"];
+
 daemons.get("/", async (c) => {
-	const machine = useMachine("2");
+	const { actor, controls } = createDaemonMachine(aaveStrategy, "eded", AaveDaemon);
 
-	await sendEventAndWait(machine, DaemonEvent.Start({ initialAmount: 1000n }), [
-		AaveStates._initializing,
-		AaveStates._depositing,
-		AaveStates.chilling,
-	]);
+	await controls.sendEvents.START({ initialAmount: 100n });
+	await controls.sendEvents.HARVEST({});
+	await controls.sendEvents.WITHDRAW({});
 
-	await sendEventAndWait(machine, DaemonEvent.Harvest(), [
-		AaveStates._harvesting,
-		AaveStates.chilling,
-	]);
-
-	await sendEventAndWait(machine, DaemonEvent.Withdraw(), [
-		AaveStates._withdrawing,
-		AaveStates.idle,
-	]);
-
-	const state = MachineSnapshotDB.getAllMachinesSnapshot();
+	const state = actor.getPersistedSnapshot();
 
 	return c.json(state);
 });

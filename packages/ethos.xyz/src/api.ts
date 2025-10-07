@@ -15,12 +15,15 @@ namespace API {
 		/**
 		 * @dev
 		 */
-		export interface Nomos extends NomosPrimitive.Nomos {}
+		export interface Daemon extends DaemonPrimitive.DaemonInstance {}
 
 		/**
 		 * @dev
 		 */
-		export interface Daemon extends DaemonPrimitive.DaemonInstance<any> {}
+		export namespace Nomos {
+			export interface _Nomos extends NomosPrimitive.Nomos {}
+			export interface _NomosEvent extends NomosPrimitive.NomosEvent {}
+		}
 
 		/**
 		 * @dev

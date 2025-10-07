@@ -1,0 +1,19 @@
+meta {
+  name: http://localhost:8000
+  type: http
+  seq: 1
+}
+
+post {
+  url: /user/authenticated/daemons/:id/events
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 
+}
+
+settings {
+  encodeUrl: true
+}

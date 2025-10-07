@@ -22,7 +22,7 @@ declare module "hono" {
 
 const signJwt = async (address: Address, expiresInSeconds = 3600) => {
 	const payload: JwtPayload = {
-		sub: `User-${address}`,
+		sub: `user-${address}`,
 		exp: Math.floor(Date.now() / 1000) + expiresInSeconds,
 	};
 
@@ -60,21 +60,35 @@ const withJwt = (routeHandler: Hono<BlankEnv, BlankSchema, "/">) => {
 
 const extractJwtSub = (c: Context<BlankEnv, "/", BlankInput>) => c.var.jwtPayload.sub;
 
-type TypedContext<Params extends Record<string, string> = {}, Response = unknown> = {
+type TypedContext<
+	Params extends Record<string, string> = {},
+	Response = unknown,
+	Data extends Record<string, unknown> = {},
+> = {
 	user: User.User;
 	params: Params;
+	data: Data;
 	json: (data: Response, status?: ContentfulStatusCode) => ResponseReturnType<Response>;
 };
 
 // Hono’s `c.json` actually returns a Response object
 type ResponseReturnType<T> = Response & { __type?: T };
 
-export function createCtx<Params extends Record<string, string> = {}, Response = unknown>(
-	c: Context<BlankEnv, "/", BlankInput>,
-): TypedContext<Params, Response> {
+export async function createCtx<
+	Params extends Record<string, string> = {},
+	Response = unknown,
+	Data extends Record<string, unknown> = {},
+>(c: Context<BlankEnv, "/", BlankInput>): Promise<TypedContext<Params, Response, Data>> {
+	let body = {};
+
+	try {
+		body = await c.req.json();
+	} catch (_) {}
+
 	return {
 		user: c.var.user,
 		params: c.req.param() as Params,
+		data: body as Data,
 		json: (data, status?: ContentfulStatusCode) =>
 			c.json(data, status, {}) as ResponseReturnType<Response>,
 	};

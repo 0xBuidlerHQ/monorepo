@@ -11,53 +11,34 @@ export namespace Daemon {
 	 */
 	export type DaemonState<S extends string = string> = S;
 
-	/**
-	 * Convert an event map into a discriminated union
-	 * Example:
-	 * { DEPOSIT: { amount: bigint }, HARVEST: undefined }
-	 * becomes:
-	 * | { type: "DEPOSIT"; payload: { amount: bigint } }
-	 * | { type: "HARVEST"; payload: undefined }
-	 */
-	export type DaemonEvent<E extends Record<string, any>> = {
+	export type DaemonEvent<E extends Record<string, {}>> = {
 		[K in keyof E]: { type: K; payload: E[K] };
 	}[keyof E];
 
 	/** Logs emitted by the daemon, fully typed by event */
-	export interface DaemonLog<E extends Record<string, any>> {
-		event: DaemonEvent<E>;
+	export interface DaemonLog<N extends Nomos.Nomos> {
+		event: DaemonEvent<N["events"]>;
 		timestamp: string;
 	}
 
 	/** Generic context for a daemon */
-	export interface DaemonContext<
-		N extends Nomos.Nomos<any>,
-		E extends Record<string, any> = Record<string, any>,
-	> {
+	export interface DaemonContext<N extends Nomos.Nomos> {
 		nomos: N;
 		userId: User.UserId;
 		params: N["params"];
 
 		internal: {
-			logs: DaemonLog<E>[];
+			logs: DaemonLog<N>[];
 		};
 	}
 
 	/** Generic daemon instance */
-	export interface DaemonInstance<
-		N extends Nomos.Nomos<any>,
-		E extends Record<string, any> = Record<string, any>,
-		S extends string = string,
-	> {
+	export interface DaemonInstance<N extends Nomos.Nomos = any> {
 		id: DaemonId;
-		state: DaemonState<S>;
-		context: DaemonContext<N, E>;
+		state: keyof N["states"];
+		context: DaemonContext<N>;
 	}
 
 	/** Registry of daemons keyed by strategy ID */
-	export type DaemonsByStrategyId<
-		N extends Nomos.Nomos<any>,
-		E extends Record<string, any> = Record<string, any>,
-		S extends string = string,
-	> = Record<N["id"], DaemonInstance<N, E, S>>;
+	export type DaemonsByStrategyId<N extends Nomos.Nomos> = Record<N["id"], DaemonInstance<N>>;
 }

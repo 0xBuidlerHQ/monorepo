@@ -1,126 +1,165 @@
-import { type Daemon, Nomos } from "@0xbuidlerhq/package-ethos.xyz";
-import type { Actor } from "xstate";
-import { createDaemonMachine, type DaemonStep } from "./factory.js";
+import { Nomos } from "@0xbuidlerhq/package-ethos.xyz";
+import type { UnknownActorLogic } from "xstate";
+import { createDaemonActor, type DaemonStep } from "./factory.js";
 
-const aaveStrategy = Nomos.NomosRegistry["nomos-0x-aave"];
+const AaveNomos = Nomos.NomosRegistry["nomos-0x-aave"];
 
-type AaveEvents = {
-	START: { initialAmount: bigint };
-	HARVEST: undefined;
-	WITHDRAW: undefined;
-};
+const AaveDaemon: {
+	actors: Record<keyof (typeof AaveNomos)["states"], UnknownActorLogic>;
+	states: Record<keyof (typeof AaveNomos)["states"], DaemonStep<typeof AaveNomos>>;
+} = {
+	actors: {
+		/**
+		 * @dev
+		 */
+		[AaveNomos.states.idle]: createDaemonActor<typeof AaveNomos>(async ({ input }) => {
+			const { context, event } = input;
 
-enum AaveStates {
-	idle = "idle",
-	chilling = "chilling",
+			console.log("idle");
+			await new Promise((res) => setTimeout(res, 1000));
+		}),
 
-	_initializing = "_initializing",
-	_depositing = "_depositing",
-	_harvesting = "_harvesting",
-	_withdrawing = "_withdrawing",
-}
-// Define steps
-const aaveSteps: DaemonStep<typeof aaveStrategy, AaveEvents, AaveStates>[] = [
-	{
-		name: AaveStates._initializing,
-		actor: async (ctx) => {
-			console.log("Initializing");
-			ctx.internal.logs.push({
-				event: { type: "START", payload: ctx.params },
-				timestamp: new Date().toISOString(),
-			});
-			await new Promise((r) => setTimeout(r, 1500));
+		/**
+		 * @dev
+		 */
+		[AaveNomos.states.__initializing__]: createDaemonActor<typeof AaveNomos>(async ({ input }) => {
+			const { context, event } = input;
+
+			console.log("__initializing__");
+			await new Promise((res) => setTimeout(res, 1000));
+		}),
+
+		/**
+		 * @dev
+		 */
+		[AaveNomos.states.__depositing__]: createDaemonActor<typeof AaveNomos>(async ({ input }) => {
+			const { context, event } = input;
+
+			console.log("__depositing__");
+			await new Promise((res) => setTimeout(res, 1000));
+		}),
+
+		/**
+		 * @dev
+		 */
+		[AaveNomos.states.chilling]: createDaemonActor<typeof AaveNomos>(async ({ input }) => {
+			const { context, event } = input;
+
+			console.log("chilling");
+			await new Promise((res) => setTimeout(res, 1000));
+		}),
+
+		/**
+		 * @dev
+		 */
+		[AaveNomos.states.__harvesting__]: createDaemonActor<typeof AaveNomos>(async ({ input }) => {
+			const { context, event } = input;
+
+			console.log("__harvesting__");
+			await new Promise((res) => setTimeout(res, 1000));
+		}),
+
+		/**
+		 * @dev
+		 */
+		[AaveNomos.states.__withdrawing__]: createDaemonActor<typeof AaveNomos>(async ({ input }) => {
+			const { context, event } = input;
+
+			console.log("__withdrawing__");
+			await new Promise((res) => setTimeout(res, 1000));
+		}),
+	},
+
+	states: {
+		[AaveNomos.states.idle]: {
+			name: AaveNomos.states.idle,
+
+			invoke: {
+				src: AaveNomos.states.idle,
+				input: (ctx) => ctx,
+			},
+
+			on: {
+				START: {
+					target: AaveNomos.states.__initializing__,
+					actions: [
+						({ context, event }) => {
+							context.params = event.payload;
+						},
+					],
+				},
+			},
 		},
-		onDone: AaveStates._depositing,
-	},
-	{
-		name: AaveStates._depositing,
-		actor: async (ctx) => {
-			console.log("Depositing");
-			ctx.internal.logs.push({
-				event: { type: "START", payload: ctx.params },
-				timestamp: new Date().toISOString(),
-			});
-			await new Promise((r) => setTimeout(r, 1500));
+
+		/**
+		 * @dev
+		 */
+		[AaveNomos.states.__initializing__]: {
+			name: AaveNomos.states.__initializing__,
+
+			invoke: {
+				src: AaveNomos.states.__initializing__,
+				input: (ctx) => ctx,
+				onDone: { target: AaveNomos.states.__depositing__ },
+			},
 		},
-		onDone: AaveStates.chilling,
-	},
-	{
-		name: AaveStates.chilling,
-		actor: async () => {},
-		onEvents: { HARVEST: AaveStates._harvesting, WITHDRAW: AaveStates._withdrawing },
-	},
-	{
-		name: AaveStates._harvesting,
-		actor: async (ctx) => {
-			console.log("Harvesting");
-			ctx.internal.logs.push({
-				event: { type: "HARVEST", payload: undefined },
-				timestamp: new Date().toISOString(),
-			});
-			await new Promise((r) => setTimeout(r, 1500));
+
+		/**
+		 * @dev
+		 */
+		[AaveNomos.states.__depositing__]: {
+			name: AaveNomos.states.__depositing__,
+
+			invoke: {
+				src: AaveNomos.states.__depositing__,
+				input: (ctx) => ctx,
+				onDone: { target: AaveNomos.states.chilling },
+			},
 		},
-		onDone: AaveStates.chilling,
-	},
-	{
-		name: AaveStates._withdrawing,
-		actor: async (ctx) => {
-			console.log("Withdrawing");
-			ctx.internal.logs.push({
-				event: { type: "WITHDRAW", payload: undefined },
-				timestamp: new Date().toISOString(),
-			});
-			await new Promise((r) => setTimeout(r, 1500));
+
+		/**
+		 * @dev
+		 */
+		[AaveNomos.states.chilling]: {
+			name: AaveNomos.states.chilling,
+
+			invoke: {
+				src: AaveNomos.states.chilling,
+				input: (ctx) => ctx,
+			},
+
+			on: {
+				HARVEST: { target: AaveNomos.states.__harvesting__ },
+				WITHDRAW: { target: AaveNomos.states.__withdrawing__ },
+			},
 		},
-		onDone: AaveStates.idle,
+
+		/**
+		 * @dev
+		 */
+		[AaveNomos.states.__harvesting__]: {
+			name: AaveNomos.states.__harvesting__,
+
+			invoke: {
+				src: AaveNomos.states.__harvesting__,
+				input: (ctx) => ctx,
+				onDone: { target: AaveNomos.states.chilling },
+			},
+		},
+
+		/**
+		 * @dev
+		 */
+		[AaveNomos.states.__withdrawing__]: {
+			name: AaveNomos.states.__withdrawing__,
+
+			invoke: {
+				src: AaveNomos.states.__withdrawing__,
+				input: (ctx) => ctx,
+				onDone: { target: AaveNomos.states.idle },
+			},
+		},
 	},
-	{
-		name: AaveStates.idle,
-		actor: async () => {},
-	},
-];
+} as const;
 
-// Create the machine
-const DaemonMachine = createDaemonMachine(aaveStrategy, "user-0x123", aaveSteps);
-
-type AaveDaemonEvent = Daemon.DaemonEvent<AaveEvents>;
-
-const DaemonEvent = {
-	Start: (payload: AaveEvents["START"]): AaveDaemonEvent => ({ type: "START", payload }),
-	Harvest: (payload: AaveEvents["HARVEST"] = undefined): AaveDaemonEvent => ({
-		type: "HARVEST",
-		payload,
-	}),
-	Withdraw: (payload: AaveEvents["WITHDRAW"] = undefined): AaveDaemonEvent => ({
-		type: "WITHDRAW",
-		payload,
-	}),
-};
-
-const sendEventAndWait = async (
-	actor: Actor<typeof DaemonMachine>,
-	event: AaveDaemonEvent,
-	stateSequence: AaveStates[],
-) => {
-	return await new Promise<{ value: AaveStates; context: any }>((resolve) => {
-		let index = 0;
-
-		const sub = actor.subscribe((snapshot) => {
-			const value = snapshot.value as AaveStates;
-
-			if (value === stateSequence[index]) {
-				index++;
-
-				// If we reached the last state in the sequence, resolve
-				if (index >= stateSequence.length) {
-					sub.unsubscribe();
-					resolve({ value, context: snapshot.context });
-				}
-			}
-		});
-
-		actor.send(event);
-	});
-};
-
-export { DaemonMachine, sendEventAndWait, DaemonEvent, AaveStates };
+export { AaveDaemon };
