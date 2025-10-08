@@ -51,57 +51,6 @@ type Nomos<
 };
 
 type EmptyEvent = Record<string, never>;
-const NomosRegistry = {
-	"nomos-0x-aave": defineNomos({
-		id: "nomos-0x-aave",
-
-		name: "AAVE",
-		description: "",
-
-		networks: ["base"],
-		tokens: ["usdc", "eth"],
-		protocols: ["aave"],
-
-		params: {
-			initialAmount: 0n as bigint,
-		},
-
-		states: {
-			idle: "idle",
-			chilling: "chilling",
-			//
-			__initializing__: "__initializing__",
-			__depositing__: "__depositing__",
-			__harvesting__: "__harvesting__",
-			__withdrawing__: "__withdrawing__",
-		} as const,
-
-		events: {
-			START: {
-				type: "START",
-				payload: {
-					initialAmount: 0n as bigint,
-				},
-			},
-			HARVEST: {
-				type: "HARVEST",
-				payload: {} as EmptyEvent,
-			},
-			WITHDRAW: {
-				type: "WITHDRAW",
-				payload: {} as EmptyEvent,
-			},
-		} as const,
-
-		emitted: {} as const,
-
-		eventDependencies: {
-			START: ["__initializing__", "__depositing__", "chilling"],
-			HARVEST: ["__harvesting__", "chilling"],
-			WITHDRAW: ["__withdrawing__", "idle"],
-		},
-	}),
-} as const satisfies { [key: NomosId]: Nomos };
 
 function defineNomos<
 	S extends Record<string, string>,
@@ -117,6 +66,4 @@ function defineNomos<
 	return nomos;
 }
 
-const getNomos = (id: NomosId) => (NomosRegistry as { [key: NomosId]: Nomos })[id];
-
-export { type NomosId, type Nomos, NomosRegistry, type NomosEvent, getNomos };
+export { type NomosId, type Nomos, type NomosEvent, defineNomos, type EmptyEvent };

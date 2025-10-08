@@ -1,8 +1,4 @@
-import type {
-	Daemon as DaemonPrimitive,
-	Nomos as NomosPrimitive,
-	User as UserPrimitive,
-} from "./index";
+import type { Nomos as NomosPrimitive, User as UserPrimitive } from "./index";
 
 /**
  * @dev
@@ -12,11 +8,6 @@ namespace API {
 	 * @dev
 	 */
 	export namespace Types {
-		/**
-		 * @dev
-		 */
-		export interface Daemon extends DaemonPrimitive.DaemonInstance {}
-
 		/**
 		 * @dev
 		 */
@@ -32,4 +23,5 @@ namespace API {
 	}
 }
 
+//
 export type { API };

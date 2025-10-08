@@ -2,7 +2,7 @@
  * @dev
  */
 
-import type { API } from "@0xbuidlerhq/package-ethos.xyz";
+import type { Nomos } from "@0xbuidlerhq/package-ethos.xyz";
 import { Hono } from "hono";
 import { createCtx } from "@/utils/jwt.js";
 
@@ -11,11 +11,11 @@ const nomos = new Hono();
 /**
  * @dev
  */
-nomos.get("/", (c) => {
+nomos.get("/", async (c) => {
 	type Params = {};
-	type Response = API.Types.NomosT[];
+	type Response = {}[];
 
-	const { json } = createCtx<Params, Response>(c);
+	const { json } = await createCtx<Params, Response>(c);
 
 	const response: Response = (() => {
 		return [];
@@ -27,11 +27,11 @@ nomos.get("/", (c) => {
 /**
  * @dev
  */
-nomos.get("/:id", (c) => {
-	type Params = { id: API.Types.NomosT["id"] };
-	type Response = API.Types.NomosT;
+nomos.get("/:id", async (c) => {
+	type Params = { id: Nomos.NomosId };
+	type Response = {};
 
-	const { params, json } = createCtx<Params, Response>(c);
+	const { params, json } = await createCtx<Params, Response>(c);
 
 	const response: Response = (() => {
 		return {};

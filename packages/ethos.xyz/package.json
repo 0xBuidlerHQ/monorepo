@@ -29,6 +29,7 @@
 		"typescript": "catalog:react19"
 	},
 	"peerDependencies": {
-		"@tanstack/react-query": "catalog:react19"
+		"@tanstack/react-query": "catalog:react19",
+		"xstate": "^5.22.0"
 	}
 }

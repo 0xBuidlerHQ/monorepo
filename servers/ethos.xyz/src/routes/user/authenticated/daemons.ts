@@ -2,10 +2,11 @@
  * @dev
  */
 
-import { type API, Nomos } from "@0xbuidlerhq/package-ethos.xyz";
+import type { API } from "@0xbuidlerhq/package-ethos.xyz";
 import { Hono } from "hono";
-import { createDaemonMachine } from "@/daemons/factory.js";
-import { getDaemon } from "@/daemons/registry.js";
+import { createDaemon } from "@/core/daemon/factory.js";
+import { getNomos } from "@/core/nomos/index.js";
+import { getPraxis } from "@/core/praxis/index.js";
 import { createCtx } from "@/utils/jwt.js";
 
 const daemons = new Hono();
@@ -48,10 +49,10 @@ daemons.post("/create", async (c) => {
 	};
 	const { json, data, user } = await createCtx<Params, Response, Data>(c);
 
-	const nomos = Nomos.getNomos(data.nomosId);
-	const daemon = getDaemon(data.nomosId)!;
+	const nomos = getNomos(data.nomosId)!;
+	const praxis = getPraxis(data.nomosId)!;
 
-	const { controls } = createDaemonMachine(nomos, user.id, daemon);
+	const { controls } = createDaemon(user.id, nomos, praxis);
 
 	await controls.sendEvent(data.event);
 
