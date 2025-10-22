@@ -1,7 +1,7 @@
-import { DefaultPage } from "@client/components/defaultPage";
+import { Box } from "@0xbuidlerhq/ui/system/base/box";
 
 const AdminPage = () => {
-	return <DefaultPage label="DASHBOARD">Hello</DefaultPage>;
+	return <Box>Hello</Box>;
 };
 
 export default AdminPage;

@@ -1,4 +1,5 @@
 import {
+	Inter,
 	Montserrat,
 	Noto_Sans,
 	Noto_Sans_Display,
@@ -9,7 +10,16 @@ import {
 } from "next/font/google";
 
 /**
- * @dev
+ * @dev Inter.
+ */
+const inter = Inter({
+	subsets: ["latin"],
+	variable: "--font-inter",
+	display: "swap",
+});
+
+/**
+ * @dev Work.
  */
 const workSans = Work_Sans({
 	subsets: ["latin"],
@@ -18,7 +28,7 @@ const workSans = Work_Sans({
 });
 
 /**
- * @dev
+ * @dev Montserrat.
  */
 const montserrat = Montserrat({
 	subsets: ["latin"],
@@ -27,7 +37,7 @@ const montserrat = Montserrat({
 });
 
 /**
- * @dev
+ * @dev Noto.
  */
 const notoSerif = Noto_Serif({
 	subsets: ["latin"],
@@ -61,4 +71,13 @@ const notoSansYi = Noto_Sans_Yi({
 	weight: ["400"],
 });
 
-export { montserrat, notoSans, notoSansDisplay, notoSansMono, notoSansYi, notoSerif, workSans };
+export {
+	montserrat,
+	notoSans,
+	notoSansDisplay,
+	notoSansMono,
+	notoSansYi,
+	notoSerif,
+	workSans,
+	inter,
+};

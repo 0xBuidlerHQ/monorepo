@@ -3,6 +3,7 @@ import "@0xbuidlerhq/ui/globals.css";
 import "./system.css";
 
 import {
+	inter,
 	montserrat,
 	notoSans,
 	notoSansDisplay,
@@ -14,10 +15,8 @@ import {
 import { cn } from "@0xbuidlerhq/ui/shadcn/lib/utils";
 import { Box } from "@0xbuidlerhq/ui/system/base/box";
 import { Container } from "@0xbuidlerhq/ui/system/base/container";
-import { Background } from "@app/background";
-import { Footer } from "@client/fragments/footer";
-import { Header } from "@client/fragments/header";
-import { Globals } from "@client/globals";
+import { Footer } from "@client/footer";
+import { Header } from "@client/header";
 import { Providers } from "@client/providers";
 import type { PropsWithChildren } from "react";
 
@@ -30,8 +29,9 @@ const Layout = ({ children }: PropsWithChildren) => {
 					"antialiased",
 					"bg-background",
 					"text-foreground",
-					"font-noto-sans",
+					"font-inter",
 					"overscroll-contain",
+					"tracking-tighter",
 					workSans.variable,
 					notoSerif.variable,
 					notoSans.variable,
@@ -39,26 +39,19 @@ const Layout = ({ children }: PropsWithChildren) => {
 					notoSansMono.variable,
 					notoSansYi.variable,
 					montserrat.variable,
+					inter.variable,
 				)}
 			>
 				<Providers>
-					<Globals />
+					<main className="grow flex flex-col min-h-[100dvh]">
+						<Header />
 
-					<Box className="grow flex flex-col min-h-[100dvh]">
-						<main className="flex flex-col grow">
-							<Header />
+						<Container className="flex grow min-h-0">
+							<Box className="grow max-w-4xl mx-auto">{children}</Box>
+						</Container>
 
-							<Container className="flex grow min-h-0">
-								<Box className="relative border-x border-accent grow px-[1px]">
-									<Background />
-
-									<Box className="grow">{children}</Box>
-								</Box>
-							</Container>
-
-							<Footer />
-						</main>
-					</Box>
+						<Footer />
+					</main>
 				</Providers>
 			</body>
 		</html>

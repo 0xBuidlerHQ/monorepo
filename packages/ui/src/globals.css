@@ -140,6 +140,7 @@
 }
 
 @theme inline {
+	--font-inter: var(--font-inter);
 	--font-montserrat: var(--font-montserrat);
 	--font-work-sans: var(--font-work-sans);
 	--font-noto-serif: var(--font-noto-serif);

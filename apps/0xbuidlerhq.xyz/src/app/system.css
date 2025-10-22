@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+.light,
+[data-theme="light"],
+:root {
+}
+
+.dark,
+[data-theme="dark"],
+:root[class~="dark"] {
+}

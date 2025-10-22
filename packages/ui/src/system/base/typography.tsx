@@ -2,6 +2,30 @@ import { cn } from "@0xbuidlerhq/ui/shadcn/lib/utils";
 
 interface TypographyProps extends React.HTMLAttributes<HTMLElement> {}
 
+const H1_6 = ({ children, className, ...props }: TypographyProps) => (
+	<h1 className={cn(className, "lg:text-9xl sm:text-8xl text-7xl")} {...props}>
+		{children}
+	</h1>
+);
+
+const H1_5 = ({ children, className, ...props }: TypographyProps) => (
+	<h1 className={cn(className, "text-8xl")} {...props}>
+		{children}
+	</h1>
+);
+
+const H1_4 = ({ children, className, ...props }: TypographyProps) => (
+	<h1 className={cn(className, "text-7xl")} {...props}>
+		{children}
+	</h1>
+);
+
+const H1_3 = ({ children, className, ...props }: TypographyProps) => (
+	<h1 className={cn(className, "text-6xl")} {...props}>
+		{children}
+	</h1>
+);
+
 const H1_2 = ({ children, className, ...props }: TypographyProps) => (
 	<h1 className={cn(className, "text-5xl")} {...props}>
 		{children}
@@ -62,4 +86,4 @@ const P = ({ children, className, ...props }: TypographyProps) => (
 	</p>
 );
 
-export { H1_0, H1_2, H1_1, H1, H2, H3, H4, H5, H6, P };
+export { H1_0, H1_2, H1_3, H1_4, H1_5, H1_6, H1_1, H1, H2, H3, H4, H5, H6, P };

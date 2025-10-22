@@ -1,0 +1,35 @@
+{
+	"name": "@0xbuidlerhq/apps-0xbuidler.xyz",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev --turbopack --port 3001",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@0xbuidlerhq/ui": "workspace:*",
+		"@icons-pack/react-simple-icons": "^13.7.0",
+		"@react-spring/web": "10.0.1",
+		"@tailwindcss/typography": "^0.5.19",
+		"@tanstack/react-query": "catalog:react19",
+		"gray-matter": "^4.0.3",
+		"lucide-react": "^0.475.0",
+		"next": "catalog:react19",
+		"react": "catalog:react19",
+		"react-dom": "catalog:react19",
+		"react-markdown": "^10.1.0",
+		"react-use": "^17.6.0",
+		"remark-gfm": "^4.0.1",
+		"zustand": "^5.0.8"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "catalog:react19",
+		"@types/node": "catalog:react19",
+		"@types/react": "catalog:react19",
+		"@types/react-dom": "catalog:react19",
+		"tailwindcss": "catalog:react19",
+		"typescript": "catalog:react19"
+	}
+}

@@ -80,4 +80,4 @@ const useMachine = (id: MachineId) => {
 	return machine;
 };
 
-export { useMachine, MachineSnapshotDB };
+export { useMachine, MachineSnapshotDB, saveMachineSnapshot };

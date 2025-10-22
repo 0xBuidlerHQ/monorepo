@@ -15,13 +15,11 @@ verify.post("/", async (c) => {
 	// Verify the signature.
 	const client = RelayClient.fromPorto(porto, { chainId: siweMessage.chainId });
 
-	console.log("1");
 	const valid = await verifySiweMessage(client, {
 		address: siweMessage.address!,
 		message: params.message,
 		signature: params.signature,
 	});
-	console.log("2");
 
 	// If the signature is invalid, we cannot authenticate the user.
 	if (!valid) return c.json({ error: "Invalid signature" }, 401);

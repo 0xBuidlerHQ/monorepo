@@ -7,6 +7,7 @@ import { Hono } from "hono";
 import { createDaemon } from "@/core/daemon/factory.js";
 import { getNomos } from "@/core/nomos/index.js";
 import { getPraxis } from "@/core/praxis/index.js";
+import { saveMachineSnapshot } from "@/db/index.js";
 import { createCtx } from "@/utils/jwt.js";
 
 const daemons = new Hono();
@@ -52,9 +53,10 @@ daemons.post("/create", async (c) => {
 	const nomos = getNomos(data.nomosId)!;
 	const praxis = getPraxis(data.nomosId)!;
 
-	const { controls } = createDaemon(user.id, nomos, praxis);
+	const { actor, controls } = createDaemon(user.id, nomos, praxis);
 
 	await controls.sendEvent(data.event);
+	saveMachineSnapshot(`${user.id}-${nomos.id}`, actor.getPersistedSnapshot());
 
 	const response: Response = {};
 
@@ -64,22 +66,22 @@ daemons.post("/create", async (c) => {
 /**
  * @dev POST.
  */
-// daemons.post("/:id/events", async (c) => {
-// 	type Params = { id: API.Types.Daemon["id"] };
-// 	type Response = API.Types.Daemon;
-// 	type Data = API.Types.Nomos._NomosEvent;
-// 	const { params, json, data } = await createCtx<Params, Response, Data>(c);
+daemons.post("/:id/events", async (c) => {
+	type Params = { id: API.Types.Daemon["id"] };
+	type Response = API.Types.Daemon;
+	type Data = API.Types.Nomos._NomosEvent;
+	const { params, json, data } = await createCtx<Params, Response, Data>(c);
 
-// const nomos = Nomos.getNomos(data.nomosId);
-// 	const daemon = getDaemon(data.nomosId)!;
+	const nomos = Nomos.getNomos(data.nomosId);
+	const daemon = getDaemon(data.nomosId)!;
 
-// 	const { controls } = createDaemonMachine(nomos, "eded", daemon);
+	const { controls } = createDaemonMachine(nomos, "eded", daemon);
 
-// 	await controls.sendEvent(data.event);
+	await controls.sendEvent(data.event);
 
-// 	const response: Response = {};
+	const response: Response = {};
 
-// 	return json(response);
-// });
+	return json(response);
+});
 
 export { daemons };

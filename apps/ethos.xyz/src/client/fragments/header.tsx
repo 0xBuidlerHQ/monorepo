@@ -9,6 +9,7 @@ import { H1, H5, H6 } from "@0xbuidlerhq/ui/system/base/typography";
 import { ButtonBase } from "@0xbuidlerhq/ui/system/buttons/ButtonBase";
 import { Header as HeaderPrimitive } from "@0xbuidlerhq/ui/system/layouts/header";
 import { ConnectButton } from "@client/components/connectButton";
+import { Annoucement } from "@client/fragments/annoucement";
 import { useTokenPricesBySymbol } from "@client/hooks/queries/useTokenPricesBySymbol";
 import { useWeb3 } from "@client/providers/web3";
 import { useToggleCmdK, useToggleDevMode } from "@client/stores/modals";
@@ -241,6 +242,7 @@ const BottomHeader = () => {
 const Header = () => {
 	return (
 		<Box className="sticky top-0 z-50">
+			<Annoucement />
 			<TopTopHeader />
 			<BottomHeader />
 		</Box>
