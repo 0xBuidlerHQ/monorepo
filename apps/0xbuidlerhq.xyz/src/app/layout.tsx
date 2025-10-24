@@ -14,7 +14,6 @@ import {
 } from "@0xbuidlerhq/ui/fonts";
 import { cn } from "@0xbuidlerhq/ui/shadcn/lib/utils";
 import { Box } from "@0xbuidlerhq/ui/system/base/box";
-import { Container } from "@0xbuidlerhq/ui/system/base/container";
 import { Footer } from "@client/footer";
 import { Header } from "@client/header";
 import { Providers } from "@client/providers";
@@ -46,9 +45,9 @@ const Layout = ({ children }: PropsWithChildren) => {
 					<main className="grow flex flex-col min-h-[100dvh]">
 						<Header />
 
-						<Container className="flex grow min-h-0">
-							<Box className="grow max-w-4xl mx-auto">{children}</Box>
-						</Container>
+						<Box className="flex grow min-h-0">
+							<Box className="grow">{children}</Box>
+						</Box>
 
 						<Footer />
 					</main>

@@ -8,6 +8,7 @@ export type PostMeta = {
 	slug: string;
 	title: string;
 	date: Date;
+	subtitle: string;
 };
 
 export function getAllSlugs(): string[] {
@@ -24,7 +25,7 @@ export function getPost(slug: string) {
 	const { data, content } = matter(raw);
 	return {
 		slug,
-		frontmatter: data as { title: string; date: Date },
+		frontmatter: data as { title: string; date: Date; subtitle: string },
 		content,
 	};
 }
@@ -33,7 +34,12 @@ export function getAllPosts(): PostMeta[] {
 	return getAllSlugs()
 		.map((slug) => {
 			const p = getPost(slug)!;
-			return { slug, title: p.frontmatter.title, date: p.frontmatter.date };
+			return {
+				slug,
+				title: p.frontmatter.title,
+				date: p.frontmatter.date,
+				subtitle: p.frontmatter.subtitle,
+			};
 		})
 		.sort((a, b) => (b.date || "").toString().localeCompare(a.date?.toString() || ""));
 }

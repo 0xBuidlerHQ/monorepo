@@ -1,14 +1,26 @@
 ---
-title: Hello World
-date: 2025-10-22
+title: Self Introspection.
+date: 2025-10-06
+subtitle: To more life, more presence, more fuck it, more do it.
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu malesuada tortor. Aenean blandit volutpat dui, eget varius libero accumsan porta. Fusce elementum a quam sed vehicula. Aenean ultrices finibus mauris, euismod pretium ipsum convallis nec. Curabitur luctus, lectus vel vulputate rutrum, nunc orci porta magna, non finibus justo eros auctor libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed consequat tempor arcu id placerat. Suspendisse eu massa ullamcorper, viverra ligula sed, feugiat risus. Suspendisse dictum cursus lectus, non viverra arcu imperdiet quis. Nullam ac bibendum ligula, ut rhoncus ligula. Donec lobortis justo id sagittis luctus. Nunc mattis auctor tortor. Etiam tempor, orci in ornare pretium, dui quam faucibus dui, nec rhoncus nisl enim in mauris. Duis laoreet, dolor at iaculis luctus, odio dui posuere nisl, in varius mi nulla euismod ex.
+What a weird feeling to turn 29.
+Those last few months I really started to think more. Good thing you'd say. Well, yes and no. Yes because of course it's such a blessing to be able to think and analyze. But it can become a nightmare when it becomes overthinking, or worse ... analysis paralysis.
 
-Donec lobortis lacus ante, sed vehicula arcu pulvinar eget. Etiam nec vestibulum eros. Proin velit diam, varius feugiat vehicula et, pulvinar at ipsum. Proin ut est pharetra, elementum sapien et, fringilla arcu. Curabitur lacinia tortor lectus, eu sagittis massa interdum eget. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam dapibus sapien quis ligula sagittis elementum. Maecenas aliquam egestas nisi vitae facilisis. Donec fermentum, leo ut lacinia eleifend, nisi leo placerat elit, feugiat semper turpis tortor mollis diam. Vestibulum sed ex eget ex egestas aliquet. Phasellus vulputate ultrices arcu sed fringilla. Nam urna sapien, tincidunt in nisl sed, varius gravida elit. Suspendisse luctus consectetur nisi, et interdum ipsum sollicitudin vitae.
+This last year a few things happened in my personal life, my grand father died - joining my grand mother who died in 2021, my last working experience was a shit show and I got let go from speaking up (maybe I'll talk about this one day) and had a weird but also very sad break up. Very personal right, lol. If it feels uncomfortable for you to read this, imagine how I feel writing this and sharing it online for the whole world (actually just 2 people - me and the google web scrapper bot) to see.
 
-Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce nunc felis, consectetur id nunc ut, rhoncus tempor metus. Aenean et ex eget velit cursus accumsan. Mauris et odio ac lacus vehicula dapibus luctus id enim. Aliquam condimentum sodales velit non viverra. Nam euismod consequat mauris ac porttitor. Nulla at ultrices justo, a lacinia nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et eros id nulla lobortis cursus non vel tellus. Proin efficitur lectus ac erat facilisis, a tincidunt lorem sollicitudin. Sed in quam odio. In imperdiet venenatis diam, ac elementum risus ultrices vitae. Nulla facilisi.
+After the end of my job - *effective immediately* - and the end of my relationship - *effective immediately too lol* - I felt lonely.
+Most of my friends don't live in my city anymore and the ones who do are too busy with their own life. And I guess it's just harder now than what it used to be when we only had to think about homeworks and Pokemon cards.
 
-Donec mollis diam nec augue varius, id pellentesque massa convallis. Mauris mollis iaculis risus in ullamcorper. Nunc id enim nec nisl volutpat dignissim. Donec finibus interdum elit imperdiet gravida. Integer hendrerit finibus nunc, quis placerat nibh condimentum ac. Praesent aliquam bibendum neque sed placerat. Morbi eu porta nisi, placerat eleifend lacus. Integer finibus, nibh vitae tincidunt blandit, augue enim semper ipsum, vel sodales eros nulla at lectus. Sed hendrerit tellus rhoncus nisl mattis, in eleifend felis vulputate. Donec dictum sit amet mi ut feugiat. Nulla facilisi.
+As a result of all those events and feelings, the last few months were filled with a lot of thoughts. Those thoughts were all mixed with anxiety & analysis paralysis.
+Is this the right choice ? Should I take this job ? Should I move there ? Should I start a youtube channel ? If so about what ? Should I do this ? Should I do that ?
 
-Curabitur placerat eget lacus et tincidunt. Cras a bibendum augue, sit amet euismod sapien. In dui metus, tincidunt ut nibh ac, convallis placerat velit. In sed aliquam diam. Fusce ac elit consectetur, suscipit tellus sed, iaculis turpis. Donec eu mi et ex sodales luctus. Vivamus efficitur ultrices massa. Nam vel egestas nulla, in rhoncus ex. Ut ac tellus molestie ante sagittis ultricies.
+One thing I know for sure is that I wouldn't have all those thoughts if I were to be in a really tough spot. The reason why I'm having those is because I'm in a place of comfort, which allows me to stop and think - too much.
+
+One thing I realized as well, is that we really all are going through some kind of things like that but we generally don't really like talking about it. Which makes sense. It feels weird exposing yourself. But truth being said who cares anyway. It's not like people will remember us in a hundreds or thousands years.
+
+This is going a little bit all over the place for a first though but to be honest it's just like me.
+
+Today's quote will be from *Marcus Aurelius* in his book *Meditations* :
+
+> It is not death that a man should fear, but he should fear never beginning to live.

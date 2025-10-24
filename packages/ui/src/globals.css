@@ -10,6 +10,12 @@
 :root {
 	--app-w: 10000px !important;
 	--app-px: 1rem !important;
+
+	--header-w: 10000px !important;
+	--header-px: 1rem !important;
+
+	--footer-w: 10000px !important;
+	--footer-px: 1rem !important;
 }
 
 .light,
