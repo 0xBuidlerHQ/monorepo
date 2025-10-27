@@ -8,13 +8,18 @@ import remarkGfm from "remark-gfm";
 
 export const dynamicParams = false;
 
-export async function generateStaticParams() {
-	return getAllSlugs().map((slug) => ({ slug }));
+export function generateStaticParams() {
+	return getAllSlugs().map((slug: string) => ({ slug }));
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-	const post = getPost(params.slug);
-	if (!post) return notFound();
+// ⬇️ Make component async and await params
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+	const { slug } = await params;
+
+	const post = getPost(slug);
+	if (!post) {
+		notFound(); // no need to return; this throws
+	}
 
 	const { frontmatter, content } = post;
 
@@ -24,18 +29,10 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 				<H1_6 className="text-accent rounded font-black">THOUGHTS</H1_6>
 
 				<Box>
-					{/* <ButtonBase
-						className="flex gap-2 group w-fit items-center mb-4 px-2"
-						href={PAGES.thoughts}
-					>
-						<MoveLeft className="size-4" />
-						<H4>See all thoughts.</H4>
-					</ButtonBase> */}
-
 					<H1_0 className="font-extrabold">{frontmatter.title}</H1_0>
 					<H5 className="font-bold text-black/90">{frontmatter.subtitle}</H5>
 					<H5 className="text-accent italic">
-						{frontmatter.date.toLocaleDateString("en-US", {
+						{new Date(frontmatter.date).toLocaleDateString("en-US", {
 							year: "numeric",
 							month: "long",
 							day: "numeric",
