@@ -1,9 +1,10 @@
 import { Box } from "@0xbuidlerhq/ui/system/base/box";
 import { Container } from "@0xbuidlerhq/ui/system/base/container";
-import { H1_6 } from "@0xbuidlerhq/ui/system/base/typography";
+import { H1_6, H3, H6 } from "@0xbuidlerhq/ui/system/base/typography";
+import { ButtonBase } from "@0xbuidlerhq/ui/system/buttons/ButtonBase";
 import { PAGES } from "@config/pages";
 import { getAllPosts } from "@server/thoughts";
-import Link from "next/link";
+import { PlusIcon } from "lucide-react";
 
 export const dynamic = "force-static";
 
@@ -12,20 +13,31 @@ const Page = () => {
 
 	return (
 		<Container>
-			<Box className="mt-10 relative">
-				<H1_6 className="text-accent rounded font-black mb-10">THOUGHTS</H1_6>
+			<Box className="mt-10 relative flex flex-col gap-6">
+				<H1_6 className="text-accent rounded font-black">THOUGHTS</H1_6>
 
-				{posts.map((p) => (
-					<li key={p.slug}>
-						<Link href={`${PAGES.thoughts}/${p.slug}`}>{p.title || p.slug}</Link>
-						{p.date && (
-							<>
-								{" "}
-								— <time dateTime={p.date.toDateString()}>{p.date.toLocaleString()}</time>
-							</>
-						)}
-					</li>
-				))}
+				<Box className="flex flex-col">
+					{posts.map((p, index) => (
+						<Box key={p.slug}>
+							<ButtonBase href={`${PAGES.thoughts}/${p.slug}`}>
+								<Box className="flex flex-col">
+									<Box className="flex items-baseline gap-1">
+										<PlusIcon className="size-4 group-hover:text-red-500" />
+										<H3 className="font-bold group-hover:text-red-500">{p.title}</H3>
+									</Box>
+
+									<Box className="flex gap-1">
+										<H6 className="text-accent">#{index}</H6>
+										<H6 className="text-accent">-</H6>
+										<H6 className="text-accent">{p.date.toDateString()}</H6>
+									</Box>
+								</Box>
+							</ButtonBase>
+
+							{index !== posts.length - 1 && <Box className="bg-muted h-[1px] my-2" />}
+						</Box>
+					))}
+				</Box>
 			</Box>
 		</Container>
 	);

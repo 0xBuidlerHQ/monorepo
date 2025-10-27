@@ -9,16 +9,16 @@ import { PAGES } from "@config/pages";
 import { Terminal } from "lucide-react";
 import { usePathname } from "next/navigation";
 
-const HeaderItem = (props: { title: string; href: string }) => {
+const HeaderItem = (props: { title: string; href: string; external?: boolean }) => {
 	const pathname = usePathname();
 	const isPageActive = pathname.includes(props.title.toLowerCase());
 
 	return (
-		<ButtonBase href={props.href}>
+		<ButtonBase href={props.href} external={props.external}>
 			<H5
 				className={cn(
-					"font-medium hover:bg-red-500 hover:text-white cursor-pointer transition-all px-0.5 hover:px-2 hover:font-bold duration-300",
-					isPageActive && "bg-red-500 text-white px-2 font-bold",
+					"font-medium hover:bg-black hover:text-white cursor-pointer transition-all px-0.5 hover:px-2 hover:font-bold duration-300",
+					isPageActive && "bg-black text-white px-2 font-bold",
 				)}
 			>
 				{props.title}
@@ -31,8 +31,6 @@ const HeaderItems = () => {
 	return (
 		<Box className="flex justify-center gap-4">
 			<HeaderItem title="About" href={PAGES.about} />
-			<HeaderItem title="Projects" href={PAGES.projects} />
-			<HeaderItem title="Music" href={PAGES.music} />
 			<HeaderItem title="Thoughts" href={PAGES.thoughts} />
 		</Box>
 	);

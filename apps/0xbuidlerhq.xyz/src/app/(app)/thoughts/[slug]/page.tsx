@@ -21,10 +21,19 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 	return (
 		<Container>
 			<Box className="mt-10 relative flex flex-col gap-6">
+				<H1_6 className="text-accent rounded font-black">THOUGHTS</H1_6>
+
 				<Box>
-					<H1_6 className="text-accent rounded font-black mb-10">THOUGHTS</H1_6>
+					{/* <ButtonBase
+						className="flex gap-2 group w-fit items-center mb-4 px-2"
+						href={PAGES.thoughts}
+					>
+						<MoveLeft className="size-4" />
+						<H4>See all thoughts.</H4>
+					</ButtonBase> */}
+
 					<H1_0 className="font-extrabold">{frontmatter.title}</H1_0>
-					<H4 className="font-bold text-black/90">{frontmatter.subtitle}</H4>
+					<H5 className="font-bold text-black/90">{frontmatter.subtitle}</H5>
 					<H5 className="text-accent italic">
 						{frontmatter.date.toLocaleDateString("en-US", {
 							year: "numeric",
@@ -34,9 +43,9 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 					</H5>
 				</Box>
 
-				<Box className="p-1 bg-muted/30">
-					<Box className="p-1 bg-muted/60">
-						<article className="prose p-4 max-w-none bg-muted">
+				<Box className="p-[2px] bg-muted/30">
+					<Box className="p-[2px] bg-muted/60">
+						<article className="prose px-2 py-4 max-w-none bg-muted">
 							<ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
 						</article>
 					</Box>
