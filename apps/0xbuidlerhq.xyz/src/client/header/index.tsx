@@ -30,7 +30,6 @@ const HeaderItem = (props: { title: string; href: string; external?: boolean }) 
 const HeaderItems = () => {
 	return (
 		<Box className="flex justify-center gap-4">
-			<HeaderItem title="About" href={PAGES.about} />
 			<HeaderItem title="Thoughts" href={PAGES.thoughts} />
 		</Box>
 	);
