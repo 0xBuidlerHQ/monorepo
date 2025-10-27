@@ -1,5 +1,3 @@
-import "@0xbuidlerhq/ui/globals.css";
-
 import "./system.css";
 
 import {

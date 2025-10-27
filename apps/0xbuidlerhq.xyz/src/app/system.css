@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "@0xbuidlerhq/ui/globals.css";
 @plugin "@tailwindcss/typography";
 
 :root {
