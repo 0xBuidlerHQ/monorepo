@@ -10,6 +10,7 @@
 	},
 	"dependencies": {
 		"@0xbuidlerhq/ui": "workspace:*",
+		"@0xbuidlerhq/core": "workspace:*",
 		"@icons-pack/react-simple-icons": "^13.7.0",
 		"@react-spring/web": "10.0.1",
 		"@tailwindcss/typography": "^0.5.19",

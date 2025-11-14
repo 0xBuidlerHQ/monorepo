@@ -241,6 +241,9 @@ importers:
 
   apps/utility.af:
     dependencies:
+      '@0xbuidlerhq/core':
+        specifier: workspace:*
+        version: link:../../packages/core
       '@0xbuidlerhq/ui':
         specifier: workspace:*
         version: link:../../packages/ui
