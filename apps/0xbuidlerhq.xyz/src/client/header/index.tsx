@@ -11,7 +11,7 @@ import { usePathname } from "next/navigation";
 
 const HeaderItem = (props: { title: string; href: string; external?: boolean }) => {
 	const pathname = usePathname();
-	const isPageActive = pathname.includes(props.title.toLowerCase());
+	const isPageActive = pathname.includes(props.href.toLowerCase());
 
 	return (
 		<ButtonBase href={props.href} external={props.external}>
@@ -30,7 +30,7 @@ const HeaderItem = (props: { title: string; href: string; external?: boolean }) 
 const HeaderItems = () => {
 	return (
 		<Box className="flex justify-center gap-4">
-			<HeaderItem title="Thoughts" href={PAGES.thoughts} />
+			<HeaderItem title="Meditations." href={PAGES.meditations} />
 		</Box>
 	);
 };

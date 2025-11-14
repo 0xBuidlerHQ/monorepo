@@ -1,1 +1,1 @@
-export { A as APPS } from '../links-CPmRZeq1.js';
+export { A as APPS, G as GLOBAL } from '../links-DNIhIZ1l.js';

@@ -1,9 +1,9 @@
 import { Box } from "@0xbuidlerhq/ui/system/base/box";
 import { Container } from "@0xbuidlerhq/ui/system/base/container";
-import { H1_6, H3, H6 } from "@0xbuidlerhq/ui/system/base/typography";
+import { H3, H6 } from "@0xbuidlerhq/ui/system/base/typography";
 import { ButtonBase } from "@0xbuidlerhq/ui/system/buttons/ButtonBase";
 import { PAGES } from "@config/pages";
-import { getAllPosts } from "@server/thoughts";
+import { getAllPosts } from "@server/meditations";
 import { PlusIcon } from "lucide-react";
 
 export const dynamic = "force-static";
@@ -13,13 +13,11 @@ const Page = () => {
 
 	return (
 		<Container>
-			<Box className="mt-10 relative flex flex-col gap-6">
-				<H1_6 className="text-accent rounded font-black">THOUGHTS</H1_6>
-
+			<Box className="flex flex-col gap-6">
 				<Box className="flex flex-col">
 					{posts.map((p, index) => (
 						<Box key={p.slug}>
-							<ButtonBase href={`${PAGES.thoughts}/${p.slug}`}>
+							<ButtonBase href={`${PAGES.meditations}/${p.slug}`}>
 								<Box className="flex flex-col">
 									<Box className="flex items-baseline gap-1">
 										<PlusIcon className="size-4 group-hover:text-red-500" />

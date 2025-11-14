@@ -14,4 +14,11 @@ const APPS = {
 	},
 } as const;
 
-export { APPS };
+const GLOBAL = {
+	x: "https://x.com/0xbuidlerhq",
+	github: "https://github.com/0xbuidler",
+	telegram: "https://t.me/@the0xbuidler",
+	youtube: "https://www.youtube.com/@maximeisalive",
+};
+
+export { APPS, GLOBAL };

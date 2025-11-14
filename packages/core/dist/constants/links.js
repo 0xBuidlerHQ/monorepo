@@ -1,8 +1,10 @@
 import {
-  APPS
-} from "../chunk-MTRYVFFM.js";
+  APPS,
+  GLOBAL
+} from "../chunk-NLZN2LAM.js";
 import "../chunk-PZ5AY32C.js";
 export {
-  APPS
+  APPS,
+  GLOBAL
 };
 //# sourceMappingURL=links.js.map

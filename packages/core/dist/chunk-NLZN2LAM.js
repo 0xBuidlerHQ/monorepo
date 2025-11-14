@@ -5,7 +5,8 @@ import {
 // src/constants/links.ts
 var links_exports = {};
 __export(links_exports, {
-  APPS: () => APPS
+  APPS: () => APPS,
+  GLOBAL: () => GLOBAL
 });
 var APPS = {
   /**
@@ -21,9 +22,16 @@ var APPS = {
     }
   }
 };
+var GLOBAL = {
+  x: "https://x.com/0xbuidlerhq",
+  github: "https://github.com/0xbuidler",
+  telegram: "https://t.me/@the0xbuidler",
+  youtube: "https://www.youtube.com/@maximeisalive"
+};
 
 export {
   APPS,
+  GLOBAL,
   links_exports
 };
-//# sourceMappingURL=chunk-MTRYVFFM.js.map
+//# sourceMappingURL=chunk-NLZN2LAM.js.map

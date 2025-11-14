@@ -1,4 +1,4 @@
-import { l as links } from './links-CPmRZeq1.js';
+import { l as links } from './links-DNIhIZ1l.js';
 
 declare namespace index {
   export { links as Links };

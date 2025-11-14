@@ -1,6 +1,5 @@
 const PAGES = {
-	about: "/about",
-	thoughts: "/thoughts",
+	meditations: "/meditations",
 
 	_youtube: "https://www.youtube.com/@0xbuidlerhq",
 	_twitter: "https://x.com/0xbuidlerhq",

@@ -12,10 +12,17 @@ declare const APPS: {
         };
     };
 };
+declare const GLOBAL: {
+    x: string;
+    github: string;
+    telegram: string;
+    youtube: string;
+};
 
 declare const links_APPS: typeof APPS;
+declare const links_GLOBAL: typeof GLOBAL;
 declare namespace links {
-  export { links_APPS as APPS };
+  export { links_APPS as APPS, links_GLOBAL as GLOBAL };
 }
 
-export { APPS as A, links as l };
+export { APPS as A, GLOBAL as G, links as l };
