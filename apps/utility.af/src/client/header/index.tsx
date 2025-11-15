@@ -8,7 +8,7 @@ import { DraftingCompass } from "lucide-react";
 
 const Header = () => {
 	return (
-		<HeaderPrimitive>
+		<HeaderPrimitive className="py-2">
 			<ButtonBase href={PAGES.home} className="flex items-center gap-2 py-1">
 				<DraftingCompass className="size-6" strokeWidth={3} />
 				<H1 className="font-extrabold">utility.af</H1>

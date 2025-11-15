@@ -77,7 +77,8 @@ const categoryStyles: Record<ToolCategory, { label: string; bg: string; text: st
 	},
 };
 
-type ToolCategory = "text" | "time" | "dev" | "media" | "system";
+const ToolCategory = ["text", "time", "dev", "media", "system"] as const satisfies string[];
+type ToolCategory = (typeof ToolCategory)[number];
 
 type Tool = {
 	name: string;
@@ -549,4 +550,4 @@ const Tools = {
 	},
 } as const satisfies { [toolName: string]: Tool };
 
-export { type Tool, Tools, categoryStyles };
+export { type Tool, Tools, categoryStyles, ToolCategory };

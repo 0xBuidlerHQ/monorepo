@@ -7,7 +7,7 @@ import { Container } from "@0xbuidlerhq/ui/system/base/container";
 import { H1, H1_6, H2, H3, H4, H5, H6 } from "@0xbuidlerhq/ui/system/base/typography";
 import { ButtonBase } from "@0xbuidlerhq/ui/system/buttons/ButtonBase";
 import { PAGES } from "@config/pages";
-import { categoryStyles, Tools } from "@config/tools";
+import { categoryStyles, ToolCategory, Tools } from "@config/tools";
 import { useForm, useStore } from "@tanstack/react-form";
 import { Sparkles } from "lucide-react";
 import { motion } from "motion/react";
@@ -16,7 +16,7 @@ const useUserSearchInputForm = () => {
 	const formApi = useForm({
 		defaultValues: {
 			search: "",
-			categories: [] as string[], // <-- NEW
+			categories: ToolCategory,
 		},
 	});
 
@@ -110,9 +110,7 @@ const ToolsList = ({ form }: FormComponent) => {
 								{!isAvailable && (
 									<Box className="absolute top-2 right-2">
 										<Box className={cn("px-2 py-[1px] border border-accent rounded-lg", bgColor)}>
-											<H6 className={cn("text-[10px]! font-medium font-mono", textColor)}>
-												{text}
-											</H6>
+											<H6 className={cn("font-medium font-mono", textColor)}>{text}</H6>
 										</Box>
 									</Box>
 								)}
@@ -175,6 +173,10 @@ const InputBox = ({ form }: FormComponent) => {
 						const selected = (field.state.value ?? []) as string[];
 
 						const toggleCategory = (key: string) => {
+							if (selected.length === ToolCategory.length) {
+								return field.handleChange([key]);
+							}
+
 							const isSelected = selected.includes(key);
 							const updated = isSelected ? selected.filter((c) => c !== key) : [...selected, key];
 							field.handleChange(updated);
@@ -189,20 +191,22 @@ const InputBox = ({ form }: FormComponent) => {
 										<ButtonBase
 											key={item.label}
 											className={cn(
-												"flex gap-2 mt-2 cursor-pointer hover:scale-105 transition-all group ",
-												isActive ? "opacity-100" : "opacity-60",
+												"flex gap-2 mt-2 cursor-pointer hover:scale-105 transition-all group",
+												isActive ? "opacity-100" : "opacity-50",
+												"hover:opacity-100",
 											)}
 											onClick={() => toggleCategory(key)}
 										>
 											<Box className={cn("border border-accent px-2 rounded", item.bg)}>
-												<H6
+												<H5
 													className={cn(
 														"font-mono group-hover:px-2 transition-all duration-500",
+														isActive && "px-1",
 														item.text,
 													)}
 												>
 													{item.label}
-												</H6>
+												</H5>
 											</Box>
 										</ButtonBase>
 									);
@@ -228,30 +232,30 @@ const Page = () => {
 					form.handleSubmit();
 				}}
 			>
-				<Box className="flex flex-col gap-2 ">
+				<Box className="flex flex-col gap-2 py-10">
 					<Box>
 						<H1_6 className="relative font-extrabold font-montserrat">
-							<Sparkles className="absolute -z-10 size-6 -top-6 left-4 animate-pulse" />
-							Do More,
+							<Sparkles className="absolute -z-10 size-6 -top-8 left-4 -rotate-[5deg] text-white" />
+							Do <span className="text-white font-black">More</span>,
 						</H1_6>
 
 						<H1_6 className="relative font-extrabold font-montserrat inline-block">
-							<Sparkles className="absolute -bottom-1 -right-8 -z-10 size-6 animate-pulse" />
-							With Less.
+							<Sparkles className="absolute -bottom-1 -right-10 -z-10 size-6 rotate-[5deg] text-white" />
+							With <span className="text-white font-black">Less</span>.
 						</H1_6>
 					</Box>
 
 					<H2 className="font-semibold text-muted-foreground font-montserrat">
-						Lightweight tools designed for speed and simplicity.
+						A lightweight toolkit that keeps everything quick and simple.
 					</H2>
 				</Box>
 
-				<Box className="mt-10">
+				<Box>
 					<InputBox form={form} />
 				</Box>
 
-				<Box className="py-10">
-					<Separator className="bg-muted" />
+				<Box className="py-8">
+					<Separator className="bg-accent" />
 				</Box>
 
 				<Box>

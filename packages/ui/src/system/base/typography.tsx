@@ -3,7 +3,7 @@ import { cn } from "@0xbuidlerhq/ui/shadcn/lib/utils";
 interface TypographyProps extends React.HTMLAttributes<HTMLElement> {}
 
 const H1_6 = ({ children, className, ...props }: TypographyProps) => (
-	<h1 className={cn(className, "md:text-9xl! text-5xl!")} {...props}>
+	<h1 className={cn(className, "md:text-9xl! text-6xl!")} {...props}>
 		{children}
 	</h1>
 );

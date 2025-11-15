@@ -12,7 +12,7 @@ function GradientBackground({
 		<motion.div
 			data-slot="gradient-background"
 			className={cn(
-				"size-full bg-gradient-to-br from-muted/50 to-background bg-[length:400%_400%]",
+				"size-full bg-gradient-to-br from-muted/10 to-background bg-[length:400%_400%]",
 				className,
 			)}
 			animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
