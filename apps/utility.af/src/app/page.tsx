@@ -46,7 +46,7 @@ const ToolsList = ({ form }: FormComponent) => {
 
 	return (
 		<>
-			<motion.div
+			<motion.ul
 				className="grid md:grid-cols-3 grid-cols-1 gap-6"
 				initial="hidden"
 				animate="show"
@@ -54,7 +54,7 @@ const ToolsList = ({ form }: FormComponent) => {
 					hidden: {},
 					show: {
 						transition: {
-							staggerChildren: 0.12, // delay between items
+							staggerChildren: 0.09,
 						},
 					},
 				}}
@@ -72,13 +72,9 @@ const ToolsList = ({ form }: FormComponent) => {
 						<motion.div
 							key={item.href}
 							variants={{
-								hidden: { opacity: 0, y: 20 },
-								show: { opacity: 1, y: 0 },
+								hidden: { opacity: 0, y: 20, x: 0 },
+								show: { opacity: 1, y: 0, x: 0 },
 							}}
-							initial="hidden"
-							animate="show"
-							exit="exit"
-							transition={{ duration: 0.35, ease: "easeOut" }}
 						>
 							<ButtonBase
 								href={`${PAGES.tools}/${item.href}`}
@@ -130,7 +126,7 @@ const ToolsList = ({ form }: FormComponent) => {
 						</motion.div>
 					);
 				})}
-			</motion.div>
+			</motion.ul>
 
 			{filteredTools.length === 0 && <NotFound />}
 		</>
@@ -157,7 +153,7 @@ const InputBox = ({ form }: FormComponent) => {
 				{(field) => (
 					<Box className="w-full">
 						<input
-							className="w-full bg-muted border border-accent rounded-lg h-10 p-6"
+							className="w-full bg-muted border border-accent rounded-lg h-10 p-6 font-mono"
 							placeholder="Search tools..."
 							value={field.state.value}
 							onChange={(e) => field.handleChange(e.target.value)}
@@ -233,15 +229,18 @@ const Page = () => {
 				}}
 			>
 				<Box className="flex flex-col gap-2 py-10">
-					<Box>
+					<Box className="relative">
+						<Sparkles className="absolute -z-10 size-8 -top-10 left-1/10 -rotate-[5deg] text-orange-500" />
+						<Sparkles className="absolute -bottom-1 right-1/9 -z-10 size-8 rotate-[5deg] text-purple-500" />
+						<Sparkles className="absolute -top-1 right-1/2 -z-10 size-8 rotate-[5deg] text-yellow-500" />
+						<Sparkles className="absolute -bottom-1 left-1/2 -z-10 size-8 rotate-[5deg] text-green-500" />
+
 						<H1_6 className="relative font-extrabold font-montserrat">
-							<Sparkles className="absolute -z-10 size-6 -top-8 left-4 -rotate-[5deg] text-white" />
-							Do <span className="text-white font-black">More</span>,
+							Do <span className="text-purple-400 font-black">More,</span>
 						</H1_6>
 
 						<H1_6 className="relative font-extrabold font-montserrat inline-block">
-							<Sparkles className="absolute -bottom-1 -right-10 -z-10 size-6 rotate-[5deg] text-white" />
-							With <span className="text-white font-black">Less</span>.
+							With <span className="text-orange-400 font-black">Less.</span>
 						</H1_6>
 					</Box>
 

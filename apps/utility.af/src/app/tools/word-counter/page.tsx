@@ -3,7 +3,7 @@
 import { Separator } from "@0xbuidlerhq/ui/shadcn/components/separator";
 import { Box } from "@0xbuidlerhq/ui/system/base/box";
 import { Container } from "@0xbuidlerhq/ui/system/base/container";
-import { H1, H1_3, H1_6, H4 } from "@0xbuidlerhq/ui/system/base/typography";
+import { H1_3, H1_6, H2, H4 } from "@0xbuidlerhq/ui/system/base/typography";
 import { getTextStats } from "@app/tools/word-counter/utils";
 import { Tools } from "@config/tools";
 import React from "react";
@@ -90,8 +90,8 @@ const Page = () => {
 	return (
 		<Container>
 			<Box className="flex flex-col gap-4">
-				<H1_6 className="font-bold font-montserrat">{tool.name}</H1_6>
-				<H1 className="font-medium text-muted-foreground">{tool.subtitle}</H1>
+				<H1_6 className="relative font-extrabold font-montserrat">{tool.name}</H1_6>
+				<H2 className="font-semibold text-muted-foreground font-montserrat">{tool.subtitle}</H2>
 			</Box>
 
 			<Separator className="bg-accent my-10" />
