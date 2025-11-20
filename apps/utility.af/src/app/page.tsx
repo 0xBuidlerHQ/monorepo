@@ -7,7 +7,7 @@ import { Container } from "@0xbuidlerhq/ui/system/base/container";
 import { H1, H1_6, H2, H3, H4, H5, H6 } from "@0xbuidlerhq/ui/system/base/typography";
 import { ButtonBase } from "@0xbuidlerhq/ui/system/buttons/ButtonBase";
 import { PAGES } from "@config/pages";
-import { categoryStyles, ToolCategory, Tools } from "@config/tools";
+import { categoryStyles, ToolCategories, type ToolCategory, Tools } from "@config/tools";
 import { useForm, useStore } from "@tanstack/react-form";
 import { Sparkles } from "lucide-react";
 import { motion } from "motion/react";
@@ -16,7 +16,7 @@ const useUserSearchInputForm = () => {
 	const formApi = useForm({
 		defaultValues: {
 			search: "",
-			categories: ToolCategory,
+			categories: ToolCategories,
 		},
 	});
 
@@ -48,8 +48,6 @@ const ToolsList = ({ form }: FormComponent) => {
 		<>
 			<motion.ul
 				className="grid md:grid-cols-3 grid-cols-1 gap-6"
-				initial="hidden"
-				animate="show"
 				variants={{
 					hidden: {},
 					show: {
@@ -58,6 +56,9 @@ const ToolsList = ({ form }: FormComponent) => {
 						},
 					},
 				}}
+				layout
+				initial="hidden"
+				animate="show"
 			>
 				{filteredTools.map((item) => {
 					const isAvailable = item.available;
@@ -75,6 +76,10 @@ const ToolsList = ({ form }: FormComponent) => {
 								hidden: { opacity: 0, y: 20, x: 0 },
 								show: { opacity: 1, y: 0, x: 0 },
 							}}
+							layout
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							exit={{ opacity: 0, y: -20 }}
 						>
 							<ButtonBase
 								href={`${PAGES.tools}/${item.href}`}
@@ -166,22 +171,36 @@ const InputBox = ({ form }: FormComponent) => {
 			<Box className="flex gap-2 ml-2 mt-1 flex-wrap">
 				<form.Field name="categories">
 					{(field) => {
-						const selected = (field.state.value ?? []) as string[];
+						const selected = (field.state.value ?? ToolCategories) as ToolCategory[];
 
-						const toggleCategory = (key: string) => {
-							if (selected.length === ToolCategory.length) {
+						const toggleCategory = (key: ToolCategory) => {
+							const all = ToolCategories as ToolCategory[];
+
+							const isSelected = selected.includes(key);
+							const isAllSelected = selected.length === all.length;
+							const isLastSelected = selected.length === 1 && isSelected;
+
+							// 1) All selected → clicking one => only that one stays selected
+							if (isAllSelected && isSelected) {
 								return field.handleChange([key]);
 							}
 
-							const isSelected = selected.includes(key);
+							// 2) Last one selected → clicking it => select all
+							if (isLastSelected) {
+								return field.handleChange(all);
+							}
+
+							// 3) Normal toggle behaviour
 							const updated = isSelected ? selected.filter((c) => c !== key) : [...selected, key];
+
 							field.handleChange(updated);
 						};
 
 						return (
 							<>
-								{Object.entries(categoryStyles).map(([key, item]) => {
-									const isActive = selected.includes(key);
+								{ToolCategories.map((toolCategory) => {
+									const item = categoryStyles[toolCategory];
+									const isActive = selected.includes(toolCategory);
 
 									return (
 										<ButtonBase
@@ -191,7 +210,7 @@ const InputBox = ({ form }: FormComponent) => {
 												isActive ? "opacity-100" : "opacity-50",
 												"hover:opacity-100",
 											)}
-											onClick={() => toggleCategory(key)}
+											onClick={() => toggleCategory(toolCategory)}
 										>
 											<Box className={cn("border border-accent px-2 rounded", item.bg)}>
 												<H5
