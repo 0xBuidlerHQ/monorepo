@@ -14,7 +14,6 @@ import { cn } from "@0xbuidlerhq/ui/shadcn/lib/utils";
 import { Box } from "@0xbuidlerhq/ui/system/base/box";
 import { Footer } from "@client/footer";
 import { Header } from "@client/header";
-import { GradientBackground } from "@client/layouts/background";
 import { Providers } from "@client/providers";
 import type { PropsWithChildren } from "react";
 
@@ -40,8 +39,6 @@ const Layout = ({ children }: PropsWithChildren) => {
 					inter.variable,
 				)}
 			>
-				<GradientBackground className="absolute w-full h-full -z-10" />
-
 				<Providers>
 					<main className="grow flex flex-col min-h-[100dvh]">
 						<Header />

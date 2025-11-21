@@ -10,7 +10,9 @@ import { PAGES } from "@config/pages";
 import { categoryStyles, ToolCategories, type ToolCategory, Tools } from "@config/tools";
 import { useForm, useStore } from "@tanstack/react-form";
 import { Sparkles } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, useAnimationFrame } from "motion/react";
+import type { PropsWithChildren } from "react";
+import React from "react";
 
 const useUserSearchInputForm = () => {
 	const formApi = useForm({
@@ -235,6 +237,61 @@ const InputBox = ({ form }: FormComponent) => {
 	);
 };
 
+const FloatingElem = ({ children }: PropsWithChildren) => {
+	const ref = React.useRef<HTMLDivElement | null>(null);
+
+	const config = React.useMemo(() => {
+		const rand = () => Math.random();
+
+		return {
+			// how far it moves
+			ampX: (rand() - 0.5) * 40, // -20..20 px
+			ampY: (rand() - 0.5) * 40, // -20..20 px
+
+			// how fast it moves (different per axis)
+			freqX: 0.00015 + rand() * 0.0002, // in ms^-1
+			freqY: 0.0001 + rand() * 0.00025,
+
+			// phase offsets so they don't line up
+			phaseX: rand() * Math.PI * 2,
+			phaseY: rand() * Math.PI * 2,
+
+			// rotation + scale wobble
+			rotAmp: (rand() - 0.5) * 6, // -3°..3°
+			rotFreq: 0.00012 + rand() * 0.0002,
+			scaleAmp: 0.01 + rand() * 0.03, // 0.01–0.04
+			scaleFreq: 0.00008 + rand() * 0.0002,
+		};
+	}, []);
+
+	useAnimationFrame((time) => {
+		const el = ref.current;
+		if (!el) return;
+
+		const t = time * 1.5; // ms
+
+		const x = Math.sin(t * config.freqX + config.phaseX) * config.ampX;
+		const y = Math.sin(t * config.freqY + config.phaseY) * config.ampY;
+
+		const r = Math.sin(t * config.rotFreq + config.phaseY) * config.rotAmp;
+		const s = 1 + Math.sin(t * config.scaleFreq + config.phaseX) * config.scaleAmp;
+
+		// smooth, continuous, slightly chaotic path:
+		el.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${r}deg) scale(${s})`;
+	});
+
+	return (
+		<div
+			ref={ref}
+			style={{
+				willChange: "transform",
+			}}
+		>
+			{children}
+		</div>
+	);
+};
+
 const Page = () => {
 	const form = useUserSearchInputForm();
 
@@ -249,18 +306,39 @@ const Page = () => {
 			>
 				<Box className="flex flex-col gap-2 py-10">
 					<Box className="relative">
-						<Sparkles className="absolute -z-10 size-8 -top-10 left-1/10 -rotate-[5deg] text-orange-500" />
-						<Sparkles className="absolute -bottom-1 right-1/9 -z-10 size-8 rotate-[5deg] text-purple-500" />
-						<Sparkles className="absolute -top-1 right-1/2 -z-10 size-8 rotate-[5deg] text-yellow-500" />
-						<Sparkles className="absolute -bottom-1 left-1/2 -z-10 size-8 rotate-[5deg] text-green-500" />
+						<Box className="absolute -z-10 -top-10 left-1/10 -rotate-[5deg] text-yellow-500">
+							<FloatingElem>
+								<Sparkles className="size-8" />
+							</FloatingElem>
+						</Box>
 
-						<H1_6 className="relative font-extrabold font-montserrat">
-							Do <span className="text-purple-400 font-black">More,</span>
-						</H1_6>
+						<Box className="absolute -bottom-1 right-1/9 -z-10 rotate-[5deg] text-rose-400">
+							<FloatingElem>
+								<Sparkles className="size-8" />
+							</FloatingElem>
+						</Box>
 
-						<H1_6 className="relative font-extrabold font-montserrat inline-block">
-							With <span className="text-orange-400 font-black">Less.</span>
-						</H1_6>
+						<Box className="absolute -top-10 right-1/2 -z-10  rotate-[5deg] text-blue-500">
+							<FloatingElem>
+								<Sparkles className="size-8" />
+							</FloatingElem>
+						</Box>
+
+						<Box className="absolute top-6 right-1/4 -z-10  rotate-[5deg] text-green-400">
+							<FloatingElem>
+								<Sparkles className="size-8" />
+							</FloatingElem>
+						</Box>
+
+						<Box className="">
+							<H1_6 className="relative font-extrabold font-montserrat">
+								Do <span className="text-purple-400 font-black">More,</span>
+							</H1_6>
+
+							<H1_6 className="relative font-extrabold font-montserrat">
+								With <span className="text-orange-400 font-black">Less.</span>
+							</H1_6>
+						</Box>
 					</Box>
 
 					<H2 className="font-semibold text-muted-foreground font-montserrat">
