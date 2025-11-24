@@ -11,7 +11,7 @@
 		"moduleResolution": "bundler",
 		"resolveJsonModule": true,
 		"isolatedModules": true,
-		"jsx": "preserve",
+		"jsx": "react-jsx",
 		"incremental": true,
 		"plugins": [
 			{
@@ -23,13 +23,19 @@
 			"@client/*": ["./src/client/*"],
 			"@server/*": ["./src/server/*"],
 			"@config/*": ["./src/config/*"],
-
+			"@content/*": ["./src/content/*"],
 			"@0xbuidlerhq/ui/*": ["../../packages/ui/src/*"],
 			"@0xbuidlerhq/assets/*": ["../../packages/assets/src/*"],
 			"@0xbuidlerhq/connect-button/*": ["../../packages/connect-button/src/*"],
 			"@0xbuidlerhq/core/*": ["../../packages/core/src/*"]
 		}
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		".next/types/**/*.ts",
+		".next/dev/types/**/*.ts"
+	],
 	"exclude": ["node_modules"]
 }

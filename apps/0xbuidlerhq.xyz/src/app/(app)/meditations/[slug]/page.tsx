@@ -28,7 +28,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 			<Box className="flex flex-col gap-6">
 				<Box>
 					<H1 className="font-bold">{frontmatter.title}</H1>
-					<H5 className="font-semibold text-black/90">{frontmatter.subtitle}</H5>
+					<H4 className="font-medium text-black/50">{frontmatter.subtitle}</H4>
 					<H5 className="text-accent font-medium italic">
 						{new Date(frontmatter.date).toLocaleDateString("en-US", {
 							year: "numeric",

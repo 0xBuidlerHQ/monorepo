@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@0xbuidlerhq/ui/shadcn/lib/utils";
+import { Box } from "@0xbuidlerhq/ui/system/base/box";
 import type { MouseEventHandler } from "react";
 
 interface ButtonBaseProps extends React.HTMLAttributes<HTMLButtonElement> {
@@ -28,11 +29,11 @@ const ButtonBase = (props: ButtonBaseProps) => {
 
 	return (
 		<a
-			className={cn("group relative hover:cursor-pointer", className)}
+			//
 			target={external ? "_blank" : undefined}
 			href={href ?? "https://google.com"}
 		>
-			{children}
+			<Box className={cn("group relative hover:cursor-pointer", className)}>{children}</Box>
 		</a>
 	);
 };
