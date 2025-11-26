@@ -12,7 +12,7 @@ const Page = () => {
 	const posts = getAllPosts();
 
 	return (
-		<Container>
+		<Container className="p-0">
 			<Box className="flex flex-col gap-6">
 				<Box className="flex flex-col">
 					{posts.map((p, index) => (
@@ -20,9 +20,9 @@ const Page = () => {
 							<ButtonBase href={`${PAGES.meditations}/${p.slug}`}>
 								<Box className="flex flex-col">
 									<Box className="flex gap-1">
-										<H5 className="text-accent">#{index}</H5>
-										<H5 className="text-accent">-</H5>
-										<H5 className="text-accent">{p.date.toDateString()}</H5>
+										<H4 className="text-accent">#{posts.length - index - 1}</H4>
+										<H4 className="text-accent">-</H4>
+										<H4 className="text-accent">{p.date.toDateString()}</H4>
 									</Box>
 
 									<Box className="flex items-baseline gap-1">
@@ -31,12 +31,12 @@ const Page = () => {
 									</Box>
 
 									<Box className="flex items-baseline gap-1">
-										<H4 className="text-accent">{p.subtitle}</H4>
+										<H5 className="text-accent">{p.subtitle}</H5>
 									</Box>
 								</Box>
 							</ButtonBase>
 
-							{index !== posts.length - 1 && <Box className="bg-muted h-[1px] my-2" />}
+							{index !== posts.length - 1 && <Box className="bg-muted h-[1px] my-4" />}
 						</Box>
 					))}
 				</Box>

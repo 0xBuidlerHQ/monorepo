@@ -6,7 +6,6 @@ import { H4 } from "@0xbuidlerhq/ui/system/base/typography";
 import { ButtonBase } from "@0xbuidlerhq/ui/system/buttons/ButtonBase";
 import { Header as HeaderPrimitive } from "@0xbuidlerhq/ui/system/layouts/header";
 import { PAGES } from "@config/pages";
-import { Terminal } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 const HeaderItem = (props: { title: string; href: string; external?: boolean }) => {
@@ -17,8 +16,8 @@ const HeaderItem = (props: { title: string; href: string; external?: boolean }) 
 		<ButtonBase href={props.href} external={props.external}>
 			<H4
 				className={cn(
-					"font-medium hover:underline cursor-pointer transition-all px-0.5 duration-300 underline-offset-2",
-					isPageActive && "bg-red-500 text-white px-2 font-bold",
+					"font-regular hover:underline cursor-pointer transition-all duration-300 underline-offset-2 text-accent",
+					isPageActive && "font-bold text-foreground",
 				)}
 			>
 				{props.title}
@@ -29,19 +28,25 @@ const HeaderItem = (props: { title: string; href: string; external?: boolean }) 
 
 const HeaderItems = () => {
 	return (
-		<Box className="flex justify-center gap-4">
-			<HeaderItem title="Meditations." href={PAGES.meditations} />
+		<Box className="flex justify-center gap-2 items-center">
+			{/* <HeaderItem title="/projects." href={PAGES.projects} /> */}
+			<HeaderItem title="/meditations." href={PAGES.meditations} />
 		</Box>
 	);
 };
 
 const Header = () => {
 	return (
-		<HeaderPrimitive>
+		<HeaderPrimitive className="flex flex-col gap-2 py-2">
+			<H4 className="uppercase font-montserrat font-black">. Maxime Aubanel .</H4>
+
+			<Box className="border-b-[2px] border-muted" />
+
 			<Box className="flex items-center gap-4 py-1">
-				<Terminal className="size-5" />
 				<HeaderItems />
 			</Box>
+
+			<Box className="border-b-[2px] border-muted" />
 		</HeaderPrimitive>
 	);
 };
