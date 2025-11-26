@@ -12,6 +12,7 @@ import {
 } from "@0xbuidlerhq/ui/fonts";
 import { cn } from "@0xbuidlerhq/ui/shadcn/lib/utils";
 import { Box } from "@0xbuidlerhq/ui/system/base/box";
+import { Background } from "@client/components/background";
 import { Footer } from "@client/footer";
 import { Header } from "@client/header";
 import { Providers } from "@client/providers";
@@ -39,6 +40,8 @@ const Layout = ({ children }: PropsWithChildren) => {
 					inter.variable,
 				)}
 			>
+				<Background />
+
 				<Providers>
 					<main className="grow flex flex-col min-h-[100dvh]">
 						<Header />

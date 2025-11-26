@@ -87,7 +87,7 @@ const ToolsList = ({ form }: FormComponent) => {
 								href={`${PAGES.tools}/${item.href}`}
 								disabled={!isAvailable}
 								className={cn(
-									"group relative",
+									"group relative bg-background",
 									isAvailable && "hover:scale-[1.025] transition-all duration-500",
 								)}
 							>

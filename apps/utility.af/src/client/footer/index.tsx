@@ -19,20 +19,20 @@ const Footer = () => {
 				<Box className="h-3 bg-muted-foreground w-[2px]" />
 
 				<Box className="flex gap-1">
-					<ButtonBase external href={Constants.Links.GLOBAL.youtube}>
-						<SiYoutube className="size-4" />
+					<ButtonBase external href={Constants.Links.GLOBAL.telegram}>
+						<SiTelegram className="size-4" />
 					</ButtonBase>
 
 					<ButtonBase external href={Constants.Links.GLOBAL.github}>
 						<SiGithub className="size-4" />
 					</ButtonBase>
 
-					<ButtonBase external href={Constants.Links.GLOBAL.telegram}>
-						<SiTelegram className="size-4" />
-					</ButtonBase>
-
 					<ButtonBase external href={Constants.Links.GLOBAL.x}>
 						<SiX className="size-4" />
+					</ButtonBase>
+
+					<ButtonBase external href={Constants.Links.GLOBAL.youtube}>
+						<SiYoutube className="size-4" />
 					</ButtonBase>
 				</Box>
 			</FooterPrimitive>

@@ -17,7 +17,7 @@ const HeaderItem = (props: { title: string; href: string; external?: boolean }) 
 			<H4
 				className={cn(
 					"font-regular hover:underline cursor-pointer transition-all duration-300 underline-offset-2 text-accent",
-					isPageActive && "font-bold text-foreground",
+					isPageActive && "font-bold text-foreground underline",
 				)}
 			>
 				{props.title}
@@ -29,7 +29,7 @@ const HeaderItem = (props: { title: string; href: string; external?: boolean }) 
 const HeaderItems = () => {
 	return (
 		<Box className="flex justify-center gap-2 items-center">
-			{/* <HeaderItem title="/projects." href={PAGES.projects} /> */}
+			<HeaderItem title="/projects." href={PAGES.projects} />
 			<HeaderItem title="/meditations." href={PAGES.meditations} />
 		</Box>
 	);
