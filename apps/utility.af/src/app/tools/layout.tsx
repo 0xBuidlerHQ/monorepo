@@ -13,7 +13,7 @@ const Layout = ({ children }: PropsWithChildren) => {
 
 			<Container>
 				<ButtonBase href={PAGES.home}>
-					<Box className="inline-flex gap-2 group-hover:ml-2 transition-all">
+					<Box className="inline-flex gap-2 group-hover:ml-2 transition-all duration-500">
 						<MoveLeft />
 						<H4>See all.</H4>
 					</Box>
