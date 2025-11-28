@@ -18,6 +18,8 @@ import { Header } from "@client/header";
 import { Providers } from "@client/providers";
 import type { PropsWithChildren } from "react";
 
+export { metadata } from "./metadata";
+
 const Layout = ({ children }: PropsWithChildren) => {
 	return (
 		<html lang="en" suppressHydrationWarning>

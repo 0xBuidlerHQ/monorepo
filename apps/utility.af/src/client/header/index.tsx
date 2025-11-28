@@ -16,12 +16,11 @@ const Header = () => {
 
 				<Box className="flex gap-[0px]">
 					<H1 className="font-black text-cyan-400">u</H1>
-					<H1 className="font-black text-blue-400">t</H1>
-					<H1 className="font-black text-purple-400">i</H1>
-					<H1 className="font-black text-pink-400">l</H1>
-					<H1 className="font-black text-green-400">i</H1>
-					<H1 className="font-black text-yellow-400">t</H1>
-					<H1 className="font-black text-orange-400">y</H1>
+					<H1 className="font-black text-blue-400">s</H1>
+					<H1 className="font-black text-purple-400">e</H1>
+					<H1 className="font-black text-pink-400">f</H1>
+					<H1 className="font-black text-green-400">u</H1>
+					<H1 className="font-black text-yellow-400">l</H1>
 					<H1 className="font-black text-green-400">.</H1>
 					<H1 className="font-black text-purple-400">a</H1>
 					<H1 className="font-black text-rose-400">f</H1>
