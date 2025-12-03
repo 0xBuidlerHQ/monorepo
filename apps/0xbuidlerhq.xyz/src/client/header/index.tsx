@@ -17,7 +17,7 @@ const HeaderItem = (props: { title: string; href: string; external?: boolean }) 
 			<H4
 				className={cn(
 					"font-regular hover:underline cursor-pointer transition-all duration-300 underline-offset-2 text-accent",
-					isPageActive && "font-bold text-foreground underline",
+					isPageActive && "font-semibold text-foreground underline",
 				)}
 			>
 				{props.title}
@@ -38,15 +38,13 @@ const HeaderItems = () => {
 const Header = () => {
 	return (
 		<HeaderPrimitive className="flex flex-col gap-2 py-2">
-			<H4 className="uppercase font-montserrat font-black">. Maxime Aubanel .</H4>
+			<H4 className="font-montserrat font-extrabold">MAXIME AUBANEL</H4>
 
 			<Box className="border-b-[2px] border-muted" />
 
 			<Box className="flex items-center gap-4 py-1">
 				<HeaderItems />
 			</Box>
-
-			<Box className="border-b-[2px] border-muted" />
 		</HeaderPrimitive>
 	);
 };
