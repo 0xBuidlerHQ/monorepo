@@ -2,7 +2,8 @@
 
 import { cn } from "@0xbuidlerhq/ui/shadcn/lib/utils";
 import { Box } from "@0xbuidlerhq/ui/system/base/box";
-import { H3, H4 } from "@0xbuidlerhq/ui/system/base/typography";
+import { Container } from "@0xbuidlerhq/ui/system/base/container";
+import { H4, H6 } from "@0xbuidlerhq/ui/system/base/typography";
 import { ButtonBase } from "@0xbuidlerhq/ui/system/buttons/ButtonBase";
 import { Header as HeaderPrimitive } from "@0xbuidlerhq/ui/system/layouts/header";
 import { PAGES } from "@config/pages";
@@ -17,7 +18,7 @@ const HeaderItem = (props: { title: string; href: string; external?: boolean }) 
 			<H4
 				className={cn(
 					"hover:underline font-montserrat font-medium cursor-pointer transition-all duration-300 underline-offset-2 text-accent",
-					isPageActive && "text-foreground",
+					isPageActive && "text-foreground underline underline-offset-4",
 				)}
 			>
 				{props.title}
@@ -30,27 +31,32 @@ const HeaderItems = () => {
 	return (
 		<Box className="flex justify-center gap-2 items-center">
 			<HeaderItem title="projects." href={PAGES.projects} />
-			<H4 className="text-accent">{"//"}</H4>
+			<H6 className="text-muted-foreground px-1 rounded">{"//"}</H6>
 			<HeaderItem title="meditations." href={PAGES.meditations} />
+			<H6 className="text-muted-foreground px-1 rounded">{"//"}</H6>
+			<HeaderItem title="music." href={PAGES.music} />
 		</Box>
 	);
 };
 
 const Header = () => {
 	return (
-		<HeaderPrimitive className="flex flex-col gap-2 py-2">
-			<Box className="flex items-center gap-2">
-				<H4 className="font-montserrat font-bold">0xbuidlerhq</H4>
-				<H3 className="text-accent">{"////"}</H3>
-				<H4 className="font-montserrat font-semibold">Maxime Aubanel</H4>
-			</Box>
+		<>
+			<HeaderPrimitive className="flex flex-col gap-2 py-2">
+				<Box className="flex justify-between">
+					<H4 className="font-montserrat font-bold">MAXIME AUBANEL</H4>
+					<H4 className="grayscale-0">🌞</H4>
+				</Box>
 
-			<Box className="border-b-[2px] border-muted" />
+				<Box className="border-b-[2px] border-muted" />
+			</HeaderPrimitive>
 
-			<Box className="flex items-center gap-4 py-1">
-				<HeaderItems />
-			</Box>
-		</HeaderPrimitive>
+			<Container>
+				<Box className="flex items-center gap-4 py-1">
+					<HeaderItems />
+				</Box>
+			</Container>
+		</>
 	);
 };
 
