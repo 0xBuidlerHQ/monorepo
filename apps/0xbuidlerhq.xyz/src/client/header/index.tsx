@@ -5,7 +5,6 @@ import { Box } from "@0xbuidlerhq/ui/system/base/box";
 import { Container } from "@0xbuidlerhq/ui/system/base/container";
 import { H4, H6 } from "@0xbuidlerhq/ui/system/base/typography";
 import { ButtonBase } from "@0xbuidlerhq/ui/system/buttons/ButtonBase";
-import { Header as HeaderPrimitive } from "@0xbuidlerhq/ui/system/layouts/header";
 import { PAGES } from "@config/pages";
 import { usePathname } from "next/navigation";
 
@@ -41,22 +40,22 @@ const HeaderItems = () => {
 
 const Header = () => {
 	return (
-		<>
-			<HeaderPrimitive className="flex flex-col gap-2 py-2">
+		<Box className="flex flex-col gap-2 py-2">
+			<Container>
 				<Box className="flex justify-between">
 					<H4 className="font-montserrat font-bold">MAXIME AUBANEL</H4>
 					<H4 className="grayscale-0">🌞</H4>
 				</Box>
+			</Container>
 
-				<Box className="border-b-[2px] border-muted" />
-			</HeaderPrimitive>
+			<Box className="border-b-[2px] border-muted" />
 
 			<Container>
 				<Box className="flex items-center gap-4 py-1">
 					<HeaderItems />
 				</Box>
 			</Container>
-		</>
+		</Box>
 	);
 };
 
