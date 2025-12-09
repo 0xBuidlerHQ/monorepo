@@ -1,0 +1,39 @@
+{
+	"name": "@0xbuidlerhq/apps.dusk-explorer.xyz",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "next dev --turbopack --port 3002",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@0xbuidlerhq/ui": "workspace:*",
+		"lucide-react": "catalog:react19",
+		"@icons-pack/react-simple-icons": "^9.5.0",
+		"@rainbow-me/rainbowkit": "^2.1.6",
+		"@simplewebauthn/browser": "^9.0.1",
+		"@tanstack/react-query": "catalog:react19",
+		"@tanstack/react-table": "catalog:react19",
+		"@vercel/analytics": "^1.2.2",
+		"next": "catalog:react19",
+		"react": "catalog:react19",
+		"react-dom": "catalog:react19",
+		"react-tracked": "^2.0.1",
+		"tailwind-merge": "^2.2.1",
+		"viem": "catalog:react19",
+		"wagmi": "catalog:react19",
+		"zustand": "catalog:react19"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "catalog:react19",
+		"@types/node": "catalog:react19",
+		"@types/react": "catalog:react19",
+		"@types/react-dom": "catalog:react19",
+		"tailwindcss": "catalog:react19",
+		"typescript": "catalog:react19"
+	},
+	"packageManager": "yarn@4.1.0"
+}
