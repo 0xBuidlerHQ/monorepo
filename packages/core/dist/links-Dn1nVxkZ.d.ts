@@ -5,8 +5,8 @@ declare const APPS: {
     readonly ethos_xyz: {
         readonly url: "https://ethos.xyz";
         readonly socials: {
+            readonly x: "https://x.com/0xBuidlerHQ";
             readonly discord: "https://discord.gg/VdvP9rFzkM";
-            readonly twitter: "https://x.com/0xBuidlerHQ";
             readonly telegram: "https://t.me/@the0xbuidler";
             readonly github: "https://github.com/0xBuidlerHQ";
         };
@@ -17,6 +17,9 @@ declare const GLOBAL: {
     github: string;
     telegram: string;
     youtube: string;
+    twitch: string;
+    spotify: string;
+    hq_github: string;
 };
 
 declare const links_APPS: typeof APPS;

@@ -1,7 +1,7 @@
 const PAGES = {
-	meditations: "/meditations",
-	projects: "/projects",
-	music: "/music",
+	homepage: "/",
+	blocks: "/blocks",
+	transactions: "/transactions",
 } as const;
 const allPages = Object.values(PAGES);
 

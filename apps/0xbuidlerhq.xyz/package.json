@@ -15,7 +15,7 @@
 		"@tailwindcss/typography": "^0.5.19",
 		"@tanstack/react-query": "catalog:react19",
 		"gray-matter": "^4.0.3",
-		"lucide-react": "^0.475.0",
+		"lucide-react": "catalog:react19",
 		"next": "catalog:react19",
 		"react": "catalog:react19",
 		"react-dom": "catalog:react19",

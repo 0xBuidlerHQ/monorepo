@@ -1,8 +1,8 @@
+import { Constants } from "@0xbuidlerhq/core";
 import { Box } from "@0xbuidlerhq/ui/system/base/box";
 import { H4 } from "@0xbuidlerhq/ui/system/base/typography";
 import { ButtonBase } from "@0xbuidlerhq/ui/system/buttons/ButtonBase";
 import { Footer as FooterPrimitive } from "@0xbuidlerhq/ui/system/layouts/footer";
-import { PAGES } from "@config/pages";
 import {
 	type IconType,
 	SiGithub,
@@ -18,6 +18,7 @@ const FooterLinks = () => {
 			<ButtonBase
 				className="flex gap-1 hover:underline items-center underline-offset-2"
 				href={props.href}
+				external
 			>
 				<H4>{props.name}</H4>
 				<props.icon className="size-4" />
@@ -27,11 +28,11 @@ const FooterLinks = () => {
 
 	return (
 		<Box className="flex flex-wrap justify-center gap-x-4 gap-y-2">
-			<FooterLink icon={SiTelegram} name="telegram" href={PAGES._spotify} />
-			<FooterLink icon={SiGithub} name="github" href={PAGES._github} />
-			<FooterLink icon={SiX} name="twitter" href={PAGES._twitter} />
-			<FooterLink icon={SiYoutube} name="youtube" href={PAGES._youtube} />
-			<FooterLink icon={SiSpotify} name="spotify" href={PAGES._spotify} />
+			<FooterLink icon={SiTelegram} name="telegram" href={Constants.Links.GLOBAL.telegram} />
+			<FooterLink icon={SiGithub} name="github" href={Constants.Links.GLOBAL.github} />
+			<FooterLink icon={SiX} name="twitter" href={Constants.Links.GLOBAL.x} />
+			<FooterLink icon={SiYoutube} name="youtube" href={Constants.Links.GLOBAL.youtube} />
+			<FooterLink icon={SiSpotify} name="spotify" href={Constants.Links.GLOBAL.spotify} />
 		</Box>
 	);
 };
