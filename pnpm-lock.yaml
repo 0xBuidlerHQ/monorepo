@@ -87,7 +87,7 @@ importers:
         specifier: catalog:react19
         version: 5.8.3
 
-  apps/0xbuidlerhq.xyz:
+  apps/0_0xbuidlerhq.xyz:
     dependencies:
       '@0xbuidlerhq/ui':
         specifier: workspace:*
@@ -151,7 +151,7 @@ importers:
         specifier: catalog:react19
         version: 5.8.3
 
-  apps/betterlido.xyz:
+  apps/1_betterlido.xyz:
     dependencies:
       '@0xbuidlerhq/ui':
         specifier: workspace:*
@@ -215,7 +215,7 @@ importers:
         specifier: catalog:react19
         version: 5.8.3
 
-  apps/dusk-explorer:
+  apps/2_dusk-explorer:
     dependencies:
       '@0xbuidlerhq/ui':
         specifier: workspace:*
@@ -285,7 +285,7 @@ importers:
         specifier: catalog:react19
         version: 5.8.3
 
-  apps/ethos.xyz:
+  apps/3_ethos.xyz:
     dependencies:
       '@0xbuidlerhq/connect-button':
         specifier: workspace:*
@@ -376,7 +376,7 @@ importers:
         specifier: catalog:react19
         version: 5.8.3
 
-  apps/utility.af:
+  apps/4_utility.af:
     dependencies:
       '@0xbuidlerhq/core':
         specifier: workspace:*
@@ -12650,7 +12650,7 @@ snapshots:
     dependencies:
       '@types/use-sync-external-store': 0.0.6
       react: 19.1.1
-      use-sync-external-store: 1.4.0(react@19.1.1)
+      use-sync-external-store: 1.6.0(react@19.1.1)
     optionalDependencies:
       '@types/react': 19.1.7
       redux: 5.0.1
@@ -12764,7 +12764,7 @@ snapshots:
       react-redux: 9.2.0(@types/react@19.1.7)(react@19.1.1)(redux@5.0.1)
       reselect: 5.1.1
       tiny-invariant: 1.3.3
-      use-sync-external-store: 1.4.0(react@19.1.1)
+      use-sync-external-store: 1.6.0(react@19.1.1)
       victory-vendor: 37.3.6
     transitivePeerDependencies:
       - '@types/react'
