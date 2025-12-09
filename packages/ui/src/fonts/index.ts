@@ -6,6 +6,7 @@ import {
 	Noto_Sans_Mono,
 	Noto_Sans_Yi,
 	Noto_Serif,
+	Space_Grotesk,
 	Work_Sans,
 } from "next/font/google";
 
@@ -33,6 +34,15 @@ const workSans = Work_Sans({
 const montserrat = Montserrat({
 	subsets: ["latin"],
 	variable: "--font-montserrat",
+	display: "swap",
+});
+
+/**
+ * @dev Space Grotesk.
+ */
+const spaceGrotesk = Space_Grotesk({
+	subsets: ["latin"],
+	variable: "--font-space-grotesk",
 	display: "swap",
 });
 
@@ -80,4 +90,5 @@ export {
 	notoSerif,
 	workSans,
 	inter,
+	spaceGrotesk,
 };

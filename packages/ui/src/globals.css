@@ -154,6 +154,7 @@
 	--font-noto-sans-display: var(--font-noto-sans-display);
 	--font-noto-sans-mono: var(--font-noto-sans-mono);
 	--font-noto-sans-yi: var(--font-noto-sans-yi);
+	--font-space-grotesk: var(--font-space-grotesk);
 }
 
 @theme inline {
