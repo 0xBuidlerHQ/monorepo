@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const metadata: Metadata = {
-	title: "BetterLido.xyz",
+	title: "Lido Rewards",
 };
 
 export { metadata };

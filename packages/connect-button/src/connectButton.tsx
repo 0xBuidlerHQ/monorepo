@@ -5,7 +5,7 @@ import {
 	type ConnectButtonStore,
 	useConnectButton,
 } from "@0xbuidlerhq/connect-button/hooks/useConnectButton";
-import React from "react";
+import React, { type PropsWithChildren } from "react";
 
 /**
  * @dev
@@ -21,4 +21,11 @@ const ConnectButton = (props: ConnectButtonStore["props"]) => {
 	return <ConnectButtonPrimitive />;
 };
 
-export { ConnectButton };
+const CustomConnectButton = (props: ConnectButtonStore["props"] & PropsWithChildren) => {
+	const { children } = props;
+
+	useEffectSetConnectButtonProps(props);
+	return children;
+};
+
+export { ConnectButton, CustomConnectButton };

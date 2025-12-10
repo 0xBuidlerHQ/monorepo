@@ -14,8 +14,8 @@ import { createBreakpoint } from "react-use";
 
 const BUTTON_HEIGHT = "40px";
 
-const CONNECT_BUTTON_WIDTH = "170px";
-const WRONG_NETWORK_WIDTH = "150px";
+const CONNECT_BUTTON_WIDTH = "180px";
+const WRONG_NETWORK_WIDTH = "170px";
 
 const ACCOUNT_BUTTON_WIDTH = "170px";
 const ACCOUNT_BUTTON_MOBILE_WIDTH = "70px";

@@ -1,4 +1,4 @@
-import "@0xbuidlerhq/ui/globals.css";
+// import "@0xbuidlerhq/ui/globals.css";
 
 import { ConnectButton } from "@0xbuidlerhq/connect-button/connectButton";
 

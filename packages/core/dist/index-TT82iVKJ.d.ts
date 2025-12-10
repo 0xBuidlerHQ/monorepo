@@ -20,6 +20,11 @@ declare const FormatUnits: {
     format: (value: bigint | undefined, decimals: number | undefined) => string;
     parse: (value: string | undefined, decimals: number | undefined) => bigint;
 };
+/**
+ * @dev
+ * Converts a bigint using decimals and formats it using FormatNumber.
+ */
+declare const FormatBeauty: (value: bigint | undefined, decimals?: number) => string;
 declare const FormatEvmHash: (hash: string | undefined) => string | undefined;
 declare const FormatEvmAddress: (address: string | undefined) => string | undefined;
 
@@ -36,6 +41,7 @@ declare const FormatExplorerTransaction: (blockExplorerUrl: string | undefined, 
  */
 declare const FormatExplorerBlock: (blockExplorerUrl: string | undefined, blockNumber: number | undefined) => string;
 
+declare const index_FormatBeauty: typeof FormatBeauty;
 declare const index_FormatEvmAddress: typeof FormatEvmAddress;
 declare const index_FormatEvmHash: typeof FormatEvmHash;
 declare const index_FormatExplorerAddress: typeof FormatExplorerAddress;
@@ -46,7 +52,7 @@ declare const index_FormatPercent: typeof FormatPercent;
 declare const index_FormatUSD: typeof FormatUSD;
 declare const index_FormatUnits: typeof FormatUnits;
 declare namespace index {
-  export { index_FormatEvmAddress as FormatEvmAddress, index_FormatEvmHash as FormatEvmHash, index_FormatExplorerAddress as FormatExplorerAddress, index_FormatExplorerBlock as FormatExplorerBlock, index_FormatExplorerTransaction as FormatExplorerTransaction, index_FormatNumber as FormatNumber, index_FormatPercent as FormatPercent, index_FormatUSD as FormatUSD, index_FormatUnits as FormatUnits };
+  export { index_FormatBeauty as FormatBeauty, index_FormatEvmAddress as FormatEvmAddress, index_FormatEvmHash as FormatEvmHash, index_FormatExplorerAddress as FormatExplorerAddress, index_FormatExplorerBlock as FormatExplorerBlock, index_FormatExplorerTransaction as FormatExplorerTransaction, index_FormatNumber as FormatNumber, index_FormatPercent as FormatPercent, index_FormatUSD as FormatUSD, index_FormatUnits as FormatUnits };
 }
 
-export { FormatEvmHash as F, FormatEvmAddress as a, FormatExplorerAddress as b, FormatExplorerBlock as c, FormatExplorerTransaction as d, FormatUSD as e, FormatPercent as f, FormatNumber as g, FormatUnits as h, index as i };
+export { FormatEvmHash as F, FormatEvmAddress as a, FormatExplorerAddress as b, FormatExplorerBlock as c, FormatExplorerTransaction as d, FormatBeauty as e, FormatUSD as f, FormatPercent as g, FormatNumber as h, index as i, FormatUnits as j };

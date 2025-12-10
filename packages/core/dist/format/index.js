@@ -1,4 +1,5 @@
 import {
+  FormatBeauty,
   FormatEvmAddress,
   FormatEvmHash,
   FormatExplorerAddress,
@@ -8,9 +9,10 @@ import {
   FormatPercent,
   FormatUSD,
   FormatUnits
-} from "../chunk-SZFEYDES.js";
+} from "../chunk-XWPDCG5W.js";
 import "../chunk-PZ5AY32C.js";
 export {
+  FormatBeauty,
   FormatEvmAddress,
   FormatEvmHash,
   FormatExplorerAddress,

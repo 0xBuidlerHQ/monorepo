@@ -9,12 +9,16 @@ import {
 	notoSansYi,
 	notoSerif,
 	spaceGrotesk,
+	syne,
+	syneMono,
+	syneTactile,
+	tasaOrbiter,
 	workSans,
 } from "@0xbuidlerhq/ui/fonts";
 import { cn } from "@0xbuidlerhq/ui/shadcn/lib/utils";
 import { Box } from "@0xbuidlerhq/ui/system/base/box";
-import { Footer } from "@client/footer";
-import { Header } from "@client/header";
+import { Footer } from "@client/components/footer";
+import { Header } from "@client/components/header";
 import { Providers } from "@client/providers";
 import type { PropsWithChildren } from "react";
 
@@ -29,7 +33,7 @@ const Layout = ({ children }: PropsWithChildren) => {
 					"antialiased",
 					"bg-background",
 					"text-foreground",
-					"font-space-grotesk",
+					"font-inter",
 					"overscroll-contain",
 					"tracking-tighter",
 					workSans.variable,
@@ -41,6 +45,10 @@ const Layout = ({ children }: PropsWithChildren) => {
 					montserrat.variable,
 					inter.variable,
 					spaceGrotesk.variable,
+					tasaOrbiter.variable,
+					syne.variable,
+					syneMono.variable,
+					syneTactile.variable,
 				)}
 			>
 				<Providers>

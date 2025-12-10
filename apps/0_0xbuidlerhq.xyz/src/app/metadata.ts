@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const metadata: Metadata = {
-	title: "Maxime A. | 0xbuidler",
+	title: "0xBuidlerHQ | Maxime A",
 };
 
 export { metadata };

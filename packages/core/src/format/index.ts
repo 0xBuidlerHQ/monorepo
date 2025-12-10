@@ -62,6 +62,26 @@ const FormatUnits = {
 	},
 };
 
+/**
+ * @dev
+ * Converts a bigint using decimals and formats it using FormatNumber.
+ */
+const FormatBeauty = (value: bigint | undefined, decimals: number = 18) => {
+	if (value === undefined) return "0";
+
+	// formatUnits returns a string, so we parse it into a JS number
+	// If the number is too large for JS, this will fall back to the raw string
+	const formatted = FormatUnits.format(value, decimals);
+
+	// Try converting to a number, but keep the original if we overflow
+	const num = Number(formatted);
+
+	// If Number loses precision, avoid mangling and just return the string
+	if (!Number.isFinite(num)) return formatted;
+
+	return FormatNumber.format(num);
+};
+
 ///////////////////////////
 ////// HASH & ADDRESS /////
 ///////////////////////////
@@ -118,6 +138,7 @@ export {
 	FormatExplorerAddress,
 	FormatExplorerBlock,
 	FormatExplorerTransaction,
+	FormatBeauty,
 	FormatUSD,
 	FormatPercent,
 	FormatNumber,

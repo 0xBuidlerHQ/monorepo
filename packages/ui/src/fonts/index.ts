@@ -7,6 +7,10 @@ import {
 	Noto_Sans_Yi,
 	Noto_Serif,
 	Space_Grotesk,
+	Syne,
+	Syne_Mono,
+	Syne_Tactile,
+	TASA_Orbiter,
 	Work_Sans,
 } from "next/font/google";
 
@@ -44,6 +48,45 @@ const spaceGrotesk = Space_Grotesk({
 	subsets: ["latin"],
 	variable: "--font-space-grotesk",
 	display: "swap",
+});
+
+/**
+ * @dev TASA Orbiter.
+ */
+const tasaOrbiter = TASA_Orbiter({
+	subsets: ["latin"],
+	variable: "--font-tasa-orbiter",
+	display: "swap",
+	weight: ["400"],
+});
+
+/**
+ * @dev TASA Orbiter.
+ */
+const syne = Syne({
+	subsets: ["latin"],
+	variable: "--font-syne",
+	display: "swap",
+});
+
+/**
+ * @dev TASA Orbiter.
+ */
+const syneMono = Syne_Mono({
+	subsets: ["latin"],
+	variable: "--font-syne-mono",
+	display: "swap",
+	weight: ["400"],
+});
+
+/**
+ * @dev TASA Orbiter.
+ */
+const syneTactile = Syne_Tactile({
+	subsets: ["latin"],
+	variable: "--font-syne-tactile",
+	display: "swap",
+	weight: ["400"],
 });
 
 /**
@@ -91,4 +134,8 @@ export {
 	workSans,
 	inter,
 	spaceGrotesk,
+	tasaOrbiter,
+	syne,
+	syneMono,
+	syneTactile,
 };

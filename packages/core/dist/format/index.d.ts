@@ -1,1 +1,1 @@
-export { a as FormatEvmAddress, F as FormatEvmHash, b as FormatExplorerAddress, c as FormatExplorerBlock, d as FormatExplorerTransaction, g as FormatNumber, f as FormatPercent, e as FormatUSD, h as FormatUnits } from '../index-C0PiHOKh.js';
+export { e as FormatBeauty, a as FormatEvmAddress, F as FormatEvmHash, b as FormatExplorerAddress, c as FormatExplorerBlock, d as FormatExplorerTransaction, h as FormatNumber, g as FormatPercent, f as FormatUSD, j as FormatUnits } from '../index-TT82iVKJ.js';

@@ -5,6 +5,7 @@ import {
 // src/format/index.ts
 var format_exports = {};
 __export(format_exports, {
+  FormatBeauty: () => FormatBeauty,
   FormatEvmAddress: () => FormatEvmAddress,
   FormatEvmHash: () => FormatEvmHash,
   FormatExplorerAddress: () => FormatExplorerAddress,
@@ -49,6 +50,13 @@ var FormatUnits = {
     return parseUnits(value, decimals);
   }
 };
+var FormatBeauty = (value, decimals = 18) => {
+  if (value === void 0) return "0";
+  const formatted = FormatUnits.format(value, decimals);
+  const num = Number(formatted);
+  if (!Number.isFinite(num)) return formatted;
+  return FormatNumber.format(num);
+};
 var FormatEvmHash = (hash) => hash ? `${hash.slice(0, 6)}...${hash.slice(-4)}` : hash;
 var FormatEvmAddress = (address) => address ? `${address.slice(0, 6)}...${address.slice(-4)}` : void 0;
 var FormatExplorerAddress = (blockExplorerUrl, address) => {
@@ -69,6 +77,7 @@ export {
   FormatPercent,
   FormatNumber,
   FormatUnits,
+  FormatBeauty,
   FormatEvmHash,
   FormatEvmAddress,
   FormatExplorerAddress,
@@ -76,4 +85,4 @@ export {
   FormatExplorerBlock,
   format_exports
 };
-//# sourceMappingURL=chunk-SZFEYDES.js.map
+//# sourceMappingURL=chunk-XWPDCG5W.js.map

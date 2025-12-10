@@ -67,7 +67,7 @@
 [data-theme="dark"],
 :root[class~="dark"] {
 	--background: oklch(0.155 0 0);
-	--foreground: oklch(0.87 0 0);
+	--foreground: oklch(0.9 0 0);
 
 	--muted: oklch(0.219 0 0);
 	--muted-foreground: oklch(0.708 0 0);
@@ -155,6 +155,10 @@
 	--font-noto-sans-mono: var(--font-noto-sans-mono);
 	--font-noto-sans-yi: var(--font-noto-sans-yi);
 	--font-space-grotesk: var(--font-space-grotesk);
+	--font-tasa-orbiter: var(--font-tasa-orbiter);
+	--font-syne: var(--font-syne);
+	--font-syne-mono: var(--font-syne-mono);
+	--font-syne-tactile: var(--font-syne-tactile);
 }
 
 @theme inline {
