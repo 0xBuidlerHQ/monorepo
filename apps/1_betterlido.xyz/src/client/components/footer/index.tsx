@@ -7,7 +7,7 @@ import { SiGithub, SiTelegram, SiX, SiYoutube } from "@icons-pack/react-simple-i
 
 const Footer = () => {
 	return (
-		<Box className="mt-10">
+		<Box className="mt-10 font-inter">
 			<FooterPrimitive className="flex justify-end items-center py-2 gap-2">
 				<ButtonBase external href={Constants.Links.GLOBAL.x}>
 					<Box className="flex gap-1">

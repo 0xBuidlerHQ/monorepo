@@ -1,9 +1,9 @@
 "use client";
 
-import { EthereumLogo } from "@0xbuidlerhq/assets/crypto/ethereum/Logo";
 import { Format } from "@0xbuidlerhq/core";
+import { cn } from "@0xbuidlerhq/ui/shadcn/lib/utils";
 import { Box } from "@0xbuidlerhq/ui/system/base/box";
-import { H4, H5, H6 } from "@0xbuidlerhq/ui/system/base/typography";
+import { H4, H6, H7 } from "@0xbuidlerhq/ui/system/base/typography";
 import type React from "react";
 import {
 	Area,
@@ -67,10 +67,10 @@ const formatTotalPooledValue = (rawWei: string): string => {
 };
 
 const seriesColors = {
+	userBalance: { stroke: "#fbbf24", textClass: "text-amber-400" },
 	apr: { stroke: "#60a5fa", textClass: "text-blue-400" },
 	rewardsEth: { stroke: "#22c55e", textClass: "text-green-500" },
 	totalPooledEth: { stroke: "#a5b4fc", textClass: "text-indigo-200" },
-	userBalance: { stroke: "#ffffff", textClass: "text-white" },
 	poolSharePercent: { stroke: "#f472b6", textClass: "text-pink-400" },
 } as const;
 
@@ -93,9 +93,9 @@ const EthValue = ({
 	const text = typeof value === "string" ? value : formatEthDisplay(value, maxFractionDigits);
 
 	return (
-		<Box className="flex items-center gap-1">
-			<H5 className={textClass}>{text}</H5>
-			<EthereumLogo className="size-4" />
+		<Box className="flex items-baseline gap-1">
+			<H6 className={textClass}>{text}</H6>
+			<H7 className={cn("font-syne font-bold")}>ETH</H7>
 		</Box>
 	);
 };
@@ -129,12 +129,26 @@ const CustomTooltip: React.FC<TooltipProps> = ({ active, payload, label }) => {
 	const dateLabel = formatFullDate(data.timestamp);
 
 	return (
-		<Box className="min-w-[220px] max-w-[280px] bg-muted/50 rounded backdrop-blur-xs p-4 text-xs rounded">
+		<Box className="min-w-[220px] max-w-[280px] bg-muted/90 rounded-xl backdrop-blur-xs py-4 px-4 text-xs border border-accent">
 			<H4 className="font-semibold">{dateLabel}</H4>
 
 			<Box className="my-2 border-t border-white/10" />
 
-			<Box className="grid gap-1">
+			<Box className="grid gap-0">
+				<Box className="flex items-center">
+					<H6 className="text-muted-foreground">User balance:&nbsp;</H6>
+
+					<EthValue textClass={seriesColors.userBalance.textClass} value={data.userBalance} />
+				</Box>
+
+				<Box className="flex items-center">
+					<H6 className="text-muted-foreground">APR:&nbsp;</H6>
+
+					<H6 className={seriesColors.apr.textClass}>{data.apr.toFixed(2)}%</H6>
+				</Box>
+
+				<Box className="my-2 border-t border-white/10" />
+
 				<Box className="flex items-center">
 					<H6 className="text-muted-foreground">Rewards:&nbsp;</H6>
 
@@ -148,16 +162,10 @@ const CustomTooltip: React.FC<TooltipProps> = ({ active, payload, label }) => {
 				<Box className="flex items-center">
 					<H6 className="text-muted-foreground">Rewards value:&nbsp;</H6>
 
-					<H5 className={seriesColors.rewardsEth.textClass}>${data.rewardsUsd.toFixed(2)}</H5>
+					<H6 className={seriesColors.rewardsEth.textClass}>${data.rewardsUsd.toFixed(2)}</H6>
 				</Box>
 
 				<Box className="my-2 border-t border-white/10" />
-
-				<Box className="flex items-center">
-					<H6 className="text-muted-foreground">APR:&nbsp;</H6>
-
-					<H5 className={seriesColors.apr.textClass}>{data.apr.toFixed(2)}%</H5>
-				</Box>
 
 				<Box className="flex items-center">
 					<H6 className="text-muted-foreground">Total pooled:&nbsp;</H6>
@@ -169,26 +177,20 @@ const CustomTooltip: React.FC<TooltipProps> = ({ active, payload, label }) => {
 				</Box>
 
 				<Box className="flex items-center">
-					<H6 className="text-muted-foreground">User balance:&nbsp;</H6>
-
-					<EthValue textClass={seriesColors.userBalance.textClass} value={data.userBalance} />
-				</Box>
-
-				<Box className="flex items-center">
 					<H6 className="text-muted-foreground">Pool share:&nbsp;</H6>
 
-					<H5 className={seriesColors.poolSharePercent.textClass}>
+					<H6 className={seriesColors.poolSharePercent.textClass}>
 						{data.poolSharePercent.toFixed(4)}%
-					</H5>
+					</H6>
 				</Box>
-			</Box>
 
-			<Box className="my-2 border-t border-white/10" />
+				<Box className="my-2 border-t border-white/10" />
 
-			<Box className="text-[11px] text-white/70">
-				<H6>Block: {data.raw.block}</H6>
-				<H6>Epoch day: {data.raw.epochDays}</H6>
-				<H6>Epoch full days: {data.raw.epochFullDays}</H6>
+				<Box>
+					<H6 className="text-muted-foreground">Block: {data.raw.block}</H6>
+					<H6 className="text-muted-foreground">Epoch day: {data.raw.epochDays}</H6>
+					<H6 className="text-muted-foreground">Epoch full days: {data.raw.epochFullDays}</H6>
+				</Box>
 			</Box>
 		</Box>
 	);
@@ -197,34 +199,22 @@ const CustomTooltip: React.FC<TooltipProps> = ({ active, payload, label }) => {
 const LegendContent = () => {
 	const items = [
 		{
+			key: "userBalance",
+			label: "User balance (stETH)",
+			dotClass: "bg-amber-400",
+			textClass: seriesColors.userBalance.textClass,
+		},
+		{
+			key: "rewardsEth",
+			label: "Rewards (stETH)",
+			dotClass: "bg-emerald-400",
+			textClass: seriesColors.rewardsEth.textClass,
+		},
+		{
 			key: "apr",
 			label: "APR (%)",
 			dotClass: "bg-blue-400",
 			textClass: seriesColors.apr.textClass,
-		},
-		{
-			key: "rewardsEth",
-			label: "Rewards (ETH)",
-			dotClass: "bg-green-500",
-			textClass: seriesColors.rewardsEth.textClass,
-		},
-		{
-			key: "userBalance",
-			label: "User balance (ETH)",
-			dotClass: "bg-white",
-			textClass: seriesColors.userBalance.textClass,
-		},
-		{
-			key: "poolSharePercent",
-			label: "Pool share (%)",
-			dotClass: "bg-pink-400",
-			textClass: seriesColors.poolSharePercent.textClass,
-		},
-		{
-			key: "totalPooledEth",
-			label: "Total pooled (ETH)",
-			dotClass: "bg-indigo-200",
-			textClass: seriesColors.totalPooledEth.textClass,
 		},
 	];
 
@@ -278,6 +268,14 @@ export const RewardChart = ({ events }: { events: RewardEvent[] }) => {
 							<stop offset="0%" stopColor="#60a5fa" stopOpacity={0.9} />
 							<stop offset="100%" stopColor="#3b82f6" stopOpacity={0.1} />
 						</linearGradient>
+						<linearGradient id="userBalanceGradient" x1="0" y1="0" x2="0" y2="1">
+							<stop offset="0%" stopColor="#fbbf24" stopOpacity={0.35} />
+							<stop offset="100%" stopColor="#fbbf24" stopOpacity={0} />
+						</linearGradient>
+						<linearGradient id="poolShareGradient" x1="0" y1="0" x2="0" y2="1">
+							<stop offset="0%" stopColor="#f472b6" stopOpacity={0.35} />
+							<stop offset="100%" stopColor="#f472b6" stopOpacity={0} />
+						</linearGradient>
 					</defs>
 
 					{/* <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" /> */}
@@ -299,9 +297,6 @@ export const RewardChart = ({ events }: { events: RewardEvent[] }) => {
 					{/* Dedicated axis for rewards so small values don't flatten against larger ETH numbers */}
 					<YAxis yAxisId="rewards" hide domain={["auto", "auto"]} />
 
-					{/* Separate axis for pool share so tiny percentages get their own scale */}
-					<YAxis yAxisId="poolShare" hide domain={["auto", "auto"]} />
-
 					<YAxis
 						yAxisId="right"
 						orientation="right"
@@ -314,14 +309,25 @@ export const RewardChart = ({ events }: { events: RewardEvent[] }) => {
 
 					<Legend content={<LegendContent />} verticalAlign="top" align="right" />
 
-					{/* Flashy white curve for user balance */}
+					{/* Area under user balance */}
+					<Area
+						yAxisId="right"
+						dataKey="userBalance"
+						name="User balance (ETH)"
+						stroke="none"
+						fill="url(#userBalanceGradient)"
+						dot={false}
+						activeDot={false}
+					/>
+
 					<Line
 						yAxisId="right"
-						type="monotone"
 						dataKey="userBalance"
 						name="User balance (ETH)"
 						stroke={seriesColors.userBalance.stroke}
 						strokeWidth={2}
+						strokeLinecap="round"
+						strokeLinejoin="round"
 						dot={false}
 						activeDot={{ r: 4 }}
 					/>
@@ -339,6 +345,30 @@ export const RewardChart = ({ events }: { events: RewardEvent[] }) => {
 						activeDot={{ r: 4 }}
 					/>
 
+					<Line
+						yAxisId="rewards"
+						type="monotone"
+						dataKey="rewardsEth"
+						name="Rewards (ETH)"
+						stroke={seriesColors.rewardsEth.stroke}
+						fill="url(#rewardsGradient)"
+						strokeWidth={1}
+						dot={false}
+						activeDot={{ r: 4 }}
+					/>
+
+					{/* Blue fill under APR curve */}
+					<Area
+						yAxisId="left"
+						type="monotone"
+						dataKey="apr"
+						name="APR (%)"
+						stroke="none"
+						fill="url(#aprGradient)"
+						dot={false}
+						activeDot={false}
+					/>
+
 					{/* Line for APR (%) */}
 					<Line
 						yAxisId="left"
@@ -346,18 +376,6 @@ export const RewardChart = ({ events }: { events: RewardEvent[] }) => {
 						dataKey="apr"
 						name="APR (%)"
 						stroke={seriesColors.apr.stroke}
-						strokeWidth={1}
-						dot={false}
-						activeDot={{ r: 4 }}
-					/>
-
-					{/* Pool share percentage line */}
-					<Line
-						yAxisId="poolShare"
-						type="monotone"
-						dataKey="poolSharePercent"
-						name="Pool share (%)"
-						stroke={seriesColors.poolSharePercent.stroke}
 						strokeWidth={1}
 						dot={false}
 						activeDot={{ r: 4 }}

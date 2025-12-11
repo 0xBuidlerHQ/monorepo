@@ -140,10 +140,16 @@ const H6 = ({ children, className, ...props }: TypographyProps) => (
 	</h6>
 );
 
+const H7 = ({ children, className, ...props }: TypographyProps) => (
+	<h6 className={cn("text-[10px]", className)} {...props}>
+		{children}
+	</h6>
+);
+
 const P = ({ children, className, ...props }: TypographyProps) => (
 	<p className={cn("text-base", className)} {...props}>
 		{children}
 	</p>
 );
 
-export { H1_0, H1_1, H1_2, H1_3, H1_4, H1_5, H1_6, H1, H2, H3, H4, H5, H6, P };
+export { H1_0, H1_1, H1_2, H1_3, H1_4, H1_5, H1_6, H1, H2, H3, H4, H5, H6, H7, P };

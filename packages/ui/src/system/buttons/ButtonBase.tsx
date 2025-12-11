@@ -14,7 +14,7 @@ interface ButtonBaseProps extends React.HTMLAttributes<HTMLButtonElement> {
 const ButtonBase = (props: ButtonBaseProps) => {
 	const { children, onClick, href, className, external, disabled } = props;
 
-	if (disabled) return <div className={cn("group relative", className)}>{children}</div>;
+	if (disabled) return <div className={cn("group relative opacity-50", className)}>{children}</div>;
 
 	if (onClick)
 		return (

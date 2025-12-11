@@ -1,7 +1,5 @@
 "use client";
 
-import { Box } from "@0xbuidlerhq/ui/system/base/box";
-import { Button } from "@0xbuidlerhq/ui/shadcn/components/button";
 import {
 	Table,
 	TableBody,
@@ -10,9 +8,12 @@ import {
 	TableHeader,
 	TableRow,
 } from "@0xbuidlerhq/ui/shadcn/components/table";
+import { Box } from "@0xbuidlerhq/ui/system/base/box";
+import { H5 } from "@0xbuidlerhq/ui/system/base/typography";
+import { ButtonBase } from "@0xbuidlerhq/ui/system/buttons/ButtonBase";
 import type { RewardEvent } from "@app/chart";
-import type { ColumnDef } from "@tanstack/react-table";
 import {
+	createColumnHelper,
 	flexRender,
 	getCoreRowModel,
 	getPaginationRowModel,
@@ -52,7 +53,7 @@ const formatNumber = (value: number, maximumFractionDigits = 2) => {
 	// Fallback to "-" if the value is not a number
 	if (!Number.isFinite(value)) return "-";
 
-	return new Intl.NumberFormat(undefined, { maximumFractionDigits }).format(value);
+	return new Intl.NumberFormat("en-US", { maximumFractionDigits }).format(value);
 };
 
 const formatUsd = (value: number) => {
@@ -97,48 +98,44 @@ export const RewardsTable = ({ events }: { events: RewardEvent[] }) => {
 		});
 	}, [events]);
 
-	const columns = useMemo<ColumnDef<RewardTableRow>[]>(
+	const columnHelper = useMemo(() => createColumnHelper<RewardTableRow>(), []);
+
+	const columns = useMemo(
 		() => [
-			{
+			columnHelper.accessor("date", {
 				header: "Date",
-				accessorKey: "date",
-			},
-			{
+				cell: (info) => <H5>{info.getValue()}</H5>,
+			}),
+			columnHelper.accessor("apr", {
 				header: "APR (%)",
-				accessorKey: "apr",
-				cell: ({ getValue }) => formatPercent(Number(getValue()), 2),
-			},
-			{
+				cell: (info) => <H5>{formatPercent(info.getValue(), 2)}</H5>,
+			}),
+			columnHelper.accessor("rewardsEth", {
 				header: "Rewards (ETH)",
-				accessorKey: "rewardsEth",
-				cell: ({ getValue }) => formatNumber(Number(getValue()), 6),
-			},
-			{
+				cell: (info) => <H5>{formatNumber(info.getValue(), 6)}</H5>,
+			}),
+			columnHelper.accessor("rewardsUsd", {
 				header: "Rewards (USD)",
-				accessorKey: "rewardsUsd",
-				cell: ({ getValue }) => formatUsd(Number(getValue())),
-			},
-			{
+				cell: (info) => <H5>{formatUsd(info.getValue())}</H5>,
+			}),
+			columnHelper.accessor("totalPooledEth", {
 				header: "Total pooled (ETH)",
-				accessorKey: "totalPooledEth",
-				cell: ({ getValue }) => formatNumber(Number(getValue()), 2),
-			},
-			{
+				cell: (info) => <H5>{formatNumber(info.getValue(), 2)}</H5>,
+			}),
+			columnHelper.accessor("userBalance", {
 				header: "User balance (ETH)",
-				accessorKey: "userBalance",
-				cell: ({ getValue }) => formatNumber(Number(getValue()), 4),
-			},
-			{
+				cell: (info) => <H5>{formatNumber(info.getValue(), 4)}</H5>,
+			}),
+			columnHelper.accessor("poolSharePercent", {
 				header: "Pool share (%)",
-				accessorKey: "poolSharePercent",
-				cell: ({ getValue }) => formatPercent(Number(getValue()), 4),
-			},
-			{
+				cell: (info) => <H5>{formatPercent(info.getValue(), 4)}</H5>,
+			}),
+			columnHelper.accessor("block", {
 				header: "Block",
-				accessorKey: "block",
-			},
+				cell: (info) => <H5>{info.getValue()}</H5>,
+			}),
 		],
-		[],
+		[columnHelper],
 	);
 
 	const table = useReactTable({
@@ -155,30 +152,18 @@ export const RewardsTable = ({ events }: { events: RewardEvent[] }) => {
 			<Box className="flex items-center justify-between pb-4">
 				<span className="text-sm text-white/80">
 					Showing{" "}
-					{table.getRowModel().rows.length
-						? pagination.pageIndex * pagination.pageSize + 1
-						: 0}
-					-
-					{Math.min((pagination.pageIndex + 1) * pagination.pageSize, data.length)} of {data.length} rewards
+					{table.getRowModel().rows.length ? pagination.pageIndex * pagination.pageSize + 1 : 0}-
+					{Math.min((pagination.pageIndex + 1) * pagination.pageSize, data.length)} of {data.length}{" "}
+					rewards
 				</span>
 
 				<Box className="flex items-center gap-2">
-					<Button
-						variant="ghost"
-						size="sm"
-						onClick={() => table.previousPage()}
-						disabled={!table.getCanPreviousPage()}
-					>
+					<ButtonBase onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>
 						Prev
-					</Button>
-					<Button
-						variant="ghost"
-						size="sm"
-						onClick={() => table.nextPage()}
-						disabled={!table.getCanNextPage()}
-					>
+					</ButtonBase>
+					<ButtonBase onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>
 						Next
-					</Button>
+					</ButtonBase>
 				</Box>
 			</Box>
 
@@ -204,7 +189,7 @@ export const RewardsTable = ({ events }: { events: RewardEvent[] }) => {
 						table.getPaginationRowModel().rows.map((row) => (
 							<TableRow key={row.id} className="odd:bg-white/[0.02] hover:bg-white/[0.06]">
 								{row.getVisibleCells().map((cell) => (
-									<TableCell key={cell.id} className="align-middle">
+									<TableCell key={cell.id} className="align-middle py-4">
 										{flexRender(cell.column.columnDef.cell, cell.getContext())}
 									</TableCell>
 								))}
@@ -225,22 +210,12 @@ export const RewardsTable = ({ events }: { events: RewardEvent[] }) => {
 					Page {table.getState().pagination.pageIndex + 1} of {Math.max(table.getPageCount(), 1)}
 				</span>
 				<Box className="flex items-center gap-2">
-					<Button
-						variant="outline"
-						size="sm"
-						onClick={() => table.previousPage()}
-						disabled={!table.getCanPreviousPage()}
-					>
+					<ButtonBase onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>
 						Previous
-					</Button>
-					<Button
-						variant="outline"
-						size="sm"
-						onClick={() => table.nextPage()}
-						disabled={!table.getCanNextPage()}
-					>
+					</ButtonBase>
+					<ButtonBase onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>
 						Next
-					</Button>
+					</ButtonBase>
 				</Box>
 			</Box>
 		</Box>

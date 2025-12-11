@@ -18,6 +18,7 @@ import {
 } from "@0xbuidlerhq/ui/fonts";
 import { cn } from "@0xbuidlerhq/ui/shadcn/lib/utils";
 import { Box } from "@0xbuidlerhq/ui/system/base/box";
+import { Background } from "@client/components/background";
 import { Footer } from "@client/components/footer";
 import { Header } from "@client/components/header";
 import { Providers } from "@client/providers";
@@ -27,7 +28,7 @@ export { metadata } from "./metadata";
 
 const Layout = ({ children }: PropsWithChildren) => {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang="en" suppressHydrationWarning className="overscroll-none">
 			<body
 				className={cn(
 					"relative",
@@ -35,7 +36,6 @@ const Layout = ({ children }: PropsWithChildren) => {
 					"bg-background",
 					"text-foreground",
 					"font-azeret-mono",
-					"overscroll-contain",
 					"tracking-tighter",
 					workSans.variable,
 					notoSerif.variable,
@@ -54,15 +54,17 @@ const Layout = ({ children }: PropsWithChildren) => {
 				)}
 			>
 				<Providers>
-					<main className="grow flex flex-col min-h-[100dvh]">
-						<Header />
+					<Background>
+						<main className="grow flex flex-col min-h-[100dvh]">
+							<Header />
 
-						<Box className="flex grow min-h-0">
-							<Box className="grow">{children}</Box>
-						</Box>
+							<Box className="flex grow min-h-0">
+								<Box className="grow">{children}</Box>
+							</Box>
 
-						<Footer />
-					</main>
+							<Footer />
+						</main>
+					</Background>
 				</Providers>
 			</body>
 		</html>
