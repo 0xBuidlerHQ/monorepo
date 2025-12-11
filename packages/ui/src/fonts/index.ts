@@ -1,4 +1,5 @@
 import {
+	Azeret_Mono,
 	Inter,
 	Montserrat,
 	Noto_Sans,
@@ -90,6 +91,15 @@ const syneTactile = Syne_Tactile({
 });
 
 /**
+ * @dev Azeret Mono.
+ */
+const azeretMono = Azeret_Mono({
+	subsets: ["latin"],
+	variable: "--font-azeret-mono",
+	display: "swap",
+});
+
+/**
  * @dev Noto.
  */
 const notoSerif = Noto_Serif({
@@ -138,4 +148,5 @@ export {
 	syne,
 	syneMono,
 	syneTactile,
+	azeretMono,
 };

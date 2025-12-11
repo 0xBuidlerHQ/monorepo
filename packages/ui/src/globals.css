@@ -159,6 +159,7 @@
 	--font-syne: var(--font-syne);
 	--font-syne-mono: var(--font-syne-mono);
 	--font-syne-tactile: var(--font-syne-tactile);
+	--font-azeret-mono: var(--font-azeret-mono);
 }
 
 @theme inline {

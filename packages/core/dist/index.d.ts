@@ -1,7 +1,7 @@
 export { i as Constants } from './index-CDYjtErE.js';
 export { i as Env } from './index-DghqQMgx.js';
 export { i as Format } from './index-TT82iVKJ.js';
-export { i as Web3 } from './index-Rz_GYPHa.js';
+export { i as Web3 } from './index-Xl8DKxWc.js';
 import './links-Dn1nVxkZ.js';
 import './networks-N9hD4Sq-.js';
 import 'viem/zksync';
@@ -12,4 +12,4 @@ import 'react/jsx-runtime';
 import 'react';
 import 'zod';
 import './protocols-Dt6qfLnJ.js';
-import './tokens-DbaNGzOU.js';
+import './tokens-CQeYFGBa.js';

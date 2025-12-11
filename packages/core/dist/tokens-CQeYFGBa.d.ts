@@ -41,7 +41,7 @@ declare const tokenMetadata: (tokenId: TokenId | undefined, networkId: NetworkId
     network: "mode" | "ethereum" | "base" | "optimism" | "arbitrum" | "polygon" | "linea" | "zksync" | "anvil" | "sepolia" | "baseSepolia";
     ticker: "ETH" | "USDC" | "USDT" | "OP";
     address: "0x4200000000000000000000000000000000000006" | "0xd988097fb8612cc24eeC14542bC03424c656005f" | "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913" | "0x0b2c639c533813f4aa9d7837caf62653d097ff85" | "0xaf88d065e77c8cC2239327C5EDb3A432268e5831" | "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359" | "0x176211869cA2b568f2A7D4EE941E073a821EE1ff" | "0x1d17CBcF0D6D143135aE902365D2E5e2A16538D4" | "0xf0F161fDA2712DB8b566946122a5af183995e2eD" | "0xdAC17F958D2ee523a2206206994597C13D831ec7" | "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58" | "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9" | "0xc2132D05D31c914a87C6611C10748AEb04B58e8F" | "0xA219439258ca9da29E9Cc4cE5596924745e12B93" | "0x4200000000000000000000000000000000000042";
-    decimals: 6 | 18;
+    decimals: 18 | 6;
     Logo: ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element);
 } | undefined;
 type TokenMetadata = NonNullable<ReturnType<typeof tokenMetadata>>;
@@ -53,7 +53,7 @@ declare const tokenMetadataByNetworkChainId: (tokenId: TokenId | undefined, netw
     network: "mode" | "ethereum" | "base" | "optimism" | "arbitrum" | "polygon" | "linea" | "zksync" | "anvil" | "sepolia" | "baseSepolia";
     ticker: "ETH" | "USDC" | "USDT" | "OP";
     address: "0x4200000000000000000000000000000000000006" | "0xd988097fb8612cc24eeC14542bC03424c656005f" | "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913" | "0x0b2c639c533813f4aa9d7837caf62653d097ff85" | "0xaf88d065e77c8cC2239327C5EDb3A432268e5831" | "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359" | "0x176211869cA2b568f2A7D4EE941E073a821EE1ff" | "0x1d17CBcF0D6D143135aE902365D2E5e2A16538D4" | "0xf0F161fDA2712DB8b566946122a5af183995e2eD" | "0xdAC17F958D2ee523a2206206994597C13D831ec7" | "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58" | "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9" | "0xc2132D05D31c914a87C6611C10748AEb04B58e8F" | "0xA219439258ca9da29E9Cc4cE5596924745e12B93" | "0x4200000000000000000000000000000000000042";
-    decimals: 6 | 18;
+    decimals: 18 | 6;
     Logo: ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element);
 } | undefined;
 /**
@@ -64,7 +64,7 @@ declare const tokenMetadataByAddress: (tokenAddress: string | undefined, network
     network: "mode" | "ethereum" | "base" | "optimism" | "arbitrum" | "polygon" | "linea" | "zksync" | "anvil" | "sepolia" | "baseSepolia";
     ticker: "ETH" | "USDC" | "USDT" | "OP";
     address: "0x4200000000000000000000000000000000000006" | "0xd988097fb8612cc24eeC14542bC03424c656005f" | "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913" | "0x0b2c639c533813f4aa9d7837caf62653d097ff85" | "0xaf88d065e77c8cC2239327C5EDb3A432268e5831" | "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359" | "0x176211869cA2b568f2A7D4EE941E073a821EE1ff" | "0x1d17CBcF0D6D143135aE902365D2E5e2A16538D4" | "0xf0F161fDA2712DB8b566946122a5af183995e2eD" | "0xdAC17F958D2ee523a2206206994597C13D831ec7" | "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58" | "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9" | "0xc2132D05D31c914a87C6611C10748AEb04B58e8F" | "0xA219439258ca9da29E9Cc4cE5596924745e12B93" | "0x4200000000000000000000000000000000000042";
-    decimals: 6 | 18;
+    decimals: 18 | 6;
     Logo: ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element);
 } | undefined;
 /**
@@ -75,7 +75,7 @@ declare const tokenMetadataByAddressByNetworkChainId: (tokenAddress: string | un
     network: "mode" | "ethereum" | "base" | "optimism" | "arbitrum" | "polygon" | "linea" | "zksync" | "anvil" | "sepolia" | "baseSepolia";
     ticker: "ETH" | "USDC" | "USDT" | "OP";
     address: "0x4200000000000000000000000000000000000006" | "0xd988097fb8612cc24eeC14542bC03424c656005f" | "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913" | "0x0b2c639c533813f4aa9d7837caf62653d097ff85" | "0xaf88d065e77c8cC2239327C5EDb3A432268e5831" | "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359" | "0x176211869cA2b568f2A7D4EE941E073a821EE1ff" | "0x1d17CBcF0D6D143135aE902365D2E5e2A16538D4" | "0xf0F161fDA2712DB8b566946122a5af183995e2eD" | "0xdAC17F958D2ee523a2206206994597C13D831ec7" | "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58" | "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9" | "0xc2132D05D31c914a87C6611C10748AEb04B58e8F" | "0xA219439258ca9da29E9Cc4cE5596924745e12B93" | "0x4200000000000000000000000000000000000042";
-    decimals: 6 | 18;
+    decimals: 18 | 6;
     Logo: ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element);
 } | undefined;
 /**
@@ -86,7 +86,7 @@ declare const tokenMetadataByTokenTicker: (tokenTicker: TokenTicker | undefined,
     network: "mode" | "ethereum" | "base" | "optimism" | "arbitrum" | "polygon" | "linea" | "zksync" | "anvil" | "sepolia" | "baseSepolia";
     ticker: "ETH" | "USDC" | "USDT" | "OP";
     address: "0x4200000000000000000000000000000000000006" | "0xd988097fb8612cc24eeC14542bC03424c656005f" | "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913" | "0x0b2c639c533813f4aa9d7837caf62653d097ff85" | "0xaf88d065e77c8cC2239327C5EDb3A432268e5831" | "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359" | "0x176211869cA2b568f2A7D4EE941E073a821EE1ff" | "0x1d17CBcF0D6D143135aE902365D2E5e2A16538D4" | "0xf0F161fDA2712DB8b566946122a5af183995e2eD" | "0xdAC17F958D2ee523a2206206994597C13D831ec7" | "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58" | "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9" | "0xc2132D05D31c914a87C6611C10748AEb04B58e8F" | "0xA219439258ca9da29E9Cc4cE5596924745e12B93" | "0x4200000000000000000000000000000000000042";
-    decimals: 6 | 18;
+    decimals: 18 | 6;
     Logo: ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element);
 } | undefined;
 /**
@@ -95,7 +95,7 @@ declare const tokenMetadataByTokenTicker: (tokenTicker: TokenTicker | undefined,
 declare const simpleTokenMetadata: (tokenId: TokenId | undefined) => {
     id: "eth" | "usdc" | "usdt" | "op";
     ticker: "ETH" | "USDC" | "USDT" | "OP";
-    decimals: 6 | 18;
+    decimals: 18 | 6;
     Logo: ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element);
 } | undefined;
 type SimpleTokenMetadata = NonNullable<ReturnType<typeof simpleTokenMetadata>>;
@@ -105,7 +105,7 @@ type SimpleTokenMetadata = NonNullable<ReturnType<typeof simpleTokenMetadata>>;
 declare const simpleTokenMetadataByTokenTicker: (tokenTicker: TokenTicker | undefined) => {
     id: "eth" | "usdc" | "usdt" | "op";
     ticker: "ETH" | "USDC" | "USDT" | "OP";
-    decimals: 6 | 18;
+    decimals: 18 | 6;
     Logo: ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element) | ((props: react.SVGProps<SVGSVGElement>) => react_jsx_runtime.JSX.Element);
 } | undefined;
 

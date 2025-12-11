@@ -8,8 +8,8 @@ import { ConnectButton } from "@client/connectButton/component";
 const Header = () => {
 	return (
 		<HeaderPrimitive>
-			<Box className="flex items-center justify-between">
-				<H1_2 className="font-space-grotesk">BETTERLIDO</H1_2>
+			<Box className="flex items-center justify-between py-2">
+				<H1_2 className="font-syne font-bold">betterlido</H1_2>
 				<ConnectButton />
 			</Box>
 		</HeaderPrimitive>

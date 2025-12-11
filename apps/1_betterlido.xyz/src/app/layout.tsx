@@ -1,6 +1,7 @@
 import "./system.css";
 
 import {
+	azeretMono,
 	inter,
 	montserrat,
 	notoSans,
@@ -33,7 +34,7 @@ const Layout = ({ children }: PropsWithChildren) => {
 					"antialiased",
 					"bg-background",
 					"text-foreground",
-					"font-inter",
+					"font-azeret-mono",
 					"overscroll-contain",
 					"tracking-tighter",
 					workSans.variable,
@@ -49,6 +50,7 @@ const Layout = ({ children }: PropsWithChildren) => {
 					syne.variable,
 					syneMono.variable,
 					syneTactile.variable,
+					azeretMono.variable,
 				)}
 			>
 				<Providers>
