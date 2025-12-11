@@ -1,14 +1,14 @@
 "use client";
 
-import { Chains } from "porto";
 import type { PropsWithChildren } from "react";
 import { createConfig, http, WagmiProvider } from "wagmi";
+import { mainnet } from "wagmi/chains";
 
 const wagmiConfig = createConfig({
-	chains: [Chains.baseSepolia],
+	chains: [mainnet],
 	ssr: true,
 	transports: {
-		[Chains.baseSepolia.id]: http(),
+		[mainnet.id]: http(),
 	},
 });
 
