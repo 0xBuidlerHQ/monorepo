@@ -177,9 +177,15 @@ importers:
       '@tanstack/react-query':
         specifier: catalog:react19
         version: 5.90.12(react@19.1.1)
+      '@tanstack/react-table':
+        specifier: catalog:react19
+        version: 8.21.3(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
+      http-status-codes:
+        specifier: ^2.3.0
+        version: 2.3.0
       lucide-react:
         specifier: ^0.475.0
         version: 0.475.0(react@19.1.1)
