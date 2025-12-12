@@ -37,11 +37,20 @@ const DashboardHeaderItem = (props: DashboardHeaderItemProps) => {
 
 type LidoRewardsData = ReturnType<typeof useLidoRewards>["lidoRewards"];
 
+const toBigInt = (value?: string) => {
+	if (!value) return undefined;
+	try {
+		return BigInt(value);
+	} catch {
+		return undefined;
+	}
+};
+
 const DashboardHeader = ({ lidoRewards }: { lidoRewards?: LidoRewardsData }) => {
-	const a = lidoRewards?.events[0]?.balance;
-	const b = lidoRewards?.totals.ethRewards;
+	const a = toBigInt(lidoRewards?.events[0]?.balance);
+	const b = toBigInt(lidoRewards?.totals.ethRewards);
 	const c = lidoRewards?.averageApr ? Number(lidoRewards.averageApr) / 100 : undefined;
-	const d = lidoRewards?.events[0]?.rewards;
+	const d = toBigInt(lidoRewards?.events[0]?.rewards);
 	const e = lidoRewards?.totalItems;
 
 	const headerItems = [
@@ -71,7 +80,7 @@ const DashboardHeader = ({ lidoRewards }: { lidoRewards?: LidoRewardsData }) => 
 		},
 		{
 			title: "Average APR",
-			value: Format.FormatPercent.format(c),
+			value: Format.FormatPercent.format(c ?? 0),
 			className: "text-emerald-400",
 			eth: false,
 		},
