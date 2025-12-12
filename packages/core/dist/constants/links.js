@@ -1,7 +1,7 @@
 import {
   APPS,
   GLOBAL
-} from "../chunk-TSKMHMVC.js";
+} from "../chunk-I4SXANC2.js";
 import "../chunk-PZ5AY32C.js";
 export {
   APPS,

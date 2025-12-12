@@ -204,7 +204,7 @@ const Page = () => {
 					)
 				) : (
 					<ViewSwitch key="disconnected">
-						<Container className="flex flex-col items-center gap-6 text-center">
+						<Container className="flex flex-col items-center gap-6 text-center pt-20">
 							<H1_5 className="font-bold font-syne">Connect your wallet</H1_5>
 							<H5 className="text-muted-foreground max-w-xl">
 								Link your wallet to view your stETH balance, rewards, and APR insights.
