@@ -87,7 +87,7 @@ importers:
         specifier: catalog:react19
         version: 5.8.3
 
-  apps/0_0xbuidlerhq.xyz:
+  apps/0_0xbuidlerhq:
     dependencies:
       '@0xbuidlerhq/core':
         specifier: workspace:*
@@ -157,7 +157,7 @@ importers:
         specifier: catalog:react19
         version: 5.8.3
 
-  apps/100_ethos.xyz:
+  apps/100_ethos:
     dependencies:
       '@0xbuidlerhq/connect-button':
         specifier: workspace:*
@@ -248,7 +248,7 @@ importers:
         specifier: catalog:react19
         version: 5.8.3
 
-  apps/1_betterlido.xyz:
+  apps/1_betterlido:
     dependencies:
       '@0xbuidlerhq/connect-button':
         specifier: workspace:*
@@ -406,7 +406,7 @@ importers:
         specifier: catalog:react19
         version: 5.8.3
 
-  apps/3_utility.af:
+  apps/3_utilityaf:
     dependencies:
       '@0xbuidlerhq/core':
         specifier: workspace:*
