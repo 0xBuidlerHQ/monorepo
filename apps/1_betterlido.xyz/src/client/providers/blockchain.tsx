@@ -1,8 +1,9 @@
 "use client";
 
 import type { PropsWithChildren } from "react";
-import { createConfig, http, WagmiProvider } from "wagmi";
+import { cookieStorage, createConfig, createStorage, http, WagmiProvider } from "wagmi";
 import { mainnet } from "wagmi/chains";
+import { injected } from "wagmi/connectors";
 
 const wagmiConfig = createConfig({
 	chains: [mainnet],
@@ -10,6 +11,10 @@ const wagmiConfig = createConfig({
 	transports: {
 		[mainnet.id]: http(),
 	},
+	connectors: [injected()],
+	storage: createStorage({
+		storage: cookieStorage,
+	}),
 });
 
 const BlockchainProvider = ({ children }: PropsWithChildren) => (

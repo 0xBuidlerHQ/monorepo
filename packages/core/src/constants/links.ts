@@ -1,5 +1,37 @@
 const APPS = {
 	/**
+	 * @dev 0_0xbuidlerhq.
+	 */
+	"0_0xbuidlerhq": {
+		url: "https://0xbuidlerhq.com",
+		name: "0xBuidlerHQ",
+	},
+
+	/**
+	 * @dev 1_betterlido.
+	 */
+	"1_betterlido": {
+		url: "https://betterlido.0xbuidlerhq.com",
+		name: "BetterLido",
+	},
+
+	/**
+	 * @dev 2_dusk-explorer.
+	 */
+	"2_dusk-explorer": {
+		url: "https://duskexplorer.0xbuidlerhq.com",
+		name: "Dusk Explorer",
+	},
+
+	/**
+	 * @dev 3_utilityaf.
+	 */
+	"3_utilityaf": {
+		url: "https://utilityaf.0xbuidlerhq.com",
+		name: "UtilityAf",
+	},
+
+	/**
 	 * @dev ethos.xyz.
 	 */
 	ethos_xyz: {

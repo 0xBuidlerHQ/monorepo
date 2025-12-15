@@ -1,5 +1,33 @@
 declare const APPS: {
     /**
+     * @dev 0_0xbuidlerhq.
+     */
+    readonly "0_0xbuidlerhq": {
+        readonly url: "https://0xbuidlerhq.com";
+        readonly name: "0xBuidlerHQ";
+    };
+    /**
+     * @dev 1_betterlido.
+     */
+    readonly "1_betterlido": {
+        readonly url: "https://betterlido.0xbuidlerhq.com";
+        readonly name: "BetterLido";
+    };
+    /**
+     * @dev 2_dusk-explorer.
+     */
+    readonly "2_dusk-explorer": {
+        readonly url: "https://duskexplorer.0xbuidlerhq.com";
+        readonly name: "Dusk Explorer";
+    };
+    /**
+     * @dev 3_utilityaf.
+     */
+    readonly "3_utilityaf": {
+        readonly url: "https://utilityaf.0xbuidlerhq.com";
+        readonly name: "UtilityAf";
+    };
+    /**
      * @dev ethos.xyz.
      */
     readonly ethos_xyz: {

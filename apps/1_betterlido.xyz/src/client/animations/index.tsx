@@ -1,6 +1,6 @@
-import type { ComponentProps } from "react";
 import type { HTMLMotionProps, Transition, Variant } from "motion/react";
 import { motion } from "motion/react";
+import type { ComponentProps } from "react";
 
 const transition: Transition = { duration: 0.6, ease: [0.21, 0.47, 0.32, 0.99] };
 
@@ -30,7 +30,10 @@ type MotionProps<T extends MotionElement> = ComponentProps<(typeof motion)[T]>;
 type WithAs<T extends MotionElement> = { as?: T } & MotionProps<T>;
 
 const makeAnimated =
-	<TDefault extends MotionElement>(variants: Variant | Record<string, Variant>, fallback: TDefault) =>
+	<TDefault extends MotionElement>(
+		variants: Variant | Record<string, Variant>,
+		fallback: TDefault,
+	) =>
 	// eslint-disable-next-line react/display-name
 	<T extends MotionElement = TDefault>({ as, ...props }: WithAs<T>) => {
 		const Comp = (motion as Record<string, any>)[as ?? fallback];

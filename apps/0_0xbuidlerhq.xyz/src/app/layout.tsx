@@ -1,6 +1,7 @@
 import "./system.css";
 
 import {
+	azeretMono,
 	inter,
 	montserrat,
 	notoSans,
@@ -8,6 +9,8 @@ import {
 	notoSansMono,
 	notoSansYi,
 	notoSerif,
+	syne,
+	syneMono,
 	workSans,
 } from "@0xbuidlerhq/ui/fonts";
 import { cn } from "@0xbuidlerhq/ui/shadcn/lib/utils";
@@ -39,6 +42,9 @@ const Layout = ({ children }: PropsWithChildren) => {
 					notoSansYi.variable,
 					montserrat.variable,
 					inter.variable,
+					azeretMono.variable,
+					syne.variable,
+					syneMono.variable,
 				)}
 			>
 				<Providers>

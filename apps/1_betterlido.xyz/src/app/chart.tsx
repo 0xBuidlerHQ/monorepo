@@ -1,13 +1,17 @@
 "use client";
 
 import { Format } from "@0xbuidlerhq/core";
+import { Switch } from "@0xbuidlerhq/ui/shadcn/components/switch";
 import { cn } from "@0xbuidlerhq/ui/shadcn/lib/utils";
 import { Box } from "@0xbuidlerhq/ui/system/base/box";
+import { Container } from "@0xbuidlerhq/ui/system/base/container";
 import { H4, H6, H7 } from "@0xbuidlerhq/ui/system/base/typography";
 import type React from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
 	Area,
 	AreaChart,
+	type DotProps,
 	Legend,
 	Line,
 	ResponsiveContainer,
@@ -84,7 +88,7 @@ const formatFullDate = (timestamp: number) =>
 const EthValue = ({
 	value,
 	textClass,
-	maxFractionDigits = 2,
+	maxFractionDigits = 3,
 }: {
 	value: number | string;
 	textClass: string;
@@ -111,6 +115,7 @@ type ChartPoint = {
 	totalPooledEth: number;
 	userBalance: number;
 	poolSharePercent: number;
+	plusCount: number;
 	raw: RewardEvent;
 };
 
@@ -232,8 +237,71 @@ const LegendContent = () => {
 
 // ------- Main chart component ------- //
 
-export const RewardChart = ({ events }: { events: RewardEvent[] }) => {
-	const chartData: ChartPoint[] = events.map((e) => {
+type LineDotProps = DotProps & { payload?: ChartPoint };
+
+const renderMilestoneDot = (props: LineDotProps): React.ReactElement<SVGElement> => {
+	const { cx, cy, payload } = props;
+	const count = payload?.plusCount ?? 0;
+
+	if (count <= 0 || cx == null || cy == null) {
+		return <g style={{ display: "none" }} />;
+	}
+
+	return (
+		<g transform={`translate(${cx}, ${cy - 5})`} pointerEvents="none">
+			{Array.from({ length: count }).map((_, idx) => (
+				<text
+					key={idx}
+					x={0}
+					y={-8 - idx * 14}
+					fill={"gold"}
+					fontSize={16}
+					fontWeight={800}
+					textAnchor="middle"
+					dominantBaseline="central"
+				>
+					+
+				</text>
+			))}
+		</g>
+	);
+};
+
+export const RewardChart = ({ events, address }: { events: RewardEvent[]; address?: string }) => {
+	// Ensure chronological order so milestone detection is deterministic
+	const sorted = [...events].sort((a, b) => Number(a.blockTime) - Number(b.blockTime));
+
+	const storageKey = useMemo(
+		() => `rewardChart:milestones:${(address ?? "default").toLowerCase()}`,
+		[address],
+	);
+
+	const [showMilestones, setShowMilestones] = useState(true);
+
+	useEffect(() => {
+		if (typeof window === "undefined") return;
+		const stored = window.localStorage.getItem(storageKey);
+		if (stored !== null) {
+			setShowMilestones(stored === "true");
+		}
+	}, [storageKey]);
+
+	const toggleMilestones = (next: boolean) => {
+		setShowMilestones(next);
+		if (typeof window === "undefined") return;
+		try {
+			window.localStorage.setItem(storageKey, String(next));
+		} catch {
+			// ignore storage failures (private mode, etc.)
+		}
+	};
+
+	let lastHundredthBucket = Number.NEGATIVE_INFINITY; // 0.01 steps
+	let lastTenthBucket = Number.NEGATIVE_INFINITY; // 0.1 steps
+	let lastUnitBucket = Number.NEGATIVE_INFINITY; // 1.0 steps
+	const chartData: ChartPoint[] = [];
+
+	sorted.forEach((e, index) => {
 		const timestamp = parseInt(e.blockTime, 10) * 1000;
 		const dateLabel = new Date(timestamp).toLocaleDateString(undefined, {
 			month: "short",
@@ -242,7 +310,33 @@ export const RewardChart = ({ events }: { events: RewardEvent[] }) => {
 		const totalPooledEth = toEtherNumber(e.totalPooledEtherAfter);
 		const userBalance = toEtherNumber(e.balance);
 
-		return {
+		const currentHundredth = Math.floor(userBalance * 100); // 0.01 buckets
+		const currentTenth = Math.floor(userBalance * 10); // 0.1 buckets
+		const currentUnit = Math.floor(userBalance); // 1.0 buckets
+
+		let plusCount = 0;
+		if (index === 0) {
+			lastHundredthBucket = currentHundredth;
+			lastTenthBucket = currentTenth;
+			lastUnitBucket = currentUnit;
+		} else {
+			if (currentUnit > lastUnitBucket) {
+				plusCount = 3;
+				lastUnitBucket = currentUnit;
+				// also update lower buckets to avoid duplicate triggers
+				lastTenthBucket = Math.max(lastTenthBucket, currentTenth);
+				lastHundredthBucket = Math.max(lastHundredthBucket, currentHundredth);
+			} else if (currentTenth > lastTenthBucket) {
+				plusCount = 2;
+				lastTenthBucket = currentTenth;
+				lastHundredthBucket = Math.max(lastHundredthBucket, currentHundredth);
+			} else if (currentHundredth > lastHundredthBucket) {
+				plusCount = 1;
+				lastHundredthBucket = currentHundredth;
+			}
+		}
+
+		chartData.push({
 			timestamp,
 			date: dateLabel,
 			apr: Number(e.apr),
@@ -251,12 +345,18 @@ export const RewardChart = ({ events }: { events: RewardEvent[] }) => {
 			totalPooledEth,
 			userBalance,
 			poolSharePercent: totalPooledEth > 0 ? (userBalance / totalPooledEth) * 100 : 0,
+			plusCount,
 			raw: e,
-		};
+		});
 	});
 
 	return (
 		<Box className="h-[500px] w-full">
+			<Container className="flex justify-start gap-4 mb-2">
+				<H6 className="text-muted-foreground">Show milestones</H6>
+				<Switch checked={showMilestones} onCheckedChange={toggleMilestones} />
+			</Container>
+
 			<ResponsiveContainer width="100%" height="100%">
 				<AreaChart data={chartData} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
 					<defs>
@@ -270,15 +370,13 @@ export const RewardChart = ({ events }: { events: RewardEvent[] }) => {
 						</linearGradient>
 						<linearGradient id="userBalanceGradient" x1="0" y1="0" x2="0" y2="1">
 							<stop offset="0%" stopColor="#fbbf24" stopOpacity={0.35} />
-							<stop offset="100%" stopColor="#fbbf24" stopOpacity={0} />
+							<stop offset="100%" stopColor="white" stopOpacity={0} />
 						</linearGradient>
 						<linearGradient id="poolShareGradient" x1="0" y1="0" x2="0" y2="1">
 							<stop offset="0%" stopColor="#f472b6" stopOpacity={0.35} />
 							<stop offset="100%" stopColor="#f472b6" stopOpacity={0} />
 						</linearGradient>
 					</defs>
-
-					{/* <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" /> */}
 
 					<XAxis
 						dataKey="date"
@@ -328,7 +426,7 @@ export const RewardChart = ({ events }: { events: RewardEvent[] }) => {
 						strokeWidth={2}
 						strokeLinecap="round"
 						strokeLinejoin="round"
-						dot={false}
+						dot={showMilestones ? renderMilestoneDot : false}
 						activeDot={{ r: 4 }}
 					/>
 
