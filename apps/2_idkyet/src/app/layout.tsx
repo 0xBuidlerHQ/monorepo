@@ -1,0 +1,74 @@
+import "./system.css";
+
+import {
+	azeretMono,
+	inter,
+	montserrat,
+	notoSans,
+	notoSansDisplay,
+	notoSansMono,
+	notoSansYi,
+	notoSerif,
+	spaceGrotesk,
+	syne,
+	syneMono,
+	syneTactile,
+	tasaOrbiter,
+	workSans,
+} from "@0xbuidlerhq/ui/fonts";
+import { cn } from "@0xbuidlerhq/ui/shadcn/lib/utils";
+import { Box } from "@0xbuidlerhq/ui/system/base/box";
+import { Background } from "@client/components/background";
+import { Footer } from "@client/components/footer";
+import { Header } from "@client/components/header";
+import { Providers } from "@client/providers";
+import type { PropsWithChildren } from "react";
+
+export { metadata } from "./metadata";
+
+const Layout = ({ children }: PropsWithChildren) => {
+	return (
+		<html lang="en" suppressHydrationWarning className="overscroll-none">
+			<body
+				className={cn(
+					"relative",
+					"antialiased",
+					"bg-background",
+					"text-foreground",
+					"font-azeret-mono",
+					"tracking-tighter",
+					workSans.variable,
+					notoSerif.variable,
+					notoSans.variable,
+					notoSansDisplay.variable,
+					notoSansMono.variable,
+					notoSansYi.variable,
+					montserrat.variable,
+					inter.variable,
+					spaceGrotesk.variable,
+					tasaOrbiter.variable,
+					syne.variable,
+					syneMono.variable,
+					syneTactile.variable,
+					azeretMono.variable,
+				)}
+			>
+				<Providers>
+					<Background>
+						<main className="grow flex flex-col min-h-[100dvh]">
+							<Header />
+
+							<Box className="flex grow min-h-0">
+								<Box className="grow">{children}</Box>
+							</Box>
+
+							<Footer />
+						</main>
+					</Background>
+				</Providers>
+			</body>
+		</html>
+	);
+};
+
+export default Layout;
