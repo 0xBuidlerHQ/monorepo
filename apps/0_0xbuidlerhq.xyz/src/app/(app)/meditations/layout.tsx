@@ -1,5 +1,3 @@
-"use client";
-
 import { Box } from "@0xbuidlerhq/ui/system/base/box";
 import { Container } from "@0xbuidlerhq/ui/system/base/container";
 import { H1_4, H4 } from "@0xbuidlerhq/ui/system/base/typography";
