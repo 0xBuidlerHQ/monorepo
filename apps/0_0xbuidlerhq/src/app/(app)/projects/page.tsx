@@ -35,35 +35,37 @@ const ProjectCard = ({ project }: { project: Project }) => {
 					</Box>
 
 					<Box className="flex flex-col gap-2">
-						<H1 className="font-montserrat font-semibold leading-tight text-foreground">
-							{project.name}
-						</H1>
+						<Box className="flex flex-col gap-1">
+							<H1 className="font-montserrat font-semibold leading-tight text-foreground">
+								{project.name}
+							</H1>
 
-						<Box className="flex gap-1 rounded *:px-[2px]">
-							{project.stack.web.map((item) => (
-								<H6
-									key={item}
-									className="bg-orange-500/10 font-syne font-bold text-orange-500 inline-block"
-								>
-									{item}
-								</H6>
-							))}
-							{project.stack.crypto?.map((item) => (
-								<H6
-									key={item}
-									className="bg-purple-500/10 font-syne font-bold text-purple-500 inline-block"
-								>
-									{item}
-								</H6>
-							))}
-							{project.stack.animation?.map((item) => (
-								<H6
-									key={item}
-									className="bg-emerald-500/10 font-syne font-bold text-emerald-500 inline-block"
-								>
-									{item}
-								</H6>
-							))}
+							<Box className="flex flex-wrap gap-1 rounded *:px-[2px]">
+								{project.stack.web.map((item) => (
+									<H6
+										key={item}
+										className="bg-orange-500/10 font-syne font-bold text-orange-500 inline-block"
+									>
+										{item}
+									</H6>
+								))}
+								{project.stack.crypto?.map((item) => (
+									<H6
+										key={item}
+										className="bg-purple-500/10 font-syne font-bold text-purple-500 inline-block"
+									>
+										{item}
+									</H6>
+								))}
+								{project.stack.animation?.map((item) => (
+									<H6
+										key={item}
+										className="bg-emerald-500/10 font-syne font-bold text-emerald-500 inline-block"
+									>
+										{item}
+									</H6>
+								))}
+							</Box>
 						</Box>
 
 						<H5 className="text-muted-foreground font-montserrat tracking-tighter">
