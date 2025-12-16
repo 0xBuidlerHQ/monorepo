@@ -28,6 +28,17 @@ const Projects = [
 			animation: ["Motion"],
 		},
 	},
+	{
+		id: "2_wagmui",
+		name: "Wagmui",
+		url: `${https}wagmui.${baseUrl}`,
+		img: UtilityAfPng,
+		description: "A set of React hooks for faster library.",
+		stack: {
+			web: ["React", "Typescript"],
+			animation: ["Motion"],
+		},
+	},
 	// TODO
 	{
 		id: "3_utility",

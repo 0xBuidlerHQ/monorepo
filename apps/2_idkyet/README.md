@@ -1,1 +1,0 @@
-# @0xbuidlerhq/apps/ethos.xyz

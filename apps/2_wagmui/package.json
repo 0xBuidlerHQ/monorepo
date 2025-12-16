@@ -1,0 +1,22 @@
+{
+	"name": "@0xbuidlerhq/apps.wagmui",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vocs dev --port=3002",
+		"build": "vocs build",
+		"preview": "vocs preview"
+	},
+	"dependencies": {
+		"react": "latest",
+		"react-dom": "latest",
+		"vocs": "latest",
+		"tailwindcss": "catalog:react19",
+		"@0xbuidlerhq/ui": "workspace:*"
+	},
+	"devDependencies": {
+		"@types/react": "latest",
+		"typescript": "latest"
+	}
+}
