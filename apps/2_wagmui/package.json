@@ -9,14 +9,14 @@
 		"preview": "vocs preview"
 	},
 	"dependencies": {
-		"react": "latest",
-		"react-dom": "latest",
 		"vocs": "latest",
+		"react": "catalog:react19",
+		"react-dom": "catalog:react19",
 		"tailwindcss": "catalog:react19",
 		"@0xbuidlerhq/ui": "workspace:*"
 	},
 	"devDependencies": {
-		"@types/react": "latest",
-		"typescript": "latest"
+		"@types/react": "catalog:react19",
+		"typescript": "catalog:react19"
 	}
 }
