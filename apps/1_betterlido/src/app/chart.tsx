@@ -244,11 +244,11 @@ const renderMilestoneDot = (props: LineDotProps): React.ReactElement<SVGElement>
 	const count = payload?.plusCount ?? 0;
 
 	if (count <= 0 || cx == null || cy == null) {
-		return <g style={{ display: "none" }} />;
+		return <g key={`${cx}${cy}`} style={{ display: "none" }} />;
 	}
 
 	return (
-		<g transform={`translate(${cx}, ${cy - 5})`} pointerEvents="none">
+		<g key={`${cx}${cy}`} transform={`translate(${cx}, ${cy - 5})`} pointerEvents="none">
 			{Array.from({ length: count }).map((_, idx) => (
 				<text
 					key={idx}
