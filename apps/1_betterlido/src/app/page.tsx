@@ -126,11 +126,6 @@ const DashboardHeader = ({ lidoRewards }: { lidoRewards?: LidoRewardsData }) => 
 			value: Format.FormatBeauty(a),
 			className: "text-amber-400",
 			eth: true,
-			badges: [
-				{ label: "7d", value: recentEarnings.last7d },
-				{ label: "30d", value: recentEarnings.last30d },
-				{ label: "1y", value: recentEarnings.lastYear },
-			],
 		},
 		{
 			title: "stETH rewarded",
@@ -143,6 +138,11 @@ const DashboardHeader = ({ lidoRewards }: { lidoRewards?: LidoRewardsData }) => 
 			value: Format.FormatBeauty(d),
 			className: "text-rose-400",
 			eth: true,
+			badges: [
+				{ label: "7d", value: recentEarnings.last7d },
+				{ label: "30d", value: recentEarnings.last30d },
+				{ label: "1y", value: recentEarnings.lastYear },
+			],
 		},
 		{
 			title: "Payout count",
