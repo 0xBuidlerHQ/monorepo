@@ -72,6 +72,10 @@ const formatPercent = (value: number, maximumFractionDigits = 3) => {
 	return `${value.toFixed(maximumFractionDigits)}%`;
 };
 
+const ETH_VALUE_COLOR = "text-emerald-300";
+const USD_VALUE_COLOR = "text-amber-300";
+const PERCENT_VALUE_COLOR = "text-sky-300";
+
 export const RewardsTable = ({ events }: { events: RewardEvent[] }) => {
 	const [pagination, setPagination] = useState({
 		pageIndex: 0,
@@ -108,27 +112,27 @@ export const RewardsTable = ({ events }: { events: RewardEvent[] }) => {
 			}),
 			columnHelper.accessor("apr", {
 				header: "APR (%)",
-				cell: (info) => <H5>{formatPercent(info.getValue(), 2)}</H5>,
+				cell: (info) => <H5 className={PERCENT_VALUE_COLOR}>{formatPercent(info.getValue(), 2)}</H5>,
 			}),
 			columnHelper.accessor("rewardsEth", {
 				header: "Rewards (ETH)",
-				cell: (info) => <H5>{formatNumber(info.getValue(), 6)}</H5>,
+				cell: (info) => <H5 className={ETH_VALUE_COLOR}>{formatNumber(info.getValue(), 6)}</H5>,
 			}),
 			columnHelper.accessor("rewardsUsd", {
 				header: "Rewards (USD)",
-				cell: (info) => <H5>{formatUsd(info.getValue())}</H5>,
+				cell: (info) => <H5 className={USD_VALUE_COLOR}>{formatUsd(info.getValue())}</H5>,
 			}),
 			columnHelper.accessor("totalPooledEth", {
 				header: "Total pooled (ETH)",
-				cell: (info) => <H5>{formatNumber(info.getValue(), 2)}</H5>,
+				cell: (info) => <H5 className={ETH_VALUE_COLOR}>{formatNumber(info.getValue(), 2)}</H5>,
 			}),
 			columnHelper.accessor("userBalance", {
 				header: "User balance (ETH)",
-				cell: (info) => <H5>{formatNumber(info.getValue(), 4)}</H5>,
+				cell: (info) => <H5 className={ETH_VALUE_COLOR}>{formatNumber(info.getValue(), 4)}</H5>,
 			}),
 			columnHelper.accessor("poolSharePercent", {
 				header: "Pool share (%)",
-				cell: (info) => <H5>{formatPercent(info.getValue(), 4)}</H5>,
+				cell: (info) => <H5 className={PERCENT_VALUE_COLOR}>{formatPercent(info.getValue(), 4)}</H5>,
 			}),
 			columnHelper.accessor("block", {
 				header: "Block",
