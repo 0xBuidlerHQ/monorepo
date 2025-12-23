@@ -1,12 +1,12 @@
-import { useBigIntInput } from "../hooks/useBigintInput";
+import { shortenAddress } from "../functions/shortenAddress";
+import { shortenHash } from "../functions/shortenHash";
+import { useBigIntInput } from "../hooks/useBigIntInput";
 
 const BigIntInput = () => {
-	const userBalance = 1_000_000n;
 	const decimals = 18;
 
-	const { value, handleInputChange, valueAsBigInt, externalError, numberError } = useBigIntInput({
+	const { handleInputChange, value, valueAsBigInt, isError } = useBigIntInput({
 		decimals,
-		options: { userBalance },
 	});
 
 	return (
@@ -19,9 +19,11 @@ const BigIntInput = () => {
 				<div>{value}</div>
 				<div>{String(valueAsBigInt)}</div>
 
-				<div>{externalError}</div>
-				<div>{numberError.message}</div>
+				<div>{String(isError)}</div>
 			</div>
+
+			<div>{shortenAddress("0x123456765435654")}</div>
+			<div>{shortenHash("0x123456765435654")}</div>
 		</div>
 	);
 };

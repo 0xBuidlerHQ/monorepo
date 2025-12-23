@@ -112,7 +112,9 @@ export const RewardsTable = ({ events }: { events: RewardEvent[] }) => {
 			}),
 			columnHelper.accessor("apr", {
 				header: "APR (%)",
-				cell: (info) => <H5 className={PERCENT_VALUE_COLOR}>{formatPercent(info.getValue(), 2)}</H5>,
+				cell: (info) => (
+					<H5 className={PERCENT_VALUE_COLOR}>{formatPercent(info.getValue(), 2)}</H5>
+				),
 			}),
 			columnHelper.accessor("rewardsEth", {
 				header: "Rewards (ETH)",
@@ -132,7 +134,9 @@ export const RewardsTable = ({ events }: { events: RewardEvent[] }) => {
 			}),
 			columnHelper.accessor("poolSharePercent", {
 				header: "Pool share (%)",
-				cell: (info) => <H5 className={PERCENT_VALUE_COLOR}>{formatPercent(info.getValue(), 4)}</H5>,
+				cell: (info) => (
+					<H5 className={PERCENT_VALUE_COLOR}>{formatPercent(info.getValue(), 4)}</H5>
+				),
 			}),
 			columnHelper.accessor("block", {
 				header: "Block",
