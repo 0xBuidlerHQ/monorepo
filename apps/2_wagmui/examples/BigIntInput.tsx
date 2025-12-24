@@ -1,6 +1,5 @@
-import { shortenAddress } from "../functions/shortenAddress";
-import { shortenHash } from "../functions/shortenHash";
-import { useBigIntInput } from "../hooks/useBigIntInput";
+import { formatEvmAddress, formatEvmHash } from "@0xbuidlerhq/package.wagmui";
+import { useBigIntInput } from "@0xbuidlerhq/package.wagmui/react";
 
 const BigIntInput = () => {
 	const decimals = 18;
@@ -22,8 +21,8 @@ const BigIntInput = () => {
 				<div>{String(isError)}</div>
 			</div>
 
-			<div>{shortenAddress("0x123456765435654")}</div>
-			<div>{shortenHash("0x123456765435654")}</div>
+			<div>{formatEvmAddress("0x123456765435654")}</div>
+			<div>{formatEvmHash("0x123456765435654")}</div>
 		</div>
 	);
 };

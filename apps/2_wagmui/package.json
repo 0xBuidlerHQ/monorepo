@@ -9,14 +9,20 @@
 		"preview": "vocs preview"
 	},
 	"dependencies": {
-		"vocs": "latest",
+		"typescript": "catalog:react19",
+		"@0xbuidlerhq/package.wagmui": "workspace:*"
+	},
+	"peerDependencies": {
 		"react": "catalog:react19",
-		"react-dom": "catalog:react19",
-		"tailwindcss": "catalog:react19",
-		"@0xbuidlerhq/ui": "workspace:*"
+		"react-dom": "catalog:react19"
 	},
 	"devDependencies": {
+		"vocs": "latest",
 		"@types/react": "catalog:react19",
-		"typescript": "catalog:react19"
+		"react": "catalog:react19",
+		"tailwindcss": "catalog:react19",
+		"react-dom": "catalog:react19",
+		"tsup": "^8.5.0",
+		"vite-tsconfig-paths": "^6.0.3"
 	}
 }
