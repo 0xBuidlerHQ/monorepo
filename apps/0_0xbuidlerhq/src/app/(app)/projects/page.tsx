@@ -41,6 +41,11 @@ const ProjectCard = ({ project }: { project: Project }) => {
 							</H1>
 
 							<Box className="flex flex-wrap gap-1 rounded *:px-[2px]">
+								{project.stack.library && (
+									<H6 className="bg-cyan-500/10 font-syne font-bold text-cyan-500 inline-block">
+										Library
+									</H6>
+								)}
 								{project.stack.web.map((item) => (
 									<H6
 										key={item}

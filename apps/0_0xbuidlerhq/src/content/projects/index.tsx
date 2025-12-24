@@ -1,6 +1,7 @@
 import _0xBuidlerHQPng from "./0xbuidlerhq.png";
 import BetterLidoPng from "./betterlido.png";
 import UtilityAfPng from "./utilityaf.png";
+import wagmuiPng from "./wagmui.png";
 
 const https = "https://";
 const baseUrl = "0xbuidlerhq.com";
@@ -32,11 +33,12 @@ const Projects = [
 		id: "2_wagmui",
 		name: "Wagmui",
 		url: `${https}wagmui.${baseUrl}`,
-		img: UtilityAfPng,
-		description: "A set of React hooks for faster library.",
+		img: wagmuiPng,
+		description: "Composable formatting helpers and React hooks for polished web3 interfaces.",
 		stack: {
 			web: ["React", "Typescript"],
 			animation: ["Motion"],
+			library: true,
 		},
 	},
 	// TODO
