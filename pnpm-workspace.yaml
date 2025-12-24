@@ -2,7 +2,7 @@ packages:
   - apps/*
   - packages/*
   - configs/*
-  - servers/*
+  - libraries/*
 
 catalogs:
   react19:
@@ -29,3 +29,5 @@ catalogs:
     zod: 4.0.13
     zustand: 5.0.7
     lucide-react: 0.553.0
+    tsup: 8.5.0
+

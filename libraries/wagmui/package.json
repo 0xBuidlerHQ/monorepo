@@ -1,5 +1,5 @@
 {
-	"name": "@0xbuidlerhq/package.wagmui",
+	"name": "@0xbuidlerhq/wagmui",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
@@ -22,7 +22,6 @@
 			"require": "./dist/react.cjs"
 		}
 	},
-
 	"dependencies": {
 		"typescript": "catalog:react19"
 	},
@@ -34,6 +33,6 @@
 		"@types/react": "catalog:react19",
 		"react": "catalog:react19",
 		"react-dom": "catalog:react19",
-		"tsup": "^8.5.0"
+		"tsup": "catalog:react19"
 	}
 }

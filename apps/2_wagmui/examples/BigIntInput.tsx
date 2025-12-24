@@ -1,5 +1,5 @@
-import { formatEvmAddress, formatEvmHash } from "@0xbuidlerhq/package.wagmui";
-import { useBigIntInput } from "@0xbuidlerhq/package.wagmui/react";
+import { formatEvmAddress, formatEvmHash } from "@0xbuidlerhq/wagmui";
+import { useBigIntInput } from "@0xbuidlerhq/wagmui/react";
 
 const BigIntInput = () => {
 	const decimals = 18;

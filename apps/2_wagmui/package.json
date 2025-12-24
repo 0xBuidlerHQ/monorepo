@@ -10,7 +10,7 @@
 	},
 	"dependencies": {
 		"typescript": "catalog:react19",
-		"@0xbuidlerhq/package.wagmui": "workspace:*"
+		"@0xbuidlerhq/wagmui": "workspace:*"
 	},
 	"peerDependencies": {
 		"react": "catalog:react19",
