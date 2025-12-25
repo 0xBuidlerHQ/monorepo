@@ -1,2 +1,0 @@
-# `@0xbuidlerhq/core`
-
