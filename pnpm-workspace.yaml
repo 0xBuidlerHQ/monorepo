@@ -1,8 +1,10 @@
 packages:
   - apps/*
-  - packages/*
   - configs/*
-  - libraries/*
+  - packages/*
+  - websites/*
+  - projects/**/*
+  - libraries/**/*
 
 catalogs:
   react19:

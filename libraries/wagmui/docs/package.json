@@ -1,0 +1,28 @@
+{
+	"name": "@0xbuidlerhq/wagmui.docs",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vocs dev --port=3000",
+		"build": "vocs build",
+		"preview": "vocs preview"
+	},
+	"dependencies": {
+		"typescript": "catalog:react19",
+		"@0xbuidlerhq/wagmui": "workspace:*"
+	},
+	"peerDependencies": {
+		"react": "catalog:react19",
+		"react-dom": "catalog:react19"
+	},
+	"devDependencies": {
+		"vocs": "latest",
+		"@types/react": "catalog:react19",
+		"react": "catalog:react19",
+		"tailwindcss": "catalog:react19",
+		"react-dom": "catalog:react19",
+		"tsup": "^8.5.0",
+		"vite-tsconfig-paths": "^6.0.3"
+	}
+}
