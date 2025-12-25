@@ -1,8 +1,7 @@
 packages:
-  - apps/*
-  - configs/*
-  - packages/*
-  - websites/*
+  - configs/**/*
+  - packages/**/*
+  - websites/**/*
   - projects/**/*
   - libraries/**/*
 
