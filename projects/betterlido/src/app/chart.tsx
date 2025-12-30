@@ -351,7 +351,7 @@ export const RewardChart = ({ events, address }: { events: RewardEvent[]; addres
 	});
 
 	return (
-		<Box className="h-[500px] w-full">
+		<Box className="h-[700px] w-full">
 			<Container className="flex justify-start gap-4 mb-2">
 				<H6 className="text-muted-foreground">Show milestones</H6>
 				<Switch checked={showMilestones} onCheckedChange={toggleMilestones} />
