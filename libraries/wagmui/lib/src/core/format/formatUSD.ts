@@ -1,15 +1,26 @@
-type IntlNumberFormat = Parameters<typeof Intl.NumberFormat>;
+/**
+ * @dev
+ */
 
-const formatPercentDefaultOptions: IntlNumberFormat = [
-	"en-US",
-	{
-		style: "currency",
-		currency: "USD",
-	},
-];
+const options: Intl.NumberFormatOptions = {
+	style: "currency",
+	currency: "USD",
+};
 
-const formatUSD = (options: IntlNumberFormat = formatPercentDefaultOptions) => {
-	return new Intl.NumberFormat(...options).format;
+const formatUSD = (
+	value: Parameters<Intl.NumberFormat["format"]>[0],
+	//
+	overrides?: Intl.NumberFormatOptions,
+	locale: Intl.LocalesArgument = "en-US",
+) => {
+	return new Intl.NumberFormat(
+		//
+		locale,
+		{
+			...options,
+			...(overrides ?? {}),
+		},
+	).format(value);
 };
 
 export { formatUSD };

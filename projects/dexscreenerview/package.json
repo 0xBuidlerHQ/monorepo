@@ -1,0 +1,44 @@
+{
+	"name": "@0xbuidlerhq/dexscreenerview",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev --turbopack --port 3000",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@0xbuidlerhq/connect-button": "workspace:*",
+		"@0xbuidlerhq/core": "workspace:*",
+		"@0xbuidlerhq/wagmui": "workspace:*",
+		"@0xbuidlerhq/ui": "workspace:*",
+		"@icons-pack/react-simple-icons": "^13.7.0",
+		"@react-spring/web": "10.0.1",
+		"@tailwindcss/typography": "^0.5.19",
+		"@tanstack/react-query": "catalog:react19",
+		"gray-matter": "^4.0.3",
+		"http-status-codes": "^2.3.0",
+		"lucide-react": "^0.475.0",
+		"motion": "^12.23.24",
+		"next": "catalog:react19",
+		"react": "catalog:react19",
+		"react-dom": "catalog:react19",
+		"@tanstack/react-table": "catalog:react19",
+		"react-markdown": "^10.1.0",
+		"react-use": "^17.6.0",
+		"recharts": "^3.1.2",
+		"remark-gfm": "^4.0.1",
+		"viem": "catalog:react19",
+		"wagmi": "catalog:react19",
+		"zustand": "^5.0.8"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "catalog:react19",
+		"@types/node": "catalog:react19",
+		"@types/react": "catalog:react19",
+		"@types/react-dom": "catalog:react19",
+		"tailwindcss": "catalog:react19",
+		"typescript": "catalog:react19"
+	}
+}

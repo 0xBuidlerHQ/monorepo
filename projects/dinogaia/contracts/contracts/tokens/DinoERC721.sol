@@ -8,4 +8,11 @@ contract DinoERC721 is ERC721, Ownable {
     uint256 public totalSupply;
 
     constructor() ERC721("Dino", "DINO") Ownable(msg.sender) {}
+
+    function mint(address to) external onlyOwner returns (uint256 tokenId) {
+        require(to != address(0), "zero to");
+
+        tokenId = ++totalSupply;
+        _safeMint(to, tokenId);
+    }
 }
