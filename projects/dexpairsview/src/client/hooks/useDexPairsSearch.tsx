@@ -8,11 +8,11 @@ import { queryOptions, useQuery } from "@tanstack/react-query";
 /**
  * @dev
  */
-type DexScreenerSearchQueryParams = {
+type DexPairsSearchQueryParams = {
 	text: string;
 };
 
-type DexScreenerSearchQueryResponse = {
+type DexPairsSearchQueryResponse = {
 	schemaVersion: string;
 
 	pairs: Array<{
@@ -81,24 +81,24 @@ type DexScreenerSearchQueryResponse = {
 /**
  * @dev
  */
-const dexScreenerSearchQuery = async (params: DexScreenerSearchQueryParams) => {
+const dexPairsSearchQuery = async (params: DexPairsSearchQueryParams) => {
 	const response = await fetch(`https://api.dexscreener.com/latest/dex/search?q=${params.text}`, {
 		method: "GET",
 	});
 
-	return (await handleQueryResponse(response)) as DexScreenerSearchQueryResponse;
+	return (await handleQueryResponse(response)) as DexPairsSearchQueryResponse;
 };
 
 /**
  * @dev
  */
-type QueryOptionsProps = DexScreenerSearchQueryParams & {
+type QueryOptionsProps = DexPairsSearchQueryParams & {
 	options?: QueryOptionsUserProps;
 };
-const defaultQueryOptions = (params: DexScreenerSearchQueryParams) =>
+const defaultQueryOptions = (params: DexPairsSearchQueryParams) =>
 	queryOptions({
 		queryKey: ["symbol", params.text],
-		queryFn: () => dexScreenerSearchQuery(params),
+		queryFn: () => dexPairsSearchQuery(params),
 		//
 		retry: false,
 		enabled: !!params.text,
@@ -107,7 +107,7 @@ const defaultQueryOptions = (params: DexScreenerSearchQueryParams) =>
 /**
  * @dev
  */
-const dexScreenerSearchQueryOptions = ({ options, ...params }: QueryOptionsProps) =>
+const dexPairsSearchQueryOptions = ({ options, ...params }: QueryOptionsProps) =>
 	queryOptions({
 		...defaultQueryOptions(params),
 		...(options as {}),
@@ -116,20 +116,24 @@ const dexScreenerSearchQueryOptions = ({ options, ...params }: QueryOptionsProps
 /**
  * @dev
  */
-const useDexScreenerSearch = (props: QueryOptionsProps) => {
+const useDexPairsSearchSearch = (props: QueryOptionsProps) => {
 	const {
-		data: dexScreenerSearch,
-		isPending: dexScreenerSearchIsPending,
-		isError: dexScreenerSearchIsError,
-		error: dexScreenerSearchError,
-	} = useQuery(dexScreenerSearchQueryOptions(props));
+		data: dexPairsSearch,
+		isPending: dexPairsSearchIsPending,
+		isError: dexPairsSearchIsError,
+		error: dexPairsSearchError,
+	} = useQuery(dexPairsSearchQueryOptions(props));
 
 	return {
-		dexScreenerSearch,
-		dexScreenerSearchIsPending,
-		dexScreenerSearchIsError,
-		dexScreenerSearchError,
+		dexPairsSearch,
+		dexPairsSearchIsPending,
+		dexPairsSearchIsError,
+		dexPairsSearchError,
 	};
 };
 
-export { useDexScreenerSearch, type DexScreenerSearchQueryResponse };
+export {
+	useDexPairsSearchSearch,
+	type DexPairsSearchQueryResponse,
+	type DexPairsSearchQueryParams,
+};

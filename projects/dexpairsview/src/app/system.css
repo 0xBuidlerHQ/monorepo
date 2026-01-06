@@ -2,13 +2,13 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-	--app-w: 10000px !important;
+	--app-w: 1280px !important;
 	--app-px: 1.5rem !important;
 
-	--header-w: 10000px !important;
+	--header-w: 1280px !important;
 	--header-px: 1.5rem !important;
 
-	--footer-w: 10000px !important;
+	--footer-w: 1280px !important;
 	--footer-px: 1.5rem !important;
 }
 

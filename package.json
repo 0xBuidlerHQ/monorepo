@@ -7,7 +7,7 @@
 		"start": "turbo run start",
 
 		"wagmui": "turbo run dev --filter=\"@0xbuidlerhq/wagmui*...\"",
-		"dexscreenerview": "turbo run dev --filter=\"@0xbuidlerhq/dexscreenerview*...\"",
+		"dexpairsview": "turbo run dev --filter=\"@0xbuidlerhq/dexpairsview*...\"",
 		"dinogaia": "turbo run dev --filter=\"@0xbuidlerhq/dinogaia*...\"",
 		"betterlido": "turbo run dev --filter=\"@0xbuidlerhq/betterlido*...\"",
 		"0xbuidlerhq": "turbo run dev --filter=\"@0xbuidlerhq/0xbuidlerhq*...\"",
