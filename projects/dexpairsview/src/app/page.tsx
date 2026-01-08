@@ -6,10 +6,7 @@ import { H1_1, H4 } from "@0xbuidlerhq/ui/system/base/typography";
 import { AnimatedCard, AnimatedStaggerContainer, AnimatedStaggerItem } from "@client/animations";
 import { TextInput } from "@client/components/inputs/TextInput";
 import { DexPairsTable } from "@client/components/tables/DexPairsTable";
-import {
-	type DexPairsSearchQueryResponse,
-	useDexPairsSearchSearch,
-} from "@client/hooks/useDexPairsSearch";
+import { useAlpha } from "@client/hooks/metier/useAlpha";
 import { Loader } from "lucide-react";
 import { useState } from "react";
 import { useDebounce } from "react-use";
@@ -19,27 +16,8 @@ const Page = () => {
 	const [debounceValue, setDebounceValue] = useState(searchInput);
 
 	useDebounce(() => setDebounceValue(searchInput), 300, [searchInput]);
-	const { dexPairsSearch, dexPairsSearchIsPending } = useDexPairsSearchSearch({
-		text: debounceValue,
-	});
 
-	const filteredSearch = (() => {
-		if (!dexPairsSearch) return {};
-
-		const groupedByChain: Record<string, Record<string, DexPairsSearchQueryResponse["pairs"]>> = {};
-
-		for (const pair of dexPairsSearch.pairs) {
-			const chainKey = pair.chainId ?? "unknown-chain";
-			const dexKey = pair.dexId ?? "unknown-dex";
-
-			if (!groupedByChain[chainKey]) groupedByChain[chainKey] = {};
-			if (!groupedByChain[chainKey][dexKey]) groupedByChain[chainKey][dexKey] = [];
-
-			groupedByChain[chainKey][dexKey].push(pair);
-		}
-
-		return groupedByChain;
-	})();
+	const { filteredSearch, dexPairsSearchIsPending } = useAlpha({ value: debounceValue });
 
 	return (
 		<Container className="py-6">
