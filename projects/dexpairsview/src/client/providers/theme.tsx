@@ -7,12 +7,7 @@ import type { PropsWithChildren } from "react";
  * Theme provider.
  */
 const ThemeProvider = ({ children }: PropsWithChildren) => (
-	<ThemeProviderPrimitive
-		attribute="class"
-		defaultTheme="dark"
-		forcedTheme="dark"
-		disableTransitionOnChange
-	>
+	<ThemeProviderPrimitive attribute="class" defaultTheme="dark" disableTransitionOnChange>
 		{children}
 	</ThemeProviderPrimitive>
 );
