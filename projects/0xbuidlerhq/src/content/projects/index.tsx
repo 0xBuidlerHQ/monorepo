@@ -1,5 +1,6 @@
 import _0xBuidlerHQPng from "./0xbuidlerhq.png";
 import BetterLidoPng from "./betterlido.png";
+import DexPairsView from "./dexpairsview.png";
 import UtilityAfPng from "./utilityaf.png";
 import wagmuiPng from "./wagmui.png";
 
@@ -41,13 +42,23 @@ const Projects = [
 			library: true,
 		},
 	},
-	// TODO
 	{
 		id: "3_utility",
 		name: "UtilityAf",
 		url: `${https}utilityaf.${baseUrl}`,
 		img: UtilityAfPng,
 		description: "A set of lean utilities to get work done fast.",
+		stack: {
+			web: ["React", "Typescript"],
+			animation: ["Motion"],
+		},
+	},
+	{
+		id: "4_dexpairsview",
+		name: "Dex Pairs View",
+		url: `${https}dexpairsview.${baseUrl}`,
+		img: DexPairsView,
+		description: "Search engine for Dex Pairs.",
 		stack: {
 			web: ["React", "Typescript"],
 			animation: ["Motion"],

@@ -18,20 +18,6 @@ type Props = {
 	data: DexPairsSearchQueryResponse["pairs"];
 };
 
-function calculatePairRiskScore(volume, liquidity, pricechange) {
-	const K_volume = 1 / 200; // 24h USD
-	const volume_risk_score = Math.min(1 / (K_volume * volume), 1);
-
-	const K_liquidity = 1 / 20000; // 24h USD
-	const liquidity_risk_score = Math.min(1 / (K_liquidity * liquidity), 1);
-
-	const K_pricechange = 1 / 5; // 24h %
-	const pricechange_risk_score = 1 - Math.min(1 / (K_pricechange * Math.abs(pricechange)), 1);
-
-	const risk_score = Math.max(volume_risk_score, liquidity_risk_score, pricechange_risk_score);
-
-	return risk_score;
-}
 const DexPairsTable = (props: Props) => {
 	const { data } = props;
 
