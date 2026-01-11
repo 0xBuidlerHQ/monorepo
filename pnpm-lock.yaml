@@ -611,10 +611,10 @@ importers:
         version: 2.41.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11)
       wagmi:
         specifier: catalog:react19
-        version: 3.1.0(@coinbase/wallet-sdk@4.3.6(@types/react@19.1.7)(bufferutil@4.0.9)(immer@10.1.1)(react@19.1.1)(typescript@5.8.3)(use-sync-external-store@1.4.0(react@19.1.1))(utf-8-validate@5.0.10)(zod@4.1.11))(@safe-global/safe-apps-provider@0.18.6(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(@safe-global/safe-apps-sdk@9.1.0(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(@tanstack/query-core@5.90.12)(@tanstack/react-query@5.90.12(react@19.1.1))(@types/react@19.1.7)(@walletconnect/ethereum-provider@2.21.1(@types/react@19.1.7)(bufferutil@4.0.9)(react@19.1.1)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(immer@10.1.1)(react@19.1.1)(typescript@5.8.3)(viem@2.41.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))
+        version: 3.1.0(@coinbase/wallet-sdk@4.3.6(@types/react@19.1.7)(bufferutil@4.0.9)(immer@10.1.1)(react@19.1.1)(typescript@5.8.3)(use-sync-external-store@1.6.0(react@19.1.1))(utf-8-validate@5.0.10)(zod@4.1.11))(@safe-global/safe-apps-provider@0.18.6(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(@safe-global/safe-apps-sdk@9.1.0(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(@tanstack/query-core@5.90.12)(@tanstack/react-query@5.90.12(react@19.1.1))(@types/react@19.1.7)(@walletconnect/ethereum-provider@2.21.1(@types/react@19.1.7)(bufferutil@4.0.9)(react@19.1.1)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(immer@10.1.1)(react@19.1.1)(typescript@5.8.3)(viem@2.41.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))
       zustand:
         specifier: ^5.0.8
-        version: 5.0.8(@types/react@19.1.7)(immer@10.1.1)(react@19.1.1)(use-sync-external-store@1.4.0(react@19.1.1))
+        version: 5.0.8(@types/react@19.1.7)(immer@10.1.1)(react@19.1.1)(use-sync-external-store@1.6.0(react@19.1.1))
     devDependencies:
       '@tailwindcss/postcss':
         specifier: catalog:react19
@@ -752,6 +752,97 @@ importers:
       viem:
         specifier: ^2.41.2
         version: 2.41.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.76)
+
+  projects/realpolymarket:
+    dependencies:
+      '@0xbuidlerhq/connect-button':
+        specifier: workspace:*
+        version: link:../../packages/connect-button
+      '@0xbuidlerhq/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@0xbuidlerhq/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
+      '@0xbuidlerhq/wagmui':
+        specifier: workspace:*
+        version: link:../../libraries/wagmui/lib
+      '@icons-pack/react-simple-icons':
+        specifier: ^13.7.0
+        version: 13.7.0(react@19.1.1)
+      '@react-spring/web':
+        specifier: 10.0.1
+        version: 10.0.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      '@tailwindcss/typography':
+        specifier: ^0.5.19
+        version: 0.5.19(tailwindcss@4.1.8)
+      '@tanstack/react-query':
+        specifier: catalog:react19
+        version: 5.90.12(react@19.1.1)
+      '@tanstack/react-table':
+        specifier: catalog:react19
+        version: 8.21.3(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      gray-matter:
+        specifier: ^4.0.3
+        version: 4.0.3
+      http-status-codes:
+        specifier: ^2.3.0
+        version: 2.3.0
+      lucide-react:
+        specifier: ^0.475.0
+        version: 0.475.0(react@19.1.1)
+      motion:
+        specifier: ^12.23.24
+        version: 12.23.24(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      next:
+        specifier: catalog:react19
+        version: 16.0.8(@babel/core@7.28.5)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      react:
+        specifier: catalog:react19
+        version: 19.1.1
+      react-dom:
+        specifier: catalog:react19
+        version: 19.1.1(react@19.1.1)
+      react-markdown:
+        specifier: ^10.1.0
+        version: 10.1.0(@types/react@19.1.7)(react@19.1.1)
+      react-use:
+        specifier: ^17.6.0
+        version: 17.6.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      recharts:
+        specifier: ^3.1.2
+        version: 3.1.2(@types/react@19.1.7)(react-dom@19.1.1(react@19.1.1))(react-is@19.1.1)(react@19.1.1)(redux@5.0.1)
+      remark-gfm:
+        specifier: ^4.0.1
+        version: 4.0.1
+      viem:
+        specifier: catalog:react19
+        version: 2.41.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11)
+      wagmi:
+        specifier: catalog:react19
+        version: 3.1.0(@coinbase/wallet-sdk@4.3.6(@types/react@19.1.7)(bufferutil@4.0.9)(immer@10.1.1)(react@19.1.1)(typescript@5.8.3)(use-sync-external-store@1.4.0(react@19.1.1))(utf-8-validate@5.0.10)(zod@4.1.11))(@safe-global/safe-apps-provider@0.18.6(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(@safe-global/safe-apps-sdk@9.1.0(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(@tanstack/query-core@5.90.12)(@tanstack/react-query@5.90.12(react@19.1.1))(@types/react@19.1.7)(@walletconnect/ethereum-provider@2.21.1(@types/react@19.1.7)(bufferutil@4.0.9)(react@19.1.1)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(immer@10.1.1)(react@19.1.1)(typescript@5.8.3)(viem@2.41.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))
+      zustand:
+        specifier: ^5.0.8
+        version: 5.0.8(@types/react@19.1.7)(immer@10.1.1)(react@19.1.1)(use-sync-external-store@1.4.0(react@19.1.1))
+    devDependencies:
+      '@tailwindcss/postcss':
+        specifier: catalog:react19
+        version: 4.1.8
+      '@types/node':
+        specifier: catalog:react19
+        version: 22.13.14
+      '@types/react':
+        specifier: catalog:react19
+        version: 19.1.7
+      '@types/react-dom':
+        specifier: catalog:react19
+        version: 19.1.7(@types/react@19.1.7)
+      tailwindcss:
+        specifier: catalog:react19
+        version: 4.1.8
+      typescript:
+        specifier: catalog:react19
+        version: 5.8.3
 
   projects/utilityaf:
     dependencies:
