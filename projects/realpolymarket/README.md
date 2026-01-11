@@ -1,4 +1,4 @@
-# @0xbuidlerhq/dexpairsview
+# @0xbuidlerhq/realpolymarket
 
 ## Getting Started
 
