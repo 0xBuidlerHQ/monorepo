@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const metadata: Metadata = {
-	title: "Useful | As F",
+	title: "Useful.af",
 };
 
 export { metadata };
