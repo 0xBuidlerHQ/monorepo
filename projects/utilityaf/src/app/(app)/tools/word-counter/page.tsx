@@ -4,7 +4,7 @@ import { Separator } from "@0xbuidlerhq/ui/shadcn/components/separator";
 import { Box } from "@0xbuidlerhq/ui/system/base/box";
 import { Container } from "@0xbuidlerhq/ui/system/base/container";
 import { H1_3, H1_6, H2, H4 } from "@0xbuidlerhq/ui/system/base/typography";
-import { getTextStats } from "@app/tools/word-counter/utils";
+import { getTextStats } from "@app/(app)/tools/word-counter/utils";
 import { Tools } from "@config/tools";
 import React from "react";
 
