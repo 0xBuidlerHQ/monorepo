@@ -33,6 +33,9 @@ catalogs:
     lucide-react:
       specifier: 0.553.0
       version: 0.553.0
+    motion:
+      specifier: 12.23.24
+      version: 12.23.24
     next:
       specifier: 16.0.8
       version: 16.0.8
@@ -85,6 +88,28 @@ importers:
         version: 5.8.3
 
   configs/typescript-config: {}
+
+  libraries/animotion/lib:
+    dependencies:
+      motion:
+        specifier: catalog:react19
+        version: 12.23.24(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      typescript:
+        specifier: catalog:react19
+        version: 5.8.3
+    devDependencies:
+      '@types/react':
+        specifier: catalog:react19
+        version: 19.1.7
+      react:
+        specifier: catalog:react19
+        version: 19.1.1
+      react-dom:
+        specifier: catalog:react19
+        version: 19.1.1(react@19.1.1)
+      tsup:
+        specifier: catalog:react19
+        version: 8.5.0(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1)
 
   libraries/wagmui/docs:
     dependencies:
@@ -520,10 +545,10 @@ importers:
         version: 2.41.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11)
       wagmi:
         specifier: catalog:react19
-        version: 3.1.0(@coinbase/wallet-sdk@4.3.6(@types/react@19.1.7)(bufferutil@4.0.9)(immer@10.1.1)(react@19.1.1)(typescript@5.8.3)(use-sync-external-store@1.6.0(react@19.1.1))(utf-8-validate@5.0.10)(zod@4.1.11))(@safe-global/safe-apps-provider@0.18.6(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(@safe-global/safe-apps-sdk@9.1.0(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(@tanstack/query-core@5.90.12)(@tanstack/react-query@5.90.12(react@19.1.1))(@types/react@19.1.7)(@walletconnect/ethereum-provider@2.21.1(@types/react@19.1.7)(bufferutil@4.0.9)(react@19.1.1)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(immer@10.1.1)(react@19.1.1)(typescript@5.8.3)(viem@2.41.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))
+        version: 3.1.0(@coinbase/wallet-sdk@4.3.6(@types/react@19.1.7)(bufferutil@4.0.9)(immer@10.1.1)(react@19.1.1)(typescript@5.8.3)(use-sync-external-store@1.4.0(react@19.1.1))(utf-8-validate@5.0.10)(zod@4.1.11))(@safe-global/safe-apps-provider@0.18.6(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(@safe-global/safe-apps-sdk@9.1.0(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(@tanstack/query-core@5.90.12)(@tanstack/react-query@5.90.12(react@19.1.1))(@types/react@19.1.7)(@walletconnect/ethereum-provider@2.21.1(@types/react@19.1.7)(bufferutil@4.0.9)(react@19.1.1)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(immer@10.1.1)(react@19.1.1)(typescript@5.8.3)(viem@2.41.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))
       zustand:
         specifier: ^5.0.8
-        version: 5.0.8(@types/react@19.1.7)(immer@10.1.1)(react@19.1.1)(use-sync-external-store@1.6.0(react@19.1.1))
+        version: 5.0.8(@types/react@19.1.7)(immer@10.1.1)(react@19.1.1)(use-sync-external-store@1.4.0(react@19.1.1))
     devDependencies:
       '@tailwindcss/postcss':
         specifier: catalog:react19
@@ -820,10 +845,10 @@ importers:
         version: 2.41.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11)
       wagmi:
         specifier: catalog:react19
-        version: 3.1.0(@coinbase/wallet-sdk@4.3.6(@types/react@19.1.7)(bufferutil@4.0.9)(immer@10.1.1)(react@19.1.1)(typescript@5.8.3)(use-sync-external-store@1.4.0(react@19.1.1))(utf-8-validate@5.0.10)(zod@4.1.11))(@safe-global/safe-apps-provider@0.18.6(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(@safe-global/safe-apps-sdk@9.1.0(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(@tanstack/query-core@5.90.12)(@tanstack/react-query@5.90.12(react@19.1.1))(@types/react@19.1.7)(@walletconnect/ethereum-provider@2.21.1(@types/react@19.1.7)(bufferutil@4.0.9)(react@19.1.1)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(immer@10.1.1)(react@19.1.1)(typescript@5.8.3)(viem@2.41.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))
+        version: 3.1.0(@coinbase/wallet-sdk@4.3.6(@types/react@19.1.7)(bufferutil@4.0.9)(immer@10.1.1)(react@19.1.1)(typescript@5.8.3)(use-sync-external-store@1.6.0(react@19.1.1))(utf-8-validate@5.0.10)(zod@4.1.11))(@safe-global/safe-apps-provider@0.18.6(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(@safe-global/safe-apps-sdk@9.1.0(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(@tanstack/query-core@5.90.12)(@tanstack/react-query@5.90.12(react@19.1.1))(@types/react@19.1.7)(@walletconnect/ethereum-provider@2.21.1(@types/react@19.1.7)(bufferutil@4.0.9)(react@19.1.1)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))(immer@10.1.1)(react@19.1.1)(typescript@5.8.3)(viem@2.41.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@4.1.11))
       zustand:
         specifier: ^5.0.8
-        version: 5.0.8(@types/react@19.1.7)(immer@10.1.1)(react@19.1.1)(use-sync-external-store@1.4.0(react@19.1.1))
+        version: 5.0.8(@types/react@19.1.7)(immer@10.1.1)(react@19.1.1)(use-sync-external-store@1.6.0(react@19.1.1))
     devDependencies:
       '@tailwindcss/postcss':
         specifier: catalog:react19
@@ -846,6 +871,9 @@ importers:
 
   projects/utilityaf:
     dependencies:
+      '@0xbuidlerhq/animotion':
+        specifier: workspace:*
+        version: link:../../libraries/animotion/lib
       '@0xbuidlerhq/core':
         specifier: workspace:*
         version: link:../../packages/core
@@ -874,7 +902,7 @@ importers:
         specifier: catalog:react19
         version: 0.553.0(react@19.1.1)
       motion:
-        specifier: ^12.23.24
+        specifier: catalog:react19
         version: 12.23.24(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       next:
         specifier: catalog:react19
