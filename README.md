@@ -2,31 +2,33 @@
 
 ![React] ![TypeScript] ![Next.js] ![Vercel] ![Three.js] ![ReactQuery] ![Motion]
 
-> This is a description for this monorepo.
+> The @0xBuidlerHQ monorepo is the single home for every library, package, and product we ship. Everything lives in the open, so you can read, fork, and contribute without friction.
 
 ## Libraries
 
-> This is a description for the libraries folder.
+> Open-source building blocks that accelerate day-to-day engineering: from animation helpers to opinionated WAGMI integrations that feel consistent across platforms.
 
-### bettermotion
-
-### wagmui
+- [bettermotion](libraries/animotion/lib/)
+- [wagmui](libraries/wagmui/lib/)
 
 ## Projects
 
-> This is a description for the projects folder.
+> Full-stack builds and experimental apps created within @0xBuidlerHQ. Expect multi-app setups, shared packages, and production-grade concerns tackled end-to-end.
 
-### 0xbuidlerhq
+- [dinogaia](projects/dinogaia/)
+- [realpolymarket](projects/realpolymarket/)
 
-### betterlido
+## Apps
 
-### dinogaia
+> Lightweight apps and landing pages that stay minimal by design.
 
-### utilityaf
+- [utilityaf](websites/utilityaf/)
+- [betterlido](websites/betterlido/)
+- [0xbuidlerhq](websites/0xbuidlerhq/)
 
 ## Packages
 
-> This is a description for the libraries folder.
+> Reusable building blocks shared across the stack, even when they are not published as standalone packages.
 
 <!-- Badges -->
 [ReactQuery]: https://img.shields.io/badge/React%20Query-black?logo=reactquery&logoColor=fff
