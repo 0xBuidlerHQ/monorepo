@@ -198,7 +198,7 @@ Spanish pages use `/es`; Portuguese pages use `/pt`, with Portugal-specific word
 
 ## Newsletter subscriptions
 
-The current header has a rounded Subscribe button spanning the available top-right width (a full row on mobile), with a white background, black label, and arrow. It opens the shadcn Base UI drawer, with an email field, translated title/description, and close control. The form inside is deliberately UI-only and prevents submission; it does not contact Buttondown. There is no bottom-of-page signup form.
+The header has a rounded Subscribe button with a white background, black label, and arrow. On mobile, navigation occupies its own row, with larger language controls and a compact Subscribe button together beneath it. Translated links stay on one line, with horizontal scrolling available on unusually narrow screens. Desktop keeps its existing layout with Subscribe in the right-hand area. It opens the shadcn Base UI drawer, with an email field, translated title/description, and close control. The form inside is deliberately UI-only and prevents submission; it does not contact Buttondown. There is no bottom-of-page signup form.
 
 The Buttondown form component and public newsletter configuration (`https://buttondown.com/0xhq` in `packages/config/src/links.ts`) remain available for future integration. When mounted with `getNewsletterSignupUrl`, `NewsletterSignup` uses a native HTML POST to Buttondown, including the email address, `embed=1`, and language/source metadata; Buttondown handles validation and confirmation. No API key or database is needed. `.env.example` documents the optional username override for that future wiring; it currently has no effect on the drawer’s UI-only form.
 
