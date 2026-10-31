@@ -85,8 +85,8 @@ const scenes = {
 } as const;
 
 const styles = `
-.df-scene { --df-accent:#438e86; --df-asset:#7c6bba; --df-warm:#b3863c; }
-@media(prefers-color-scheme:dark) { .df-scene { --df-accent:#7bc0b3; --df-asset:#b4a1ed; --df-warm:#d8b36f; } }
+.df-scene { --df-accent:#7bc0b3; --df-asset:#b4a1ed; --df-warm:#d8b36f; }
+
 .df-scene .df-surface { stroke:var(--df-accent); fill:color-mix(in srgb,var(--df-accent) 8%,var(--background)); }
 .df-scene .df-asset { stroke:var(--df-asset); fill:color-mix(in srgb,var(--df-asset) 10%,var(--background)); }
 .df-scene .df-eth { stroke:var(--df-asset); fill:color-mix(in srgb,var(--df-asset) 8%,var(--background)); }

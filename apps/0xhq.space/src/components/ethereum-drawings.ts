@@ -65,14 +65,8 @@ const scenes = {
 } as const;
 
 const styles = `
-.eth-scene {
- --eth-accent:#7c6bba;
- --eth-warm:#b3863c;
- --eth-success:#438e86;
-}
-@media(prefers-color-scheme:dark) {
- .eth-scene { --eth-accent:#b4a1ed; --eth-warm:#d8b36f; --eth-success:#7bc0b3; }
-}
+.eth-scene { --eth-accent:#b4a1ed; --eth-warm:#d8b36f; --eth-success:#7bc0b3; }
+
 .eth-scene .eth-diamond { stroke:var(--eth-accent); }
 .eth-scene .eth-diamond > path:first-child {
  fill:color-mix(in srgb,var(--eth-accent) 12%,var(--background));

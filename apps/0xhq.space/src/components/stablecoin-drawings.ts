@@ -61,8 +61,8 @@ const scenes = {
 } as const;
 
 const styles = `
-.st-scene { --st-accent:#578d9b; --st-secondary:#7c6bba; --st-warm:#b3863c; }
-@media(prefers-color-scheme:dark) { .st-scene { --st-accent:#83bfcd; --st-secondary:#b4a1ed; --st-warm:#d8b36f; } }
+.st-scene { --st-accent:#83bfcd; --st-secondary:#b4a1ed; --st-warm:#d8b36f; }
+
 .st-scene .st-surface { stroke:var(--st-accent); fill:color-mix(in srgb,var(--st-accent) 8%,var(--background)); }
 .st-scene .st-asset { stroke:var(--st-secondary); fill:color-mix(in srgb,var(--st-secondary) 10%,var(--background)); }
 .st-scene .st-dollar,.st-scene .st-value-anchor,.st-scene .st-reserve-lines,.st-scene .st-together-flow { stroke:var(--st-accent); }

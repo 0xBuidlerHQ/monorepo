@@ -57,8 +57,8 @@ const scenes = {
 } as const;
 
 const styles = `
-.or-scene { --or-accent:#688f81; --or-secondary:#8a77b3; --or-warm:#b3863c; }
-@media(prefers-color-scheme:dark) { .or-scene { --or-accent:#99c8b7; --or-secondary:#bca6e5; --or-warm:#d8b36f; } }
+.or-scene { --or-accent:#99c8b7; --or-secondary:#bca6e5; --or-warm:#d8b36f; }
+
 .or-scene .or-surface { stroke:var(--or-accent); fill:color-mix(in srgb,var(--or-accent) 8%,var(--background)); }
 .or-scene .or-asset { stroke:var(--or-secondary); fill:color-mix(in srgb,var(--or-secondary) 10%,var(--background)); }
 .or-scene .or-secondary { stroke:var(--or-secondary); }

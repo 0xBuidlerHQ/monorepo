@@ -58,8 +58,8 @@ const scenes = {
 } as const;
 
 const styles = `
-.l2-scene { --l2-accent:#667cb0; --l2-secondary:#438e86; --l2-warm:#b3863c; }
-@media(prefers-color-scheme:dark) { .l2-scene { --l2-accent:#a1b2e6; --l2-secondary:#7bc0b3; --l2-warm:#d8b36f; } }
+.l2-scene { --l2-accent:#a1b2e6; --l2-secondary:#7bc0b3; --l2-warm:#d8b36f; }
+
 .l2-scene .l2-surface { stroke:var(--l2-accent); fill:color-mix(in srgb,var(--l2-accent) 8%,var(--background)); }
 .l2-scene .l2-asset { stroke:var(--l2-secondary); fill:color-mix(in srgb,var(--l2-secondary) 10%,var(--background)); }
 .l2-scene .l2-network-flow,.l2-scene .l2-rollup-flow,.l2-scene .l2-bridge-arch,.l2-scene .l2-settlement-flow { stroke:var(--l2-accent); }

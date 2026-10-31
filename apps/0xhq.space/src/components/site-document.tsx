@@ -68,7 +68,7 @@ export function SiteDocument({
 		<html
 			lang={locale}
 			style={{ scrollbarGutter: "stable" }}
-			className={`${geistSans.variable} ${sourceSerif.variable} ${geistMono.variable} antialiased bg-background`}
+			className={`${geistSans.variable} ${sourceSerif.variable} ${geistMono.variable} dark antialiased bg-background`}
 		>
 			<body className="flex min-h-dvh flex-col font-sans leading-relaxed">
 				<LocaleProvider locale={locale}>

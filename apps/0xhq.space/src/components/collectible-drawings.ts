@@ -1,8 +1,8 @@
 import { svgDrawing } from "./svg-drawing";
 
 const styles = `
-.id-scene { --id-gold:#b28a45; --id-green:#648e80; --id-violet:#8e7bac; }
-@media(prefers-color-scheme:dark) { .id-scene { --id-gold:#dfbb7b; --id-green:#98c4b2; --id-violet:#baa5dc; } }
+.id-scene { --id-gold:#dfbb7b; --id-green:#98c4b2; --id-violet:#baa5dc; }
+
 .id-scene .id-paper { fill:var(--background);stroke:var(--id-violet); }
 .id-scene .id-gold { stroke:var(--id-gold); }
 .id-scene .id-green { stroke:var(--id-green); }

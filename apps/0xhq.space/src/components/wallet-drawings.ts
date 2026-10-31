@@ -61,8 +61,8 @@ const scenes = {
 } as const;
 
 const styles = `
-.wa-scene { --wa-accent:#a57d57; --wa-secondary:#7c6bba; --wa-success:#438e86; }
-@media(prefers-color-scheme:dark) { .wa-scene { --wa-accent:#d5b18d; --wa-secondary:#b4a1ed; --wa-success:#7bc0b3; } }
+.wa-scene { --wa-accent:#d5b18d; --wa-secondary:#b4a1ed; --wa-success:#7bc0b3; }
+
 .wa-scene .wa-surface { stroke:var(--wa-accent); fill:color-mix(in srgb,var(--wa-accent) 8%,var(--background)); }
 .wa-scene .wa-key-face { stroke:var(--wa-secondary); fill:color-mix(in srgb,var(--wa-secondary) 10%,var(--background)); }
 .wa-scene .wa-check,.wa-scene .wa-link-color,.wa-scene .wa-device-confirm { stroke:var(--wa-success); }

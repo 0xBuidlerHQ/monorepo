@@ -68,14 +68,8 @@ const scenes = {
 } as const;
 
 const styles = `
-.bc-scene {
- --bc-accent:#7c6bba;
- --bc-warm:#b3863c;
- --bc-success:#438e86;
-}
-@media(prefers-color-scheme:dark) {
- .bc-scene { --bc-accent:#b4a1ed; --bc-warm:#d8b36f; --bc-success:#7bc0b3; }
-}
+.bc-scene { --bc-accent:#b4a1ed; --bc-warm:#d8b36f; --bc-success:#7bc0b3; }
+
 .bc-scene .bc-block-face,.bc-scene .bc-ticket-face,.bc-scene .bc-record-face {
  stroke:var(--bc-accent);
  fill:color-mix(in srgb,var(--bc-accent) 9%,var(--background));

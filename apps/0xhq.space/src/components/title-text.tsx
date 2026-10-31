@@ -31,7 +31,6 @@ export function renderTitleText(children: ReactNode, theme?: "light" | "dark") {
 							theme
 								? { ...getTitleMarkerColors(topic, theme), padding: "0 8px" }
 								: {
-										colorScheme: "light dark",
 										color: `light-dark(${light.color}, ${dark.color})`,
 										backgroundColor: `light-dark(${light.backgroundColor}, ${dark.backgroundColor})`,
 									}
