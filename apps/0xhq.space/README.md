@@ -1,4 +1,4 @@
-# 0xhq
+# 0xhq.space
 
 Run `pnpm install` and `pnpm dev` from the repository root. Open http://localhost:3000/en.
 
@@ -82,7 +82,7 @@ sourceRevision: SHA256_OF_THE_REVIEWED_ENGLISH_FILE
 Rédigez la traduction ici.
 ```
 
-Run `pnpm --filter @0xhq/0xhq check:translations` from the repository root. It reports missing or outdated source revisions and prints the current English hash. Review the source changes, update the translation, then record that hash. Do not update the hash without reviewing the source. Set the language file’s `draft: false` when ready to publish, and make sure the shared `meta.json` is not drafted. Changes only to shared metadata do not require a translation revision update.
+Run `pnpm --filter @0xhq/0xhq.space check:translations` from the repository root. It reports missing or outdated source revisions and prints the current English hash. Review the source changes, update the translation, then record that hash. Do not update the hash without reviewing the source. Set the language file’s `draft: false` when ready to publish, and make sure the shared `meta.json` is not drafted. Changes only to shared metadata do not require a translation revision update.
 
 The EN/FR/ES/PT selector lives in the header. It opens the same article in the chosen language and disables unavailable translations. Navigation preserves the selected language for both content and interface. Translation titles do not change the URL slug. All current articles and glossary definitions have French, Spanish, and European Portuguese versions. Future translations can still be drafted and published individually.
 
@@ -139,8 +139,8 @@ From the repository root:
 ```sh
 pnpm typecheck
 pnpm lint
-pnpm --filter @0xhq/0xhq test:content
-pnpm --filter @0xhq/0xhq check:translations
+pnpm --filter @0xhq/0xhq.space test:content
+pnpm --filter @0xhq/0xhq.space check:translations
 pnpm build
 ```
 
@@ -169,3 +169,15 @@ Ideas is a translated content section at `/<locale>/ideas`, with entries in `con
 Spanish pages use `/es`; Portuguese pages use `/pt`, with Portugal-specific wording and `pt-PT` date formatting. The language switcher displays PT and announces Portuguese (Portugal). About, footer accessibility labels, errors, glossary, thoughts, ideas, and all seven learning articles are translated. Glossary terms retain English anchor IDs in every language, so links and term selection survive language changes. Article headings use localized anchors; each article’s `meta.json` maps its animations and captions for every language. The SVG instances remain shared when switching languages.
 
 `check:translations` validates all non-English language files against the English source hash. Content tests check links and glossary anchors in all four languages. Add new languages through `src/lib/locales.ts`, including their regional format and language-switch labels, rather than adding English/French branches.
+
+## Newsletter subscriptions
+
+The current header has a rounded Subscribe button spanning the available top-right width (a full row on mobile), with a white background, black label, and arrow. It opens the shadcn Base UI drawer, with an email field, translated title/description, and close control. The form inside is deliberately UI-only and prevents submission; it does not contact Buttondown. There is no bottom-of-page signup form.
+
+The Buttondown form component and public newsletter configuration (`https://buttondown.com/0xhq` in `packages/config/src/links.ts`) remain available for future integration. When mounted with `getNewsletterSignupUrl`, `NewsletterSignup` uses a native HTML POST to Buttondown, including the email address, `embed=1`, and language/source metadata; Buttondown handles validation and confirmation. No API key or database is needed. `.env.example` documents the optional username override for that future wiring; it currently has no effect on the drawer’s UI-only form.
+
+Reference: [Buttondown HTML signup forms](https://docs.buttondown.com/building-your-subscriber-base).
+
+## UI components
+
+`components.json` configures shadcn’s `base-nova` registry for the app’s existing Tailwind v4 setup. `src/components/ui/drawer.tsx` was installed with the official shadcn CLI and uses `@base-ui/react/drawer` (not Vaul), with the registry’s `cn` utility. Base UI supplies the portal, modal focus handling, focus restoration, scroll lock, Escape/outside dismissal, and swipe interactions. The bottom-sheet form uses its VirtualKeyboardProvider; `body` is positioned for the iOS overlay. Theme tokens reuse the existing light/dark colors. Reduced-motion users skip the drawer transitions.

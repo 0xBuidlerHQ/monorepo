@@ -36,6 +36,7 @@ export const messages = {
 		xLabel: "Maxime on X (opens in a new tab)",
 		githubLabel: "0xbuidler on GitHub (opens in a new tab)",
 		spotifyLabel: "Maxime on Spotify (opens in a new tab)",
+		youtubeLabel: "Maxime on YouTube (opens in a new tab)",
 	},
 	fr: {
 		thoughts: "Pensées",
@@ -72,6 +73,7 @@ export const messages = {
 		xLabel: "Maxime sur X (s’ouvre dans un nouvel onglet)",
 		githubLabel: "0xbuidler sur GitHub (s’ouvre dans un nouvel onglet)",
 		spotifyLabel: "Maxime sur Spotify (s’ouvre dans un nouvel onglet)",
+		youtubeLabel: "Maxime sur YouTube (s’ouvre dans un nouvel onglet)",
 	},
 	es: {
 		thoughts: "Reflexiones",
@@ -108,6 +110,7 @@ export const messages = {
 		xLabel: "Maxime en X (se abre en una pestaña nueva)",
 		githubLabel: "0xbuidler en GitHub (se abre en una pestaña nueva)",
 		spotifyLabel: "Maxime en Spotify (se abre en una pestaña nueva)",
+		youtubeLabel: "Maxime en YouTube (se abre en una pestaña nueva)",
 	},
 	pt: {
 		thoughts: "Reflexões",
@@ -144,6 +147,7 @@ export const messages = {
 		xLabel: "Maxime no X (abre num novo separador)",
 		githubLabel: "0xbuidler no GitHub (abre num novo separador)",
 		spotifyLabel: "Maxime no Spotify (abre num novo separador)",
+		youtubeLabel: "Maxime no YouTube (abre num novo separador)",
 	},
 } satisfies Record<ContentLocale, Record<string, string>>;
 

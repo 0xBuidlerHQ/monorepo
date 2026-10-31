@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Footer } from "@/components/footer";
 import { HeaderNavigation } from "@/components/header-navigation";
 import { PageContainer } from "@/components/page-container";
+import { SubscribeButton } from "@/components/subscribe-button";
 import { contentLanguageRoutes } from "@/lib/translations";
 import "@/app/globals.css";
 import type { ReactNode } from "react";
@@ -35,6 +36,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
 	title: "0xhq",
 	description: "0xhq",
+	icons: { icon: { url: "/logo.svg", type: "image/svg+xml", sizes: "any" } },
 };
 
 export function SiteDocument({
@@ -52,16 +54,19 @@ export function SiteDocument({
 		>
 			<body className="flex min-h-dvh flex-col font-sans leading-relaxed">
 				<LocaleProvider locale={locale}>
-					<header className="shrink-0 border-b border-foreground/10">
-						<PageContainer
-							as="nav"
-							ariaLabel={messages[locale].mainNavigation}
-							className="flex items-center py-3 text-xs font-medium"
-						>
-							<HeaderNavigation languageRoutes={contentLanguageRoutes()} />
-						</PageContainer>
+					<header className="site-header shrink-0 border-b border-foreground/10">
+						<div className="site-header-row">
+							<PageContainer
+								as="nav"
+								ariaLabel={messages[locale].mainNavigation}
+								className="site-header-navigation flex items-center text-xs font-medium"
+							>
+								<HeaderNavigation languageRoutes={contentLanguageRoutes()} />
+							</PageContainer>
+							<SubscribeButton />
+						</div>
 						<div className="border-t border-foreground/10">
-							<PageContainer className="py-2">
+							<PageContainer className="site-header-breadcrumbs">
 								<Breadcrumbs />
 							</PageContainer>
 						</div>

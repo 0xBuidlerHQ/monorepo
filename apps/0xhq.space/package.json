@@ -1,5 +1,5 @@
 {
-  "name": "@0xhq/0xhq",
+  "name": "@0xhq/0xhq.space",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,11 +9,14 @@
     "lint": "biome lint .",
     "typecheck": "next typegen && tsc --noEmit",
     "check:translations": "node scripts/check-translations.mjs",
-    "test:content": "node --conditions=react-server --test scripts/content.test.mjs"
+    "test:content": "node --conditions=react-server --test scripts/content.test.mjs",
+    "test:newsletter": "node --test scripts/newsletter.test.mjs"
   },
   "dependencies": {
     "@0xhq/config": "workspace:*",
+    "@base-ui/react": "^1.9.0",
     "@lucasmarkes/hairline": "0.5.1",
+    "cn": "^0.5.1",
     "gray-matter": "4.0.3",
     "motion": "^14.8.0",
     "next": "16.4.3",

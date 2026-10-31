@@ -21,7 +21,7 @@ export async function generateMetadata({
 	const { locale } = await params;
 	if (!isContentLocale(locale) || getGlossary(locale) === undefined) notFound();
 	return {
-		title: `${messages[locale].glossary} | 0xhq`,
+		title: `0xhq | ${messages[locale].glossary}`,
 		alternates: {
 			canonical: `/${locale}/glossary`,
 			languages: Object.fromEntries(

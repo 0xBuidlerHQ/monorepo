@@ -21,7 +21,7 @@ export async function generateMetadata({
 	if (!isContentLocale(locale) || !getThoughtTags(locale).includes(tag))
 		notFound();
 	return {
-		title: `${formatTagLabel(tag, locale)} — ${messages[locale].thoughts} | 0xhq`,
+		title: `0xhq | ${formatTagLabel(tag, locale)} — ${messages[locale].thoughts}`,
 	};
 }
 async function TaggedContent({

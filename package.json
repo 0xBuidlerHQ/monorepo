@@ -7,9 +7,9 @@
     "node": ">=20.9.0"
   },
   "scripts": {
-    "dev": "pnpm --filter @0xhq/0xhq dev",
+    "dev": "pnpm --filter @0xhq/0xhq.space dev",
     "build": "pnpm -r build",
-    "start": "pnpm --filter @0xhq/0xhq start",
+    "start": "pnpm --filter @0xhq/0xhq.space start",
     "lint": "pnpm -r lint",
     "typecheck": "pnpm -r typecheck"
   }

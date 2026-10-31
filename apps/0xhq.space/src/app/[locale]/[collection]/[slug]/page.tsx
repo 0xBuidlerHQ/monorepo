@@ -43,7 +43,7 @@ export async function generateMetadata({
 }: PageProps<"/[locale]/[collection]/[slug]">): Promise<Metadata> {
 	const { entry, locale, collection, slug } = await resolveEntry(params);
 	return {
-		title: `${entry.title} | 0xhq`,
+		title: `0xhq | ${entry.title}`,
 		alternates: articleAlternates(collection, slug, locale),
 		openGraph: {
 			type: "article",

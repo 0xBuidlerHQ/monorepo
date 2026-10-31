@@ -25,7 +25,7 @@ export async function generateMetadata({
 	const { locale, collection } = await params;
 	if (!isContentLocale(locale) || !isTranslatedCollection(collection))
 		notFound();
-	return { title: `${messages[locale][collection]} | 0xhq` };
+	return { title: `0xhq | ${messages[locale][collection]}` };
 }
 async function ContentIndex({ params }: PageProps<"/[locale]/[collection]">) {
 	const { locale, collection } = await params;
