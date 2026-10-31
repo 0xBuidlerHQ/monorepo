@@ -35,7 +35,6 @@ export function Breadcrumbs() {
 							segment === "learn" ||
 							segment === "thoughts" ||
 							segment === "ideas" ||
-							segment === "about" ||
 							segment === "glossary" ||
 							segment === "tags"
 						)

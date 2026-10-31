@@ -14,7 +14,7 @@ import {
 import { messages } from "@/lib/messages";
 
 const items = [
-	{ href: "/about", label: "about" },
+	{ href: "/", label: "about" },
 	{ href: "/thoughts", label: "thoughts" },
 	{ href: "/ideas", label: "ideas" },
 	{ href: "/learn", label: "learn" },
@@ -40,11 +40,12 @@ export function HeaderNavigation({
 	return (
 		<div className="flex w-full flex-wrap items-center gap-2 sm:gap-4">
 			{items.map(({ href, label }) => {
-				const active = pathname === href || pathname.startsWith(`${href}/`);
+				const active =
+					pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
 				return (
 					<Link
 						key={href}
-						href={`/${locale}${href}`}
+						href={`/${locale}${href === "/" ? "" : href}`}
 						aria-current={active ? "page" : undefined}
 						className={`${href === "/glossary" ? "ml-auto " : ""}px-[2px] transition-colors ${active ? "bg-red-600 text-white" : "hover:bg-foreground/5"}`}
 					>

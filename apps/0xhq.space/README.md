@@ -66,7 +66,7 @@ Keep `slug`, `date`, and `tags` exclusively in `meta.json`; putting them in lang
 
 The English URL is `/en/learn/my-article`. French versions use `/fr/learn/my-article`. Thoughts follow the same pattern. `/en/learn` and `/fr/learn` list only published content in that language. There is no silent English fallback for a missing translation.
 
-There is one root layout, `src/app/[locale]/layout.tsx`, for all four languages. Pages use `/en`, `/fr`, `/es`, or `/pt` URLs. No legacy routes or redirects are configured. No custom article ordering is configured.
+There is one root layout, `src/app/[locale]/layout.tsx`, for all four languages. Pages use `/en`, `/fr`, `/es`, or `/pt` URLs. The locale homepage displays About; there is no separate `/about` page. `src/proxy.ts` redirects page URLs without a locale to English, preserving the path and query string: `/` goes to `/en`, and `/learn` goes to `/en/learn`. Static assets, Next.js internals, and API routes bypass locale redirects. No custom article ordering is configured.
 
 ## Translating content
 

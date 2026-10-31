@@ -65,7 +65,6 @@ export function contentLanguageRoutes() {
 		"/learn": [...contentLocales],
 		"/thoughts": [...contentLocales],
 		"/ideas": [...contentLocales],
-		"/about": [...contentLocales],
 		"/glossary": glossaryLanguages().map(({ locale }) => locale),
 	};
 	for (const locale of contentLocales) {
