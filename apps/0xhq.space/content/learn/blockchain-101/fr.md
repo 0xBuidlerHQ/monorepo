@@ -1,7 +1,8 @@
 ---
+description: "Comprenez la blockchain avec un billet de concert : transactions, signatures numériques, blocs, consensus et finalité, expliqués pas à pas."
 title: "Comprendre la [ Blockchain ]"
 draft: false
-sourceRevision: 19c60042c624acbb06c9fe0e770f9bdaba82ce2d3f7ccc38165b24c5ccc89449
+sourceRevision: 854e21ca995ba3dd0b90e9bea1455c9ccd63365f92c54faddc06e1688126d967
 ---
 
 Alice possède le billet 42 pour un concert. Elle ne peut pas y assister et souhaite le donner à Bob. Si elle lui envoie une photo, elle conserve l’image d’origine. Elle pourrait aussi en envoyer une copie à Charlie.

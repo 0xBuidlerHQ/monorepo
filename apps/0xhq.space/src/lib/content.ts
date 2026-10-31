@@ -164,6 +164,10 @@ export function getArticleAnimations(
 export type ContentEntry = {
 	slug: string;
 	title: string;
+	description?: string;
+	image?: string;
+	imageAlt?: string;
+	updated?: string;
 	content: string;
 	date?: string;
 	tags?: string[];
@@ -220,7 +224,14 @@ export function getEntries(
 			if (metadata.draft === true) return [];
 
 			const { data, content } = matter(readFileSync(filename, "utf8"));
-			for (const field of ["slug", "date", "tags", "animations"]) {
+			for (const field of [
+				"slug",
+				"date",
+				"tags",
+				"animations",
+				"image",
+				"updated",
+			]) {
 				if (field in data)
 					throw new Error(`${filename}: ${field} belongs in meta.json.`);
 			}
@@ -293,6 +304,34 @@ export function getEntries(
 			slugs.add(slug);
 
 			const heading = content.match(/^\s*#\s+(.+?)[ \t]*(?:\r?\n|$)/);
+			const description = optionalText(
+				data.description,
+				"description",
+				filename,
+			)?.replace(/\s+/g, " ");
+			const imageAlt = optionalText(data.imageAlt, "imageAlt", filename);
+			const image = optionalText(metadata.image, "image", metadataFile);
+			if (
+				image &&
+				(!/^\/(?!\/)[^?#\\]+\.(?:png|jpe?g|webp)$/i.test(image) ||
+					image.split("/").includes(".."))
+			) {
+				throw new Error(
+					`${metadataFile}: image must be a local /path/to/image.png, .jpg, or .webp.`,
+				);
+			}
+			const updated = optionalText(metadata.updated, "updated", metadataFile);
+			if (
+				updated &&
+				(!/^\d{4}-\d{2}-\d{2}$/.test(updated) ||
+					!Number.isFinite(Date.parse(updated)) ||
+					new Date(updated).toISOString().slice(0, 10) !== updated ||
+					updated < date)
+			) {
+				throw new Error(
+					`${metadataFile}: updated must be a valid YYYY-MM-DD date on or after date.`,
+				);
+			}
 			const title =
 				optionalText(data.title, "title", filename) ??
 				heading?.[1] ??
@@ -307,6 +346,10 @@ export function getEntries(
 					next,
 					animations,
 					title,
+					description,
+					image,
+					imageAlt,
+					updated,
 					date,
 					tags,
 					content: `# ${title}\n\n${body.trimStart()}`,

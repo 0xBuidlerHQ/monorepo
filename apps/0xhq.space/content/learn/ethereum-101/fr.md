@@ -1,7 +1,8 @@
 ---
+description: "Découvrez les smart contracts, les transferts d’ETH et de tokens, ainsi que les frais de gas sur Ethereum, à travers la vente d’un billet de concert."
 title: "Comprendre [ Ethereum ]"
 draft: false
-sourceRevision: fc2bacc0d26ac0cca9060d4c7da8598261b2c71c138c84d0afb539b628be2297
+sourceRevision: 5fb7f25acf045283bb1bc08825af5b626bda6ae8a85042cae09c8bb9b30748e5
 ---
 
 Dans [Comprendre la \[ Blockchain \]](/fr/learn/blockchain-101), Alice souhaitait donner le billet 42 à Bob. Imaginons maintenant qu’elle veuille plutôt le lui vendre.

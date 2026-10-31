@@ -1,7 +1,8 @@
 ---
+description: "Explorez la finance décentralisée : échanges, pools de liquidité, staking, prêts, garanties et liquidation, avec les exemples d’Alice et Bob."
 title: "Comprendre la [ DeFi ]"
 draft: false
-sourceRevision: 7b4cc32f7a0e2e4bb30b3f774dc3c5db1270ee8485310de1952747ba3df5d059
+sourceRevision: cc21c923a58498c316f53c9c7c18800e69d55e9523a7cb0084f28d34ac8c8637
 ---
 
 Alice a vendu le billet 42 à Bob pour **0,6 ETH**. Dans [Comprendre \[ Ethereum \]](/fr/learn/ethereum-101), leur programme a fait en sorte que le paiement et le transfert du billet aient lieu ensemble.

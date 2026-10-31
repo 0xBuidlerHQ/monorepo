@@ -1,5 +1,6 @@
 ---
-sourceRevision: 7b4cc32f7a0e2e4bb30b3f774dc3c5db1270ee8485310de1952747ba3df5d059
+description: "Explora las finanzas descentralizadas: intercambios, pools de liquidez, staking, préstamos, garantías y liquidación, con ejemplos de Alice y Bob."
+sourceRevision: cc21c923a58498c316f53c9c7c18800e69d55e9523a7cb0084f28d34ac8c8637
 title: "Entender la [ DeFi ]"
 draft: false
 ---

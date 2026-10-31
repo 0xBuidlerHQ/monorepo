@@ -1,5 +1,6 @@
 ---
-sourceRevision: fc2bacc0d26ac0cca9060d4c7da8598261b2c71c138c84d0afb539b628be2297
+description: "Aprende cómo Ethereum ejecuta contratos inteligentes, transfiere ETH y tokens y cobra gas, siguiendo la venta de una entrada de concierto."
+sourceRevision: 5fb7f25acf045283bb1bc08825af5b626bda6ae8a85042cae09c8bb9b30748e5
 title: "Entender [ Ethereum ]"
 draft: false
 ---

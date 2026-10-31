@@ -1,4 +1,5 @@
 ---
+description: "Learn how Ethereum runs smart contracts, transfers ETH and tokens, and charges gas fees by following the sale of a concert ticket."
 title: "[ Ethereum ] 101"
 draft: false
 ---

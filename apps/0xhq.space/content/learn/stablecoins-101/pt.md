@@ -1,5 +1,6 @@
 ---
-sourceRevision: bec98a83b468fac8210476f13b9c9b777a44f986c09a84a43193f44c75dc059d
+description: "Descobre como as stablecoins procuram acompanhar uma moeda, o que sustenta tokens como o USDC e por que motivo podem perder a paridade."
+sourceRevision: 632a467c945a456717db2ca29c7bc6f80bdd2618a7f9317645a9f8b24e2d9463
 title: "Compreender as [ Stablecoins ]"
 draft: false
 ---

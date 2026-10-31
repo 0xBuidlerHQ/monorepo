@@ -1,7 +1,8 @@
 ---
+description: "Comprenez les wallets, les comptes, les clés privées, les signatures, les autorisations et la récupération en suivant Alice qui utilise ses ETH."
 title: "Comprendre les [ Wallets ]"
 draft: false
-sourceRevision: 3f2c6050da3a9bd316ad29ed10794a231050f879aaa0869c65300376011f7242
+sourceRevision: 4a993e40954aadd3133fb373b787443f0925a96faa33cb459aaf4347c7acc246
 ---
 
 Alice a reçu 0,6 ETH en vendant le billet 42. Dans [Comprendre \[ Ethereum \]](/fr/learn/ethereum-101), nous avons suivi ce que le réseau et le contrat de billetterie faisaient. Elle ouvre maintenant une application pour utiliser l’argent de la vente.

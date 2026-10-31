@@ -4,10 +4,14 @@ import { ArticleContent, ArticleLayout } from "@/components/article";
 import { ArticleNavigation } from "@/components/article-navigation";
 import { getEntries } from "@/lib/content";
 import {
+	articleMetadata,
+	articleStructuredData,
+	serializeJsonLd,
+} from "@/lib/article-seo";
+import {
 	contentLocales,
 	isContentLocale,
 	isTranslatedCollection,
-	localeRegions,
 } from "@/lib/locales";
 import { articleAlternates } from "@/lib/translations";
 
@@ -42,16 +46,11 @@ export async function generateMetadata({
 	params,
 }: PageProps<"/[locale]/[collection]/[slug]">): Promise<Metadata> {
 	const { entry, locale, collection, slug } = await resolveEntry(params);
-	return {
-		title: `0xhq | ${entry.title}`,
-		alternates: articleAlternates(collection, slug, locale),
-		openGraph: {
-			type: "article",
-			title: entry.title,
-			publishedTime: entry.date,
-			locale: localeRegions[locale].replace("-", "_"),
-		},
-	};
+	return articleMetadata(
+		entry,
+		collection,
+		articleAlternates(collection, slug, locale),
+	);
 }
 
 async function LocalizedContent({
@@ -60,6 +59,13 @@ async function LocalizedContent({
 	const { entry, collection, locale } = await resolveEntry(params);
 	return (
 		<>
+			<script
+				type="application/ld+json"
+				// biome-ignore lint/security/noDangerouslySetInnerHtml: serializeJsonLd escapes < so article text cannot close this script.
+				dangerouslySetInnerHTML={{
+					__html: serializeJsonLd(articleStructuredData(entry, collection)),
+				}}
+			/>
 			<ArticleContent entry={entry} />
 			<ArticleNavigation
 				entry={entry}

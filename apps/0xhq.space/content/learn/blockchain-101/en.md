@@ -1,4 +1,5 @@
 ---
+description: "Understand how blockchains work through a concert ticket: transactions, digital signatures, blocks, consensus, and finality explained step by step."
 title: "[ Blockchain ] 101"
 draft: false
 ---

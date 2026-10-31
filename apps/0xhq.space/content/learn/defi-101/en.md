@@ -1,4 +1,5 @@
 ---
+description: "Explore decentralized finance through swaps, liquidity pools, staking, lending, collateral, and liquidation, with examples featuring Alice and Bob."
 title: "[ DeFi ] 101"
 draft: false
 ---

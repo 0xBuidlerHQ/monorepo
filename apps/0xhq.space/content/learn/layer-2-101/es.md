@@ -1,5 +1,6 @@
 ---
-sourceRevision: 2074bf1539a1ccce992f345ac59af5d409306f0d3c45567bedcd4069f59c570e
+description: "Entiende las redes de capa 2 de Ethereum, los rollups, los puentes y la liquidación siguiendo a Alice al mover USDC entre redes."
+sourceRevision: 2ae2377c800ed8d8b36f092c4293b8f7a70db6b051e55720c6b3d8f730551da7
 title: "Entender las [ Capas 2 ]"
 draft: false
 ---

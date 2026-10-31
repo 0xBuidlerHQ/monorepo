@@ -1,4 +1,5 @@
 ---
+description: "Understand crypto wallets, accounts, private keys, signatures, permissions, and recovery by following Alice as she uses her ETH."
 title: "[ Wallets ] 101"
 draft: false
 ---

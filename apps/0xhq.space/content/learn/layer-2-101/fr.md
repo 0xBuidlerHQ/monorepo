@@ -1,7 +1,8 @@
 ---
+description: "Comprenez les réseaux de couche 2, les rollups, les ponts et le règlement sur Ethereum en suivant Alice qui transfère des USDC entre réseaux."
 title: "Comprendre les [ Layers 2 ]"
 draft: false
-sourceRevision: 2074bf1539a1ccce992f345ac59af5d409306f0d3c45567bedcd4069f59c570e
+sourceRevision: 2ae2377c800ed8d8b36f092c4293b8f7a70db6b051e55720c6b3d8f730551da7
 ---
 
 Alice comprend ce qui garantit les 500 USDC présentés dans [Comprendre les \[ Stablecoins \]](/fr/learn/stablecoins-101). Elle retire 200 de ces USDC de sa position de prêt pour les utiliser dans une autre application.

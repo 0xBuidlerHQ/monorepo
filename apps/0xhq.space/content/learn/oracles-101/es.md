@@ -1,5 +1,6 @@
 ---
-sourceRevision: 423d54ae78f2b72b950e0d7c5b8fbcd05ed0fbb795f336625edc3912d2154cd8
+description: "Aprende cómo los oráculos llevan datos externos a los contratos inteligentes y por qué la calidad de los precios importa para los préstamos DeFi."
+sourceRevision: f924086149ccfcbaf6906c004e701b0636ca058d5431a5f282d28ebacca9bd3d
 title: "Entender los [ Oráculos ]"
 draft: false
 ---

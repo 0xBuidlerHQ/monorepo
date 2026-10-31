@@ -10,6 +10,7 @@ import "@/app/globals.css";
 import type { ReactNode } from "react";
 import type { ContentLocale } from "@/lib/locales";
 import { messages } from "@/lib/messages";
+import { shareImageSize, site } from "@/lib/site";
 import { LocaleProvider } from "./locale-provider";
 
 const geistSans = Geist({
@@ -34,8 +35,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL(site.url),
 	title: "0xhq",
-	description: "0xhq",
+	description: site.description,
+	openGraph: {
+		type: "website",
+		siteName: site.name,
+		images: [
+			{
+				url: "/share-image.png",
+				...shareImageSize,
+				alt: site.name,
+				type: "image/png",
+			},
+		],
+	},
+	twitter: {
+		card: "summary_large_image",
+		images: [{ url: "/share-image.png", alt: site.name }],
+	},
 	icons: { icon: { url: "/logo.svg", type: "image/svg+xml", sizes: "any" } },
 };
 

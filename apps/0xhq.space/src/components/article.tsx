@@ -214,6 +214,11 @@ export function ArticleContent({ entry }: { entry: ContentEntry }) {
 										</ArticleHeading>
 										{animationsAt("article-title")}
 									</div>
+									{entry.description && (
+										<p className="mt-5 text-lg leading-relaxed text-foreground/65">
+											{entry.description}
+										</p>
+									)}
 								</header>
 							) : (
 								<ArticleHeading as="h1">{children}</ArticleHeading>

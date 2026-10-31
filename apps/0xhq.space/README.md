@@ -104,6 +104,32 @@ Translated articles should link to content in the same language when it exists. 
 
 Glossary translations also use `sourceRevision` and `draft` front matter. Source changes flag them for review, but do not automatically unpublish an existing translation.
 
+## Article SEO and share images
+
+Add a short, plain-text `description` to each language file's front matter. This is both the visible introduction under the article title and the description used in search and social metadata. Write it in the same language as the article:
+
+```yaml
+title: "[ Blockchain ] 101"
+description: "Understand transactions, digital signatures, blocks, consensus, and finality with a concert ticket example."
+draft: false
+```
+
+Descriptions are provided for all current articles in all four languages. New articles without a description use a plain-text excerpt as a fallback. Update descriptions alongside translations and record the reviewed English `sourceRevision` as usual.
+
+Each article automatically gets a localized 1200 × 480 PNG share card at `/<locale>/<collection>/<slug>/share-image`. To use your own image, put a PNG, JPEG, or WebP in `public/images/`, then add `"image": "/images/my-article.jpg"` to the article's shared `meta.json`. Add a translated `imageAlt` to each language file. Use a landscape image around 1200 × 630 for social sharing. These images are used in metadata; custom images are not inserted into the article body automatically.
+
+Generated cards use the site's dark theme, typography, and colored title markers. They show only the article title, description, publication date, and reading time, without navigation, subscription controls, breadcrumbs, footer, or borders. Geist and Geist Mono are bundled locally in `src/assets/fonts/` under their included SIL Open Font License, so the share cards need no font downloads. Title-marker colors are shared with the website.
+
+Pages without their own image inherit the default 1200 × 480 card at `/share-image.png`. It uses the site name and description from `src/lib/site.ts`, with the same dark style and no article date or reading time. Appending `/share-image` to other page URLs, including unknown paths, serves this default card. Unknown articles' image URLs redirect to the static default PNG; ordinary unknown page URLs still return the site's not-found page. The default and all published article cards are generated during the production build.
+
+With `pnpm dev` running, run `pnpm --filter @0xhq/0xhq.space test:share-images` to verify the actual image endpoints. Set `SHARE_IMAGE_BASE_URL` to check another local port or a production server. This complements the build check, since the image renderer's handling of React components differs in development.
+
+The article emits a clean search title, description, canonical URL, published-language alternatives, Open Graph metadata, an X large-image card, and Article/BlogPosting JSON-LD with its author and publication date. The visible title keeps its existing styling. Markdown continues to supply semantic headings, paragraphs, lists, tables, and code blocks; use `##` for article sections because the title already provides the page's `h1`.
+
+Set an optional `"updated": "2026-11-01"` in `meta.json` after a substantive revision. It must be on or after the publication date and is only emitted as a modified date when supplied. `SITE_URL` defaults to `https://0xhq.space`; keep it set to the public production origin so previews don't become canonical URLs.
+
+`/sitemap.xml` lists published pages and available translations; drafts are excluded. `/robots.txt` points crawlers to it. Run `pnpm --filter @0xhq/0xhq.space test:seo` to check metadata and safe structured-data serialization.
+
 ## Article animations
 
 Configure article illustrations in the article’s shared `meta.json`. Each entry selects a figure, its section heading, and the caption for each language:

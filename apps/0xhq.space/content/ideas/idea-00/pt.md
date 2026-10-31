@@ -1,5 +1,6 @@
 ---
-sourceRevision: 2f5c41a91ffa368846c7b7160bf7f70f00d6e4dc829a6e4cb9f47b8d5c90c593
+description: "Um conceito que liga a certificação de objetos de coleção, os passaportes digitais, a proveniência em blockchain e os espaços físicos de troca."
+sourceRevision: 7dc4427dee21183495831e778071368515b5896a05c0a81865b5bf1dc5a5b096
 title: "Um novo padrão para a propriedade de objetos de coleção"
 draft: false
 ---

@@ -1,4 +1,5 @@
 ---
+description: "A concept connecting collectible grading, digital passports, blockchain provenance, and physical trading hubs to document ownership and build trust."
 title: "A New Standard for Collectible Ownership"
 draft: false
 ---

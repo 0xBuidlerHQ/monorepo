@@ -1,4 +1,5 @@
 ---
+description: "Learn how blockchain oracles bring outside data to smart contracts, how price feeds work, and why data quality matters for DeFi loans."
 title: "[ Oracles ] 101"
 draft: false
 ---

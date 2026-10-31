@@ -1,5 +1,6 @@
 ---
-sourceRevision: 3f2c6050da3a9bd316ad29ed10794a231050f879aaa0869c65300376011f7242
+description: "Entiende los wallets, las cuentas, las claves privadas, las firmas, los permisos y la recuperación siguiendo a Alice mientras utiliza sus ETH."
+sourceRevision: 4a993e40954aadd3133fb373b787443f0925a96faa33cb459aaf4347c7acc246
 title: "Entender los [ Wallets ]"
 draft: false
 ---

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { siteNavigation } from "@/config/navigation";
 
 import {
 	type ContentLocale,
@@ -12,14 +13,6 @@ import {
 } from "@/lib/locales";
 
 import { messages } from "@/lib/messages";
-
-const items = [
-	{ href: "/", label: "about" },
-	{ href: "/thoughts", label: "thoughts" },
-	{ href: "/ideas", label: "ideas" },
-	{ href: "/learn", label: "learn" },
-	{ href: "/glossary", label: "glossary" },
-] as const;
 
 export function HeaderNavigation({
 	languageRoutes,
@@ -39,9 +32,10 @@ export function HeaderNavigation({
 
 	return (
 		<div className="flex w-full flex-wrap items-center gap-2 sm:gap-4">
-			{items.map(({ href, label }) => {
+			{siteNavigation.map(({ href, label }) => {
 				const active =
-					pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
+					pathname === href ||
+					(href !== "/" && pathname.startsWith(`${href}/`));
 				return (
 					<Link
 						key={href}

@@ -1,7 +1,8 @@
 ---
+description: "Découvrez comment les stablecoins suivent une monnaie, ce qui garantit des tokens comme l’USDC, et pourquoi leur ancrage peut se rompre."
 title: "Comprendre les [ Stablecoins ]"
 draft: false
-sourceRevision: bec98a83b468fac8210476f13b9c9b777a44f986c09a84a43193f44c75dc059d
+sourceRevision: 632a467c945a456717db2ca29c7bc6f80bdd2618a7f9317645a9f8b24e2d9463
 ---
 
 Dans [Comprendre la \[ DeFi \]](/fr/learn/defi-101), Alice a échangé une partie des ETH de la vente de son billet contre 500 USDC. Nous avons ensuite considéré que ces unités valaient 500 dollars. Revenons à ces tokens avant qu’Alice les fournisse au protocole de prêt.

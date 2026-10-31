@@ -10,3 +10,16 @@ export function getTitleHue(title: string): number {
 	}
 	return (hash >>> 0) % 360;
 }
+
+export function getTitleMarkerColors(title: string, theme: "light" | "dark") {
+	const hue = getTitleHue(title);
+	return theme === "dark"
+		? {
+				color: `hsl(${hue}, 75%, 78%)`,
+				backgroundColor: `hsla(${hue}, 75%, 65%, 0.15)`,
+			}
+		: {
+				color: `hsl(${hue}, 65%, 28%)`,
+				backgroundColor: `hsla(${hue}, 75%, 50%, 0.12)`,
+			};
+}

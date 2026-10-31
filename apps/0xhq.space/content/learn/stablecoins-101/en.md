@@ -1,4 +1,5 @@
 ---
+description: "Learn how stablecoins aim to track a currency, what backs tokens such as USDC, how pegs are maintained, and why they can fail."
 title: "[ Stablecoins ] 101"
 draft: false
 ---

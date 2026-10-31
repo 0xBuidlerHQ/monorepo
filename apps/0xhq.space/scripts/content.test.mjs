@@ -125,6 +125,57 @@ test("source revision check fails when the English source changes", () => {
 	}
 });
 
+test("SEO descriptions and image alt text are localized; cover images and updates are shared", () =>
+	withArticle(({ writeMeta, writeLanguage, metadata }) => {
+		writeMeta({
+			...metadata,
+			image: "/images/example.jpg",
+			updated: "2026-10-30",
+		});
+		writeLanguage(
+			"en",
+			"description: An English summary.\nimageAlt: The English image label.\n",
+		);
+		writeLanguage(
+			"fr",
+			"description: Un résumé français.\nimageAlt: La légende française.\n",
+		);
+		const english = getEntries("learn", "en")[0];
+		const french = getEntries("learn", "fr")[0];
+		assert.equal(english.description, "An English summary.");
+		assert.equal(french.description, "Un résumé français.");
+		assert.equal(french.imageAlt, "La légende française.");
+		assert.equal(english.image, "/images/example.jpg");
+		assert.equal(french.image, english.image);
+		assert.equal(french.updated, "2026-10-30");
+		writeLanguage("fr", "description: [not, text]\n");
+		assert.throws(
+			() => getEntries("learn", "fr"),
+			/description must be a string/,
+		);
+	}));
+
+test("invalid SEO images and modified dates are rejected", () =>
+	withArticle(({ writeMeta, writeLanguage, metadata }) => {
+		for (const image of [
+			"//example.com/image.png",
+			"/\\example.com/image.jpg",
+			"/../image.png",
+			"/image.svg",
+			"https://example.com/image.jpg",
+		]) {
+			writeMeta({ ...metadata, image });
+			assert.throws(() => getEntries("learn"), /image must be a local/);
+		}
+		for (const updated of ["2026-02-30", "2026-10-24", "not-a-date"]) {
+			writeMeta({ ...metadata, updated });
+			assert.throws(() => getEntries("learn"), /updated must be a valid/);
+		}
+		writeMeta(metadata);
+		writeLanguage("en", "image: /cover.jpg\n");
+		assert.throws(() => getEntries("learn"), /image belongs in meta.json/);
+	}));
+
 test("interface dictionaries have matching keys and dates use the selected locale", async () => {
 	const { messages } = await import("../src/lib/messages.ts");
 	const { formatPublicationDate } = await import("../src/lib/dates.ts");

@@ -1,5 +1,6 @@
 ---
-sourceRevision: 2074bf1539a1ccce992f345ac59af5d409306f0d3c45567bedcd4069f59c570e
+description: "Compreende as redes de camada 2 do Ethereum, os rollups, as pontes e a liquidação, acompanhando a Alice ao transferir USDC entre redes."
+sourceRevision: 2ae2377c800ed8d8b36f092c4293b8f7a70db6b051e55720c6b3d8f730551da7
 title: "Compreender as [ Camadas 2 ]"
 draft: false
 ---

@@ -1,4 +1,5 @@
 ---
+description: "Understand Ethereum Layer 2 networks, rollups, bridges, token versions, and settlement by following Alice as she moves USDC between networks."
 title: "[ Layer 2 ] 101"
 draft: false
 ---

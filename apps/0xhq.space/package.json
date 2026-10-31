@@ -10,6 +10,8 @@
     "typecheck": "next typegen && tsc --noEmit",
     "check:translations": "node scripts/check-translations.mjs",
     "test:content": "node --conditions=react-server --test scripts/content.test.mjs",
+    "test:seo": "node --conditions=react-server --test scripts/seo.test.mjs",
+    "test:share-images": "node --test scripts/share-images.test.mjs",
     "test:newsletter": "node --test scripts/newsletter.test.mjs"
   },
   "dependencies": {

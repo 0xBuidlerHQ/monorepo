@@ -1,5 +1,6 @@
 ---
-sourceRevision: 19c60042c624acbb06c9fe0e770f9bdaba82ce2d3f7ccc38165b24c5ccc89449
+description: "Compreende como funciona uma blockchain com um bilhete de concerto: transações, assinaturas digitais, blocos, consenso e finalidade, passo a passo."
+sourceRevision: 854e21ca995ba3dd0b90e9bea1455c9ccd63365f92c54faddc06e1688126d967
 title: "Compreender a [ Blockchain ]"
 draft: false
 ---

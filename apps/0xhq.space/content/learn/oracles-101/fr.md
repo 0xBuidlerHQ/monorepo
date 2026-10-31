@@ -1,7 +1,8 @@
 ---
+description: "Découvrez comment les oracles transmettent des données aux smart contracts et pourquoi la qualité des prix compte pour les prêts en DeFi."
 title: "Comprendre les [ Oracles ]"
 draft: false
-sourceRevision: 423d54ae78f2b72b950e0d7c5b8fbcd05ed0fbb795f336625edc3912d2154cd8
+sourceRevision: f924086149ccfcbaf6906c004e701b0636ca058d5431a5f282d28ebacca9bd3d
 ---
 
 Dans [Comprendre la \[ DeFi \]](/fr/learn/defi-101), Bob a emprunté 400 USDC contre des actifs valant 1 000 dollars. Sa position pouvait être liquidée si cette garantie perdait trop de valeur.
