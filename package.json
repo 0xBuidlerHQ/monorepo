@@ -1,0 +1,16 @@
+{
+  "name": "@0xhq/monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@12.16.1",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @0xhq/0xhq dev",
+    "build": "pnpm -r build",
+    "start": "pnpm --filter @0xhq/0xhq start",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck"
+  }
+}

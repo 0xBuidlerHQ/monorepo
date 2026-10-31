@@ -1,0 +1,115 @@
+{
+	"slug": "layer-2-101",
+	"date": "2026-10-31",
+	"tags": ["ethereum", "layer-2", "basics"],
+	"draft": false,
+	"previous": "stablecoins-101",
+	"animations": [
+		{
+			"figure": "layer2-networks",
+			"afterHeading": {
+				"en": "article-title",
+				"fr": "article-title",
+				"es": "article-title",
+				"pt": "article-title"
+			},
+			"caption": {
+				"en": "Connected networks keep separate records of Alice’s assets.",
+				"fr": "Des réseaux reliés conservent des registres distincts des actifs d’Alice.",
+				"es": "Las redes conectadas mantienen registros separados de los activos de Alice.",
+				"pt": "As redes ligadas mantêm registos separados dos ativos de Alice."
+			}
+		},
+		{
+			"figure": "layer2-capacity",
+			"afterHeading": {
+				"en": "why-use-another-network",
+				"fr": "pourquoi-utiliser-un-autre-reseau",
+				"es": "por-que-utilizar-otra-red",
+				"pt": "porque-usar-outra-rede"
+			},
+			"caption": {
+				"en": "Many user actions can share the cost of publishing a batch to Ethereum.",
+				"fr": "De nombreuses actions peuvent partager le coût de publication d’un lot sur Ethereum.",
+				"es": "Muchas acciones pueden compartir el coste de publicar un lote en Ethereum.",
+				"pt": "Muitas ações podem partilhar o custo de publicar um lote em Ethereum."
+			}
+		},
+		{
+			"figure": "layer2-rollup",
+			"afterHeading": {
+				"en": "rollups-and-the-connection-to-ethereum",
+				"fr": "les-rollups-et-le-lien-avec-ethereum",
+				"es": "los-rollups-y-su-conexion-con-ethereum",
+				"pt": "os-rollups-e-a-ligacao-a-ethereum"
+			},
+			"caption": {
+				"en": "Rollups execute activity separately and connect their results to Ethereum’s verification rules.",
+				"fr": "Les rollups exécutent l’activité séparément et relient leurs résultats aux règles de vérification d’Ethereum.",
+				"es": "Los rollups ejecutan por separado y conectan los resultados con la verificación de Ethereum.",
+				"pt": "Os rollups executam separadamente e ligam os resultados à verificação de Ethereum."
+			}
+		},
+		{
+			"figure": "layer2-balances",
+			"afterHeading": {
+				"en": "one-wallet-separate-balances",
+				"fr": "un-wallet-des-soldes-distincts",
+				"es": "un-wallet-con-saldos-separados",
+				"pt": "uma-wallet-com-saldos-separados"
+			},
+			"caption": {
+				"en": "The same wallet address can show 200 USDC on one network and none on another.",
+				"fr": "La même adresse de wallet peut afficher 200 USDC sur un réseau et aucun sur un autre.",
+				"es": "La misma dirección puede tener 200 USDC en una red y ninguno en otra.",
+				"pt": "O mesmo endereço pode ter 200 USDC numa rede e nenhum noutra."
+			}
+		},
+		{
+			"figure": "layer2-bridge",
+			"afterHeading": {
+				"en": "bridges-and-cross-network-transfers",
+				"fr": "les-bridges-et-les-transferts-entre-reseaux",
+				"es": "puentes-y-transferencias-entre-redes",
+				"pt": "pontes-e-transferencias-entre-redes"
+			},
+			"caption": {
+				"en": "A cross-network transfer needs a process recognized by the destination.",
+				"fr": "Un transfert entre réseaux exige un processus reconnu par la destination.",
+				"es": "Una transferencia entre redes necesita un proceso reconocido en destino.",
+				"pt": "Uma transferência entre redes precisa de um processo reconhecido no destino."
+			}
+		},
+		{
+			"figure": "layer2-versions",
+			"afterHeading": {
+				"en": "native-tokens-and-bridged-versions",
+				"fr": "les-tokens-natifs-et-les-versions-bridgees",
+				"es": "tokens-nativos-y-versiones-transferidas-por-puentes",
+				"pt": "tokens-nativos-e-versoes-de-pontes"
+			},
+			"caption": {
+				"en": "Native USDC and USDC.e have different contracts and transfer dependencies.",
+				"fr": "Les USDC natifs et les USDC.e ont des contrats et des dépendances de transfert différents.",
+				"es": "USDC nativo y USDC.e tienen contratos y dependencias de transferencia distintos.",
+				"pt": "USDC nativo e USDC.e têm contratos e dependências de transferência diferentes."
+			}
+		},
+		{
+			"figure": "layer2-settlement",
+			"afterHeading": {
+				"en": "quick-confirmations-and-final-settlement",
+				"fr": "la-confirmation-rapide-et-le-reglement-final",
+				"es": "confirmaciones-rapidas-y-liquidacion-final",
+				"pt": "confirmacoes-rapidas-e-liquidacao-final"
+			},
+			"caption": {
+				"en": "A quick execution result and final settlement on Ethereum happen at different stages.",
+				"fr": "Un résultat d’exécution rapide et le règlement final sur Ethereum interviennent à des étapes différentes.",
+				"es": "El resultado rápido y la liquidación final en Ethereum ocurren en etapas distintas.",
+				"pt": "O resultado rápido e a liquidação final em Ethereum acontecem em etapas diferentes."
+			}
+		}
+	],
+	"next": "oracles-101"
+}

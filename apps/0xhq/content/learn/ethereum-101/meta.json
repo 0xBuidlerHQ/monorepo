@@ -1,0 +1,130 @@
+{
+	"slug": "ethereum-101",
+	"date": "2026-10-26",
+	"tags": ["ethereum", "technology", "basics"],
+	"draft": false,
+	"previous": "blockchain-101",
+	"animations": [
+		{
+			"figure": "ethereum-network",
+			"afterHeading": {
+				"en": "article-title",
+				"fr": "article-title",
+				"es": "article-title",
+				"pt": "article-title"
+			},
+			"caption": {
+				"en": "A ticket and a payment, connected by Ethereum.",
+				"fr": "Un billet et un paiement, reliés par Ethereum.",
+				"es": "Ethereum conecta una entrada y un pago.",
+				"pt": "Ethereum liga um bilhete a um pagamento."
+			}
+		},
+		{
+			"figure": "ethereum-program",
+			"afterHeading": {
+				"en": "ethereum-and-shared-programs",
+				"fr": "ethereum-et-les-programmes-partages",
+				"es": "ethereum-y-los-programas-compartidos",
+				"pt": "ethereum-e-os-programas-partilhados"
+			},
+			"caption": {
+				"en": "The ticket contract publishes rules that different apps can use.",
+				"fr": "Le contrat de billetterie publie des règles que plusieurs applications peuvent utiliser.",
+				"es": "El contrato publica reglas que pueden utilizar distintas aplicaciones.",
+				"pt": "O contrato publica regras que várias aplicações podem usar."
+			}
+		},
+		{
+			"figure": "ethereum-ether",
+			"afterHeading": {
+				"en": "ether-the-native-cryptocurrency",
+				"fr": "l-ether-la-cryptomonnaie-native",
+				"es": "ether-la-criptomoneda-nativa",
+				"pt": "ether-a-criptomoeda-nativa"
+			},
+			"caption": {
+				"en": "ETH is Ethereum’s native currency, used for payments and network fees.",
+				"fr": "L’ETH est la monnaie native d’Ethereum, utilisée pour les paiements et les frais du réseau.",
+				"es": "ETH es la moneda nativa de Ethereum para pagos y comisiones.",
+				"pt": "ETH é a moeda nativa de Ethereum para pagamentos e taxas."
+			}
+		},
+		{
+			"figure": "ethereum-tokens",
+			"afterHeading": {
+				"en": "tokens-and-the-ticket",
+				"fr": "les-tokens-et-le-billet",
+				"es": "los-tokens-y-la-entrada",
+				"pt": "os-tokens-e-o-bilhete"
+			},
+			"caption": {
+				"en": "The ticket has an individual identity; payment tokens track interchangeable units.",
+				"fr": "Le billet possède une identité propre ; les tokens de paiement comptabilisent des unités interchangeables.",
+				"es": "La entrada tiene identidad individual y los tokens de pago son intercambiables.",
+				"pt": "O bilhete tem identidade individual e os tokens de pagamento são intercambiáveis."
+			}
+		},
+		{
+			"figure": "ethereum-exchange",
+			"afterHeading": {
+				"en": "exchanging-the-ticket-and-the-payment-together",
+				"fr": "echanger-le-billet-et-le-paiement-ensemble",
+				"es": "intercambiar-la-entrada-y-el-pago-a-la-vez",
+				"pt": "trocar-o-bilhete-e-o-pagamento-em-conjunto"
+			},
+			"caption": {
+				"en": "Ticket ownership and payment change together in one purchase.",
+				"fr": "La propriété du billet et le paiement changent ensemble lors d’un même achat.",
+				"es": "La propiedad de la entrada y el pago cambian juntos en una compra.",
+				"pt": "A propriedade do bilhete e o pagamento mudam em conjunto numa compra."
+			}
+		},
+		{
+			"figure": "ethereum-gas",
+			"afterHeading": {
+				"en": "gas-the-measure-of-execution",
+				"fr": "le-gas-la-mesure-de-l-execution",
+				"es": "el-gas-como-medida-de-ejecucion",
+				"pt": "o-gas-como-medida-de-execucao"
+			},
+			"caption": {
+				"en": "Each executed operation contributes to the gas used.",
+				"fr": "Chaque opération exécutée contribue au gas consommé.",
+				"es": "Cada operación ejecutada contribuye al gas utilizado.",
+				"pt": "Cada operação executada contribui para o gas utilizado."
+			}
+		},
+		{
+			"figure": "ethereum-fees",
+			"afterHeading": {
+				"en": "gas-fees-and-the-price-of-the-ticket",
+				"fr": "les-frais-de-gas-et-le-prix-du-billet",
+				"es": "las-comisiones-de-gas-y-el-precio-de-la-entrada",
+				"pt": "as-taxas-de-gas-e-o-preco-do-bilhete"
+			},
+			"caption": {
+				"en": "Gas used × price per unit gives the network fee, separate from the ticket price.",
+				"fr": "Le gas consommé × son prix unitaire donne les frais de réseau, distincts du prix du billet.",
+				"es": "El gas utilizado multiplicado por su precio da la comisión, separada del precio de la entrada.",
+				"pt": "O gas utilizado multiplicado pelo preço dá a taxa, separada do preço do bilhete."
+			}
+		},
+		{
+			"figure": "ethereum-settlement",
+			"afterHeading": {
+				"en": "the-completed-sale",
+				"fr": "la-vente-terminee",
+				"es": "la-venta-completada",
+				"pt": "a-venda-concluida"
+			},
+			"caption": {
+				"en": "Bob owns ticket 42, Alice receives the payment, and the network fee is paid separately.",
+				"fr": "Bob possède le billet 42, Alice reçoit le paiement et les frais de réseau sont payés séparément.",
+				"es": "Bob recibe la entrada 42 y Alice el pago, con la comisión aparte.",
+				"pt": "Bob recebe o bilhete 42 e Alice o pagamento, com a taxa à parte."
+			}
+		}
+	],
+	"next": "wallets-101"
+}

@@ -1,0 +1,130 @@
+{
+	"slug": "defi-101",
+	"date": "2026-10-28",
+	"tags": ["defi", "finance", "basics"],
+	"draft": false,
+	"previous": "wallets-101",
+	"animations": [
+		{
+			"figure": "defi-network",
+			"afterHeading": {
+				"en": "article-title",
+				"fr": "article-title",
+				"es": "article-title",
+				"pt": "article-title"
+			},
+			"caption": {
+				"en": "Alice puts the proceeds into staking, lending, and a project token.",
+				"fr": "Alice répartit le produit de la vente entre staking, prêt et token de projet.",
+				"es": "Alice reparte lo ganado entre staking, préstamos y un token de proyecto.",
+				"pt": "Alice divide o dinheiro entre staking, empréstimos e um token de projeto."
+			}
+		},
+		{
+			"figure": "defi-allocation",
+			"afterHeading": {
+				"en": "three-uses-for-the-proceeds",
+				"fr": "trois-usages-pour-l-argent-de-la-vente",
+				"es": "tres-usos-para-el-dinero-recibido",
+				"pt": "tres-utilizacoes-para-o-dinheiro-recebido"
+			},
+			"caption": {
+				"en": "The 0.6 ETH sale becomes three positions of 0.2 ETH each.",
+				"fr": "Les 0,6 ETH de la vente deviennent trois positions de 0,2 ETH chacune.",
+				"es": "Los 0,6 ETH de la venta se convierten en tres posiciones de 0,2 ETH.",
+				"pt": "Os 0,6 ETH da venda tornam-se três posições de 0,2 ETH."
+			}
+		},
+		{
+			"figure": "defi-swap",
+			"afterHeading": {
+				"en": "swaps-and-liquidity-pools",
+				"fr": "les-swaps-et-les-pools-de-liquidite",
+				"es": "swaps-y-pools-de-liquidez",
+				"pt": "swaps-e-pools-de-liquidez"
+			},
+			"caption": {
+				"en": "Alice swaps 0.2 ETH for 500 USDC using assets made available by liquidity providers.",
+				"fr": "Alice échange 0,2 ETH contre 500 USDC grâce aux actifs mis à disposition par les fournisseurs de liquidité.",
+				"es": "Alice cambia 0,2 ETH por 500 USDC con los activos de los proveedores de liquidez.",
+				"pt": "Alice troca 0,2 ETH por 500 USDC com ativos dos fornecedores de liquidez."
+			}
+		},
+		{
+			"figure": "defi-staking",
+			"afterHeading": {
+				"en": "staking-eth-with-lido",
+				"fr": "le-staking-d-eth-avec-lido",
+				"es": "hacer-staking-de-eth-con-lido",
+				"pt": "fazer-staking-de-eth-com-a-lido"
+			},
+			"caption": {
+				"en": "Lido routes pooled ETH to validators; stETH represents Alice’s staking position.",
+				"fr": "Lido dirige les ETH mutualisés vers des validateurs ; le stETH représente la position de staking d’Alice.",
+				"es": "Lido dirige ETH a validadores y stETH representa la posición de Alice.",
+				"pt": "A Lido encaminha ETH para validadores e stETH representa a posição de Alice."
+			}
+		},
+		{
+			"figure": "defi-lending",
+			"afterHeading": {
+				"en": "lending-usdc-through-aave",
+				"fr": "preter-des-usdc-via-aave",
+				"es": "prestar-usdc-mediante-aave",
+				"pt": "emprestar-usdc-atraves-da-aave"
+			},
+			"caption": {
+				"en": "Alice supplies USDC to Aave; borrowers pay interest and provide collateral.",
+				"fr": "Alice fournit des USDC à Aave ; les emprunteurs paient des intérêts et apportent du collatéral.",
+				"es": "Alice aporta USDC a Aave y los prestatarios pagan intereses y entregan garantías.",
+				"pt": "Alice fornece USDC à Aave e os mutuários pagam juros e entregam garantias."
+			}
+		},
+		{
+			"figure": "defi-project",
+			"afterHeading": {
+				"en": "buying-a-project-token",
+				"fr": "acheter-le-token-d-un-projet",
+				"es": "comprar-el-token-de-un-proyecto",
+				"pt": "comprar-o-token-de-um-projeto"
+			},
+			"caption": {
+				"en": "Buying a project token exposes Alice to its price, without automatically generating income.",
+				"fr": "Acheter un token de projet expose Alice à son prix, sans produire automatiquement un revenu.",
+				"es": "El token expone a Alice a su precio sin generar ingresos automáticamente.",
+				"pt": "O token expõe Alice ao seu preço sem gerar rendimento automaticamente."
+			}
+		},
+		{
+			"figure": "defi-returns",
+			"afterHeading": {
+				"en": "understanding-the-return",
+				"fr": "comprendre-l-origine-du-gain",
+				"es": "entender-el-rendimiento",
+				"pt": "compreender-o-rendimento"
+			},
+			"caption": {
+				"en": "Staking rewards, borrower interest, and price gains have different sources.",
+				"fr": "Les récompenses de staking, les intérêts des emprunteurs et les plus-values ont des sources différentes.",
+				"es": "Las recompensas, los intereses y las ganancias de precio tienen fuentes distintas.",
+				"pt": "As recompensas, os juros e os ganhos de preço têm fontes diferentes."
+			}
+		},
+		{
+			"figure": "defi-together",
+			"afterHeading": {
+				"en": "diversifying-without-losing-the-thread",
+				"fr": "diversifier-en-gardant-le-fil",
+				"es": "diversificar-sin-perder-el-hilo",
+				"pt": "diversificar-sem-perder-o-fio-a-meada"
+			},
+			"caption": {
+				"en": "The three positions have different roles but still share some dependencies.",
+				"fr": "Les trois positions ont des rôles différents, mais conservent certaines dépendances communes.",
+				"es": "Las tres posiciones tienen funciones distintas y algunas dependencias comunes.",
+				"pt": "As três posições têm funções diferentes e algumas dependências comuns."
+			}
+		}
+	],
+	"next": "stablecoins-101"
+}

@@ -1,0 +1,107 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+	--background: #ffffff;
+	--foreground: #171717;
+}
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-sans: var(--font-geist-sans);
+	--font-serif: var(--font-source-serif-4);
+	--font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #18181b;
+		--foreground: #ededed;
+	}
+}
+
+body {
+	background: var(--background);
+	color: var(--foreground);
+	font-optical-sizing: auto;
+}
+
+@layer components {
+	.thought-title {
+		font-family: var(--font-geist-sans);
+		font-weight: 400;
+		letter-spacing: -0.035em;
+		line-height: 1.1;
+		text-wrap: balance;
+		overflow-wrap: anywhere;
+	}
+
+	.thought-prose {
+		font-size: 0.9375rem;
+		line-height: 1.4;
+	}
+
+	.thought-prose :where(p, ul, ol) {
+		margin-block: 0.6em;
+	}
+
+	.thought-prose :where(li) {
+		margin-block: 0.2em;
+	}
+
+	.thought-prose li :where(p, ul, ol) {
+		margin-block: 0.35em;
+	}
+
+	.thought-prose :where(blockquote, pre, table) {
+		margin-block: 0.8em;
+	}
+
+	.thought-prose :where(hr) {
+		margin-block: 1.5em;
+	}
+
+	.thought-prose :where(strong, b) {
+		font-weight: 500;
+	}
+
+	.thought-prose .article-heading :where(strong, b) {
+		font-weight: inherit;
+		color: inherit;
+	}
+
+	.thought-prose :where(code, kbd, pre) {
+		font-family: var(--font-mono);
+		font-size: 0.8em;
+		font-variant-ligatures: none;
+	}
+
+	.thought-prose pre code {
+		font-size: inherit;
+	}
+
+	.thought-prose > :first-child {
+		margin-top: 0;
+	}
+
+	.thought-prose > :last-child {
+		margin-bottom: 0;
+	}
+}
+
+/* Keep glossary drawings responsive without conflicting breakpoint utilities. */
+.glossary-drawing {
+	width: 7rem;
+}
+@media (min-width: 640px) {
+	.glossary-drawing {
+		width: 8rem;
+	}
+}
+@media (min-width: 1280px) {
+	.glossary-drawing {
+		width: 100%;
+		max-width: var(--animation-drawing-width, 100%);
+	}
+}

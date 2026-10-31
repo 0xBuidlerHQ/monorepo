@@ -1,0 +1,114 @@
+{
+	"slug": "oracles-101",
+	"date": "2026-10-30",
+	"tags": ["oracles", "defi", "basics"],
+	"draft": false,
+	"previous": "layer-2-101",
+	"animations": [
+		{
+			"figure": "oracle-data",
+			"afterHeading": {
+				"en": "article-title",
+				"fr": "article-title",
+				"es": "article-title",
+				"pt": "article-title"
+			},
+			"caption": {
+				"en": "An oracle connects market information to the contracts using it.",
+				"fr": "Un oracle relie les informations de marché aux contrats qui les utilisent.",
+				"es": "Un oráculo conecta la información del mercado con los contratos que la usan.",
+				"pt": "Um oráculo liga a informação de mercado aos contratos que a usam."
+			}
+		},
+		{
+			"figure": "oracle-boundary",
+			"afterHeading": {
+				"en": "what-the-contract-can-and-cannot-know",
+				"fr": "ce-que-le-contrat-peut-savoir",
+				"es": "lo-que-puede-saber-el-contrato",
+				"pt": "o-que-o-contrato-pode-saber"
+			},
+			"caption": {
+				"en": "The contract records token amounts; their market value is another input.",
+				"fr": "Le contrat enregistre des quantités de tokens ; leur valeur de marché est une autre donnée.",
+				"es": "El contrato registra cantidades y necesita otro dato para conocer su valor.",
+				"pt": "O contrato regista quantidades e precisa de outro dado para conhecer o seu valor."
+			}
+		},
+		{
+			"figure": "oracle-sources",
+			"afterHeading": {
+				"en": "from-market-observations-to-a-reference-price",
+				"fr": "des-observations-de-marche-a-un-prix-de-reference",
+				"es": "de-las-observaciones-al-precio-de-referencia",
+				"pt": "das-observacoes-ao-preco-de-referencia"
+			},
+			"caption": {
+				"en": "Combining independent observations can produce a reference price.",
+				"fr": "Combiner des observations indépendantes peut produire un prix de référence.",
+				"es": "Combinar observaciones independientes puede producir un precio de referencia.",
+				"pt": "Combinar observações independentes pode produzir um preço de referência."
+			}
+		},
+		{
+			"figure": "oracle-report",
+			"afterHeading": {
+				"en": "publishing-a-price-the-contract-can-use",
+				"fr": "publier-un-prix-utilisable-par-le-contrat",
+				"es": "publicar-un-precio-utilizable",
+				"pt": "publicar-um-preco-utilizavel"
+			},
+			"caption": {
+				"en": "An accepted report makes a price usable without proving that the market observation is true.",
+				"fr": "Un rapport accepté rend un prix utilisable sans prouver que l’observation de marché est vraie.",
+				"es": "Aceptar un informe permite utilizar un precio sin demostrar que sea correcto.",
+				"pt": "Aceitar um relatório permite usar um preço sem provar que está correto."
+			}
+		},
+		{
+			"figure": "oracle-freshness",
+			"afterHeading": {
+				"en": "a-price-also-has-a-time",
+				"fr": "un-prix-a-aussi-une-date",
+				"es": "un-precio-tambien-tiene-una-fecha",
+				"pt": "um-preco-tambem-tem-uma-data"
+			},
+			"caption": {
+				"en": "A price’s age matters alongside its value.",
+				"fr": "L’ancienneté d’un prix compte autant que sa valeur.",
+				"es": "La antigüedad de un precio importa tanto como su valor.",
+				"pt": "A antiguidade de um preço importa tanto como o seu valor."
+			}
+		},
+		{
+			"figure": "oracle-loan",
+			"afterHeading": {
+				"en": "how-a-price-affects-bob-s-loan",
+				"fr": "l-effet-du-prix-sur-le-pret-de-bob",
+				"es": "el-efecto-del-precio-en-el-prestamo-de-bob",
+				"pt": "o-efeito-do-preco-no-emprestimo-de-bob"
+			},
+			"caption": {
+				"en": "The oracle supplies a valuation input; the lending contract applies the liquidation rule.",
+				"fr": "L’oracle fournit une donnée de valorisation ; le contrat de prêt applique la règle de liquidation.",
+				"es": "El oráculo aporta el precio y el contrato aplica la regla de liquidación.",
+				"pt": "O oráculo fornece o preço e o contrato aplica a regra de liquidação."
+			}
+		},
+		{
+			"figure": "oracle-trust",
+			"afterHeading": {
+				"en": "where-the-trust-sits",
+				"fr": "ou-se-trouve-la-confiance",
+				"es": "donde-reside-la-confianza",
+				"pt": "onde-esta-a-confianca"
+			},
+			"caption": {
+				"en": "Reliable execution still depends on the quality and interpretation of the inputs.",
+				"fr": "Une exécution fiable dépend toujours de la qualité et de l’interprétation des données.",
+				"es": "La ejecución fiable sigue dependiendo de la calidad e interpretación de los datos.",
+				"pt": "A execução fiável continua a depender da qualidade e interpretação dos dados."
+			}
+		}
+	]
+}

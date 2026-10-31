@@ -1,0 +1,130 @@
+{
+	"slug": "wallets-101",
+	"date": "2026-10-27",
+	"tags": ["wallets", "ethereum", "basics"],
+	"draft": false,
+	"previous": "ethereum-101",
+	"next": "defi-101",
+	"animations": [
+		{
+			"figure": "wallet-access",
+			"afterHeading": {
+				"en": "article-title",
+				"fr": "article-title",
+				"es": "article-title",
+				"pt": "article-title"
+			},
+			"caption": {
+				"en": "The wallet provides access and authorization; assets remain recorded on the blockchain.",
+				"fr": "Le wallet permet l’accès et l’autorisation ; les actifs restent enregistrés sur la blockchain.",
+				"es": "El wallet permite acceder y autorizar, mientras los activos siguen en la blockchain.",
+				"pt": "A wallet permite aceder e autorizar, enquanto os ativos ficam registados na blockchain."
+			}
+		},
+		{
+			"figure": "wallet-account",
+			"afterHeading": {
+				"en": "the-wallet-and-the-account",
+				"fr": "le-wallet-et-le-compte",
+				"es": "el-wallet-y-la-cuenta",
+				"pt": "a-wallet-e-a-conta"
+			},
+			"caption": {
+				"en": "Different compatible apps can access the same account without duplicating its assets.",
+				"fr": "Plusieurs applications compatibles peuvent accéder au même compte sans dupliquer ses actifs.",
+				"es": "Aplicaciones compatibles acceden a la misma cuenta sin duplicar activos.",
+				"pt": "Aplicações compatíveis acedem à mesma conta sem duplicar ativos."
+			}
+		},
+		{
+			"figure": "wallet-connection",
+			"afterHeading": {
+				"en": "connecting-to-an-application",
+				"fr": "se-connecter-a-une-application",
+				"es": "conectarse-a-una-aplicacion",
+				"pt": "ligar-a-uma-aplicacao"
+			},
+			"caption": {
+				"en": "Connecting shares an account with a site; additional requests need their own authorization.",
+				"fr": "La connexion partage un compte avec le site ; les demandes supplémentaires nécessitent leur propre autorisation.",
+				"es": "Conectar comparte una cuenta, pero cada permiso adicional requiere autorización.",
+				"pt": "A ligação partilha uma conta, mas cada permissão adicional exige autorização."
+			}
+		},
+		{
+			"figure": "wallet-signature",
+			"afterHeading": {
+				"en": "signing-a-message-or-sending-a-transaction",
+				"fr": "signer-un-message-ou-envoyer-une-transaction",
+				"es": "firmar-un-mensaje-o-enviar-una-transaccion",
+				"pt": "assinar-uma-mensagem-ou-enviar-uma-transacao"
+			},
+			"caption": {
+				"en": "A message signature and a transaction can authorize different actions.",
+				"fr": "Une signature de message et une transaction peuvent autoriser des actions différentes.",
+				"es": "Firmar un mensaje y enviar una transacción pueden autorizar acciones distintas.",
+				"pt": "Assinar uma mensagem e enviar uma transação podem autorizar ações diferentes."
+			}
+		},
+		{
+			"figure": "wallet-permissions",
+			"afterHeading": {
+				"en": "token-spending-permissions",
+				"fr": "les-autorisations-de-depense-des-tokens",
+				"es": "permisos-para-gastar-tokens",
+				"pt": "autorizacoes-para-gastar-tokens"
+			},
+			"caption": {
+				"en": "A token allowance defines which spender can transfer tokens and up to what amount.",
+				"fr": "Une autorisation de token définit qui peut transférer des tokens et jusqu’à quel montant.",
+				"es": "La autorización define quién puede gastar tokens y hasta qué importe.",
+				"pt": "A autorização define quem pode gastar tokens e até que montante."
+			}
+		},
+		{
+			"figure": "wallet-recovery",
+			"afterHeading": {
+				"en": "recovery-phrases-and-lost-devices",
+				"fr": "les-phrases-de-recuperation-et-les-appareils-perdus",
+				"es": "frases-de-recuperacion-y-dispositivos-perdidos",
+				"pt": "frases-de-recuperacao-e-dispositivos-perdidos"
+			},
+			"caption": {
+				"en": "Recovery information can restore signing access after a device is lost.",
+				"fr": "Les informations de récupération peuvent rétablir le pouvoir de signature après la perte d’un appareil.",
+				"es": "La recuperación permite restaurar el acceso para firmar tras perder un dispositivo.",
+				"pt": "A recuperação permite restaurar o acesso para assinar após perder um dispositivo."
+			}
+		},
+		{
+			"figure": "wallet-custody",
+			"afterHeading": {
+				"en": "software-hardware-and-platform-accounts",
+				"fr": "logiciel-hardware-wallet-et-compte-sur-une-plateforme",
+				"es": "software-hardware-y-cuentas-en-plataformas",
+				"pt": "software-hardware-e-contas-em-plataformas"
+			},
+			"caption": {
+				"en": "Software wallets, hardware devices, and custodial platforms arrange control differently.",
+				"fr": "Wallets logiciels, appareils de signature et plateformes de garde organisent le contrôle différemment.",
+				"es": "Software, hardware y plataformas con custodia organizan el control de forma distinta.",
+				"pt": "Software, hardware e plataformas com custódia organizam o controlo de formas diferentes."
+			}
+		},
+		{
+			"figure": "wallet-authority",
+			"afterHeading": {
+				"en": "what-alice-authorizes",
+				"fr": "ce-qu-alice-autorise",
+				"es": "lo-que-autoriza-alice",
+				"pt": "o-que-alice-autoriza"
+			},
+			"caption": {
+				"en": "Connection, signatures, approvals, and transactions have different scopes.",
+				"fr": "Connexion, signatures, autorisations et transactions ont des portées différentes.",
+				"es": "Conexiones, firmas, autorizaciones y transacciones tienen alcances distintos.",
+				"pt": "Ligações, assinaturas, autorizações e transações têm alcances diferentes."
+			}
+		}
+	]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@0xhq/0xhq",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "biome lint .",
+    "typecheck": "next typegen && tsc --noEmit",
+    "check:translations": "node scripts/check-translations.mjs",
+    "test:content": "node --conditions=react-server --test scripts/content.test.mjs"
+  },
+  "dependencies": {
+    "@0xhq/config": "workspace:*",
+    "@lucasmarkes/hairline": "0.5.1",
+    "gray-matter": "4.0.3",
+    "motion": "^14.8.0",
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-markdown": "10.1.0",
+    "remark-gfm": "4.0.1",
+    "server-only": "0.0.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.4",
+    "@tailwindcss/turbopack": "^4.3.3",
+    "@tailwindcss/typography": "0.5.20",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "tailwindcss": "4.3.3",
+    "typescript": "7.0.2"
+  }
+}

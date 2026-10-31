@@ -1,0 +1,144 @@
+{
+	"slug": "blockchain-101",
+	"date": "2026-10-25",
+	"tags": ["tech", "blockchain", "technology", "basics"],
+	"draft": false,
+	"next": "ethereum-101",
+	"animations": [
+		{
+			"figure": "blockchain-history",
+			"afterHeading": {
+				"en": "article-title",
+				"fr": "article-title",
+				"es": "article-title",
+				"pt": "article-title"
+			},
+			"caption": {
+				"en": "A shared record with a history of changes.",
+				"fr": "Un registre partagé qui conserve l’historique des changements.",
+				"es": "Un registro compartido conserva el historial de cambios.",
+				"pt": "Um registo partilhado conserva o histórico de alterações."
+			}
+		},
+		{
+			"figure": "blockchain-record",
+			"afterHeading": {
+				"en": "a-shared-ownership-record",
+				"fr": "un-registre-partage-des-proprietaires",
+				"es": "un-registro-de-propiedad-compartido",
+				"pt": "um-registo-de-propriedade-partilhado"
+			},
+			"caption": {
+				"en": "One ownership record, available to different ticket apps.",
+				"fr": "Un même registre des propriétaires, accessible à plusieurs applications de billetterie.",
+				"es": "Varias aplicaciones de entradas consultan el mismo registro de propiedad.",
+				"pt": "Várias aplicações de bilhetes consultam o mesmo registo de propriedade."
+			}
+		},
+		{
+			"figure": "blockchain-signature",
+			"afterHeading": {
+				"en": "transactions-and-digital-signatures",
+				"fr": "transactions-et-signatures-numeriques",
+				"es": "transacciones-y-firmas-digitales",
+				"pt": "transacoes-e-assinaturas-digitais"
+			},
+			"caption": {
+				"en": "Alice authorizes a specific request. Changing the recipient changes what she signed.",
+				"fr": "Alice autorise une demande précise. Changer le destinataire modifie ce qu’elle a signé.",
+				"es": "La firma de Alice autoriza una solicitud cuyo destinatario no se puede cambiar.",
+				"pt": "A assinatura de Alice autoriza um pedido cujo destinatário não pode ser alterado."
+			}
+		},
+		{
+			"figure": "blockchain-rules",
+			"afterHeading": {
+				"en": "smart-contracts-and-nodes",
+				"fr": "smart-contracts-et-n-uds",
+				"es": "smart-contracts-y-nodos",
+				"pt": "smart-contracts-e-nos"
+			},
+			"caption": {
+				"en": "The same transfer rules apply, whichever app Alice uses.",
+				"fr": "Les mêmes règles de transfert s’appliquent, quelle que soit l’application d’Alice.",
+				"es": "Las mismas reglas se aplican en cualquier aplicación que utilice Alice.",
+				"pt": "As mesmas regras aplicam-se em qualquer aplicação que Alice use."
+			}
+		},
+		{
+			"figure": "blockchain-hashes",
+			"afterHeading": {
+				"en": "blocks-and-hashes",
+				"fr": "blocs-et-hashes",
+				"es": "bloques-y-hashes",
+				"pt": "blocos-e-hashes"
+			},
+			"caption": {
+				"en": "Changing an earlier block affects the references that follow it.",
+				"fr": "Modifier un bloc antérieur affecte les références qui le suivent.",
+				"es": "Cambiar un bloque anterior afecta a las referencias que le siguen.",
+				"pt": "Alterar um bloco anterior afeta as referências que se seguem."
+			}
+		},
+		{
+			"figure": "blockchain-consensus",
+			"afterHeading": {
+				"en": "consensus-and-finality",
+				"fr": "consensus-et-finalite",
+				"es": "consenso-y-finalidad",
+				"pt": "consenso-e-finalidade"
+			},
+			"caption": {
+				"en": "Competing proposals need to give way to one accepted history.",
+				"fr": "Face à des propositions concurrentes, le réseau doit établir un historique accepté.",
+				"es": "Las propuestas rivales deben dar paso a un historial aceptado.",
+				"pt": "As propostas concorrentes têm de dar lugar a um histórico aceite."
+			}
+		},
+		{
+			"figure": "blockchain-lifecycle",
+			"afterHeading": {
+				"en": "the-transaction-lifecycle",
+				"fr": "le-deroulement-d-une-transaction",
+				"es": "el-recorrido-de-una-transaccion",
+				"pt": "o-percurso-de-uma-transacao"
+			},
+			"caption": {
+				"en": "Alice’s signed request travels between participants before its result is accepted.",
+				"fr": "La demande signée d’Alice circule entre les participants avant que son résultat soit accepté.",
+				"es": "La solicitud firmada circula entre participantes antes de aceptarse su resultado.",
+				"pt": "O pedido assinado circula entre participantes antes de o resultado ser aceite."
+			}
+		},
+		{
+			"figure": "blockchain-layers",
+			"afterHeading": {
+				"en": "applications-trust-and-limitations",
+				"fr": "applications-confiance-et-limites",
+				"es": "aplicaciones-confianza-y-limites",
+				"pt": "aplicacoes-confianca-e-limites"
+			},
+			"caption": {
+				"en": "The interface, the program, and the record are different parts of the system.",
+				"fr": "L’interface, le programme et le registre sont des parties distinctes du système.",
+				"es": "La interfaz, el programa y el registro son partes distintas del sistema.",
+				"pt": "A interface, o programa e o registo são partes diferentes do sistema."
+			}
+		},
+		{
+			"figure": "blockchain-together",
+			"afterHeading": {
+				"en": "the-blockchain-as-a-whole",
+				"fr": "la-blockchain-dans-son-ensemble",
+				"es": "la-blockchain-en-conjunto",
+				"pt": "a-blockchain-como-um-todo"
+			},
+			"caption": {
+				"en": "Authorization, independent checks, and agreement make the shared record possible.",
+				"fr": "L’autorisation, les vérifications indépendantes et l’accord permettent de tenir le registre partagé.",
+				"es": "La autorización, las verificaciones y el acuerdo hacen posible el registro compartido.",
+				"pt": "A autorização, as verificações e o acordo tornam possível o registo partilhado."
+			}
+		}
+	]
+}

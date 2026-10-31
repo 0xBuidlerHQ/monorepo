@@ -1,0 +1,115 @@
+{
+	"slug": "stablecoins-101",
+	"date": "2026-10-29",
+	"tags": ["stablecoins", "finance", "basics"],
+	"draft": false,
+	"previous": "defi-101",
+	"animations": [
+		{
+			"figure": "stablecoin-value",
+			"afterHeading": {
+				"en": "article-title",
+				"fr": "article-title",
+				"es": "article-title",
+				"pt": "article-title"
+			},
+			"caption": {
+				"en": "Holding 500 tokens and being able to exchange them for 500 dollars are different things.",
+				"fr": "Détenir 500 tokens et pouvoir les échanger contre 500 dollars sont deux choses différentes.",
+				"es": "Tener 500 tokens no es lo mismo que poder cambiarlos por 500 dólares.",
+				"pt": "Ter 500 tokens não é o mesmo que poder trocá-los por 500 dólares."
+			}
+		},
+		{
+			"figure": "stablecoin-peg",
+			"afterHeading": {
+				"en": "a-reference-value",
+				"fr": "une-valeur-de-reference",
+				"es": "un-valor-de-referencia",
+				"pt": "um-valor-de-referencia"
+			},
+			"caption": {
+				"en": "The dollar is the reference; the token’s market price aims to stay close to it.",
+				"fr": "Le dollar sert de référence ; le prix du token cherche à rester proche de cette cible.",
+				"es": "El precio del token intenta mantenerse cerca de su referencia en dólares.",
+				"pt": "O preço do token procura manter-se perto da referência em dólares."
+			}
+		},
+		{
+			"figure": "stablecoin-reserves",
+			"afterHeading": {
+				"en": "reserves-and-redemption",
+				"fr": "les-reserves-et-le-remboursement",
+				"es": "reservas-y-reembolso",
+				"pt": "reservas-e-resgate"
+			},
+			"caption": {
+				"en": "Issuance creates tokens against reserves; redemption takes tokens out of circulation.",
+				"fr": "L’émission crée des tokens contre des réserves ; le remboursement les retire de la circulation.",
+				"es": "La emisión crea tokens contra reservas y el reembolso los retira de circulación.",
+				"pt": "A emissão cria tokens contra reservas e o resgate retira-os de circulação."
+			}
+		},
+		{
+			"figure": "stablecoin-arbitrage",
+			"afterHeading": {
+				"en": "how-the-market-price-stays-near-one-dollar",
+				"fr": "comment-le-prix-reste-proche-d-un-dollar",
+				"es": "como-se-mantiene-el-precio-cerca-de-un-dolar",
+				"pt": "como-o-preco-se-mantem-perto-de-um-dolar"
+			},
+			"caption": {
+				"en": "Usable issuance and redemption can give traders a reason to bring the price toward the target.",
+				"fr": "L’accès à l’émission et au remboursement peut inciter les participants à ramener le prix vers la cible.",
+				"es": "La emisión y el reembolso accesibles incentivan acercar el precio a la referencia.",
+				"pt": "A emissão e o resgate acessíveis incentivam a aproximação do preço à referência."
+			}
+		},
+		{
+			"figure": "stablecoin-models",
+			"afterHeading": {
+				"en": "different-ways-to-back-the-same-target",
+				"fr": "plusieurs-manieres-de-garantir-la-meme-cible",
+				"es": "distintas-formas-de-respaldar-el-mismo-objetivo",
+				"pt": "formas-diferentes-de-respaldar-o-mesmo-objetivo"
+			},
+			"caption": {
+				"en": "The same dollar target can rely on different reserves, collateral, or supply mechanisms.",
+				"fr": "Une même cible en dollars peut reposer sur des réserves, du collatéral ou des mécanismes d’offre différents.",
+				"es": "El mismo objetivo en dólares puede depender de reservas y mecanismos distintos.",
+				"pt": "O mesmo objetivo em dólares pode depender de reservas e mecanismos diferentes."
+			}
+		},
+		{
+			"figure": "stablecoin-depeg",
+			"afterHeading": {
+				"en": "when-the-peg-breaks",
+				"fr": "quand-l-ancrage-se-rompt",
+				"es": "cuando-se-rompe-la-paridad",
+				"pt": "quando-a-paridade-se-perde"
+			},
+			"caption": {
+				"en": "Alice can still hold 500 tokens while their market value falls to 450 dollars.",
+				"fr": "Alice peut toujours détenir 500 tokens alors que leur valeur de marché tombe à 450 dollars.",
+				"es": "Alice puede seguir teniendo 500 tokens cuyo valor baje a 450 dólares.",
+				"pt": "Alice pode continuar com 500 tokens cujo valor desça para 450 dólares."
+			}
+		},
+		{
+			"figure": "stablecoin-together",
+			"afterHeading": {
+				"en": "what-alice-actually-holds",
+				"fr": "ce-qu-alice-detient-reellement",
+				"es": "que-tiene-realmente-alice",
+				"pt": "o-que-alice-tem-realmente"
+			},
+			"caption": {
+				"en": "The recorded balance, the backing, and the market value must be understood separately.",
+				"fr": "Le solde enregistré, les actifs de garantie et la valeur de marché sont des éléments distincts.",
+				"es": "El saldo, el respaldo y el valor de mercado son conceptos distintos.",
+				"pt": "O saldo, o respaldo e o valor de mercado são conceitos diferentes."
+			}
+		}
+	],
+	"next": "layer-2-101"
+}
