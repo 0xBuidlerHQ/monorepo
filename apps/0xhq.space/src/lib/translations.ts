@@ -9,6 +9,7 @@ import {
 	type ContentLocale,
 	contentLocales,
 	type TranslatedCollection,
+	translatedCollections,
 } from "./locales";
 
 export function articleLanguages(
@@ -65,10 +66,12 @@ export function contentLanguageRoutes() {
 		"/learn": [...contentLocales],
 		"/thoughts": [...contentLocales],
 		"/ideas": [...contentLocales],
+		"/curated": [...contentLocales],
+		"/content": [...contentLocales],
 		"/glossary": glossaryLanguages().map(({ locale }) => locale),
 	};
 	for (const locale of contentLocales) {
-		for (const collection of ["learn", "thoughts", "ideas"] as const) {
+		for (const collection of translatedCollections) {
 			for (const entry of getEntries(collection, locale)) {
 				const key = `/${collection}/${entry.slug}`;
 				routes[key] ??= [];

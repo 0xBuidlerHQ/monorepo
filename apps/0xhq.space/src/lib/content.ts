@@ -4,7 +4,11 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 
-import { type ContentLocale, contentLocales } from "./locales.ts";
+import {
+	type ContentLocale,
+	contentLocales,
+	type TranslatedCollection,
+} from "./locales.ts";
 
 export const hairlineFigures = [
 	"collectible-identity",
@@ -191,7 +195,7 @@ function validateDraft(value: unknown, filename: string) {
 }
 
 export function getEntries(
-	collection: "thoughts" | "ideas" | "projects" | "learn",
+	collection: TranslatedCollection | "projects",
 	locale: ContentLocale = "en",
 ): ContentEntry[] {
 	const directory = path.join(process.cwd(), "content", collection);

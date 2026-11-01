@@ -1,0 +1,316 @@
+[
+	{
+		"id": "ambire-ice",
+		"name": "Ice",
+		"brand": "Ambire",
+		"url": "https://www.ambire.com/ice#pre-order",
+		"availability": "preorder",
+		"image": {
+			"src": "/images/curated/ambire-ice-exploded.png",
+			"width": 1208,
+			"height": 1276,
+			"source": "https://www.ambire.com/_next/static/chunks/images/media/ice/built-to-be-looked-at/device_2560.png"
+		},
+		"translations": {
+			"en": {
+				"description": "An open-source hardware wallet built for Safe, with a transparent case and transaction details displayed on the device.",
+				"imageAlt": "Exploded view of Ambire Ice showing its transparent case, screen, and circuit board."
+			},
+			"fr": {
+				"description": "Un portefeuille matériel open source conçu pour Safe, avec un boîtier transparent et les détails des transactions affichés sur l’appareil.",
+				"imageAlt": "Vue éclatée d’Ambire Ice montrant son boîtier transparent, son écran et son circuit imprimé."
+			},
+			"es": {
+				"description": "Una cartera física de código abierto diseñada para Safe, con una carcasa transparente y los detalles de las transacciones en la pantalla del dispositivo.",
+				"imageAlt": "Vista desglosada de Ambire Ice que muestra su carcasa transparente, pantalla y placa de circuito."
+			},
+			"pt": {
+				"description": "Uma carteira física de código aberto concebida para a Safe, com uma caixa transparente e os detalhes das transações apresentados no dispositivo.",
+				"imageAlt": "Vista explodida da Ambire Ice, com a caixa transparente, o ecrã e a placa de circuito."
+			}
+		}
+	},
+	{
+		"id": "santa-cruz-pokemon",
+		"name": "Pokémon TCG",
+		"brand": "Santa Cruz",
+		"url": "https://santacruzskateboards.com/pokemon",
+		"availability": "available",
+		"image": {
+			"src": "/images/curated/santa-cruz-pokemon-three-decks.png",
+			"width": 1050,
+			"height": 1270,
+			"source": "https://cdn.shopify.com/s/files/1/0527/5051/6381/files/11117698_167274_91577_80in_x_316in_Pokmon_TCG_Blind_Bag_Santa_Cruz_Skateboard_Deck_size_80inx316in.jpg?v=1791232318"
+		},
+		"translations": {
+			"en": {
+				"description": "The Santa Cruz × Pokémon TCG collection brings original Pokémon card artwork to skateboard decks and apparel.",
+				"imageAlt": "Three Santa Cruz Pokémon TCG skateboard decks: green Venusaur on the left, orange Charizard in the center, and blue Blastoise on the right."
+			},
+			"fr": {
+				"description": "La collection Santa Cruz × Pokémon JCC reprend les illustrations originales des cartes Pokémon sur des planches de skateboard et des vêtements.",
+				"imageAlt": "Trois planches de skateboard Santa Cruz Pokémon JCC : Florizarre en vert à gauche, Dracaufeu en orange au centre et Tortank en bleu à droite."
+			},
+			"es": {
+				"description": "La colección Santa Cruz × JCC Pokémon lleva las ilustraciones originales de las cartas Pokémon a tablas de skate y prendas de vestir.",
+				"imageAlt": "Tres tablas de skate Santa Cruz JCC Pokémon: Venusaur en verde a la izquierda, Charizard en naranja en el centro y Blastoise en azul a la derecha."
+			},
+			"pt": {
+				"description": "A coleção Santa Cruz × Pokémon TCG leva as ilustrações originais das cartas Pokémon para pranchas de skate e peças de vestuário.",
+				"imageAlt": "Três pranchas de skate Santa Cruz Pokémon TCG: Venusaur em verde à esquerda, Charizard em laranja ao centro e Blastoise em azul à direita."
+			}
+		}
+	},
+	{
+		"id": "apple-imac-g4",
+		"name": "iMac G4",
+		"brand": "Apple",
+		"url": "https://www.ebay.com/b/Apple-iMac-PowerPC-G4-Desktops/111418/bn_635486",
+		"availability": "discontinued",
+		"image": {
+			"src": "/images/curated/apple-imac-g4.jpg",
+			"width": 1800,
+			"height": 1949,
+			"source": "https://allaboutstevejobs.com/resources/img/pics/2002-01_imac_G4_06839.jpg",
+			"blendWithBackground": true
+		},
+		"translations": {
+			"en": {
+				"description": "Apple’s 2002 all-in-one computer, with a floating flat-panel display on an adjustable arm and a white dome-shaped base.",
+				"imageAlt": "Apple iMac G4 with a white dome base, articulated chrome arm, and flat-panel screen showing a blue desktop."
+			},
+			"fr": {
+				"description": "L’ordinateur tout-en-un d’Apple lancé en 2002, avec un écran plat suspendu à un bras articulé et une base blanche en forme de dôme.",
+				"imageAlt": "iMac G4 d’Apple avec une base blanche en forme de dôme, un bras chromé articulé et un écran plat affichant un bureau bleu."
+			},
+			"es": {
+				"description": "El ordenador todo en uno de Apple de 2002, con una pantalla plana sobre un brazo articulado y una base blanca en forma de cúpula.",
+				"imageAlt": "iMac G4 de Apple con base blanca en forma de cúpula, brazo cromado articulado y pantalla plana con un escritorio azul."
+			},
+			"pt": {
+				"description": "O computador tudo em um da Apple lançado em 2002, com um ecrã plano num braço articulado e uma base branca em forma de cúpula.",
+				"imageAlt": "iMac G4 da Apple com uma base branca em forma de cúpula, um braço cromado articulado e um ecrã plano com um ambiente de trabalho azul."
+			}
+		}
+	},
+	{
+		"id": "apple-iphone-17-pro-orange",
+		"name": "iPhone 17 Pro",
+		"brand": "Apple",
+		"url": "https://www.fnac.pt/Apple-iPhone-17-Pro-256GB-Laranja-Telemovel-iPhone/a13297875",
+		"availability": "available",
+		"image": {
+			"src": "/images/curated/apple-iphone-17-pro-orange.jpg",
+			"width": 340,
+			"height": 340,
+			"source": "https://static.fnac-static.com/multimedia/Images/PT/NR/7c/5e/ab/11230844/1540-1.jpg",
+			"blendWithBackground": true
+		},
+		"translations": {
+			"en": {
+				"description": "Apple’s iPhone 17 Pro in Cosmic Orange, with an aluminium unibody and a triple-camera system.",
+				"imageAlt": "Front and back views of the Apple iPhone 17 Pro in Cosmic Orange."
+			},
+			"fr": {
+				"description": "L’iPhone 17 Pro d’Apple en orange cosmique, avec un boîtier unibody en aluminium et un système à trois appareils photo.",
+				"imageAlt": "Vues avant et arrière de l’iPhone 17 Pro d’Apple en orange cosmique."
+			},
+			"es": {
+				"description": "El iPhone 17 Pro de Apple en naranja cósmico, con un diseño unibody de aluminio y un sistema de triple cámara.",
+				"imageAlt": "Vistas frontal y trasera del iPhone 17 Pro de Apple en naranja cósmico."
+			},
+			"pt": {
+				"description": "O iPhone 17 Pro da Apple em laranja-cósmico, com um design unibody em alumínio e um sistema de três câmaras.",
+				"imageAlt": "Vistas frontal e traseira do iPhone 17 Pro da Apple em laranja-cósmico."
+			}
+		}
+	},
+	{
+		"id": "porsche-718-cayman-gt4-rs",
+		"name": "718 Cayman GT4 RS",
+		"brand": "Porsche",
+		"url": "https://finder.porsche.com/pt/pt-PT/search/718?model=718&model-generation=982&category=718-cayman-gt4-rs",
+		"availability": "available",
+		"image": {
+			"src": "/images/curated/porsche-718-cayman-gt4-rs.png",
+			"width": 2616,
+			"height": 712,
+			"source": "https://a.storyblok.com/f/322327/2616x712/e030f0d430/cm24n3jix0001-718-cayman-gt-4-rs-side.png"
+		},
+		"translations": {
+			"en": {
+				"description": "A mid-engined Porsche sports car with a naturally aspirated 4.0-litre flat-six and a fixed rear wing.",
+				"imageAlt": "Side profile of a Porsche 718 Cayman GT4 RS in Arctic Grey with a fixed rear wing and dark wheels."
+			},
+			"fr": {
+				"description": "Une sportive Porsche à moteur central, avec un six cylindres à plat atmosphérique de 4,0 litres et un aileron arrière fixe.",
+				"imageAlt": "Vue de profil d’une Porsche 718 Cayman GT4 RS en Gris Arctique, avec un aileron arrière fixe et des jantes sombres."
+			},
+			"es": {
+				"description": "Un deportivo Porsche de motor central, con un motor bóxer atmosférico de seis cilindros y 4,0 litros y un alerón trasero fijo.",
+				"imageAlt": "Vista lateral de un Porsche 718 Cayman GT4 RS en Gris Ártico, con un alerón trasero fijo y llantas oscuras."
+			},
+			"pt": {
+				"description": "Um desportivo Porsche de motor central, com um motor boxer atmosférico de seis cilindros e 4,0 litros e uma asa traseira fixa.",
+				"imageAlt": "Vista lateral de um Porsche 718 Cayman GT4 RS em Cinzento Ártico, com uma asa traseira fixa e jantes escuras."
+			}
+		}
+	},
+	{
+		"id": "nintendo-game-boy-color",
+		"name": "Game Boy Color",
+		"brand": "Nintendo",
+		"url": "https://www.ebay.com/b/Nintendo-Game-Boy-Color-Video-Game-Consoles/139971/bn_7116333186",
+		"availability": "discontinued",
+		"image": {
+			"src": "/images/curated/nintendo-game-boy-color.png",
+			"width": 1440,
+			"height": 2436,
+			"source": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Game-Boy-Color-Purple.png"
+		},
+		"translations": {
+			"en": {
+				"description": "Nintendo’s handheld console in Atomic Purple, with a translucent shell and a colour screen.",
+				"imageAlt": "Front view of a Nintendo Game Boy Color with a translucent Atomic Purple shell."
+			},
+			"fr": {
+				"description": "La console portable de Nintendo en violet transparent, avec une coque translucide et un écran couleur.",
+				"imageAlt": "Vue de face d’une Nintendo Game Boy Color avec une coque violette translucide."
+			},
+			"es": {
+				"description": "La consola portátil de Nintendo en Atomic Purple, con una carcasa translúcida y una pantalla a color.",
+				"imageAlt": "Vista frontal de una Nintendo Game Boy Color con una carcasa violeta translúcida."
+			},
+			"pt": {
+				"description": "A consola portátil da Nintendo em Atomic Purple, com uma caixa translúcida e um ecrã a cores.",
+				"imageAlt": "Vista frontal de uma Nintendo Game Boy Color com uma caixa violeta translúcida."
+			}
+		}
+	},
+	{
+		"id": "nike-air-force-1-low-first-use-light-sail-red",
+		"name": "Air Force 1 Low First Use",
+		"brand": "Nike",
+		"url": "https://stockx.com/nike-air-force-1-low-first-use-light-sail-red",
+		"availability": "available",
+		"image": {
+			"src": "/images/curated/nike-air-force-1-first-use.jpg",
+			"width": 800,
+			"height": 600,
+			"source": "https://images.stockx.com/360/Nike-Air-Force-1-Low-First-Use-Light-Sail-Red/Images/Nike-Air-Force-1-Low-First-Use-Light-Sail-Red/Lv2/img01.jpg?dpr=1&h=800&q=90&updated_at=1641481849&w=1200",
+			"blendWithBackground": true
+		},
+		"translations": {
+			"en": {
+				"description": "Nike’s Air Force 1 Low First Use in Light Sail Red, with pale leather, stone-coloured suede overlays, an outlined Swoosh, and red accents.",
+				"imageAlt": "Side view of the Nike Air Force 1 Low First Use Light Sail Red, with pale leather, stone-coloured suede, a black outlined Swoosh, and a red heel tab."
+			},
+			"fr": {
+				"description": "La Nike Air Force 1 Low First Use en Light Sail Red, avec du cuir clair, des empiècements en daim couleur pierre, un Swoosh aux contours dessinés et des touches de rouge.",
+				"imageAlt": "Vue de profil de la Nike Air Force 1 Low First Use Light Sail Red, avec du cuir clair, du daim couleur pierre, un Swoosh au contour noir et un empiècement rouge au talon."
+			},
+			"es": {
+				"description": "La Nike Air Force 1 Low First Use en Light Sail Red, con cuero claro, paneles de ante en tono piedra, un Swoosh delineado y detalles rojos.",
+				"imageAlt": "Vista lateral de la Nike Air Force 1 Low First Use Light Sail Red, con cuero claro, ante en tono piedra, un Swoosh delineado en negro y un panel rojo en el talón."
+			},
+			"pt": {
+				"description": "As Nike Air Force 1 Low First Use em Light Sail Red, com pele clara, painéis de camurça em tom pedra, um Swoosh delineado e detalhes vermelhos.",
+				"imageAlt": "Vista lateral das Nike Air Force 1 Low First Use Light Sail Red, com pele clara, camurça em tom pedra, um Swoosh delineado a preto e um painel vermelho no calcanhar."
+			}
+		}
+	},
+	{
+		"id": "nude-project-mon-amour-cap-olive",
+		"name": "Mon Amour Cap",
+		"brand": "Nude Project",
+		"url": "https://nude-project.com/en-pt/collections/headwear/products/mon-amour-cap-olive",
+		"availability": "available",
+		"image": {
+			"src": "/images/curated/nude-project-mon-amour-cap-olive-transparent.png",
+			"width": 1352,
+			"height": 1304,
+			"source": "https://cdn.shopify.com/s/files/1/0025/3725/9054/files/5front_40e91b41-0821-4246-9339-b0fa821f7ba8.webp?v=1786030013"
+		},
+		"translations": {
+			"en": {
+				"description": "An olive-green corduroy cap with a curved visor and embroidered Mon Amour Studios lettering and red cherries.",
+				"imageAlt": "Front view of the olive-green Nude Project Mon Amour cap with cream lettering and embroidered red cherries."
+			},
+			"fr": {
+				"description": "Une casquette en velours côtelé vert olive, avec une visière incurvée et une broderie Mon Amour Studios ornée de cerises rouges.",
+				"imageAlt": "Vue de face de la casquette vert olive Mon Amour de Nude Project, avec un lettrage crème et des cerises rouges brodées."
+			},
+			"es": {
+				"description": "Una gorra de pana verde oliva con visera curva, letras Mon Amour Studios y cerezas rojas bordadas.",
+				"imageAlt": "Vista frontal de la gorra verde oliva Mon Amour de Nude Project, con letras crema y cerezas rojas bordadas."
+			},
+			"pt": {
+				"description": "Um boné de bombazine verde-azeitona com pala curva, letras Mon Amour Studios e cerejas vermelhas bordadas.",
+				"imageAlt": "Vista frontal do boné verde-azeitona Mon Amour da Nude Project, com letras creme e cerejas vermelhas bordadas."
+			}
+		}
+	},
+	{
+		"id": "polo-ralph-lauren-sport-beanie-orange",
+		"name": "Polo Sport Beanie",
+		"brand": "Polo Ralph Lauren",
+		"url": "https://www.asos.com/polo-ralph-lauren/polo-ralph-lauren-sport-logo-beanie-in-orange/prd/211101554#colourWayId-211101556",
+		"availability": "available",
+		"image": {
+			"src": "/images/curated/polo-ralph-lauren-sport-beanie-orange.jpg",
+			"width": 951,
+			"height": 728,
+			"source": "https://cdn.shopify.com/s/files/1/0948/5107/2335/files/Polo-Ralph-Lauren-POLO-SPORT-BEANIE_-Orange.jpg?v=1791197738",
+			"blendWithBackground": true
+		},
+		"translations": {
+			"en": {
+				"description": "An orange ribbed-knit beanie with a folded cuff, embroidered Polo Sport lettering, and an American flag.",
+				"imageAlt": "Front view of an orange Polo Ralph Lauren beanie with Polo Sport embroidery and an American flag on the folded cuff."
+			},
+			"fr": {
+				"description": "Un bonnet orange en maille côtelée avec un revers, un lettrage Polo Sport brodé et un drapeau américain.",
+				"imageAlt": "Vue de face d’un bonnet orange Polo Ralph Lauren, avec une broderie Polo Sport et un drapeau américain sur le revers."
+			},
+			"es": {
+				"description": "Un gorro naranja de punto acanalado con vuelta, letras Polo Sport bordadas y una bandera estadounidense.",
+				"imageAlt": "Vista frontal de un gorro naranja Polo Ralph Lauren, con bordado Polo Sport y una bandera estadounidense en la vuelta."
+			},
+			"pt": {
+				"description": "Um gorro laranja de malha canelada com dobra, letras Polo Sport bordadas e uma bandeira americana.",
+				"imageAlt": "Vista frontal de um gorro laranja Polo Ralph Lauren, com bordado Polo Sport e uma bandeira americana na dobra."
+			}
+		}
+	},
+	{
+		"id": "modretro-chromatic-transparent-green",
+		"name": "Chromatic",
+		"brand": "ModRetro",
+		"url": "https://modretro.com/products/chromatic-transparent?variant=52703072780590",
+		"availability": "available",
+		"image": {
+			"src": "/images/curated/modretro-chromatic-transparent-green.webp",
+			"width": 1445,
+			"height": 1445,
+			"source": "https://modretro.com/cdn/shop/files/01_HNHD-PLA-GREU-Hero.webp?v=1791241181&width=1445"
+		},
+		"translations": {
+			"en": {
+				"description": "A transparent green handheld console for Game Boy and Game Boy Color cartridges, bundled with Tetris.",
+				"imageAlt": "Front view of a transparent green ModRetro Chromatic handheld console displaying Tetris."
+			},
+			"fr": {
+				"description": "Une console portable vert transparent pour les cartouches Game Boy et Game Boy Color, fournie avec Tetris.",
+				"imageAlt": "Vue de face d’une console portable ModRetro Chromatic vert transparent affichant Tetris."
+			},
+			"es": {
+				"description": "Una consola portátil verde transparente para cartuchos de Game Boy y Game Boy Color, con Tetris incluido.",
+				"imageAlt": "Vista frontal de una consola portátil ModRetro Chromatic verde transparente mostrando Tetris."
+			},
+			"pt": {
+				"description": "Uma consola portátil verde transparente para cartuchos Game Boy e Game Boy Color, com Tetris incluído.",
+				"imageAlt": "Vista frontal de uma consola portátil ModRetro Chromatic verde transparente a apresentar Tetris."
+			}
+		}
+	}
+]

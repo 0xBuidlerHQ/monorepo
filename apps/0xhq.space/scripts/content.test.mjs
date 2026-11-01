@@ -12,7 +12,7 @@ import os from "node:os";
 import path from "node:path";
 import test from "node:test";
 import { getEntries } from "../src/lib/content.ts";
-import { contentLocales } from "../src/lib/locales.ts";
+import { contentLocales, translatedCollections } from "../src/lib/locales.ts";
 
 const checkScript = path.resolve(import.meta.dirname, "check-translations.mjs");
 
@@ -272,7 +272,7 @@ test("every published source has translations and animation targets in all langu
 			.toLowerCase()
 			.replace(/[^a-z0-9]+/g, "-")
 			.replace(/^-|-$/g, "");
-	for (const collection of ["learn", "ideas", "thoughts"]) {
+	for (const collection of translatedCollections) {
 		const sources = getEntries(collection, "en");
 		for (const locale of contentLocales) {
 			const entries = getEntries(collection, locale);

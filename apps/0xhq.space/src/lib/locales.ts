@@ -1,13 +1,14 @@
 export const contentLocales = ["en", "fr", "es", "pt"] as const;
 export type ContentLocale = (typeof contentLocales)[number];
-export type TranslatedCollection = "learn" | "thoughts" | "ideas";
+export const translatedCollections = ["learn", "thoughts", "ideas"] as const;
+export type TranslatedCollection = (typeof translatedCollections)[number];
 export function isContentLocale(value: string): value is ContentLocale {
 	return contentLocales.some((locale) => locale === value);
 }
 export function isTranslatedCollection(
 	value: string,
 ): value is TranslatedCollection {
-	return value === "learn" || value === "thoughts" || value === "ideas";
+	return translatedCollections.some((collection) => collection === value);
 }
 
 export const localeRegions = {

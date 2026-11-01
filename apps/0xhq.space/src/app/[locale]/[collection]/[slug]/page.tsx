@@ -12,6 +12,7 @@ import {
 	contentLocales,
 	isContentLocale,
 	isTranslatedCollection,
+	translatedCollections,
 } from "@/lib/locales";
 import { articleAlternates } from "@/lib/translations";
 
@@ -19,7 +20,7 @@ export const ensureStatic = "navigation";
 
 export function generateStaticParams() {
 	return contentLocales.flatMap((locale) =>
-		(["learn", "thoughts", "ideas"] as const).flatMap((collection) =>
+		translatedCollections.flatMap((collection) =>
 			getEntries(collection, locale).map(({ slug }) => ({
 				locale,
 				collection,

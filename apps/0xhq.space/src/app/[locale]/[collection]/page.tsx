@@ -8,12 +8,13 @@ import {
 	contentLocales,
 	isContentLocale,
 	isTranslatedCollection,
+	translatedCollections,
 } from "@/lib/locales";
 
 export const ensureStatic = "navigation";
 export function generateStaticParams() {
 	return contentLocales.flatMap((locale) =>
-		["learn", "thoughts", "ideas"].map((collection) => ({
+		translatedCollections.map((collection) => ({
 			locale,
 			collection,
 		})),

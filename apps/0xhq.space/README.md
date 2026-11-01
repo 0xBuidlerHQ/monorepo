@@ -29,7 +29,7 @@ English is the source language. Content and interface support English (`en`), Fr
 
 ## Publishing an article
 
-Create a folder such as `content/learn/my-article/` (or use `thoughts`). Add a shared `meta.json`:
+Create a folder such as `content/learn/my-article/` (or use `thoughts` or `ideas`). Add a shared `meta.json`:
 
 ```json
 {
@@ -65,6 +65,16 @@ A version is published only when both draft flags are absent or false. Drafts ar
 Keep `slug`, `date`, and `tags` exclusively in `meta.json`; putting them in language front matter is rejected to prevent contradictory values. Markdown front matter contains the translated title, optional per-language draft status, and translation revision information.
 
 The English URL is `/en/learn/my-article`. French versions use `/fr/learn/my-article`. Thoughts follow the same pattern. `/en/learn` and `/fr/learn` list only published content in that language. There is no silent English fallback for a missing translation.
+
+## Curated products
+
+Curated / Pépites / Joyas / Pérolas lives at `/<locale>/curated`. Products are image cards that link directly to the maker’s purchase page. They have no local article page, publication date, or reading time.
+
+Edit `content/curated/products.json` to add a product. Each entry has a unique `id`, `name`, `brand`, HTTPS purchase `url`, `availability` (`preorder`, `available`, or `discontinued`), an `image` with local `src`, `width`, `height`, and original `source` URL, and `translations` for `en`, `fr`, `es`, and `pt` containing `description` and `imageAlt`. Array order controls card order. Store product images in `public/images/curated/`. No Markdown or shared article metadata is needed.
+
+Discontinued products can link to second-hand listings. White-background catalog photos can set `image.blendWithBackground: true` to blend into the gray card using CSS, preserving the original image file.
+
+The first entry is Ambire Ice. Its description and image come from [Ambire’s product page](https://www.ambire.com/ice); its purchase link opens the pre-order section. Prices are left to the seller’s page. The cards use the site’s existing dark background, typography, borders, and red interaction accents.
 
 There is one root layout, `src/app/[locale]/layout.tsx`, for all four languages. Pages use `/en`, `/fr`, `/es`, or `/pt` URLs. The locale homepage displays About; there is no separate `/about` page. `src/proxy.ts` redirects page URLs without a locale to English, preserving the path and query string: `/` goes to `/en`, and `/learn` goes to `/en/learn`. Static assets, Next.js internals, and API routes bypass locale redirects. No custom article ordering is configured.
 

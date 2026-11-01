@@ -2,7 +2,7 @@
 description: "Un concept reliant la certification des objets de collection, les passeports numériques, la provenance sur blockchain et les lieux d’échange physiques."
 title: "Un nouveau standard pour la propriété des objets de collection"
 draft: false
-sourceRevision: 7dc4427dee21183495831e778071368515b5896a05c0a81865b5bf1dc5a5b096
+sourceRevision: 9b8384b3179a48ad00076359b1535c045db9e777c0f2088f412dca2bd0b52115
 ---
 
 ## 1. La vision
@@ -31,9 +31,27 @@ L’entreprise commence par devenir une autorité professionnelle du grading et 
 
 Une fois authentifié, chaque objet reçoit un NFT unique associé à son identité physique. Cela crée un historique traçable en continu de la propriété enregistrée et des événements importants de la vie de l’objet. Les collectionneurs peuvent prouver qu’ils contrôlent leur certificat numérique de propriété, consulter l’historique de propriété enregistré et examiner les données de grading et d’authentification. Lors d’une vente ou d’un échange, ils peuvent transférer le certificat avec l’objet. La comparaison entre l’objet physique et son identité enregistrée permet aussi aux acheteurs de repérer des incohérences. Contrairement aux certificats traditionnels de grading, le système est conçu pour suivre davantage que l’état d’un objet. Il établit un historique de **ce qu’est l’objet, de la manière dont il a été authentifié et de la personne qui contrôle actuellement son certificat numérique de propriété enregistré.** La blockchain rend ces données vérifiables indépendamment et résistantes aux modifications non autorisées de l’historique.
 
+#### Une application normale, avec toute la technique en arrière-plan
+
+Les collectionneurs se connecteraient simplement avec Face ID, Touch ID ou leur compte Google, puis consulteraient leur collection, achèteraient, vendraient ou échangeraient. Pas de crypto à acheter, pas de portefeuille séparé à configurer et pas d’étapes techniques à apprendre. Les certificats et les transferts seraient gérés automatiquement en arrière-plan. L’application montrerait ce qui compte : les objets, leur histoire et la confirmation qu’un échange est terminé.
+
+La plupart des gens ne savent pas si leur application préférée fonctionne sur les serveurs d’Amazon ou de Google, ni dans quel langage elle a été écrite. Ils n’ont pas besoin de le savoir. Le principe serait le même ici : les collectionneurs pourraient utiliser tout le service sans jamais savoir qu’il repose sur une blockchain. Les curieux pourraient découvrir son fonctionnement ; les autres pourraient simplement profiter de leur passion.
+
+La différence serait dans les possibilités offertes : vérifier plus facilement l’histoire d’un objet, conserver son certificat lorsqu’il change de mains et permettre à différents services de consulter le même registre. Davantage de possibilités en coulisses, avec une expérience toujours aussi simple pour l’utilisateur.
+
+#### Un socle de sécurité qui évolue
+
+Construire le registre sur [Ethereum](/fr/learn/ethereum-101) permettrait à l’entreprise de s’appuyer sur un socle de sécurité entretenu par un réseau mondial, plutôt que de sécuriser seule un registre privé. Les données dont le règlement est assuré par Ethereum bénéficieraient de son consensus et de leur vérification indépendante, ainsi que des travaux visant à renforcer la décentralisation, la résistance à la censure et la résilience du réseau. C’est un avantage à long terme : l’entreprise pourrait s’appuyer sur les améliorations de sécurité de l’écosystème au fil de l’évolution du réseau. La feuille de route de sécurité d’Ethereum présente ces travaux. Si une couche 2 d’Ethereum est utilisée, son système de preuve, la disponibilité de ses données, ses ponts et ses mécanismes de mise à jour devraient également être évalués.
+
+Cela comprend une voie vers une cryptographie plus robuste face aux nouvelles menaces. Le programme post-quantique d’Ethereum développe des protections contre de futures attaques quantiques. Ces protections sont encore en développement ; adopter Ethereum aujourd’hui ne rend pas chaque portefeuille ou application résistant au quantique. L’entreprise devrait prévoir les migrations de comptes, de clés et d’applications nécessaires à mesure que ces protections deviennent disponibles.
+
+À mesure que l’IA facilite la fabrication d’images et de documents, un historique dont chacun peut vérifier l’émetteur enregistré et les événements devient plus utile. Il aiderait les collectionneurs à confronter les affirmations aux éléments enregistrés, sans rendre le système invulnérable aux fraudes assistées par l’IA. La blockchain conserve ce qui a été enregistré ; l’authentification professionnelle, l’empreinte physique, la sécurité des comptes et l’audit des contrats resteraient déterminants pour la fiabilité de cet historique.
+
 ### Pilier 3 : échanges physiques et communauté
 
 L’entreprise établirait des lieux physiques où les collectionneurs pourraient se rencontrer, échanger, acheter, vendre et discuter de leurs objets. Ces lieux réuniraient des services professionnels de grading et d’authentification, des espaces d’exposition, des points de transaction de confiance et des espaces communautaires. Des événements, des expositions et des soirées d’échange donneraient aux collectionneurs des raisons de revenir au-delà d’une seule transaction. L’une de leurs fonctions principales serait de faciliter des transactions sécurisées. Lorsque deux collectionneurs souhaitent réaliser une transaction, ils pourraient se retrouver dans un lieu agréé où l’entreprise vérifie l’objet physique, contrôle le NFT associé et coordonne le transfert de l’objet, du certificat numérique et du paiement. L’entreprise pourrait agir comme intermédiaire de confiance, avec des partenaires réglementés pour le paiement ou le séquestre lorsque cela est nécessaire. Ces lieux serviraient à la fois de points de rencontre pour la communauté et de prolongement de l’infrastructure de confiance de l’entreprise.
+
+La communauté locale serait au cœur du produit. Des soirées d’échange régulières, des séances pour débutants et des rencontres permettraient de retrouver des visages familiers, de partager des connaissances et de nouer des relations durables. Un collectionneur devrait avoir une raison de venir même sans objet à faire grader ni achat en tête. La vérification professionnelle soutiendrait ces relations, tandis que le plaisir de collectionner ensemble ferait vivre le lieu.
 
 ---
 
@@ -59,6 +77,15 @@ Toutes les informations n’auraient pas besoin d’être enregistrées directem
 
 Les lieux physiques constituent une dimension essentielle de l’activité. Plutôt que de fonctionner exclusivement en ligne, l’entreprise pourrait développer un réseau de lieux de destination pour les collectionneurs. Ces espaces pourraient associer l’atmosphère d’un showroom haut de gamme, d’un laboratoire spécialisé de grading et d’un lieu de rencontre communautaire. Les collectionneurs pourraient y déposer des objets à faire grader, vérifier leur authenticité, découvrir des pièces rares et acheter, vendre ou échanger dans le cadre de transactions vérifiées. Les événements et les expositions feraient de ces lieux des espaces de rencontre autant que des lieux de commerce. Ces lieux contribueraient à établir une présence physique et une marque reconnaissable. Ils répondraient aussi à l’un des principaux problèmes du commerce d’objets de collection : la confiance entre inconnus. En facilitant les transactions dans un environnement contrôlé, l’entreprise pourrait vérifier l’actif physique et son certificat numérique de propriété avant de finaliser un échange. À terme, ces lieux pourraient constituer un réseau interconnecté de points de transaction de confiance.
 
+### Une opportunité locale en Europe
+
+Les États-Unis offrent un exemple visible de la collection comme activité sociale à grande échelle. Dans un [entretien de 2026 avec un organisateur de la National Sports Collectors Convention, en anglais](https://www.beckett.com/news/beckett-interview-preview-of-national-2026-with-nsccs-shane-winn/), la fréquentation attendue dépassait 100 000 personnes. L’Europe possède aussi des communautés établies : le [London Card Show, en anglais](https://londoncardshow.co.uk/about/), décrit son passage d’un petit rassemblement à un événement attirant des milliers de personnes.
+
+L’opportunité à tester est de savoir si des échanges locaux réguliers et accessibles restent sous-représentés dans certaines villes européennes par rapport à ce modèle américain. Ces exemples ne démontrent pas un manque à l’échelle du continent. Il faudrait cartographier la demande, les boutiques et les événements ville par ville. L’objectif serait de renforcer les communautés existantes en s’associant aux boutiques indépendantes, aux clubs et aux organisateurs, plutôt que de supposer que tout reste à créer.
+
+Un lancement concret pourrait commencer par une soirée mensuelle dans un lieu partenaire, des dépôts ponctuels pour le grading et de petits salons régionaux. Les débutants pourraient apprendre à évaluer l’état des objets et à échanger en confiance ; les collectionneurs expérimentés pourraient rencontrer des marchands, compléter leurs séries et retrouver des habitués. La fréquentation récurrente, les échanges réalisés, l’intérêt des partenaires et l’équilibre économique guideraient la décision d’ouvrir un lieu permanent. La communauté physique pourrait devenir une porte d’entrée vers les services d’authentification et de passeport numérique.
+
+
 ---
 
 ## 7. L’écosystème
@@ -74,6 +101,8 @@ Le réseau de collectionneurs donne à cette infrastructure sa valeur pratique. 
 La première source de revenus serait le grading professionnel et l’authentification, avec la mise sous boîtier et la certification numérique. Les collectionneurs pourraient payer pour une documentation supplémentaire, comme des images en haute résolution, une empreinte numérique avancée ou une représentation 3D détaillée. Ces services établiraient le dossier initial de l’objet et donneraient à l’entreprise une activité fondée sur le travail nécessaire pour inspecter et documenter des pièces physiques.
 
 D’autres revenus pourraient provenir des transactions et des services ultérieurs. L’entreprise pourrait facturer les échanges vérifiés et les services de séquestre, percevoir des commissions sur les ventes réalisées sur sa place de marché et proposer un stockage sécurisé facultatif pour les objets de valeur. Des adhésions pourraient réunir services prioritaires, événements et avantages pour les collectionneurs. Les partenariats professionnels ouvriraient la même infrastructure d’authentification et de vérification aux boutiques spécialisées, aux marchands, aux maisons de vente aux enchères et aux autres acteurs du secteur. Ensemble, ces activités pourraient générer des revenus à différents moments de la vie d’un objet, tout en réduisant la dépendance à ses premiers frais de grading.
+
+Les événements locaux pourraient aussi contribuer au modèle économique grâce à des entrées abordables, des tables pour les marchands, des partenariats avec les lieux et des adhésions facultatives. Des rencontres gratuites ou peu coûteuses maintiendraient l’accessibilité, avec des services payants associés à des bénéfices clairs. Un pilote devrait mesurer le retour des participants et le coût d’animation de la communauté avant de s’engager dans des locaux permanents.
 
 ---
 

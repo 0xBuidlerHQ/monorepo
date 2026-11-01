@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Footer } from "@/components/footer";
 import { HeaderNavigation } from "@/components/header-navigation";
 import { PageContainer } from "@/components/page-container";
+import { SideDrawings } from "@/components/side-drawings";
 import { SubscribeButton } from "@/components/subscribe-button";
 import { contentLanguageRoutes } from "@/lib/translations";
 import "@/app/globals.css";
@@ -71,6 +72,7 @@ export function SiteDocument({
 			className={`${geistSans.variable} ${sourceSerif.variable} ${geistMono.variable} dark antialiased bg-background`}
 		>
 			<body className="flex min-h-dvh flex-col font-sans leading-relaxed">
+				<SideDrawings />
 				<LocaleProvider locale={locale}>
 					<header className="site-header shrink-0 border-b border-foreground/10">
 						<div className="site-header-row">

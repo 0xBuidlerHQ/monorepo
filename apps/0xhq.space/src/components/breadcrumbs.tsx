@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { isTranslatedCollection } from "@/lib/locales";
 import { formatTagLabel, messages } from "@/lib/messages";
 import { useLocale } from "./locale-provider";
 
@@ -32,9 +33,9 @@ export function Breadcrumbs() {
 						if (segments[index - 1] === "tags")
 							label = formatTagLabel(label, locale);
 						if (
-							segment === "learn" ||
-							segment === "thoughts" ||
-							segment === "ideas" ||
+							isTranslatedCollection(segment) ||
+							segment === "curated" ||
+							segment === "content" ||
 							segment === "glossary" ||
 							segment === "tags"
 						)

@@ -51,7 +51,7 @@ export function SocialLinks({ showLabels = false }: { showLabels?: boolean }) {
 					href={links[profile]}
 					target="_blank"
 					rel="noopener noreferrer"
-					className={`inline-flex items-center gap-3 transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-600 ${showLabels ? "group relative aspect-square flex-col items-center justify-center gap-5 overflow-hidden rounded-2xl border border-foreground/10 bg-gradient-to-b from-foreground/[0.04] to-transparent px-4 py-8 text-center text-sm font-medium text-foreground/75 transition-[translate,color,background-color,border-color,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/5 motion-reduce:transition-none motion-reduce:hover:translate-y-0" : "p-1"} ${showLabels ? cardStyles[profile] : ""}`}
+					className={`inline-flex items-center gap-3 hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-600 ${showLabels ? "group relative aspect-square flex-col items-center justify-center gap-5 overflow-hidden rounded-2xl border border-foreground/10 bg-gradient-to-b from-foreground/[0.04] to-transparent px-4 py-8 text-center text-sm font-medium text-foreground/75 transition-[translate,color,background-color,border-color,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/5 motion-reduce:transition-none motion-reduce:hover:translate-y-0" : "p-1 transition-colors"} ${showLabels ? cardStyles[profile] : ""}`}
 				>
 					<svg
 						aria-hidden="true"
