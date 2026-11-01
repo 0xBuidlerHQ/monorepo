@@ -20,6 +20,7 @@ import {
 } from "@lucasmarkes/hairline/react";
 import { usePathname } from "next/navigation";
 import { isContentLocale } from "@/lib/locales";
+import styles from "./side-drawings.module.css";
 
 const pageDrawings = {
 	"/": [Terrain, Exploded],
@@ -70,11 +71,11 @@ export function SideDrawings() {
 		],
 	];
 	return (
-		<div className="side-drawings" aria-hidden="true">
-			<div className="side-drawing side-drawing-left">
+		<div className={styles.drawings} aria-hidden="true">
+			<div className={`${styles.drawing} ${styles.left}`}>
 				<Left key={`${path}-left`} theme="dark" intensity={0.35} play />
 			</div>
-			<div className="side-drawing side-drawing-right">
+			<div className={`${styles.drawing} ${styles.right}`}>
 				<Right key={`${path}-right`} theme="dark" intensity={0.35} play />
 			</div>
 		</div>

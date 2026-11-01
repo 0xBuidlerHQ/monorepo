@@ -32,51 +32,6 @@ body {
 	font-optical-sizing: auto;
 }
 
-.side-drawings {
-	display: none;
-	position: absolute;
-	width: 0;
-	height: 0;
-	pointer-events: none;
-	--hairline-plate: var(--background);
-	--hairline-hi: color-mix(in srgb, var(--foreground) 80%, transparent);
-	--hairline-edge: color-mix(in srgb, var(--foreground) 50%, transparent);
-	--hairline-mid: color-mix(in srgb, var(--foreground) 30%, transparent);
-	--hairline-lo: color-mix(in srgb, var(--foreground) 16%, transparent);
-	--hairline-stroke: 0.75;
-}
-
-@media (min-width: 1280px) {
-	.side-drawings {
-		display: block;
-	}
-	.side-drawing {
-		position: fixed;
-		top: 50%;
-		width: min(11.5rem, calc((100vw - 56rem) / 2 - 1.5rem));
-		aspect-ratio: 5 / 4;
-		overflow: hidden;
-		contain: layout paint;
-		opacity: 0.85;
-		pointer-events: auto;
-		transform: translateY(-50%);
-	}
-	.side-drawing > div {
-		width: 100%;
-		height: 100%;
-	}
-	.side-drawing [data-hairline] > svg {
-		transform: scale(1.2);
-		transform-origin: center;
-	}
-	.side-drawing-left {
-		right: calc(50% + 28rem + 1rem);
-	}
-	.side-drawing-right {
-		left: calc(50% + 28rem + 1rem);
-	}
-}
-
 @layer components {
 	.thought-title {
 		font-family: var(--font-geist-sans);
