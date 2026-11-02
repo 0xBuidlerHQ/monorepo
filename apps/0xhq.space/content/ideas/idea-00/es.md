@@ -2,12 +2,12 @@
 description: "Una visión basada en la confianza y la transparencia, que conecta objetos de colección y de valor con identidades digitales autenticadas y registros de propiedad verificables mediante espacios físicos de autenticación, intercambio y comunidad."
 title: "Un nuevo estándar para los objetos de colección y de valor"
 draft: false
-sourceRevision: 438c8984e20cb47cf65071620fcaa9a36e2746872b150efb2026c01d723ee4b2
+sourceRevision: 6d472693f143c5a388c8f097677586732ec653ea2c5f4b7273f00710b1fd2f65
 ---
 
 ## 1. La visión
 
-**La visión es construir un ecosistema de confianza y transparencia que conecte los objetos de colección y de valor con identidades digitales autenticadas y registros de propiedad verificables.** Ya sea una carta, un bolso de lujo o un reloj, cada objeto tendría un historial duradero que indique qué es, cómo se ha autenticado y quién es su propietario registrado. Gestionaríamos todo el proceso, reuniendo autenticación profesional, pasaportes digitales y espacios físicos de verificación, intercambio y encuentro. La base es la conexión entre el objeto real, su identidad digital y su propietario durante toda su vida. La gestión de colecciones, las valoraciones, los intercambios seguros y el acceso vinculado a la propiedad surgirían de esa base.
+**La visión es establecer un nuevo estándar de confianza para los objetos de colección y de valor, conectando cada objeto físico con una identidad digital autenticada y un historial de propiedad verificable.** Una carta, un bolso de lujo o un reloj podría llevar su historia de un propietario al siguiente: qué es, cómo se ha autenticado, cómo ha evolucionado su estado y por qué manos ha pasado. Construiríamos y gestionaríamos la infraestructura que lo hace posible, reuniendo autenticación profesional, pasaportes digitales, una aplicación accesible y espacios físicos en un ecosistema conectado. En su centro está una conexión duradera entre el objeto real, su identidad digital y su propietario. Esta base abre la puerta a una experiencia de propiedad más rica: comprender lo que posees, compartir su historia, descubrir su valor e intercambiarlo con confianza. La ambición es que esa confianza forme parte de la vida cotidiana de coleccionistas y propietarios de todo el mundo.
 
 ---
 
@@ -65,9 +65,9 @@ Iniciar sesión y utilizar estos servicios resultaría tan familiar como usar un
 
 ### El espacio físico
 
-Este espacio llevaría el sistema al mundo físico: un lugar para autenticar objetos de colección y de valor, inspeccionar piezas en persona y completar ventas o intercambios verificados. Nuestro equipo comprobaría el objeto y su pasaporte digital, verificaría la propiedad registrada y coordinaría el pago y la entrega. Las instalaciones y los conocimientos especializados permitirían la autenticación y el grading cuando corresponda, junto con un espacio para exponer y descubrir objetos. Una red de espacios conectados permitiría acceder a estos servicios en distintos lugares utilizando el mismo pasaporte y los mismos registros.
+Estos espacios serían destinos para quienes valoran los objetos de colección y de valor. Imagina la atmósfera de una sala de exposición especializada, los conocimientos de un laboratorio de autenticación y la energía de un lugar de encuentro comunitario reunidos en un mismo sitio. Los propietarios podrían traer una pieza muy apreciada, descubrir algo que llevan tiempo buscando o reunirse con un comprador y completar un intercambio con nuestro equipo para verificar el objeto, su pasaporte y su propiedad registrada. Estos espacios darían presencia física al sistema y pondrían personas expertas detrás de su promesa de confianza. Un pasaporte establecido en un lugar podría reconocerse en otro, permitiendo que la historia de un objeto viaje con él por toda la red.
 
-La comunidad daría motivos para acudir más allá de un servicio o una transacción. Las noches de intercambio, exposiciones, sesiones para principiantes y encuentros reunirían a propietarios y coleccionistas para compartir conocimientos y crear relaciones. Todo el mundo debería sentirse bienvenido incluso sin tener nada que autenticar, comprar o vender.
+La comunidad daría vida a estos lugares. Noches de intercambio, exposiciones, sesiones para principiantes y encuentros reunirían a personas con distintas colecciones, experiencias e intereses. Alguien podría llegar con una pieza para autenticar y marcharse con una nueva relación, un mayor conocimiento de su colección o el siguiente objeto que desea encontrar. Los visitantes habituales deberían reconocer caras conocidas y sentir que pertenecen al lugar, incluso sin tener nada que comprar o vender. A medida que crezca la red, cada espacio podría convertirse en un hogar local para una comunidad mundial.
 
 ---
 
@@ -103,7 +103,7 @@ Visitas uno de nuestros espacios para conocer a otros propietarios, descubrir ob
 
 ## 6. La ambición final
 
-**La ambición es convertirse en una referencia mundial para la autenticación, la identidad y la propiedad de los objetos de colección y de valor.** Un pasaporte digital emitido por nosotros se convertiría en una fuente de confianza reconocida, ofreciendo a propietarios y compradores un registro fiable de la autenticidad, el estado y el historial de propiedad de un objeto. Mediante una aplicación conectada y una red de espacios físicos, las personas podrían acceder a los mismos servicios de verificación e intercambio en distintas ciudades y países, con un historial que continúa cuando el objeto cambia de manos. El objetivo final es que esta conexión entre el objeto físico, su identidad digital y su propietario se convierta en una parte esperada de poseer e intercambiar objetos de colección y de valor en todo el mundo.
+**La ambición es convertirse en una referencia mundial para la autenticación, la identidad y la propiedad de los objetos de colección y de valor.** Un pasaporte emitido por nosotros se convertiría en algo que las personas reconocen y solicitan: una forma fiable de comprender un objeto, seguir su historia documentada e intercambiarlo con confianza. Un propietario de una ciudad podría reunirse con un comprador de otra y apoyarse en los mismos registros, conocimientos y procesos de verificación. Cada autenticación, inspección y transferencia verificada enriquecería un historial que permanece con el objeto, construyendo algo más duradero que una sola transacción. Mediante la aplicación y una red internacional de espacios físicos, conectaríamos esa base compartida con comunidades de todo el mundo. El objetivo final es establecer un estándar reconocido mundialmente que convierta la identidad autenticada, el historial transparente y la propiedad verificable en una parte esperada de cómo los objetos de colección y de valor pasan de una persona a otra.
 
 ---
 

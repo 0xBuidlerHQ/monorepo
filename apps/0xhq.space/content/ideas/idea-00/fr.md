@@ -2,12 +2,12 @@
 description: "Une vision fondée sur la confiance et la transparence, reliant les objets de collection et de valeur à des identités numériques authentifiées et à des registres de propriété vérifiables, grâce à des lieux dédiés à l’authentification, aux échanges et à la communauté."
 title: "Un nouveau standard pour les objets de collection et de valeur"
 draft: false
-sourceRevision: 438c8984e20cb47cf65071620fcaa9a36e2746872b150efb2026c01d723ee4b2
+sourceRevision: 6d472693f143c5a388c8f097677586732ec653ea2c5f4b7273f00710b1fd2f65
 ---
 
 ## 1. La vision
 
-**La vision est de bâtir un écosystème de confiance et de transparence qui relie les objets de collection et de valeur à des identités numériques authentifiées et à des registres de propriété vérifiables.** Qu’il s’agisse d’une carte, d’un sac de luxe ou d’une montre, chaque objet disposerait d’un historique durable indiquant ce qu’il est, comment il a été authentifié et qui est son propriétaire enregistré. Nous assurerions l’ensemble du processus, en réunissant authentification professionnelle, passeports numériques et lieux physiques de vérification, d’échange et de rencontre. Le socle est le lien entre l’objet réel, son identité numérique et son propriétaire tout au long de son existence. La gestion de collection, les estimations de valeur, les échanges sécurisés et les accès liés à la propriété découleraient de ce socle.
+**La vision est d’établir un nouveau standard de confiance pour les objets de collection et de valeur, en reliant chaque objet physique à une identité numérique authentifiée et à un historique de propriété vérifiable.** Une carte, un sac de luxe ou une montre pourrait transmettre son histoire d’un propriétaire à l’autre : ce qu’est l’objet, comment il a été authentifié, comment son état a évolué et entre quelles mains il est passé. Nous construirions et exploiterions l’infrastructure qui rend cela possible, en réunissant authentification professionnelle, passeports numériques, application accessible et lieux physiques dans un même écosystème. Au cœur du projet se trouve un lien durable entre l’objet réel, son identité numérique et son propriétaire. Ce socle ouvre la voie à une expérience de propriété plus riche : comprendre ce que l’on possède, en partager l’histoire, en découvrir la valeur et l’échanger avec confiance. L’ambition est de faire entrer cette confiance dans le quotidien des collectionneurs et des propriétaires du monde entier.
 
 ---
 
@@ -65,9 +65,9 @@ La connexion et l’utilisation des services seraient aussi familières que dans
 
 ### Le lieu physique
 
-Ce lieu ancrerait le système dans le monde réel : un espace pour faire authentifier des objets de collection et de valeur, inspecter des pièces en personne et réaliser des ventes ou échanges vérifiés. Notre équipe contrôlerait l’objet et son passeport numérique, vérifierait la propriété enregistrée et coordonnerait le paiement et la remise. Des installations et une expertise spécialisées permettraient l’authentification et le grading lorsque cela est pertinent, avec un espace pour exposer et découvrir des objets. Un réseau de lieux interconnectés permettrait aux propriétaires d’accéder à ces services à différents endroits en utilisant le même passeport et les mêmes données.
+Ces lieux seraient des destinations pour les personnes attachées aux objets de collection et de valeur. Imaginez l’atmosphère d’un showroom spécialisé, l’expertise d’un laboratoire d’authentification et l’énergie d’un lieu de rencontre communautaire réunies au même endroit. Les propriétaires pourraient apporter une pièce qui leur est chère, découvrir un objet recherché depuis longtemps ou rencontrer un acheteur et réaliser un échange avec notre équipe pour vérifier l’objet, son passeport et sa propriété enregistrée. Ces espaces donneraient au système une présence physique et placeraient des personnes compétentes derrière sa promesse de confiance. Un passeport établi dans un lieu pourrait être reconnu dans un autre, permettant à l’historique d’un objet de l’accompagner à travers le réseau.
 
-La communauté donnerait une raison de venir au-delà d’un service ou d’une transaction. Soirées d’échange, expositions, séances pour débutants et rencontres réuniraient propriétaires et collectionneurs pour partager leurs connaissances et nouer des relations. Chacun devrait s’y sentir bienvenu, même sans objet à faire authentifier, acheter ou vendre.
+La communauté donnerait vie à ces lieux. Soirées d’échange, expositions, séances pour débutants et rencontres réuniraient des personnes aux collections, aux expériences et aux intérêts différents. On pourrait venir faire authentifier une pièce et repartir avec une nouvelle relation, une meilleure compréhension de sa collection ou une idée du prochain objet à rechercher. Les habitués devraient retrouver des visages familiers et se sentir chez eux, même sans rien à acheter ou à vendre. À mesure que le réseau grandirait, chaque lieu pourrait devenir un point d’ancrage local pour une communauté mondiale.
 
 ---
 
@@ -103,7 +103,7 @@ Vous venez rencontrer d’autres propriétaires, découvrir des objets et partic
 
 ## 6. L’ambition finale
 
-**L’ambition est de devenir une référence mondiale pour l’authentification, l’identité et la propriété des objets de collection et de valeur.** Un passeport numérique délivré par nos soins deviendrait un repère reconnu de confiance, offrant aux propriétaires et aux acheteurs un historique fiable de l’authenticité, de l’état et de la propriété d’un objet. Grâce à une application connectée et à un réseau de lieux physiques, chacun pourrait accéder aux mêmes services de vérification et d’échange dans différentes villes et différents pays, l’historique de l’objet se poursuivant à chaque changement de mains. L’objectif ultime est que ce lien entre l’objet physique, son identité numérique et son propriétaire devienne une composante attendue de la possession et de l’échange d’objets de collection et de valeur à travers le monde.
+**L’ambition est de devenir une référence mondiale pour l’authentification, l’identité et la propriété des objets de collection et de valeur.** Un passeport délivré par nos soins deviendrait quelque chose que l’on reconnaît et que l’on demande : un moyen fiable de comprendre un objet, de retracer son histoire documentée et de l’échanger avec confiance. Un propriétaire dans une ville pourrait rencontrer un acheteur dans une autre en s’appuyant sur les mêmes données, la même expertise et les mêmes procédures de vérification. Chaque authentification, inspection et transfert vérifié enrichirait un historique qui reste avec l’objet, construisant quelque chose de plus durable qu’une transaction isolée. Grâce à l’application et à un réseau international de lieux physiques, nous relierions ce socle commun à des communautés du monde entier. L’objectif ultime est d’établir un standard reconnu mondialement qui fasse de l’identité authentifiée, de l’historique transparent et de la propriété vérifiable une composante attendue de la transmission des objets de collection et de valeur d’une personne à l’autre.
 
 ---
 
