@@ -65,6 +65,12 @@
 				"description": "A coleção Santa Cruz × Pokémon TCG leva as ilustrações originais das cartas Pokémon para pranchas de skate e peças de vestuário.",
 				"imageAlt": "Três pranchas de skate Santa Cruz Pokémon TCG: Venusaur em verde à esquerda, Charizard em laranja ao centro e Blastoise em azul à direita."
 			}
+		},
+		"price": {
+			"amount": 159.99,
+			"currency": "GBP",
+			"checkedAt": "2026-11-02",
+			"source": "https://santacruzskateboards.eu/collections/pokemon"
 		}
 	},
 	{
@@ -96,6 +102,12 @@
 				"description": "O computador tudo em um da Apple lançado em 2002, com um ecrã plano num braço articulado e uma base branca em forma de cúpula.",
 				"imageAlt": "iMac G4 da Apple com uma base branca em forma de cúpula, um braço cromado articulado e um ecrã plano com um ambiente de trabalho azul."
 			}
+		},
+		"price": {
+			"amount": 249.99,
+			"currency": "USD",
+			"checkedAt": "2026-11-02",
+			"source": "https://www.ebay.com/b/Apple-iMac-PowerPC-G4-Desktops/111418/bn_635486"
 		}
 	},
 	{
@@ -164,6 +176,12 @@
 				"description": "Um desportivo Porsche de motor central, com um motor boxer atmosférico de seis cilindros e 4,0 litros e uma asa traseira fixa.",
 				"imageAlt": "Vista lateral de um Porsche 718 Cayman GT4 RS em Cinzento Ártico, com uma asa traseira fixa e jantes escuras."
 			}
+		},
+		"price": {
+			"amount": 174950,
+			"currency": "EUR",
+			"checkedAt": "2026-11-02",
+			"source": "https://www.elferspot.com/pt-br/carro/porsche-718-cayman-gt4-rs-2026-6290973/"
 		}
 	},
 	{
@@ -195,6 +213,12 @@
 				"description": "A consola portátil da Nintendo em Atomic Purple, com uma caixa translúcida e um ecrã a cores.",
 				"imageAlt": "Vista frontal de uma Nintendo Game Boy Color com uma caixa violeta translúcida."
 			}
+		},
+		"price": {
+			"amount": 125,
+			"currency": "USD",
+			"checkedAt": "2026-11-02",
+			"source": "https://www.ebay.com/b/Nintendo-Game-Boy-Color-Video-Game-Consoles/139971/bn_7116333186"
 		}
 	},
 	{
@@ -226,6 +250,12 @@
 				"description": "As Nike Air Force 1 Low First Use em Light Sail Red, com pele clara, painéis de camurça em tom pedra, um Swoosh delineado e detalhes vermelhos.",
 				"imageAlt": "Vista lateral das Nike Air Force 1 Low First Use Light Sail Red, com pele clara, camurça em tom pedra, um Swoosh delineado a preto e um painel vermelho no calcanhar."
 			}
+		},
+		"price": {
+			"amount": 225,
+			"currency": "USD",
+			"checkedAt": "2026-11-02",
+			"source": "https://stockx.com/nike-air-force-1-low-first-use-light-sail-red"
 		}
 	},
 	{

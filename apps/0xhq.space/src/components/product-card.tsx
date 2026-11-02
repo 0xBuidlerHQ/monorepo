@@ -37,7 +37,7 @@ export function ProductCard({
 				className="group relative block aspect-square overflow-hidden rounded-2xl bg-[#e5e3dd] text-zinc-900 shadow-md shadow-black/15 transition-[translate,box-shadow,background-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:hover:-translate-y-0.5 hover:bg-[#eeece6] hover:shadow-lg hover:shadow-black/25 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-600 motion-reduce:translate-y-0 motion-reduce:transition-none"
 			>
 				<p
-					className="absolute top-4 left-4 max-w-[calc(100%-2rem)] truncate text-xs text-zinc-600"
+					className="absolute top-3.5 left-3.5 max-w-[calc(100%-1.75rem)] truncate text-xs text-zinc-600"
 					title={product.brand}
 				>
 					{product.brand}
@@ -47,7 +47,7 @@ export function ProductCard({
 					image={product.image}
 					alt={imageAlt}
 				/>
-				<div className="absolute inset-x-0 bottom-0 flex items-baseline justify-between gap-3 px-4 pb-4 pt-3">
+				<div className="absolute inset-x-0 bottom-0 flex items-baseline justify-between gap-3 px-3.5 pb-3.5 pt-3">
 					<h3
 						className="min-w-0 truncate text-sm font-normal tracking-tight"
 						title={product.name}
@@ -55,7 +55,7 @@ export function ProductCard({
 						{product.name}
 					</h3>
 					<p
-						className="max-w-[45%] shrink-0 truncate text-right text-xs tabular-nums text-zinc-600"
+						className="max-w-[45%] shrink-0 truncate text-right font-mono text-xs tabular-nums text-zinc-600"
 						title={
 							product.price
 								? `${t.priceChecked} ${formatPublicationDate(product.price.checkedAt, locale)}`
