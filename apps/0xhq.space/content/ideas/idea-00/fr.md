@@ -1,168 +1,119 @@
 ---
-description: "Un concept reliant la certification des objets de collection, les passeports numériques, la provenance sur blockchain et les lieux d’échange physiques."
-title: "Un nouveau standard pour la propriété des objets de collection"
+description: "Une vision fondée sur la confiance et la transparence, reliant les objets de collection et de valeur à des identités numériques authentifiées et à des registres de propriété vérifiables, grâce à des lieux dédiés à l’authentification, aux échanges et à la communauté."
+title: "Un nouveau standard pour les objets de collection et de valeur"
 draft: false
-sourceRevision: 9b8384b3179a48ad00076359b1535c045db9e777c0f2088f412dca2bd0b52115
+sourceRevision: 8da92d6c3ff39f6f8c390dca341e7e04d488f585e088d39e4a84c05b85be9220
 ---
 
 ## 1. La vision
 
-L’idée est de créer une entreprise qui réunit **l’évaluation de l’état, l’authentification, la vérification de la propriété et les échanges physiques au sein d’un même écosystème**, en utilisant la blockchain comme socle de confiance, de transparence et de traçabilité. L’ambition ne se limite pas à créer une nouvelle entreprise de grading ou une place de marché de NFT. **La vision consiste à bâtir une infrastructure de confiance pour les objets de collection physiques**, dans laquelle chaque objet possède une identité numérique unique, un historique documenté et un registre de propriété vérifiable. Les collectionneurs pourraient faire authentifier leurs objets, prouver qu’ils contrôlent leurs certificats numériques de propriété, retracer leur histoire et les échanger avec davantage de confiance. L’entreprise associerait la sécurité de la blockchain à la crédibilité d’une évaluation professionnelle et à la dimension humaine des communautés de collectionneurs.
+**La vision est de bâtir un écosystème de confiance et de transparence qui relie les objets de collection et de valeur à des identités numériques authentifiées et à des registres de propriété vérifiables.** Qu’il s’agisse d’une carte, d’un sac de luxe ou d’une montre, chaque objet disposerait d’un historique durable indiquant ce qu’il est, comment il a été authentifié et qui est son propriétaire enregistré. Nous assurerions l’ensemble du processus, en réunissant authentification professionnelle, passeports numériques et lieux physiques de vérification, d’échange et de rencontre. Le socle est le lien entre l’objet réel, son identité numérique et son propriétaire tout au long de son existence. La gestion de collection, les estimations de valeur, les échanges sécurisés et les accès liés à la propriété découleraient de ce socle.
 
 ---
 
 ## 2. L’idée centrale
 
-Aujourd’hui, les objets de collection peuvent être authentifiés, évalués, achetés et vendus, mais ces processus sont souvent déconnectés. Les entreprises traditionnelles de grading établissent l’authenticité et l’état d’un objet, mais ne proposent généralement pas un registre blockchain de propriété publiquement vérifiable et mis à jour en continu. Notre entreprise vise à relier ces éléments. Chaque objet entrant dans l’écosystème passe par un processus professionnel d’identification et de grading, c’est-à-dire d’évaluation de son état. L’objet est authentifié et évalué par des professionnels, photographié en haute résolution et documenté par une représentation numérique 3D détaillée. Une empreinte numérique est produite à partir de ses caractéristiques physiques, établissant une identité à laquelle les inspections ultérieures pourront être comparées. Les données de grading et d’authentification sont enregistrées cryptographiquement sur la blockchain, puis un NFT unique est émis et associé à l’objet physique.
-
-Ce NFT devient le certificat numérique de propriété de l’objet, tandis que son passeport numérique conserve l’historique de son authentification, de son grading et des transferts enregistrés. L’objet physique dispose ainsi d’une identité numérique vérifiable qui peut l’accompagner tout au long de son existence.
+Chaque objet entrant dans le système recevrait un passeport numérique reliant son identité physique authentifiée, sa propriété enregistrée et son historique. Notre équipe inspecterait l’objet et vérifierait les informations de propriété et les justificatifs fournis avant de délivrer ses certificats d’authentification et de propriété numérique. Lors d’inspections ou d’échanges ultérieurs, nous comparerions l’objet à ce même passeport et enregistrerions les mises à jour vérifiées ou le transfert de propriété. L’objet conserverait son identité et son historique au fil des changements de propriétaire.
 
 ---
 
-## 3. Les trois piliers de l’entreprise
+## 3. Les quatre piliers
 
-L’entreprise réunirait trois activités autour du même objet. Le grading établit son identité et documente son état ; le registre numérique conserve cette évaluation et l’historique des transferts enregistrés ; les lieux d’échange physiques permettent aux collectionneurs d’inspecter l’objet et de coordonner sa transmission. Ensemble, ces activités contribueraient à maintenir la cohérence entre la pièce physique et son dossier numérique au fil des changements de propriétaire. L’authentification initiale donne un point de départ au prochain acheteur, tandis que les inspections et les transactions vérifiées enrichissent ensuite l’historique. Chaque pilier soutient ainsi une partie de la relation entre un objet, son histoire et les personnes qui le collectionnent.
+L’authentification, l’identité reliant le physique au numérique, la propriété et la transparence constituent le socle du système. Ensemble, elles établissent ce qu’est un objet, le relient à un dossier numérique vérifiable, identifient son propriétaire enregistré et conservent les preuves à l’appui de ces informations. Nous assurerions les processus qui maintiennent la cohérence entre ces quatre éléments.
 
-### Pilier 1 : grading et authentification
+### Authentification
 
-L’entreprise commence par devenir une autorité professionnelle du grading et de l’authentification. Les objets de collection font l’objet d’une évaluation standardisée pour déterminer leur authenticité, leur état et leur qualité. Contrairement aux systèmes de grading conventionnels, le processus d’évaluation lui-même s’inscrit dans un historique vérifiable cryptographiquement. Chaque objet reçoit une note professionnelle et un numéro d’identification unique, accompagnés d’une empreinte numérique de ses caractéristiques physiques, d’images en haute résolution et d’une représentation 3D. Chaque objet est systématiquement placé dans un boîtier sécurisé laissant apparaître les tentatives d’ouverture. Cette protection physique fait partie intégrante de sa certification. Un certificat relié à la blockchain associe cette documentation à son historique de grading et d’authentification. L’objectif est d’établir une identité numérique fiable pour chaque objet de collection.
+L’authentification professionnelle établit ce qu’est l’objet. Notre équipe inspecterait chaque pièce selon l’expertise et les procédures propres à sa catégorie, documenterait les éléments justifiant son évaluation et examinerait son état. Le grading, c’est-à-dire l’attribution d’une note d’état, serait inclus lorsqu’il apporte une information utile, plutôt qu’exigé pour tous les objets. Le dossier préciserait qui a réalisé l’évaluation, à quelle date et ce qui a été établi. Des inspections ultérieures pourraient actualiser le statut de certification et documenter les changements d’état tout en conservant les évaluations précédentes.
 
-### Pilier 2 : propriété numérique et provenance
+### Identité physique et numérique
 
-Une fois authentifié, chaque objet reçoit un NFT unique associé à son identité physique. Cela crée un historique traçable en continu de la propriété enregistrée et des événements importants de la vie de l’objet. Les collectionneurs peuvent prouver qu’ils contrôlent leur certificat numérique de propriété, consulter l’historique de propriété enregistré et examiner les données de grading et d’authentification. Lors d’une vente ou d’un échange, ils peuvent transférer le certificat avec l’objet. La comparaison entre l’objet physique et son identité enregistrée permet aussi aux acheteurs de repérer des incohérences. Contrairement aux certificats traditionnels de grading, le système est conçu pour suivre davantage que l’état d’un objet. Il établit un historique de **ce qu’est l’objet, de la manière dont il a été authentifié et de la personne qui contrôle actuellement son certificat numérique de propriété enregistré.** La blockchain rend ces données vérifiables indépendamment et résistantes aux modifications non autorisées de l’historique.
+Chaque objet authentifié recevrait une identité numérique unique liée à ses caractéristiques physiques particulières. Des photographies en haute résolution, des marques distinctives, les numéros de série disponibles et une empreinte physique adaptée à la catégorie serviraient de référence aux inspections ultérieures. Des boîtiers laissant apparaître les tentatives d’ouverture ou d’autres protections adaptées pourraient renforcer ce lien lorsque cela est pertinent. Le passeport numérique réunirait ces éléments pour permettre à notre équipe de comparer un objet présenté pour une revente, une inspection ou un transfert à son identité enregistrée.
 
-#### Une application normale, avec toute la technique en arrière-plan
+### Propriété
 
-Les collectionneurs se connecteraient simplement avec Face ID, Touch ID ou leur compte Google, puis consulteraient leur collection, achèteraient, vendraient ou échangeraient. Pas de crypto à acheter, pas de portefeuille séparé à configurer et pas d’étapes techniques à apprendre. Les certificats et les transferts seraient gérés automatiquement en arrière-plan. L’application montrerait ce qui compte : les objets, leur histoire et la confirmation qu’un échange est terminé.
+L’objet serait relié à son propriétaire enregistré par un certificat de propriété numérique représenté par un NFT associé. Avant d’enregistrer la propriété, nous vérifierions les informations et les justificatifs fournis par le propriétaire. Les transferts vérifiés ultérieurs enregistreraient les changements de propriétaire lors de la remise physique. Dans nos lieux, nous contrôlerions l’objet, le certificat de propriété du vendeur et les éventuels litiges signalés avant de coordonner le paiement et le transfert de l’objet et de son certificat. Des procédures de récupération et de résolution des litiges permettraient de traiter les pertes d’accès, les revendications contradictoires et les vols signalés. Le certificat relierait le propriétaire à l’objet physique authentifié et à son historique enregistré.
 
-La plupart des gens ne savent pas si leur application préférée fonctionne sur les serveurs d’Amazon ou de Google, ni dans quel langage elle a été écrite. Ils n’ont pas besoin de le savoir. Le principe serait le même ici : les collectionneurs pourraient utiliser tout le service sans jamais savoir qu’il repose sur une blockchain. Les curieux pourraient découvrir son fonctionnement ; les autres pourraient simplement profiter de leur passion.
+### Transparence
 
-La différence serait dans les possibilités offertes : vérifier plus facilement l’histoire d’un objet, conserver son certificat lorsqu’il change de mains et permettre à différents services de consulter le même registre. Davantage de possibilités en coulisses, avec une expérience toujours aussi simple pour l’utilisateur.
-
-#### Un socle de sécurité qui évolue
-
-Construire le registre sur [Ethereum](/fr/learn/ethereum-101) permettrait à l’entreprise de s’appuyer sur un socle de sécurité entretenu par un réseau mondial, plutôt que de sécuriser seule un registre privé. Les données dont le règlement est assuré par Ethereum bénéficieraient de son consensus et de leur vérification indépendante, ainsi que des travaux visant à renforcer la décentralisation, la résistance à la censure et la résilience du réseau. C’est un avantage à long terme : l’entreprise pourrait s’appuyer sur les améliorations de sécurité de l’écosystème au fil de l’évolution du réseau. La feuille de route de sécurité d’Ethereum présente ces travaux. Si une couche 2 d’Ethereum est utilisée, son système de preuve, la disponibilité de ses données, ses ponts et ses mécanismes de mise à jour devraient également être évalués.
-
-Cela comprend une voie vers une cryptographie plus robuste face aux nouvelles menaces. Le programme post-quantique d’Ethereum développe des protections contre de futures attaques quantiques. Ces protections sont encore en développement ; adopter Ethereum aujourd’hui ne rend pas chaque portefeuille ou application résistant au quantique. L’entreprise devrait prévoir les migrations de comptes, de clés et d’applications nécessaires à mesure que ces protections deviennent disponibles.
-
-À mesure que l’IA facilite la fabrication d’images et de documents, un historique dont chacun peut vérifier l’émetteur enregistré et les événements devient plus utile. Il aiderait les collectionneurs à confronter les affirmations aux éléments enregistrés, sans rendre le système invulnérable aux fraudes assistées par l’IA. La blockchain conserve ce qui a été enregistré ; l’authentification professionnelle, l’empreinte physique, la sécurité des comptes et l’audit des contrats resteraient déterminants pour la fiabilité de cet historique.
-
-### Pilier 3 : échanges physiques et communauté
-
-L’entreprise établirait des lieux physiques où les collectionneurs pourraient se rencontrer, échanger, acheter, vendre et discuter de leurs objets. Ces lieux réuniraient des services professionnels de grading et d’authentification, des espaces d’exposition, des points de transaction de confiance et des espaces communautaires. Des événements, des expositions et des soirées d’échange donneraient aux collectionneurs des raisons de revenir au-delà d’une seule transaction. L’une de leurs fonctions principales serait de faciliter des transactions sécurisées. Lorsque deux collectionneurs souhaitent réaliser une transaction, ils pourraient se retrouver dans un lieu agréé où l’entreprise vérifie l’objet physique, contrôle le NFT associé et coordonne le transfert de l’objet, du certificat numérique et du paiement. L’entreprise pourrait agir comme intermédiaire de confiance, avec des partenaires réglementés pour le paiement ou le séquestre lorsque cela est nécessaire. Ces lieux serviraient à la fois de points de rencontre pour la communauté et de prolongement de l’infrastructure de confiance de l’entreprise.
-
-La communauté locale serait au cœur du produit. Des soirées d’échange régulières, des séances pour débutants et des rencontres permettraient de retrouver des visages familiers, de partager des connaissances et de nouer des relations durables. Un collectionneur devrait avoir une raison de venir même sans objet à faire grader ni achat en tête. La vérification professionnelle soutiendrait ces relations, tandis que le plaisir de collectionner ensemble ferait vivre le lieu.
+L’historique devrait préciser ce qui a été vérifié, quand et par qui. Les évaluations d’authentification, les inspections ultérieures, les transferts enregistrés et les changements de statut de certification formeraient un historique vérifiable, la blockchain conservant les preuves cryptographiques des événements enregistrés. Les corrections et les données contestées seraient documentées par de nouvelles entrées afin que les déclarations antérieures restent traçables. La vérification publique porterait sur l’objet et les éléments justifiant son statut, tandis que les informations personnelles et les documents sensibles resteraient protégés.
 
 ---
 
-## 4. Une nouvelle approche de la propriété et de la confiance
+## 4. L’écosystème
 
-L’un des éléments les plus importants du concept est la relation entre l’objet physique et son certificat numérique de propriété. Aujourd’hui, une personne peut détenir un objet de collection gradé sans nécessairement pouvoir démontrer un historique de propriété transparent. Dans ce modèle, l’objet disposerait d’une identité numérique reconnue, reliée à ses caractéristiques physiques. Lorsqu’une personne souhaite le vendre, l’acheteur pourrait vérifier que le vendeur contrôle le NFT associé. Cela crée un niveau de sécurité supplémentaire. Si une personne vend un objet physique sans transférer son NFT, l’acheteur suivant pourrait découvrir que le vendeur ne contrôle pas le certificat numérique de propriété enregistré. De même, une tentative de vente d’une contrefaçon utilisant le numéro d’identification d’un autre objet pourrait être mise en doute grâce à l’empreinte numérique, aux données d’authentification et aux informations de propriété enregistrées. Le système incite les collectionneurs à maintenir la cohérence entre la possession physique et les données numériques de propriété.
+Le passeport numérique, l’application et le lieu physique relieraient les quatre piliers aux personnes utilisant le système. Le passeport conserverait le dossier de l’objet, l’application le rendrait accessible et le lieu physique le relierait à l’authentification, aux échanges et à la communauté.
 
-**L’objectif n’est pas de rendre la fraude impossible, mais de la rendre plus facile à détecter, moins rentable au sein de l’écosystème et plus traçable.** Les incohérences de propriété, les transactions suspectes et les objets litigieux pourraient être signalés et examinés à partir de leur historique enregistré. Les données de transactions vérifiées pourraient aussi aider à retracer les incidents à travers les transferts précédents, même si l’identification des personnes réelles derrière les wallets exigerait des informations vérifiées supplémentaires. La valeur de ce système augmenterait à mesure que davantage de collectionneurs et d’entreprises reconnaîtraient les certificats numériques comme une composante essentielle des transactions. La propriété du NFT et la propriété juridique de l’objet physique ne sont toutefois pas automatiquement identiques. Le cadre contractuel et les procédures de vérification de l’entreprise devraient établir le lien entre les deux.
+### Le passeport numérique
 
----
+Les quatre piliers doivent rester liés lorsque l’objet passe de sa première authentification à une vente ou un échange ultérieur. Une évaluation établit ce qu’est l’objet, des éléments d’identification le relient à cette évaluation et un registre de propriété le relie à une personne. Réunir ces éléments dans un dossier durable et vérifiable donne à l’objet une référence qui peut l’accompagner tout au long de son existence. C’est le **passeport numérique** : un dossier unifié de l’identité authentifiée de l’objet, de sa propriété enregistrée et de son historique, délivré après son inspection et son authentification par notre équipe.
 
-## 5. Le passeport numérique de l’objet
+Le passeport contiendrait les informations d’identification de l’objet et ses caractéristiques physiques documentées, appuyées par des photographies en haute résolution et des éléments adaptés à sa catégorie. Son certificat d’authentification consignerait l’évaluation, l’examinateur, la date et toute note d’état pertinente. Son certificat de propriété numérique, représenté par un NFT associé, relierait l’objet à son propriétaire enregistré et consignerait les transferts de propriété vérifiés. Ces certificats ont des fonctions différentes : l’authentification documente ce qu’est l’objet, tandis que la propriété indique à qui il appartient dans l’écosystème. Tous deux seraient reliés au même objet par son passeport.
 
-Chaque objet authentifié disposerait d’un passeport numérique permanent. Ce passeport représenterait l’identité de l’objet et son historique documenté. Le passeport réunirait quatre catégories d’informations. L’identification rassemble l’identifiant unique de l’objet, son nom, son édition, son année et ses caractéristiques pertinentes, accompagnés de son empreinte physique, de photographies en haute résolution et d’une représentation numérique 3D. Les données d’authentification et de grading précisent le statut d’authentification, la note professionnelle, la date d’évaluation et la certification. Elles conservent aussi l’historique des réévaluations et des inspections importantes, afin que le passeport reflète les examens ultérieurs.
+Au fil du parcours de l’objet dans le système, le passeport réunirait les inspections, les mises à jour de son état, les remises vérifiées et les changements de statut, notamment les nouvelles authentifications ou les litiges signalés. Lors d’un échange ultérieur, notre équipe pourrait comparer l’objet physique à son identité documentée, vérifier ses données d’authentification et de propriété, puis enregistrer le transfert réalisé. Le propriétaire change, tandis que l’objet conserve son identité et son historique.
 
-Les données de propriété et de provenance relient le NFT associé à la propriété numérique actuellement enregistrée, à l’historique des transferts du NFT, aux changements de garde enregistrés et aux transactions vérifiées. Les données de sécurité précisent le statut actuel de la certification, les litiges de propriété signalés, les alertes d’activité suspecte et les événements tels qu’un remplacement de boîtier ou une nouvelle authentification.
+### L’application
 
-Toutes les informations n’auraient pas besoin d’être enregistrées directement sur la blockchain. Les fichiers volumineux et les données sensibles pourraient rester dans un stockage sécurisé, avec des références cryptographiques enregistrées sur la blockchain. Le passeport numérique deviendrait l’identité durable de l’objet au sein de l’écosystème.
+L’application serait le moyen quotidien d’interagir avec l’écosystème, que l’on possède un objet enregistré ou que l’on s’intéresse simplement aux objets de collection et de valeur. Chacun pourrait parcourir les offres, consulter les prix et découvrir des objets et des événements. L’enregistrement d’un objet authentifié donnerait accès aux fonctionnalités liées à sa propriété et à son passeport numérique.
 
----
+**Posséder.** Les propriétaires pourraient réunir leur collection au même endroit, chaque objet enregistré étant relié à son passeport numérique, à ses certificats d’authentification et de propriété et à son historique. Ils pourraient consulter son statut, partager une vérification de propriété et suivre la valeur estimée de chaque objet et de l’ensemble de leur collection lorsque des données de marché sont disponibles.
 
-## 6. Le lieu de rencontre des collectionneurs
+**Explorer.** Les utilisateurs pourraient rechercher des cartes et d’autres objets de collection et de valeur pris en charge, suivre les ventes récentes, comparer des pièces similaires et découvrir des annonces. Les informations de prix distingueraient les ventes réalisées, les prix demandés et les estimations, en tenant compte de différences telles que l’édition, l’état et la note. Des recherches enregistrées et des alertes permettraient de suivre un objet recherché ou l’évolution du marché d’un objet déjà possédé.
 
-Les lieux physiques constituent une dimension essentielle de l’activité. Plutôt que de fonctionner exclusivement en ligne, l’entreprise pourrait développer un réseau de lieux de destination pour les collectionneurs. Ces espaces pourraient associer l’atmosphère d’un showroom haut de gamme, d’un laboratoire spécialisé de grading et d’un lieu de rencontre communautaire. Les collectionneurs pourraient y déposer des objets à faire grader, vérifier leur authenticité, découvrir des pièces rares et acheter, vendre ou échanger dans le cadre de transactions vérifiées. Les événements et les expositions feraient de ces lieux des espaces de rencontre autant que des lieux de commerce. Ces lieux contribueraient à établir une présence physique et une marque reconnaissable. Ils répondraient aussi à l’un des principaux problèmes du commerce d’objets de collection : la confiance entre inconnus. En facilitant les transactions dans un environnement contrôlé, l’entreprise pourrait vérifier l’actif physique et son certificat numérique de propriété avant de finaliser un échange. À terme, ces lieux pourraient constituer un réseau interconnecté de points de transaction de confiance.
+**Agir.** Les propriétaires pourraient proposer un objet à la vente ou à l’échange, recevoir des offres et organiser une transaction vérifiée dans l’un de nos lieux. Chacun pourrait réserver une authentification, demander une visite d’inspection, programmer un contrôle d’état ou s’inscrire à un événement communautaire. L’application afficherait la progression de chaque service ou échange, du premier rendez-vous à la remise de l’objet et au transfert de propriété.
 
-### Une opportunité locale en Europe
+La connexion et l’utilisation des services seraient aussi familières que dans une application ordinaire. Les certificats numériques et les transferts seraient gérés en arrière-plan, pour permettre à chacun de se concentrer sur ses objets et les services dont il a besoin.
 
-Les États-Unis offrent un exemple visible de la collection comme activité sociale à grande échelle. Dans un [entretien de 2026 avec un organisateur de la National Sports Collectors Convention, en anglais](https://www.beckett.com/news/beckett-interview-preview-of-national-2026-with-nsccs-shane-winn/), la fréquentation attendue dépassait 100 000 personnes. L’Europe possède aussi des communautés établies : le [London Card Show, en anglais](https://londoncardshow.co.uk/about/), décrit son passage d’un petit rassemblement à un événement attirant des milliers de personnes.
+### Le lieu physique
 
-L’opportunité à tester est de savoir si des échanges locaux réguliers et accessibles restent sous-représentés dans certaines villes européennes par rapport à ce modèle américain. Ces exemples ne démontrent pas un manque à l’échelle du continent. Il faudrait cartographier la demande, les boutiques et les événements ville par ville. L’objectif serait de renforcer les communautés existantes en s’associant aux boutiques indépendantes, aux clubs et aux organisateurs, plutôt que de supposer que tout reste à créer.
+Ce lieu ancrerait le système dans le monde réel : un espace pour faire authentifier des objets de collection et de valeur, inspecter des pièces en personne et réaliser des ventes ou échanges vérifiés. Notre équipe contrôlerait l’objet et son passeport numérique, vérifierait la propriété enregistrée et coordonnerait le paiement et la remise. Des installations et une expertise spécialisées permettraient l’authentification et le grading lorsque cela est pertinent, avec un espace pour exposer et découvrir des objets. Un réseau de lieux interconnectés permettrait aux propriétaires d’accéder à ces services à différents endroits en utilisant le même passeport et les mêmes données.
 
-Un lancement concret pourrait commencer par une soirée mensuelle dans un lieu partenaire, des dépôts ponctuels pour le grading et de petits salons régionaux. Les débutants pourraient apprendre à évaluer l’état des objets et à échanger en confiance ; les collectionneurs expérimentés pourraient rencontrer des marchands, compléter leurs séries et retrouver des habitués. La fréquentation récurrente, les échanges réalisés, l’intérêt des partenaires et l’équilibre économique guideraient la décision d’ouvrir un lieu permanent. La communauté physique pourrait devenir une porte d’entrée vers les services d’authentification et de passeport numérique.
-
-
----
-
-## 7. L’écosystème
-
-L’écosystème relie quatre fonctions qui resteraient autrement séparées. Les centres de grading authentifient et évaluent chaque objet, établissent son identité physique et délivrent sa certification. Le registre blockchain conserve l’identité numérique correspondante, les données de certification et l’historique de propriété enregistré. Les lieux d’échange ramènent ces données dans le monde physique : ils permettent d’inspecter un objet et de coordonner sa remise avec le transfert de son certificat numérique. Chaque élément accompagne ainsi le suivant, de la première évaluation à une revente ultérieure.
-
-Le réseau de collectionneurs donne à cette infrastructure sa valeur pratique. Collectionneurs, acheteurs, vendeurs, marchands, investisseurs et autres entreprises du secteur utiliseraient les mêmes données pour décider d’une transaction. Avec davantage de participants, un standard commun de vérification pourrait devenir plus utile : un certificat délivré dans un lieu pourrait être contrôlé dans un autre, et l’historique établi lors d’une transaction pourrait éclairer la suivante. Le grading fournit l’évaluation initiale, le registre rend les événements enregistrés vérifiables et les lieux physiques contribuent à maintenir le lien entre les données et les objets.
+La communauté donnerait une raison de venir au-delà d’un service ou d’une transaction. Soirées d’échange, expositions, séances pour débutants et rencontres réuniraient propriétaires et collectionneurs pour partager leurs connaissances et nouer des relations. Chacun devrait s’y sentir bienvenu, même sans objet à faire authentifier, acheter ou vendre.
 
 ---
 
-## 8. Le modèle économique
+## 5. L’expérience
 
-La première source de revenus serait le grading professionnel et l’authentification, avec la mise sous boîtier et la certification numérique. Les collectionneurs pourraient payer pour une documentation supplémentaire, comme des images en haute résolution, une empreinte numérique avancée ou une représentation 3D détaillée. Ces services établiraient le dossier initial de l’objet et donneraient à l’entreprise une activité fondée sur le travail nécessaire pour inspecter et documenter des pièces physiques.
+Les mêmes parcours simples s’appliqueraient aux objets de collection et de valeur, avec une authentification adaptée à chaque catégorie.
 
-D’autres revenus pourraient provenir des transactions et des services ultérieurs. L’entreprise pourrait facturer les échanges vérifiés et les services de séquestre, percevoir des commissions sur les ventes réalisées sur sa place de marché et proposer un stockage sécurisé facultatif pour les objets de valeur. Des adhésions pourraient réunir services prioritaires, événements et avantages pour les collectionneurs. Les partenariats professionnels ouvriraient la même infrastructure d’authentification et de vérification aux boutiques spécialisées, aux marchands, aux maisons de vente aux enchères et aux autres acteurs du secteur. Ensemble, ces activités pourraient générer des revenus à différents moments de la vie d’un objet, tout en réduisant la dépendance à ses premiers frais de grading.
+### Faire authentifier un objet
 
-Les événements locaux pourraient aussi contribuer au modèle économique grâce à des entrées abordables, des tables pour les marchands, des partenariats avec les lieux et des adhésions facultatives. Des rencontres gratuites ou peu coûteuses maintiendraient l’accessibilité, avec des services payants associés à des bénéfices clairs. Un pilote devrait mesurer le retour des participants et le coût d’animation de la communauté avant de s’engager dans des locaux permanents.
+Vous apportez un objet dans l’un de nos lieux ou organisez une visite de notre équipe. Nous l’authentifions, documentons son identité et son état, et lui attribuons une note lorsque cela est pertinent. Nous vérifions les informations de propriété et les justificatifs que vous fournissez, puis créons son passeport numérique et vous enregistrons comme propriétaire. L’objet apparaît ensuite dans votre compte avec ses certificats d’authentification et de propriété numérique et son historique.
 
----
+### Échanger un objet
 
-## 9. La différenciation concurrentielle
+Vous convenez d’une vente ou d’un échange avec une autre personne et apportez l’objet dans l’un de nos lieux. Nous vérifions sa correspondance avec son passeport numérique et la propriété enregistrée du vendeur. Nous coordonnons le paiement et la remise physique, puis transférons le certificat de propriété numérique à l’acheteur. L’objet apparaît dans son compte en conservant son identité et son historique.
 
-Des entreprises de grading établies comme PSA ont acquis une crédibilité importante dans l’authentification et l’évaluation de l’état des objets. L’objectif ne serait pas simplement de reproduire leurs services en y ajoutant un NFT. L’entreprise chercherait à proposer un standard plus large, construit autour de l’ensemble du cycle de vie d’un objet.
+### Vérifier la propriété
 
-| Modèle traditionnel de grading | Écosystème proposé |
-|---|---|
-| Authentification et grading | Authentification et grading |
-| Numéro de certification unique | Identité numérique unique reliée à la blockchain |
-| Vérification du certificat de grading | Vérification du grading et de la propriété enregistrée |
-| Évaluation de l’état | Évaluation de l’état et cycle de vie documenté |
-| Activité principalement centrée sur le grading | Grading, propriété, échanges et communauté |
-| Historique public de propriété limité | Historique traçable de la propriété enregistrée du NFT |
-| Processus de revente séparés | Infrastructure intégrée de transactions vérifiées |
+Vous partagez votre certificat de propriété numérique avec un acheteur, un organisateur d’événement ou toute personne ayant besoin de le vérifier. Cette personne peut confirmer que vous êtes le propriétaire enregistré de l’objet authentifié, sans consulter l’ensemble de votre collection ni vos informations personnelles.
 
-La principale différence réside dans le lien entre l’objet physique, son identité numérique, son historique de propriété enregistré et un réseau de lieux physiques de confiance pour réaliser les transactions. L’entreprise chercherait à devenir une autorité reconnue pour l’authenticité et l’état des objets, mais aussi pour leur provenance et la sécurité des échanges.
+### Gérer sa collection
 
----
+Vous ouvrez l’application pour retrouver tous vos objets enregistrés au même endroit, avec leurs certificats et leur historique. Lorsque des données de marché sont disponibles, vous pouvez suivre la valeur estimée de chaque objet et de l’ensemble de votre collection.
 
-## 10. La vision à long terme
+### Mettre à jour le dossier d’un objet
 
-L’entreprise pourrait commencer par les cartes à collectionner, en se concentrant sur une catégorie disposant d’une communauté active et d’une demande établie pour le grading. À mesure que le modèle gagnerait en crédibilité, elle pourrait s’étendre à d’autres catégories. Les marchés possibles comprennent les cartes de sport, Pokémon et les autres jeux de cartes à collectionner, les comics, les pièces et les billets de banque, les souvenirs et objets historiques rares, les montres de luxe, les éditions limitées et l’art.
+Vous rapportez un objet pour un contrôle d’état, une nouvelle notation ou une nouvelle authentification. Nous l’inspectons et ajoutons l’évaluation à son passeport numérique, en conservant son historique antérieur.
 
-### L’effet de réseau
+### Communauté et événements
 
-La vision d’ensemble dépend de l’adoption. Plus les objets reçoivent une identité numérique, plus les acheteurs ont intérêt à la vérifier. Plus les acheteurs demandent une vérification de la propriété, plus les vendeurs ont intérêt à tenir leurs données numériques à jour. Plus les collectionneurs utilisent le standard, plus les marchands et les entreprises peuvent souhaiter rejoindre le réseau. Un passeport numérique reconnu pourrait finir par devenir une caractéristique recherchée d’un objet de collection. Les objets dont l’authentification, le grading et la provenance sont documentés pourraient attirer davantage les acheteurs que des objets comparables dépourvus de données fiables. L’ambition est de faire de la vérification une attente normale dans les échanges d’objets de collection physiques.
+Vous venez rencontrer d’autres propriétaires, découvrir des objets et participer à des événements. Vous pouvez partager vos connaissances, nouer des relations et profiter de la communauté, même sans objet à faire authentifier ou à échanger.
 
 ---
 
-## 11. L’ambition finale
+## 6. L’ambition finale
 
-L’entreprise commence par grader des cartes. Mais le grading n’est que le point d’entrée. L’objectif plus large est de créer une infrastructure dans laquelle les objets physiques peuvent être authentifiés, identifiés numériquement, suivis et échangés de manière sécurisée tout au long de leur existence. Un objet de collection ne serait plus représenté uniquement par l’objet physique et une étiquette de grading. Il disposerait aussi d’une identité numérique vérifiable indépendamment et d’un historique croissant d’événements certifiés. Les collectionneurs gagneraient en confiance dans leurs transactions, les entreprises accéderaient à une infrastructure commune de vérification et les lieux d’échange physiques deviendraient des points d’accès de confiance à l’écosystème. **La vision finale est d’établir un standard reconnu à l’échelle mondiale pour l’authentification, la provenance et la propriété enregistrée des objets de collection physiques**, en faisant du grading, des données numériques et des échanges physiques des services qui se renforcent tout au long de la vie d’un objet.
+**L’ambition est de devenir une référence mondiale pour l’authentification, l’identité et la propriété des objets de collection et de valeur.** Un passeport numérique délivré par nos soins deviendrait un repère reconnu de confiance, offrant aux propriétaires et aux acheteurs un historique fiable de l’authenticité, de l’état et de la propriété d’un objet. Grâce à une application connectée et à un réseau de lieux physiques, chacun pourrait accéder aux mêmes services de vérification et d’échange dans différentes villes et différents pays, l’historique de l’objet se poursuivant à chaque changement de mains. L’objectif ultime est que ce lien entre l’objet physique, son identité numérique et son propriétaire devienne une composante attendue de la possession et de l’échange d’objets de collection et de valeur à travers le monde.
 
 ---
 
-## 12. Idées de noms
+## 7. Les défis
 
-```
-New Standard
-True Grade
-Golden Ratio
-Origin Collectible
-Cool Collectible
-True Origin
-Pristine
-Meta Matter
-Golden Standard
-Noble Standard
-Proven
-Artifact
-Signet
-Hallmark
-Mintmark
-Heirloom
-First Edition
-True Mark
-Origin House
-Relic House
-Noble Origin
-Golden Seal
-```
+Le modèle dépendrait de notre capacité à relever plusieurs défis :
+
+- **Gagner la confiance dans l’authentification.** Propriétaires et acheteurs doivent avoir confiance dans notre expertise, nos méthodes et notre constance. Cette réputation se construirait par un travail fiable et une gestion claire des erreurs.
+- **Maintenir le lien entre physique et numérique.** Un certificat numérique ne suffit pas à établir qu’un objet présenté plus tard est celui qui a été authentifié à l’origine. Des éléments d’identification, des protections adaptées et des inspections physiques répétées seraient nécessaires pour détecter les substitutions ou les changements.
+- **Maintenir la cohérence entre les données et la réalité.** L’état des objets peut évoluer et des ventes peuvent avoir lieu hors du système. Le passeport devrait distinguer les événements vérifiés des lacunes de l’historique et offrir un moyen clair d’actualiser ou de revérifier un objet.
+- **Gérer la récupération et les litiges.** Les pertes d’accès, les vols signalés et les revendications de propriété contradictoires nécessiteraient des procédures fiables de vérification et de résolution.
+- **Donner une raison de continuer à participer.** Les propriétaires doivent trouver un intérêt à tenir leurs données à jour et à transférer le certificat de propriété lors d’une vente. La vérification, les services utiles de l’application et les échanges de confiance devraient apporter assez de valeur pour maintenir cette participation.
+- **Garantir une qualité constante lors du développement du réseau.** Chaque catégorie demande une expertise particulière et chaque lieu devrait maintenir la même qualité d’authentification, de documentation et d’échange.

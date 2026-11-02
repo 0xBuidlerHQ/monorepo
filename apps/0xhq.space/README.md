@@ -74,7 +74,7 @@ Edit `content/curated/products.json` to add a product. Each entry has a unique `
 
 Discontinued products can link to second-hand listings. White-background catalog photos can set `image.blendWithBackground: true` to blend into the gray card using CSS, preserving the original image file.
 
-The first entry is Ambire Ice. Its description and image come from [Ambire’s product page](https://www.ambire.com/ice); its purchase link opens the pre-order section. Prices are left to the seller’s page. The cards use the site’s existing dark background, typography, borders, and red interaction accents.
+The first entry is Ambire Ice. Its description and image come from [Ambire’s product page](https://www.ambire.com/ice); its purchase link opens the pre-order section. Optional `price` metadata stores the seller’s listed `amount`, ISO `currency`, `checkedAt` date, and `source` URL. Verified prices appear at the bottom right of the card in the seller’s currency, formatted for the selected language; hovering shows the date checked. These are manually maintained snapshots. Products without a verified fixed price show a localized “See price” link label instead. The brand appears at the top left. The cards use the site’s existing dark background, typography, borders, and red interaction accents.
 
 There is one root layout, `src/app/[locale]/layout.tsx`, for all four languages. Pages use `/en`, `/fr`, `/es`, or `/pt` URLs. The locale homepage displays About; there is no separate `/about` page. `src/proxy.ts` redirects page URLs without a locale to English, preserving the path and query string: `/` goes to `/en`, and `/learn` goes to `/en/learn`. Static assets, Next.js internals, and API routes bypass locale redirects. No custom article ordering is configured.
 

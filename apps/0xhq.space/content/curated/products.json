@@ -28,6 +28,12 @@
 				"description": "Uma carteira física de código aberto concebida para a Safe, com uma caixa transparente e os detalhes das transações apresentados no dispositivo.",
 				"imageAlt": "Vista explodida da Ambire Ice, com a caixa transparente, o ecrã e a placa de circuito."
 			}
+		},
+		"price": {
+			"amount": 159,
+			"currency": "USD",
+			"checkedAt": "2026-11-02",
+			"source": "https://www.ambire.com/ice#pre-order"
 		}
 	},
 	{
@@ -68,11 +74,10 @@
 		"url": "https://www.ebay.com/b/Apple-iMac-PowerPC-G4-Desktops/111418/bn_635486",
 		"availability": "discontinued",
 		"image": {
-			"src": "/images/curated/apple-imac-g4.jpg",
-			"width": 1800,
-			"height": 1949,
-			"source": "https://allaboutstevejobs.com/resources/img/pics/2002-01_imac_G4_06839.jpg",
-			"blendWithBackground": true
+			"src": "/images/curated/apple-imac-g4-transparent.png",
+			"width": 1205,
+			"height": 1305,
+			"source": "https://allaboutstevejobs.com/resources/img/pics/2002-01_imac_G4_06839.jpg"
 		},
 		"translations": {
 			"en": {
@@ -100,11 +105,10 @@
 		"url": "https://www.fnac.pt/Apple-iPhone-17-Pro-256GB-Laranja-Telemovel-iPhone/a13297875",
 		"availability": "available",
 		"image": {
-			"src": "/images/curated/apple-iphone-17-pro-orange.jpg",
-			"width": 340,
-			"height": 340,
-			"source": "https://static.fnac-static.com/multimedia/Images/PT/NR/7c/5e/ab/11230844/1540-1.jpg",
-			"blendWithBackground": true
+			"src": "/images/curated/apple-iphone-17-pro-orange-transparent.png",
+			"width": 1254,
+			"height": 1254,
+			"source": "https://static.fnac-static.com/multimedia/Images/PT/NR/7c/5e/ab/11230844/1540-1.jpg"
 		},
 		"translations": {
 			"en": {
@@ -123,6 +127,12 @@
 				"description": "O iPhone 17 Pro da Apple em laranja-cósmico, com um design unibody em alumínio e um sistema de três câmaras.",
 				"imageAlt": "Vistas frontal e traseira do iPhone 17 Pro da Apple em laranja-cósmico."
 			}
+		},
+		"price": {
+			"amount": 1319,
+			"currency": "EUR",
+			"checkedAt": "2026-11-02",
+			"source": "https://www.fnac.pt/Apple-iPhone-17-Pro-256GB-Laranja-Telemovel-iPhone/a13297875"
 		}
 	},
 	{
@@ -194,11 +204,10 @@
 		"url": "https://stockx.com/nike-air-force-1-low-first-use-light-sail-red",
 		"availability": "available",
 		"image": {
-			"src": "/images/curated/nike-air-force-1-first-use.jpg",
-			"width": 800,
-			"height": 600,
-			"source": "https://images.stockx.com/360/Nike-Air-Force-1-Low-First-Use-Light-Sail-Red/Images/Nike-Air-Force-1-Low-First-Use-Light-Sail-Red/Lv2/img01.jpg?dpr=1&h=800&q=90&updated_at=1641481849&w=1200",
-			"blendWithBackground": true
+			"src": "/images/curated/nike-air-force-1-first-use-transparent.png",
+			"width": 1448,
+			"height": 1086,
+			"source": "https://images.stockx.com/360/Nike-Air-Force-1-Low-First-Use-Light-Sail-Red/Images/Nike-Air-Force-1-Low-First-Use-Light-Sail-Red/Lv2/img01.jpg?dpr=1&h=800&q=90&updated_at=1641481849&w=1200"
 		},
 		"translations": {
 			"en": {
@@ -248,6 +257,12 @@
 				"description": "Um boné de bombazine verde-azeitona com pala curva, letras Mon Amour Studios e cerejas vermelhas bordadas.",
 				"imageAlt": "Vista frontal do boné verde-azeitona Mon Amour da Nude Project, com letras creme e cerejas vermelhas bordadas."
 			}
+		},
+		"price": {
+			"amount": 45,
+			"currency": "EUR",
+			"checkedAt": "2026-11-02",
+			"source": "https://nude-project.com/en-pt/collections/headwear/products/mon-amour-cap-olive"
 		}
 	},
 	{
@@ -257,11 +272,10 @@
 		"url": "https://www.asos.com/polo-ralph-lauren/polo-ralph-lauren-sport-logo-beanie-in-orange/prd/211101554#colourWayId-211101556",
 		"availability": "available",
 		"image": {
-			"src": "/images/curated/polo-ralph-lauren-sport-beanie-orange.jpg",
-			"width": 951,
-			"height": 728,
-			"source": "https://cdn.shopify.com/s/files/1/0948/5107/2335/files/Polo-Ralph-Lauren-POLO-SPORT-BEANIE_-Orange.jpg?v=1791197738",
-			"blendWithBackground": true
+			"src": "/images/curated/polo-ralph-lauren-sport-beanie-orange-transparent.png",
+			"width": 1434,
+			"height": 1097,
+			"source": "https://cdn.shopify.com/s/files/1/0948/5107/2335/files/Polo-Ralph-Lauren-POLO-SPORT-BEANIE_-Orange.jpg?v=1791197738"
 		},
 		"translations": {
 			"en": {
@@ -280,6 +294,12 @@
 				"description": "Um gorro laranja de malha canelada com dobra, letras Polo Sport bordadas e uma bandeira americana.",
 				"imageAlt": "Vista frontal de um gorro laranja Polo Ralph Lauren, com bordado Polo Sport e uma bandeira americana na dobra."
 			}
+		},
+		"price": {
+			"amount": 100,
+			"currency": "GBP",
+			"checkedAt": "2026-11-02",
+			"source": "https://www.asos.com/polo-ralph-lauren/polo-ralph-lauren-sport-logo-beanie-in-orange/prd/211101554#colourWayId-211101556"
 		}
 	},
 	{
@@ -311,6 +331,12 @@
 				"description": "Uma consola portátil verde transparente para cartuchos Game Boy e Game Boy Color, com Tetris incluído.",
 				"imageAlt": "Vista frontal de uma consola portátil ModRetro Chromatic verde transparente a apresentar Tetris."
 			}
+		},
+		"price": {
+			"amount": 149.99,
+			"currency": "USD",
+			"checkedAt": "2026-11-02",
+			"source": "https://modretro.com/products/chromatic-transparent?variant=52703072780590"
 		}
 	}
 ]

@@ -1,263 +1,132 @@
 {
 	"slug": "idea-00",
 	"date": "2026-10-31",
-	"updated": "2026-11-01",
-	"tags": ["collectibles", "ownership", "blockchain"],
+	"updated": "2026-11-02",
+	"tags": [
+		"collectibles",
+		"ownership",
+		"blockchain"
+	],
 	"draft": false,
 	"animations": [
 		{
 			"figure": "collectible-identity",
 			"afterHeading": {
-				"en": "article-title",
 				"fr": "article-title",
 				"es": "article-title",
-				"pt": "article-title"
+				"pt": "article-title",
+				"en": "article-title"
 			},
 			"caption": {
-				"en": "Every collectible carries a verifiable history.",
-				"fr": "Chaque objet porte un historique vérifiable.",
-				"es": "Cada pieza lleva un historial verificable.",
-				"pt": "Cada peça tem um histórico verificável."
+				"fr": "Chaque objet authentifié porte un historique vérifiable.",
+				"es": "Cada objeto autenticado lleva un historial verificable.",
+				"pt": "Cada objeto autenticado tem um histórico verificável.",
+				"en": "Every authenticated object carries a verifiable history."
 			}
 		},
 		{
 			"figure": "collectible-vision",
 			"afterHeading": {
-				"en": "1-the-vision",
 				"fr": "1-la-vision",
 				"es": "1-la-vision",
-				"pt": "1-a-visao"
+				"pt": "1-a-visao",
+				"en": "1-the-vision"
 			},
 			"caption": {
-				"en": "Trust follows the collectible throughout its lifetime.",
-				"fr": "La confiance accompagne l’objet tout au long de sa vie.",
-				"es": "La confianza acompaña al objeto durante toda su vida.",
-				"pt": "A confiança acompanha a peça ao longo da sua vida."
+				"fr": "La confiance relie l’objet, son identité numérique et son propriétaire.",
+				"es": "La confianza conecta el objeto, su identidad digital y su propietario.",
+				"pt": "A confiança liga o objeto, a sua identidade digital e o seu proprietário.",
+				"en": "Trust connects the object, its digital identity, and its owner."
 			}
 		},
 		{
 			"figure": "collectible-process",
 			"afterHeading": {
-				"en": "2-the-core-idea",
 				"fr": "2-l-idee-centrale",
 				"es": "2-la-idea-central",
-				"pt": "2-a-ideia-central"
+				"pt": "2-a-ideia-central",
+				"en": "2-the-core-idea"
 			},
 			"caption": {
-				"en": "Each object receives its own digital identity.",
-				"fr": "Chaque objet reçoit sa propre identité numérique.",
-				"es": "Cada objeto recibe su propia identidad digital.",
-				"pt": "Cada objeto recebe a sua identidade digital."
+				"fr": "L’authentification et les transferts vérifiés construisent un historique durable.",
+				"es": "La autenticación y las transferencias verificadas construyen un historial duradero.",
+				"pt": "A autenticação e as transferências verificadas constroem um histórico duradouro.",
+				"en": "Authentication and verified transfers build a lasting record."
 			}
 		},
 		{
 			"figure": "collectible-pillars",
 			"afterHeading": {
-				"en": "3-the-three-pillars-of-the-company",
-				"fr": "3-les-trois-piliers-de-l-entreprise",
-				"es": "3-los-tres-pilares-de-la-empresa",
-				"pt": "3-os-tres-pilares-da-empresa"
+				"fr": "3-les-quatre-piliers",
+				"es": "3-los-cuatro-pilares",
+				"pt": "3-os-quatro-pilares",
+				"en": "3-the-four-pillars"
 			},
 			"caption": {
-				"en": "Three pillars support a shared standard of trust.",
-				"fr": "Trois piliers soutiennent un même standard de confiance.",
-				"es": "Tres pilares sostienen un estándar común de confianza.",
-				"pt": "Três pilares sustentam um padrão comum de confiança."
-			}
-		},
-		{
-			"figure": "collectible-grading",
-			"afterHeading": {
-				"en": "pillar-1-grading-authentication",
-				"fr": "pilier-1-grading-et-authentification",
-				"es": "pilar-1-grading-y-autenticacion",
-				"pt": "pilar-1-grading-e-autenticacao"
-			},
-			"caption": {
-				"en": "Every authenticated object is protected in a sealed case.",
-				"fr": "Chaque objet authentifié est protégé dans un boîtier scellé.",
-				"es": "Cada objeto autenticado se protege en una cápsula sellada.",
-				"pt": "Cada objeto autenticado é protegido numa caixa selada."
-			}
-		},
-		{
-			"figure": "collectible-provenance",
-			"afterHeading": {
-				"en": "pillar-2-digital-ownership-provenance",
-				"fr": "pilier-2-propriete-numerique-et-provenance",
-				"es": "pilar-2-propiedad-digital-y-procedencia",
-				"pt": "pilar-2-propriedade-digital-e-proveniencia"
-			},
-			"caption": {
-				"en": "The digital record follows the physical object.",
-				"fr": "L’historique numérique accompagne l’objet physique.",
-				"es": "El historial digital acompaña al objeto físico.",
-				"pt": "O histórico digital acompanha o objeto físico."
+				"fr": "L’authentification, l’identité, la propriété et la transparence constituent le socle.",
+				"es": "La autenticación, la identidad, la propiedad y la transparencia forman la base.",
+				"pt": "A autenticação, a identidade, a propriedade e a transparência constituem a base.",
+				"en": "Authentication, identity, ownership, and transparency form the foundation."
 			}
 		},
 		{
 			"figure": "collectible-community",
 			"afterHeading": {
-				"en": "pillar-3-physical-trading-community",
-				"fr": "pilier-3-echanges-physiques-et-communaute",
-				"es": "pilar-3-intercambios-fisicos-y-comunidad",
-				"pt": "pilar-3-trocas-fisicas-e-comunidade"
+				"fr": "5-l-experience",
+				"es": "5-la-experiencia",
+				"pt": "5-a-experiencia",
+				"en": "5-the-experience"
 			},
 			"caption": {
-				"en": "Collectors meet to exchange with confidence.",
-				"fr": "Les collectionneurs se retrouvent pour échanger en confiance.",
-				"es": "Los coleccionistas se reúnen para intercambiar con confianza.",
-				"pt": "Os colecionadores encontram-se para trocar com confiança."
+				"fr": "Les propriétaires font authentifier, gèrent, vérifient et échangent leurs objets.",
+				"es": "Los propietarios autentican, gestionan, verifican e intercambian sus objetos.",
+				"pt": "Os proprietários autenticam, gerem, verificam e trocam os seus objetos.",
+				"en": "Owners authenticate, manage, verify, and exchange their objects."
 			}
 		},
 		{
 			"figure": "collectible-ownership",
 			"afterHeading": {
-				"en": "4-a-new-approach-to-ownership-and-trust",
-				"fr": "4-une-nouvelle-approche-de-la-propriete-et-de-la-confiance",
-				"es": "4-otra-forma-de-entender-la-propiedad-y-la-confianza",
-				"pt": "4-uma-nova-abordagem-a-propriedade-e-a-confianca"
+				"fr": "7-les-defis",
+				"es": "7-los-desafios",
+				"pt": "7-os-desafios",
+				"en": "7-challenges"
 			},
 			"caption": {
-				"en": "The buyer checks the object against its digital certificate.",
-				"fr": "L’acheteur vérifie que l’objet correspond à son certificat numérique.",
-				"es": "El comprador comprueba que el objeto corresponde a su certificado.",
-				"pt": "O comprador verifica se o objeto corresponde ao certificado."
-			}
-		},
-		{
-			"figure": "collectible-passport",
-			"afterHeading": {
-				"en": "5-the-collectible-digital-passport",
-				"fr": "5-le-passeport-numerique-de-l-objet",
-				"es": "5-el-pasaporte-digital-del-objeto",
-				"pt": "5-o-passaporte-digital-do-objeto"
-			},
-			"caption": {
-				"en": "The passport preserves the object’s documented history.",
-				"fr": "Le passeport conserve l’histoire documentée de l’objet.",
-				"es": "El pasaporte conserva la historia documentada del objeto.",
-				"pt": "O passaporte conserva a história documentada do objeto."
-			}
-		},
-		{
-			"figure": "collectible-hub",
-			"afterHeading": {
-				"en": "6-the-physical-collectibles-hub",
-				"fr": "6-le-lieu-de-rencontre-des-collectionneurs",
-				"es": "6-un-lugar-para-los-coleccionistas",
-				"pt": "6-um-espaco-para-os-colecionadores"
-			},
-			"caption": {
-				"en": "Physical hubs connect the registry to each exchange.",
-				"fr": "Les lieux physiques relient le registre à chaque échange.",
-				"es": "Los centros físicos conectan el registro con cada intercambio.",
-				"pt": "Os centros físicos ligam o registo a cada troca."
+				"fr": "Une vérification fiable maintient le lien entre l’objet physique et son dossier.",
+				"es": "Una verificación fiable mantiene la conexión entre el objeto físico y su registro.",
+				"pt": "Uma verificação fiável mantém a ligação entre o objeto físico e o seu registo.",
+				"en": "Reliable verification keeps the physical object and its record aligned."
 			}
 		},
 		{
 			"figure": "collectible-ecosystem",
 			"afterHeading": {
-				"en": "7-the-ecosystem",
-				"fr": "7-l-ecosysteme",
-				"es": "7-el-ecosistema",
-				"pt": "7-o-ecossistema"
+				"fr": "4-l-ecosysteme",
+				"es": "4-el-ecosistema",
+				"pt": "4-o-ecossistema",
+				"en": "4-the-ecosystem"
 			},
 			"caption": {
-				"en": "The network connects collectors through a shared registry.",
-				"fr": "Le réseau relie les collectionneurs autour d’un registre commun.",
-				"es": "La red conecta a los coleccionistas mediante un registro compartido.",
-				"pt": "A rede liga os colecionadores através de um registo partilhado."
-			}
-		},
-		{
-			"figure": "collectible-business",
-			"afterHeading": {
-				"en": "8-the-business-model",
-				"fr": "8-le-modele-economique",
-				"es": "8-el-modelo-de-negocio",
-				"pt": "8-o-modelo-de-negocio"
-			},
-			"caption": {
-				"en": "Services generate revenue throughout the object’s lifetime.",
-				"fr": "Les services génèrent des revenus tout au long de la vie de l’objet.",
-				"es": "Los servicios generan ingresos durante la vida del objeto.",
-				"pt": "Os serviços geram receitas ao longo da vida do objeto."
-			}
-		},
-		{
-			"figure": "collectible-standard",
-			"afterHeading": {
-				"en": "9-competitive-differentiation",
-				"fr": "9-la-differenciation-concurrentielle",
-				"es": "9-la-diferenciacion-competitiva",
-				"pt": "9-a-diferenciacao-competitiva"
-			},
-			"caption": {
-				"en": "Verification continues beyond the first certification.",
-				"fr": "La vérification se poursuit après la première certification.",
-				"es": "La verificación continúa después de la primera certificación.",
-				"pt": "A verificação continua após a primeira certificação."
-			}
-		},
-		{
-			"figure": "collectible-expansion",
-			"afterHeading": {
-				"en": "10-long-term-vision",
-				"fr": "10-la-vision-a-long-terme",
-				"es": "10-la-vision-a-largo-plazo",
-				"pt": "10-a-visao-a-longo-prazo"
-			},
-			"caption": {
-				"en": "The approach can extend beyond collectible cards.",
-				"fr": "L’approche peut s’étendre au-delà des cartes à collectionner.",
-				"es": "El modelo puede extenderse más allá de las cartas coleccionables.",
-				"pt": "A abordagem pode estender-se para lá das cartas colecionáveis."
-			}
-		},
-		{
-			"figure": "collectible-network",
-			"afterHeading": {
-				"en": "the-network-effect",
-				"fr": "l-effet-de-reseau",
-				"es": "el-efecto-de-red",
-				"pt": "o-efeito-de-rede"
-			},
-			"caption": {
-				"en": "Each participant makes shared verification more useful.",
-				"fr": "Chaque participant renforce l’utilité d’une vérification commune.",
-				"es": "Cada participante hace más útil la verificación compartida.",
-				"pt": "Cada participante torna a verificação partilhada mais útil."
+				"fr": "Le passeport, l’application et le lieu physique relient le système à ses utilisateurs.",
+				"es": "El pasaporte, la aplicación y el espacio físico conectan el sistema con sus usuarios.",
+				"pt": "O passaporte, a aplicação e o espaço físico ligam o sistema aos seus utilizadores.",
+				"en": "The passport, app, and hub connect the system to its users."
 			}
 		},
 		{
 			"figure": "collectible-ambition",
 			"afterHeading": {
-				"en": "11-the-ultimate-ambition",
-				"fr": "11-l-ambition-finale",
-				"es": "11-la-ambicion-final",
-				"pt": "11-a-ambicao-final"
+				"fr": "6-l-ambition-finale",
+				"es": "6-la-ambicion-final",
+				"pt": "6-a-ambicao-final",
+				"en": "6-the-ultimate-ambition"
 			},
 			"caption": {
-				"en": "The ambition is to establish a lasting standard of trust.",
-				"fr": "L’ambition est d’établir un standard de confiance durable.",
-				"es": "La ambición es establecer un estándar de confianza duradero.",
-				"pt": "A ambição é estabelecer um padrão de confiança duradouro."
-			}
-		},
-		{
-			"figure": "collectible-names",
-			"afterHeading": {
-				"en": "12-name-ideas",
-				"fr": "12-idees-de-noms",
-				"es": "12-ideas-de-nombres",
-				"pt": "12-ideias-de-nomes"
-			},
-			"caption": {
-				"en": "The name should reflect the promise of authenticity.",
-				"fr": "Le nom doit refléter la promesse d’authenticité.",
-				"es": "El nombre debe reflejar la promesa de autenticidad.",
-				"pt": "O nome deve refletir a promessa de autenticidade."
+				"fr": "L’ambition est de devenir une référence mondiale pour les objets de collection et de valeur.",
+				"es": "La ambición es convertirse en una referencia mundial para los objetos de colección y de valor.",
+				"pt": "A ambição é tornar-nos uma referência mundial para os objetos de coleção e de valor.",
+				"en": "The ambition is to become a worldwide reference for collectibles and valuables."
 			}
 		}
 	]

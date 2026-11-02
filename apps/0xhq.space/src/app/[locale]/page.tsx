@@ -6,7 +6,7 @@ import { messages } from "@/lib/messages";
 
 const copy = {
 	en: {
-		intro: "Hi, I’m Maxime. I’m an artist, and I like making things.",
+		intro: "Hi, I'm Maxime. I like creating things.",
 		paragraphs: [
 			"Sometimes that means writing code or making music. Other times, it’s designing an object, starting a project, or following an idea to see where it goes. Some things turn out better than others. I keep trying, learning as I go, and doing my best to become a better person along the way. That curiosity extends to languages, too: I speak French, English, Spanish, and Portuguese, and I enjoy learning how people express themselves in each.",
 			"Over the years, I’ve realized that nothing makes me happier than helping others (turns out Mum was right again). Sharing something I’ve learned, helping someone get started, or giving back in whatever way I can. I’d like the things I create to make the world a little better, even in small ways.",
@@ -15,8 +15,7 @@ const copy = {
 		],
 	},
 	fr: {
-		intro:
-			"Salut, moi c’est Maxime. Je suis artiste et j’aime créer des choses.",
+		intro: "Salut, moi c’est Maxime. J’aime créer des choses.",
 		paragraphs: [
 			"Du code, de la musique, des objets, des projets… J’aime partir d’une idée et voir ce que je peux en faire. Ça ne marche pas toujours comme je l’imaginais, mais j’essaie, j’apprends et je recommence. Je fais de mon mieux, dans ce que je crée comme dans la personne que j’essaie de devenir. Cette curiosité passe aussi par les langues : je parle français, anglais, espagnol et portugais, et j’aime découvrir les différentes façons de s’exprimer.",
 			"Avec le temps, je me suis rendu compte que ce qui me rend le plus heureux, c’est d’aider les autres (encore une fois, maman avait raison). Transmettre ce que je sais, donner un coup de main, rendre un peu de ce qu’on m’a apporté. Si ce que je fais peut être utile à quelqu’un ou rendre les choses un peu meilleures, alors ça vaut la peine de le partager.",
@@ -25,7 +24,7 @@ const copy = {
 		],
 	},
 	es: {
-		intro: "Hola, soy Maxime. Soy artista y me gusta crear cosas.",
+		intro: "Hola, soy Maxime. Me gusta crear cosas.",
 		paragraphs: [
 			"Código, música, objetos, proyectos… Me gusta partir de una idea y ver qué puedo hacer con ella. No siempre sale como imaginaba, pero pruebo, aprendo y vuelvo a intentarlo. Intento hacerlo lo mejor posible, tanto en lo que creo como en la persona que quiero llegar a ser. Esa curiosidad también me lleva a aprender idiomas: hablo francés, inglés, español y portugués, y me gusta descubrir cómo nos expresamos en cada uno.",
 			"Con el tiempo, me he dado cuenta de que lo que más feliz me hace es ayudar a los demás (mamá tenía razón, una vez más). Compartir lo que sé, echar una mano y devolver un poco de lo que he recibido. Si lo que hago puede servirle a alguien o mejorar las cosas aunque sea un poco, merece la pena compartirlo.",
@@ -34,7 +33,7 @@ const copy = {
 		],
 	},
 	pt: {
-		intro: "Olá, sou o Maxime. Sou artista e gosto de criar coisas.",
+		intro: "Olá, sou o Maxime. Gosto de criar coisas.",
 		paragraphs: [
 			"Código, música, objetos, projetos… Gosto de partir de uma ideia e ver o que consigo fazer com ela. Nem sempre corre como imaginava, mas experimento, aprendo e volto a tentar. Faço o meu melhor, tanto no que crio como na pessoa que quero ser. Essa curiosidade também me leva às línguas: falo francês, inglês, espanhol e português, e gosto de descobrir as diferentes formas de nos expressarmos.",
 			"Com o tempo, percebi que nada me faz mais feliz do que ajudar os outros (a minha mãe tinha razão, mais uma vez). Partilhar o que sei, dar uma ajuda e retribuir um pouco do que recebi. Se aquilo que faço puder ser útil a alguém ou melhorar alguma coisa, mesmo que só um bocadinho, vale a pena partilhá-lo.",

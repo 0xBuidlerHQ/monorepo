@@ -294,10 +294,15 @@ test("every published source has translations and animation targets in all langu
 					);
 					assert(animation.caption.length > 0);
 				}
-				const source = sources.find((source) => source.slug === entry.slug);
+				// Localized revisions may have different illustration placements.
+				// Each section still needs its own placement to avoid overlapping figures.
+				const animationTargets = (entry.animations ?? []).map(
+					(animation) => animation.afterHeading,
+				);
 				assert.equal(
-					(entry.animations ?? []).length,
-					(source.animations ?? []).length,
+					new Set(animationTargets).size,
+					animationTargets.length,
+					`${locale}/${entry.slug}: multiple animations target the same heading`,
 				);
 				for (const match of entry.content.matchAll(/\]\(\/(en|fr|es|pt)\//g)) {
 					assert.equal(

@@ -2,7 +2,7 @@
 
 import { type RefObject, useEffect, useId, useState } from "react";
 
-type Connector = { id: string; path: string; opacity: number };
+type Connector = { key: string; id: string; path: string; opacity: number };
 
 export function ArticleAnimationArrows({
 	container,
@@ -74,6 +74,8 @@ export function ArticleAnimationArrows({
 					if (space <= 32) return [];
 					return [
 						{
+							// Multiple illustrations can share a section heading.
+							key: `${figures[index].dataset.sectionAnimation ?? "figure"}:${index}`,
 							id: figures[index].dataset.sectionAnimation ?? String(index),
 							path: `M ${x} ${start} C ${x} ${middle}, ${nextX} ${middle}, ${nextX} ${end}`,
 							opacity: Math.min(1, (space - 32) / 48),
@@ -124,9 +126,9 @@ export function ArticleAnimationArrows({
 					<path d="M 1 1 L 7 4 L 1 7" fill="none" stroke="currentColor" />
 				</marker>
 			</defs>
-			{connectors.map(({ id, path, opacity }) => (
+			{connectors.map(({ key, id, path, opacity }) => (
 				<path
-					key={id}
+					key={key}
 					data-connector-from={id}
 					opacity={opacity}
 					d={path}

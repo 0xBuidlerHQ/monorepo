@@ -7,6 +7,12 @@ export type CuratedProduct = {
 	brand: string;
 	url: string;
 	availability: "preorder" | "available" | "discontinued";
+	price?: {
+		amount: number;
+		currency: string;
+		checkedAt: string;
+		source: string;
+	};
 	image: {
 		src: string;
 		width: number;
