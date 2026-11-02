@@ -1,0 +1,102 @@
+.scene {
+	width: 100%;
+	aspect-ratio: 5 / 4;
+	color: var(--foreground);
+}
+
+.scene svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+	stroke: currentColor;
+	stroke-width: 0.85;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	transform: perspective(600px) rotateX(var(--tilt)) rotateY(var(--turn));
+	transition: transform 300ms ease-out;
+}
+
+.base {
+	opacity: 0.3;
+}
+.detail {
+	opacity: 0.55;
+}
+.moving {
+	opacity: 0.9;
+	animation: float 7s ease-in-out infinite;
+}
+.accent {
+	opacity: 0.65;
+	animation: breathe 5s ease-in-out infinite;
+}
+.scene[data-scene="notebook"] .moving {
+	animation-name: write;
+}
+.scene[data-scene="notebook"] .detail {
+	stroke-dasharray: 80;
+	animation: ink 7s ease-in-out infinite;
+}
+.scene[data-scene="book"] .moving {
+	animation-duration: 9s;
+}
+.scene[data-scene="idea"] .moving {
+	animation-duration: 6s;
+}
+.scene[data-scene="media"] .moving {
+	animation: breathe 3s ease-in-out infinite;
+}
+.scene[data-scene="media"] .detail {
+	animation: breathe 3s -1.5s ease-in-out infinite;
+}
+
+@keyframes float {
+	0%,
+	100% {
+		translate: 0 0;
+	}
+	50% {
+		translate: 0 -5px;
+	}
+}
+@keyframes write {
+	0%,
+	100% {
+		translate: 0 0;
+	}
+	50% {
+		translate: -7px 4px;
+	}
+}
+@keyframes ink {
+	0%,
+	100% {
+		stroke-dashoffset: 35;
+		opacity: 0.3;
+	}
+	50%,
+	75% {
+		stroke-dashoffset: 0;
+		opacity: 0.65;
+	}
+}
+@keyframes breathe {
+	0%,
+	100% {
+		opacity: 0.35;
+	}
+	50% {
+		opacity: 0.9;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.scene svg {
+		transform: none;
+		transition: none;
+	}
+	.scene g {
+		animation: none;
+	}
+}

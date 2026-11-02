@@ -1,6 +1,146 @@
 {
-  "slug": "why-ethereum",
-  "date": "2026-11-01",
-  "tags": ["ethereum", "investing"],
-  "draft": false
+	"slug": "why-ethereum",
+	"date": "2026-11-01",
+	"tags": [
+		"ethereum",
+		"investing"
+	],
+	"draft": false,
+	"animations": [
+		{
+			"figure": "ethereum-ether",
+			"afterHeading": {
+				"en": "article-title",
+				"fr": "article-title",
+				"es": "article-title",
+				"pt": "article-title"
+			},
+			"caption": {
+				"en": "ETH has a role in the network; its investment case depends on more than price.",
+				"fr": "L’ETH joue un rôle dans le réseau ; sa thèse d’investissement dépasse son prix.",
+				"es": "ETH cumple una función en la red; su tesis de inversión va más allá del precio.",
+				"pt": "O ETH tem um papel na rede; a sua tese de investimento vai além do preço."
+			}
+		},
+		{
+			"figure": "exploded",
+			"afterHeading": {
+				"en": "the-problem-businesses-inherit",
+				"fr": "le-probleme-dont-les-entreprises-heritent",
+				"es": "el-problema-que-heredan-las-empresas",
+				"pt": "o-problema-que-as-empresas-herdam"
+			},
+			"caption": {
+				"en": "More dependencies mean more places where trust can break.",
+				"fr": "Plus de dépendances, c’est aussi plus de points où la confiance peut se rompre.",
+				"es": "Más dependencias crean más puntos donde puede fallar la confianza.",
+				"pt": "Mais dependências criam mais pontos onde a confiança pode falhar."
+			}
+		},
+		{
+			"figure": "hub",
+			"afterHeading": {
+				"en": "a-foundation-we-can-share",
+				"fr": "une-base-que-nous-pouvons-partager",
+				"es": "una-base-que-podamos-compartir",
+				"pt": "uma-base-que-podemos-partilhar"
+			},
+			"caption": {
+				"en": "Different services can build on a shared foundation.",
+				"fr": "Des services différents peuvent construire sur une base commune.",
+				"es": "Distintos servicios pueden apoyarse en una base compartida.",
+				"pt": "Serviços diferentes podem apoiar-se numa base comum."
+			}
+		},
+		{
+			"figure": "branches",
+			"afterHeading": {
+				"en": "a-shared-foundation-should-not-have-a-single-gatekeeper",
+				"fr": "une-base-commune-ne-devrait-pas-avoir-de-gardien-unique",
+				"es": "una-base-compartida-no-deberia-tener-un-unico-guardian",
+				"pt": "uma-base-partilhada-nao-deve-ter-um-unico-guardiao"
+			},
+			"caption": {
+				"en": "Alternative paths reduce dependence on a single gateway.",
+				"fr": "Des chemins alternatifs réduisent la dépendance à une seule porte d’entrée.",
+				"es": "Las rutas alternativas reducen la dependencia de una única puerta de acceso.",
+				"pt": "Caminhos alternativos reduzem a dependência de uma única porta de entrada."
+			}
+		},
+		{
+			"figure": "blockchain-consensus",
+			"afterHeading": {
+				"en": "we-will-need-a-neutral-decentralized-place-to-build",
+				"fr": "nous-aurons-besoin-d-un-espace-neutre-et-decentralise-pour-construire",
+				"es": "necesitaremos-un-espacio-neutral-y-descentralizado-donde-construir",
+				"pt": "vamos-precisar-de-um-espaco-neutro-e-descentralizado-para-construir"
+			},
+			"caption": {
+				"en": "Independent participants verify a common set of rules.",
+				"fr": "Des participants indépendants vérifient un ensemble de règles communes.",
+				"es": "Participantes independientes verifican unas reglas comunes.",
+				"pt": "Participantes independentes verificam um conjunto de regras comuns."
+			}
+		},
+		{
+			"figure": "ethereum-program",
+			"afterHeading": {
+				"en": "why-ethereum",
+				"fr": "pourquoi-ethereum",
+				"es": "por-que-ethereum",
+				"pt": "porque-ethereum"
+			},
+			"caption": {
+				"en": "Published contracts let builders use and verify shared programs.",
+				"fr": "Des contrats publics permettent de réutiliser et de vérifier des programmes communs.",
+				"es": "Los contratos públicos permiten utilizar y verificar programas compartidos.",
+				"pt": "Contratos públicos permitem utilizar e verificar programas partilhados."
+			}
+		},
+		{
+			"figure": "ethereum-network",
+			"afterHeading": {
+				"en": "what-this-could-look-like-in-practice",
+				"fr": "a-quoi-cela-pourrait-ressembler-en-pratique",
+				"es": "como-podria-funcionar-en-la-practica",
+				"pt": "como-poderia-funcionar-na-pratica"
+			},
+			"caption": {
+				"en": "A membership and its payment can connect different services.",
+				"fr": "Une adhésion et son paiement peuvent relier plusieurs services.",
+				"es": "Una membresía y su pago pueden conectar distintos servicios.",
+				"pt": "Uma adesão e o seu pagamento podem ligar serviços diferentes."
+			}
+		},
+		{
+			"figure": "rebuild",
+			"afterHeading": {
+				"en": "what-still-needs-to-improve-and-who-is-building-it",
+				"fr": "ce-qui-doit-encore-progresser-et-qui-y-travaille",
+				"es": "que-debe-mejorar-todavia-y-quien-esta-trabajando-en-ello",
+				"pt": "o-que-ainda-precisa-de-melhorar-e-quem-esta-a-trabalhar-nisso"
+			},
+			"caption": {
+				"en": "Better tools make the shared foundation easier to use.",
+				"fr": "De meilleurs outils rendent la base commune plus simple à utiliser.",
+				"es": "Mejores herramientas facilitan el uso de la base compartida.",
+				"pt": "Melhores ferramentas tornam a base comum mais fácil de utilizar."
+			}
+		},
+		{
+			"figure": "ethereum-fees",
+			"afterHeading": {
+				"en": "finally-what-about-eth-and-its-price",
+				"fr": "enfin-qu-en-est-il-de-l-eth-et-de-son-prix",
+				"es": "por-ultimo-que-ocurre-con-eth-y-su-precio",
+				"pt": "por-fim-e-o-eth-e-o-seu-preco"
+			},
+			"caption": {
+				"en": "Fees, issuance and burning are parts of ETH’s economics.",
+				"fr": "Les frais, l’émission et la destruction font partie de l’économie de l’ETH.",
+				"es": "Las comisiones, la emisión y la quema forman parte de la economía de ETH.",
+				"pt": "Taxas, emissão e queima fazem parte da economia do ETH."
+			}
+		}
+	]
 }

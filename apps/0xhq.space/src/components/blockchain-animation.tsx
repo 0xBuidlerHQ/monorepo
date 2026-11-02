@@ -12,6 +12,7 @@ import {
 	settle,
 	terminal,
 } from "@lucasmarkes/hairline";
+import { motion, useReducedMotion } from "motion/react";
 import { type CSSProperties, useLayoutEffect, useRef } from "react";
 import type { HairlineFigure } from "@/lib/content";
 
@@ -77,6 +78,7 @@ export function BlockchainAnimation({
 	placement?: "inline" | "section" | "glossary";
 	showCaption?: boolean;
 }) {
+	const reducedMotion = useReducedMotion();
 	const figure = useRef<HTMLElement>(null);
 	const drawing = useRef<HTMLDivElement>(null);
 	const key = `${animationId}:${figureName}`;
@@ -145,8 +147,15 @@ export function BlockchainAnimation({
 	}, [caption, key]);
 
 	return (
-		<figure
+		<motion.figure
 			ref={figure}
+			initial={reducedMotion ? false : { opacity: 0, y: 8 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: false, amount: 0.05 }}
+			transition={{
+				duration: reducedMotion ? 0 : 0.6,
+				ease: [0.32, 0.72, 0, 1],
+			}}
 			data-figure={figureName}
 			className={`blockchain-illustration not-prose ${placement !== "inline" ? "my-5 flex flex-col items-center gap-4 min-[1280px]:m-0 min-[1280px]:flex-col min-[1280px]:gap-4" : "my-5 flex flex-col items-center gap-4"}`}
 		>
@@ -169,6 +178,6 @@ export function BlockchainAnimation({
 					{caption}
 				</figcaption>
 			)}
-		</figure>
+		</motion.figure>
 	);
 }

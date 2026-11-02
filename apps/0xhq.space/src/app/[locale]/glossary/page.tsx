@@ -5,11 +5,7 @@ import { ReferenceContent } from "@/components/article";
 import { ArticleOutline } from "@/components/article-outline";
 import { isContentLocale } from "@/lib/locales";
 import { messages } from "@/lib/messages";
-import {
-	getGlossary,
-	getGlossaryFigures,
-	glossaryLanguages,
-} from "@/lib/translations";
+import { getGlossary, glossaryLanguages } from "@/lib/translations";
 
 export const ensureStatic = "navigation";
 export function generateStaticParams() {
@@ -37,8 +33,8 @@ async function GlossaryContent({ params }: PageProps<"/[locale]/glossary">) {
 	if (content === undefined) notFound();
 	return (
 		<article lang={locale} className="w-full min-w-0 py-12">
-			<ArticleOutline key={locale} side="right" mobileNavigation>
-				<ReferenceContent content={content} figures={getGlossaryFigures()} />
+			<ArticleOutline key={locale} side="right" mobileNavigation arrows={false}>
+				<ReferenceContent content={content} />
 			</ArticleOutline>
 		</article>
 	);
