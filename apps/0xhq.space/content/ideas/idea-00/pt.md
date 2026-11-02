@@ -2,7 +2,7 @@
 description: "Uma visão assente na confiança e na transparência, que liga objetos de coleção e de valor a identidades digitais autenticadas e registos de propriedade verificáveis através de espaços físicos de autenticação, troca e comunidade."
 title: "Um novo padrão para os objetos de coleção e de valor"
 draft: false
-sourceRevision: 8da92d6c3ff39f6f8c390dca341e7e04d488f585e088d39e4a84c05b85be9220
+sourceRevision: 438c8984e20cb47cf65071620fcaa9a36e2746872b150efb2026c01d723ee4b2
 ---
 
 ## 1. A visão
@@ -31,11 +31,11 @@ Cada objeto autenticado receberia uma identidade digital única ligada às suas 
 
 ### Propriedade
 
-O objeto estaria ligado ao seu proprietário registado através de um certificado de propriedade digital representado por um NFT associado. Antes de registar a propriedade, verificaríamos as informações e os comprovativos apresentados pelo proprietário. As transferências verificadas posteriores registariam as mudanças de proprietário juntamente com a entrega física. Nos nossos espaços, verificaríamos o objeto, o certificado de propriedade do vendedor e quaisquer litígios comunicados antes de coordenar o pagamento e a transferência tanto da peça como do seu certificado. Os procedimentos de recuperação e de resolução de litígios responderiam a perdas de acesso, reivindicações contraditórias e furtos ou roubos comunicados. O certificado ligaria o proprietário ao objeto físico autenticado e ao seu histórico registado.
+O objeto estaria ligado ao seu proprietário registado através de um certificado de propriedade digital. Antes de registar a propriedade, verificaríamos as informações e os comprovativos apresentados pelo proprietário. As transferências verificadas posteriores registariam as mudanças de proprietário juntamente com a entrega física. Nos nossos espaços, verificaríamos o objeto, o certificado de propriedade do vendedor e quaisquer litígios comunicados antes de coordenar o pagamento e a transferência tanto da peça como do seu certificado. Os procedimentos de recuperação e de resolução de litígios responderiam a perdas de acesso, reivindicações contraditórias e furtos ou roubos comunicados. O certificado ligaria o proprietário ao objeto físico autenticado e ao seu histórico registado.
 
 ### Transparência
 
-O histórico deveria esclarecer o que foi verificado, quando e por quem. As avaliações de autenticação, as inspeções posteriores, as transferências registadas e as alterações no estado de certificação formariam um histórico verificável, com a blockchain a preservar provas criptográficas dos acontecimentos registados. As correções e os registos contestados seriam documentados através de novas entradas, mantendo a rastreabilidade das declarações anteriores. A verificação pública incidiria sobre o objeto e os elementos que sustentam o seu estado, enquanto os dados pessoais e os documentos sensíveis permaneceriam protegidos.
+O histórico deveria esclarecer o que foi verificado, quando e por quem. As avaliações de autenticação, as inspeções posteriores, as transferências registadas e as alterações no estado de certificação formariam um histórico verificável. As correções e os registos contestados seriam documentados através de novas entradas, mantendo a rastreabilidade das declarações anteriores. A verificação pública incidiria sobre o objeto e os elementos que sustentam o seu estado, enquanto os dados pessoais e os documentos sensíveis permaneceriam protegidos.
 
 ---
 
@@ -47,7 +47,7 @@ O passaporte digital, a aplicação e o espaço físico ligariam os quatro pilar
 
 Os quatro pilares precisam de permanecer ligados quando um objeto passa da primeira autenticação para uma venda ou troca posterior. Uma avaliação estabelece o que é o objeto, os elementos de identificação ligam-no a essa avaliação e um registo de propriedade liga-o a uma pessoa. Reunir estes elementos num registo duradouro e verificável dá ao objeto uma referência que pode acompanhá-lo ao longo de toda a sua vida. Este é o **passaporte digital**: um registo unificado da identidade autenticada do objeto, da propriedade registada e do seu histórico, emitido depois de a nossa equipa o inspecionar e autenticar.
 
-O passaporte conteria os dados de identificação do objeto e as suas características físicas documentadas, apoiados por fotografias de alta resolução e elementos adequados à sua categoria. O certificado de autenticação registaria a avaliação, o examinador, a data e qualquer nota de conservação relevante. O certificado de propriedade digital, representado por um NFT associado, ligaria o objeto ao seu proprietário registado e registaria as transferências de propriedade verificadas. Estes certificados têm funções diferentes: a autenticação documenta o que é o objeto, enquanto a propriedade regista a quem pertence dentro do ecossistema. Ambos estariam ligados ao mesmo objeto através do seu passaporte.
+O passaporte conteria os dados de identificação do objeto e as suas características físicas documentadas, apoiados por fotografias de alta resolução e elementos adequados à sua categoria. O certificado de autenticação registaria a avaliação, o examinador, a data e qualquer nota de conservação relevante. O certificado de propriedade digital ligaria o objeto ao seu proprietário registado e registaria as transferências de propriedade verificadas. Estes certificados têm funções diferentes: a autenticação documenta o que é o objeto, enquanto a propriedade regista a quem pertence dentro do ecossistema. Ambos estariam ligados ao mesmo objeto através do seu passaporte.
 
 À medida que o objeto passasse pelo sistema, o passaporte acumularia inspeções, atualizações do estado de conservação, entregas verificadas e alterações de estado, incluindo novas autenticações ou litígios comunicados. Numa troca posterior, a nossa equipa poderia comparar o objeto físico com a sua identidade documentada, verificar os registos de autenticação e propriedade e registar a transferência concluída. O proprietário muda, enquanto o objeto mantém a sua identidade e o seu histórico.
 

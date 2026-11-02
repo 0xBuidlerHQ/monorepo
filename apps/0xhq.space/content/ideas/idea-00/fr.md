@@ -2,7 +2,7 @@
 description: "Une vision fondée sur la confiance et la transparence, reliant les objets de collection et de valeur à des identités numériques authentifiées et à des registres de propriété vérifiables, grâce à des lieux dédiés à l’authentification, aux échanges et à la communauté."
 title: "Un nouveau standard pour les objets de collection et de valeur"
 draft: false
-sourceRevision: 8da92d6c3ff39f6f8c390dca341e7e04d488f585e088d39e4a84c05b85be9220
+sourceRevision: 438c8984e20cb47cf65071620fcaa9a36e2746872b150efb2026c01d723ee4b2
 ---
 
 ## 1. La vision
@@ -31,11 +31,11 @@ Chaque objet authentifié recevrait une identité numérique unique liée à ses
 
 ### Propriété
 
-L’objet serait relié à son propriétaire enregistré par un certificat de propriété numérique représenté par un NFT associé. Avant d’enregistrer la propriété, nous vérifierions les informations et les justificatifs fournis par le propriétaire. Les transferts vérifiés ultérieurs enregistreraient les changements de propriétaire lors de la remise physique. Dans nos lieux, nous contrôlerions l’objet, le certificat de propriété du vendeur et les éventuels litiges signalés avant de coordonner le paiement et le transfert de l’objet et de son certificat. Des procédures de récupération et de résolution des litiges permettraient de traiter les pertes d’accès, les revendications contradictoires et les vols signalés. Le certificat relierait le propriétaire à l’objet physique authentifié et à son historique enregistré.
+L’objet serait relié à son propriétaire enregistré par un certificat de propriété numérique. Avant d’enregistrer la propriété, nous vérifierions les informations et les justificatifs fournis par le propriétaire. Les transferts vérifiés ultérieurs enregistreraient les changements de propriétaire lors de la remise physique. Dans nos lieux, nous contrôlerions l’objet, le certificat de propriété du vendeur et les éventuels litiges signalés avant de coordonner le paiement et le transfert de l’objet et de son certificat. Des procédures de récupération et de résolution des litiges permettraient de traiter les pertes d’accès, les revendications contradictoires et les vols signalés. Le certificat relierait le propriétaire à l’objet physique authentifié et à son historique enregistré.
 
 ### Transparence
 
-L’historique devrait préciser ce qui a été vérifié, quand et par qui. Les évaluations d’authentification, les inspections ultérieures, les transferts enregistrés et les changements de statut de certification formeraient un historique vérifiable, la blockchain conservant les preuves cryptographiques des événements enregistrés. Les corrections et les données contestées seraient documentées par de nouvelles entrées afin que les déclarations antérieures restent traçables. La vérification publique porterait sur l’objet et les éléments justifiant son statut, tandis que les informations personnelles et les documents sensibles resteraient protégés.
+L’historique devrait préciser ce qui a été vérifié, quand et par qui. Les évaluations d’authentification, les inspections ultérieures, les transferts enregistrés et les changements de statut de certification formeraient un historique vérifiable. Les corrections et les données contestées seraient documentées par de nouvelles entrées afin que les déclarations antérieures restent traçables. La vérification publique porterait sur l’objet et les éléments justifiant son statut, tandis que les informations personnelles et les documents sensibles resteraient protégés.
 
 ---
 
@@ -47,7 +47,7 @@ Le passeport numérique, l’application et le lieu physique relieraient les qua
 
 Les quatre piliers doivent rester liés lorsque l’objet passe de sa première authentification à une vente ou un échange ultérieur. Une évaluation établit ce qu’est l’objet, des éléments d’identification le relient à cette évaluation et un registre de propriété le relie à une personne. Réunir ces éléments dans un dossier durable et vérifiable donne à l’objet une référence qui peut l’accompagner tout au long de son existence. C’est le **passeport numérique** : un dossier unifié de l’identité authentifiée de l’objet, de sa propriété enregistrée et de son historique, délivré après son inspection et son authentification par notre équipe.
 
-Le passeport contiendrait les informations d’identification de l’objet et ses caractéristiques physiques documentées, appuyées par des photographies en haute résolution et des éléments adaptés à sa catégorie. Son certificat d’authentification consignerait l’évaluation, l’examinateur, la date et toute note d’état pertinente. Son certificat de propriété numérique, représenté par un NFT associé, relierait l’objet à son propriétaire enregistré et consignerait les transferts de propriété vérifiés. Ces certificats ont des fonctions différentes : l’authentification documente ce qu’est l’objet, tandis que la propriété indique à qui il appartient dans l’écosystème. Tous deux seraient reliés au même objet par son passeport.
+Le passeport contiendrait les informations d’identification de l’objet et ses caractéristiques physiques documentées, appuyées par des photographies en haute résolution et des éléments adaptés à sa catégorie. Son certificat d’authentification consignerait l’évaluation, l’examinateur, la date et toute note d’état pertinente. Son certificat de propriété numérique relierait l’objet à son propriétaire enregistré et consignerait les transferts de propriété vérifiés. Ces certificats ont des fonctions différentes : l’authentification documente ce qu’est l’objet, tandis que la propriété indique à qui il appartient dans l’écosystème. Tous deux seraient reliés au même objet par son passeport.
 
 Au fil du parcours de l’objet dans le système, le passeport réunirait les inspections, les mises à jour de son état, les remises vérifiées et les changements de statut, notamment les nouvelles authentifications ou les litiges signalés. Lors d’un échange ultérieur, notre équipe pourrait comparer l’objet physique à son identité documentée, vérifier ses données d’authentification et de propriété, puis enregistrer le transfert réalisé. Le propriétaire change, tandis que l’objet conserve son identité et son historique.
 
