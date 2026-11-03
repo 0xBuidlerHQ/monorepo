@@ -6,7 +6,7 @@ draft: false
 
 ## 1. The Vision
 
-**The vision is to establish a new standard of trust for collectibles and valuables, connecting each physical object to an authenticated digital identity and a verifiable ownership history.** A card, a luxury bag, or a watch could carry its story from one owner to the next: what it is, how it has been authenticated, how its condition has evolved, and whose hands it has passed through. We would build and operate the infrastructure that makes this possible, bringing professional authentication, digital passports, an accessible app, and physical hubs into one connected ecosystem. At its heart is a lasting connection between the real object, its digital identity, and its owner. That foundation opens the door to a richer experience of ownership: understanding what you own, sharing its story, discovering its value, and exchanging it with confidence. The ambition is to make that confidence part of everyday life for collectors and owners around the world.
+**The vision is to establish a new standard of trust for collectibles and valuables, connecting each physical object to an authenticated digital identity and a verifiable ownership history.** A card, a luxury bag, or a watch could carry its story from one owner to the next: what it is, how it has been authenticated, how its condition has evolved, and whose hands it has passed through. The company would build and operate the infrastructure that makes this possible, bringing professional authentication, digital passports, an accessible app, and physical hubs into one connected ecosystem. At its heart is a lasting connection between the real object, its digital identity, and its owner. That foundation opens the door to a richer experience of ownership: understanding what you own, sharing its story, discovering its value, and exchanging it with confidence. The ambition is to make that confidence part of everyday life for collectors and owners around the world.
 
 ---
 
@@ -70,7 +70,7 @@ All of this would feel like a familiar app, with digital credentials and transfe
 
 ### The Hub
 
-The hubs would be destinations for people who care about collectibles and valuables. Imagine the atmosphere of a specialist showroom, the expertise of an authentication laboratory, and the energy of a community clubhouse in one place. Owners could bring in a treasured piece, discover something they have been searching for, or meet a buyer and complete an exchange with our team there to verify the object, its passport, and its registered ownership. These spaces would give the system a physical presence and put knowledgeable people behind its promise of trust. A passport established at one hub could be recognized at another, allowing an object’s history to travel with it across the network.
+The hubs would be destinations for people who care about collectibles and valuables. Imagine the atmosphere of a specialist showroom, the expertise of an authentication laboratory, and the energy of a community clubhouse in one place. Owners could bring in a treasured piece, discover something they have been searching for, or meet a buyer and complete an exchange with the company’s team there to verify the object, its passport, and its registered ownership. These spaces would give the system a physical presence and put knowledgeable people behind its promise of trust. A passport established at one hub could be recognized at another, allowing an object’s history to travel with it across the network.
 
 Community would give these places their life. Trading nights, exhibitions, beginner sessions, and meetups would bring together people with different collections, experience, and interests. Someone could arrive with a piece to authenticate and leave with a new connection, a better understanding of their collection, or the next object they want to find. Regular visitors should recognize familiar faces and feel that they belong, even when they have nothing to buy or sell. As the network grows, each hub could become a local home for a worldwide community.
 
@@ -106,19 +106,27 @@ You visit a hub to meet other owners, discover pieces, and join trading nights, 
 
 ---
 
-## 6. What It Takes
+## 6. Why It Matters
 
-- **Earning trust** → Rigorous authentication and consistent assessments
-- **Protecting ownership** → Owner-controlled transfers, dependable recovery, and clear dispute procedures
-- **Keeping records connected to reality** → Reliable physical identification and updated records
-- **Making trading effortless** → A simple app that makes exchanging objects and transferring ownership easy
+The opportunity is to change what people can expect when they own or exchange something valuable. A buyer could arrive informed, an owner could carry their evidence with them, and the next exchange could build on everything already established. **Honest participation would create lasting value, while deception would face a history that anyone can question.**
+
+- **Make stolen objects harder to profit from** → Stealing a piece would not itself transfer control of its registered ownership certificate. As buyers come to expect that connection, possession alone would become a weaker basis for a convincing sale.
+- **Give counterfeits fewer places to hide** → An object’s authenticated identity and identifying evidence would be available for buyers to compare with the piece in front of them. A copied label would have to stand up to the documented details of the real object.
+- **Make exchanges accountable** → Each recorded transfer would become part of a continuing history, helping people examine discrepancies and trace disputed exchanges. Participant confirmations and professional inspections would remain clearly distinguishable.
+- **Let strangers exchange with confidence** → People who have never met could begin with a shared reference for authenticity, condition, and registered ownership. That common ground could open collections and opportunities far beyond someone’s immediate circle.
+- **Put owners in control** → Owners could demonstrate their connection to an object, preserve its story, and choose how to pass it on. Open verification and independent transfers would let that confidence travel with them.
+- **Build trust across generations** → Every documented inspection and exchange would leave the next owner more to build on. A piece could gather decades of evidence and care, making its history an increasingly valuable part of what is passed forward.
+
+The ambition is for checking a passport to become a natural part of an exchange, rewarding owners who maintain their records and making suspicious claims harder to sustain. Its strength would come from people using that evidence to check both the story and the object.
 
 ---
 
 ## 7. The Ultimate Ambition
 
-**The ambition is to become a worldwide reference for the authentication, identity, and ownership of collectibles and valuables.** A passport issued by the company would become something people recognize, trust, and ask for, whether they are buying their first card or passing a treasured object to the next generation. Once authenticated in one city, a piece could travel across countries and collections with its identity intact, its documented history accessible, and its ownership ready to be verified.
+**The ultimate ambition is to build a worldwide foundation of trust for physical ownership.** Starting with collectibles and valuables, the company would establish a standard through which an object’s identity, authenticity, and ownership can be verified wherever it goes. A passport issued in one city could be recognized across countries, markets, and generations, becoming something people expect when they acquire an object worth preserving.
 
-The company would build a network where that confidence can travel as freely as the objects themselves. The app would connect owners and discoveries across borders; the hubs would give that network a local presence, professional expertise, and a community to return to. People could exchange independently or seek the company’s support, relying on the same open records while retaining control of what they own. Each authentication, inspection, and recorded transfer would contribute to something that lasts beyond a single owner or transaction.
+The same foundation could eventually serve a much wider world of physical assets. Cars could carry documented histories of inspections, repairs, and ownership; aircraft and their components could carry records of maintenance, replacements, and custody. Each category would require its own expertise and verification methods, while sharing the ambition of an identity that stays with the asset and a history that grows throughout its life.
 
-**The ultimate goal is for a verifiable identity and a transparent history to become an expected part of owning something worth preserving.** Over time, the company could help build a living record of the objects people collect, treasure, and pass on: a shared foundation of trust that grows across categories, countries, and generations.
+The company would connect this shared reference to a global network of people, services, and physical hubs. Owners could verify, exchange, and pass on their assets across borders without surrendering control of them. Professionals could consult established evidence and contribute new assessments. Each verified event would make the record more useful to the next person, allowing trust to accumulate across an asset’s lifetime.
+
+**The goal is for verifiable identity and transparent history to become part of what people expect from physical ownership itself.** From a first card to a treasured object passed to the next generation, and eventually to assets that support entire industries, the company would seek to make that continuity possible. The long-term vision is a living, openly verifiable record of the physical things people value, connecting their past to their next owner and giving their history a future.

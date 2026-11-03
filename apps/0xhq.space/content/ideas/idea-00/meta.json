@@ -1,7 +1,7 @@
 {
 	"slug": "idea-00",
 	"date": "2026-10-31",
-	"updated": "2026-11-02",
+	"updated": "2026-11-03",
 	"tags": [
 		"collectibles",
 		"ownership",
@@ -85,21 +85,6 @@
 			}
 		},
 		{
-			"figure": "collectible-ownership",
-			"afterHeading": {
-				"fr": "6-ce-que-cela-exige",
-				"es": "6-lo-que-hace-falta",
-				"pt": "6-o-que-e-preciso",
-				"en": "6-what-it-takes"
-			},
-			"caption": {
-				"fr": "Une vérification fiable maintient le lien entre l’objet physique et son dossier.",
-				"es": "Una verificación fiable mantiene la conexión entre el objeto físico y su registro.",
-				"pt": "Uma verificação fiável mantém a ligação entre o objeto físico e o seu registo.",
-				"en": "Reliable verification keeps the physical object and its record aligned."
-			}
-		},
-		{
 			"figure": "collectible-ecosystem",
 			"afterHeading": {
 				"fr": "4-l-ecosysteme",
@@ -127,6 +112,21 @@
 				"es": "La ambición es convertirse en una referencia mundial para los objetos de colección y de valor.",
 				"pt": "A ambição é tornar-nos uma referência mundial para os objetos de coleção e de valor.",
 				"en": "The ambition is to become a worldwide reference for collectibles and valuables."
+			}
+		},
+		{
+			"figure": "collectible-standard",
+			"afterHeading": {
+				"en": "6-why-it-matters",
+				"fr": "6-pourquoi-cela-compte",
+				"es": "6-por-que-importa",
+				"pt": "6-porque-e-importante"
+			},
+			"caption": {
+				"en": "Shared evidence helps buyers and owners exchange with greater confidence.",
+				"fr": "Des éléments communs aident acheteurs et propriétaires à échanger avec davantage de confiance.",
+				"es": "Las pruebas compartidas ayudan a compradores y propietarios a intercambiar con más confianza.",
+				"pt": "Elementos partilhados ajudam compradores e proprietários a trocar com maior confiança."
 			}
 		}
 	]
