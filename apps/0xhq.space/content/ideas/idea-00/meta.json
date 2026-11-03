@@ -87,10 +87,10 @@
 		{
 			"figure": "collectible-ownership",
 			"afterHeading": {
-				"fr": "7-les-defis",
-				"es": "7-los-desafios",
-				"pt": "7-os-desafios",
-				"en": "7-challenges"
+				"fr": "6-ce-que-cela-exige",
+				"es": "6-lo-que-hace-falta",
+				"pt": "6-o-que-e-preciso",
+				"en": "6-what-it-takes"
 			},
 			"caption": {
 				"fr": "Une vérification fiable maintient le lien entre l’objet physique et son dossier.",
@@ -117,10 +117,10 @@
 		{
 			"figure": "collectible-ambition",
 			"afterHeading": {
-				"fr": "6-l-ambition-finale",
-				"es": "6-la-ambicion-final",
-				"pt": "6-a-ambicao-final",
-				"en": "6-the-ultimate-ambition"
+				"fr": "7-l-ambition-finale",
+				"es": "7-la-ambicion-final",
+				"pt": "7-a-ambicao-final",
+				"en": "7-the-ultimate-ambition"
 			},
 			"caption": {
 				"fr": "L’ambition est de devenir une référence mondiale pour les objets de collection et de valeur.",

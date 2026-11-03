@@ -1,8 +1,8 @@
 ---
-description: "Une vision fondée sur la confiance et la transparence, reliant les objets de collection et de valeur à des identités numériques authentifiées et à des registres de propriété vérifiables, grâce à des lieux dédiés à l’authentification, aux échanges et à la communauté."
+description: "Une entreprise qui établit un nouveau standard de confiance et de transparence pour les objets de collection et de valeur, reliant identités numériques authentifiées et registres de propriété vérifiables grâce à des lieux dédiés à l’authentification, aux échanges et à la communauté."
 title: "Un nouveau standard pour les objets de collection et de valeur"
 draft: false
-sourceRevision: 6d472693f143c5a388c8f097677586732ec653ea2c5f4b7273f00710b1fd2f65
+sourceRevision: 58c18db782fe69cabf24ab7d640a0db30bde36285457909edf47c65b03c1610f
 ---
 
 ## 1. La vision
@@ -13,55 +13,61 @@ sourceRevision: 6d472693f143c5a388c8f097677586732ec653ea2c5f4b7273f00710b1fd2f65
 
 ## 2. L’idée centrale
 
-Chaque objet entrant dans le système recevrait un passeport numérique reliant son identité physique authentifiée, sa propriété enregistrée et son historique. Notre équipe inspecterait l’objet et vérifierait les informations de propriété et les justificatifs fournis avant de délivrer ses certificats d’authentification et de propriété numérique. Lors d’inspections ou d’échanges ultérieurs, nous comparerions l’objet à ce même passeport et enregistrerions les mises à jour vérifiées ou le transfert de propriété. L’objet conserverait son identité et son historique au fil des changements de propriétaire.
+Aujourd’hui, les informations qui donnent sa crédibilité à un objet de collection ou de valeur peuvent être dispersées entre certificats, reçus, photographies et connaissances de son propriétaire. Lorsque l’objet change de mains, une partie de cette histoire peut disparaître. **L’idée centrale est de donner à chaque objet une identité durable et vérifiable qui relie son authentification, sa propriété et son historique tout au long de son existence.** Une carte, un sac de luxe ou une montre porterait un dossier que son prochain propriétaire pourrait consulter, vérifier et continuer à enrichir.
+
+L’entreprise établirait cette identité par une inspection professionnelle, documenterait les caractéristiques propres à l’objet et vérifierait les informations de propriété et les justificatifs fournis. Elle délivrerait ensuite un passeport numérique contenant des certificats distincts d’authentification et de propriété. Les inspections ultérieures et les échanges vérifiés enrichiraient le même dossier. Le propriétaire change, l’état peut évoluer et de nouveaux événements s’ajoutent à l’histoire, tandis que l’objet conserve une identité cohérente. En assurant à la fois la vérification physique et le système numérique, l’entreprise prendrait la responsabilité de maintenir cette continuité.
+
+L’opportunité est de rendre ce dossier commun utile tout au long de la possession de l’objet. Chacun pourrait comprendre l’histoire d’une pièce avant de l’acheter, démontrer sa propriété enregistrée lorsque nécessaire, suivre sa valeur estimée et organiser un échange vérifié au sein du même écosystème. Un passeport créé dans un lieu pourrait être contrôlé dans un autre, donnant aux personnes une référence commune lors d’une transaction avec quelqu’un qu’elles n’ont jamais rencontré. **À grande échelle, l’entreprise pourrait transformer des authentifications individuelles en un réseau mondial d’objets de confiance, de propriétaires et de lieux d’échange.** Chaque événement vérifié enrichirait un dossier qui survit à la transaction, permettant au prochain propriétaire de recevoir, avec l’objet, la confiance construite autour de lui.
 
 ---
 
 ## 3. Les quatre piliers
 
-L’authentification, l’identité reliant le physique au numérique, la propriété et la transparence constituent le socle du système. Ensemble, elles établissent ce qu’est un objet, le relient à un dossier numérique vérifiable, identifient son propriétaire enregistré et conservent les preuves à l’appui de ces informations. Nous assurerions les processus qui maintiennent la cohérence entre ces quatre éléments.
+L’authentification, l’identité reliant le physique au numérique, la propriété et la transparence constituent le socle du système. Ensemble, elles donnent à chaque objet une identité reconnaissable, des preuves dignes de confiance et un historique qui se poursuit au-delà d’un seul propriétaire. L’entreprise réunirait ces quatre piliers pour faire de la confiance une composante de la possession et de l’échange d’objets de collection et de valeur.
 
 ### Authentification
 
-L’authentification professionnelle établit ce qu’est l’objet. Notre équipe inspecterait chaque pièce selon l’expertise et les procédures propres à sa catégorie, documenterait les éléments justifiant son évaluation et examinerait son état. Le grading, c’est-à-dire l’attribution d’une note d’état, serait inclus lorsqu’il apporte une information utile, plutôt qu’exigé pour tous les objets. Le dossier préciserait qui a réalisé l’évaluation, à quelle date et ce qui a été établi. Des inspections ultérieures pourraient actualiser le statut de certification et documenter les changements d’état tout en conservant les évaluations précédentes.
+L’authentification donne confiance dans ce que l’on possède. Les spécialistes de l’entreprise établiraient l’authenticité d’un objet, évalueraient son état et documenteraient les éléments justifiant leurs conclusions, avec une notation lorsque celle-ci apporte une information utile. Chaque évaluation préciserait qui l’a réalisée, quand et ce qui a été établi. Au fil des nouvelles inspections, cette expertise resterait accessible au prochain propriétaire, donnant à chaque échange un point de départ fiable.
 
 ### Identité physique et numérique
 
-Chaque objet authentifié recevrait une identité numérique unique liée à ses caractéristiques physiques particulières. Des photographies en haute résolution, des marques distinctives, les numéros de série disponibles et une empreinte physique adaptée à la catégorie serviraient de référence aux inspections ultérieures. Des boîtiers laissant apparaître les tentatives d’ouverture ou d’autres protections adaptées pourraient renforcer ce lien lorsque cela est pertinent. Le passeport numérique réunirait ces éléments pour permettre à notre équipe de comparer un objet présenté pour une revente, une inspection ou un transfert à son identité enregistrée.
+Chaque objet aurait une identité numérique ancrée dans les caractéristiques qui le rendent unique. Des photographies en haute résolution, des marques distinctives, des numéros de série et une empreinte physique adaptée à la catégorie créeraient une référence permettant de vérifier à nouveau l’objet physique. Des protections adaptées, notamment des boîtiers laissant apparaître les tentatives d’ouverture lorsque cela est pertinent, renforceraient ce lien. L’ambition est qu’un objet reste reconnaissable tout au long de son parcours, la même identité reliant sa première authentification à chaque inspection ou échange vérifié ultérieur.
 
 ### Propriété
 
-L’objet serait relié à son propriétaire enregistré par un certificat de propriété numérique. Avant d’enregistrer la propriété, nous vérifierions les informations et les justificatifs fournis par le propriétaire. Les transferts vérifiés ultérieurs enregistreraient les changements de propriétaire lors de la remise physique. Dans nos lieux, nous contrôlerions l’objet, le certificat de propriété du vendeur et les éventuels litiges signalés avant de coordonner le paiement et le transfert de l’objet et de son certificat. Des procédures de récupération et de résolution des litiges permettraient de traiter les pertes d’accès, les revendications contradictoires et les vols signalés. Le certificat relierait le propriétaire à l’objet physique authentifié et à son historique enregistré.
+Un certificat de propriété numérique relierait chaque objet à son propriétaire enregistré. L’entreprise vérifierait les informations et les justificatifs fournis lors de l’enregistrement. Ensuite, le propriétaire déciderait de conserver, de vendre, d’offrir ou d’échanger l’objet, son certificat de propriété l’accompagnant à chaque changement de mains. Les propriétaires pourraient démontrer ce lien et réaliser des transactions directement avec d’autres personnes, sans demander l’autorisation de l’entreprise. La propriété resterait entre leurs mains, son historique se poursuivant lorsque l’objet et son certificat de propriété passent au propriétaire suivant.
 
 ### Transparence
 
-L’historique devrait préciser ce qui a été vérifié, quand et par qui. Les évaluations d’authentification, les inspections ultérieures, les transferts enregistrés et les changements de statut de certification formeraient un historique vérifiable. Les corrections et les données contestées seraient documentées par de nouvelles entrées afin que les déclarations antérieures restent traçables. La vérification publique porterait sur l’objet et les éléments justifiant son statut, tandis que les informations personnelles et les documents sensibles resteraient protégés.
+L’historique d’un objet serait accessible à chacun pour le consulter, le contrôler et le vérifier. Les personnes pourraient examiner directement les éléments enregistrés, sans demander l’autorisation de l’entreprise, et s’appuyer sur ce qui a déjà été établi. Les évaluations d’authentification, les inspections, les transferts vérifiés et les changements de certification indiqueraient ce qui a été contrôlé, quand et par qui. Les corrections resteraient traçables, tandis que les informations personnelles et les documents sensibles demeureraient protégés. Chaque événement vérifié enrichirait un dossier commun, permettant à la confiance de grandir avec l’historique de l’objet et donnant au prochain propriétaire davantage d’éléments sur lesquels s’appuyer.
 
 ---
 
 ## 4. L’écosystème
 
-Le passeport numérique, l’application et le lieu physique relieraient les quatre piliers aux personnes utilisant le système. Le passeport conserverait le dossier de l’objet, l’application le rendrait accessible et le lieu physique le relierait à l’authentification, aux échanges et à la communauté.
+Les quatre piliers prendraient vie dans un écosystème connecté : le passeport numérique, l’application et le lieu physique. Ensemble, ils donneraient à l’objet une identité durable, à son propriétaire un accès à un ensemble de services et à la confiance une place dans les lieux de rencontre et d’échange. Chaque composante renforcerait les autres, faisant d’une authentification le début d’une relation qui se poursuit au fil des propriétaires, des lieux et des générations.
 
 ### Le passeport numérique
 
-Les quatre piliers doivent rester liés lorsque l’objet passe de sa première authentification à une vente ou un échange ultérieur. Une évaluation établit ce qu’est l’objet, des éléments d’identification le relient à cette évaluation et un registre de propriété le relie à une personne. Réunir ces éléments dans un dossier durable et vérifiable donne à l’objet une référence qui peut l’accompagner tout au long de son existence. C’est le **passeport numérique** : un dossier unifié de l’identité authentifiée de l’objet, de sa propriété enregistrée et de son historique, délivré après son inspection et son authentification par notre équipe.
+Un objet peut passer entre de nombreuses mains, mais son histoire devrait rester la sienne. Son authentification, ses éléments d’identification et son registre de propriété ont besoin d’un point de référence commun qui l’accompagne à chaque nouveau chapitre. C’est le **passeport numérique** : un dossier durable et vérifiable qui réunit les quatre piliers et donne à chaque futur propriétaire un socle sur lequel s’appuyer.
 
-Le passeport contiendrait les informations d’identification de l’objet et ses caractéristiques physiques documentées, appuyées par des photographies en haute résolution et des éléments adaptés à sa catégorie. Son certificat d’authentification consignerait l’évaluation, l’examinateur, la date et toute note d’état pertinente. Son certificat de propriété numérique relierait l’objet à son propriétaire enregistré et consignerait les transferts de propriété vérifiés. Ces certificats ont des fonctions différentes : l’authentification documente ce qu’est l’objet, tandis que la propriété indique à qui il appartient dans l’écosystème. Tous deux seraient reliés au même objet par son passeport.
+Délivré après une inspection professionnelle, le passeport contiendrait l’identité documentée de l’objet, ses photographies et les éléments adaptés à sa catégorie. Son certificat d’authentification préciserait ce qui a été examiné, par qui et avec quelles conclusions, avec une note d’état lorsque cela est pertinent. Son certificat de propriété numérique relierait l’objet à son propriétaire enregistré et aux transferts vérifiés ultérieurs. Ensemble, ces données permettraient de comprendre la pièce que l’on a devant soi et l’histoire qui l’accompagne.
 
-Au fil du parcours de l’objet dans le système, le passeport réunirait les inspections, les mises à jour de son état, les remises vérifiées et les changements de statut, notamment les nouvelles authentifications ou les litiges signalés. Lors d’un échange ultérieur, notre équipe pourrait comparer l’objet physique à son identité documentée, vérifier ses données d’authentification et de propriété, puis enregistrer le transfert réalisé. Le propriétaire change, tandis que l’objet conserve son identité et son historique.
+Chaque inspection, mise à jour de l’état et remise vérifiée enrichirait le même passeport. Lors d’un échange ultérieur, l’équipe de l’entreprise pourrait le consulter, le comparer à l’objet physique et poursuivre l’historique pour le propriétaire suivant. Au fil du temps, une pièce pourrait porter des décennies d’histoire documentée à travers les collections et les pays. Son passeport deviendrait une référence reconnue permettant de préserver, de partager et de consulter cette histoire avec confiance.
+
+Chacun pourrait librement consulter et vérifier les informations sur l’objet, son authentification, son historique enregistré et son statut de propriété actuel dans le passeport, les informations personnelles restant protégées. L’entreprise recommanderait de réaliser l’échange dans un lieu physique pour une vérification professionnelle et une remise accompagnée. Les propriétaires resteraient libres d’organiser directement le paiement et la remise et de transférer le certificat de propriété numérique dans l’application, sans autorisation de l’entreprise. Le dossier distinguerait les échanges confirmés par les participants des remises vérifiées physiquement par l’entreprise.
 
 ### L’application
 
-L’application serait le moyen quotidien d’interagir avec l’écosystème, que l’on possède un objet enregistré ou que l’on s’intéresse simplement aux objets de collection et de valeur. Chacun pourrait parcourir les offres, consulter les prix et découvrir des objets et des événements. L’enregistrement d’un objet authentifié donnerait accès aux fonctionnalités liées à sa propriété et à son passeport numérique.
+L’application ouvrirait l’écosystème à toute personne intéressée par les objets de collection et de valeur. Quelqu’un pourrait venir chercher le prix d’une carte et découvrir une communauté, un objet qu’il souhaite posséder ou un lieu où faire authentifier une pièce qui lui est chère. Pour les propriétaires enregistrés, elle deviendrait un point d’ancrage pour leur collection et un lien direct avec toutes les possibilités du système.
 
-**Posséder.** Les propriétaires pourraient réunir leur collection au même endroit, chaque objet enregistré étant relié à son passeport numérique, à ses certificats d’authentification et de propriété et à son historique. Ils pourraient consulter son statut, partager une vérification de propriété et suivre la valeur estimée de chaque objet et de l’ensemble de leur collection lorsque des données de marché sont disponibles.
+**Posséder.** Les propriétaires pourraient voir leur collection comme un ensemble connecté, avec l’identité, les certificats et l’historique de chaque objet à portée de main. Ils pourraient partager une vérification de propriété, retrouver l’histoire d’une pièce et suivre les valeurs estimées des objets et de la collection lorsque des données de marché sont disponibles. L’objectif est de rendre les connaissances qui entourent une collection aussi accessibles que les objets eux-mêmes.
 
-**Explorer.** Les utilisateurs pourraient rechercher des cartes et d’autres objets de collection et de valeur pris en charge, suivre les ventes récentes, comparer des pièces similaires et découvrir des annonces. Les informations de prix distingueraient les ventes réalisées, les prix demandés et les estimations, en tenant compte de différences telles que l’édition, l’état et la note. Des recherches enregistrées et des alertes permettraient de suivre un objet recherché ou l’évolution du marché d’un objet déjà possédé.
+**Explorer.** Chacun pourrait découvrir des cartes et d’autres objets de collection et de valeur pris en charge, suivre les ventes récentes, comparer des pièces et trouver des annonces au-delà de son entourage. Les prix distingueraient ventes réalisées, prix demandés et estimations, avec des précisions sur l’édition, l’état et la note. Les recherches enregistrées et les alertes pourraient transformer un intérêt passager en découverte ou aider à trouver une pièce recherchée depuis des années.
 
-**Agir.** Les propriétaires pourraient proposer un objet à la vente ou à l’échange, recevoir des offres et organiser une transaction vérifiée dans l’un de nos lieux. Chacun pourrait réserver une authentification, demander une visite d’inspection, programmer un contrôle d’état ou s’inscrire à un événement communautaire. L’application afficherait la progression de chaque service ou échange, du premier rendez-vous à la remise de l’objet et au transfert de propriété.
+**Agir.** Un propriétaire pourrait proposer un objet, recevoir une offre et organiser un échange dans l’application. L’entreprise recommanderait un lieu physique pour une inspection professionnelle et une remise accompagnée, les propriétaires restant libres d’échanger directement et de transférer eux-mêmes le certificat de propriété. Chacun pourrait aussi réserver une authentification, demander une visite d’inspection, programmer un contrôle d’état ou participer à un événement. L’application relierait chaque intention aux personnes et aux services physiques nécessaires pour la concrétiser, avec une progression visible du premier rendez-vous au transfert réalisé.
 
-La connexion et l’utilisation des services seraient aussi familières que dans une application ordinaire. Les certificats numériques et les transferts seraient gérés en arrière-plan, pour permettre à chacun de se concentrer sur ses objets et les services dont il a besoin.
+Tout cela serait aussi familier qu’une application ordinaire, les certificats numériques et les transferts étant gérés en arrière-plan. À mesure que le réseau grandirait, le même compte pourrait relier une personne à un lieu de proximité, à un acheteur dans une autre ville et à une communauté plus large partageant ses intérêts.
 
 ### Le lieu physique
 
@@ -73,47 +79,47 @@ La communauté donnerait vie à ces lieux. Soirées d’échange, expositions, s
 
 ## 5. L’expérience
 
-Les mêmes parcours simples s’appliqueraient aux objets de collection et de valeur, avec une authentification adaptée à chaque catégorie.
+Voici comment chacun pourrait faire authentifier des objets, gérer sa collection et réaliser des échanges de collection et de valeur au sein de l’écosystème.
 
 ### Faire authentifier un objet
 
-Vous apportez un objet dans l’un de nos lieux ou organisez une visite de notre équipe. Nous l’authentifions, documentons son identité et son état, et lui attribuons une note lorsque cela est pertinent. Nous vérifions les informations de propriété et les justificatifs que vous fournissez, puis créons son passeport numérique et vous enregistrons comme propriétaire. L’objet apparaît ensuite dans votre compte avec ses certificats d’authentification et de propriété numérique et son historique.
+Vous apportez un objet dans l’un des lieux de l’entreprise ou organisez une visite de l’équipe de l’entreprise. Des spécialistes l’authentifient, documentent son identité et son état, et lui attribuent une note lorsque cela est pertinent. Après vérification des informations de propriété et des justificatifs fournis, l’entreprise crée son passeport numérique et vous enregistre comme propriétaire. L’objet apparaît dans votre compte avec ses certificats et son historique, ouvrant un dossier qui pourra l’accompagner pendant des années et offrir un point de départ au prochain propriétaire.
 
 ### Échanger un objet
 
-Vous convenez d’une vente ou d’un échange avec une autre personne et apportez l’objet dans l’un de nos lieux. Nous vérifions sa correspondance avec son passeport numérique et la propriété enregistrée du vendeur. Nous coordonnons le paiement et la remise physique, puis transférons le certificat de propriété numérique à l’acheteur. L’objet apparaît dans son compte en conservant son identité et son historique.
+Vous trouvez un acheteur ou convenez d’un échange et consultez ensemble le passeport de l’objet. L’entreprise recommande une rencontre dans un lieu physique pour une inspection professionnelle et une assistance pour le paiement, la remise de l’objet et le transfert du certificat. Vous restez libre d’échanger de manière indépendante et de transférer le certificat de propriété dans l’application sans avoir à demander l’autorisation de l’entreprise. Le dossier distingue les échanges confirmés par les participants des remises vérifiées par l’entreprise. L’objet commence un nouveau chapitre auprès de son prochain propriétaire, en conservant son identité et son historique.
 
 ### Vérifier la propriété
 
-Vous partagez votre certificat de propriété numérique avec un acheteur, un organisateur d’événement ou toute personne ayant besoin de le vérifier. Cette personne peut confirmer que vous êtes le propriétaire enregistré de l’objet authentifié, sans consulter l’ensemble de votre collection ni vos informations personnelles.
+Vous pouvez partager une preuve de votre propriété enregistrée avec un acheteur, un organisateur d’événement ou toute personne qui en a besoin. Cette personne peut vérifier votre lien avec l’objet authentifié sans voir l’ensemble de votre collection ni vos informations personnelles. Chacun peut aussi consulter directement le passeport et l’historique d’authentification. Le même dossier peut offrir une référence commune à des personnes qui se rencontrent pour la première fois ou partagent une passion depuis des années.
 
 ### Gérer sa collection
 
-Vous ouvrez l’application pour retrouver tous vos objets enregistrés au même endroit, avec leurs certificats et leur historique. Lorsque des données de marché sont disponibles, vous pouvez suivre la valeur estimée de chaque objet et de l’ensemble de votre collection.
+Vous ouvrez l’application pour retrouver vos objets enregistrés, chacun avec son identité, ses certificats et son historique. Lorsque des données de marché sont disponibles, vous pouvez suivre les valeurs estimées des pièces et de l’ensemble de votre collection. L’application devient un lieu pour redécouvrir ce que vous possédez, comprendre l’histoire de chaque pièce et décider de ce que vous souhaitez conserver, partager ou rechercher ensuite.
 
 ### Mettre à jour le dossier d’un objet
 
-Vous rapportez un objet pour un contrôle d’état, une nouvelle notation ou une nouvelle authentification. Nous l’inspectons et ajoutons l’évaluation à son passeport numérique, en conservant son historique antérieur.
+Vous rapportez un objet pour un contrôle d’état, une nouvelle notation ou une nouvelle authentification. L’entreprise ajoute l’évaluation à son passeport tout en conservant l’historique précédent. À mesure que l’objet vieillit ou que son état évolue, son dossier s’enrichit avec lui, donnant aux futurs propriétaires une meilleure compréhension de la pièce et des soins qui lui ont été apportés.
 
 ### Communauté et événements
 
-Vous venez rencontrer d’autres propriétaires, découvrir des objets et participer à des événements. Vous pouvez partager vos connaissances, nouer des relations et profiter de la communauté, même sans objet à faire authentifier ou à échanger.
+Vous venez rencontrer d’autres propriétaires, découvrir des pièces et participer à des soirées d’échange, des expositions ou des séances pour débutants. Vous pouvez arriver avec une question, une collection à partager ou simplement de la curiosité. Au fil du temps, les rencontres régulières donnent naissance à des relations, les connaissances passent entre générations de collectionneurs et un intérêt partagé devient une communauté que l’on retrouve, même sans objet à faire authentifier ou à échanger.
 
 ---
 
-## 6. L’ambition finale
+## 6. Ce que cela exige
 
-**L’ambition est de devenir une référence mondiale pour l’authentification, l’identité et la propriété des objets de collection et de valeur.** Un passeport délivré par nos soins deviendrait quelque chose que l’on reconnaît et que l’on demande : un moyen fiable de comprendre un objet, de retracer son histoire documentée et de l’échanger avec confiance. Un propriétaire dans une ville pourrait rencontrer un acheteur dans une autre en s’appuyant sur les mêmes données, la même expertise et les mêmes procédures de vérification. Chaque authentification, inspection et transfert vérifié enrichirait un historique qui reste avec l’objet, construisant quelque chose de plus durable qu’une transaction isolée. Grâce à l’application et à un réseau international de lieux physiques, nous relierions ce socle commun à des communautés du monde entier. L’objectif ultime est d’établir un standard reconnu mondialement qui fasse de l’identité authentifiée, de l’historique transparent et de la propriété vérifiable une composante attendue de la transmission des objets de collection et de valeur d’une personne à l’autre.
+- **Gagner la confiance** → Authentification rigoureuse et évaluations cohérentes
+- **Protéger la propriété** → Transferts contrôlés par les propriétaires, récupération d’accès fiable et procédures claires de résolution des litiges
+- **Relier les dossiers à la réalité** → Identification physique fiable et dossiers à jour
+- **Simplifier les échanges** → Une application intuitive pour échanger des objets et transférer leur propriété en quelques étapes
 
 ---
 
-## 7. Les défis
+## 7. L’ambition finale
 
-Le modèle dépendrait de notre capacité à relever plusieurs défis :
+**L’ambition est de devenir une référence mondiale pour l’authentification, l’identité et la propriété des objets de collection et de valeur.** Un passeport délivré par l’entreprise deviendrait quelque chose que l’on reconnaît, auquel on fait confiance et que l’on demande, que l’on achète sa première carte ou que l’on transmette un objet précieux à la génération suivante. Une fois authentifiée dans une ville, une pièce pourrait traverser les pays et les collections en conservant son identité, un historique documenté accessible et un propriétaire enregistré que chacun peut vérifier.
 
-- **Gagner la confiance dans l’authentification.** Propriétaires et acheteurs doivent avoir confiance dans notre expertise, nos méthodes et notre constance. Cette réputation se construirait par un travail fiable et une gestion claire des erreurs.
-- **Maintenir le lien entre physique et numérique.** Un certificat numérique ne suffit pas à établir qu’un objet présenté plus tard est celui qui a été authentifié à l’origine. Des éléments d’identification, des protections adaptées et des inspections physiques répétées seraient nécessaires pour détecter les substitutions ou les changements.
-- **Maintenir la cohérence entre les données et la réalité.** L’état des objets peut évoluer et des ventes peuvent avoir lieu hors du système. Le passeport devrait distinguer les événements vérifiés des lacunes de l’historique et offrir un moyen clair d’actualiser ou de revérifier un objet.
-- **Gérer la récupération et les litiges.** Les pertes d’accès, les vols signalés et les revendications de propriété contradictoires nécessiteraient des procédures fiables de vérification et de résolution.
-- **Donner une raison de continuer à participer.** Les propriétaires doivent trouver un intérêt à tenir leurs données à jour et à transférer le certificat de propriété lors d’une vente. La vérification, les services utiles de l’application et les échanges de confiance devraient apporter assez de valeur pour maintenir cette participation.
-- **Garantir une qualité constante lors du développement du réseau.** Chaque catégorie demande une expertise particulière et chaque lieu devrait maintenir la même qualité d’authentification, de documentation et d’échange.
+L’entreprise construirait un réseau où cette confiance peut voyager aussi librement que les objets eux-mêmes. L’application relierait propriétaires et découvertes au-delà des frontières ; les lieux physiques donneraient à ce réseau un ancrage local, une expertise professionnelle et une communauté que l’on retrouve. Chacun pourrait échanger de manière indépendante ou solliciter l’accompagnement de l’entreprise, en s’appuyant sur les mêmes données ouvertes tout en gardant le contrôle de ce qu’il possède. Chaque authentification, inspection et transfert enregistré contribuerait à quelque chose qui dure au-delà d’un seul propriétaire ou d’une transaction.
+
+**L’objectif ultime est qu’une identité vérifiable et un historique transparent deviennent une évidence pour tout objet qui mérite d’être préservé.** Au fil du temps, l’entreprise pourrait contribuer à construire une mémoire vivante des objets que les personnes collectionnent, chérissent et transmettent : un socle commun de confiance qui grandit à travers les catégories, les pays et les générations.

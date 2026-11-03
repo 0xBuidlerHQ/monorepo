@@ -1,8 +1,8 @@
 ---
-description: "Uma visão assente na confiança e na transparência, que liga objetos de coleção e de valor a identidades digitais autenticadas e registos de propriedade verificáveis através de espaços físicos de autenticação, troca e comunidade."
+description: "Uma empresa que estabelece um novo padrão de confiança e transparência para os objetos de coleção e de valor, ligando identidades digitais autenticadas e registos de propriedade verificáveis através de espaços físicos de autenticação, troca e comunidade."
 title: "Um novo padrão para os objetos de coleção e de valor"
 draft: false
-sourceRevision: 6d472693f143c5a388c8f097677586732ec653ea2c5f4b7273f00710b1fd2f65
+sourceRevision: 58c18db782fe69cabf24ab7d640a0db30bde36285457909edf47c65b03c1610f
 ---
 
 ## 1. A visão
@@ -13,55 +13,61 @@ sourceRevision: 6d472693f143c5a388c8f097677586732ec653ea2c5f4b7273f00710b1fd2f65
 
 ## 2. A ideia central
 
-Cada objeto que entrasse no sistema receberia um passaporte digital que ligasse a sua identidade física autenticada, a propriedade registada e o seu histórico. A nossa equipa inspecionaria o objeto e verificaria as informações de propriedade e os comprovativos apresentados antes de emitir os certificados de autenticação e de propriedade digital. Em inspeções ou trocas posteriores, compararíamos o objeto com esse mesmo passaporte e registaríamos as atualizações verificadas ou a transferência de propriedade. O objeto manteria a sua identidade e o histórico acumulado à medida que mudasse de proprietário.
+Hoje, a informação que dá credibilidade a um objeto de coleção ou de valor pode estar dispersa por certificados, recibos, fotografias e pelos conhecimentos do seu proprietário. Quando o objeto muda de mãos, parte dessa história pode desaparecer. **A ideia central é dar a cada objeto uma identidade duradoura e verificável que ligue a sua autenticação, a propriedade e o histórico ao longo de toda a sua vida.** Uma carta, uma mala de luxo ou um relógio teria um registo que o proprietário seguinte pudesse consultar, verificar e continuar a enriquecer.
+
+A empresa estabeleceria essa identidade através de uma inspeção profissional, documentaria as características daquele objeto específico e verificaria as informações de propriedade e os comprovativos apresentados. Emitiria depois um passaporte digital com certificados distintos de autenticação e de propriedade. As inspeções posteriores e as trocas verificadas enriqueceriam o mesmo registo. O proprietário muda, o estado pode evoluir e novos acontecimentos passam a fazer parte da história, enquanto o objeto mantém uma identidade consistente. Ao assegurar tanto a verificação física como o sistema digital, a empresa assumiria a responsabilidade de manter essa continuidade.
+
+A oportunidade é tornar este registo partilhado útil durante todo o período em que se possui um objeto. Uma pessoa poderia compreender a história de uma peça antes de a comprar, demonstrar a propriedade registada quando necessário, acompanhar o seu valor estimado e organizar uma troca verificada no mesmo ecossistema. Um passaporte criado num local poderia ser verificado noutro, oferecendo uma referência comum ao lidar com alguém que nunca se conheceu. **À escala global, a empresa poderia transformar autenticações individuais numa rede mundial de objetos de confiança, proprietários e locais de troca.** Cada acontecimento verificado enriqueceria um registo que perdura para além da transação, ajudando o proprietário seguinte a receber, juntamente com o objeto, a confiança construída à sua volta.
 
 ---
 
 ## 3. Os quatro pilares
 
-A autenticação, a identidade que liga o físico ao digital, a propriedade e a transparência constituem a base do sistema. Em conjunto, estabelecem o que é um objeto, ligam-no a um registo digital verificável, identificam o seu proprietário registado e preservam as provas que sustentam essas informações. Asseguraríamos os processos que mantêm estes quatro elementos alinhados.
+A autenticação, a identidade que liga o físico ao digital, a propriedade e a transparência constituem a base do sistema. Em conjunto, dão a cada objeto uma identidade reconhecível, provas fiáveis e um histórico que continua para além de um único proprietário. A empresa reuniria estes quatro pilares para tornar a confiança parte da forma como se possuem e trocam objetos de coleção e de valor.
 
 ### Autenticação
 
-A autenticação profissional estabelece o que é o objeto. A nossa equipa inspecionaria cada peça com conhecimentos e procedimentos específicos da sua categoria, documentaria os elementos que sustentam a avaliação e examinaria o seu estado. O grading, ou seja, a atribuição de uma nota de conservação, seria incluído quando acrescentasse informação útil, em vez de ser exigido para todos os objetos. O registo identificaria quem realizou a avaliação, quando ocorreu e o que foi estabelecido. As inspeções posteriores poderiam atualizar o estado de certificação e documentar alterações na conservação, preservando as avaliações anteriores.
+A autenticação dá confiança naquilo que se possui. Os especialistas da empresa estabeleceriam a autenticidade de um objeto, avaliariam o seu estado e documentariam os elementos que sustentam as suas conclusões, atribuindo uma nota quando acrescentasse informação útil. Cada avaliação identificaria quem a realizou, quando e o que foi estabelecido. À medida que novas inspeções enriquecessem o registo, esses conhecimentos continuariam disponíveis para o proprietário seguinte, dando a cada troca um ponto de partida fiável.
 
 ### Identidade física e digital
 
-Cada objeto autenticado receberia uma identidade digital única ligada às suas características físicas particulares. Fotografias de alta resolução, marcas identificativas, números de série quando disponíveis e uma impressão física adequada à categoria serviriam de referência para inspeções posteriores. Caixas que evidenciem tentativas de abertura ou outras proteções adequadas poderiam reforçar essa ligação quando relevante. O passaporte digital reuniria estes elementos para que a nossa equipa pudesse comparar um objeto apresentado para revenda, inspeção ou transferência com a sua identidade registada.
+Cada objeto teria uma identidade digital assente nas características que o tornam único. Fotografias de alta resolução, marcas identificativas, números de série e uma impressão física adequada à categoria criariam uma referência que permitiria voltar a verificar o objeto físico. Proteções adequadas, incluindo caixas que evidenciem tentativas de abertura quando relevante, reforçariam essa ligação. A ambição é que um objeto permaneça reconhecível ao longo de todo o seu percurso, com a mesma identidade a ligar a primeira autenticação a cada inspeção ou troca verificada posterior.
 
 ### Propriedade
 
-O objeto estaria ligado ao seu proprietário registado através de um certificado de propriedade digital. Antes de registar a propriedade, verificaríamos as informações e os comprovativos apresentados pelo proprietário. As transferências verificadas posteriores registariam as mudanças de proprietário juntamente com a entrega física. Nos nossos espaços, verificaríamos o objeto, o certificado de propriedade do vendedor e quaisquer litígios comunicados antes de coordenar o pagamento e a transferência tanto da peça como do seu certificado. Os procedimentos de recuperação e de resolução de litígios responderiam a perdas de acesso, reivindicações contraditórias e furtos ou roubos comunicados. O certificado ligaria o proprietário ao objeto físico autenticado e ao seu histórico registado.
+Um certificado de propriedade digital ligaria cada objeto ao seu proprietário registado. A empresa verificaria as informações e os comprovativos apresentados no registo. A partir daí, o proprietário decidiria se quer manter, vender, oferecer ou trocar o objeto, com o certificado de propriedade a acompanhá-lo sempre que muda de mãos. Os proprietários poderiam demonstrar essa ligação e realizar transações diretamente com outras pessoas, sem precisar da autorização da empresa. A propriedade permaneceria nas suas mãos, com o histórico a continuar quando o objeto e o seu certificado de propriedade passam para o proprietário seguinte.
 
 ### Transparência
 
-O histórico deveria esclarecer o que foi verificado, quando e por quem. As avaliações de autenticação, as inspeções posteriores, as transferências registadas e as alterações no estado de certificação formariam um histórico verificável. As correções e os registos contestados seriam documentados através de novas entradas, mantendo a rastreabilidade das declarações anteriores. A verificação pública incidiria sobre o objeto e os elementos que sustentam o seu estado, enquanto os dados pessoais e os documentos sensíveis permaneceriam protegidos.
+O histórico de um objeto estaria aberto para qualquer pessoa aceder, consultar e verificar. As pessoas poderiam examinar diretamente os elementos registados, sem precisar da autorização da empresa, e apoiar-se no que já foi estabelecido. As avaliações de autenticação, as inspeções, as transferências verificadas e as alterações de certificação mostrariam o que foi verificado, quando e por quem. As correções continuariam a ser rastreáveis, enquanto os dados pessoais e os documentos sensíveis permaneceriam protegidos. Cada acontecimento verificado enriqueceria um registo partilhado, permitindo que a confiança crescesse com a história do objeto e dando ao proprietário seguinte mais elementos em que se apoiar.
 
 ---
 
 ## 4. O ecossistema
 
-O passaporte digital, a aplicação e o espaço físico ligariam os quatro pilares às pessoas que utilizam o sistema. O passaporte guardaria o registo do objeto, a aplicação torná-lo-ia acessível e o espaço físico ligá-lo-ia à autenticação, às trocas e à comunidade.
+Os quatro pilares ganhariam vida através de um ecossistema ligado: o passaporte digital, a aplicação e o espaço físico. Em conjunto, dariam ao objeto uma identidade duradoura, ao proprietário acesso a um mundo de serviços e à confiança um lugar nos espaços onde as pessoas se encontram e trocam. Cada componente reforçaria as restantes, fazendo de uma autenticação o início de uma relação que continua entre proprietários, locais e gerações.
 
 ### O passaporte digital
 
-Os quatro pilares precisam de permanecer ligados quando um objeto passa da primeira autenticação para uma venda ou troca posterior. Uma avaliação estabelece o que é o objeto, os elementos de identificação ligam-no a essa avaliação e um registo de propriedade liga-o a uma pessoa. Reunir estes elementos num registo duradouro e verificável dá ao objeto uma referência que pode acompanhá-lo ao longo de toda a sua vida. Este é o **passaporte digital**: um registo unificado da identidade autenticada do objeto, da propriedade registada e do seu histórico, emitido depois de a nossa equipa o inspecionar e autenticar.
+Um objeto pode passar por muitas mãos, mas a sua história deveria continuar a ser sua. A autenticação, os elementos de identificação e o registo de propriedade precisam de um ponto de referência comum que o acompanhe em cada novo capítulo. Este é o **passaporte digital**: um registo duradouro e verificável que reúne os quatro pilares e oferece a cada futuro proprietário uma base para continuar a construir.
 
-O passaporte conteria os dados de identificação do objeto e as suas características físicas documentadas, apoiados por fotografias de alta resolução e elementos adequados à sua categoria. O certificado de autenticação registaria a avaliação, o examinador, a data e qualquer nota de conservação relevante. O certificado de propriedade digital ligaria o objeto ao seu proprietário registado e registaria as transferências de propriedade verificadas. Estes certificados têm funções diferentes: a autenticação documenta o que é o objeto, enquanto a propriedade regista a quem pertence dentro do ecossistema. Ambos estariam ligados ao mesmo objeto através do seu passaporte.
+Emitido após uma inspeção profissional, o passaporte conteria a identidade documentada do objeto, fotografias e elementos adequados à sua categoria. O certificado de autenticação estabeleceria o que foi avaliado, por quem e com que conclusões, incluindo uma nota de conservação quando relevante. O certificado de propriedade digital ligaria o objeto ao seu proprietário registado e às transferências verificadas posteriores. Estes registos permitiriam compreender tanto a peça que se tem à frente como a história que a acompanha.
 
-À medida que o objeto passasse pelo sistema, o passaporte acumularia inspeções, atualizações do estado de conservação, entregas verificadas e alterações de estado, incluindo novas autenticações ou litígios comunicados. Numa troca posterior, a nossa equipa poderia comparar o objeto físico com a sua identidade documentada, verificar os registos de autenticação e propriedade e registar a transferência concluída. O proprietário muda, enquanto o objeto mantém a sua identidade e o seu histórico.
+Cada inspeção, atualização do estado e entrega verificada enriqueceria o mesmo passaporte. A equipa da empresa poderia consultá-lo numa troca posterior, compará-lo com o objeto físico e continuar o registo para o proprietário seguinte. Com o tempo, uma peça poderia levar décadas de história documentada através de coleções e países. O passaporte tornar-se-ia uma referência reconhecida para preservar, partilhar e consultar essa história com confiança.
+
+Qualquer pessoa poderia consultar e verificar livremente as informações do objeto, a autenticação, o histórico registado e o estado atual da propriedade no passaporte, mantendo os dados pessoais protegidos. A empresa recomendaria realizar a troca num dos seus espaços para uma verificação profissional e uma entrega acompanhada. Os proprietários continuariam livres de organizar diretamente o pagamento e a entrega e transferir o certificado de propriedade digital através da aplicação, sem autorização da empresa. O registo distinguiria as trocas confirmadas pelos participantes das entregas verificadas fisicamente pela empresa.
 
 ### A aplicação
 
-A aplicação seria a forma de interagir diariamente com o ecossistema, quer a pessoa possua um objeto registado, quer tenha apenas interesse em objetos de coleção e de valor. Qualquer pessoa poderia explorar, consultar preços e descobrir objetos e eventos. O registo de um objeto autenticado daria acesso às funcionalidades associadas à sua propriedade e ao seu passaporte digital.
+A aplicação abriria o ecossistema a qualquer pessoa interessada em objetos de coleção e de valor. Alguém poderia chegar à procura do preço de uma carta e descobrir uma comunidade, um objeto que quer possuir ou um lugar onde autenticar uma peça estimada. Para os proprietários registados, seria uma casa para a coleção e uma ligação direta a tudo o que o sistema torna possível.
 
-**Possuir.** Os proprietários poderiam reunir a sua coleção num só lugar, com cada objeto registado ligado ao passaporte digital, aos certificados de autenticação e propriedade e ao histórico. Poderiam consultar o seu estado atual, partilhar a verificação de propriedade e acompanhar os valores estimados de cada peça e da coleção no seu conjunto, quando existam dados de mercado disponíveis.
+**Possuir.** Os proprietários poderiam ver a sua coleção como um conjunto ligado, com a identidade, os certificados e o histórico de cada objeto à mão. Poderiam partilhar a verificação de propriedade, revisitar a história de uma peça e acompanhar os valores estimados de cada objeto e da coleção quando existam dados de mercado disponíveis. O objetivo é tornar os conhecimentos que rodeiam uma coleção tão acessíveis como os próprios objetos.
 
-**Explorar.** As pessoas poderiam pesquisar cartas e outros objetos de coleção e de valor abrangidos pelo sistema, acompanhar vendas recentes, comparar peças semelhantes e descobrir anúncios. A informação de preços distinguiria os preços de vendas realizadas, os preços pedidos e os valores estimados, tendo em conta diferenças como a edição, o estado e a nota. As pesquisas guardadas e os alertas permitiriam acompanhar um objeto desejado ou as alterações no mercado de algo que já se possui.
+**Explorar.** As pessoas poderiam descobrir cartas e outros objetos de coleção e de valor abrangidos pelo sistema, acompanhar vendas recentes, comparar peças e encontrar anúncios para além do seu círculo próximo. Os preços distinguiriam vendas realizadas, preços pedidos e estimativas, com contexto sobre a edição, o estado e a nota. As pesquisas guardadas e os alertas poderiam transformar um interesse passageiro numa descoberta ou ajudar alguém a encontrar a peça que procura há anos.
 
-**Agir.** Os proprietários poderiam colocar um objeto à venda ou para troca, receber propostas e organizar uma transação verificada num dos nossos espaços. As pessoas poderiam marcar uma autenticação, pedir uma visita de inspeção, agendar uma verificação do estado ou inscrever-se em eventos da comunidade. A aplicação mostraria o progresso de cada serviço ou troca, desde a primeira marcação até à entrega e à transferência de propriedade concluídas.
+**Agir.** Um proprietário poderia anunciar um objeto, receber uma proposta e organizar uma troca através da aplicação. A empresa recomendaria um dos seus espaços para uma inspeção profissional e uma entrega acompanhada, enquanto os proprietários continuariam livres de trocar diretamente e transferir o certificado de propriedade por sua conta. Também seria possível marcar uma autenticação, pedir uma visita de inspeção, agendar uma verificação do estado ou participar num evento. A aplicação ligaria cada intenção às pessoas e aos serviços físicos necessários para a concretizar, com o progresso visível desde a primeira marcação até à transferência concluída.
 
-Iniciar sessão e utilizar estes serviços seria tão familiar como usar uma aplicação habitual. Os certificados digitais e as transferências seriam tratados em segundo plano, para que as pessoas se pudessem concentrar nos seus objetos e nos serviços de que precisam.
+Tudo seria tão familiar como uma aplicação habitual, com os certificados digitais e as transferências tratados em segundo plano. À medida que a rede crescesse, a mesma conta poderia ligar alguém a um espaço local, a um comprador noutra cidade e a uma comunidade mais ampla com interesses partilhados.
 
 ### O espaço físico
 
@@ -73,47 +79,47 @@ A comunidade daria vida a estes lugares. Noites de troca, exposições, sessões
 
 ## 5. A experiência
 
-Os mesmos percursos simples aplicar-se-iam aos objetos de coleção e de valor, com autenticação adaptada a cada categoria.
+Eis como seria autenticar objetos, gerir uma coleção e trocar peças através do ecossistema.
 
 ### Autenticar um objeto
 
-Trazes um objeto a um dos nossos espaços ou combinas uma visita da nossa equipa. Autenticamo-lo, documentamos a sua identidade e o seu estado e atribuímos-lhe uma nota quando relevante. Verificamos as informações de propriedade e os comprovativos que apresentas, criamos o passaporte digital e registamos-te como proprietário. O objeto aparece depois na tua conta com os certificados de autenticação e de propriedade digital e o seu histórico.
+Trazes um objeto a um dos espaços da empresa ou combinas uma visita da equipa da empresa. Os especialistas autenticam-no, documentam a sua identidade e o seu estado e atribuem-lhe uma nota quando relevante. Depois de verificar as informações de propriedade e os comprovativos que apresentas, a empresa cria o passaporte digital e regista-te como proprietário. O objeto aparece na tua conta com os certificados e o histórico, iniciando um registo que o pode acompanhar durante anos e oferecer uma base ao proprietário seguinte.
 
 ### Trocar um objeto
 
-Combinas uma venda ou troca com outra pessoa e trazes o objeto a um dos nossos espaços. Verificamos se corresponde ao passaporte digital e confirmamos a propriedade registada do vendedor. Coordenamos o pagamento e a entrega física e transferimos o certificado de propriedade digital para o comprador. O objeto aparece na conta do comprador, mantendo a sua identidade e o seu histórico.
+Encontras um comprador ou combinas uma troca. Em conjunto, consultam o passaporte do objeto. A empresa recomenda um encontro num dos seus espaços para uma inspeção profissional e apoio no pagamento, na entrega e na transferência do certificado. Continuas livre de trocar de forma independente e transferir o certificado de propriedade através da aplicação sem teres de pedir autorização à empresa. O registo distingue as trocas confirmadas pelos participantes das entregas inspecionadas pela empresa. O objeto começa um novo capítulo com outro proprietário, mantendo a identidade e o histórico já estabelecidos.
 
 ### Verificar a propriedade
 
-Partilhas o teu certificado de propriedade digital com um comprador, um organizador de eventos ou qualquer pessoa que precise de o verificar. Essa pessoa pode confirmar que és o proprietário registado do objeto autenticado sem consultar toda a tua coleção nem os teus dados pessoais.
+Podes partilhar uma prova da tua propriedade registada com um comprador, um organizador de eventos ou qualquer pessoa que dela precise. Essa pessoa pode verificar a tua ligação ao objeto autenticado sem ver toda a tua coleção nem os teus dados pessoais. Qualquer pessoa também pode consultar diretamente o passaporte e o histórico de autenticação. O mesmo registo pode oferecer uma referência comum a quem se encontra pela primeira vez ou partilha uma paixão há anos.
 
 ### Gerir a tua coleção
 
-Abres a aplicação para ver todos os teus objetos registados num só lugar, com os seus certificados e o seu histórico. Quando existem dados de mercado disponíveis, podes acompanhar o valor estimado de cada objeto e da tua coleção no seu conjunto.
+Abres a aplicação para ver todos os teus objetos registados num só lugar, cada um com a sua identidade, certificados e histórico. Quando existem dados de mercado disponíveis, podes acompanhar os valores estimados de cada peça e da coleção no seu conjunto. A aplicação torna-se um lugar para redescobrir o que possuis, compreender a história de cada peça e decidir o que queres manter, partilhar ou encontrar a seguir.
 
 ### Atualizar o registo de um objeto
 
-Trazes novamente um objeto para uma verificação do estado, uma nova classificação ou uma nova autenticação. Inspecionamo-lo e acrescentamos a nova avaliação ao passaporte digital, mantendo intacto o histórico anterior.
+Trazes novamente um objeto para uma verificação do estado, uma nova classificação ou uma nova autenticação. A empresa acrescenta a avaliação ao passaporte e preserva o histórico anterior. À medida que o objeto envelhece ou o seu estado muda, o registo cresce com ele, dando aos futuros proprietários uma melhor compreensão da peça e dos cuidados que recebeu.
 
 ### Comunidade e eventos
 
-Visitas um dos nossos espaços para conhecer outros proprietários, descobrir objetos e participar em eventos. Podes partilhar conhecimentos, criar relações e desfrutar da comunidade, mesmo sem ter nada para autenticar ou trocar.
+Visitas um dos espaços para conhecer outros proprietários, descobrir peças e participar em noites de troca, exposições ou sessões para principiantes. Podes chegar com uma pergunta, uma coleção para partilhar ou apenas curiosidade. Com o tempo, os encontros regulares dão origem a relações, os conhecimentos passam entre gerações de colecionadores e um interesse partilhado torna-se uma comunidade à qual podes regressar, mesmo sem ter nada para autenticar ou trocar.
 
 ---
 
-## 6. A ambição final
+## 6. O que é preciso
 
-**A ambição é tornar-nos uma referência mundial na autenticação, identidade e propriedade de objetos de coleção e de valor.** Um passaporte emitido por nós tornar-se-ia algo que as pessoas reconhecem e procuram: uma forma fiável de compreender um objeto, seguir a sua história documentada e trocá-lo com confiança. Um proprietário numa cidade poderia encontrar-se com um comprador noutra e contar com os mesmos registos, conhecimentos e processos de verificação. Cada autenticação, inspeção e transferência verificada acrescentaria informação a um histórico que permanece com o objeto, construindo algo mais duradouro do que uma única transação. Através da aplicação e de uma rede internacional de espaços físicos, ligaríamos essa base partilhada a comunidades de todo o mundo. O objetivo final é estabelecer um padrão reconhecido mundialmente que torne a identidade autenticada, o histórico transparente e a propriedade verificável uma parte esperada da passagem de objetos de coleção e de valor de uma pessoa para outra.
+- **Conquistar confiança** → Autenticação rigorosa e avaliações consistentes
+- **Proteger a propriedade** → Transferências controladas pelos proprietários, recuperação de acesso fiável e procedimentos claros para resolver litígios
+- **Manter os registos ligados à realidade** → Identificação física fiável e registos atualizados
+- **Simplificar as trocas** → Uma aplicação intuitiva para trocar objetos e transferir a propriedade em poucos passos
 
 ---
 
-## 7. Os desafios
+## 7. A ambição final
 
-O modelo dependeria da resposta a vários desafios:
+**A ambição é tornar a empresa uma referência mundial na autenticação, identidade e propriedade de objetos de coleção e de valor.** Um passaporte emitido pela empresa tornar-se-ia algo que as pessoas reconhecem, em que confiam e que procuram, quer estejam a comprar a primeira carta ou a transmitir um objeto estimado à geração seguinte. Uma vez autenticada numa cidade, uma peça poderia atravessar países e coleções com a sua identidade intacta, a história documentada acessível e o proprietário registado disponível para verificação.
 
-- **Conquistar confiança na autenticação.** Proprietários e compradores precisam de confiar nos nossos conhecimentos, métodos e consistência. Essa reputação seria construída através de um trabalho fiável e de uma gestão clara dos erros.
-- **Manter a ligação entre o físico e o digital.** Um certificado digital, por si só, não pode estabelecer que um objeto apresentado mais tarde é o que foi autenticado originalmente. Seriam necessários elementos de identificação, proteções adequadas e inspeções físicas repetidas para detetar substituições ou alterações.
-- **Manter os registos alinhados com a realidade.** O estado dos objetos pode mudar e estes podem ser vendidos fora do sistema. O passaporte deveria distinguir os acontecimentos verificados das lacunas no histórico e oferecer uma forma clara de atualizar ou voltar a verificar um objeto.
-- **Gerir a recuperação e os litígios.** As perdas de acesso, os furtos ou roubos comunicados e as reivindicações de propriedade contraditórias exigiriam procedimentos fiáveis de verificação e resolução.
-- **Dar motivos para continuar a participar.** Os proprietários precisam de razões para manter os registos atualizados e transferir o certificado de propriedade quando vendem. A verificação, os serviços úteis da aplicação e as trocas de confiança teriam de oferecer valor suficiente para sustentar essa participação.
-- **Prestar serviços consistentes à medida que a rede cresce.** Cada categoria exige conhecimentos diferentes e todos os espaços teriam de manter a mesma qualidade de autenticação, documentação e troca.
+A empresa construiria uma rede onde essa confiança pudesse viajar com a mesma liberdade que os próprios objetos. A aplicação ligaria proprietários e descobertas para além das fronteiras; os espaços físicos dariam à rede presença local, conhecimentos profissionais e uma comunidade à qual regressar. As pessoas poderiam trocar de forma independente ou recorrer ao apoio da empresa, usando os mesmos registos abertos e mantendo o controlo daquilo que possuem. Cada autenticação, inspeção e transferência registada contribuiria para algo que perdura para além de um único proprietário ou de uma transação.
+
+**O objetivo final é que uma identidade verificável e um histórico transparente se tornem algo natural na posse de um objeto que merece ser preservado.** Com o tempo, a empresa poderia ajudar a construir uma memória viva dos objetos que as pessoas colecionam, estimam e transmitem: uma base partilhada de confiança que cresce entre categorias, países e gerações.
