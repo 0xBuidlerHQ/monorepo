@@ -1,0 +1,20 @@
+{
+  "me55-R": {
+    "rarity": "RGB Rare",
+    "source": "https://api.tcgdex.net/v2/en/cards/30th-R",
+    "reason": "Original Pokémon TCG dataset labels this card Common; TCGdex identifies it as RGB Rare.",
+    "verifiedAt": "2026-11-08"
+  },
+  "me55-G": {
+    "rarity": "RGB Rare",
+    "source": "https://api.tcgdex.net/v2/en/cards/30th-G",
+    "reason": "Original Pokémon TCG dataset labels this card Common; TCGdex identifies it as RGB Rare.",
+    "verifiedAt": "2026-11-08"
+  },
+  "me55-B": {
+    "rarity": "RGB Rare",
+    "source": "https://api.tcgdex.net/v2/en/cards/30th-B",
+    "reason": "Original Pokémon TCG dataset labels this card Common; TCGdex identifies it as RGB Rare.",
+    "verifiedAt": "2026-11-08"
+  }
+}

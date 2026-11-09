@@ -1,0 +1,22 @@
+{
+  "name": "@0xhq/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "biome lint .",
+    "typecheck": "tsc --noEmit",
+    "test": "node --conditions=react-server --test src/*.test.ts",
+    "dev": "node --watch src/index.ts",
+    "start": "node src/index.ts",
+    "admin:password": "node src/admin-password.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.4",
+    "@types/node": "^26.6.6",
+    "typescript": "7.0.2"
+  },
+  "dependencies": {
+    "@0xhq/api-client": "workspace:*"
+  }
+}

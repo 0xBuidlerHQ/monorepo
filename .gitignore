@@ -11,3 +11,9 @@ next-env.d.ts
 .vercel/
 .DS_Store
 *.log
+
+# Local development certificates and private CA
+.dev-proxy/
+
+# Turborepo task cache
+.turbo/

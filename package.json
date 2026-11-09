@@ -4,13 +4,17 @@
   "private": true,
   "packageManager": "pnpm@12.16.1",
   "engines": {
-    "node": ">=20.9.0"
+    "node": ">=22.18.0"
   },
   "scripts": {
-    "dev": "pnpm --filter @0xhq/0xhq.space dev",
-    "build": "pnpm -r build",
-    "start": "pnpm --filter @0xhq/0xhq.space start",
-    "lint": "pnpm -r lint",
-    "typecheck": "pnpm -r typecheck"
-  }
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck"
+  },
+  "devDependencies": {
+    "turbo": "2.11.10"
+  },
+  "type": "module"
 }

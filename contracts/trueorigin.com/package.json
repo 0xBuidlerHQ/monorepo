@@ -1,0 +1,31 @@
+{
+  "name": "@0xhq/contracts.trueorigin.com",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@simplewebauthn/browser": "^14.0.0",
+    "@zerodev/passkey-validator": "^5.6.0",
+    "@zerodev/sdk": "^5.5.11",
+    "@zerodev/webauthn-key": "^5.5.0",
+    "viem": "^2.57.16"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.4",
+    "@pimlico/alto": "^0.0.21",
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  },
+  "exports": {
+    "./account": "./src/account.ts",
+    "./config": "./src/config.ts",
+    "./rpc": "./src/rpc.ts"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "typecheck": "tsc --noEmit",
+    "build:contracts": "forge build",
+    "test:contracts": "forge test",
+    "lint": "biome lint src scripts test"
+  }
+}

@@ -1,0 +1,1058 @@
+{
+  "base1": {
+    "src": "/images/sets/base1.webp",
+    "source": "https://assets.tcgdex.net/en/base/base1/logo.webp",
+    "width": 960,
+    "height": 492
+  },
+  "base2": {
+    "src": "/images/sets/base2.webp",
+    "source": "https://assets.tcgdex.net/en/base/base2/logo.webp",
+    "width": 160,
+    "height": 111
+  },
+  "base3": {
+    "src": "/images/sets/base3.webp",
+    "source": "https://assets.tcgdex.net/en/base/base3/logo.webp",
+    "width": 200,
+    "height": 174
+  },
+  "base4": {
+    "src": "/images/sets/base4.webp",
+    "source": "https://assets.tcgdex.net/en/base/base4/logo.webp",
+    "width": 180,
+    "height": 134
+  },
+  "base5": {
+    "src": "/images/sets/base5.webp",
+    "source": "https://assets.tcgdex.net/en/base/base5/logo.webp",
+    "width": 400,
+    "height": 137
+  },
+  "base6": {
+    "src": "/images/sets/base6.webp",
+    "source": "https://assets.tcgdex.net/en/lc/lc/logo.webp",
+    "width": 198,
+    "height": 74
+  },
+  "basep": {
+    "src": "/images/sets/basep.webp",
+    "source": "https://images.pokemontcg.io/basep/logo.png",
+    "width": 200,
+    "height": 181
+  },
+  "bp": {
+    "src": "/images/sets/bp.webp",
+    "source": "https://images.pokemontcg.io/bp/logo.png",
+    "width": 960,
+    "height": 492
+  },
+  "bw1": {
+    "src": "/images/sets/bw1.webp",
+    "source": "https://assets.tcgdex.net/en/bw/bw1/logo.webp",
+    "width": 588,
+    "height": 62
+  },
+  "bw10": {
+    "src": "/images/sets/bw10.webp",
+    "source": "https://assets.tcgdex.net/en/bw/bw10/logo.webp",
+    "width": 581,
+    "height": 154
+  },
+  "bw11": {
+    "src": "/images/sets/bw11.webp",
+    "source": "https://assets.tcgdex.net/en/bw/bw11/logo.webp",
+    "width": 586,
+    "height": 166
+  },
+  "bw2": {
+    "src": "/images/sets/bw2.webp",
+    "source": "https://assets.tcgdex.net/en/bw/bw2/logo.webp",
+    "width": 586,
+    "height": 140
+  },
+  "bw3": {
+    "src": "/images/sets/bw3.webp",
+    "source": "https://assets.tcgdex.net/en/bw/bw3/logo.webp",
+    "width": 586,
+    "height": 140
+  },
+  "bw4": {
+    "src": "/images/sets/bw4.webp",
+    "source": "https://assets.tcgdex.net/en/bw/bw4/logo.webp",
+    "width": 588,
+    "height": 197
+  },
+  "bw5": {
+    "src": "/images/sets/bw5.webp",
+    "source": "https://assets.tcgdex.net/en/bw/bw5/logo.webp",
+    "width": 586,
+    "height": 167
+  },
+  "bw6": {
+    "src": "/images/sets/bw6.webp",
+    "source": "https://assets.tcgdex.net/en/bw/bw6/logo.webp",
+    "width": 554,
+    "height": 169
+  },
+  "bw7": {
+    "src": "/images/sets/bw7.webp",
+    "source": "https://assets.tcgdex.net/en/bw/bw7/logo.webp",
+    "width": 588,
+    "height": 220
+  },
+  "bw8": {
+    "src": "/images/sets/bw8.webp",
+    "source": "https://assets.tcgdex.net/en/bw/bw8/logo.webp",
+    "width": 588,
+    "height": 134
+  },
+  "bw9": {
+    "src": "/images/sets/bw9.webp",
+    "source": "https://assets.tcgdex.net/en/bw/bw9/logo.webp",
+    "width": 588,
+    "height": 147
+  },
+  "bwp": {
+    "src": "/images/sets/bwp.webp",
+    "source": "https://assets.tcgdex.net/en/bw/bwp/logo.webp",
+    "width": 200,
+    "height": 181
+  },
+  "cel25": {
+    "src": "/images/sets/cel25.webp",
+    "source": "https://assets.tcgdex.net/en/swsh/cel25/logo.webp",
+    "width": 960,
+    "height": 232
+  },
+  "cel25c": {
+    "src": "/images/sets/cel25c.webp",
+    "source": "https://images.pokemontcg.io/cel25c/logo.png",
+    "width": 960,
+    "height": 232
+  },
+  "col1": {
+    "src": "/images/sets/col1.webp",
+    "source": "https://assets.tcgdex.net/en/col/col1/logo.webp",
+    "width": 586,
+    "height": 138
+  },
+  "dc1": {
+    "src": "/images/sets/dc1.webp",
+    "source": "https://assets.tcgdex.net/en/xy/dc1/logo.webp",
+    "width": 574,
+    "height": 254
+  },
+  "det1": {
+    "src": "/images/sets/det1.webp",
+    "source": "https://assets.tcgdex.net/en/sm/det1/logo.webp",
+    "width": 430,
+    "height": 212
+  },
+  "dp1": {
+    "src": "/images/sets/dp1.webp",
+    "source": "https://assets.tcgdex.net/en/dp/dp1/logo.webp",
+    "width": 579,
+    "height": 89
+  },
+  "dp2": {
+    "src": "/images/sets/dp2.webp",
+    "source": "https://assets.tcgdex.net/en/dp/dp2/logo.webp",
+    "width": 581,
+    "height": 150
+  },
+  "dp3": {
+    "src": "/images/sets/dp3.webp",
+    "source": "https://assets.tcgdex.net/en/dp/dp3/logo.webp",
+    "width": 573,
+    "height": 159
+  },
+  "dp4": {
+    "src": "/images/sets/dp4.webp",
+    "source": "https://assets.tcgdex.net/en/dp/dp4/logo.webp",
+    "width": 580,
+    "height": 130
+  },
+  "dp5": {
+    "src": "/images/sets/dp5.webp",
+    "source": "https://assets.tcgdex.net/en/dp/dp5/logo.webp",
+    "width": 575,
+    "height": 147
+  },
+  "dp6": {
+    "src": "/images/sets/dp6.webp",
+    "source": "https://assets.tcgdex.net/en/dp/dp6/logo.webp",
+    "width": 571,
+    "height": 142
+  },
+  "dp7": {
+    "src": "/images/sets/dp7.webp",
+    "source": "https://assets.tcgdex.net/en/dp/dp7/logo.webp",
+    "width": 571,
+    "height": 172
+  },
+  "dpp": {
+    "src": "/images/sets/dpp.webp",
+    "source": "https://assets.tcgdex.net/en/dp/dpp/logo.webp",
+    "width": 200,
+    "height": 181
+  },
+  "dv1": {
+    "src": "/images/sets/dv1.webp",
+    "source": "https://assets.tcgdex.net/en/bw/dv1/logo.webp",
+    "width": 325,
+    "height": 82
+  },
+  "ecard1": {
+    "src": "/images/sets/ecard1.webp",
+    "source": "https://assets.tcgdex.net/en/ecard/ecard1/logo.webp",
+    "width": 960,
+    "height": 220
+  },
+  "ecard2": {
+    "src": "/images/sets/ecard2.webp",
+    "source": "https://assets.tcgdex.net/en/ecard/ecard2/logo.webp",
+    "width": 182,
+    "height": 38
+  },
+  "ecard3": {
+    "src": "/images/sets/ecard3.webp",
+    "source": "https://assets.tcgdex.net/en/ecard/ecard3/logo.webp",
+    "width": 210,
+    "height": 65
+  },
+  "ex1": {
+    "src": "/images/sets/ex1.webp",
+    "source": "https://assets.tcgdex.net/en/ex/ex1/logo.webp",
+    "width": 574,
+    "height": 72
+  },
+  "ex10": {
+    "src": "/images/sets/ex10.webp",
+    "source": "https://assets.tcgdex.net/en/ex/ex10/logo.webp",
+    "width": 571,
+    "height": 214
+  },
+  "ex11": {
+    "src": "/images/sets/ex11.webp",
+    "source": "https://assets.tcgdex.net/en/ex/ex11/logo.webp",
+    "width": 568,
+    "height": 144
+  },
+  "ex12": {
+    "src": "/images/sets/ex12.webp",
+    "source": "https://assets.tcgdex.net/en/ex/ex12/logo.webp",
+    "width": 578,
+    "height": 208
+  },
+  "ex13": {
+    "src": "/images/sets/ex13.webp",
+    "source": "https://assets.tcgdex.net/en/ex/ex13/logo.webp",
+    "width": 195,
+    "height": 98
+  },
+  "ex14": {
+    "src": "/images/sets/ex14.webp",
+    "source": "https://assets.tcgdex.net/en/ex/ex14/logo.webp",
+    "width": 203,
+    "height": 97
+  },
+  "ex15": {
+    "src": "/images/sets/ex15.webp",
+    "source": "https://assets.tcgdex.net/en/ex/ex15/logo.webp",
+    "width": 572,
+    "height": 148
+  },
+  "ex16": {
+    "src": "/images/sets/ex16.webp",
+    "source": "https://assets.tcgdex.net/en/ex/ex16/logo.webp",
+    "width": 206,
+    "height": 92
+  },
+  "ex2": {
+    "src": "/images/sets/ex2.webp",
+    "source": "https://assets.tcgdex.net/en/ex/ex2/logo.webp",
+    "width": 572,
+    "height": 76
+  },
+  "ex3": {
+    "src": "/images/sets/ex3.webp",
+    "source": "https://assets.tcgdex.net/en/ex/ex3/logo.webp",
+    "width": 562,
+    "height": 84
+  },
+  "ex4": {
+    "src": "/images/sets/ex4.webp",
+    "source": "https://assets.tcgdex.net/en/ex/ex4/logo.webp",
+    "width": 578,
+    "height": 145
+  },
+  "ex5": {
+    "src": "/images/sets/ex5.webp",
+    "source": "https://assets.tcgdex.net/en/ex/ex5/logo.webp",
+    "width": 574,
+    "height": 303
+  },
+  "ex6": {
+    "src": "/images/sets/ex6.webp",
+    "source": "https://assets.tcgdex.net/en/ex/ex6/logo.webp",
+    "width": 186,
+    "height": 108
+  },
+  "ex7": {
+    "src": "/images/sets/ex7.webp",
+    "source": "https://assets.tcgdex.net/en/ex/ex7/logo.webp",
+    "width": 192,
+    "height": 80
+  },
+  "ex8": {
+    "src": "/images/sets/ex8.webp",
+    "source": "https://assets.tcgdex.net/en/ex/ex8/logo.webp",
+    "width": 573,
+    "height": 111
+  },
+  "ex9": {
+    "src": "/images/sets/ex9.webp",
+    "source": "https://assets.tcgdex.net/en/ex/ex9/logo.webp",
+    "width": 210,
+    "height": 33
+  },
+  "fut20": {
+    "src": "/images/sets/fut20.webp",
+    "source": "https://images.pokemontcg.io/fut20/logo.png",
+    "width": 420,
+    "height": 530
+  },
+  "g1": {
+    "src": "/images/sets/g1.webp",
+    "source": "https://assets.tcgdex.net/en/xy/g1/logo.webp",
+    "width": 578,
+    "height": 125
+  },
+  "gym1": {
+    "src": "/images/sets/gym1.webp",
+    "source": "https://assets.tcgdex.net/en/gym/gym1/logo.webp",
+    "width": 250,
+    "height": 110
+  },
+  "gym2": {
+    "src": "/images/sets/gym2.webp",
+    "source": "https://assets.tcgdex.net/en/gym/gym2/logo.webp",
+    "width": 200,
+    "height": 92
+  },
+  "hgss1": {
+    "src": "/images/sets/hgss1.webp",
+    "source": "https://assets.tcgdex.net/en/hgss/hgss1/logo.webp",
+    "width": 586,
+    "height": 246
+  },
+  "hgss2": {
+    "src": "/images/sets/hgss2.webp",
+    "source": "https://images.pokemontcg.io/hgss2/logo.png",
+    "width": 588,
+    "height": 133
+  },
+  "hgss3": {
+    "src": "/images/sets/hgss3.webp",
+    "source": "https://images.pokemontcg.io/hgss3/logo.png",
+    "width": 588,
+    "height": 141
+  },
+  "hgss4": {
+    "src": "/images/sets/hgss4.webp",
+    "source": "https://images.pokemontcg.io/hgss4/logo.png",
+    "width": 587,
+    "height": 153
+  },
+  "hsp": {
+    "src": "/images/sets/hsp.webp",
+    "source": "https://assets.tcgdex.net/en/hgss/hgssp/logo.webp",
+    "width": 200,
+    "height": 181
+  },
+  "mcd11": {
+    "src": "/images/sets/mcd11.webp",
+    "source": "https://images.pokemontcg.io/mcd11/logo.png",
+    "width": 960,
+    "height": 939
+  },
+  "mcd12": {
+    "src": "/images/sets/mcd12.webp",
+    "source": "https://images.pokemontcg.io/mcd12/logo.png",
+    "width": 960,
+    "height": 939
+  },
+  "mcd14": {
+    "src": "/images/sets/mcd14.webp",
+    "source": "https://images.pokemontcg.io/mcd14/logo.png",
+    "width": 960,
+    "height": 939
+  },
+  "mcd15": {
+    "src": "/images/sets/mcd15.webp",
+    "source": "https://images.pokemontcg.io/mcd15/logo.png",
+    "width": 960,
+    "height": 939
+  },
+  "mcd16": {
+    "src": "/images/sets/mcd16.webp",
+    "source": "https://images.pokemontcg.io/mcd16/logo.png",
+    "width": 960,
+    "height": 939
+  },
+  "mcd17": {
+    "src": "/images/sets/mcd17.webp",
+    "source": "https://images.pokemontcg.io/mcd17/logo.png",
+    "width": 960,
+    "height": 939
+  },
+  "mcd18": {
+    "src": "/images/sets/mcd18.webp",
+    "source": "https://images.pokemontcg.io/mcd18/logo.png",
+    "width": 960,
+    "height": 939
+  },
+  "mcd19": {
+    "src": "/images/sets/mcd19.webp",
+    "source": "https://images.pokemontcg.io/mcd19/logo.png",
+    "width": 960,
+    "height": 939
+  },
+  "mcd21": {
+    "src": "/images/sets/mcd21.webp",
+    "source": "https://images.pokemontcg.io/mcd21/logo.png",
+    "width": 960,
+    "height": 939
+  },
+  "mcd22": {
+    "src": "/images/sets/mcd22.webp",
+    "source": "https://images.pokemontcg.io/mcd22/logo.png",
+    "width": 960,
+    "height": 329
+  },
+  "me1": {
+    "src": "/images/sets/me1.webp",
+    "source": "https://assets.tcgdex.net/en/me/me01/logo.webp",
+    "width": 684,
+    "height": 158
+  },
+  "me2": {
+    "src": "/images/sets/me2.webp",
+    "source": "https://assets.tcgdex.net/en/me/me02/logo.webp",
+    "width": 960,
+    "height": 416
+  },
+  "me2pt5": {
+    "src": "/images/sets/me2pt5.webp",
+    "source": "https://assets.tcgdex.net/en/me/me02.5/logo.webp",
+    "width": 490,
+    "height": 250
+  },
+  "me3": {
+    "src": "/images/sets/me3.webp",
+    "source": "https://assets.tcgdex.net/en/me/me03/logo.webp",
+    "width": 604,
+    "height": 242
+  },
+  "me4": {
+    "src": "/images/sets/me4.webp",
+    "source": "https://assets.tcgdex.net/en/me/me04/logo.webp",
+    "width": 732,
+    "height": 210
+  },
+  "me5": {
+    "src": "/images/sets/me5.webp",
+    "source": "https://assets.tcgdex.net/en/me/me05/logo.webp",
+    "width": 732,
+    "height": 210
+  },
+  "me55": {
+    "src": "/images/sets/me55.webp",
+    "source": "https://images.scrydex.com/pokemon/me55-logo/logo",
+    "width": 253,
+    "height": 140
+  },
+  "me55c": {
+    "src": "/images/sets/me55c.webp",
+    "source": "https://images.scrydex.com/pokemon/me55c-logo/logo",
+    "width": 253,
+    "height": 140
+  },
+  "neo1": {
+    "src": "/images/sets/neo1.webp",
+    "source": "https://assets.tcgdex.net/en/neo/neo1/logo.webp",
+    "width": 960,
+    "height": 316
+  },
+  "neo2": {
+    "src": "/images/sets/neo2.webp",
+    "source": "https://assets.tcgdex.net/en/neo/neo2/logo.webp",
+    "width": 200,
+    "height": 90
+  },
+  "neo3": {
+    "src": "/images/sets/neo3.webp",
+    "source": "https://assets.tcgdex.net/en/neo/neo3/logo.webp",
+    "width": 308,
+    "height": 230
+  },
+  "neo4": {
+    "src": "/images/sets/neo4.webp",
+    "source": "https://assets.tcgdex.net/en/neo/neo4/logo.webp",
+    "width": 200,
+    "height": 95
+  },
+  "np": {
+    "src": "/images/sets/np.webp",
+    "source": "https://assets.tcgdex.net/en/pop/np/logo.webp",
+    "width": 200,
+    "height": 181
+  },
+  "pgo": {
+    "src": "/images/sets/pgo.webp",
+    "source": "https://assets.tcgdex.net/en/swsh/swsh10.5/logo.webp",
+    "width": 220,
+    "height": 137
+  },
+  "pl1": {
+    "src": "/images/sets/pl1.webp",
+    "source": "https://assets.tcgdex.net/en/pl/pl1/logo.webp",
+    "width": 581,
+    "height": 113
+  },
+  "pl2": {
+    "src": "/images/sets/pl2.webp",
+    "source": "https://assets.tcgdex.net/en/pl/pl2/logo.webp",
+    "width": 575,
+    "height": 170
+  },
+  "pl3": {
+    "src": "/images/sets/pl3.webp",
+    "source": "https://assets.tcgdex.net/en/pl/pl3/logo.webp",
+    "width": 580,
+    "height": 164
+  },
+  "pl4": {
+    "src": "/images/sets/pl4.webp",
+    "source": "https://assets.tcgdex.net/en/pl/pl4/logo.webp",
+    "width": 576,
+    "height": 168
+  },
+  "pop1": {
+    "src": "/images/sets/pop1.webp",
+    "source": "https://assets.tcgdex.net/en/pop/pop1/logo.webp",
+    "width": 300,
+    "height": 367
+  },
+  "pop2": {
+    "src": "/images/sets/pop2.webp",
+    "source": "https://assets.tcgdex.net/en/pop/pop2/logo.webp",
+    "width": 300,
+    "height": 367
+  },
+  "pop3": {
+    "src": "/images/sets/pop3.webp",
+    "source": "https://assets.tcgdex.net/en/pop/pop3/logo.webp",
+    "width": 300,
+    "height": 367
+  },
+  "pop4": {
+    "src": "/images/sets/pop4.webp",
+    "source": "https://assets.tcgdex.net/en/pop/pop4/logo.webp",
+    "width": 300,
+    "height": 367
+  },
+  "pop5": {
+    "src": "/images/sets/pop5.webp",
+    "source": "https://assets.tcgdex.net/en/pop/pop5/logo.webp",
+    "width": 300,
+    "height": 367
+  },
+  "pop6": {
+    "src": "/images/sets/pop6.webp",
+    "source": "https://assets.tcgdex.net/en/pop/pop6/logo.webp",
+    "width": 300,
+    "height": 367
+  },
+  "pop7": {
+    "src": "/images/sets/pop7.webp",
+    "source": "https://assets.tcgdex.net/en/pop/pop7/logo.webp",
+    "width": 300,
+    "height": 367
+  },
+  "pop8": {
+    "src": "/images/sets/pop8.webp",
+    "source": "https://assets.tcgdex.net/en/pop/pop8/logo.webp",
+    "width": 300,
+    "height": 367
+  },
+  "pop9": {
+    "src": "/images/sets/pop9.webp",
+    "source": "https://assets.tcgdex.net/en/pop/pop9/logo.webp",
+    "width": 300,
+    "height": 367
+  },
+  "rsv10pt5": {
+    "src": "/images/sets/rsv10pt5.webp",
+    "source": "https://assets.tcgdex.net/en/sv/sv10.5w/logo.webp",
+    "width": 448,
+    "height": 274
+  },
+  "ru1": {
+    "src": "/images/sets/ru1.webp",
+    "source": "https://assets.tcgdex.net/en/pl/ru1/logo.webp",
+    "width": 960,
+    "height": 606
+  },
+  "si1": {
+    "src": "/images/sets/si1.webp",
+    "source": "https://assets.tcgdex.net/en/neo/si1/logo.webp",
+    "width": 960,
+    "height": 383
+  },
+  "sm1": {
+    "src": "/images/sets/sm1.webp",
+    "source": "https://assets.tcgdex.net/en/sm/sm1/logo.webp",
+    "width": 567,
+    "height": 130
+  },
+  "sm10": {
+    "src": "/images/sets/sm10.webp",
+    "source": "https://assets.tcgdex.net/en/sm/sm10/logo.webp",
+    "width": 575,
+    "height": 242
+  },
+  "sm11": {
+    "src": "/images/sets/sm11.webp",
+    "source": "https://assets.tcgdex.net/en/sm/sm11/logo.webp",
+    "width": 578,
+    "height": 269
+  },
+  "sm115": {
+    "src": "/images/sets/sm115.webp",
+    "source": "https://assets.tcgdex.net/en/sm/sm115/logo.webp",
+    "width": 554,
+    "height": 253
+  },
+  "sm12": {
+    "src": "/images/sets/sm12.webp",
+    "source": "https://assets.tcgdex.net/en/sm/sm12/logo.webp",
+    "width": 578,
+    "height": 277
+  },
+  "sm2": {
+    "src": "/images/sets/sm2.webp",
+    "source": "https://assets.tcgdex.net/en/sm/sm2/logo.webp",
+    "width": 577,
+    "height": 203
+  },
+  "sm3": {
+    "src": "/images/sets/sm3.webp",
+    "source": "https://assets.tcgdex.net/en/sm/sm3/logo.webp",
+    "width": 578,
+    "height": 201
+  },
+  "sm35": {
+    "src": "/images/sets/sm35.webp",
+    "source": "https://images.pokemontcg.io/sm35/logo.png",
+    "width": 577,
+    "height": 225
+  },
+  "sm4": {
+    "src": "/images/sets/sm4.webp",
+    "source": "https://assets.tcgdex.net/en/sm/sm4/logo.webp",
+    "width": 578,
+    "height": 226
+  },
+  "sm5": {
+    "src": "/images/sets/sm5.webp",
+    "source": "https://assets.tcgdex.net/en/sm/sm5/logo.webp",
+    "width": 577,
+    "height": 242
+  },
+  "sm6": {
+    "src": "/images/sets/sm6.webp",
+    "source": "https://assets.tcgdex.net/en/sm/sm6/logo.webp",
+    "width": 578,
+    "height": 327
+  },
+  "sm7": {
+    "src": "/images/sets/sm7.webp",
+    "source": "https://assets.tcgdex.net/en/sm/sm7/logo.webp",
+    "width": 578,
+    "height": 327
+  },
+  "sm75": {
+    "src": "/images/sets/sm75.webp",
+    "source": "https://images.pokemontcg.io/sm75/logo.png",
+    "width": 578,
+    "height": 327
+  },
+  "sm8": {
+    "src": "/images/sets/sm8.webp",
+    "source": "https://assets.tcgdex.net/en/sm/sm8/logo.webp",
+    "width": 567,
+    "height": 183
+  },
+  "sm9": {
+    "src": "/images/sets/sm9.webp",
+    "source": "https://assets.tcgdex.net/en/sm/sm9/logo.webp",
+    "width": 960,
+    "height": 354
+  },
+  "sma": {
+    "src": "/images/sets/sma.webp",
+    "source": "https://images.pokemontcg.io/sma/logo.png",
+    "width": 365,
+    "height": 167
+  },
+  "smp": {
+    "src": "/images/sets/smp.webp",
+    "source": "https://assets.tcgdex.net/en/sm/smp/logo.webp",
+    "width": 200,
+    "height": 181
+  },
+  "sv1": {
+    "src": "/images/sets/sv1.webp",
+    "source": "https://assets.tcgdex.net/en/sv/sv01/logo.webp",
+    "width": 620,
+    "height": 177
+  },
+  "sv10": {
+    "src": "/images/sets/sv10.webp",
+    "source": "https://assets.tcgdex.net/en/sv/sv10/logo.webp",
+    "width": 445,
+    "height": 178
+  },
+  "sv2": {
+    "src": "/images/sets/sv2.webp",
+    "source": "https://assets.tcgdex.net/en/sv/sv02/logo.webp",
+    "width": 451,
+    "height": 147
+  },
+  "sv3": {
+    "src": "/images/sets/sv3.webp",
+    "source": "https://assets.tcgdex.net/en/sv/sv03/logo.webp",
+    "width": 451,
+    "height": 167
+  },
+  "sv3pt5": {
+    "src": "/images/sets/sv3pt5.webp",
+    "source": "https://assets.tcgdex.net/en/sv/sv03.5/logo.webp",
+    "width": 220,
+    "height": 167
+  },
+  "sv4": {
+    "src": "/images/sets/sv4.webp",
+    "source": "https://assets.tcgdex.net/en/sv/sv04/logo.webp",
+    "width": 451,
+    "height": 167
+  },
+  "sv4pt5": {
+    "src": "/images/sets/sv4pt5.webp",
+    "source": "https://assets.tcgdex.net/en/sv/sv04.5/logo.webp",
+    "width": 438,
+    "height": 240
+  },
+  "sv5": {
+    "src": "/images/sets/sv5.webp",
+    "source": "https://images.pokemontcg.io/sv5/logo.png",
+    "width": 575,
+    "height": 228
+  },
+  "sv6": {
+    "src": "/images/sets/sv6.webp",
+    "source": "https://assets.tcgdex.net/en/sv/sv06/logo.webp",
+    "width": 613,
+    "height": 262
+  },
+  "sv6pt5": {
+    "src": "/images/sets/sv6pt5.webp",
+    "source": "https://assets.tcgdex.net/en/sv/sv06.5/logo.webp",
+    "width": 915,
+    "height": 430
+  },
+  "sv7": {
+    "src": "/images/sets/sv7.webp",
+    "source": "https://assets.tcgdex.net/en/sv/sv07/logo.webp",
+    "width": 448,
+    "height": 180
+  },
+  "sv8": {
+    "src": "/images/sets/sv8.webp",
+    "source": "https://assets.tcgdex.net/en/sv/sv08/logo.webp",
+    "width": 896,
+    "height": 360
+  },
+  "sv8pt5": {
+    "src": "/images/sets/sv8pt5.webp",
+    "source": "https://assets.tcgdex.net/en/sv/sv08.5/logo.webp",
+    "width": 410,
+    "height": 189
+  },
+  "sv9": {
+    "src": "/images/sets/sv9.webp",
+    "source": "https://assets.tcgdex.net/en/sv/sv09/logo.webp",
+    "width": 445,
+    "height": 180
+  },
+  "sve": {
+    "src": "/images/sets/sve.webp",
+    "source": "https://images.pokemontcg.io/sve/logo.png",
+    "width": 960,
+    "height": 492
+  },
+  "svp": {
+    "src": "/images/sets/svp.webp",
+    "source": "https://images.pokemontcg.io/svp/logo.png",
+    "width": 200,
+    "height": 181
+  },
+  "swsh1": {
+    "src": "/images/sets/swsh1.webp",
+    "source": "https://assets.tcgdex.net/en/swsh/swsh1/logo.webp",
+    "width": 572,
+    "height": 112
+  },
+  "swsh10": {
+    "src": "/images/sets/swsh10.webp",
+    "source": "https://assets.tcgdex.net/en/swsh/swsh10/logo.webp",
+    "width": 451,
+    "height": 167
+  },
+  "swsh10tg": {
+    "src": "/images/sets/swsh10tg.webp",
+    "source": "https://images.pokemontcg.io/swsh10tg/logo.png",
+    "width": 902,
+    "height": 334
+  },
+  "swsh11": {
+    "src": "/images/sets/swsh11.webp",
+    "source": "https://assets.tcgdex.net/en/swsh/swsh11/logo.webp",
+    "width": 450,
+    "height": 174
+  },
+  "swsh11tg": {
+    "src": "/images/sets/swsh11tg.webp",
+    "source": "https://images.pokemontcg.io/swsh11tg/logo.png",
+    "width": 565,
+    "height": 218
+  },
+  "swsh12": {
+    "src": "/images/sets/swsh12.webp",
+    "source": "https://assets.tcgdex.net/en/swsh/swsh12/logo.webp",
+    "width": 450,
+    "height": 211
+  },
+  "swsh12pt5": {
+    "src": "/images/sets/swsh12pt5.webp",
+    "source": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo.webp",
+    "width": 400,
+    "height": 152
+  },
+  "swsh12pt5gg": {
+    "src": "/images/sets/swsh12pt5gg.webp",
+    "source": "https://images.pokemontcg.io/swsh12pt5gg/logo.png",
+    "width": 564,
+    "height": 213
+  },
+  "swsh12tg": {
+    "src": "/images/sets/swsh12tg.webp",
+    "source": "https://images.pokemontcg.io/swsh12tg/logo.png",
+    "width": 900,
+    "height": 422
+  },
+  "swsh2": {
+    "src": "/images/sets/swsh2.webp",
+    "source": "https://assets.tcgdex.net/en/swsh/swsh2/logo.webp",
+    "width": 800,
+    "height": 287
+  },
+  "swsh3": {
+    "src": "/images/sets/swsh3.webp",
+    "source": "https://assets.tcgdex.net/en/swsh/swsh3/logo.webp",
+    "width": 360,
+    "height": 98
+  },
+  "swsh35": {
+    "src": "/images/sets/swsh35.webp",
+    "source": "https://assets.tcgdex.net/en/swsh/swsh3.5/logo.webp",
+    "width": 360,
+    "height": 131
+  },
+  "swsh4": {
+    "src": "/images/sets/swsh4.webp",
+    "source": "https://assets.tcgdex.net/en/swsh/swsh4/logo.webp",
+    "width": 250,
+    "height": 104
+  },
+  "swsh45": {
+    "src": "/images/sets/swsh45.webp",
+    "source": "https://assets.tcgdex.net/en/swsh/swsh4.5/logo.webp",
+    "width": 357,
+    "height": 177
+  },
+  "swsh45sv": {
+    "src": "/images/sets/swsh45sv.webp",
+    "source": "https://images.pokemontcg.io/swsh45sv/logo.png",
+    "width": 357,
+    "height": 177
+  },
+  "swsh5": {
+    "src": "/images/sets/swsh5.webp",
+    "source": "https://assets.tcgdex.net/en/swsh/swsh5/logo.webp",
+    "width": 684,
+    "height": 226
+  },
+  "swsh6": {
+    "src": "/images/sets/swsh6.webp",
+    "source": "https://assets.tcgdex.net/en/swsh/swsh6/logo.webp",
+    "width": 604,
+    "height": 321
+  },
+  "swsh7": {
+    "src": "/images/sets/swsh7.webp",
+    "source": "https://assets.tcgdex.net/en/swsh/swsh7/logo.webp",
+    "width": 365,
+    "height": 146
+  },
+  "swsh8": {
+    "src": "/images/sets/swsh8.webp",
+    "source": "https://assets.tcgdex.net/en/swsh/swsh8/logo.webp",
+    "width": 834,
+    "height": 340
+  },
+  "swsh9": {
+    "src": "/images/sets/swsh9.webp",
+    "source": "https://assets.tcgdex.net/en/swsh/swsh9/logo.webp",
+    "width": 786,
+    "height": 421
+  },
+  "swsh9tg": {
+    "src": "/images/sets/swsh9tg.webp",
+    "source": "https://images.pokemontcg.io/swsh9tg/logo.png",
+    "width": 578,
+    "height": 239
+  },
+  "swshp": {
+    "src": "/images/sets/swshp.webp",
+    "source": "https://assets.tcgdex.net/en/swsh/swshp/logo.webp",
+    "width": 200,
+    "height": 181
+  },
+  "tk1a": {
+    "src": "/images/sets/tk1a.webp",
+    "source": "https://images.pokemontcg.io/tk1a/logo.png",
+    "width": 960,
+    "height": 86
+  },
+  "tk1b": {
+    "src": "/images/sets/tk1b.webp",
+    "source": "https://images.pokemontcg.io/tk1b/logo.png",
+    "width": 960,
+    "height": 86
+  },
+  "tk2a": {
+    "src": "/images/sets/tk2a.webp",
+    "source": "https://images.pokemontcg.io/tk2a/logo.png",
+    "width": 960,
+    "height": 86
+  },
+  "tk2b": {
+    "src": "/images/sets/tk2b.webp",
+    "source": "https://images.pokemontcg.io/tk2b/logo.png",
+    "width": 960,
+    "height": 86
+  },
+  "xy0": {
+    "src": "/images/sets/xy0.webp",
+    "source": "https://assets.tcgdex.net/en/xy/xy0/logo.webp",
+    "width": 578,
+    "height": 197
+  },
+  "xy1": {
+    "src": "/images/sets/xy1.webp",
+    "source": "https://assets.tcgdex.net/en/xy/xy1/logo.webp",
+    "width": 582,
+    "height": 145
+  },
+  "xy10": {
+    "src": "/images/sets/xy10.webp",
+    "source": "https://assets.tcgdex.net/en/xy/xy10/logo.webp",
+    "width": 570,
+    "height": 167
+  },
+  "xy11": {
+    "src": "/images/sets/xy11.webp",
+    "source": "https://assets.tcgdex.net/en/xy/xy11/logo.webp",
+    "width": 578,
+    "height": 192
+  },
+  "xy12": {
+    "src": "/images/sets/xy12.webp",
+    "source": "https://assets.tcgdex.net/en/xy/xy12/logo.webp",
+    "width": 573,
+    "height": 139
+  },
+  "xy2": {
+    "src": "/images/sets/xy2.webp",
+    "source": "https://assets.tcgdex.net/en/xy/xy2/logo.webp",
+    "width": 573,
+    "height": 236
+  },
+  "xy3": {
+    "src": "/images/sets/xy3.webp",
+    "source": "https://images.pokemontcg.io/xy3/logo.png",
+    "width": 573,
+    "height": 226
+  },
+  "xy4": {
+    "src": "/images/sets/xy4.webp",
+    "source": "https://assets.tcgdex.net/en/xy/xy4/logo.webp",
+    "width": 557,
+    "height": 267
+  },
+  "xy5": {
+    "src": "/images/sets/xy5.webp",
+    "source": "https://assets.tcgdex.net/en/xy/xy5/logo.webp",
+    "width": 575,
+    "height": 192
+  },
+  "xy6": {
+    "src": "/images/sets/xy6.webp",
+    "source": "https://assets.tcgdex.net/en/xy/xy6/logo.webp",
+    "width": 573,
+    "height": 260
+  },
+  "xy7": {
+    "src": "/images/sets/xy7.webp",
+    "source": "https://assets.tcgdex.net/en/xy/xy7/logo.webp",
+    "width": 575,
+    "height": 243
+  },
+  "xy8": {
+    "src": "/images/sets/xy8.webp",
+    "source": "https://assets.tcgdex.net/en/xy/xy8/logo.webp",
+    "width": 570,
+    "height": 197
+  },
+  "xy9": {
+    "src": "/images/sets/xy9.webp",
+    "source": "https://assets.tcgdex.net/en/xy/xy9/logo.webp",
+    "width": 578,
+    "height": 122
+  },
+  "xyp": {
+    "src": "/images/sets/xyp.webp",
+    "source": "https://assets.tcgdex.net/en/xy/xyp/logo.webp",
+    "width": 200,
+    "height": 181
+  },
+  "zsv10pt5": {
+    "src": "/images/sets/zsv10pt5.webp",
+    "source": "https://assets.tcgdex.net/en/sv/sv10.5b/logo.webp",
+    "width": 448,
+    "height": 274
+  }
+}

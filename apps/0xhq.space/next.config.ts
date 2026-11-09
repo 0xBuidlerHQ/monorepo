@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ["0xhq.space.dev"],
   transpilePackages: ["@0xhq/config"],
   /* config options here */
   cacheComponents: true,

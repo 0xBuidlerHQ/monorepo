@@ -1,0 +1,171 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+html {
+	scrollbar-width: none;
+	overscroll-behavior: none;
+}
+
+body {
+	overscroll-behavior: none;
+}
+
+html::-webkit-scrollbar {
+	display: none;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+	animation: none;
+}
+
+::view-transition-group(.page-crossfade) {
+	animation-duration: 420ms;
+	animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+::view-transition-group(navigation-dock) {
+	z-index: 100;
+}
+
+::view-transition-old(navigation-dock) {
+	animation: none;
+	opacity: 0;
+}
+
+::view-transition-new(navigation-dock) {
+	animation: none;
+	opacity: 1;
+}
+
+::view-transition-old(.page-crossfade) {
+	animation: page-fade-out 420ms ease both;
+}
+
+::view-transition-new(.page-crossfade) {
+	animation: page-fade-in 420ms ease both;
+}
+
+@keyframes page-fade-out {
+	to { opacity: 0; }
+}
+
+@keyframes page-fade-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	::view-transition-group(.page-crossfade),
+	::view-transition-old(.page-crossfade),
+	::view-transition-new(.page-crossfade) {
+		animation-duration: 0.01ms;
+	}
+}
+
+.app-shell {
+	--shell-background: #111111;
+	--sidebar-width: var(--cell);
+	--sidebar-label-opacity: 0;
+	--sidebar-label-offset: -6px;
+}
+
+.app-shell > :is(header, footer),
+.app-shell > main > :is([data-left-sidebar], :last-child) {
+	background-color: var(--shell-background);
+}
+
+.sidebar-label {
+	opacity: var(--sidebar-label-opacity);
+	transform: translateX(var(--sidebar-label-offset));
+	transition: opacity 200ms ease, transform 300ms ease;
+}
+
+.app-shell > main > [class*="overflow-y-auto"] {
+	scrollbar-width: none;
+}
+
+.app-shell > main > [class*="overflow-y-auto"]::-webkit-scrollbar {
+	display: none;
+}
+
+.app-shell > :is(header, main, footer) {
+	grid-template-columns: var(--sidebar-width) minmax(0, 1fr) var(--cell);
+	transition: grid-template-columns 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.app-shell:has([data-left-sidebar]:hover),
+	.app-shell:has(> header > :first-child:hover) {
+		--sidebar-width: calc(var(--cell) * 4);
+		--sidebar-label-opacity: 1;
+		--sidebar-label-offset: 0px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.app-shell > :is(header, main, footer),
+	.sidebar-label {
+		transition: none;
+	}
+}
+
+:root {
+	--app-header-padding: 0.75rem;
+	--app-header-height: calc(3rem + var(--app-header-padding) + var(--app-header-padding));
+	color-scheme: light;
+	--app-cell: calc(100vw / round(100vw / clamp(36px, 3vw, 48px), 1));
+	--page-gutter: clamp(28px, 6vw, 112px);
+	--brand-cyan: #c8eafa;
+	--brand-white: #ffffff;
+	--brand-accent: #ff5f00;
+	--brand-red: black;
+	--surface-hover: var(--brand-white);
+	--background: var(--brand-cyan);
+	--foreground: var(--brand-red);
+	--sky: var(--background);
+	--white: var(--brand-white);
+}
+
+@theme inline {
+	--color-brand-cyan: var(--brand-cyan);
+	--color-brand-white: var(--brand-white);
+	--color-brand-accent: var(--brand-accent);
+	--color-brand-red: var(--brand-red);
+	--spacing-page: var(--page-gutter);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-popover: var(--background);
+	--color-popover-foreground: var(--foreground);
+	--color-muted: color-mix(in srgb, var(--brand-cyan) 40%, var(--brand-white));
+	--color-muted-foreground: color-mix(
+		in srgb,
+		var(--brand-red) 75%,
+		transparent
+	);
+	--color-border: color-mix(in srgb, var(--brand-red) 20%, transparent);
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
+	--font-serif: Georgia, "Times New Roman", serif;
+}
+
+/* Fade streamed content into place without moving the layout or replaying on filters. */
+.content-ready {
+	animation: content-ready 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Nested boundaries share their parent's reveal instead of multiplying fades. */
+.content-ready .content-ready {
+	animation: none;
+}
+
+@keyframes content-ready {
+	from { opacity: 0.35; }
+	to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.content-ready { animation: none; }
+}
+

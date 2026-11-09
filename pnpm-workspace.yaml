@@ -1,3 +1,9 @@
 packages:
   - apps/*
+  - contracts/*
   - packages/*
+  - services/*
+
+allowBuilds:
+  msgpackr-extract: false
+  protobufjs: false

@@ -6,7 +6,8 @@
   "sideEffects": false,
   "exports": {
     ".": "./src/index.ts",
-    "./links": "./src/links.ts"
+    "./links": "./src/links.ts",
+    "./ipfs": "./src/ipfs.ts"
   },
   "scripts": {
     "lint": "biome lint src",

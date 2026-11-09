@@ -1,0 +1,84 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "globalDependencies": [
+    ".env",
+    ".env.*"
+  ],
+  "tasks": {
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "passThroughEnv": [
+        "IPFS_*",
+        "API_*",
+        "ADMIN_ORIGIN"
+      ]
+    },
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        ".env*"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**",
+        "!.next/dev/**"
+      ],
+      "env": [
+        "SITE_URL",
+        "BUTTONDOWN_USERNAME",
+        "NEXT_PUBLIC_*"
+      ]
+    },
+    "start": {
+      "dependsOn": [
+        "build"
+      ],
+      "cache": false,
+      "persistent": true,
+      "passThroughEnv": [
+        "IPFS_*",
+        "API_*",
+        "ADMIN_ORIGIN"
+      ]
+    },
+    "lint": {
+      "dependsOn": [
+        "^lint"
+      ],
+      "outputs": []
+    },
+    "typecheck": {
+      "dependsOn": [
+        "^typecheck"
+      ],
+      "outputs": [
+        ".next/types/**",
+        ".next/dev/types/**",
+        "next-env.d.ts",
+        "tsconfig.tsbuildinfo"
+      ]
+    },
+    "@0xhq/config#typecheck": {
+      "outputs": []
+    },
+    "@0xhq/ipfs#typecheck": {
+      "outputs": []
+    },
+    "@0xhq/ipfs#test": {
+      "cache": false
+    },
+    "@0xhq/api#typecheck": {
+      "outputs": []
+    },
+    "@0xhq/api-client#typecheck": {
+      "outputs": []
+    },
+    "@0xhq/api#test": {
+      "cache": false
+    }
+  }
+}

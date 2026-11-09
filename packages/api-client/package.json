@@ -1,0 +1,24 @@
+{
+  "name": "@0xhq/api-client",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "biome lint .",
+    "typecheck": "tsc --noEmit",
+    "test": "node --conditions=react-server --test src/*.test.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.4",
+    "@types/node": "^26.6.6",
+    "typescript": "7.0.2"
+  },
+  "dependencies": {
+    "server-only": "0.0.1"
+  },
+  "exports": {
+    ".": "./src/client.ts",
+    "./protocol": "./src/protocol.ts",
+    "./types": "./src/types.ts"
+  }
+}
