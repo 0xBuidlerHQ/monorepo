@@ -1,5 +1,5 @@
 import { LoadingBoundary } from "@/features/shell/loading-boundary";
-import Image from "next/image";
+import { RevealImage as Image } from "@/components/ui/reveal-image";
 import { Suspense } from "react";
 import { UniverseTitle } from "@/features/reference/universe-title";
 import { CatalogSkeleton } from "@/features/shell/loading-skeleton";

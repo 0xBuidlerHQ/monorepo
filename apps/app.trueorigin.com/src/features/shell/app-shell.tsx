@@ -1,3 +1,4 @@
+import { initialAccountSession } from "@/server/auth/account-session";
 import type { ReactNode } from "react";
 import { AccountProvider } from "@/features/account/account-provider";
 import { ConnectAccount } from "@/features/account/connect-account";
@@ -9,7 +10,7 @@ import { SettingsDrawer } from "@/features/settings/settings-drawer";
 
 export function AppShell({ children }: { children: ReactNode }) {
 	return (
-		<AccountProvider>
+		<AccountProvider initialSession={initialAccountSession()}>
 			<div className="app-shell flex h-dvh min-h-0 flex-none flex-col overflow-hidden bg-black outline-1 -outline-offset-1 outline-white/20 text-white [--cell:var(--app-cell)] [color-scheme:dark]">
 				<header className="relative grid h-[var(--cell)] shrink-0 grid-cols-[var(--cell)_minmax(0,1fr)_var(--cell)] after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/20">
 					<Link href="/" aria-label="Back to TrueOrigin website" title="Back to TrueOrigin website" className="grid place-items-center border-r border-white/20 text-brand-accent transition-colors hover:bg-white/5 focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-brand-accent">

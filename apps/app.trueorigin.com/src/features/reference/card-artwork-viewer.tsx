@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { RevealImage as Image } from "@/components/ui/reveal-image";
 import { motion, useReducedMotion } from "motion/react";
 import { ContentSurface } from "@/features/shell/content-surface";
 import { useRef, useState } from "react";

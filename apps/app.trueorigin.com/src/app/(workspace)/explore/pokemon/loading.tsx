@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { RevealImage as Image } from "@/components/ui/reveal-image";
 import { Suspense } from "react";
 import { UniverseTitle } from "@/features/reference/universe-title";
 import { pokemonCategories } from "@/features/pokemon/categories";

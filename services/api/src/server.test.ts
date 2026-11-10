@@ -87,3 +87,21 @@ test("the API rejects unsigned, modified, expired, and replayed requests", async
 		assert.equal((await fetch(service.url + cgcPath, { method: "POST", headers: signedHeaders({ client: "customer", secret: keys.customer, subject: "customer:a", method: "POST", path: cgcPath }) })).status, 200);
 	} finally { await service.close(); await rm(directory, { recursive: true, force: true }); }
 });
+
+test("password-free local admin still requires its backend signature and is disabled in production", async () => {
+	const directory = await mkdtemp(join(tmpdir(), "trueorigin-api-local-admin-"));
+	const previous = process.env.NODE_ENV;
+	process.env.NODE_ENV = "development";
+	const service = await createApiService({ directory, keys, adminPassword: password, port: 0, allowDevelopmentAdmin: true });
+	const path = "/v1/submissions";
+	const admin = () => signedHeaders({ client: "admin", secret: keys.admin, subject: "staff", method: "GET", path });
+	try {
+		assert.equal((await fetch(service.url + path)).status, 401);
+		assert.equal((await fetch(service.url + path, { headers: admin() })).status, 200);
+		process.env.NODE_ENV = "production";
+		assert.equal((await fetch(service.url + path, { headers: admin() })).status, 401);
+	} finally {
+		if (previous === undefined) delete process.env.NODE_ENV; else process.env.NODE_ENV = previous;
+		await service.close(); await rm(directory, { recursive: true, force: true });
+	}
+});

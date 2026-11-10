@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import Image, { type ImageProps } from "next/image";
+import type { ImageProps } from "next/image";
+import { RevealImage } from "@/components/ui/reveal-image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -35,9 +36,9 @@ export function ExploreCard({ name, brand, brandMono = false, href, image, alt, 
 				{image && <motion.div aria-hidden="true" className="pointer-events-none absolute inset-0 blur-2xl"
 					variants={{ rest: { opacity: 0.25, scale: 1.1 }, active: { opacity: 0.85, scale: 1.1 } }}
 					transition={{ duration: reducedMotion ? 0 : 0.35, ease: "easeOut" }}>
-					<Image src={image} alt="" fill sizes={sizes} loading="lazy" decoding="async" className="object-contain" />
+					<RevealImage src={image} alt="" fill sizes={sizes} loading="lazy" decoding="async" className="object-contain" />
 				</motion.div>}
-				{image ? <Image src={image} alt={alt} fill sizes={sizes} loading="lazy" decoding="async" className={imageLayout === "portrait" || name === "Yu-Gi-Oh!" ? "object-contain" : "object-contain p-2"} /> : <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center">{placeholder ?? <svg aria-hidden="true" viewBox="0 0 100 100" fill="none" className="size-[58%] text-white/[0.045]"><circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="2" /><path d="M10 50h28m24 0h28" stroke="currentColor" strokeWidth="2" /><circle cx="50" cy="50" r="12" stroke="currentColor" strokeWidth="2" /></svg>}</div>}
+				{image ? <RevealImage src={image} alt={alt} fill sizes={sizes} loading="lazy" decoding="async" className={imageLayout === "portrait" || name === "Yu-Gi-Oh!" ? "object-contain" : "object-contain p-2"} /> : <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center">{placeholder ?? <svg aria-hidden="true" viewBox="0 0 100 100" fill="none" className="size-[58%] text-white/[0.045]"><circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="2" /><path d="M10 50h28m24 0h28" stroke="currentColor" strokeWidth="2" /><circle cx="50" cy="50" r="12" stroke="currentColor" strokeWidth="2" /></svg>}</div>}
 			</div>
 			<div className={`relative flex items-end justify-between gap-3 pt-4 ${imageLayout === "portrait" ? "px-2 pb-2" : ""}`}>
 				<div className="min-w-0">

@@ -3,12 +3,20 @@
 @plugin "@tailwindcss/typography";
 
 html {
+	background-color: #141414;
 	scrollbar-width: none;
 	overscroll-behavior: none;
 }
 
 body {
 	overscroll-behavior: none;
+}
+
+:is(button, input, textarea, select, a, [role="button"], [role="combobox"], [contenteditable="true"]):is(:focus, :focus-visible) {
+	outline: none;
+	--tw-ring-color: transparent;
+	--tw-ring-offset-width: 0px;
+	--tw-inset-ring-color: transparent;
 }
 
 html::-webkit-scrollbar {
@@ -114,7 +122,7 @@ html::-webkit-scrollbar {
 :root {
 	--app-header-padding: 0.75rem;
 	--app-header-height: calc(3rem + var(--app-header-padding) + var(--app-header-padding));
-	color-scheme: light;
+	color-scheme: dark;
 	--app-cell: calc(100vw / round(100vw / clamp(36px, 3vw, 48px), 1));
 	--page-gutter: clamp(28px, 6vw, 112px);
 	--brand-cyan: #c8eafa;
@@ -122,8 +130,8 @@ html::-webkit-scrollbar {
 	--brand-accent: #ff5f00;
 	--brand-red: black;
 	--surface-hover: var(--brand-white);
-	--background: var(--brand-cyan);
-	--foreground: var(--brand-red);
+	--background: #141414;
+	--foreground: var(--brand-white);
 	--sky: var(--background);
 	--white: var(--brand-white);
 }

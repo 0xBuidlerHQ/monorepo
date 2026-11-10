@@ -1,5 +1,5 @@
 import { formatCardNumber } from "@/features/reference/card-number";
-import Image from "next/image";
+import { RevealImage as Image } from "@/components/ui/reveal-image";
 import { LiveCatalogSearch } from "./live-catalog-search";
 import Link from "next/link";
 import { cardArtwork } from "./card-artwork";

@@ -5,7 +5,7 @@ import { PageSkeleton } from "@/features/shell/loading-skeleton";
 import { ContentSurface } from "@/features/shell/content-surface";
 import { formatCardNumber } from "@/features/reference/card-number";
 import { setPageHref } from "@/features/reference/set-relationships";
-import Image from "next/image";
+import { RevealImage as Image } from "@/components/ui/reveal-image";
 import { LiveCatalogSearch } from "@/features/reference/live-catalog-search";
 import Link from "next/link";
 import { notFound } from "next/navigation";

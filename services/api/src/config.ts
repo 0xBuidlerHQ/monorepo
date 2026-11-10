@@ -28,5 +28,5 @@ export function loadConfig() {
 	}
 	const port = Number(process.env.API_PORT ?? 3004);
 	if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error("API_PORT must be between 1 and 65535.");
-	return { directory, port, keys, adminPassword };
+	return { directory, port, keys, adminPassword, allowDevelopmentAdmin: process.env.NODE_ENV === "development" };
 }

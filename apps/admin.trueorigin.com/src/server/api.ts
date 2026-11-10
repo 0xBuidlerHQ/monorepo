@@ -9,6 +9,11 @@ export async function trustedAdminOrigin() {
 	if ((await headers()).get("origin") !== origin) throw new ApiError("Origin not allowed.", 403);
 }
 export async function staffSessionToken() {
+	if (process.env.NODE_ENV === "development") {
+		const host = (await headers()).get("host");
+		if (host !== "localhost:3002" && host !== "127.0.0.1:3002") throw new ApiError("Local admin access only.", 401);
+		return "";
+	}
 	const token = (await cookies()).get(staffCookie)?.value;
 	if (!token) throw new ApiError("Staff sign-in required.", 401);
 	return token;

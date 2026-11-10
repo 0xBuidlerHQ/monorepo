@@ -26,4 +26,4 @@ The local upload service and gateway live in [services/ipfs](../../services/ipfs
 
 ## Submissions API
 
-Start `pnpm --filter @0xhq/api dev`. Get the local staff password using `pnpm --filter @0xhq/api admin:password`, then sign in at the admin homepage. Production requires `API_URL`, `API_ADMIN_SECRET`, and `ADMIN_ORIGIN`. See [the API guide](../../services/api/README.md).
+Start `pnpm --filter @0xhq/api dev`. In development, open the admin homepage directly—no password is required. Automatic access is restricted to localhost; production retains staff sign-in. Production requires `API_URL`, `API_ADMIN_SECRET`, and `ADMIN_ORIGIN`. See [the API guide](../../services/api/README.md).

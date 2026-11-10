@@ -30,7 +30,7 @@ function photoType(bytes: Buffer) {
 	throw new HttpError(415, "Use a PNG, JPEG, or WebP photo.");
 }
 
-export async function createApiService({ directory, keys, adminPassword, port = 3004 }: { directory: string; keys: ServiceKeys; adminPassword: string; port?: number }) {
+export async function createApiService({ directory, keys, adminPassword, port = 3004, allowDevelopmentAdmin = false }: { directory: string; keys: ServiceKeys; adminPassword: string; port?: number; allowDevelopmentAdmin?: boolean }) {
 	if (keys.customer.length < 32 || keys.admin.length < 32 || keys.customer === keys.admin || adminPassword.length < 12) throw new Error("Use separate API secrets of at least 32 characters and a staff password of at least 12 characters.");
 	await mkdir(join(directory, "uploads"), { recursive: true });
 	const store = openStore(join(directory, "submissions.sqlite"), adminPassword);
@@ -60,7 +60,7 @@ export async function createApiService({ directory, keys, adminPassword, port = 
 			const input = parseJson(body) as { password?: unknown } | null;
 			send(response, 200, store.login(input?.password)); return;
 		}
-		const actor: Actor = verified.client === "customer" ? { kind: "customer", id: verified.subject } : store.staff(token);
+		const actor: Actor = verified.client === "customer" ? { kind: "customer", id: verified.subject } : !token && allowDevelopmentAdmin && process.env.NODE_ENV === "development" ? { kind: "staff", id: "admin" } : store.staff(token);
 		if (url.pathname === "/v1/staff/session" && method === "GET" && actor.kind === "staff") { send(response, 200, { id: actor.id }); return; }
 		if (url.pathname === "/v1/staff/logout" && method === "POST" && actor.kind === "staff") { store.logout(token); send(response, 200, { ok: true }); return; }
 		if (url.pathname === "/v1/submissions") {

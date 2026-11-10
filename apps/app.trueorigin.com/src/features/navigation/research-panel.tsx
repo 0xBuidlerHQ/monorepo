@@ -1,10 +1,12 @@
 "use client";
 
 import { Command } from "cmdk";
+import { motion, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
 import { Drawer, DrawerContent, DrawerDescription, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
 
 export function ResearchPanel() {
+ const reducedMotion = useReducedMotion();
  const [open, setOpen] = useState(false);
  const [query, setQuery] = useState("");
  function changeOpen(next: boolean) {
@@ -23,9 +25,10 @@ export function ResearchPanel() {
   return () => document.removeEventListener("keydown", onKeyDown);
  }, []);
  return <Drawer open={open} onOpenChange={changeOpen} swipeDirection="down">
-  <DrawerTrigger aria-label="Open search (Command K or Control K)" className="flex h-12 w-12 shrink-0 cursor-pointer items-center gap-2 rounded-full bg-[#242424]/90 p-2 text-white/75 shadow-[0_8px_32px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur-2xl backdrop-saturate-150 transition-colors hover:bg-[#303030] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white min-[400px]:w-36 min-[400px]:pr-4 sm:w-64">
-   <span className="grid size-8 shrink-0 place-items-center rounded-full bg-white/[0.06] text-white/65"><svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className="size-[18px]"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" strokeWidth="1.4" /><path d="m13 13 4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" /></svg></span>
-   <span className="hidden flex-1 text-left text-sm font-medium min-[400px]:block">Search</span><kbd className="hidden font-mono text-[11px] text-white/35 sm:block">⌘ K</kbd>
+  <DrawerTrigger aria-label="Open search (Command K or Control K)" render={<motion.button whileTap={reducedMotion ? undefined : { scale: 0.98 }} transition={{ type: "spring", stiffness: 400, damping: 28 }} />} className="group flex h-12 w-12 shrink-0 cursor-pointer items-center gap-3 rounded-full bg-[#222222] p-1.5 text-white/65 shadow-[0_3px_12px_#00000018,inset_0_1px_0_#ffffff08] transition-[background-color,box-shadow] duration-200 hover:bg-[#2a2a2a] hover:shadow-[0_4px_20px_#00000026,inset_0_1px_0_#ffffff0c] data-popup-open:bg-[#2a2a2a] motion-reduce:transition-none sm:w-64 sm:pr-3">
+   <span className="grid size-9 shrink-0 place-items-center rounded-full bg-white/[0.035] text-white/55 transition-colors group-hover:text-white/85"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" className="size-[19px]"><circle cx="10.75" cy="10.75" r="6.25" /><path d="m15.5 15.5 4 4" /></svg></span>
+   <span className="hidden flex-1 text-left text-[13px] font-medium tracking-[-0.025em] sm:block">Search anything</span>
+   <kbd className="hidden h-7 items-center gap-1 rounded-lg bg-white/[0.045] px-2 font-sans text-[10px] leading-none text-white/35 sm:inline-flex"><span className="text-xs">⌘</span>K</kbd>
   </DrawerTrigger>
   <DrawerContent style={{ height: "min(65dvh, calc(100dvh - var(--app-header-height)))", maxHeight: "calc(100dvh - var(--app-header-height))" }} className="border-white/15 bg-[#111] text-white [--drawer-bleed-background:#111] [color-scheme:dark] data-[swipe-direction=down]:rounded-t-2xl">
    <DrawerTitle className="sr-only">Search TrueOrigins</DrawerTitle>

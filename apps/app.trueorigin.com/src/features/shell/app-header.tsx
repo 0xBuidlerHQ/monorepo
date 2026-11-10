@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 import { TrueOriginsMark } from "@/components/icons/trueorigins-mark";
@@ -15,7 +16,7 @@ export function AppHeader() {
 			<div className="flex min-w-0 items-center gap-3 sm:gap-5"><MotionLink href="/explore" whileTap={reducedMotion ? undefined : { scale: 0.94 }} aria-label="TrueOrigins Explore" className="flex min-w-0 items-center gap-2.5 text-white">
 				<TrueOriginsMark className="h-8 w-7 shrink-0" />
 			</MotionLink><ResearchPanel /></div>
-			<LoginButton />
+			<Suspense fallback={<div role="status" aria-label="Loading account" className="h-12 w-[184px] shrink-0 rounded-full bg-[#f0f0ed]" />}><LoginButton /></Suspense>
 		</header>
 	);
 }

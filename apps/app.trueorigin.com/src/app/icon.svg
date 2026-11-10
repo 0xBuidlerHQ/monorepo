@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <title>TrueOrigin</title>
+  <rect width="48" height="48" rx="12" fill="#141414"/>
+  <g transform="translate(6 6)" stroke-linecap="round">
+    <path d="M8 4h20v4h-8v15h-4V8H8V4Z" fill="#fff"/>
+    <path d="M9.5 12a12 12 0 1 0 17 0" stroke="#fff" stroke-width="4"/>
+  </g>
+</svg>

@@ -1,5 +1,5 @@
 import { UniverseTitle } from "@/features/reference/universe-title";
-import Image from "next/image";
+import { RevealImage as Image } from "@/components/ui/reveal-image";
 import yugiohImage from "../../../../public/yugioh.png";
 
 export const metadata = { title: "Yu-Gi-Oh!" };

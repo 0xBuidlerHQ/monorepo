@@ -1,5 +1,5 @@
 import { ContentSurface } from "@/features/shell/content-surface";
-import Image from "next/image";
+import { RevealImage as Image } from "@/components/ui/reveal-image";
 import Link from "next/link";
 import { getEvolutionRelations, getEvolutionRoot } from "./evolutions";
 import { pokemonArtwork } from "./artwork";

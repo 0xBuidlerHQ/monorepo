@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { RevealImage as Image } from "@/components/ui/reveal-image";
 import { CatalogCategoryIcon } from "@/components/icons/catalog-category-icon";
 
 export function SetHeader({ name, logo, facts }: { name: string; logo?: string; facts: { label: string; value: string }[] }) {

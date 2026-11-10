@@ -14,8 +14,10 @@ import {
 	createContext,
 	type ReactNode,
 	useContext,
+	use,
 	useEffect,
 	useState,
+	useRef,
 } from "react";
 
 import {
@@ -56,9 +58,10 @@ async function connectionFor(session: AccountSession) {
 	});
 }
 
-function useAccountState() {
+function useAccountState(initialSession: Promise<AccountSession>) {
 	const router = useRouter();
-	const [identity, setIdentity] = useState<PasskeyIdentity | null>(null);
+	const revision = useRef(0);
+	const [identity, setIdentity] = useState<PasskeyIdentity | null | undefined>(undefined);
 	const [connection, setConnection] = useState<ConnectedAccount | null>(null);
 	const [config, setConfig] = useState<AccountConfig | null>(null);
 	const [phase, setPhase] = useState<Phase>("restoring");
@@ -68,35 +71,36 @@ function useAccountState() {
 
 	useEffect(() => {
 		let active = true;
+		const restoredRevision = revision.current;
 		async function restore() {
 			try {
-				const session = actionData(await getAccountSession());
-				if (active) setIdentity(session.identity);
+				const session = await initialSession;
 				const account = await connectionFor(session);
 				const deployed = await deployedAccount(account);
-				if (active) {
+				if (active && restoredRevision === revision.current) {
 					setConfig(session.config);
 					setConnection(account);
 					setDeployed(deployed);
 				}
 			} catch (cause) {
-				if (active)
+				if (active && restoredRevision === revision.current)
 					setError(
 						cause instanceof Error
 							? cause.message
 							: "Unable to restore your account.",
 					);
 			} finally {
-				if (active) setPhase("idle");
+				if (active && restoredRevision === revision.current) setPhase("idle");
 			}
 		}
 		void restore();
 		return () => {
 			active = false;
 		};
-	}, []);
+	}, [initialSession]);
 
 	async function connect(mode: "register" | "login") {
+		revision.current += 1;
 		setError(null);
 		setPhase(mode === "register" ? "registering" : "connecting");
 		try {
@@ -130,16 +134,20 @@ function useAccountState() {
 	}
 
 	async function refreshIdentity() {
+		revision.current += 1;
 		const session = actionData(await getAccountSession());
 		setIdentity(session.identity);
 		setConfig(session.config);
+		setPhase("idle");
 		router.refresh();
 	}
 
 	async function disconnect() {
+		revision.current += 1;
 		try {
 			actionData(await disconnectAccount());
 			setIdentity(null);
+			setPhase("idle");
 			router.refresh();
 			setConnection(null);
 			setDeployed(false);
@@ -173,6 +181,7 @@ function useAccountState() {
 	}
 
 	return {
+		initialSession,
 		identity,
 		refreshIdentity,
 		connection,
@@ -190,8 +199,8 @@ function useAccountState() {
 const AccountContext = createContext<ReturnType<typeof useAccountState> | null>(
 	null,
 );
-export function AccountProvider({ children }: { children: ReactNode }) {
-	const state = useAccountState();
+export function AccountProvider({ children, initialSession }: { children: ReactNode; initialSession: Promise<AccountSession> }) {
+	const state = useAccountState(initialSession);
 	return (
 		<AccountContext.Provider value={state}>{children}</AccountContext.Provider>
 	);
@@ -200,5 +209,6 @@ export function useAccount() {
 	const state = useContext(AccountContext);
 	if (!state)
 		throw new Error("useAccount must be used inside AccountProvider.");
-	return state;
+	const session = use(state.initialSession);
+	return { ...state, identity: state.identity === undefined ? session.identity : state.identity, config: state.config ?? session.config };
 }

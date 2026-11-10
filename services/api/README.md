@@ -10,6 +10,8 @@ pnpm --filter @0xhq/api dev
 
 Root `pnpm dev` includes this service automatically. It listens on **http://localhost:3004**, bound to loopback. `GET /health` reports readiness. No separate database installation is needed.
 
+Development admin access is automatic; the password command below is only for testing the explicit sign-in flow.
+
 On first start, the service creates:
 
 - `.data/submissions.sqlite`: SQLite with WAL mode, constraints, history, staff sessions, and request nonces.
@@ -23,7 +25,7 @@ All of `.data/` is excluded from Git. To display the **local** staff password in
 pnpm --filter @0xhq/api admin:password
 ```
 
-Open http://localhost:3002 and sign in with that password. Open http://localhost:3001/submit to create or sign in with a customer passkey and send a request. No wallet deployment, blockchain transaction, external email, public IPFS upload, or NFT mint occurs during submission.
+In development, open http://localhost:3002 directly; no password is required. The local admin backend still signs API requests, and access is restricted to localhost. Production always requires staff sign-in. Open http://localhost:3001/submit to create or sign in with a customer passkey and send a request. No wallet deployment, blockchain transaction, external email, public IPFS upload, or NFT mint occurs during submission.
 
 Each app defaults to the local API and discovers development signing keys from the standard service directory. If you change `API_DATA_DIR`, point both apps' `API_SERVICE_KEYS_FILE` to the resulting absolute signing-key file path, or configure their matching server-side secret explicitly.
 
