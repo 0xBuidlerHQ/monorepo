@@ -1,5 +1,3 @@
-import { Suspense } from "react";
-import { CatalogLanguageSelector } from "@/features/reference/catalog-language-selector";
 import { ContentSurface } from "@/features/shell/content-surface";
 import { LiveCatalogSearch } from "@/features/reference/live-catalog-search";
 import type { ReactNode } from "react";
@@ -21,7 +19,7 @@ export function CatalogToolbar({ title, category, count, query, subcategory, sea
 				<h2 className="text-2xl font-medium tracking-[-0.045em] sm:text-[28px]">{title}</h2>
 				{count !== undefined && <p role="status" aria-label={`${count.toLocaleString("en-US")} results`} className="rounded-md bg-white/[0.04] px-2 py-1 font-mono text-[11px] tabular-nums text-white/40">{count.toLocaleString("en-US")}</p>}
 			</div>
-			<div className="flex flex-wrap items-center gap-3">{["cards", "sets"].includes(category) && <Suspense fallback={null}><CatalogLanguageSelector /></Suspense>}{query !== undefined && <LiveCatalogSearch key={`${category}:${subcategory ?? ""}`} query={query} placeholder={searchPlaceholder ?? `Search ${title.toLowerCase()}…`} />}</div>
+			<div className="flex flex-wrap items-center gap-3">{query !== undefined && <LiveCatalogSearch key={`${category}:${subcategory ?? ""}`} query={query} placeholder={searchPlaceholder ?? `Search ${title.toLowerCase()}…`} />}</div>
 		</header>
 		{children && <div className="mt-5 overflow-x-auto rounded-2xl bg-black/15 p-1.5">{children}</div>}
 	</ContentSurface>;

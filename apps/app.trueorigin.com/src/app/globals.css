@@ -33,7 +33,32 @@ html::-webkit-scrollbar {
 	animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Persistent bars sit above page snapshots as well as ordinary page content. */
+::view-transition-group(root) {
+	animation: none;
+}
+
+::view-transition-group(app-header),
+::view-transition-group(app-footer) {
+	animation: none;
+	z-index: 40;
+}
+
+::view-transition-old(app-header),
+::view-transition-old(app-footer),
+::view-transition-old(navigation-dock) {
+	display: none;
+}
+
+::view-transition-new(app-header),
+::view-transition-new(app-footer) {
+	animation: none;
+	opacity: 1;
+	mix-blend-mode: normal;
+}
+
 ::view-transition-group(navigation-dock) {
+	animation: none;
 	z-index: 100;
 }
 
@@ -45,6 +70,7 @@ html::-webkit-scrollbar {
 ::view-transition-new(navigation-dock) {
 	animation: none;
 	opacity: 1;
+	mix-blend-mode: normal;
 }
 
 ::view-transition-old(.page-crossfade) {
@@ -120,8 +146,12 @@ html::-webkit-scrollbar {
 }
 
 :root {
+	--surface: #1c1c1c;
+	--surface-raised: #222222;
+	--app-gutter: 1.5rem;
 	--app-header-padding: 0.75rem;
-	--app-header-height: calc(3rem + var(--app-header-padding) + var(--app-header-padding));
+	--app-navbar-height: calc(2rem + env(safe-area-inset-top));
+	--app-header-height: calc(var(--app-navbar-height) + 1.75rem);
 	color-scheme: dark;
 	--app-cell: calc(100vw / round(100vw / clamp(36px, 3vw, 48px), 1));
 	--page-gutter: clamp(28px, 6vw, 112px);
@@ -175,5 +205,24 @@ html::-webkit-scrollbar {
 
 @media (prefers-reduced-motion: reduce) {
 	.content-ready { animation: none; }
+}
+
+
+@media (min-width: 640px) {
+	:root { --app-gutter: 3rem; }
+}
+
+.explore-obsession {
+	transition: color 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) {
+	.explore-page:has([data-explore-universe]:hover) .explore-obsession { color: white; }
+}
+
+.explore-page:has([data-explore-universe]:focus-visible) .explore-obsession { color: white; }
+
+@media (prefers-reduced-motion: reduce) {
+	.explore-obsession { transition: none; }
 }
 

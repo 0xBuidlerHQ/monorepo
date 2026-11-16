@@ -7,3 +7,6 @@ packages:
 allowBuilds:
   msgpackr-extract: false
   protobufjs: false
+
+minimumReleaseAgeExclude:
+  - ponder@0.18.7

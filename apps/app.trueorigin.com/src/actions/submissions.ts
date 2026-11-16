@@ -26,3 +26,12 @@ export async function createSubmission(_previous: SubmissionActionState, form: F
 		return { error: "We couldn’t save the request. Your draft may have been saved; retry to continue it." };
 	}
 }
+
+export async function confirmReturn(_previous: { error?: string; message?: string }, form: FormData): Promise<{ error?: string; message?: string }> {
+	try {
+		await requireTrustedOrigin();
+		const id = form.get("id"); if (typeof id !== "string" || !/^[a-f0-9-]{36}$/.test(id)) return { error: "Invalid submission." };
+		await apiJson<Submission>("customer", await submissionIdentity(), `/v1/submissions/${id}/return`, { method: "PATCH", json: { version: Number(form.get("version")) } });
+		revalidatePath("/submit"); return { message: "Physical receipt confirmed." };
+	} catch (error) { return { error: error instanceof ApiError || error instanceof AccountError ? error.message : "Receipt could not be confirmed. Please try again." }; }
+}

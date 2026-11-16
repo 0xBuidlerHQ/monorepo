@@ -8,7 +8,7 @@ import { CID } from "multiformats/cid";
 import { createStorage } from "./storage.ts";
 
 const mediaTypes: Record<string, string> = {
-	".json": "application/json", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
+	".svg": "image/svg+xml", ".json": "application/json", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
 	".webp": "image/webp", ".gif": "image/gif", ".avif": "image/avif", ".pdf": "application/pdf",
 };
 
@@ -92,6 +92,16 @@ export async function createIpfsService({ directory, port = 3003, adminOrigin = 
 		if (request.method !== "GET" && request.method !== "HEAD") { response.setHeader("Allow", "GET, HEAD"); throw new HttpError(405, "Method not allowed."); }
 		response.setHeader("Access-Control-Allow-Origin", "*");
 		if (url.pathname === "/health") { json(response, 200, { status: "ok", mode: "local", gateway: `${origin}/ipfs/` }); return; }
+		if (url.pathname.startsWith("/api/archives/")) {
+			if (request.headers.origin && request.headers.origin !== adminOrigin) throw new HttpError(403, "Archive origin is not allowed.");
+			let root: CID;
+			try { root = CID.parse(url.pathname.slice("/api/archives/".length)); } catch { throw new HttpError(400, "Invalid archive CID."); }
+			try { await storage.files.stat(root, { offline: true }); } catch { throw new HttpError(404, "Archive not found."); }
+			response.writeHead(200, { "Content-Type": "application/vnd.ipld.car", "Cache-Control": "no-store" });
+			if (request.method === "HEAD") { response.end(); return; }
+			await pipeline(Readable.from(storage.archives.export(root, { signal: AbortSignal.timeout(15_000) })), response);
+			return;
+		}
 		if (!url.pathname.startsWith("/ipfs/")) throw new HttpError(404, "Not found.");
 		let cid: CID;
 		let path: string;
@@ -111,6 +121,7 @@ export async function createIpfsService({ directory, port = 3003, adminOrigin = 
 		response.setHeader("Cache-Control", "public, max-age=31536000, immutable");
 		if (request.headers["if-none-match"] === etag) { response.writeHead(304); response.end(); return; }
 		response.setHeader("Content-Type", mediaTypes[extname(path).toLowerCase()] ?? "application/octet-stream");
+		if (extname(path).toLowerCase() === ".svg") response.setHeader("Content-Security-Policy", "sandbox; default-src 'none'; style-src 'unsafe-inline'");
 		response.setHeader("Content-Length", stats.size.toString());
 		if (request.method === "HEAD") { response.writeHead(200); response.end(); return; }
 		await pipeline(Readable.from(storage.files.cat(cid, { path: path || undefined, offline: true })), response);

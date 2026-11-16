@@ -6,3 +6,6 @@ broadcast/
 *.tsbuildinfo
 .env*
 !.env.example
+
+# Installed by forge soldeer install; revision is pinned in soldeer.lock.
+dependencies/

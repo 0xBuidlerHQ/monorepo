@@ -1,0 +1,24 @@
+{
+  "name": "@0xhq/indexer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "start": "NODE_ENV=production ponder start --hostname 127.0.0.1 --port 3005",
+    "codegen": "ponder codegen",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome lint src ponder.config.ts ponder.schema.ts deployment.ts scripts"
+  },
+  "dependencies": {
+    "@0xhq/trueorigin-sdk": "workspace:*",
+    "ponder": "0.18.7",
+    "hono": "^4.12.8",
+    "viem": "^2.57.16"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.4",
+    "@types/node": "^26.6.6",
+    "typescript": "7.0.2"
+  }
+}

@@ -1,19 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import { NavigationIcon } from "@/components/icons/navigation-icon";
 import { useAccount } from "./account-provider";
 import { AccountIcon } from "./account-icon";
 
-const shortcuts = [
-	{ name: "My collection", icon: "My Collection", href: "/collection", description: "All your objects, together in one place.", color: "#ff6b24" },
-	{ name: "Submissions", icon: "Submit", href: "/submit", description: "Submit an item and follow its progress.", color: "#4488ff" },
-	{ name: "Transfers", icon: "Transfers", href: "/transfers", description: "Send and receive ownership of your objects.", color: "#c0b5ff" },
-];
-
-export function AccountOverview({ onNavigate }: { onNavigate: () => void }) {
+export function AccountOverview() {
 	const { identity, connection, disconnect, error } = useAccount();
 	const reducedMotion = useReducedMotion();
 	const address = connection?.account.address;
@@ -46,13 +38,7 @@ export function AccountOverview({ onNavigate }: { onNavigate: () => void }) {
 			<span role="status" className="sr-only">{copied ? "Address copied" : ""}</span>
 		</div>
 		{copyError && <p role="alert" className="mt-2 text-xs text-red-300">{copyError}</p>}
-		<nav aria-label="Account navigation" className="mt-7 space-y-3">
-			{shortcuts.map(item => <Link key={item.href} href={item.href} onClick={onNavigate} className="group block rounded-[26px] border border-white/[0.12] p-5 transition-colors duration-200 hover:border-white/25 hover:bg-white/[0.025]">
-				<span style={{ color: item.color }} className="mb-3 block"><NavigationIcon name={item.icon} className="size-6" /></span>
-				<span className="block text-[17px] font-medium tracking-[-0.025em]">{item.name}</span>
-				<span className="mt-1 block text-sm leading-6 text-white/50">{item.description}</span>
-			</Link>)}
-		</nav>
+
 		{error && <p role="alert" className="mt-4 text-xs leading-5 text-red-300">{error}</p>}
 	</div>;
 }

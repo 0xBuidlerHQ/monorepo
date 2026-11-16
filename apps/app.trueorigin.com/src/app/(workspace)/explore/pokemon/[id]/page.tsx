@@ -1,10 +1,10 @@
+import { FloatingTypeSymbols } from "@/features/pokemon/floating-type-symbols";
 import { LoadingBoundary } from "@/features/shell/loading-boundary";
 import { catalogHref, catalogLanguage } from "@/features/reference/catalog-language";
-import { CatalogLanguageSelector } from "@/features/reference/catalog-language-selector";
 import { PageSkeleton } from "@/features/shell/loading-skeleton";
 import { ContentSurface } from "@/features/shell/content-surface";
 import { formatCardNumber } from "@/features/reference/card-number";
-import { setPageHref } from "@/features/reference/set-relationships";
+import { setPageHref, cardPageHref } from "@/features/reference/set-relationships";
 import { RevealImage as Image } from "@/components/ui/reveal-image";
 import { LiveCatalogSearch } from "@/features/reference/live-catalog-search";
 import Link from "next/link";
@@ -41,16 +41,10 @@ async function PokemonProfile(props: Props) {
 	const number = `#${String(pokemon.id).padStart(4, "0")}`;
 	return (
 		<article aria-labelledby="pokemon-profile-title">
-			<nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-white/45">
-				<Link href="/explore" className="hover:text-white">Explore</Link><span aria-hidden="true">/</span>
-				<Link href={catalogHref("/explore/pokemon", language)} className="hover:text-white">Pokémon</Link><span aria-hidden="true">/</span>
-				<Link href={catalogHref("/explore/pokemon?category=pokedex", language)} className="hover:text-white">Pokédex</Link><span aria-hidden="true">/</span>
-				<span aria-current="page" className="text-white/80">{pokemon.name}</span>
-			</nav>
-			<ContentSurface as="header" className="relative isolate mt-6 grid overflow-hidden rounded-[32px] bg-[#1c1c1c] md:grid-cols-2">
+			<ContentSurface as="header" className="relative isolate grid overflow-hidden rounded-[32px] bg-[#1c1c1c] md:grid-cols-2">
 				<div className="relative z-10 flex flex-col items-start justify-center p-7 sm:p-10 lg:p-12">
 					<p className="font-mono text-xs text-white/40">{number}<span className="mx-3 text-white/20">/</span>Generation {roman}</p>
-					<h1 id="pokemon-profile-title" className="mt-6 break-words text-[clamp(40px,6vw,88px)] font-medium leading-none tracking-[-0.065em]">{pokemon.name}</h1>
+<div className="mt-6 flex items-center gap-5"><h1 id="pokemon-profile-title" className="min-w-0 break-words text-[clamp(40px,6vw,88px)] font-medium leading-none tracking-[-0.065em]">{pokemon.name}</h1><FloatingTypeSymbols /></div>
 					{profile?.genus && <p className="mt-3 text-sm text-white/45">{profile.genus}</p>}
 					{profile && <div className="mt-5 flex flex-wrap gap-2">{profile.types.map((type) => <span key={type} className="rounded-full bg-white/[0.07] px-4 py-1.5 text-xs text-white/75">{type}</span>)}</div>}
 					{profile?.description && <p className="mt-6 max-w-md text-sm leading-7 text-white/60">{profile.description}</p>}
@@ -76,11 +70,11 @@ async function PokemonProfile(props: Props) {
 			<section id="pokemon-cards" aria-labelledby="pokemon-cards-title" className="mt-10 scroll-mt-[calc(var(--app-header-height)+1rem)]">
 				<header className="mb-6 flex flex-wrap items-end justify-between gap-5">
 					<div><h2 id="pokemon-cards-title" className="text-3xl font-medium tracking-[-0.045em]">{pokemon.name} in cards</h2><p className="mt-2 text-sm text-white/45">{result.total.toLocaleString("en-US")} {language === "fr" ? "French" : "English"} card references{query ? ` matching “${query}”` : " across sets and editions"}.</p></div>
-					<div className="flex flex-wrap items-center gap-3"><CatalogLanguageSelector /><LiveCatalogSearch key={pokemon.id} query={query} placeholder="Search cards or sets…" /></div>
+					<div className="flex flex-wrap items-center gap-3"><LiveCatalogSearch key={pokemon.id} query={query} placeholder="Search cards or sets…" /></div>
 				</header>
 				{result.items.length > 0 ? <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">{result.items.map((card) => {
 					const set = findReferenceSet(card.setId, language);
-					return <li key={card.id}><ExploreCard name={card.name} brand={set?.name ?? "Pokémon TCG"} href={catalogHref(`/explore/cards/${card.id}`, language)} alt={card.name} imageLayout="portrait" image={getCardArtwork(card.id, language)?.src} placeholder={<span className="text-white/[0.06] [&>svg]:size-16"><CatalogCategoryIcon category="cards" /></span>} description={`${formatCardNumber(card, set?.printedTotal)} · ${card.rarity ?? card.supertype}`} />{set && <Link href={catalogHref(setPageHref(set.id), language)} className="mt-3 inline-block px-2 text-xs text-white/45 hover:text-white">Browse set ↗<span className="sr-only">: {set.name}</span></Link>}</li>;
+					return <li key={card.id}><ExploreCard name={card.name} brand={set?.name ?? "Pokémon TCG"} href={catalogHref(cardPageHref(card), language)} alt={card.name} imageLayout="portrait" image={getCardArtwork(card.id, language)?.src} placeholder={<span className="text-white/[0.06] [&>svg]:size-16"><CatalogCategoryIcon category="cards" /></span>} description={`${formatCardNumber(card, set?.printedTotal)} · ${card.rarity ?? card.supertype}`} />{set && <Link href={catalogHref(setPageHref(set.id), language)} className="mt-3 inline-block px-2 text-xs text-white/45 hover:text-white">Browse set ↗<span className="sr-only">: {set.name}</span></Link>}</li>;
 				})}</ul> : <div className="rounded-3xl bg-white/[0.025] px-6 py-12 text-center text-sm text-white/50">{query ? "No matching cards. Try another name or set." : "No cards in the current catalog yet."}</div>}
 				{result.total > 0 && <nav aria-label="Card pages" className="mt-8 flex flex-wrap items-center justify-between gap-4 text-xs text-white/45"><span>Page {result.page} of {result.pages}</span><div className="flex gap-3">{[result.page - 1, result.page + 1].filter((page) => page >= 1 && page <= result.pages).map((page) => <Link key={page} href={`/explore/pokemon/${pokemon.id}?${new URLSearchParams({ lang: language, q: query, page: String(page) })}#pokemon-cards`} className="rounded-full border border-white/15 px-5 py-2.5 hover:bg-white/5 hover:text-white">{page < result.page ? "← Previous" : "Next →"}</Link>)}</div></nav>}
 			</section>

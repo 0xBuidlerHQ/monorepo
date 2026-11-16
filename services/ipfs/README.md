@@ -68,3 +68,25 @@ pnpm --filter @0xhq/ipfs test
 ```
 
 Integration tests cover image and multi-block metadata retrieval after restart, deterministic duplicate uploads, HEAD/ETag behavior, and rejected uploads.
+
+## Passport archives and recovery
+
+`GET /api/archives/<cid>` exports the full root DAG as a CAR archive. The issuance
+worker saves separate archives for metadata and the image: the JSON's image URI is
+text, not an IPLD link, so exporting metadata alone does not back up its image.
+
+To restore, stop the IPFS service first so there is only one process using its data
+directory, then run:
+
+```sh
+pnpm --filter @0xhq/ipfs restore /absolute/path/to/metadata.json.car /absolute/path/to/passport.svg.car
+```
+
+Restart the service afterwards. Imported blocks are recursively pinned and retain
+the original CIDs. API backups are under `services/api/.data/passports/<item-id>/`.
+Keep a separate backup of that API directory; local archives do not survive losing
+the whole development machine unless copied elsewhere.
+
+Generated passport SVG images are supported. Gateway SVG responses use a restrictive
+sandbox content-security policy so opening an SVG does not execute embedded scripts.
+The service remains unauthenticated and loopback-only, for local development.

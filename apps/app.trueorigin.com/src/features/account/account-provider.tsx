@@ -4,7 +4,7 @@ import type {
 	AccountConfig,
 	ConnectedAccount,
 	PasskeyIdentity,
-} from "@0xhq/contracts.trueorigin.com/account";
+} from "@0xhq/trueorigin-sdk/account";
 import { useRouter } from "next/navigation";
 import {
 	startAuthentication,
@@ -34,7 +34,7 @@ import type { AccountActionResult, AccountSession } from "@/types/account";
 async function deployedAccount(account: ConnectedAccount | null) {
 	if (!account) return false;
 	const { isAccountDeployed } = await import(
-		"@0xhq/contracts.trueorigin.com/account"
+		"@0xhq/trueorigin-sdk/account"
 	);
 	return isAccountDeployed(account);
 }
@@ -49,7 +49,7 @@ function actionData<T>(result: AccountActionResult<T>) {
 async function connectionFor(session: AccountSession) {
 	if (!session.identity) return null;
 	const { connectPasskeyAccount } = await import(
-		"@0xhq/contracts.trueorigin.com/account"
+		"@0xhq/trueorigin-sdk/account"
 	);
 	return connectPasskeyAccount(session.identity, {
 		...session.config,
@@ -165,7 +165,7 @@ function useAccountState(initialSession: Promise<AccountSession>) {
 		setTransactionHash(null);
 		try {
 			const { sendLocalTestTransaction } = await import(
-				"@0xhq/contracts.trueorigin.com/account"
+				"@0xhq/trueorigin-sdk/account"
 			);
 			actionData(await fundLocalTestAccount());
 			const result = await sendLocalTestTransaction(connection);

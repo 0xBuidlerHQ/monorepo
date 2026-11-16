@@ -4,7 +4,7 @@ import { PikachuIcon } from "@/components/icons/pikachu-icon";
 import { YugiohIcon } from "@/components/icons/yugioh-icon";
 
 export const collections = [
-	{ name: "Pokemon", href: "/explore/cards/pokemon", icon: PikachuIcon },
+	{ name: "Pokemon", href: "/explore/catalogue/pokemon", icon: PikachuIcon },
 	{ name: "Yu-Gi-Oh!", href: "/yugioh", icon: YugiohIcon },
 	{ name: "Magic", href: "/magic", icon: MagicIcon },
 	{ name: "One Piece", href: "/one-piece", icon: OnePieceIcon },

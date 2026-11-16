@@ -1,0 +1,51 @@
+{
+  "base-set-booster-pack": {
+    "src": "/images/sealed/base-set-booster-pack-photo.webp",
+    "source": "https://loosepacks.com/cdn/shop/files/Untitled_-_2024-06-11T141531.068.png?v=1745610115&width=1445",
+    "page": "https://loosepacks.com/products/base-set-unlimited",
+    "width": 1080,
+    "height": 1080
+  },
+  "base-set-booster-box": {
+    "src": "/images/sealed/base-set-booster-box-photo.webp",
+    "source": "https://loosepacks.com/cdn/shop/files/Untitled-2_-_2025-01-26T150048.080.png?v=1770863944&width=1445",
+    "page": "https://loosepacks.com/products/base-set-unlimited-booster-box",
+    "width": 1080,
+    "height": 1080
+  },
+  "base-set-starter-set": {
+    "src": "/images/sealed/base-set-starter-set-photo.webp",
+    "source": "https://images.pristineauction.com/241/2417656/share_1658853309-1999-Pokemon-TCG-2-Player-Starter-Set-with-61-Cards-PristineAuction.com.jpg",
+    "page": "https://www.pristineauction.com/a6696789-1999-Pokemon-TCG-2-Player-Starter-Set-with-61-Cards",
+    "width": 1000,
+    "height": 1000
+  },
+  "base-set-blackout": {
+    "src": "/images/sealed/base-set-blackout-photo.webp",
+    "source": "https://images.pristineauction.com/227/2276635/main_1648849635-1999-Pokemon-TCG-Blackout-Theme-Deck-with-60-Cards-PristineAuction.com.jpg",
+    "page": "https://www.pristineauction.com/a6034330-1999-Pokemon-TCG-Blackout-Theme-Deck-with-60-Cards",
+    "width": 722,
+    "height": 1000
+  },
+  "base-set-brushfire": {
+    "src": "/images/sealed/base-set-brushfire-photo.webp",
+    "source": "https://images.pristineauction.com/223/2230026/share_1646068730-1999-Pokemon-TCG-Brushfire-Theme-Deck-with-60-Cards-PristineAuction.com.jpg",
+    "page": "https://www.pristineauction.com/a5912007-1999-Pokemon-TCG-Brushfire-Theme-Deck-with-60-Cards",
+    "width": 1000,
+    "height": 1000
+  },
+  "base-set-overgrowth": {
+    "src": "/images/sealed/base-set-overgrowth-photo.webp",
+    "source": "https://i.ebayimg.com/images/g/M7wAAOSwXuhnY-cL/s-l2400.jpg",
+    "page": "https://www.ebay.com/shop/pokemon-overgrowth-theme-deck?_nkw=pokemon+overgrowth+theme+deck",
+    "width": 1200,
+    "height": 1200
+  },
+  "base-set-zap": {
+    "src": "/images/sealed/base-set-zap-photo.webp",
+    "source": "https://thecardcave.com.au/cdn/shop/files/POKEMON_TCG_ZAP_THEME_DECK.png?v=1746508679",
+    "page": "https://thecardcave.com.au/products/pokemon-tcg-base-set-theme-deck-zap",
+    "width": 1200,
+    "height": 1200
+  }
+}

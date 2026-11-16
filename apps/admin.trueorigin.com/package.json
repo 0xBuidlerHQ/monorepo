@@ -10,11 +10,11 @@
     "typecheck": "next typegen && tsc --noEmit"
   },
   "dependencies": {
-    "next": "16.4.3",
+    "@0xhq/api-client": "workspace:*",
+    "@0xhq/config": "workspace:*",
+    "next": "16.4.6",
     "react": "19.3.1",
     "react-dom": "19.3.1",
-    "@0xhq/config": "workspace:*",
-    "@0xhq/api-client": "workspace:*",
     "server-only": "0.0.1"
   },
   "devDependencies": {

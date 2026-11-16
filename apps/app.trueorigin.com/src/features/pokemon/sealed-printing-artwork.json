@@ -1,0 +1,65 @@
+{
+  "base-set-booster-box:first-edition": {
+    "src": "/images/sealed/printings/base-set-booster-box-first-edition.webp",
+    "source": "https://levelupgames.ca/cdn/shop/products/76a38772-6d00-5707-8e9e-44785412bae9_1024x.jpg?v=1707183545",
+    "page": "https://levelupgames.ca/products/base-set-booster-box-1st-edition",
+    "width": 1024,
+    "height": 878
+  },
+  "base-set-booster-pack:first-edition": {
+    "src": "/images/sealed/printings/base-set-booster-pack-first-edition.webp",
+    "source": "https://skyfoxgames.com/cdn/shop/products/Pokemon_Base_Set_Booster_1st_Front.jpg?v=1589489563",
+    "page": "https://skyfoxgames.com/products/pokemon-1st-edition-booster-pack",
+    "width": 683,
+    "height": 915
+  },
+  "base-set-booster-box:shadowless": {
+    "src": "/images/sealed/printings/base-set-booster-box-shadowless.webp",
+    "source": "https://tcgplayer-cdn.tcgplayer.com/product/107597_400w.jpg",
+    "page": "https://www.tcgplayer.com/product/107597",
+    "width": 400,
+    "height": 367
+  },
+  "base-set-booster-pack:shadowless": {
+    "src": "/images/sealed/printings/base-set-booster-pack-shadowless.webp",
+    "source": "https://tcgplayer-cdn.tcgplayer.com/product/138131_400w.jpg",
+    "page": "https://www.tcgplayer.com/product/138131",
+    "width": 252,
+    "height": 434
+  },
+  "base-set-starter-set:shadowless": {
+    "src": "/images/sealed/printings/base-set-starter-set-shadowless.webp",
+    "source": "https://tcgplayer-cdn.tcgplayer.com/product/107602_400w.jpg",
+    "page": "https://www.tcgplayer.com/product/107602",
+    "width": 400,
+    "height": 572
+  },
+  "base-set-blackout:shadowless": {
+    "src": "/images/sealed/printings/base-set-blackout-shadowless.webp",
+    "source": "https://tcgplayer-cdn.tcgplayer.com/product/107603_400w.jpg",
+    "page": "https://www.tcgplayer.com/product/107603",
+    "width": 187,
+    "height": 296
+  },
+  "base-set-brushfire:shadowless": {
+    "src": "/images/sealed/printings/base-set-brushfire-shadowless.webp",
+    "source": "https://tcgplayer-cdn.tcgplayer.com/product/107604_400w.jpg",
+    "page": "https://www.tcgplayer.com/product/107604",
+    "width": 198,
+    "height": 305
+  },
+  "base-set-overgrowth:shadowless": {
+    "src": "/images/sealed/printings/base-set-overgrowth-shadowless.webp",
+    "source": "https://tcgplayer-cdn.tcgplayer.com/product/107605_400w.jpg",
+    "page": "https://www.tcgplayer.com/product/107605",
+    "width": 196,
+    "height": 304
+  },
+  "base-set-zap:shadowless": {
+    "src": "/images/sealed/printings/base-set-zap-shadowless.webp",
+    "source": "https://tcgplayer-cdn.tcgplayer.com/product/107606_400w.jpg",
+    "page": "https://www.tcgplayer.com/product/107606",
+    "width": 195,
+    "height": 308
+  }
+}

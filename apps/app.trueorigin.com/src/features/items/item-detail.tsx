@@ -11,7 +11,6 @@ export function ItemDetail({ item }: { item: GradedItem }) {
  return (
   <article className="w-full min-w-0 self-stretch bg-[#080808]">
    <header className="border-b border-white/10 px-5 py-7 sm:px-9">
-    <nav aria-label="Breadcrumb" className="mb-5 flex flex-wrap items-center gap-2 font-mono text-[10px] text-white/40"><Link href="/explore" className="hover:text-white">Explore</Link><span aria-hidden="true">/</span><Link href={item.referenceId ? `/explore/cards/${item.referenceId}` : "/explore"} className="hover:text-white">{item.collection} · Card information</Link><span aria-hidden="true">/</span><span className="text-white/65">Digital passport</span></nav>
     {item.preview && <p className="mb-5 border border-amber-300/20 bg-amber-300/5 px-3 py-2 text-xs leading-6 text-amber-100/70">Preview passport. This is an example, not a registered slab, verified ownership record, or sale listing.</p>}
     <div className="flex flex-wrap items-center justify-between gap-4"><div><h1 className="text-4xl font-medium tracking-[-0.05em] sm:text-5xl">{item.name}</h1><p className="mt-3 text-sm text-white/45">{item.edition} · {item.variant} · {item.language}</p></div><div className="border border-white/20 px-5 py-3 text-center"><p className="font-mono text-[10px] tracking-widest text-white/45">{item.grading.company}</p><p className="mt-1 text-3xl font-medium text-brand-accent">{item.grading.grade}</p><p className="mt-1 text-[9px] uppercase tracking-widest text-white/30">{item.preview ? "Example grade" : "Grade"}</p></div></div>
    </header>

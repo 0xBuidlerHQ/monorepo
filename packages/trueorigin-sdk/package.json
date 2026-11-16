@@ -1,0 +1,37 @@
+{
+  "name": "@0xhq/trueorigin-sdk",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@simplewebauthn/browser": "^14.0.0",
+    "@zerodev/passkey-validator": "^5.6.0",
+    "@zerodev/sdk": "^5.5.11",
+    "@zerodev/webauthn-key": "^5.5.0",
+    "viem": "^2.57.16"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.4",
+    "@pimlico/alto": "^0.0.21",
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2",
+    "@0xhq/contracts.trueorigin.com": "workspace:*"
+  },
+  "exports": {
+    "./transfers": "./src/transfers.ts",
+    "./account": "./src/account.ts",
+    "./config": "./src/config.ts",
+    "./rpc": "./src/server/rpc.ts",
+    "./passport": "./src/generated/passport.ts",
+    "./passport-issuer": "./src/server/passport-issuer.ts",
+    "./passport-reader": "./src/server/passport-reader.ts"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/export-passport-abi.mjs",
+    "generate:contracts": "pnpm --filter @0xhq/contracts.trueorigin.com build && node scripts/export-passport-abi.mjs",
+    "check:abi": "node scripts/export-passport-abi.mjs --check",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome lint src scripts"
+  }
+}

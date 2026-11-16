@@ -39,7 +39,7 @@ The app uses a sky blue, red, and white visual identity, serif display typograph
 
 ## Passkey accounts
 
-Run `make dev app.trueorigin.com` from the repository root to start this app, an Ethereum mainnet fork, and a local ERC-4337 bundler. The Connect button supports passkey registration and sign-in; accounts deploy with their first transaction. See [the Ethereum package guide](../../contracts/trueorigin.com/README.md) for configuration, cross-device limitations, and tests.
+Run `make dev app.trueorigin.com` from the repository root to start this app, an Ethereum mainnet fork, and a local ERC-4337 bundler. The Connect button supports passkey registration and sign-in; accounts deploy with their first transaction. See [the Ethereum SDK guide](../../packages/trueorigin-sdk/README.md) for configuration, cross-device limitations, and tests.
 
 ## Component structure
 
@@ -52,7 +52,7 @@ Use `features/` to compose those components with application behavior:
 - `settings/`: settings drawer.
 - `shell/`: application frame and feature composition.
 
-Route files compose features. Ethereum implementation remains in `contracts/trueorigin.com`.
+Route files compose features. Ethereum TypeScript implementation lives in `packages/trueorigin-sdk`; Solidity lives in `contracts/trueorigin.com`.
 
 ## Backend structure
 
@@ -62,7 +62,7 @@ Route files compose features. Ethereum implementation remains in `contracts/true
 - `src/server/ethereum/`: authenticated, method-restricted JSON-RPC forwarding.
 - `src/types/account.ts`: serializable action results and public session data.
 
-Features call Server Actions; actions delegate to backend services. Passkey prompts and transaction signing run in the browser. Only Ethereum and bundler JSON-RPC retain API routes because SDK transports require HTTP endpoints. Account construction and chain operations stay in `contracts/trueorigin.com`.
+Features call Server Actions; actions delegate to backend services. Passkey prompts and transaction signing run in the browser. Only Ethereum and bundler JSON-RPC retain API routes because SDK transports require HTTP endpoints. Account construction and chain operations live in `packages/trueorigin-sdk`.
 
 Every action validates the configured origin. Signed responses must match a single-use, five-minute challenge and the RP ID. Sessions use opaque tokens stored as hashes, with HttpOnly, SameSite=Strict cookies scoped to `/` so they work for both Server Actions and RPC routes. Only public credential and account configuration data is returned to the client.
 
@@ -93,3 +93,36 @@ The local upload service and gateway live in [services/ipfs](../../services/ipfs
 ## Item submissions
 
 `/submit` lets customers sign in with a passkey, select a certifier, enter the certification ID and contact email, and submit a request. Item names and grades are not collected from the customer. Photos and free-form notes are not collected in the initial request form. Progress and staff messages appear on the same page. The existing account registry remains in this app; submission records and photos are owned exclusively by [services/api](../../services/api/README.md). Requests do not mint NFTs or publish photographs to IPFS. Production requires the shared `API_URL` and this app’s `API_CUSTOMER_SECRET`.
+
+## Passport pages and Verify
+
+`/registry` lists confirmed issued passports; `/collection` links owned NFTs to
+`/items/<permanent-item-id>`. Item pages use the real registry and blockchain,
+replacing the previous static demo item route. They show the item, TrueOrigin's
+recorded inspection approval, live NFT owner, mint/transfer history, and the block
+checked. Physical possession and delivery are explicitly unconfirmed. This contract
+version's lack of revocation tracking is shown separately from on-chain verification.
+
+`/verify` accepts a passport URL, full item ID, or a supported certifier plus its
+certification number. Matching records lead to the canonical passport page. A
+missing record is not presented as proof that the physical item is counterfeit;
+service/chain errors are shown as unavailable, not successful verification. Visitors
+can use Registry, Verify, and passport pages without signing in. Passport image and
+metadata routes serve the public integrity-checked archives, not private submission
+photos or contact information.
+
+### Local submission-to-transfer journey
+
+Submit an item while signed in. In the admin app, accept it, record receipt, inspect, approve, and issue its passport. Choose hand-to-hand or delivery for the return. Staff record the handover after giving the item to the owner or the parcel to the carrier. The customer sees issuance and shipping separately in Submit, with automatic progress updates, and can confirm physical receipt.
+
+Collection and Submit link to Transfers. Select a passport, enter the recipient's full Ethereum address, review it, and authorize the NFT transfer with the account credential. Transfers currently use the local development chain and local gas funding. Live owner, contract bytecode and immutable passport identity are checked before signing; receipt confirmation requires the matching ERC-721 transfer event. The submitted operation hash is saved in browser storage so an uncertain result can be checked after reload without signing again. Keep that browser storage until confirmation. NFT transfer does not prove or arrange physical handover; peer shipping, escrow, trading and payment are separate future work.
+
+### Pokémon catalogue navigation
+
+The Pokémon tabs are Pokédex, Catalogue, and Sealed. Catalogue lists the currently supported sets and named collections, plus Misc for cards without a known collection. Collection pages live at `/explore/catalogue/collections/:id`; individual cards keep their existing `/explore/catalogue/:id` URLs. Their breadcrumb is Explore / Pokémon / Catalogue / Collection / Card. The Pokédex links to these same individual card pages.
+
+Only English Base Set is currently exposed. The language selector is removed and legacy language query parameters resolve to English. French source data and images remain available in the repository for a later release. The retained 30th Celebration source data is disabled; if re-enabled, its Classic Collection remains a checklist inside the parent release. Old `/explore/sets` and `/explore/sets/:id` links redirect to the new structure while preserving query parameters. Legacy `category=sets` routes lead to Catalogue. Misc is currently empty and hidden from the catalogue grid because every enabled card belongs to Base Set; no placeholder promo collections or fabricated card data are added.
+
+### Sealed catalogue
+
+`/explore/pokemon/sealed` is intentionally empty for now. Its shared section navigation, search, and product-type filters remain, but no product or printing detail routes are published. The Base Set research data and downloaded artwork are retained locally for future catalogue work; the UI does not import or expose them.

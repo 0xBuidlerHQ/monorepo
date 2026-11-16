@@ -1,6 +1,6 @@
 import "server-only";
 
-import { ethereumEndpoint } from "@0xhq/contracts.trueorigin.com/rpc";
+import { ethereumEndpoint } from "@0xhq/trueorigin-sdk/rpc";
 import { AccountError } from "../auth/errors.ts";
 import {
 	requireAccountIdentity,

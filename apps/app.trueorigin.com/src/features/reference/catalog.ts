@@ -8,21 +8,25 @@ import pokedex from "@/features/pokemon/pokedex.json";
 export interface ReferenceSet { id: string; name: string; series: string; printedTotal: number; releaseDate: string | null; language?: CatalogLanguage }
 export interface ReferenceCard { id: string; name: string; setId: string; number: string; supertype: string; subtypes: string[]; types: string[]; hp: string | null; rarity: string | null; artist: string | null; evolvesFrom: string | null; pokemonIds: number[]; language?: CatalogLanguage }
 const source = snapshot as { sets: ReferenceSet[]; cards: ReferenceCard[] };
-const enabledSetIds = new Set(["base1", "me55", "me55c"]);
+const enabledSetIds = new Set(["base-set"]);
 export const referenceSets = source.sets.filter((set) => enabledSetIds.has(set.id)).sort((a, b) => (b.releaseDate ?? "").localeCompare(a.releaseDate ?? "") || a.name.localeCompare(b.name));
 const cardCorrections: Record<string, { rarity: string; source: string; reason: string; verifiedAt: string }> = corrections;
 export const referenceCards = source.cards.filter((card) => enabledSetIds.has(card.setId)).map((card) => {
  const correction = cardCorrections[card.id];
- return correction ? { ...card, rarity: correction.rarity } : card;
+ return { ...card, ...(correction ? { rarity: correction.rarity } : {}) };
 });
 export const pokemonSpecies = pokedex.pokemon;
-const french = frenchSnapshot as { sets: ReferenceSet[]; cards: ReferenceCard[] };
+const frenchSource = frenchSnapshot as { sets: ReferenceSet[]; cards: ReferenceCard[] };
+const french = { sets: frenchSource.sets.filter(set => enabledSetIds.has(set.id)), cards: frenchSource.cards.filter(card => enabledSetIds.has(card.setId)) };
 export const getReferenceSets = (language: CatalogLanguage = "en") => language === "fr" ? french.sets : referenceSets;
 const localizedSetsById = new Map(french.sets.map((set) => [set.id, set]));
 const localizedCardsById = new Map(french.cards.map((card) => [card.id, card]));
 const setsById = new Map(referenceSets.map((set) => [set.id, set]));
 const cardsById = new Map(referenceCards.map((card) => [card.id, card]));
 export const findReferenceCard = (id: string, language: CatalogLanguage = "en") => language === "fr" ? localizedCardsById.get(id) : cardsById.get(id);
+const cardsBySetNumber = new Map(referenceCards.map(card => [`${card.setId}\0${card.number}`, card]));
+const localizedCardsBySetNumber = new Map(french.cards.map(card => [`${card.setId}\0${card.number}`, card]));
+export const findReferenceCardByNumber = (setId: string, number: string, language: CatalogLanguage = "en") => (language === "fr" ? localizedCardsBySetNumber : cardsBySetNumber).get(`${setId}\0${number}`);
 export const findReferenceSet = (id: string, language: CatalogLanguage = "en") => language === "fr" ? localizedSetsById.get(id) : setsById.get(id);
 export const findPokemon = (id: string) => pokemonSpecies.find((pokemon) => String(pokemon.id) === id);
 

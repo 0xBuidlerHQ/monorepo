@@ -4,9 +4,12 @@ import { mkdir, readFile, writeFile, rename } from "node:fs/promises";
 import { join } from "node:path";
 import { randomUUID } from "node:crypto";
 import { digest, verifySignature, type ServiceKeys } from "@0xhq/api-client/protocol";
+import { activityKinds, type ActivityKind } from "@0xhq/api-client/types";
 import type { PhotoSide } from "@0xhq/api-client/types";
 import { openStore, type Actor } from "./store.ts";
 import { HttpError } from "./errors.ts";
+import { createPublicPassportService } from "./passports/public.ts";
+import { createPassportWorkflow, type PassportOptions } from "./passports/workflow.ts";
 
 async function readBody(request: IncomingMessage, max: number) {
 	if (Number(request.headers["content-length"]) > max) throw new HttpError(413, "Request is too large.");
@@ -30,10 +33,12 @@ function photoType(bytes: Buffer) {
 	throw new HttpError(415, "Use a PNG, JPEG, or WebP photo.");
 }
 
-export async function createApiService({ directory, keys, adminPassword, port = 3004, allowDevelopmentAdmin = false }: { directory: string; keys: ServiceKeys; adminPassword: string; port?: number; allowDevelopmentAdmin?: boolean }) {
+export async function createApiService({ directory, keys, adminPassword, port = 3004, allowDevelopmentAdmin = false, passport: passportOptions }: { directory: string; keys: ServiceKeys; adminPassword: string; port?: number; allowDevelopmentAdmin?: boolean; passport?: PassportOptions }) {
 	if (keys.customer.length < 32 || keys.admin.length < 32 || keys.customer === keys.admin || adminPassword.length < 12) throw new Error("Use separate API secrets of at least 32 characters and a staff password of at least 12 characters.");
 	await mkdir(join(directory, "uploads"), { recursive: true });
 	const store = openStore(join(directory, "submissions.sqlite"), adminPassword);
+	const passports = createPassportWorkflow(directory, store, passportOptions);
+	const publicPassports = createPublicPassportService(directory, passportOptions?.rpcURL, passportOptions?.indexerURL, passportOptions?.ipfsURL);
 	const server = createServer((request, response) => { void handle(request, response).catch((error: unknown) => {
 		if (response.headersSent) { response.destroy(); return; }
 		if (!(error instanceof HttpError)) console.error("API operation failed:", error instanceof Error ? error.name : "Unknown error");
@@ -63,6 +68,32 @@ export async function createApiService({ directory, keys, adminPassword, port = 
 		const actor: Actor = verified.client === "customer" ? { kind: "customer", id: verified.subject } : !token && allowDevelopmentAdmin && process.env.NODE_ENV === "development" ? { kind: "staff", id: "admin" } : store.staff(token);
 		if (url.pathname === "/v1/staff/session" && method === "GET" && actor.kind === "staff") { send(response, 200, { id: actor.id }); return; }
 		if (url.pathname === "/v1/staff/logout" && method === "POST" && actor.kind === "staff") { store.logout(token); send(response, 200, { ok: true }); return; }
+		if (url.pathname === "/v1/activity" && method === "GET") {
+			const kind = url.searchParams.get("kind") ?? "all", cursor = url.searchParams.get("cursor") ?? "", limit = Number(url.searchParams.get("limit") ?? 30);
+			if (!activityKinds.includes(kind as ActivityKind) || !Number.isInteger(limit) || limit < 1 || limit > 50 || (cursor && !/^\d{1,19}:\d{1,10}$/.test(cursor))) throw new HttpError(400, "Invalid activity query.");
+			if (cursor) { const [block, log] = cursor.split(":").map(BigInt); if (block > 9223372036854775807n || log > 2147483647n) throw new HttpError(400, "Invalid activity cursor."); }
+			send(response, 200, await publicPassports.activity({ kind: kind as ActivityKind, cursor, limit })); return;
+		}
+		if (url.pathname === "/v1/passports/public" && method === "GET") { send(response, 200, await publicPassports.list()); return; }
+		if (url.pathname === "/v1/passports/lookup" && method === "GET") {
+			const certifier = url.searchParams.get("certifier") ?? "", number = (url.searchParams.get("number") ?? "").trim().toUpperCase();
+			if (!["PSA", "CGC", "BGS"].includes(certifier) || !/^[A-Z0-9-]{3,40}$/.test(number)) throw new HttpError(400, "Choose a supported certifier and enter a valid certification number.");
+			send(response, 200, await publicPassports.lookup(certifier, number)); return;
+		}
+		const publicPassport = url.pathname.match(/^\/v1\/passports\/(0x[0-9a-f]{64})(?:\/(image|metadata))?$/i);
+		if (publicPassport && method === "GET") {
+			const id = publicPassport[1].toLowerCase(), asset = publicPassport[2];
+			if (asset === "image" || asset === "metadata") {
+				const saved = await publicPassports.asset(id, asset);
+				response.writeHead(200, { "Content-Type": saved.contentType, "Content-Length": saved.bytes.length, "Cache-Control": "public, max-age=3600", "Content-Security-Policy": "sandbox; default-src 'none'; style-src 'unsafe-inline'" }); response.end(saved.bytes); return;
+			}
+			send(response, 200, await publicPassports.detail(id)); return;
+		}
+		if (url.pathname === "/v1/passports" && method === "GET") {
+			const wallet = url.searchParams.get("wallet") ?? "";
+			if (!/^0x[0-9a-fA-F]{40}$/.test(wallet) || /^0x0{40}$/.test(wallet)) throw new HttpError(400, "A valid wallet is required.");
+			send(response, 200, await publicPassports.owned(wallet)); return;
+		}
 		if (url.pathname === "/v1/submissions") {
 			if (method === "GET") { send(response, 200, store.list(actor)); return; }
 			if (method === "POST") { send(response, 201, store.create(parseJson(body), actor)); return; }
@@ -83,17 +114,20 @@ export async function createApiService({ directory, keys, adminPassword, port = 
 				send(response, 200, store.savePhoto(id, side, { filename, content_type: type.contentType, size: body.length, sha256 }, actor)); return;
 			}
 		}
-		const submission = url.pathname.match(/^\/v1\/submissions\/([a-f0-9-]{36})(\/submit|\/status)?$/);
+		const submission = url.pathname.match(/^\/v1\/submissions\/([a-f0-9-]{36})(\/submit|\/status|\/passport|\/return)?$/);
 		if (submission) {
 			const id = submission[1], operation = submission[2];
 			if (!operation && method === "GET") { send(response, 200, store.get(id, actor)); return; }
+			if (operation === "/return" && method === "POST") { send(response, 200, store.recordReturn(id, parseJson(body), actor)); return; }
+			if (operation === "/return" && method === "PATCH") { send(response, 200, store.confirmReturn(id, parseJson(body), actor)); return; }
+			if (operation === "/passport" && method === "POST") { send(response, 202, passports.queue(id, parseJson(body), actor)); return; }
 			if (operation === "/submit" && method === "POST") { send(response, 200, store.submit(id, actor)); return; }
 			if (operation === "/status" && method === "PATCH") { send(response, 200, store.transition(id, parseJson(body), actor)); return; }
 		}
 		throw new HttpError(404, "Endpoint not found.");
 	}
 	try { server.listen(port, "127.0.0.1"); await once(server, "listening"); }
-	catch (error) { store.close(); throw error; }
+	catch (error) { await passports.close(); store.close(); throw error; }
 	const address = server.address(); if (!address || typeof address === "string") throw new Error("API failed to bind.");
-	return { url: `http://localhost:${address.port}`, async close() { await new Promise<void>((resolve, reject) => server.close((error) => error ? reject(error) : resolve())); store.close(); } };
+	return { url: `http://localhost:${address.port}`, async close() { await new Promise<void>((resolve, reject) => server.close((error) => error ? reject(error) : resolve())); await passports.close(); store.close(); } };
 }

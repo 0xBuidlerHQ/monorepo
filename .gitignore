@@ -17,3 +17,7 @@ next-env.d.ts
 
 # Turborepo task cache
 .turbo/
+
+# Local make dev state
+.dev-data/
+.dev-runs/

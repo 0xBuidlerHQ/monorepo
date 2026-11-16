@@ -1,23 +1,19 @@
+import { FloatingTypeSymbols } from "@/features/pokemon/floating-type-symbols";
+import { SetCardSearch } from "@/features/pokemon/set-card-search";
 import { RevealImage as Image } from "@/components/ui/reveal-image";
-import { CatalogCategoryIcon } from "@/components/icons/catalog-category-icon";
+import { PageHeader } from "@/features/shell/page-header";
 
-export function SetHeader({ name, logo, facts }: { name: string; logo?: string; facts: { label: string; value: string }[] }) {
-	return (
-		<header className="relative isolate mt-6 overflow-hidden rounded-[28px] bg-[#1c1c1c]">
-			<div className="relative grid md:grid-cols-[1.1fr_1fr]">
-				<div className="flex flex-col items-start justify-center px-7 py-9 sm:px-10 sm:py-12 lg:px-12">
-					<h1 id="set-title" className={`${name.length > 14 ? "text-[clamp(40px,6vw,80px)]" : "text-[clamp(64px,8vw,112px)]"} font-medium leading-[0.95] tracking-[-0.075em]`}>{name}</h1>
-					<a href="#checklist" className="mt-7 inline-flex items-center gap-7 rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition-colors hover:bg-white/85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Browse cards <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className="size-4"><path d="M10 3v14m-5-5 5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg></a>
-				</div>
-				<div className="relative mx-7 mb-7 flex min-h-40 items-center justify-center overflow-hidden sm:mx-10 md:m-6 md:min-h-64 lg:m-8">
-					<div aria-hidden="true" className="absolute size-64 rounded-full border border-[#d8be80]/[0.06] lg:size-80" />
-					<div aria-hidden="true" className="absolute size-48 rounded-full border border-[#d8be80]/[0.06] lg:size-60" />
-					{logo ? <Image src={logo} alt={`${name} logo`} fill preload sizes="(min-width: 768px) 42vw, 85vw" className="object-contain p-4 drop-shadow-[0_12px_24px_#00000040] sm:p-6" /> : <span className="text-white/10 [&>svg]:size-32"><CatalogCategoryIcon category="sets" /></span>}
-				</div>
-			</div>
-			<dl className="relative grid grid-cols-1 gap-6 border-t border-white/[0.07] px-7 py-7 sm:grid-cols-3 sm:px-10 lg:px-12">
-				{facts.map((fact) => <div key={fact.label}><dt className="text-xs text-white/40">{fact.label}</dt><dd className="mt-2 text-xl font-medium tracking-[-0.035em] text-white sm:text-2xl">{fact.value}</dd></div>)}
-			</dl>
-		</header>
-	);
+export function SetHeader({ name, logo, releaseDate, series, language, cardCount }: { name: string; logo?: string; releaseDate?: string | null; series?: string; language?: string; cardCount?: number }) {
+ const date = releaseDate ? new Date(`${releaseDate.replaceAll("/", "-")}T00:00:00Z`) : null;
+ const formattedDate = date && !Number.isNaN(date.getTime()) ? new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }).format(date) : releaseDate;
+ const details = [formattedDate, series, cardCount !== undefined ? `${cardCount} cards` : null, language].filter((value): value is string => Boolean(value));
+ return <div>
+  <div className="relative isolate [&_#set-title]:font-serif">
+   <PageHeader title={name} titleId="set-title" adornment={<FloatingTypeSymbols />} actions={logo ? <div className="relative h-10 w-20 sm:h-14 sm:w-28"><Image src={logo} alt={`${name} logo`} fill preload sizes="112px" className="object-contain" /></div> : undefined} />
+  </div>
+  <div className="mt-9 flex flex-wrap items-center justify-between gap-4 pb-3">
+   {details.length > 0 && <p className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-white/45">{details.map((detail, index) => <span key={detail} className="inline-flex items-center gap-3">{index > 0 && <span aria-hidden="true" className="text-white/20">·</span>}{detail}</span>)}</p>}
+   <div className="ml-auto"><SetCardSearch /></div>
+  </div>
+ </div>;
 }

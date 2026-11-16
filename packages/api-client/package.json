@@ -19,6 +19,7 @@
   "exports": {
     ".": "./src/client.ts",
     "./protocol": "./src/protocol.ts",
+    "./handovers": "./src/handovers.ts",
     "./types": "./src/types.ts"
   }
 }

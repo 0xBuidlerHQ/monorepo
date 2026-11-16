@@ -15,7 +15,7 @@ export interface GradedItem {
 // Presentation sample only: no real slab, certificate, owner, or valuation is asserted.
 export const gradedItems: GradedItem[] = [{
  id: "preview-charizard",
- referenceId: "base1-4",
+ referenceId: "base-set-4",
  name: "Charizard",
  category: "Cards",
  collection: "Pokemon",

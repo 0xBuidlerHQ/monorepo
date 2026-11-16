@@ -1,7 +1,7 @@
 import type {
 	AccountConfig,
 	PasskeyIdentity,
-} from "@0xhq/contracts.trueorigin.com/config";
+} from "@0xhq/trueorigin-sdk/config";
 
 export type AccountSession = {
 	identity: PasskeyIdentity | null;

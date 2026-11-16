@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 
 export function NavigationScroll() {
 	const pathname = usePathname();
@@ -16,16 +16,14 @@ export function NavigationScroll() {
 		return () => window.removeEventListener("popstate", restoreHistory);
 	}, []);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (previousPath.current === pathname) return;
 		previousPath.current = pathname;
 		// Explicit section links retain their destination; query-only filters stay put.
 		if (window.location.hash) return;
-		const frame = requestAnimationFrame(() => {
-			const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-			window.scrollTo({ top: 0, left: 0, behavior: reducedMotion ? "instant" : "smooth" });
-		});
-		return () => cancelAnimationFrame(frame);
+		// Reset before the destination is painted/captured; smooth scrolling here races
+		// the route crossfade and reveals the new page at the old page's scroll offset.
+		window.scrollTo({ top: 0, left: 0, behavior: "instant" });
 	}, [pathname]);
 
 	return null;

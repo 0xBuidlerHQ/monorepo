@@ -18,7 +18,7 @@
       "language": "fr"
     },
     {
-      "id": "base1",
+      "id": "base-set",
       "name": "Set de Base",
       "series": "Base",
       "printedTotal": 102,
@@ -28,9 +28,9 @@
   ],
   "cards": [
     {
-      "id": "base1-1",
+      "id": "base-set-1",
       "name": "Alakazam",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "1",
       "supertype": "Pokémon",
       "subtypes": [
@@ -47,12 +47,12 @@
         65
       ],
       "language": "fr",
-      "sourceId": "base1-1"
+      "sourceId": "base-set-1"
     },
     {
-      "id": "base1-2",
+      "id": "base-set-2",
       "name": "Tortank",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "2",
       "supertype": "Pokémon",
       "subtypes": [
@@ -69,12 +69,12 @@
         9
       ],
       "language": "fr",
-      "sourceId": "base1-2"
+      "sourceId": "base-set-2"
     },
     {
-      "id": "base1-3",
+      "id": "base-set-3",
       "name": "Leveinard",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "3",
       "supertype": "Pokémon",
       "subtypes": [
@@ -91,12 +91,12 @@
         113
       ],
       "language": "fr",
-      "sourceId": "base1-3"
+      "sourceId": "base-set-3"
     },
     {
-      "id": "base1-4",
+      "id": "base-set-4",
       "name": "Dracaufeu",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "4",
       "supertype": "Pokémon",
       "subtypes": [
@@ -113,12 +113,12 @@
         6
       ],
       "language": "fr",
-      "sourceId": "base1-4"
+      "sourceId": "base-set-4"
     },
     {
-      "id": "base1-5",
+      "id": "base-set-5",
       "name": "Mélofée",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "5",
       "supertype": "Pokémon",
       "subtypes": [
@@ -135,12 +135,12 @@
         35
       ],
       "language": "fr",
-      "sourceId": "base1-5"
+      "sourceId": "base-set-5"
     },
     {
-      "id": "base1-6",
+      "id": "base-set-6",
       "name": "Léviator",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "6",
       "supertype": "Pokémon",
       "subtypes": [
@@ -157,12 +157,12 @@
         130
       ],
       "language": "fr",
-      "sourceId": "base1-6"
+      "sourceId": "base-set-6"
     },
     {
-      "id": "base1-7",
+      "id": "base-set-7",
       "name": "Tygnon",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "7",
       "supertype": "Pokémon",
       "subtypes": [
@@ -179,12 +179,12 @@
         107
       ],
       "language": "fr",
-      "sourceId": "base1-7"
+      "sourceId": "base-set-7"
     },
     {
-      "id": "base1-8",
+      "id": "base-set-8",
       "name": "Mackogneur",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "8",
       "supertype": "Pokémon",
       "subtypes": [
@@ -201,12 +201,12 @@
         68
       ],
       "language": "fr",
-      "sourceId": "base1-8"
+      "sourceId": "base-set-8"
     },
     {
-      "id": "base1-9",
+      "id": "base-set-9",
       "name": "Magnéton",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "9",
       "supertype": "Pokémon",
       "subtypes": [
@@ -223,12 +223,12 @@
         82
       ],
       "language": "fr",
-      "sourceId": "base1-9"
+      "sourceId": "base-set-9"
     },
     {
-      "id": "base1-10",
+      "id": "base-set-10",
       "name": "Mewtwo",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "10",
       "supertype": "Pokémon",
       "subtypes": [
@@ -245,12 +245,12 @@
         150
       ],
       "language": "fr",
-      "sourceId": "base1-10"
+      "sourceId": "base-set-10"
     },
     {
-      "id": "base1-11",
+      "id": "base-set-11",
       "name": "Nidoking",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "11",
       "supertype": "Pokémon",
       "subtypes": [
@@ -267,12 +267,12 @@
         34
       ],
       "language": "fr",
-      "sourceId": "base1-11"
+      "sourceId": "base-set-11"
     },
     {
-      "id": "base1-12",
+      "id": "base-set-12",
       "name": "Feunard",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "12",
       "supertype": "Pokémon",
       "subtypes": [
@@ -289,12 +289,12 @@
         38
       ],
       "language": "fr",
-      "sourceId": "base1-12"
+      "sourceId": "base-set-12"
     },
     {
-      "id": "base1-13",
+      "id": "base-set-13",
       "name": "Tartard",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "13",
       "supertype": "Pokémon",
       "subtypes": [
@@ -311,12 +311,12 @@
         62
       ],
       "language": "fr",
-      "sourceId": "base1-13"
+      "sourceId": "base-set-13"
     },
     {
-      "id": "base1-14",
+      "id": "base-set-14",
       "name": "Raichu",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "14",
       "supertype": "Pokémon",
       "subtypes": [
@@ -333,12 +333,12 @@
         26
       ],
       "language": "fr",
-      "sourceId": "base1-14"
+      "sourceId": "base-set-14"
     },
     {
-      "id": "base1-15",
+      "id": "base-set-15",
       "name": "Florizarre",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "15",
       "supertype": "Pokémon",
       "subtypes": [
@@ -355,12 +355,12 @@
         3
       ],
       "language": "fr",
-      "sourceId": "base1-15"
+      "sourceId": "base-set-15"
     },
     {
-      "id": "base1-16",
+      "id": "base-set-16",
       "name": "Électhor",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "16",
       "supertype": "Pokémon",
       "subtypes": [
@@ -377,12 +377,12 @@
         145
       ],
       "language": "fr",
-      "sourceId": "base1-16"
+      "sourceId": "base-set-16"
     },
     {
-      "id": "base1-17",
+      "id": "base-set-17",
       "name": "Dardargnan",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "17",
       "supertype": "Pokémon",
       "subtypes": [
@@ -399,12 +399,12 @@
         15
       ],
       "language": "fr",
-      "sourceId": "base1-17"
+      "sourceId": "base-set-17"
     },
     {
-      "id": "base1-18",
+      "id": "base-set-18",
       "name": "Draco",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "18",
       "supertype": "Pokémon",
       "subtypes": [
@@ -421,12 +421,12 @@
         148
       ],
       "language": "fr",
-      "sourceId": "base1-18"
+      "sourceId": "base-set-18"
     },
     {
-      "id": "base1-19",
+      "id": "base-set-19",
       "name": "Triopikeur",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "19",
       "supertype": "Pokémon",
       "subtypes": [
@@ -443,12 +443,12 @@
         51
       ],
       "language": "fr",
-      "sourceId": "base1-19"
+      "sourceId": "base-set-19"
     },
     {
-      "id": "base1-20",
+      "id": "base-set-20",
       "name": "Élektek",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "20",
       "supertype": "Pokémon",
       "subtypes": [
@@ -465,12 +465,12 @@
         125
       ],
       "language": "fr",
-      "sourceId": "base1-20"
+      "sourceId": "base-set-20"
     },
     {
-      "id": "base1-21",
+      "id": "base-set-21",
       "name": "Électrode",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "21",
       "supertype": "Pokémon",
       "subtypes": [
@@ -487,12 +487,12 @@
         101
       ],
       "language": "fr",
-      "sourceId": "base1-21"
+      "sourceId": "base-set-21"
     },
     {
-      "id": "base1-22",
+      "id": "base-set-22",
       "name": "Roucoups",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "22",
       "supertype": "Pokémon",
       "subtypes": [
@@ -509,12 +509,12 @@
         17
       ],
       "language": "fr",
-      "sourceId": "base1-22"
+      "sourceId": "base-set-22"
     },
     {
-      "id": "base1-23",
+      "id": "base-set-23",
       "name": "Arcanin",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "23",
       "supertype": "Pokémon",
       "subtypes": [
@@ -531,12 +531,12 @@
         59
       ],
       "language": "fr",
-      "sourceId": "base1-23"
+      "sourceId": "base-set-23"
     },
     {
-      "id": "base1-24",
+      "id": "base-set-24",
       "name": "Reptincel",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "24",
       "supertype": "Pokémon",
       "subtypes": [
@@ -553,12 +553,12 @@
         5
       ],
       "language": "fr",
-      "sourceId": "base1-24"
+      "sourceId": "base-set-24"
     },
     {
-      "id": "base1-25",
+      "id": "base-set-25",
       "name": "Lamantine",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "25",
       "supertype": "Pokémon",
       "subtypes": [
@@ -575,12 +575,12 @@
         87
       ],
       "language": "fr",
-      "sourceId": "base1-25"
+      "sourceId": "base-set-25"
     },
     {
-      "id": "base1-26",
+      "id": "base-set-26",
       "name": "Minidraco",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "26",
       "supertype": "Pokémon",
       "subtypes": [
@@ -597,12 +597,12 @@
         147
       ],
       "language": "fr",
-      "sourceId": "base1-26"
+      "sourceId": "base-set-26"
     },
     {
-      "id": "base1-27",
+      "id": "base-set-27",
       "name": "Canarticho",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "27",
       "supertype": "Pokémon",
       "subtypes": [
@@ -619,12 +619,12 @@
         83
       ],
       "language": "fr",
-      "sourceId": "base1-27"
+      "sourceId": "base-set-27"
     },
     {
-      "id": "base1-28",
+      "id": "base-set-28",
       "name": "Caninos",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "28",
       "supertype": "Pokémon",
       "subtypes": [
@@ -641,12 +641,12 @@
         58
       ],
       "language": "fr",
-      "sourceId": "base1-28"
+      "sourceId": "base-set-28"
     },
     {
-      "id": "base1-29",
+      "id": "base-set-29",
       "name": "Spectrum",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "29",
       "supertype": "Pokémon",
       "subtypes": [
@@ -663,12 +663,12 @@
         93
       ],
       "language": "fr",
-      "sourceId": "base1-29"
+      "sourceId": "base-set-29"
     },
     {
-      "id": "base1-30",
+      "id": "base-set-30",
       "name": "Herbizarre",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "30",
       "supertype": "Pokémon",
       "subtypes": [
@@ -685,12 +685,12 @@
         2
       ],
       "language": "fr",
-      "sourceId": "base1-30"
+      "sourceId": "base-set-30"
     },
     {
-      "id": "base1-31",
+      "id": "base-set-31",
       "name": "Lippoutou",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "31",
       "supertype": "Pokémon",
       "subtypes": [
@@ -707,12 +707,12 @@
         124
       ],
       "language": "fr",
-      "sourceId": "base1-31"
+      "sourceId": "base-set-31"
     },
     {
-      "id": "base1-32",
+      "id": "base-set-32",
       "name": "Kadabra",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "32",
       "supertype": "Pokémon",
       "subtypes": [
@@ -729,12 +729,12 @@
         64
       ],
       "language": "fr",
-      "sourceId": "base1-32"
+      "sourceId": "base-set-32"
     },
     {
-      "id": "base1-33",
+      "id": "base-set-33",
       "name": "Coconfort",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "33",
       "supertype": "Pokémon",
       "subtypes": [
@@ -751,12 +751,12 @@
         14
       ],
       "language": "fr",
-      "sourceId": "base1-33"
+      "sourceId": "base-set-33"
     },
     {
-      "id": "base1-34",
+      "id": "base-set-34",
       "name": "Machopeur",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "34",
       "supertype": "Pokémon",
       "subtypes": [
@@ -773,12 +773,12 @@
         67
       ],
       "language": "fr",
-      "sourceId": "base1-34"
+      "sourceId": "base-set-34"
     },
     {
-      "id": "base1-35",
+      "id": "base-set-35",
       "name": "Magicarpe",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "35",
       "supertype": "Pokémon",
       "subtypes": [
@@ -795,12 +795,12 @@
         129
       ],
       "language": "fr",
-      "sourceId": "base1-35"
+      "sourceId": "base-set-35"
     },
     {
-      "id": "base1-36",
+      "id": "base-set-36",
       "name": "Magmar",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "36",
       "supertype": "Pokémon",
       "subtypes": [
@@ -817,12 +817,12 @@
         126
       ],
       "language": "fr",
-      "sourceId": "base1-36"
+      "sourceId": "base-set-36"
     },
     {
-      "id": "base1-37",
+      "id": "base-set-37",
       "name": "Nidorino",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "37",
       "supertype": "Pokémon",
       "subtypes": [
@@ -839,12 +839,12 @@
         33
       ],
       "language": "fr",
-      "sourceId": "base1-37"
+      "sourceId": "base-set-37"
     },
     {
-      "id": "base1-38",
+      "id": "base-set-38",
       "name": "Têtarte",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "38",
       "supertype": "Pokémon",
       "subtypes": [
@@ -861,12 +861,12 @@
         61
       ],
       "language": "fr",
-      "sourceId": "base1-38"
+      "sourceId": "base-set-38"
     },
     {
-      "id": "base1-39",
+      "id": "base-set-39",
       "name": "Porygon",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "39",
       "supertype": "Pokémon",
       "subtypes": [
@@ -883,12 +883,12 @@
         137
       ],
       "language": "fr",
-      "sourceId": "base1-39"
+      "sourceId": "base-set-39"
     },
     {
-      "id": "base1-40",
+      "id": "base-set-40",
       "name": "Rattatac",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "40",
       "supertype": "Pokémon",
       "subtypes": [
@@ -905,12 +905,12 @@
         20
       ],
       "language": "fr",
-      "sourceId": "base1-40"
+      "sourceId": "base-set-40"
     },
     {
-      "id": "base1-41",
+      "id": "base-set-41",
       "name": "Otaria",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "41",
       "supertype": "Pokémon",
       "subtypes": [
@@ -927,12 +927,12 @@
         86
       ],
       "language": "fr",
-      "sourceId": "base1-41"
+      "sourceId": "base-set-41"
     },
     {
-      "id": "base1-42",
+      "id": "base-set-42",
       "name": "Carabaffe",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "42",
       "supertype": "Pokémon",
       "subtypes": [
@@ -949,12 +949,12 @@
         8
       ],
       "language": "fr",
-      "sourceId": "base1-42"
+      "sourceId": "base-set-42"
     },
     {
-      "id": "base1-43",
+      "id": "base-set-43",
       "name": "Abra",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "43",
       "supertype": "Pokémon",
       "subtypes": [
@@ -971,12 +971,12 @@
         63
       ],
       "language": "fr",
-      "sourceId": "base1-43"
+      "sourceId": "base-set-43"
     },
     {
-      "id": "base1-44",
+      "id": "base-set-44",
       "name": "Bulbizarre",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "44",
       "supertype": "Pokémon",
       "subtypes": [
@@ -993,12 +993,12 @@
         1
       ],
       "language": "fr",
-      "sourceId": "base1-44"
+      "sourceId": "base-set-44"
     },
     {
-      "id": "base1-45",
+      "id": "base-set-45",
       "name": "Chenipan",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "45",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1015,12 +1015,12 @@
         10
       ],
       "language": "fr",
-      "sourceId": "base1-45"
+      "sourceId": "base-set-45"
     },
     {
-      "id": "base1-46",
+      "id": "base-set-46",
       "name": "Salamèche",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "46",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1037,12 +1037,12 @@
         4
       ],
       "language": "fr",
-      "sourceId": "base1-46"
+      "sourceId": "base-set-46"
     },
     {
-      "id": "base1-47",
+      "id": "base-set-47",
       "name": "Taupiqueur",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "47",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1059,12 +1059,12 @@
         50
       ],
       "language": "fr",
-      "sourceId": "base1-47"
+      "sourceId": "base-set-47"
     },
     {
-      "id": "base1-48",
+      "id": "base-set-48",
       "name": "Doduo",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "48",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1081,12 +1081,12 @@
         84
       ],
       "language": "fr",
-      "sourceId": "base1-48"
+      "sourceId": "base-set-48"
     },
     {
-      "id": "base1-49",
+      "id": "base-set-49",
       "name": "Soporifik",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "49",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1103,12 +1103,12 @@
         96
       ],
       "language": "fr",
-      "sourceId": "base1-49"
+      "sourceId": "base-set-49"
     },
     {
-      "id": "base1-50",
+      "id": "base-set-50",
       "name": "Fantominus",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "50",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1125,12 +1125,12 @@
         92
       ],
       "language": "fr",
-      "sourceId": "base1-50"
+      "sourceId": "base-set-50"
     },
     {
-      "id": "base1-51",
+      "id": "base-set-51",
       "name": "Smogo",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "51",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1147,12 +1147,12 @@
         109
       ],
       "language": "fr",
-      "sourceId": "base1-51"
+      "sourceId": "base-set-51"
     },
     {
-      "id": "base1-52",
+      "id": "base-set-52",
       "name": "Machoc",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "52",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1169,12 +1169,12 @@
         66
       ],
       "language": "fr",
-      "sourceId": "base1-52"
+      "sourceId": "base-set-52"
     },
     {
-      "id": "base1-53",
+      "id": "base-set-53",
       "name": "Magnéti",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "53",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1191,12 +1191,12 @@
         81
       ],
       "language": "fr",
-      "sourceId": "base1-53"
+      "sourceId": "base-set-53"
     },
     {
-      "id": "base1-54",
+      "id": "base-set-54",
       "name": "Chrysacier",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "54",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1213,12 +1213,12 @@
         11
       ],
       "language": "fr",
-      "sourceId": "base1-54"
+      "sourceId": "base-set-54"
     },
     {
-      "id": "base1-55",
+      "id": "base-set-55",
       "name": "Nidoran ♂",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "55",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1235,12 +1235,12 @@
         32
       ],
       "language": "fr",
-      "sourceId": "base1-55"
+      "sourceId": "base-set-55"
     },
     {
-      "id": "base1-56",
+      "id": "base-set-56",
       "name": "Onix",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "56",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1257,12 +1257,12 @@
         95
       ],
       "language": "fr",
-      "sourceId": "base1-56"
+      "sourceId": "base-set-56"
     },
     {
-      "id": "base1-57",
+      "id": "base-set-57",
       "name": "Roucool",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "57",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1279,12 +1279,12 @@
         16
       ],
       "language": "fr",
-      "sourceId": "base1-57"
+      "sourceId": "base-set-57"
     },
     {
-      "id": "base1-58",
+      "id": "base-set-58",
       "name": "Pikachu",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "58",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1301,12 +1301,12 @@
         25
       ],
       "language": "fr",
-      "sourceId": "base1-58"
+      "sourceId": "base-set-58"
     },
     {
-      "id": "base1-59",
+      "id": "base-set-59",
       "name": "Ptitard",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "59",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1323,12 +1323,12 @@
         60
       ],
       "language": "fr",
-      "sourceId": "base1-59"
+      "sourceId": "base-set-59"
     },
     {
-      "id": "base1-60",
+      "id": "base-set-60",
       "name": "Ponyta",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "60",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1345,12 +1345,12 @@
         77
       ],
       "language": "fr",
-      "sourceId": "base1-60"
+      "sourceId": "base-set-60"
     },
     {
-      "id": "base1-61",
+      "id": "base-set-61",
       "name": "Rattata",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "61",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1367,12 +1367,12 @@
         19
       ],
       "language": "fr",
-      "sourceId": "base1-61"
+      "sourceId": "base-set-61"
     },
     {
-      "id": "base1-62",
+      "id": "base-set-62",
       "name": "Sabelette",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "62",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1389,12 +1389,12 @@
         27
       ],
       "language": "fr",
-      "sourceId": "base1-62"
+      "sourceId": "base-set-62"
     },
     {
-      "id": "base1-63",
+      "id": "base-set-63",
       "name": "Carapuce",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "63",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1411,12 +1411,12 @@
         7
       ],
       "language": "fr",
-      "sourceId": "base1-63"
+      "sourceId": "base-set-63"
     },
     {
-      "id": "base1-64",
+      "id": "base-set-64",
       "name": "Staross",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "64",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1433,12 +1433,12 @@
         121
       ],
       "language": "fr",
-      "sourceId": "base1-64"
+      "sourceId": "base-set-64"
     },
     {
-      "id": "base1-65",
+      "id": "base-set-65",
       "name": "Stari",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "65",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1455,12 +1455,12 @@
         120
       ],
       "language": "fr",
-      "sourceId": "base1-65"
+      "sourceId": "base-set-65"
     },
     {
-      "id": "base1-66",
+      "id": "base-set-66",
       "name": "Saquedeneu",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "66",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1477,12 +1477,12 @@
         114
       ],
       "language": "fr",
-      "sourceId": "base1-66"
+      "sourceId": "base-set-66"
     },
     {
-      "id": "base1-67",
+      "id": "base-set-67",
       "name": "Voltorbe",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "67",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1499,12 +1499,12 @@
         100
       ],
       "language": "fr",
-      "sourceId": "base1-67"
+      "sourceId": "base-set-67"
     },
     {
-      "id": "base1-68",
+      "id": "base-set-68",
       "name": "Goupix",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "68",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1521,12 +1521,12 @@
         37
       ],
       "language": "fr",
-      "sourceId": "base1-68"
+      "sourceId": "base-set-68"
     },
     {
-      "id": "base1-69",
+      "id": "base-set-69",
       "name": "Aspicot",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "69",
       "supertype": "Pokémon",
       "subtypes": [
@@ -1543,12 +1543,12 @@
         13
       ],
       "language": "fr",
-      "sourceId": "base1-69"
+      "sourceId": "base-set-69"
     },
     {
-      "id": "base1-70",
+      "id": "base-set-70",
       "name": "Peluche Mélofée",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "70",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1559,12 +1559,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-70"
+      "sourceId": "base-set-70"
     },
     {
-      "id": "base1-71",
+      "id": "base-set-71",
       "name": "Recherche informatique",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "71",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1575,12 +1575,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-71"
+      "sourceId": "base-set-71"
     },
     {
-      "id": "base1-72",
+      "id": "base-set-72",
       "name": "Vaporisateur rétrograde",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "72",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1591,12 +1591,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-72"
+      "sourceId": "base-set-72"
     },
     {
-      "id": "base1-73",
+      "id": "base-set-73",
       "name": "Faux Professeur Chen",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "73",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1607,12 +1607,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-73"
+      "sourceId": "base-set-73"
     },
     {
-      "id": "base1-74",
+      "id": "base-set-74",
       "name": "Récupérateur",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "74",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1623,12 +1623,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-74"
+      "sourceId": "base-set-74"
     },
     {
-      "id": "base1-75",
+      "id": "base-set-75",
       "name": "Fillette",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "75",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1639,12 +1639,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-75"
+      "sourceId": "base-set-75"
     },
     {
-      "id": "base1-76",
+      "id": "base-set-76",
       "name": "Éleveur de Pokémon",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "76",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1655,12 +1655,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-76"
+      "sourceId": "base-set-76"
     },
     {
-      "id": "base1-77",
+      "id": "base-set-77",
       "name": "Marchand de Pokémon",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "77",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1671,12 +1671,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-77"
+      "sourceId": "base-set-77"
     },
     {
-      "id": "base1-78",
+      "id": "base-set-78",
       "name": "Rappel",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "78",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1687,12 +1687,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-78"
+      "sourceId": "base-set-78"
     },
     {
-      "id": "base1-79",
+      "id": "base-set-79",
       "name": "Double Suppression d'Énergie",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "79",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1703,12 +1703,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-79"
+      "sourceId": "base-set-79"
     },
     {
-      "id": "base1-80",
+      "id": "base-set-80",
       "name": "Défenseur",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "80",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1719,12 +1719,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-80"
+      "sourceId": "base-set-80"
     },
     {
-      "id": "base1-81",
+      "id": "base-set-81",
       "name": "Sauvegarde d'Énergie",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "81",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1735,12 +1735,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-81"
+      "sourceId": "base-set-81"
     },
     {
-      "id": "base1-82",
+      "id": "base-set-82",
       "name": "Guérison Totale",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "82",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1751,12 +1751,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-82"
+      "sourceId": "base-set-82"
     },
     {
-      "id": "base1-83",
+      "id": "base-set-83",
       "name": "Entretien",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "83",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1767,12 +1767,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-83"
+      "sourceId": "base-set-83"
     },
     {
-      "id": "base1-84",
+      "id": "base-set-84",
       "name": "PlusPower",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "84",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1783,12 +1783,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-84"
+      "sourceId": "base-set-84"
     },
     {
-      "id": "base1-85",
+      "id": "base-set-85",
       "name": "Centre Pokémon",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "85",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1799,12 +1799,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-85"
+      "sourceId": "base-set-85"
     },
     {
-      "id": "base1-86",
+      "id": "base-set-86",
       "name": "Flûte Pokémon",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "86",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1815,12 +1815,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-86"
+      "sourceId": "base-set-86"
     },
     {
-      "id": "base1-87",
+      "id": "base-set-87",
       "name": "Pokédex",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "87",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1831,12 +1831,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-87"
+      "sourceId": "base-set-87"
     },
     {
-      "id": "base1-88",
+      "id": "base-set-88",
       "name": "Professeur Chen",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "88",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1847,12 +1847,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-88"
+      "sourceId": "base-set-88"
     },
     {
-      "id": "base1-89",
+      "id": "base-set-89",
       "name": "Réanimation",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "89",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1863,12 +1863,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-89"
+      "sourceId": "base-set-89"
     },
     {
-      "id": "base1-90",
+      "id": "base-set-90",
       "name": "Super Potion",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "90",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1879,12 +1879,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-90"
+      "sourceId": "base-set-90"
     },
     {
-      "id": "base1-91",
+      "id": "base-set-91",
       "name": "Léo",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "91",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1895,12 +1895,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-91"
+      "sourceId": "base-set-91"
     },
     {
-      "id": "base1-92",
+      "id": "base-set-92",
       "name": "Suppression d'Énergie",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "92",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1911,12 +1911,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-92"
+      "sourceId": "base-set-92"
     },
     {
-      "id": "base1-93",
+      "id": "base-set-93",
       "name": "Rafale de vent",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "93",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1927,12 +1927,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-93"
+      "sourceId": "base-set-93"
     },
     {
-      "id": "base1-94",
+      "id": "base-set-94",
       "name": "Potion",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "94",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1943,12 +1943,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-94"
+      "sourceId": "base-set-94"
     },
     {
-      "id": "base1-95",
+      "id": "base-set-95",
       "name": "Transfert",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "95",
       "supertype": "Dresseur",
       "subtypes": [],
@@ -1959,12 +1959,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-95"
+      "sourceId": "base-set-95"
     },
     {
-      "id": "base1-96",
+      "id": "base-set-96",
       "name": "Double Énergie Incolore",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "96",
       "supertype": "Énergie",
       "subtypes": [
@@ -1977,12 +1977,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-96"
+      "sourceId": "base-set-96"
     },
     {
-      "id": "base1-97",
+      "id": "base-set-97",
       "name": "Énergie Combat",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "97",
       "supertype": "Énergie",
       "subtypes": [
@@ -1996,12 +1996,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-97"
+      "sourceId": "base-set-97"
     },
     {
-      "id": "base1-98",
+      "id": "base-set-98",
       "name": "Énergie Feu",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "98",
       "supertype": "Énergie",
       "subtypes": [
@@ -2015,12 +2015,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-98"
+      "sourceId": "base-set-98"
     },
     {
-      "id": "base1-99",
+      "id": "base-set-99",
       "name": "Énergie Plante",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "99",
       "supertype": "Énergie",
       "subtypes": [
@@ -2034,12 +2034,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-99"
+      "sourceId": "base-set-99"
     },
     {
-      "id": "base1-100",
+      "id": "base-set-100",
       "name": "Énergie Électrique",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "100",
       "supertype": "Énergie",
       "subtypes": [
@@ -2053,12 +2053,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-100"
+      "sourceId": "base-set-100"
     },
     {
-      "id": "base1-101",
+      "id": "base-set-101",
       "name": "Énergie Psy",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "101",
       "supertype": "Énergie",
       "subtypes": [
@@ -2072,12 +2072,12 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-101"
+      "sourceId": "base-set-101"
     },
     {
-      "id": "base1-102",
+      "id": "base-set-102",
       "name": "Énergie Eau",
-      "setId": "base1",
+      "setId": "base-set",
       "number": "102",
       "supertype": "Énergie",
       "subtypes": [
@@ -2091,7 +2091,7 @@
       "evolvesFrom": null,
       "pokemonIds": [],
       "language": "fr",
-      "sourceId": "base1-102"
+      "sourceId": "base-set-102"
     },
     {
       "id": "me55-1",

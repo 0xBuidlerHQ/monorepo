@@ -1,5 +1,5 @@
 import "server-only";
-import { passkeyAccountAddress } from "@0xhq/contracts.trueorigin.com/rpc";
+import { passkeyAccountAddress } from "@0xhq/trueorigin-sdk/rpc";
 import { createHash } from "node:crypto";
 import { apiJson, apiRequest } from "@0xhq/api-client";
 import type { Submission } from "@0xhq/api-client/types";
@@ -16,4 +16,9 @@ export async function mySubmissionPhoto(id: string, side: string) {
 
 export async function submissionWalletAddress() {
 	return passkeyAccountAddress(await requireAccountIdentity());
+}
+
+export async function myPassports() {
+	const [subject, wallet] = await Promise.all([submissionIdentity(), submissionWalletAddress()]);
+	return apiJson<import("@0xhq/api-client/types").PublicPassport[]>("customer", subject, `/v1/passports?wallet=${encodeURIComponent(wallet)}`);
 }

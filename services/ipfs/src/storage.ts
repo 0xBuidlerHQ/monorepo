@@ -1,4 +1,6 @@
 import type { CID } from "multiformats/cid";
+import { car } from "@helia/car";
+import { CarReader } from "@ipld/car";
 import { mkdir } from "node:fs/promises";
 import { join } from "node:path";
 import { createHeliaLight } from "helia";
@@ -15,8 +17,20 @@ export async function createStorage(directory: string) {
 	const helia = createHeliaLight({ blockstore, datastore, blockBrokers: [], routers: [] });
 	await helia.start();
 	const files = unixfs(helia);
+	const archives = car(helia);
 	return {
 		files,
+		archives,
+		async restore(bytes: Uint8Array) {
+			const reader = await CarReader.fromBytes(bytes);
+			await archives.import(reader);
+			const roots = await reader.getRoots();
+			for (const root of roots) {
+				try { for await (const _cid of helia.pins.add(root)) { /* Pin restored blocks. */ } }
+				catch (error) { if (!(error instanceof Error) || error.name !== "AlreadyPinnedError") throw error; }
+			}
+			return roots;
+		},
 		async add(name: string, content: Uint8Array) {
 			let root: CID | undefined;
 			for await (const entry of files.addAll([{ path: name, content }], { wrapWithDirectory: true, cidVersion: 1, rawLeaves: true })) {

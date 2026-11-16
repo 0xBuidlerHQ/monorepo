@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 const icons: Record<string, ReactNode> = {
+ Feed: <><path d="M4 6h16M4 12h12M4 18h8" /><circle cx="19" cy="18" r="2" fill="currentColor" fillOpacity="0.12" /></>,
  Submit: <><path d="M12 16V3m-5 5 5-5 5 5M4 14v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5" /></>,
  Registry: <><rect x="5" y="3" width="15" height="18" rx="2" fill="currentColor" fillOpacity="0.06" /><path d="M5 7H3m2 5H3m2 5H3M9 8h7m-7 4h7m-7 4h4" /></>,
  Home: <><path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" fill="currentColor" fillOpacity="0.06" /><path d="M9 21v-7h6v7" /></>,

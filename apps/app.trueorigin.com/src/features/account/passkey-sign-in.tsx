@@ -25,7 +25,7 @@ export function PasskeySignIn({ intent = "account" }: { intent?: "account" | "su
 		} catch (cause) { setError(cause instanceof Error && cause.name !== "NotAllowedError" ? cause.message : "Sign-in was cancelled. Try again when you’re ready."); }
 		finally { setPending(false); }
 	}
-	return <div className={intent === "submission" ? "mt-10 max-w-xl rounded-[28px] bg-[#1c1c1c] p-7 sm:p-9" : "flex flex-1 flex-col pb-2 pt-8"}>
+	return <div className={intent === "submission" ? "max-w-xl rounded-[28px] bg-[#1c1c1c] p-7 sm:p-9" : "flex flex-1 flex-col pb-2 pt-8"}>
 		<div className={intent === "submission" ? "mb-8" : "flex flex-1 flex-col items-center justify-center pb-12 pt-6 text-center"}>
 			<div className="mb-7 grid size-20 place-items-center rounded-full bg-white/[0.035] text-white"><TrueOriginsMark className="h-10 w-9" /></div>
 			<h2 className="text-[34px] font-medium leading-[1.12] tracking-[-0.05em]">{intent === "submission" ? "Before you submit." : <>Welcome to<br />TrueOrigin.</>}</h2>

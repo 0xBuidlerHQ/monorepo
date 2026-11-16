@@ -11,7 +11,13 @@
       "passThroughEnv": [
         "IPFS_*",
         "API_*",
-        "ADMIN_ORIGIN"
+        "ADMIN_ORIGIN",
+        "PASSPORT_*",
+        "PONDER_*",
+        "DATABASE_URL",
+        "DATABASE_SCHEMA",
+        "PASSKEY_*",
+        "TRUEORIGIN_*"
       ]
     },
     "build": {
@@ -42,7 +48,11 @@
       "passThroughEnv": [
         "IPFS_*",
         "API_*",
-        "ADMIN_ORIGIN"
+        "ADMIN_ORIGIN",
+        "PONDER_*",
+        "DATABASE_URL",
+        "DATABASE_SCHEMA",
+        "PASSPORT_*"
       ]
     },
     "lint": {

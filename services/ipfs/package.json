@@ -8,7 +8,8 @@
     "start": "node src/index.ts",
     "lint": "biome lint .",
     "typecheck": "tsc --noEmit",
-    "test": "node --test src/*.test.ts"
+    "test": "node --test src/*.test.ts",
+    "restore": "node src/restore.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "2.6.4",
@@ -16,7 +17,9 @@
     "typescript": "7.0.2"
   },
   "dependencies": {
+    "@helia/car": "^6.0.9",
     "@helia/unixfs": "^8.0.9",
+    "@ipld/car": "^5.4.7",
     "blockstore-fs": "^4.0.1",
     "datastore-fs": "^12.0.1",
     "helia": "^7.1.16",

@@ -5,7 +5,6 @@ import { ConnectAccount } from "@/features/account/connect-account";
 import Link from "next/link";
 import { OriginLogo } from "@/components/origin-logo";
 import { Sidebar } from "@/features/navigation/sidebar";
-import { ResearchPanel } from "@/features/navigation/research-panel";
 import { SettingsDrawer } from "@/features/settings/settings-drawer";
 
 export function AppShell({ children }: { children: ReactNode }) {
@@ -17,7 +16,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 						<OriginLogo className="size-[calc(var(--cell)*0.5)]" />
 					</Link>
 					<div className="flex justify-end bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:var(--cell)_100%]">
-						<ResearchPanel />
+						
 						<ConnectAccount />
 					</div>
 					<SettingsDrawer />

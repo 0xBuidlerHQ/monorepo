@@ -1,0 +1,4 @@
+Pokémon TCG energy icons downloaded from:
+https://github.com/Vociferix/ptcgp-images/tree/master/elements/icons
+Original game artwork © The Pokémon Company, DeNA Co., Ltd., and Creatures Inc.
+See the source repository for attribution and license information.

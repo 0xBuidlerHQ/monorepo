@@ -1,6 +1,6 @@
 import "server-only";
 
-import type { PasskeyIdentity } from "@0xhq/contracts.trueorigin.com/config";
+import type { PasskeyIdentity } from "@0xhq/trueorigin-sdk/config";
 import { cookies, headers } from "next/headers";
 import { connection } from "next/server";
 import {

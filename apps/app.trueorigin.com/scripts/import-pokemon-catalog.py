@@ -14,14 +14,17 @@ with tarfile.open(sys.argv[1]) as archive:
     for entry in sets:
         if entry['id'] == 'base1':
             entry['name'] = 'Base Set'
+            entry['id'] = 'base-set'
     cards = []
     for member in members:
         if '/cards/en/' not in member.name or not member.name.endswith('.json') or '/v1/' in member.name:
             continue
         set_id = Path(member.name).stem
+        if set_id == 'base1':
+            set_id = 'base-set'
         for card in json.load(archive.extractfile(member)):
             cards.append({
-                'id': card['id'], 'name': card['name'], 'setId': set_id,
+                'id': card['id'].replace('base1-', 'base-set-', 1), 'name': card['name'], 'setId': set_id,
                 'number': card['number'], 'supertype': card['supertype'],
                 'subtypes': card.get('subtypes', []), 'types': card.get('types', []),
                 'hp': card.get('hp'), 'rarity': card.get('rarity'),

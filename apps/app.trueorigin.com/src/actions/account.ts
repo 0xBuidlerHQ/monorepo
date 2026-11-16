@@ -3,7 +3,7 @@
 import {
 	browserAccountConfig,
 	fundLocalAccount,
-} from "@0xhq/contracts.trueorigin.com/rpc";
+} from "@0xhq/trueorigin-sdk/rpc";
 import { AccountError } from "@/server/auth/errors";
 import {
 	authenticationOptions,
