@@ -8,7 +8,8 @@ import { formatCardNumber } from "@/features/reference/card-number";
 
 import Image from "next/image";
 import { LayoutGroup, motion, useReducedMotion } from "motion/react";
-import { addTransitionType, startTransition, useId } from "react";
+import { addTransitionType, startTransition, useId, Suspense } from "react";
+import { CatalogSkeleton } from "@/features/shell/loading-skeleton";
 import { FilterPanel } from "@/components/ui/filter-panel";
 import { useSearchParams } from "next/navigation";
 import { CatalogCategoryIcon } from "@/components/icons/catalog-category-icon";
@@ -43,12 +44,20 @@ function CardTypeIcon({ type }: { type: string }) {
 }
 
 
-export function SetChecklist({ set, cards: allCards, sections }: {
-	set: ReferenceSet;
-	cards: ReferenceCard[];
-	sections?: { id: string; name: string; setId: string; printedTotal: number | null }[];
-}) {
-	const params = useSearchParams();
+type ChecklistProps = {
+ set: ReferenceSet;
+ cards: ReferenceCard[];
+ sections?: { id: string; name: string; setId: string; printedTotal: number | null }[];
+};
+const emptyParams = new URLSearchParams();
+export function SetChecklist(props: ChecklistProps) {
+ return <Suspense fallback={<ChecklistView {...props} params={emptyParams} loading />}><QueryChecklist {...props} /></Suspense>;
+}
+function QueryChecklist(props: ChecklistProps) {
+ const params = useSearchParams();
+ return <ChecklistView {...props} params={params} />;
+}
+function ChecklistView({ set, cards: allCards, sections, params, loading = false }: ChecklistProps & { params: Pick<URLSearchParams,"get">; loading?: boolean }) {
 	const language = catalogLanguage(set.language);
 	const reducedMotion = useReducedMotion();
 	const sectionGroup = useId();
@@ -89,7 +98,7 @@ export function SetChecklist({ set, cards: allCards, sections }: {
 	const filteredView = !!query || Object.values(filters).some(Boolean);
 	return (
 			<section id="checklist" aria-label="Set cards" className="mt-3 scroll-mt-[calc(var(--app-header-height)+1rem)]">
-				<FilterPanel resultCount={filtered.length} canReset={filteredView} onReset={clearFilters}>
+				<FilterPanel resultCount={loading ? undefined : filtered.length} canReset={filteredView} onReset={clearFilters}>
 					{sections && <LayoutGroup id={sectionGroup}><nav aria-label="Set checklists" className="mt-5 flex flex-wrap gap-2">{sections.map((section) => <motion.button key={section.id} whileTap={reducedMotion ? undefined : { scale: 0.97 }} type="button" aria-pressed={section.id === activeSection?.id} onClick={() => updateFilter("section", section.id)} className={`relative isolate flex cursor-pointer items-center gap-3 rounded-full px-4 py-2.5 text-xs transition-colors ${section.id === activeSection?.id ? "text-black" : "text-white/55 hover:text-white"}`}>{section.id === activeSection?.id && <motion.span layoutId="checklist-section" className="absolute inset-0 -z-10 rounded-full bg-white" transition={reducedMotion ? { duration: 0 } : { type: "spring", stiffness: 380, damping: 32 }} />}{section.name}<span className="font-mono text-[10px] opacity-60">{allCards.filter((card) => card.setId === section.setId).length}</span></motion.button>)}</nav></LayoutGroup>}
 					<form onSubmit={(event) => event.preventDefault()} className="py-1">
 						<div className=" flex flex-wrap items-center gap-x-8 gap-y-5">
@@ -112,7 +121,7 @@ export function SetChecklist({ set, cards: allCards, sections }: {
 					</form>
 				</FilterPanel>
 				{printedTotal && sectionCards.length > printedTotal ? <p className="mt-5 text-xs text-white/40">Includes cards beyond the printed set number</p> : null}
-				{filtered.length > 0 ? <ul className="relative mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">{filtered.map((card) => <li key={card.id}>
+				{loading ? <div className="mt-5"><CatalogSkeleton variant="checklist" count={Math.min(allCards.length, 10)} /></div> : filtered.length > 0 ? <ul className="relative mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">{filtered.map((card) => <li key={card.id}>
 					<ExploreCard inlineMetadata name={card.name} brand={`#${formatCardNumber(card, printedTotal)}`} brandMono href={catalogHref(cardPageHref(card), language)} alt={card.name} imageLayout="portrait" image={getCardArtwork(card.id, language)?.src} placeholder={<span className="text-white/[0.06] [&>svg]:size-16"><CatalogCategoryIcon category="cards" /></span>} nameAdornment={card.supertype === "Pokémon" && card.types.map(type => <span key={type} title={type} className="inline-flex"><Image src={`/images/tcg-types/${type.toLowerCase()}.png`} alt={`${type} type`} width={18} height={18} className="size-[18px] object-contain" /></span>)} description={<span className="inline-flex items-center gap-2">{card.rarity ? <span title={card.rarity} className="inline-flex items-center [&>svg]:size-[18px]"><RaritySymbol rarity={card.rarity} /><span className="sr-only">{card.rarity}</span></span> : null}</span>} sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw" />
 				</li>)}</ul> : <div className="mt-5 rounded-3xl bg-white/[0.025] px-6 py-16 text-center"><h3 className="text-xl">No matching cards</h3><p className="mt-3 text-sm text-white/45">Try changing your search or filters.</p><button type="button" onClick={clearFilters} className="mt-5 inline-block cursor-pointer text-sm text-white/70 hover:text-white">Reset filters ↗</button></div>}
 			</section>

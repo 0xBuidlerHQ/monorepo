@@ -1,7 +1,7 @@
 import { LoadingBoundary } from "@/features/shell/loading-boundary";
 import { catalogHref, catalogLanguage } from "@/features/reference/catalog-language";
 import { SetHeader } from "@/features/reference/set-header";
-import { CatalogSkeleton, PageSkeleton } from "@/features/shell/loading-skeleton";
+import { PageSkeleton } from "@/features/shell/loading-skeleton";
 import Link from "next/link";
 import { setArtwork } from "@/features/reference/set-artwork";
 import { notFound, redirect } from "next/navigation";
@@ -11,8 +11,8 @@ import { ExploreCard } from "@/features/reference/explore-card";
 import { getCardArtwork } from "@/features/reference/card-artwork";
 import { SetChecklist } from "@/features/pokemon/set-checklist";
 
-export async function generateMetadata({ params, searchParams }: Props) {
-	const set = findReferenceSet((await params).id, catalogLanguage((await searchParams).lang));
+export async function generateMetadata({ params }: Props) {
+	const set = findReferenceSet((await params).id, catalogLanguage(undefined));
 	return { title: (await params).id === "misc" ? "Misc · Pokémon Cards" : set ? `${set.name} · Pokémon` : "Collection not found" };
 }
 export function generateStaticParams() { return [{ id: "base-set" }]; }
@@ -27,7 +27,7 @@ async function SetProfile(props: Props) {
 		query.set("section", "classic");
 		redirect(`/explore/catalogue/collections/me55?${query.toString()}`);
 	}
-	const language = catalogLanguage((await props.searchParams).lang);
+	const language = catalogLanguage(undefined);
     if (id === "misc") {
         const sets = getReferenceSets(language);
         const cards = searchReferenceCards("", { language }).filter(card => cardCollectionId(card.setId, sets) === "misc");
@@ -47,9 +47,7 @@ async function SetProfile(props: Props) {
 		<article aria-labelledby="set-title">
 			<SetHeader name={set.name} logo={setArtwork[set.id]?.src} releaseDate={set.releaseDate} series={set.series} language={language === "fr" ? "Français" : "English"} cardCount={allCards.length} />
 
-			<LoadingBoundary fallback={<CatalogSkeleton variant="checklist" />}>
 				<SetChecklist set={set} cards={allCards} sections={sections} />
-			</LoadingBoundary>
 			<footer className="mt-10 flex flex-wrap items-center justify-between gap-5 border-t border-white/10 pt-6"><Link href={catalogHref("/explore/pokemon", language)} className="text-sm text-white/55 hover:text-white">← Browse card collections</Link><a href={language === "fr" ? "https://tcgdex.dev/" : "https://github.com/PokemonTCG/pokemon-tcg-data"} target="_blank" rel="noreferrer" className="text-[10px] text-white/30 hover:text-white">Reference data: {language === "fr" ? "TCGdex" : "Pokémon TCG Data"} ↗</a></footer>
 		</article>
 	);

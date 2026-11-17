@@ -17,7 +17,7 @@ async function FeedContent() {
 export default function FeedPage() {
 	return (
 		<PageLayout title="Feed">
-			<Suspense fallback={<FeedSkeleton />}>
+			<Suspense fallback={<FeedSkeleton toolbar />}>
 				<FeedContent />
 			</Suspense>
 		</PageLayout>

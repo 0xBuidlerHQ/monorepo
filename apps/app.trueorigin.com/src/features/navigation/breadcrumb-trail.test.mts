@@ -41,7 +41,7 @@ test("query-based categories and subcategories update without adding search/filt
 	assert.deepEqual(labels("/explore/pokemon", "category=sealed"), [
 		"Explore",
 		"Pokémon",
-		"Sealed",
+		"Catalogue",
 	]);
 	assert.deepEqual(labels("/explore/pokemon", "subcategory=promos"), [
 		"Explore",
@@ -99,13 +99,12 @@ test("main pages and unresolved records retain valid breadcrumbs", () => {
 		["/feed", "Feed"],
 		["/registry", "Registry"],
 		["/collection", "Collection"],
-		["/submit", "Submit"],
+		["/submit", "Authenticate"],
 		["/verify", "Verify"],
 		["/transfers", "Transfers"],
 		["/scan", "Scan"],
 	])
 		assert.deepEqual(labels(path), [label]);
-	assert.deepEqual(labels("/trading", "mode=sell"), ["Trading", "Sell"]);
 	assert.deepEqual(labels(`/items/0x${"a".repeat(64)}`), [
 		"Registry",
 		"Passport",

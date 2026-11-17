@@ -1,5 +1,6 @@
 "use client";
 
+
 import { Suspense } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -9,7 +10,7 @@ import { PageBreadcrumbs } from "@/features/navigation/page-breadcrumbs";
 import { ResearchPanel } from "@/features/navigation/research-panel";
 import { LoginButton } from "@/features/account/login-button";
 import {
-	navigationItems,
+	primaryNavigationItems,
 	isNavigationActive,
 } from "@/features/navigation/navigation-items";
 
@@ -19,7 +20,7 @@ function HeaderLinks({ pathname }: { pathname: string }) {
 			aria-label="Header navigation"
 			className="flex min-w-0 flex-1 items-center overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
 		>
-			{navigationItems.map((item) => (
+			{primaryNavigationItems.map((item) => (
 				<Link
 					key={item.href}
 					href={item.href}
@@ -27,7 +28,7 @@ function HeaderLinks({ pathname }: { pathname: string }) {
 					aria-current={
 						isNavigationActive(item.href, pathname) ? "page" : undefined
 					}
-					className={`inline-flex h-[30px] shrink-0 items-center gap-1.5 whitespace-nowrap border-r border-white/[0.07] px-3 text-[11px] transition-colors last:border-r-0 hover:text-white ${isNavigationActive(item.href, pathname) ? "text-white" : "text-[#969696]"}`}
+					className={`relative inline-flex h-[30px] shrink-0 items-center gap-1.5 whitespace-nowrap px-3 text-[11px] transition-colors hover:text-white border-r border-r-white/[0.07] ${isNavigationActive(item.href, pathname) ? "text-white" : "text-[#969696]"}`}
 				>
 					<NavigationIcon name={item.icon} className="size-3.5 shrink-0" />
 					{item.name}

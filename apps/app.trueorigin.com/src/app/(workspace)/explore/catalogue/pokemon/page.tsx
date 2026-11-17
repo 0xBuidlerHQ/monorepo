@@ -1,6 +1,5 @@
 import { redirect } from "next/navigation";
 import { LoadingBoundary } from "@/features/shell/loading-boundary";
-import { PageSkeleton } from "@/features/shell/loading-skeleton";
 type Props = { searchParams: Promise<Record<string, string | string[] | undefined>> };
 async function LegacyCatalog({ searchParams }: Props) {
  const query = new URLSearchParams();
@@ -8,4 +7,4 @@ async function LegacyCatalog({ searchParams }: Props) {
  redirect(`/explore/pokemon${query.size ? `?${query}` : ""}`);
  return null;
 }
-export default function Page(props: Props) { return <LoadingBoundary fallback={<PageSkeleton variant="sets" />}><LegacyCatalog {...props}/></LoadingBoundary>; }
+export default function Page(props: Props) { return <LoadingBoundary fallback={null}><LegacyCatalog {...props}/></LoadingBoundary>; }

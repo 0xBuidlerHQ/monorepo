@@ -1,5 +1,1 @@
-import { PageSkeleton } from "@/features/shell/loading-skeleton";
-
-export default function Loading() {
-	return <PageSkeleton variant="set" />;
-}
+export default function Loading() { return null; }

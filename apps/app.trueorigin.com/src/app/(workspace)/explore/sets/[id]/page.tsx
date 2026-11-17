@@ -1,6 +1,5 @@
 import { redirect } from "next/navigation";
 import { LoadingBoundary } from "@/features/shell/loading-boundary";
-import { PageSkeleton } from "@/features/shell/loading-skeleton";
 type Props = { params: Promise<{ id: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
 async function LegacyCollection({ params, searchParams }: Props) {
  const { id } = await params; const query = new URLSearchParams();
@@ -8,4 +7,4 @@ async function LegacyCollection({ params, searchParams }: Props) {
  redirect(`/explore/catalogue/collections/${id}${query.size ? `?${query}` : ""}`);
  return null;
 }
-export default function Page(props: Props) { return <LoadingBoundary fallback={<PageSkeleton variant="set" />}><LegacyCollection {...props}/></LoadingBoundary>; }
+export default function Page(props: Props) { return <LoadingBoundary fallback={null}><LegacyCollection {...props}/></LoadingBoundary>; }

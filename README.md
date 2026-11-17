@@ -16,7 +16,7 @@ These are product milestones, not published releases or delivery dates. The work
 | --- | --- | --- | --- |
 | **v0.1.0** | **Local alpha** | **Current target** | Complete the item lifecycle and a simple NFT transfer on the local chain. |
 | v0.2.0 | Controlled hub pilot | Planned | Operate the flow with a small group, persistent infrastructure, and hub custody records. |
-| v0.3.0 | Trading | Planned | List items, make offers, and complete purchases with defined payment and dispute rules. |
+| v0.3.0 | Marketplace | Planned | List items, make offers, and complete purchases with defined payment and dispute rules. |
 | v0.4.0 | Broader catalogue | Planned | Expand supported objects and improve discovery, scanning, and catalogue coverage. |
 
 ### v0.1.0 — Local alpha
@@ -26,7 +26,7 @@ These are product milestones, not published releases or delivery dates. The work
 Implemented:
 
 - [x] Passkey registration and sign-in with a Kernel smart account behind the scenes.
-- [x] Explore with a Pokémon Pokédex and Catalogue organized by named sets/collections plus Misc; English-only catalogue for the first release. Catalogue coverage remains limited, and Sealed is not a complete product catalogue.
+- [x] Explore with a Pokémon Pokédex and Catalogue organized by named sets/collections plus Misc; English-only catalogue for the first release. Catalogue coverage remains limited; the empty Sealed section is hidden.
 - [x] Submission by certifier and certification number, with authenticated receiving wallet and progress tracking.
 - [x] Admin acceptance, arrival recording, inspection, approval, and rejection.
 - [x] Local ERC-721 passport issuance with immutable IPFS metadata and file backups.
@@ -39,8 +39,8 @@ Implemented:
 
 Remaining release criteria:
 
-- [ ] Validate the full journey with two accounts in the browser, including rejected signatures, reloads, pending operations, and failed transactions.
-- [ ] Record the tested release scope and known limitations before tagging `v0.1.0`.
+- [x] Validate the full two-account browser journey, cancelled signatures, reloads, and pending operation recovery; cover reverted transactions and issuance failures in automated tests.
+- [x] Record the tested release scope and known limitations in [v0.1.0 acceptance notes](docs/releases/v0.1.0.md). No release tag has been created.
 
 Scope decisions:
 
@@ -48,7 +48,7 @@ Scope decisions:
 - Transfers only sends NFTs; it does not manage physical handovers. Any future peer-to-peer physical flow will be hand-to-hand only. Delivery remains available for returns from TrueOrigin.
 - Invitations, recipient acceptance, physical receipt tracking between users, sale/gift classification, payments, and escrow are outside this release.
 - Users retain the ability to transfer their NFTs outside TrueOrigin. The guided flow is an optional service.
-- Trading and Scan have page foundations; they are not functioning marketplace or scanning services yet.
+- Marketplace is deferred and has no published page. Authenticate opens from the header/pill and Collection’s **Add an item**. Verify remains a global action; QR scanning is an input method inside Verify, not a separate destination.
 
 ### v0.2.0 — Controlled hub pilot
 
@@ -61,7 +61,7 @@ Scope decisions:
 
 Hub-assisted escrow is a later capability to design explicitly. Current returns and guided NFT transfers do not escrow assets or payments.
 
-### v0.3.0 — Trading
+### v0.3.0 — Marketplace
 
 - [ ] Listings, offers, purchases, and their lifecycle.
 - [ ] Payment, cancellation, refund, and dispute rules.
@@ -71,8 +71,41 @@ Hub-assisted escrow is a later capability to design explicitly. Current returns 
 ### v0.4.0 — Broader catalogue
 
 - [ ] Expand catalogue coverage, languages, and sealed products.
-- [ ] Connect Scan to real passport and certification lookups.
+- [ ] Extend scanning beyond QR codes to certification-label text and other barcode formats.
 - [ ] Add categories beyond Pokémon using the shared object/passport model.
+
+## Pages and their purpose
+
+### Customer app — `app.trueorigin.com`
+
+| Page | Route | Purpose | Current state |
+| --- | --- | --- | --- |
+| Explore | `/explore` | Discover the supported collectible universes and enter their reference catalogues. | Pokémon is available. |
+| Pokémon · Pokédex | `/explore/pokemon/pokedex` | Browse Pokémon species by generation and open their profiles. | Local species data and artwork. |
+| Pokémon profile | `/explore/pokemon/:id` | Learn about a species, its evolution family, and the cards that feature it. | Links to the available catalogue cards. |
+| Pokémon · Catalogue | `/explore/pokemon/catalogue` | Browse named sets and collections of individual cards. | English Base Set is currently enabled. |
+| Collection / set | `/explore/catalogue/collections/:id` | Browse a set’s cards, release details, and type/rarity filters. | Base Set contains 102 card references. |
+| Card | `/explore/catalogue/:setId/:number` | Describe a specific catalogue card, its printings, and its Pokémon links. | Example: `/explore/catalogue/base-set/2`. Printing options reuse the reference image for now. |
+| Feed | `/feed` | Follow passport issuance and NFT transfers across the platform. | On-chain activity is indexed; an NFT transfer is not classified as a sale. Sales/listing filters await the marketplace. |
+| Registry | `/registry` | Browse individual objects with issued TrueOrigin passports, regardless of owner. | Public passport records, distinct from reference catalogue entries. |
+| Passport | `/items/:id` | Inspect one registered object’s authentication record, current NFT owner, metadata, and ownership history. | Physical possession is explicitly separate from NFT ownership. |
+| Authenticate | `/submit` | Request an inspection, supply the certifier and certification number, and follow the submission through issuance and return. | Available in the header/pill and through **Add an item** in Collection. Requires sign-in; the receiving wallet comes from the account. |
+| Collection | `/collection` | See the passports currently owned by the signed-in user and open or transfer them. | Reflects indexed NFT ownership, including transfers made outside TrueOrigin. |
+| Verify | `/verify` | Check an existing item by entering its passport or certification number, scanning a QR code with the camera, or uploading a QR image. | Public lookup. Supports passport QR codes, raw certification numbers, and PSA verification links; scanning does not authenticate the physical object. |
+| Transfers | `/transfers` | Send an owned NFT to another wallet: select an item, enter the recipient, review, authorize, and confirm. | A simple NFT transfer; no payment, sale classification, or physical handover workflow. |
+| Scan shortcut | `/scan` | Open the scanning method within Verify. | Redirects to `/verify?method=scan`; there is no separate Scan page or navigation item. |
+
+**Explore describes a card; Registry shows actual registered copies; Collection shows the copies you own; Marketplace will show copies offered for sale; Transfers moves NFT ownership.**
+
+Account management and the shared search are drawers, not separate pages. Search controls and Cmd/Ctrl+K open the same drawer; live results include app pages, Pokémon, collections, cards, and public passports. Private submissions are excluded. The empty Sealed section is hidden; `/explore/pokemon/sealed` redirects to Catalogue. The root `/` redirects to Explore, and `/explore/pokemon` opens Catalogue. Older Pokémon and set routes redirect to their current destinations. Magic, One Piece, and Yu-Gi-Oh! have placeholder universe pages outside the current release scope.
+
+### Admin app — `admin.trueorigin.com`
+
+| Page | Route | Purpose |
+| --- | --- | --- |
+| Operations | `/` | Review submissions, accept or reject requests, record arrival and inspection, approve passport issuance, follow issuance jobs, and manage physical returns. |
+
+The admin workflow records staff decisions; the customer app displays the user-facing submission progress and issued passports.
 
 ## Run locally
 
@@ -151,6 +184,6 @@ pnpm --filter @0xhq/api test:issuance
 pnpm --filter @0xhq/contracts.trueorigin.com test
 ```
 
-The issuance integration test launches isolated local services and exercises issuance, public verification, physical return tracking, NFT transfers, and reconstruction. It does not replace the two-account browser test required for the first release. Run package checks individually while `0xhq.space` remains in the workspace if you only need TrueOrigin results.
+The issuance integration test launches isolated local services and exercises issuance, public verification, physical return tracking, NFT transfers, and reconstruction. The repeatable two-account browser acceptance test is `scripts/test-alpha-browser.mjs`; set `CHROME_PATH` to a Chromium executable and keep the local stack running. See the [v0.1.0 acceptance notes](docs/releases/v0.1.0.md) for validation evidence and known limitations. Run package checks individually while `0xhq.space` remains in the workspace if you only need TrueOrigin results.
 
 Further setup and implementation details: [customer app](apps/app.trueorigin.com/README.md), [admin app](apps/admin.trueorigin.com/README.md), [API](services/api/README.md), [SDK](packages/trueorigin-sdk/README.md), [contracts](contracts/trueorigin.com/README.md), [indexer and recovery](services/indexer/README.md), and [IPFS](services/ipfs/README.md).

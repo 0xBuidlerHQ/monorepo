@@ -1,3 +1,4 @@
+import { PassportGridSkeleton, LoadingStatus } from "@/features/shell/loading-skeleton";
 import Link from "next/link";
 import { Suspense } from "react";
 import { PageLayout } from "@/features/shell/page-layout";
@@ -11,6 +12,9 @@ export const metadata = { title: "Collection" };
 
 async function CollectionContents() {
 	if (!await sessionIdentity()) return <div className="max-w-sm"><PasskeySignIn /></div>;
+	return <Suspense fallback={<PassportGridSkeleton collection />}><CollectionItems /></Suspense>;
+}
+async function CollectionItems() {
 	let passports: Awaited<ReturnType<typeof myPassports>>;
 	try { passports = await myPassports(); }
 	catch { return <p role="alert" className="rounded-2xl bg-white/5 p-6 text-sm leading-6 text-white/60">Your collection is temporarily unavailable. Check the local API and chain, then reload.</p>; }
@@ -22,5 +26,5 @@ async function CollectionContents() {
 }
 
 export default function CollectionPage() {
-	return <PageLayout title="Collection" actions={<PageHeaderLink href="/submit">Submit an item ↗</PageHeaderLink>}><Suspense fallback={<div role="status" aria-label="Loading your collection" className="h-64 rounded-[28px] bg-white/[0.025]" />}><CollectionContents /></Suspense></PageLayout>;
+	return <PageLayout title="Collection" actions={<PageHeaderLink href="/submit">Add an item ↗</PageHeaderLink>}><Suspense fallback={<LoadingStatus>Checking your account…</LoadingStatus>}><CollectionContents /></Suspense></PageLayout>;
 }

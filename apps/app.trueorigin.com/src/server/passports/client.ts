@@ -11,9 +11,9 @@ export const getPublicPassport = cache(async (id: string) => {
 	try { return await apiJson<PublicPassportDetail>("customer", subject, `/v1/passports/${id.toLowerCase()}`); }
 	catch (error) { if (error instanceof ApiError && error.status === 404) return null; throw error; }
 });
-export async function publicPassports() {
+export async function publicPassports(signal?: AbortSignal) {
 	await connection();
-	return apiJson<PublicPassport[]>("customer", subject, "/v1/passports/public");
+	return apiJson<PublicPassport[]>("customer", subject, "/v1/passports/public", { signal });
 }
 export async function findPublicPassport(certifier: string, number: string) {
 	await connection();

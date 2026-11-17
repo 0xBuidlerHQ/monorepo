@@ -65,12 +65,8 @@ function BreadcrumbContent({ pathname, params }: { pathname: string; params: Pic
 			<div aria-hidden="true" className="h-full w-10 shrink-0 border-r border-white/[0.07]" />
             <ol className="flex h-full min-w-0 flex-1 items-center gap-2 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
 				{trail.map((item, index) => (
-					<li key={`${item.href}:${item.label}`} className={`flex shrink-0 items-center gap-2 ${index === 0 && item.label === "Explore" ? "pl-2" : ""}`}>
-						{(index > 0 || item.label === "Explore") && (
-							<span aria-hidden="true" className="text-white/20">
-								/
-							</span>
-						)}
+					<li key={`${item.href}:${item.label}`} className={`flex shrink-0 items-center gap-2 ${index === 0 ? "pl-2" : ""}`}>
+						<span aria-hidden="true" className="text-white/20">/</span>
 						<Link
 							href={item.href}
 							aria-current={index === trail.length - 1 ? "page" : undefined}

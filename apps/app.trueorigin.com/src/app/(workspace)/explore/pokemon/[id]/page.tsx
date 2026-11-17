@@ -1,7 +1,9 @@
+import pokedex from "@/features/pokemon/pokedex.json";
+import { pokemonProfileGrid } from "@/features/shell/detail-layout";
 import { FloatingTypeSymbols } from "@/features/pokemon/floating-type-symbols";
 import { LoadingBoundary } from "@/features/shell/loading-boundary";
 import { catalogHref, catalogLanguage } from "@/features/reference/catalog-language";
-import { PageSkeleton } from "@/features/shell/loading-skeleton";
+import { CatalogSkeleton, PageSkeleton } from "@/features/shell/loading-skeleton";
 import { ContentSurface } from "@/features/shell/content-surface";
 import { formatCardNumber } from "@/features/reference/card-number";
 import { setPageHref, cardPageHref } from "@/features/reference/set-relationships";
@@ -21,19 +23,17 @@ export async function generateMetadata({ params }: Props) {
 	const pokemon = findPokemon((await params).id);
 	return { title: pokemon ? `${pokemon.name} · Pokédex` : "Pokémon not found" };
 }
-export function generateStaticParams() { return [{ id: "6" }]; }
+export function generateStaticParams() { return pokedex.pokemon.map(pokemon => ({id:String(pokemon.id)})); }
 type Props = { params: Promise<{ id: string }>; searchParams: Promise<{ lang?: string; q?: string; page?: string }> };
 
 async function PokemonProfile(props: Props) {
-	const [{ id }, params] = await Promise.all([props.params, props.searchParams]);
-	const language = catalogLanguage(params.lang);
+	const { id } = await props.params;
+	const language = catalogLanguage(undefined);
 	const pokemon = findPokemon(id);
 	if (!pokemon) notFound();
 	const profile = findPokemonProfile(pokemon.id);
 	const image = pokemonArtwork[pokemon.id];
-	const query = typeof params.q === "string" ? params.q : "";
 	const appearances = searchReferenceCards("", { pokemonId: pokemon.id, language });
-	const result = paginate(query ? searchReferenceCards(query, { pokemonId: pokemon.id, language }) : appearances, params.page);
 	const setCount = new Set(appearances.map((card) => card.setId)).size;
 	const previous = findPokemon(String(pokemon.id - 1));
 	const next = findPokemon(String(pokemon.id + 1));
@@ -41,7 +41,7 @@ async function PokemonProfile(props: Props) {
 	const number = `#${String(pokemon.id).padStart(4, "0")}`;
 	return (
 		<article aria-labelledby="pokemon-profile-title">
-			<ContentSurface as="header" className="relative isolate grid overflow-hidden rounded-[32px] bg-[#1c1c1c] md:grid-cols-2">
+			<ContentSurface as="header" className={pokemonProfileGrid}>
 				<div className="relative z-10 flex flex-col items-start justify-center p-7 sm:p-10 lg:p-12">
 					<p className="font-mono text-xs text-white/40">{number}<span className="mx-3 text-white/20">/</span>Generation {roman}</p>
 <div className="mt-6 flex items-center gap-5"><h1 id="pokemon-profile-title" className="min-w-0 break-words text-[clamp(40px,6vw,88px)] font-medium leading-none tracking-[-0.065em]">{pokemon.name}</h1><FloatingTypeSymbols /></div>
@@ -69,14 +69,10 @@ async function PokemonProfile(props: Props) {
 			<div id="evolutions" className="scroll-mt-[calc(var(--app-header-height)+1rem)]"><EvolutionFamily pokemonId={pokemon.id} /></div>
 			<section id="pokemon-cards" aria-labelledby="pokemon-cards-title" className="mt-10 scroll-mt-[calc(var(--app-header-height)+1rem)]">
 				<header className="mb-6 flex flex-wrap items-end justify-between gap-5">
-					<div><h2 id="pokemon-cards-title" className="text-3xl font-medium tracking-[-0.045em]">{pokemon.name} in cards</h2><p className="mt-2 text-sm text-white/45">{result.total.toLocaleString("en-US")} {language === "fr" ? "French" : "English"} card references{query ? ` matching “${query}”` : " across sets and editions"}.</p></div>
-					<div className="flex flex-wrap items-center gap-3"><LiveCatalogSearch key={pokemon.id} query={query} placeholder="Search cards or sets…" /></div>
+					<div><h2 id="pokemon-cards-title" className="text-3xl font-medium tracking-[-0.045em]">{pokemon.name} in cards</h2><LoadingBoundary fallback={<p className="mt-2 text-sm text-white/45">{appearances.length.toLocaleString("en-US")} English card references across sets and editions.</p>}><PokemonCardCount pokemonId={pokemon.id} searchParams={props.searchParams} /></LoadingBoundary></div>
+					<div className="flex flex-wrap items-center gap-3"><LiveCatalogSearch key={pokemon.id} query="" placeholder="Search cards or sets…" /></div>
 				</header>
-				{result.items.length > 0 ? <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">{result.items.map((card) => {
-					const set = findReferenceSet(card.setId, language);
-					return <li key={card.id}><ExploreCard name={card.name} brand={set?.name ?? "Pokémon TCG"} href={catalogHref(cardPageHref(card), language)} alt={card.name} imageLayout="portrait" image={getCardArtwork(card.id, language)?.src} placeholder={<span className="text-white/[0.06] [&>svg]:size-16"><CatalogCategoryIcon category="cards" /></span>} description={`${formatCardNumber(card, set?.printedTotal)} · ${card.rarity ?? card.supertype}`} />{set && <Link href={catalogHref(setPageHref(set.id), language)} className="mt-3 inline-block px-2 text-xs text-white/45 hover:text-white">Browse set ↗<span className="sr-only">: {set.name}</span></Link>}</li>;
-				})}</ul> : <div className="rounded-3xl bg-white/[0.025] px-6 py-12 text-center text-sm text-white/50">{query ? "No matching cards. Try another name or set." : "No cards in the current catalog yet."}</div>}
-				{result.total > 0 && <nav aria-label="Card pages" className="mt-8 flex flex-wrap items-center justify-between gap-4 text-xs text-white/45"><span>Page {result.page} of {result.pages}</span><div className="flex gap-3">{[result.page - 1, result.page + 1].filter((page) => page >= 1 && page <= result.pages).map((page) => <Link key={page} href={`/explore/pokemon/${pokemon.id}?${new URLSearchParams({ lang: language, q: query, page: String(page) })}#pokemon-cards`} className="rounded-full border border-white/15 px-5 py-2.5 hover:bg-white/5 hover:text-white">{page < result.page ? "← Previous" : "Next →"}</Link>)}</div></nav>}
+                <LoadingBoundary fallback={<CatalogSkeleton variant="cards" count={Math.min(appearances.length, 10)} />}><PokemonCardResults pokemon={pokemon} searchParams={props.searchParams} /></LoadingBoundary>
 			</section>
 			<nav aria-label="Previous and next Pokémon" className="mt-12 grid grid-cols-2 gap-4 border-t border-white/10 pt-6">
 				<div>{previous && <Link href={catalogHref(`/explore/pokemon/${previous.id}`, language)} className="text-sm text-white/60 hover:text-white"><span className="mb-2 block text-xs text-white/30">← Previous Pokémon</span>{previous.name}</Link>}</div>
@@ -85,6 +81,25 @@ async function PokemonProfile(props: Props) {
 			<p className="mt-8 text-[10px] text-white/30">Species data: <a href="https://pokeapi.co/" target="_blank" rel="noreferrer" className="hover:text-white">PokéAPI</a> · Card references: <a href="https://github.com/PokemonTCG/pokemon-tcg-data" target="_blank" rel="noreferrer" className="hover:text-white">Pokémon TCG Data</a></p>
 		</article>
 	);
+}
+
+async function PokemonCardCount({ pokemonId, searchParams }: { pokemonId: number; searchParams: Props["searchParams"] }) {
+ const params = await searchParams;
+ const query = typeof params.q === "string" ? params.q : "";
+ const total = searchReferenceCards(query,{pokemonId,language:catalogLanguage(params.lang)}).length;
+ return <p className="mt-2 text-sm text-white/45">{total.toLocaleString("en-US")} English card references{query ? ` matching “${query}”` : " across sets and editions"}.</p>;
+}
+
+async function PokemonCardResults({ pokemon, searchParams }: { pokemon: {id:number;name:string}; searchParams: Props["searchParams"] }) {
+ const params = await searchParams;
+ const language = catalogLanguage(params.lang);
+ const query = typeof params.q === "string" ? params.q : "";
+ const result = paginate(searchReferenceCards(query,{pokemonId:pokemon.id,language}),params.page);
+ return <>				{result.items.length > 0 ? <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">{result.items.map((card) => {
+					const set = findReferenceSet(card.setId, language);
+					return <li key={card.id}><ExploreCard name={card.name} brand={set?.name ?? "Pokémon TCG"} href={catalogHref(cardPageHref(card), language)} alt={card.name} imageLayout="portrait" image={getCardArtwork(card.id, language)?.src} placeholder={<span className="text-white/[0.06] [&>svg]:size-16"><CatalogCategoryIcon category="cards" /></span>} description={`${formatCardNumber(card, set?.printedTotal)} · ${card.rarity ?? card.supertype}`} />{set && <Link href={catalogHref(setPageHref(set.id), language)} className="mt-3 inline-block px-2 text-xs text-white/45 hover:text-white">Browse set ↗<span className="sr-only">: {set.name}</span></Link>}</li>;
+				})}</ul> : <div className="rounded-3xl bg-white/[0.025] px-6 py-12 text-center text-sm text-white/50">{query ? "No matching cards. Try another name or set." : "No cards in the current catalog yet."}</div>}
+				{result.total > 0 && <nav aria-label="Card pages" className="mt-8 flex flex-wrap items-center justify-between gap-4 text-xs text-white/45"><span>Page {result.page} of {result.pages}</span><div className="flex gap-3">{[result.page - 1, result.page + 1].filter((page) => page >= 1 && page <= result.pages).map((page) => <Link key={page} href={`/explore/pokemon/${pokemon.id}?${new URLSearchParams({ lang: language, q: query, page: String(page) })}#pokemon-cards`} className="rounded-full border border-white/15 px-5 py-2.5 hover:bg-white/5 hover:text-white">{page < result.page ? "← Previous" : "Next →"}</Link>)}</div></nav>}</>;
 }
 
 export default function Page(props: Props) {

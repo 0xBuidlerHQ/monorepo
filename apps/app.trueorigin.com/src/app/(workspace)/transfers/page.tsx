@@ -1,3 +1,4 @@
+import { LoadingStatus } from "@/features/shell/loading-skeleton";
 import { Suspense } from "react";
 import { PageLayout } from "@/features/shell/page-layout";
 import { TransferPanel } from "@/features/transfers/transfer-panel";
@@ -13,5 +14,5 @@ async function TransferContent() {
  catch { return <p role="alert" className="text-sm text-white/50">Your passports are temporarily unavailable. Reload when the local API and chain are ready.</p>; }
 }
 export default function TransfersPage() {
- return <PageLayout title="Transfers"><Suspense fallback={null}><TransferContent /></Suspense></PageLayout>;
+ return <PageLayout title="Transfers"><Suspense fallback={<LoadingStatus>Loading your transfer options…</LoadingStatus>}><TransferContent /></Suspense></PageLayout>;
 }

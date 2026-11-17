@@ -1,5 +1,7 @@
 "use client";
 
+import { cardArtworkFrame } from "@/features/shell/detail-layout";
+
 import { RevealImage as Image } from "@/components/ui/reveal-image";
 import { motion, useReducedMotion } from "motion/react";
 import { useRef, useState } from "react";
@@ -15,7 +17,7 @@ export function CardArtworkViewer({ src, name, number }: { src: string; name: st
 	return (
 		<>
 			<div className="relative">
-				<motion.button whileTap={reducedMotion ? undefined : { scale: 0.97 }} type="button" onClick={openArtwork} aria-label={`Enlarge ${name} artwork`} className="group relative mr-auto block aspect-[600/825] w-full max-w-[600px] cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-white lg:max-w-[min(600px,calc((100dvh_-_var(--app-header-height)_-_6rem)*0.727273))]">
+				<motion.button whileTap={reducedMotion ? undefined : { scale: 0.97 }} type="button" onClick={openArtwork} aria-label={`Enlarge ${name} artwork`} className={`${cardArtworkFrame} group cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-white`}>
 					<Image src={src} alt={`${name}, card ${number}`} fill preload sizes="(min-width: 1024px) 50vw, 90vw" className="object-contain drop-shadow-[0_20px_30px_#00000070]" />
 				</motion.button>
 			</div>

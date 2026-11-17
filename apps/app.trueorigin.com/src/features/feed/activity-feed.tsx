@@ -10,15 +10,9 @@ import type {
 import { RevealImage } from "@/components/ui/reveal-image";
 import { NavigationIcon } from "@/components/icons/navigation-icon";
 import { CopyValue } from "@/features/passports/controls";
+import { ActivityFilters } from "./activity-filters";
 import { FeedSkeleton } from "./feed-skeleton";
 
-const filters: { kind: ActivityKind; label: string }[] = [
-	{ kind: "all", label: "All activity" },
-	{ kind: "sale", label: "Sales" },
-	{ kind: "listing", label: "Listings" },
-	{ kind: "transfer", label: "Transfers" },
-	{ kind: "issued", label: "Issuance" },
-];
 const shorten = (value: string) => `${value.slice(0, 6)}…${value.slice(-4)}`;
 function ActivityRow({ event }: { event: AssetActivity }) {
 	const issued = event.kind === "issued";
@@ -173,25 +167,7 @@ export function ActivityFeed({ initial }: { initial: ActivityPage | null }) {
 	return (
 		<div>
 			<div className="mb-6 flex flex-wrap items-center justify-between gap-4">
-				<fieldset
-					className="flex flex-wrap gap-1"
-					aria-label="Activity filters"
-				>
-					{filters.map((filter) => (
-						<button
-							key={filter.kind}
-							type="button"
-							aria-pressed={kind === filter.kind}
-							onClick={() => {
-								setKind(filter.kind);
-								setCursor("");
-							}}
-							className={`cursor-pointer rounded-full px-4 py-2.5 text-xs transition-colors ${kind === filter.kind ? "bg-white text-black" : "text-white/40 hover:bg-white/5 hover:text-white"}`}
-						>
-							{filter.label}
-						</button>
-					))}
-				</fieldset>
+				<ActivityFilters value={kind} onChange={value => { setKind(value); setCursor(""); }} />
 				<div className="flex items-center gap-3 text-[10px] text-white/35">
 					<span className="flex items-center gap-1.5">
 						<span
@@ -265,7 +241,7 @@ export function ActivityFeed({ initial }: { initial: ActivityPage | null }) {
 						</h2>
 						<p className="mt-3 max-w-sm text-xs leading-6 text-white/40">
 							{market
-								? "Trading is coming soon. Marketplace activity will appear here once buying and selling are available."
+								? "Marketplace is coming soon. Marketplace activity will appear here once buying and selling are available."
 								: kind === "issued"
 									? "New passports will appear here as they’re issued."
 									: kind === "transfer"
@@ -273,10 +249,10 @@ export function ActivityFeed({ initial }: { initial: ActivityPage | null }) {
 										: "New passports and ownership changes will appear here as they happen."}
 						</p>
 						<Link
-							href={market ? "/trading" : "/explore"}
+							href="/explore"
 							className="mt-6 text-xs text-white/70 transition-colors hover:text-white"
 						>
-							{market ? "View Trading" : "Explore objects"} ↗
+							Explore objects ↗
 						</Link>
 					</div>
 				)

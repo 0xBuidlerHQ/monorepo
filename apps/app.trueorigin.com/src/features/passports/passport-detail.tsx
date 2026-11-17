@@ -1,3 +1,4 @@
+import { passportDetailGrid } from "@/features/shell/detail-layout";
 import type { PublicPassportDetail } from "@0xhq/api-client/types";
 import { RevealImage } from "@/components/ui/reveal-image";
 import { CopyValue, RecheckPassport, TransferPassport } from "./controls";
@@ -7,7 +8,7 @@ function date(value: string) { return new Intl.DateTimeFormat("en-GB", { dateSty
 export function PassportDetail({ passport }: { passport: PublicPassportDetail }) {
 	const verification = passport.verification, verified = verification.status === "verified";
 	return <article aria-labelledby="passport-title" className="pb-4 pt-3">
-		<div className="grid items-start gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)] lg:gap-14">
+		<div className={passportDetailGrid}>
 			<div className="relative mx-auto aspect-[4/5] w-full max-w-lg overflow-hidden rounded-[28px] bg-[var(--surface)]"><RevealImage unoptimized src={`/api/passports/${passport.itemId}/image`} alt={`${passport.title} digital passport`} fill preload sizes="(min-width: 1024px) 40vw, 90vw" className="object-contain p-4" /></div>
 			<div className="min-w-0 py-1">
 				<div className="mb-5 flex flex-wrap items-center gap-2"><span className={`rounded-full px-3 py-1.5 text-[11px] ${verified ? "bg-emerald-300/10 text-emerald-200" : "bg-orange-200/10 text-orange-200"}`}>{verified ? "On-chain passport verified" : verification.status === "mismatch" ? "Passport record mismatch" : "Verification unavailable"}</span><span className="text-[10px] text-white/30">Local development network</span></div>

@@ -99,18 +99,10 @@ export function breadcrumbTrail(
 	if (entry) {
 		const trail = [
 			{
-				label: entry.name === "Collections" ? "Collection" : entry.name,
+				label: entry.name,
 				href: path,
 			},
 		];
-		if (
-			path === "/trading" &&
-			["buy", "sell"].includes(params.get("mode") ?? "")
-		)
-			trail.push({
-				label: params.get("mode") === "sell" ? "Sell" : "Buy",
-				href: `${path}?mode=${params.get("mode")}`,
-			});
 		return trail;
 	}
 	return [explore];

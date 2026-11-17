@@ -35,7 +35,7 @@ Root `dev` starts all apps through Turborepo. Root `build`, `lint`, and `typeche
 - `src/config/utils.ts`: class name helper for UI components.
 - `public/`: static assets, including the original engraved SVG landscape.
 
-The app uses a sky blue, red, and white visual identity, serif display typography, and Geist text fonts loaded through `next/font/google`. It shares the `@/*` alias, shadcn configuration, and Tailwind Turbopack integration with `0xhq.space`. The starter is independent of the editorial site’s content, routes, and newsletter integration.
+The app uses a dark visual identity, serif display typography, and Geist text fonts loaded through `next/font/google`. It shares the `@/*` alias, shadcn configuration, and Tailwind Turbopack integration with `0xhq.space`. The starter is independent of the editorial site’s content, routes, and newsletter integration.
 
 ## Passkey accounts
 
@@ -48,7 +48,7 @@ Keep `components/` presentational and reusable: accept content, state, and callb
 Use `features/` to compose those components with application behavior:
 
 - `account/`: passkey provider, session state, and account connection flow.
-- `navigation/`: menu drawer.
+- `navigation/`: persistent navigation, breadcrumbs, and the shared live search drawer.
 - `settings/`: settings drawer.
 - `shell/`: application frame and feature composition.
 
@@ -62,7 +62,7 @@ Route files compose features. Ethereum TypeScript implementation lives in `packa
 - `src/server/ethereum/`: authenticated, method-restricted JSON-RPC forwarding.
 - `src/types/account.ts`: serializable action results and public session data.
 
-Features call Server Actions; actions delegate to backend services. Passkey prompts and transaction signing run in the browser. Only Ethereum and bundler JSON-RPC retain API routes because SDK transports require HTTP endpoints. Account construction and chain operations live in `packages/trueorigin-sdk`.
+Features call Server Actions; actions delegate to backend services. Passkey prompts and transaction signing run in the browser. API routes also serve public search, activity, passport assets, and authenticated submission updates. Search includes reference catalogue entries and public passports, never private submission fields. Account construction and chain operations live in `packages/trueorigin-sdk`.
 
 Every action validates the configured origin. Signed responses must match a single-use, five-minute challenge and the RP ID. Sessions use opaque tokens stored as hashes, with HttpOnly, SameSite=Strict cookies scoped to `/` so they work for both Server Actions and RPC routes. Only public credential and account configuration data is returned to the client.
 
@@ -126,3 +126,7 @@ Only English Base Set is currently exposed. The language selector is removed and
 ### Sealed catalogue
 
 `/explore/pokemon/sealed` is intentionally empty for now. Its shared section navigation, search, and product-type filters remain, but no product or printing detail routes are published. The Base Set research data and downloaded artwork are retained locally for future catalogue work; the UI does not import or expose them.
+
+## Local alpha acceptance
+
+See the [v0.1.0 acceptance notes](../../docs/releases/v0.1.0.md) for the tested flows, repeatable browser test, and known limitations. Authenticate remains at `/submit`; the empty Sealed section is hidden and its URL redirects to Catalogue.

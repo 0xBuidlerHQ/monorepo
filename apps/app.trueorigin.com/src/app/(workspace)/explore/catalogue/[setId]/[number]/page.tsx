@@ -1,3 +1,6 @@
+import { Suspense } from "react";
+import { PrintingCardsSkeleton } from "@/features/pokemon/printing-cards-skeleton";
+import { cardDetailGrid } from "@/features/shell/detail-layout";
 import { getCardPrintings } from "@/features/pokemon/card-printings";
 import { CardPrintingSelector } from "@/features/pokemon/card-printing-selector";
 import { cardPageHref } from "@/features/reference/set-relationships";
@@ -14,17 +17,17 @@ import { CatalogCategoryIcon } from "@/components/icons/catalog-category-icon";
 import { CardArtworkViewer } from "@/features/reference/card-artwork-viewer";
 import { pokemonArtwork } from "@/features/pokemon/artwork";
 import { getCardArtwork } from "@/features/reference/card-artwork";
-import { findPokemon, findReferenceCardByNumber, findReferenceSet, searchReferenceCards, type ReferenceCard } from "@/features/reference/catalog";
+import { findPokemon, findReferenceCardByNumber, findReferenceSet, referenceCards, searchReferenceCards, type ReferenceCard } from "@/features/reference/catalog";
 import { ExploreCard } from "@/features/reference/explore-card";
 
-export async function generateMetadata({ params, searchParams }: Props) {
-	const language = catalogLanguage((await searchParams).lang);
+export async function generateMetadata({ params }: Props) {
+	const language = catalogLanguage(undefined);
 	const { setId, number: cardNumber } = await params;
 	const card = findReferenceCardByNumber(setId, cardNumber, language);
 	const set = card ? findReferenceSet(card.setId, language) : undefined;
 	return { title: card ? `${card.name} · ${set?.name ?? "Pokémon"} #${card.number}` : "Card not found" };
 }
-export function generateStaticParams() { return [{ setId: "base-set", number: "4" }]; }
+export function generateStaticParams() { return referenceCards.map(card => ({setId:card.setId,number:card.number})); }
 type Props = { params: Promise<{ setId: string; number: string }>; searchParams: Promise<{ lang?: string; printing?: string }> };
 
 function RelatedCards({ cards, language }: { cards: ReferenceCard[]; language: CatalogLanguage }) {
@@ -34,8 +37,8 @@ function RelatedCards({ cards, language }: { cards: ReferenceCard[]; language: C
 	})}</ul>;
 }
 
-async function CardProfile({ params, searchParams }: Props) {
-	const language = catalogLanguage((await searchParams).lang);
+async function CardProfile({ params }: Props) {
+	const language = catalogLanguage(undefined);
 	const { setId, number: cardNumber } = await params;
 	const card = findReferenceCardByNumber(setId, cardNumber, language);
 	if (!card) notFound();
@@ -59,7 +62,7 @@ async function CardProfile({ params, searchParams }: Props) {
 	].filter((attribute) => attribute.value);
 	return (
 		<article aria-labelledby="card-title">
-			<div className="grid items-start gap-8 lg:grid-cols-[minmax(0,min(50%,600px,calc((100dvh_-_var(--app-header-height)_-_6rem)*0.727273)))_minmax(0,1fr)] lg:gap-8">
+			<div className={cardDetailGrid}>
 				<div className="lg:sticky lg:top-[calc(var(--app-header-height)+1.5rem)]">
 					{image ? <CardArtworkViewer src={image.src} name={card.name} number={number} /> : <div className="flex aspect-[600/825] flex-col items-center justify-center gap-5 rounded-[28px] bg-[#1c1c1c] text-white/25"><span className="[&>svg]:size-20"><CatalogCategoryIcon category="cards" /></span><p className="text-xs">Artwork not available yet</p></div>}
 				</div>
@@ -83,7 +86,7 @@ async function CardProfile({ params, searchParams }: Props) {
                             </div>)}
                         </dl>
                     </section>
-                    {printings.length > 0 && <CardPrintingSelector printings={printings} image={image?.src} cardName={card.name} types={card.types} number={number} />}
+                    {printings.length > 0 && <Suspense fallback={<PrintingCardsSkeleton count={printings.length} />}><CardPrintingSelector printings={printings} image={image?.src} cardName={card.name} types={card.types} number={number} /></Suspense>}
             {pokemon.length > 0 && <section aria-labelledby="related-title" className="mt-7 border-t border-white/[0.08] pt-6">
                 <header className="mb-5 flex flex-wrap items-center justify-between gap-4">
                     <h2 id="related-title" className="text-xs text-white/65">Other cards</h2>

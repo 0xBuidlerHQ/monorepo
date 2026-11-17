@@ -3,7 +3,7 @@ import { cardCollectionId, setPageHref } from "@/features/reference/set-relation
 import { pokemonCategories as categories } from "./categories";
 import { Pokedex } from "./pokedex";
 import { setArtwork } from "@/features/reference/set-artwork";
-import { PokemonCollectionBrowser, PokemonSealedBrowser } from "./pokemon-category-browser";
+import { PokemonCollectionBrowser } from "./pokemon-category-browser";
 import { normalizeSearch, getReferenceSets, searchReferenceCards } from "@/features/reference/catalog";
 import { redirect } from "next/navigation";
 
@@ -31,7 +31,5 @@ export async function PokemonSectionResults({ searchParams, category: selectedCa
  return <div>
   {category.id === "pokedex" && <Pokedex key={query} initialQuery={query} embedded />}
   {category.id === "cards" && <PokemonCollectionBrowser collections={tiles} series={[...new Set(sets.map(set => set.series))]} />}
-  {category.id === "sealed" && <PokemonSealedContent />}
  </div>;
 }
-export function PokemonSealedContent() { return <PokemonSealedBrowser />; }

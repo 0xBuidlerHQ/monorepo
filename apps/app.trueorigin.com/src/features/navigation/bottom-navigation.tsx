@@ -7,9 +7,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NavigationIcon } from "@/components/icons/navigation-icon";
 
-import { navigationItems as destinations, isNavigationActive as isActive } from "./navigation-items";
+import { primaryNavigationItems, isNavigationActive as isActive } from "./navigation-items";
 
-const mobilePrimary = new Set(["Explore", "Feed", "Registry", "Trading", "Collections"]);
+const destinations = primaryNavigationItems;
+
+const mobilePrimary = new Set(["Explore", "Feed", "Registry", "Collection"]);
 
 const spring = { stiffness: 360, damping: 26, mass: 0.6 };
 
@@ -17,7 +19,7 @@ function DockItem({ name, icon, href, active, mobileHidden }: (typeof destinatio
  const reducedMotion = useReducedMotion();
  return (
   <Link href={href} scroll={false} aria-label={name} aria-current={active ? "page" : undefined}
-   className={`relative h-10 min-w-0 items-center justify-center rounded-full outline-offset-2 transition-colors hover:z-10 focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-black lg:h-12 ${mobileHidden ? "hidden lg:flex" : "flex"} ${active ? "text-white" : "text-black hover:text-black/65"}`}>
+   className={`relative overflow-hidden h-10 min-w-0 items-center justify-center rounded-full outline-offset-2 transition-colors hover:z-10 focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-black lg:h-12 ${mobileHidden ? "hidden lg:flex" : "flex"} ${active ? "text-white" : "text-black hover:text-black/65"}`}>
    <motion.div className="relative grid size-full place-items-center rounded-full" whileTap={reducedMotion ? undefined : { scale: 0.95 }}>
     {active && <motion.span layoutId="active-page" className="absolute inset-0 rounded-full bg-black shadow-[0_1px_6px_rgba(32,60,75,0.05)]" transition={reducedMotion ? { duration: 0 } : spring} />}
     <NavigationIcon name={icon} className="relative z-10 size-5 shrink-0 lg:size-6" />
@@ -46,8 +48,8 @@ function NavigationDock({ pathname }: { pathname: string }) {
  return (
   <LayoutGroup id={groupId}>
    <nav aria-label="Main navigation" style={{ viewTransitionName: "navigation-dock" }}
-    className="fixed bottom-[calc(2.75rem+env(safe-area-inset-bottom))] left-1/2 z-[100] isolate flex w-[calc(100%-1.5rem)] max-w-[640px] -translate-x-1/2 items-center rounded-full bg-white/55 p-1 shadow-[0_8px_40px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.65)] backdrop-blur-2xl backdrop-saturate-150 lg:w-auto">
-    <div className="grid min-w-0 flex-1 grid-cols-5 lg:w-[468px] lg:flex-none lg:grid-cols-9 lg:gap-1">{destinations.map(destination => <DockItem key={destination.href} {...destination} active={isActive(destination.href, pathname)} mobileHidden={!mobilePrimary.has(destination.name)} />)}</div>
+    className="fixed bottom-[calc(2.75rem+env(safe-area-inset-bottom))] left-1/2 z-[100] isolate flex w-[calc(100%-1.5rem)] max-w-[640px] -translate-x-1/2 items-center rounded-full bg-white/30 p-1 shadow-[0_8px_40px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.65)] backdrop-blur-2xl backdrop-saturate-150 transition-colors duration-300 hover:bg-white/70 focus-within:bg-white/70 motion-reduce:transition-none lg:w-auto">
+    <div className="grid min-w-0 flex-1 grid-cols-4 lg:w-[312px] lg:flex-none lg:grid-cols-6 lg:gap-1">{destinations.map(destination => <DockItem key={destination.href} {...destination} active={isActive(destination.href, pathname)} mobileHidden={!mobilePrimary.has(destination.name)} />)}</div>
     <MoreNavigation pathname={pathname} />
    </nav>
   </LayoutGroup>

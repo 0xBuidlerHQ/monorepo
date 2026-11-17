@@ -34,3 +34,17 @@ test("confirmation requires the exact passport transfer event, not merely a succ
  assert.deepEqual(await waitPassportTransfer(connection, pending), { success: true, transactionHash: hash });
  await assert.rejects(waitPassportTransfer(connection, { ...pending, recipient: owner }), /does not confirm/);
 });
+
+test("a reverted operation is reported as failed and a receipt timeout can be checked again without resending", async () => {
+ const hash = `0x${"b".repeat(64)}` as const;
+ let calls = 0;
+ const connection = { client: { waitForUserOperationReceipt: async () => {
+  calls++;
+  if (calls === 1) throw new Error("Receipt request timed out");
+  return { success: false, receipt: { transactionHash: hash, logs: [] } };
+ } } } as unknown as ConnectedAccount;
+ const pending = { ...transfer, hash };
+ await assert.rejects(waitPassportTransfer(connection, pending), /timed out/);
+ assert.deepEqual(await waitPassportTransfer(connection, pending), { success: false, transactionHash: hash });
+ assert.equal(calls, 2);
+});
