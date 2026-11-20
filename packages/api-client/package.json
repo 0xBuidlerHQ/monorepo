@@ -20,6 +20,8 @@
     ".": "./src/client.ts",
     "./protocol": "./src/protocol.ts",
     "./handovers": "./src/handovers.ts",
+    "./activity": "./src/activity.ts",
+    "./passport-item": "./src/passport-item.ts",
     "./types": "./src/types.ts"
   }
 }

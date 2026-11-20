@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 
 export const pageTitleClassName =
-	"text-[clamp(48px,9vw,120px)] font-medium leading-none tracking-[-0.065em] text-white";
+	"font-serif text-[clamp(48px,9vw,120px)] font-medium leading-none tracking-[-0.065em] text-white";
 
 export function PageHeader({
 	title,

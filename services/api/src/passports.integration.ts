@@ -91,7 +91,7 @@ test("real local issuance, CAR restoration, restart idempotency, and external NF
 			const update = await call(`/v1/submissions/${submission.id}/status`, "PATCH", { status, version: submission.version, note: "" }, true);
 			assert.equal(update.status, 200); submission = await update.json();
 		}
-		const queued = await call(path, "POST", { title: "Charizard — Base Set", grade: "10", version: submission.version }, true);
+		const queued = await call(path, "POST", { item: { type: "trading-card", schemaVersion: 1, category: "pokemon", attributes: { subject: "Charizard", set: "Base Set", number: "4", total: "102" } }, grade: "10", version: submission.version }, true);
 		assert.equal(queued.status, 202);
 		const first = await queued.json() as PassportIssuance;
 		assert.equal((await (await call(path, "POST", {}, true)).json()).itemId, first.itemId);
@@ -104,18 +104,31 @@ test("real local issuance, CAR restoration, restart idempotency, and external NF
 		}
 		assert(minted?.transactionHash && minted.contractAddress && minted.metadataURI && minted.imageURI);
 		assert.equal(minted.tokenId, "1");
+  assert.equal(minted.title, "Charizard — Base Set #4/102");
+  assert.deepEqual(minted.item, { type: "trading-card", schemaVersion: 1, category: "pokemon", attributes: { subject: "Charizard", set: "Base Set", number: "4", total: "102" } });
 		await waitIndexed(wallet);
 		assert.notEqual(await rpc("eth_getCode", [minted.contractAddress, "latest"]), "0x");
 		assert.equal((await (await call(`/v1/passports?wallet=${wallet}`)).json()).length, 1);
 		const publicPath = `/v1/passports/${minted.itemId}`;
-		const issuedFeed = await (await call("/v1/activity")).json();
-		assert.equal(issuedFeed.events.length, 1); assert.equal(issuedFeed.events[0].kind, "issued");
-		assert.equal(issuedFeed.events[0].itemId, minted.itemId); assert.equal(issuedFeed.events[0].passport.title, minted.title);
-		assert.equal(issuedFeed.nextCursor, null);
+		const issuedActivity = await (await call("/v1/activity")).json();
+		assert.equal(issuedActivity.events.length, 1); assert.equal(issuedActivity.events[0].kind, "issued");
+		assert.equal(issuedActivity.events[0].itemId, minted.itemId); assert.equal(issuedActivity.events[0].passport.title, minted.title);
+		assert.equal(issuedActivity.nextCursor, null);
+  const registrationId = issuedActivity.events[0].id;
+  const registrationDetail = await call(`/v1/activity/${encodeURIComponent(registrationId)}`);
+  assert.equal(registrationDetail.status, 200);
+  assert.deepEqual(await registrationDetail.json(), issuedActivity.events[0]);
+  assert.equal((await call("/v1/activity/invalid")).status, 400);
+  assert.equal((await call(`/v1/activity/${encodeURIComponent(`31337:0x${"f".repeat(64)}:0`)}`)).status, 404);
 		for (const query of ["kind=unknown", "cursor=broken", "cursor=9999999999999999999:1", "limit=51", "limit=-1"]) assert.equal((await call(`/v1/activity?${query}`)).status, 400);
-		for (const privateValue of ["private@example.com", "Never publish", "raw_tx", "submission_id"]) assert(!JSON.stringify(issuedFeed).includes(privateValue));
+		for (const privateValue of ["private@example.com", "Never publish", "raw_tx", "submission_id"]) assert(!JSON.stringify(issuedActivity).includes(privateValue));
 
 		const publicResult = await (await call(publicPath)).json();
+  assert.deepEqual(publicResult.item, minted.item);
+  const archivedMetadata = await (await call(`${publicPath}/metadata`)).json();
+  assert.equal(archivedMetadata.name, minted.title);
+  assert.deepEqual(archivedMetadata.trueorigin.item, minted.item);
+  assert.equal(archivedMetadata.trueorigin.schema_version, "4");
 		assert.equal(publicResult.verification.status, "verified");
 		assert.equal(publicResult.verification.currentOwner.toLowerCase(), wallet);
 		assert.equal(publicResult.verification.history.length, 1);
@@ -186,6 +199,8 @@ test("real local issuance, CAR restoration, restart idempotency, and external NF
 		assert.equal(afterTransfer.verification.history[1].kind, "transfer");
 		const newest = await (await call("/v1/activity?limit=1")).json();
 		assert.equal(newest.events.length, 1); assert.equal(newest.events[0].kind, "transfer");
+  assert.deepEqual(await (await call(`/v1/activity/${encodeURIComponent(newest.events[0].id)}`)).json(), newest.events[0]);
+  assert.equal((await (await call(`/v1/activity/${encodeURIComponent(registrationId)}`)).json()).kind, "issued");
 		assert.equal(newest.events[0].to.toLowerCase(), buyer); assert(newest.nextCursor);
 		const older = await (await call(`/v1/activity?limit=1&cursor=${encodeURIComponent(newest.nextCursor)}`)).json();
 		assert.equal(older.events.length, 1); assert.equal(older.events[0].kind, "issued"); assert.equal(older.nextCursor, null);
@@ -209,13 +224,14 @@ test("real local issuance, CAR restoration, restart idempotency, and external NF
 		api = await createApiService({ ...config, directory: join(directory, "api-empty"), passport: { ...config.passport, enabled: false, ipfsURL: ipfs.url } });
 		const rebuilt = await (await call(publicPath)).json();
 		assert.equal(rebuilt.verification.status, "verified");
+		assert.deepEqual(rebuilt.item, minted.item);
 		assert.equal(rebuilt.title, minted.title); assert.equal(rebuilt.metadataURI, minted.metadataURI);
 		assert.equal(rebuilt.certificationNumber, "12345678"); assert.equal(rebuilt.grade, "10");
 		assert.equal(rebuilt.verification.currentOwner.toLowerCase(), buyer);
 		assert.equal(rebuilt.verification.history.length, 2);
-		const rebuiltFeed = await (await call("/v1/activity")).json();
-		assert.deepEqual(rebuiltFeed.events.map((event: { id: string }) => event.id), [newest.events[0].id, older.events[0].id]);
-		assert.equal(rebuiltFeed.events[0].passport.title, minted.title);
+		const rebuiltActivity = await (await call("/v1/activity")).json();
+		assert.deepEqual(rebuiltActivity.events.map((event: { id: string }) => event.id), [newest.events[0].id, older.events[0].id]);
+		assert.equal(rebuiltActivity.events[0].passport.title, minted.title);
 
 		const indexedHistory = await (await fetch(`${indexerURL}/v1/passports/${minted.itemId}`)).json();
 		assert.equal(indexedHistory.history.length, 2); assert.equal(indexedHistory.history[1].to.toLowerCase(), buyer);

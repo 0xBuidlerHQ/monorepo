@@ -3,7 +3,7 @@ export type NavigationItem = { name: string; icon: string; href: string };
 export const navigationItems: NavigationItem[] = [
 	{ name: "Explore", icon: "Explore", href: "/explore" },
 	{ name: "Collection", icon: "My Collection", href: "/collection" },
-	{ name: "Feed", icon: "Feed", href: "/feed" },
+	{ name: "Activity", icon: "Activity", href: "/activity" },
 	{ name: "Registry", icon: "Registry", href: "/registry" },
 	{ name: "Authenticate", icon: "Submit", href: "/submit" },
 	{ name: "Transfers", icon: "Transfers", href: "/transfers" },
@@ -11,6 +11,6 @@ export const navigationItems: NavigationItem[] = [
 	{ name: "Scan", icon: "Scan", href: "/scan" },
 ];
 
-export const isNavigationActive = (href: string, pathname: string) => pathname === href || pathname.startsWith(`${href}/`) || (href === "/registry" && pathname.startsWith("/items/"));
+export const isNavigationActive = (href: string, pathname: string) => pathname === href || pathname.startsWith(`${href}/`);
 
 export const primaryNavigationItems = navigationItems.filter(item => !["/transfers", "/scan"].includes(item.href));

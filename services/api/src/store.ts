@@ -5,6 +5,7 @@ import { dirname } from "node:path";
 import { digest } from "@0xhq/api-client/protocol";
 import { certifiers, type Certifier, staffTransitions, submissionStatuses, type Submission, type SubmissionInput, type SubmissionStatus, type PhotoSide, type PassportIssuance } from "@0xhq/api-client/types";
 import { parseHandover, type PhysicalHandover } from "@0xhq/api-client/handovers";
+import { parsePassportItem, itemDisplayTitle } from "@0xhq/api-client/passport-item";
 import { HttpError } from "./errors.ts";
 
 export type Actor = { kind: "customer" | "staff"; id: string };
@@ -210,12 +211,14 @@ export function openStore(path: string, password: string) {
 					db.prepare("UPDATE passports SET data=?,raw_tx=NULL WHERE submission_id=?").run(JSON.stringify(retry), id);
 					return retry;
 				}
-				const input = value as { title?: unknown; grade?: unknown; version?: unknown } | null;
-				if (!input || typeof input.title !== "string" || !input.title.trim() || input.title.trim().length > 200 || typeof input.grade !== "string" || input.grade.length > 40) throw new HttpError(400, "Enter an item name and a valid grade, or leave grade empty.");
+				const input = value as { item?: unknown; title?: unknown; grade?: unknown; version?: unknown } | null;
+				if (!input || input.title !== undefined || typeof input.grade !== "string" || input.grade.length > 40) throw new HttpError(400, "Use structured item details and a valid grade, or leave grade empty.");
+    let item: ReturnType<typeof parsePassportItem>;
+    try { item = parsePassportItem(input.item); } catch (error) { throw new HttpError(400, error instanceof Error ? error.message : "Invalid item details."); }
 				if (input.version !== row.version) throw new HttpError(409, "The submission changed. Refresh before issuing.");
 				const data = JSON.parse(row.data) as SubmissionInput;
 				const approval = db.prepare("SELECT created_at FROM history WHERE submission_id=? AND status='approved' ORDER BY id DESC LIMIT 1").get(id) as { created_at: string };
-				const passport: PassportIssuance = { inspectionApprovedAt: approval.created_at, itemId: `0x${digest(`trueorigin:item:${randomUUID()}`)}`, title: input.title.trim(), grade: input.grade.trim(), certifier: row.grading_company, certificationNumber: row.cert,
+				const passport: PassportIssuance = { inspectionApprovedAt: approval.created_at, itemId: `0x${digest(`trueorigin:item:${randomUUID()}`)}`, item, title: itemDisplayTitle(item), grade: input.grade.trim(), certifier: row.grading_company, certificationNumber: row.cert,
 					recipientAddress: data.recipientAddress, chainId: 31337, contractAddress: null, tokenId: null, metadataURI: null, imageURI: null, transactionHash: null, status: "queued", error: null, createdAt: new Date().toISOString(), confirmedAt: null };
 				db.prepare("INSERT INTO passports(submission_id,item_id,data) VALUES (?,?,?)").run(id, passport.itemId, JSON.stringify(passport));
 				db.prepare("UPDATE submissions SET data=?,version=version+1 WHERE id=?").run(JSON.stringify({ ...data, title: passport.title, grade: passport.grade }), id);

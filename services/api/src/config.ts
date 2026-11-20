@@ -2,6 +2,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { resolve, join } from "node:path";
 import { randomBytes } from "node:crypto";
+import { developmentPassportImage } from "./development/fixtures.ts";
 import type { ServiceKeys } from "@0xhq/api-client/protocol";
 
 export const serviceDirectory = fileURLToPath(new URL("../", import.meta.url));
@@ -28,5 +29,6 @@ export function loadConfig() {
 	}
 	const port = Number(process.env.API_PORT ?? 3004);
 	if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error("API_PORT must be between 1 and 65535.");
-	return { directory, port, keys, adminPassword, passport: { bootstrap: process.env.NODE_ENV === "development" && process.env.PASSPORT_LOCAL_BOOTSTRAP !== "false", indexerURL: process.env.PASSPORT_INDEXER_URL ?? "http://127.0.0.1:3005", deploymentsFile: process.env.PASSPORT_DEPLOYMENTS_FILE, enabled: process.env.NODE_ENV === "development" && process.env.PASSPORT_LOCAL_ISSUANCE !== "false", rpcURL: process.env.PASSPORT_RPC_URL ?? "http://127.0.0.1:8545", ipfsURL: process.env.PASSPORT_IPFS_URL ?? "http://localhost:3003" }, allowDevelopmentAdmin: process.env.NODE_ENV === "development" };
+	const seed = !production && process.env.NODE_ENV === "development" && process.env.TRUEORIGIN_DEV_SEED === "true";
+	return { directory, port, keys, adminPassword, seed, passport: { image: seed ? developmentPassportImage : undefined, bootstrap: process.env.NODE_ENV === "development" && process.env.PASSPORT_LOCAL_BOOTSTRAP !== "false", indexerURL: process.env.PASSPORT_INDEXER_URL ?? "http://127.0.0.1:3005", deploymentsFile: process.env.PASSPORT_DEPLOYMENTS_FILE, enabled: process.env.NODE_ENV === "development" && process.env.PASSPORT_LOCAL_ISSUANCE !== "false", rpcURL: process.env.PASSPORT_RPC_URL ?? "http://127.0.0.1:8545", ipfsURL: process.env.PASSPORT_IPFS_URL ?? "http://localhost:3003" }, allowDevelopmentAdmin: process.env.NODE_ENV === "development" };
 }

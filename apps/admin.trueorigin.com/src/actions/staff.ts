@@ -1,4 +1,5 @@
 "use server";
+import { itemSchemas } from "@0xhq/api-client/passport-item";
 
 import { handoverMethods, isHandoverMethod } from "@0xhq/api-client/handovers";
 import { cookies } from "next/headers";
@@ -37,7 +38,12 @@ export async function issuePassport(_previous: StaffFormState, form: FormData): 
 		await trustedAdminOrigin();
 		const id = form.get("id");
 		if (typeof id !== "string" || !/^[a-f0-9-]{36}$/.test(id)) return { error: "Invalid submission." };
-		await staffJson(`/v1/submissions/${id}/passport`, { method: "POST", json: { title: form.get("title") ?? "", grade: form.get("grade") ?? "", version: Number(form.get("version")) } });
+  const selected = itemSchemas.find(schema => `${schema.type}:${schema.version}` === form.get("itemType"));
+  const attributes = Object.fromEntries((selected?.fields ?? []).map(field => {
+   const value = form.get(field.key);
+   return [field.key, field.type === "boolean" ? value === "on" : field.type === "number" ? value === null || value === "" ? undefined : Number(value) : value ?? ""];
+  }));
+		await staffJson(`/v1/submissions/${id}/passport`, { method: "POST", json: { item: { type: selected?.type, schemaVersion: selected?.version, category: form.get("category"), attributes }, grade: form.get("grade") ?? "", version: Number(form.get("version")) } });
 		revalidatePath("/");
 		return { message: "Passport issuance queued. Ownership will appear after confirmation." };
 	} catch (error) { return { error: error instanceof ApiError ? error.message : "Passport issuance could not be started. Please try again." }; }

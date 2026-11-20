@@ -2,10 +2,12 @@ import { join } from "node:path";
 import { createLocalPassportIssuer, type PreparedPassportTransaction } from "@0xhq/trueorigin-sdk/passport-issuer";
 import type { Actor, SubmissionStore } from "../store.ts";
 import { HttpError } from "../errors.ts";
+import type { PassportIssuance } from "@0xhq/api-client/types";
+import type { PassportImage } from "./assets.ts";
 import { storePassportMetadata } from "./storage.ts";
 
 type Issuer = Awaited<ReturnType<typeof createLocalPassportIssuer>>;
-export type PassportOptions = { bootstrap?: boolean; deploymentsFile?: string; indexerURL?: string; enabled?: boolean; rpcURL?: string; ipfsURL?: string; issuer?: Issuer; storeMetadata?: typeof storePassportMetadata };
+export type PassportOptions = { bootstrap?: boolean; deploymentsFile?: string; indexerURL?: string; enabled?: boolean; rpcURL?: string; ipfsURL?: string; issuer?: Issuer; storeMetadata?: typeof storePassportMetadata; image?: (passport: PassportIssuance) => Promise<PassportImage | undefined> };
 export function createPassportWorkflow(directory: string, store: SubmissionStore, options: PassportOptions = {}) {
 	let chain: Promise<Issuer> | undefined;
 	const issuer = () => chain ??= options.issuer ? Promise.resolve(options.issuer) : createLocalPassportIssuer(join(directory, "passport-chain"), options.rpcURL, options.deploymentsFile).catch(error => { chain = undefined; throw error; });
@@ -29,7 +31,8 @@ export function createPassportWorkflow(directory: string, store: SubmissionStore
 			if (closed) break;
 			try {
 				let passport = job.passport;
-				const metadata = await (options.storeMetadata ?? storePassportMetadata)(directory, passport, options.ipfsURL ?? "http://localhost:3003");
+				const artwork = passport.metadataURI ? undefined : await options.image?.(passport);
+				const metadata = await (options.storeMetadata ?? storePassportMetadata)(directory, passport, options.ipfsURL ?? "http://localhost:3003", artwork);
 				passport = store.updatePassport(job.submissionId, { ...metadata, error: null });
 				const client = await issuer();
 				const address = passport.contractAddress as `0x${string}` | null ?? await client.deployment();

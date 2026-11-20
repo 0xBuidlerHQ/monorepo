@@ -1,4 +1,4 @@
-export type SearchResult = { title: string; detail: string; href: string; group: string; keywords?: string };
+export type SearchResult = { title: string; detail: string; href: string; group: string; image?: string; universe?: string; keywords?: string };
 export function normalizeSearchText(value: string) {
  return value.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replace(/[^a-z0-9]/g, "");
 }

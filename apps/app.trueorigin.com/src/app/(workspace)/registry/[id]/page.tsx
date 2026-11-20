@@ -14,7 +14,7 @@ async function ItemContent({ params }: Props) {
 	const { id } = await params;
 	let passport: Awaited<ReturnType<typeof getPublicPassport>>;
 	try { passport = await getPublicPassport(id); }
-	catch { return <section className="py-12"><h1 className="text-4xl font-medium tracking-tight">Passport temporarily unavailable</h1><p className="my-5 max-w-md text-sm leading-6 text-white/45">The registry could not be reached. This is not a verification result; try again shortly.</p><RecheckPassport /></section>; }
+	catch { return <section className="py-12"><h1 className="font-serif text-4xl font-medium tracking-tight">Passport temporarily unavailable</h1><p className="my-5 max-w-md text-sm leading-6 text-white/45">The registry could not be reached. This is not a verification result; try again shortly.</p><RecheckPassport /></section>; }
 	if (!passport) notFound();
 	return <PassportDetail passport={passport} />;
 }

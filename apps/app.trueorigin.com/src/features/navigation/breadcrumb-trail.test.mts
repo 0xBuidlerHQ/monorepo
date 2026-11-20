@@ -96,7 +96,7 @@ test("legacy language parameters keep English catalogue links and collection hie
 test("main pages and unresolved records retain valid breadcrumbs", () => {
 	for (const [path, label] of [
 		["/explore", "Explore"],
-		["/feed", "Feed"],
+		["/activity", "Activity"],
 		["/registry", "Registry"],
 		["/collection", "Collection"],
 		["/submit", "Authenticate"],
@@ -105,9 +105,9 @@ test("main pages and unresolved records retain valid breadcrumbs", () => {
 		["/scan", "Scan"],
 	])
 		assert.deepEqual(labels(path), [label]);
-	assert.deepEqual(labels(`/items/0x${"a".repeat(64)}`), [
+	assert.deepEqual(labels(`/registry/0x${"a".repeat(64)}`), [
 		"Registry",
-		"Passport",
+		"0xaaaa…aaaa",
 	]);
 	assert.deepEqual(labels("/explore/pokemon/2"), [
 		"Explore",
@@ -179,4 +179,18 @@ test("selected printings extend card breadcrumbs and the card link clears the pr
  assert.equal(breadcrumbTrail(path,new URLSearchParams(),detail).at(-1)?.label,"Blastoise");
  assert.equal(breadcrumbTrail(path,new URLSearchParams("printing=unknown"),detail).at(-1)?.label,"Blastoise");
  assert.equal(breadcrumbTrail("/explore/pokemon/catalogue",new URLSearchParams("printing=first-edition")).at(-1)?.label,"Catalogue");
+});
+
+test("registry breadcrumbs shorten the item ID and retain its full copy value", () => {
+ const id = `0x${"a".repeat(64)}`;
+ const path = `/registry/${id}`;
+ assert.equal(needsBreadcrumbDetail(path), false);
+ const expected = [{ label: "Registry", href: "/registry" }, { label: "0xaaaa…aaaa", href: path, copyValue: id }];
+ assert.deepEqual(breadcrumbTrail(path, new URLSearchParams()), expected);
+ assert.deepEqual(breadcrumbTrail(`${path}/`, new URLSearchParams(), { name: "Charizard" }), expected);
+});
+
+test("event breadcrumbs keep activity as the parent and identify the transaction log", () => {
+ const path = `/activity/${encodeURIComponent(`31337:0x${"a".repeat(64)}:7`)}`;
+ assert.deepEqual(breadcrumbTrail(path, new URLSearchParams()), [{ label: "Activity", href: "/activity" }, { label: "0xaaaa…aaaa · 7", href: path }]);
 });

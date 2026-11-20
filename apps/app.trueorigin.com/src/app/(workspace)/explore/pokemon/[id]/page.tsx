@@ -44,7 +44,7 @@ async function PokemonProfile(props: Props) {
 			<ContentSurface as="header" className={pokemonProfileGrid}>
 				<div className="relative z-10 flex flex-col items-start justify-center p-7 sm:p-10 lg:p-12">
 					<p className="font-mono text-xs text-white/40">{number}<span className="mx-3 text-white/20">/</span>Generation {roman}</p>
-<div className="mt-6 flex items-center gap-5"><h1 id="pokemon-profile-title" className="min-w-0 break-words text-[clamp(40px,6vw,88px)] font-medium leading-none tracking-[-0.065em]">{pokemon.name}</h1><FloatingTypeSymbols /></div>
+<div className="mt-6 flex items-center gap-5"><h1 id="pokemon-profile-title" className="font-serif min-w-0 break-words text-[clamp(40px,6vw,88px)] font-medium leading-none tracking-[-0.065em]">{pokemon.name}</h1><FloatingTypeSymbols /></div>
 					{profile?.genus && <p className="mt-3 text-sm text-white/45">{profile.genus}</p>}
 					{profile && <div className="mt-5 flex flex-wrap gap-2">{profile.types.map((type) => <span key={type} className="rounded-full bg-white/[0.07] px-4 py-1.5 text-xs text-white/75">{type}</span>)}</div>}
 					{profile?.description && <p className="mt-6 max-w-md text-sm leading-7 text-white/60">{profile.description}</p>}

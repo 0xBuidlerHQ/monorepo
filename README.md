@@ -30,12 +30,12 @@ Implemented:
 - [x] Submission by certifier and certification number, with authenticated receiving wallet and progress tracking.
 - [x] Admin acceptance, arrival recording, inspection, approval, and rejection.
 - [x] Local ERC-721 passport issuance with immutable IPFS metadata and file backups.
-- [x] Individual passport pages, Registry, Verify, Collection, and an issuance/transfer Feed.
+- [x] Individual passport pages, Registry, Verify, Collection, and an issuance/transfer Activity.
 - [x] Manual returns from TrueOrigin by hand-to-hand or delivery, with customer receipt confirmation.
 - [x] Simple NFT transfers: pick an item, enter a receiving wallet, review, authorize, and show confirmation. Live ownership checks and pending operation recovery protect execution.
-- [x] App-wide on-chain transfer tracking in Feed, passport history, and Collection, including external NFT transfers.
+- [x] App-wide on-chain transfer tracking in Activity, passport history, and Collection, including external NFT transfers.
 - [x] Rebuilding the public index from blockchain events and restoring IPFS files from CAR backups.
-- [x] Fresh local development startup, including an empty registry before the first mint.
+- [x] Fresh local development startup with real seeded demo passports, IPFS card images, submissions, and on-chain transfer activity; an empty run remains available.
 
 Remaining release criteria:
 
@@ -66,7 +66,7 @@ Hub-assisted escrow is a later capability to design explicitly. Current returns 
 - [ ] Listings, offers, purchases, and their lifecycle.
 - [ ] Payment, cancellation, refund, and dispute rules.
 - [ ] Decide whether hub-assisted exchanges need an NFT/payment escrow contract, and review its release conditions before deployment.
-- [ ] Add actual listing and sale events to Feed; an NFT transfer is not automatically a sale.
+- [ ] Add actual listing and sale events to Activity; an NFT transfer is not automatically a sale.
 
 ### v0.4.0 — Broader catalogue
 
@@ -86,7 +86,7 @@ Hub-assisted escrow is a later capability to design explicitly. Current returns 
 | Pokémon · Catalogue | `/explore/pokemon/catalogue` | Browse named sets and collections of individual cards. | English Base Set is currently enabled. |
 | Collection / set | `/explore/catalogue/collections/:id` | Browse a set’s cards, release details, and type/rarity filters. | Base Set contains 102 card references. |
 | Card | `/explore/catalogue/:setId/:number` | Describe a specific catalogue card, its printings, and its Pokémon links. | Example: `/explore/catalogue/base-set/2`. Printing options reuse the reference image for now. |
-| Feed | `/feed` | Follow passport issuance and NFT transfers across the platform. | On-chain activity is indexed; an NFT transfer is not classified as a sale. Sales/listing filters await the marketplace. |
+| Activity | `/activity` | Follow passport issuance and NFT transfers across the platform. | On-chain activity is indexed; an NFT transfer is not classified as a sale. Sales/listing filters await the marketplace. |
 | Registry | `/registry` | Browse individual objects with issued TrueOrigin passports, regardless of owner. | Public passport records, distinct from reference catalogue entries. |
 | Passport | `/items/:id` | Inspect one registered object’s authentication record, current NFT owner, metadata, and ownership history. | Physical possession is explicitly separate from NFT ownership. |
 | Authenticate | `/submit` | Request an inspection, supply the certifier and certification number, and follow the submission through issuance and return. | Available in the header/pill and through **Add an item** in Collection. Requires sign-in; the receiving wallet comes from the account. |
@@ -131,9 +131,20 @@ The Ethereum fork needs an archive-capable upstream RPC. Configure `ETHEREUM_RPC
 | Bundler | http://localhost:4337 | Local ERC-4337 user operations |
 | Anvil | http://127.0.0.1:8545 | Ethereum fork, chain ID **31337** |
 
-**Every `make dev` run clears and reuses `.dev-data/`.** Accounts, submissions, files, deployment state, and the public index start fresh. Register again for the new run; credentials already saved in your authenticator are not deleted from your device. Startup initializes the local passport contract but does not mint sample NFTs.
+**Every `make dev` run clears and reuses `.dev-data/`.** Accounts, submissions, files, deployment state, and the public index start fresh. Register again for the new run; credentials already saved in your authenticator are not deleted from your device. Startup then seeds **8 card NFTs, 12 submissions, and 3 NFT transfers** using the normal inspection/issuance workflow. Card images and metadata are pinned in local IPFS and backed up as CAR files; Ponder indexes the actual chain events. Wait for **Development data ready** in the terminal.
 
-Stop the previous run with Ctrl+C before restarting. The launcher refuses occupied ports rather than killing existing processes. `make dev admin.trueorigin.com` starts the same complete TrueOrigin stack. `make dev` also starts the unrelated `0xhq.space` app while it remains in this workspace.
+
+The demo includes Charizard, Blastoise, Venusaur, Pikachu, Mewtwo, Machamp, Zapdos, and Alakazam from Base Set, with catalogue artwork already stored in this repository. It also includes requests awaiting review, accepted requests, an inspection, a rejection, and hand-to-hand/delivery returns. Certification and inspection details are fictional and metadata marks these as local development demos.
+
+Demo NFTs belong to Anvil's public test wallets. Your Collection still shows only the NFTs owned by your signed-in wallet; seeding does not create a passkey or bypass sign-in. The seed manifest at `.dev-data/api/development-seed.json` lists item IDs, wallet owners, certification numbers, and IPFS URIs. Restarts within the same run reuse the records and do not mint or transfer twice.
+
+For an empty development environment:
+
+```sh
+TRUEORIGIN_DEV_SEED=false make dev
+```
+
+Stop the previous run with Ctrl+C before restarting. Shutdown waits for the complete process tree, including detached services, and force-stops stragglers after a grace period. If a previous run was interrupted or crashed, run `make clean` to stop remaining development processes from this workspace. Cleanup preserves development data and build caches; the next `make dev` still resets `.dev-data/`. Processes belonging to other projects are left alone and reported, so their ports must be freed in those projects. The launcher refuses occupied ports rather than killing unrelated services. `make dev admin.trueorigin.com` starts the same complete TrueOrigin stack. `make dev` also starts the unrelated `0xhq.space` app while it remains in this workspace.
 
 `pnpm dev` skips the reset wrapper and uses configured service data paths, but its local chain still starts fresh. Keeping a database alone does not restore an old chain.
 
@@ -181,6 +192,7 @@ pnpm build
 pnpm test:dev
 pnpm --filter @0xhq/api test
 pnpm --filter @0xhq/api test:issuance
+pnpm --filter @0xhq/api test:seed
 pnpm --filter @0xhq/contracts.trueorigin.com test
 ```
 

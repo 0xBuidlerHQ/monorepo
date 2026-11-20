@@ -4,7 +4,7 @@ import { pokemonCategories } from "../pokemon/categories.ts";
 import { setPageHref } from "../reference/set-relationships.ts";
 import { catalogHref, catalogLanguage } from "../reference/catalog-language.ts";
 
-export type BreadcrumbItem = { label: string; href: string };
+export type BreadcrumbItem = { label: string; href: string; copyValue?: string };
 export type BreadcrumbDetail = {
 	name: string | null;
 	setId?: string;
@@ -84,10 +84,18 @@ export function breadcrumbTrail(
         return trail;
     }
 
-	if (path.startsWith("/items/"))
+ if (path.startsWith("/activity/")) {
+  let id: string;
+  try { id = decodeURIComponent(path.slice("/activity/".length)); } catch { id = ""; }
+  const parts = id.split(":");
+  const label = parts.length === 3 ? `${parts[1].slice(0, 6)}…${parts[1].slice(-4)} · ${parts[2]}` : "Event";
+  return [{ label: "Activity", href: "/activity" }, { label, href: path }];
+ }
+
+	if (path.startsWith("/registry/"))
 		return [
 			{ label: "Registry", href: "/registry" },
-			{ label: "Passport", href: path },
+			{ label: `${path.split("/").at(-1)?.slice(0, 6)}…${path.slice(-4)}`, href: path, copyValue: path.split("/").at(-1) },
 		];
 	const universe = {
 		"/magic": "Magic",

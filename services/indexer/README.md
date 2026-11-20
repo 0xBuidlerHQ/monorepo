@@ -55,8 +55,8 @@ These loopback-only endpoints contain public data and require no private-service
 - `GET /v1/passports?owner=0x…`: chain-derived registry entries, optionally filtered by indexed owner.
 - `GET /v1/passports/0x…`: one item and its indexed NFT transfer history.
 
-## Activity feed
+## Activity
 
 `GET /v1/activity?kind=all&limit=30&cursor=<block>:<log-index>` joins indexed transfers to registered passports. Results are ordered by block and log index, newest first; the opaque cursor identifies the last returned event. Limits are capped at 50. Filters support `issued` and `transfer`. Sales and listings remain empty until actual marketplace contracts/events are integrated; a standard NFT transfer is never classified as a purchase or sale.
 
-The shared API exposes the same signed public endpoint. Item metadata is hydrated once per asset per page; an IPFS outage leaves the chain event visible with fallback item information. Feed events and stable event IDs are reconstructed when rebuilding the index.
+The shared API exposes the same signed public endpoint. Item metadata is hydrated once per asset per page; an IPFS outage leaves the chain event visible with fallback item information. Activity events and stable event IDs are reconstructed when rebuilding the index.

@@ -5,7 +5,7 @@ import { PokedexSearchProvider } from "@/features/pokemon/pokedex-search";
 import { PokemonCategoryTabs } from "@/features/pokemon/pokemon-category-navigation";
 
 export default function PokemonSectionsLayout({ children }: { children: ReactNode }) {
- return <section aria-labelledby="pokemon-title" className="[&_#pokemon-title]:font-serif">
+ return <section aria-labelledby="pokemon-title">
   <UniverseTitle name="Pokémon" titleId="pokemon-title">
    <Image src="/pika.png" alt="Pikachu" width={120} height={120} className="size-[clamp(48px,9vw,120px)] shrink-0 object-contain" />
   </UniverseTitle>

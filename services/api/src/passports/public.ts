@@ -4,6 +4,7 @@ import { createPassportReader, PassportMismatch } from "@0xhq/trueorigin-sdk/pas
 import { digest } from "@0xhq/api-client/protocol";
 import type { PublicPassport, PublicPassportDetail } from "@0xhq/api-client/types";
 import { createPassportIndex, readIPFS, type IndexedPassport } from "./index.ts";
+import { passportAsset } from "./assets.ts";
 import { HttpError } from "../errors.ts";
 
 export function createPublicPassportService(directory: string, rpcURL?: string, indexerURL?: string, ipfsURL = "http://localhost:3003") {
@@ -19,9 +20,10 @@ export function createPublicPassportService(directory: string, rpcURL?: string, 
 		const manifest = JSON.parse(await readFile(join(directoryPath, "manifest.json"), "utf8")) as { itemId: string; image: { uri: string; sha256: string }; metadata: { uri: string; sha256: string } };
 		const asset = manifest[kind];
 		if (manifest.itemId !== itemId || asset.uri !== expectedURI) throw new Error("Archive reference mismatch");
-		const bytes = await readFile(join(directoryPath, kind === "image" ? "passport.svg" : "metadata.json"));
+		const { name, contentType } = passportAsset(asset.uri, kind);
+		const bytes = await readFile(join(directoryPath, name));
 		if (digest(bytes) !== asset.sha256) throw new Error("Archive integrity mismatch");
-		return { bytes, contentType: kind === "image" ? "image/svg+xml" : "application/json" };
+		return { bytes, contentType };
 	}
 	async function readAsset(itemId: string, kind: "image" | "metadata") {
 		const passport = await record(itemId);
@@ -29,12 +31,13 @@ export function createPublicPassportService(directory: string, rpcURL?: string, 
 		try { return await archive(passport.itemId, kind, uri); }
 		catch {
 			if (!uri) throw new HttpError(404, "No passport image is recorded.");
-			return { bytes: await readIPFS(uri, ipfsURL), contentType: kind === "image" ? "image/svg+xml" : "application/json" };
+			return { bytes: await readIPFS(uri, ipfsURL), contentType: passportAsset(uri, kind).contentType };
 		}
 	}
 	return {
 		list: () => index.list(),
 		activity: index.activity,
+  activityEvent: index.activityEvent,
 		async owned(wallet: string) {
 			const candidates = await index.list(wallet);
 			const owned: PublicPassport[] = [];

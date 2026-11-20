@@ -36,6 +36,7 @@ export async function freshDevelopmentEnvironment(workspace, inherited = process
 		PASSKEY_ORIGIN: "http://localhost:3001",
 		PASSKEY_RP_ID: "localhost",
 		TRUEORIGIN_CHAIN_ID: "31337",
+		TRUEORIGIN_DEV_SEED: inherited.TRUEORIGIN_DEV_SEED === "false" ? "false" : "true",
 		TRUEORIGIN_APP_PORT: "3001",
 		PONDER_DATABASE_DIR: join(directory, "indexer"),
 		PONDER_PORT: "3005",

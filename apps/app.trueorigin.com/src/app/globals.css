@@ -23,80 +23,6 @@ html::-webkit-scrollbar {
 	display: none;
 }
 
-::view-transition-old(root),
-::view-transition-new(root) {
-	animation: none;
-}
-
-::view-transition-group(.page-crossfade) {
-	animation-duration: 420ms;
-	animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-/* Persistent bars sit above page snapshots as well as ordinary page content. */
-::view-transition-group(root) {
-	animation: none;
-}
-
-::view-transition-group(app-header),
-::view-transition-group(app-footer) {
-	animation: none;
-	z-index: 40;
-}
-
-::view-transition-old(app-header),
-::view-transition-old(app-footer),
-::view-transition-old(navigation-dock) {
-	display: none;
-}
-
-::view-transition-new(app-header),
-::view-transition-new(app-footer) {
-	animation: none;
-	opacity: 1;
-	mix-blend-mode: normal;
-}
-
-::view-transition-group(navigation-dock) {
-	animation: none;
-	z-index: 100;
-}
-
-::view-transition-old(navigation-dock) {
-	animation: none;
-	opacity: 0;
-}
-
-::view-transition-new(navigation-dock) {
-	animation: none;
-	opacity: 1;
-	mix-blend-mode: normal;
-}
-
-::view-transition-old(.page-crossfade) {
-	animation: page-fade-out 420ms ease both;
-}
-
-::view-transition-new(.page-crossfade) {
-	animation: page-fade-in 420ms ease both;
-}
-
-@keyframes page-fade-out {
-	to { opacity: 0; }
-}
-
-@keyframes page-fade-in {
-	from { opacity: 0; }
-	to { opacity: 1; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-	::view-transition-group(.page-crossfade),
-	::view-transition-old(.page-crossfade),
-	::view-transition-new(.page-crossfade) {
-		animation-duration: 0.01ms;
-	}
-}
 
 .app-shell {
 	--shell-background: #111111;
@@ -150,7 +76,7 @@ html::-webkit-scrollbar {
 	--surface-raised: #222222;
 	--app-gutter: 1.5rem;
 	--app-header-padding: 0.75rem;
-	--app-navbar-height: calc(2rem + env(safe-area-inset-top));
+	--app-navbar-height: calc(1.875rem + env(safe-area-inset-top));
 	--app-header-height: calc(var(--app-navbar-height) + 1.75rem);
 	color-scheme: dark;
 	--app-cell: calc(100vw / round(100vw / clamp(36px, 3vw, 48px), 1));

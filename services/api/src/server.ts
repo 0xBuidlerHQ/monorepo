@@ -4,6 +4,7 @@ import { mkdir, readFile, writeFile, rename } from "node:fs/promises";
 import { join } from "node:path";
 import { randomUUID } from "node:crypto";
 import { digest, verifySignature, type ServiceKeys } from "@0xhq/api-client/protocol";
+import { parseActivityId } from "@0xhq/api-client/activity";
 import { activityKinds, type ActivityKind } from "@0xhq/api-client/types";
 import type { PhotoSide } from "@0xhq/api-client/types";
 import { openStore, type Actor } from "./store.ts";
@@ -68,6 +69,12 @@ export async function createApiService({ directory, keys, adminPassword, port = 
 		const actor: Actor = verified.client === "customer" ? { kind: "customer", id: verified.subject } : !token && allowDevelopmentAdmin && process.env.NODE_ENV === "development" ? { kind: "staff", id: "admin" } : store.staff(token);
 		if (url.pathname === "/v1/staff/session" && method === "GET" && actor.kind === "staff") { send(response, 200, { id: actor.id }); return; }
 		if (url.pathname === "/v1/staff/logout" && method === "POST" && actor.kind === "staff") { store.logout(token); send(response, 200, { ok: true }); return; }
+  if (url.pathname.startsWith("/v1/activity/") && method === "GET") {
+   let id: string;
+   try { id = decodeURIComponent(url.pathname.slice("/v1/activity/".length)); } catch { throw new HttpError(400, "Invalid event ID."); }
+   if (!parseActivityId(id)) throw new HttpError(400, "Invalid event ID.");
+   send(response, 200, await publicPassports.activityEvent(id)); return;
+  }
 		if (url.pathname === "/v1/activity" && method === "GET") {
 			const kind = url.searchParams.get("kind") ?? "all", cursor = url.searchParams.get("cursor") ?? "", limit = Number(url.searchParams.get("limit") ?? 30);
 			if (!activityKinds.includes(kind as ActivityKind) || !Number.isInteger(limit) || limit < 1 || limit > 50 || (cursor && !/^\d{1,19}:\d{1,10}$/.test(cursor))) throw new HttpError(400, "Invalid activity query.");

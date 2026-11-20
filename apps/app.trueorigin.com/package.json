@@ -8,7 +8,7 @@
     "start": "next start --port 3001",
     "lint": "biome lint .",
     "typecheck": "next typegen && tsc --noEmit",
-    "test": "NODE_ENV=test node --conditions=react-server --test src/server/auth/*.test.mts src/features/navigation/*.test.mts src/features/pokemon/*.test.mts src/features/passports/*.test.mts"
+    "test": "NODE_ENV=test node --conditions=react-server --test src/server/auth/*.test.mts src/features/navigation/*.test.mts src/features/activity/*.test.mts src/features/pokemon/*.test.mts src/features/passports/*.test.mts"
   },
   "dependencies": {
     "@0xhq/api-client": "workspace:*",

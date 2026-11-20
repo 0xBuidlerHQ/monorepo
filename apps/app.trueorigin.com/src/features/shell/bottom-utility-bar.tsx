@@ -15,6 +15,7 @@ const icons: Record<string, ReactNode> = {
 	sun: <><circle cx="12" cy="12" r="4" /><path d="M12 1v2m0 18v2M1 12h2m18 0h2M4.2 4.2l1.4 1.4m12.8 12.8 1.4 1.4M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" /></>,
 	moon: <path d="M20.6 14.2A9 9 0 0 1 9.8 3.4 9 9 0 1 0 20.6 14.2Z" />,
 	system: <><circle cx="12" cy="12" r="9" /><path d="M12 3a9 9 0 0 1 0 18V3Z" fill="currentColor" stroke="none" /></>,
+	engine: <><path d="m9 3-.6 2.2-1.8 1.1-2.2-.6-2 3.5L4 11v2l-1.6 1.8 2 3.5 2.2-.6 1.8 1.1L9 21h6l.6-2.2 1.8-1.1 2.2.6 2-3.5L20 13v-2l1.6-1.8-2-3.5-2.2.6-1.8-1.1L15 3Z" /><circle cx="12" cy="12" r="3" /></>,
 };
 
 function BarIcon({ name, className = "size-3.5" }: { name: string; className?: string }) {
@@ -28,7 +29,7 @@ const buttonStyle = "inline-flex shrink-0 cursor-pointer items-center gap-1.5 wh
 export function BottomUtilityBar() {
 	const [theme, setTheme] = useState("moon");
 	return (
-		<footer data-bottom-utility-bar style={{ viewTransitionName: "app-footer" }} className="fixed inset-x-0 bottom-0 z-40 overflow-x-auto rounded-b-[14px] border border-[#292929] bg-[var(--background)] pb-[env(safe-area-inset-bottom)] text-[11px] leading-none text-[#969696] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+		<footer data-bottom-utility-bar className="fixed inset-x-0 bottom-0 z-40 overflow-x-auto rounded-b-[14px] border border-[#292929] bg-[var(--background)] pb-[env(safe-area-inset-bottom)] text-[11px] leading-none text-[#969696] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
 			<div className="flex h-[30px] min-w-max items-center px-4">
 				<Link href="/explore" aria-label="TrueOrigin Explore" className="grid h-[30px] shrink-0 place-items-center text-white/80 transition-colors hover:text-white"><TrueOriginsMark className="size-5" /></Link>
 				<Divider />
@@ -41,6 +42,8 @@ export function BottomUtilityBar() {
 				<button type="button" className={buttonStyle}><BarIcon name="support" />Support</button>
 				<Divider />
 				<fieldset aria-label="Appearance preview" className="flex items-center rounded-full bg-[#161616] p-0.5">{["sun", "moon", "system"].map(name => <button key={name} type="button" aria-label={`${name === "sun" ? "Light" : name === "moon" ? "Dark" : "System"} appearance`} aria-pressed={theme === name} onClick={() => setTheme(name)} className={`grid size-5 cursor-pointer place-items-center rounded-full transition-colors ${theme === name ? "bg-[#262626] text-[#eeeeee]" : "text-[#929292] hover:text-white"}`}><BarIcon name={name} /></button>)}</fieldset>
+				<Divider />
+				<button type="button" aria-label="Engine" className={buttonStyle}><BarIcon name="engine" /></button>
 			</div>
 		</footer>
 	);

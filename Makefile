@@ -1,4 +1,8 @@
-.PHONY: dev app.trueorigin.com admin.trueorigin.com trueorigin.com
+.PHONY: dev clean app.trueorigin.com admin.trueorigin.com trueorigin.com
+.DEFAULT_GOAL := dev
+
+clean:
+	node scripts/clean.mjs
 
 dev:
 ifneq ($(filter app.trueorigin.com admin.trueorigin.com trueorigin.com,$(MAKECMDGOALS)),)

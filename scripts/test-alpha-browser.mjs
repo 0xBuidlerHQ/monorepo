@@ -52,7 +52,7 @@ try {
   await admin.ev(`{const e=document.querySelector('details[open] select[name=status]'); e.value=${JSON.stringify(status)};e.dispatchEvent(new Event('change',{bubbles:true}));}`);
   await admin.click('Update submission');await admin.wait(`!document.querySelector('details[open] button:disabled')`);await pause(600);
  }
- await admin.fill('details[open] input[name=title]',title);await admin.fill('details[open] input[name=grade]','10');await admin.click('Issue passport');
+ await admin.fill('details[open] input[name=subject]',title);await admin.fill('details[open] input[name=set]','Base Set');await admin.fill('details[open] input[name=number]','4');await admin.fill('details[open] input[name=total]','102');await admin.fill('details[open] input[name=grade]','10');await admin.click('Issue passport');
  await admin.wait(`document.body?.innerText.includes('Passport issued')`);
  console.log('Admin accepted, received, inspected, approved, and issued NFT');
  await admin.click('Record handover');await admin.wait(`document.body?.innerText.includes('Waiting for receipt confirmation')`);
@@ -61,8 +61,8 @@ try {
  await a.ev(`document.querySelector('details[open] input[type=checkbox]').click()`);await a.click('Confirm receipt');await a.wait(`document.body?.innerText.includes('Receipt confirmed by you.')`);
  console.log('Hand-to-hand physical return and owner receipt recorded separately');
  await a.nav('/collection');await a.wait(`document.body?.innerText.includes(${JSON.stringify(title)})`);
- await a.wait(`!!document.querySelector('main a[href^="/items/"]')`);
- const itemHref=await a.ev(`document.querySelector('main a[href^="/items/"]').getAttribute('href')`);
+ await a.wait(`!!document.querySelector('main a[href^="/registry/"]')`);
+ const itemHref=await a.ev(`document.querySelector('main a[href^="/registry/"]').getAttribute('href')`);
  const itemId=itemHref.split('/').at(-1);
  await a.nav('/verify');await a.wait(`!!document.querySelector('input[name=q]')`);await a.fill('input[name=q]',cert);await a.ev(`document.querySelector('input[name=q]').form.requestSubmit()`);await a.wait(`location.pathname===${JSON.stringify(itemHref)}`);await a.wait(`document.body?.innerText.toLowerCase().includes(${JSON.stringify(walletA.toLowerCase())})`);
  console.log('Collection and Verify resolve issued passport to user A');
@@ -80,12 +80,12 @@ try {
  await b.nav('/collection');await b.wait(`document.body?.innerText.includes(${JSON.stringify(title)})`);
  await a.nav('/collection');await a.wait(`document.body?.innerText.includes('Your objects, together.')`);
  await b.nav(itemHref);await b.wait(`document.body?.innerText.toLowerCase().includes(${JSON.stringify(walletB.toLowerCase())})`);
- await b.nav('/feed');await b.wait(`document.body?.innerText.includes(${JSON.stringify(title)})`);
+ await b.nav('/activity');await b.wait(`document.body?.innerText.includes(${JSON.stringify(title)})`);
  await b.nav('/registry');await b.wait(`document.body?.innerText.includes(${JSON.stringify(title)})`);
- console.log('Ownership updated across both Collections, passport, Feed, and Registry');
+ console.log('Ownership updated across both Collections, passport, Activity, and Registry');
  await b.ev(`document.querySelector('[data-header-search]').click()`);await b.wait(`!!document.querySelector('[cmdk-input]')`);await b.fill('[cmdk-input]',cert);await b.wait(`!!document.querySelector('[cmdk-item]')`);assert(await b.ev(`document.querySelector('[cmdk-item]').textContent.includes(${JSON.stringify(title)})`));
  console.log('Live search finds public passport by certification number');
- const activity = await b.ev(`fetch('/api/feed').then(r=>r.json())`);
+ const activity = await b.ev(`fetch('/api/activity').then(r=>r.json())`);
  const ownEvents = activity.events.filter(event => event.itemId === itemId);
  assert.equal(ownEvents.filter(event => event.kind === 'issued').length, 1);
  assert.equal(ownEvents.filter(event => event.kind === 'transfer').length, 1);

@@ -58,11 +58,14 @@ test("each make dev environment starts with empty accounts and submissions in th
 		assert.equal(await readFile(join(external, "keep.txt"), "utf8"), "existing development data");
 		assert.equal(second.env.DATABASE_URL, ""); assert.equal(second.env.NODE_ENV, "development");
 		assert.equal(second.env.TRUEORIGIN_CHAIN_ID, "31337");
+		assert.equal(second.env.TRUEORIGIN_DEV_SEED, "true");
 		assert.notEqual(first.env.API_CUSTOMER_SECRET, second.env.API_CUSTOMER_SECRET);
 		assert.notEqual(first.env.API_ADMIN_SECRET, second.env.API_ADMIN_SECRET);
 		const keys = JSON.parse(await readFile(second.env.API_SERVICE_KEYS_FILE, "utf8"));
 		assert.equal(keys.customer, second.env.API_CUSTOMER_SECRET); assert.equal(keys.admin, second.env.API_ADMIN_SECRET);
 		const turbo = JSON.parse(await readFile(new URL("../turbo.json", import.meta.url), "utf8"));
 		for (const name of ["API_*", "IPFS_*", "PASSPORT_*", "PONDER_*", "PASSKEY_*", "TRUEORIGIN_*"]) assert(turbo.tasks.dev.passThroughEnv.includes(name));
+		const withoutSeed = await freshDevelopmentEnvironment(workspace, { ...inherited, TRUEORIGIN_DEV_SEED: "false" });
+		assert.equal(withoutSeed.env.TRUEORIGIN_DEV_SEED, "false");
 	} finally { await rm(workspace, { recursive: true, force: true }); }
 });

@@ -14,6 +14,7 @@ const wallet = "0x1111111111111111111111111111111111111111" as const;
 const contract = "0x2222222222222222222222222222222222222222" as const;
 const metadataURI = "ipfs://bafy-test/metadata.json";
 const imageURI = "ipfs://bafy-image/passport.svg";
+const item = { type: "trading-card", schemaVersion: 1, category: "pokemon", attributes: { subject: "Charizard", set: "Base Set", number: "4", total: "102" } };
 const password = "test-password-for-passports";
 function approved(store: ReturnType<typeof openStore>) {
 	let submission = store.create({ requestId: randomUUID(), gradingCompany: "PSA", certificationNumber: "12345678", contactEmail: "private-owner@example.com", recipientAddress: wallet, notes: "Private inspection information" }, customer);
@@ -49,8 +50,11 @@ test("issuance is staff-only, requires approval, and preserves the server-record
 		assert.throws(() => workflow.queue(draft.id, {}, staff), /Approve the inspection/);
 		let submission = store.get(draft.id, staff);
 		for (const status of ["accepted", "received", "under_inspection", "approved"]) submission = store.transition(draft.id, { status, version: submission.version, note: "" }, staff);
-		const queued = workflow.queue(draft.id, { title: "Charizard", grade: "10", version: submission.version, recipientAddress: contract }, staff);
+  assert.throws(() => workflow.queue(draft.id, { title: "Free text", grade: "10", version: submission.version }, staff), /structured item/);
+		const queued = workflow.queue(draft.id, { item, grade: "10", version: submission.version, recipientAddress: contract }, staff);
 		assert.equal(queued.recipientAddress, wallet);
+  assert.equal(queued.title, "Charizard — Base Set #4/102");
+  assert.deepEqual(queued.item, item);
 		assert.equal(workflow.queue(draft.id, { title: "Different", grade: "1", version: 0 }, staff).itemId, queued.itemId);
 		await workflow.pump();
 		assert.equal(store.get(draft.id, staff).passport?.status, "confirmed");
@@ -66,7 +70,7 @@ test("a lost RPC response is reconciled after restart without signing or minting
 	const mock = mockIssuer(); mock.loseResponse();
 	let workflow = createPassportWorkflow(directory, store, { enabled: true, issuer: mock.issuer, storeMetadata: async () => ({ metadataURI, imageURI }) });
 	try {
-		workflow.queue(submission.id, { title: "Charizard", grade: "10", version: submission.version }, staff);
+		workflow.queue(submission.id, { item, grade: "10", version: submission.version }, staff);
 		await workflow.pump();
 		const uncertain = store.get(submission.id, staff).passport;
 		assert.equal(uncertain?.status, "prepared"); assert(uncertain?.transactionHash);
@@ -89,7 +93,7 @@ test("storage failure prevents signing and broadcasting; production issuance rem
 	const workflow = createPassportWorkflow(directory, store, { enabled: true, issuer: mock.issuer, storeMetadata: async () => { throw new Error("Backup unavailable"); } });
 	const previous = process.env.NODE_ENV;
 	try {
-		workflow.queue(submission.id, { title: "Charizard", grade: "10", version: submission.version }, staff);
+		workflow.queue(submission.id, { item, grade: "10", version: submission.version }, staff);
 		await workflow.pump();
 		assert.deepEqual(mock.counts, { broadcasts: 0, prepared: 0, deployed: 0 });
 		assert.equal(store.get(submission.id, staff).passport?.error, "Backup unavailable");

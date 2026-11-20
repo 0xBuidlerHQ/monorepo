@@ -21,3 +21,5 @@ next-env.d.ts
 # Local make dev state
 .dev-data/
 .dev-runs/
+.dev-processes.json
+.dev-processes.json.*.tmp

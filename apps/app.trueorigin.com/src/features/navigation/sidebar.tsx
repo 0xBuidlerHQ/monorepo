@@ -18,7 +18,7 @@ export function Sidebar() {
    </Link>
    <nav className="min-h-0 flex-1 space-y-2 overflow-y-auto px-3 py-8 md:px-5">
     {sidebarItems.map(({ name, href }) => {
-     const active = pathname === href || (href !== "/" && pathname.startsWith(`${href}/`)) || (href === "/explore" && pathname.startsWith("/items/"));
+     const active = pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
      return <Link key={href} href={href} aria-label={name} title={name} aria-current={active ? "page" : undefined} className="group relative flex h-11 items-center justify-center gap-3 rounded-md px-3 text-[#203c4b]/55 transition-colors duration-150 hover:bg-white/20 hover:text-[#203c4b] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#203c4b] aria-[current=page]:text-[#203c4b] aria-[current=page]:before:absolute aria-[current=page]:before:inset-y-3 aria-[current=page]:before:-left-3 aria-[current=page]:before:w-0.5 aria-[current=page]:before:bg-brand-accent motion-reduce:transition-none md:justify-start md:aria-[current=page]:before:-left-5">
       <NavigationIcon name={name} />
       <span className="hidden min-w-0 flex-1 text-[13px] tracking-[-0.01em] md:block">{name}</span>

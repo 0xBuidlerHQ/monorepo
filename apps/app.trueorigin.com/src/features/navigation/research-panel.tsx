@@ -3,16 +3,18 @@
 import { OPEN_SEARCH_EVENT } from "./open-search";
 import { Command } from "cmdk";
 import { motion, useReducedMotion } from "motion/react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { SearchResult } from "./search-results";
-import { Drawer, DrawerContent, DrawerDescription, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
+import { Dialog } from "@base-ui/react/dialog";
+import { SearchResultsView } from "./search-results-view";
 
 export function ResearchPanel({ compact = false }: { compact?: boolean }) {
  const reducedMotion = useReducedMotion();
  const [open, setOpen] = useState(false);
  const [query, setQuery] = useState("");
  const router = useRouter();
+ const inputRef = useRef<HTMLInputElement>(null);
  const [results, setResults] = useState<SearchResult[]>([]);
  const [loading, setLoading] = useState(false);
  const [error, setError] = useState("");
@@ -54,29 +56,27 @@ export function ResearchPanel({ compact = false }: { compact?: boolean }) {
    window.removeEventListener(OPEN_SEARCH_EVENT, openDrawer);
   };
  }, []);
- return <Drawer open={open} onOpenChange={changeOpen} swipeDirection="down">
-  <DrawerTrigger data-header-search aria-label="Open search (Command K or Control K)" render={<motion.button whileTap={reducedMotion ? undefined : { scale: 0.98 }} transition={{ type: "spring", stiffness: 400, damping: 28 }} />} className={compact ? "group flex h-[30px] cursor-pointer items-center gap-2 border-r border-white/[0.07] px-3 text-[11px] text-white/50 transition-colors hover:bg-white/[0.04] hover:text-white [&>span:first-child]:size-4 [&>span:first-child>svg]:size-3.5 [&>kbd]:h-5 [&>kbd]:rounded [&>kbd]:px-1 [&>span:nth-child(2)]:text-[11px]" : "group flex h-12 w-12 shrink-0 cursor-pointer items-center gap-3 rounded-full bg-[#222222] p-1.5 text-white/65 shadow-[0_3px_12px_#00000018,inset_0_1px_0_#ffffff08] transition-[background-color,box-shadow] duration-200 hover:bg-[#2a2a2a] hover:shadow-[0_4px_20px_#00000026,inset_0_1px_0_#ffffff0c] data-popup-open:bg-[#2a2a2a] motion-reduce:transition-none sm:w-64 sm:pr-3"}>
+ return <Dialog.Root open={open} onOpenChange={changeOpen}>
+  <Dialog.Trigger data-header-search aria-label="Open search (Command K or Control K)" render={<motion.button whileTap={reducedMotion ? undefined : { scale: 0.98 }} transition={{ type: "spring", stiffness: 400, damping: 28 }} />} className={compact ? "group flex h-8 shrink-0 cursor-pointer items-center gap-2 rounded-lg border border-white/25 px-1.5 text-xs font-medium text-white/85 transition-colors hover:border-white/45 hover:bg-white/[0.07] hover:text-white lg:px-3 [&>span:first-child]:size-[18px] [&>span:first-child>svg]:size-[18px] [&>kbd]:h-5 [&>kbd]:rounded [&>kbd]:px-1 [&>span:nth-child(2)]:text-xs" : "group flex h-12 w-12 shrink-0 cursor-pointer items-center gap-3 rounded-full bg-[#222222] p-1.5 text-white/65 shadow-[0_3px_12px_#00000018,inset_0_1px_0_#ffffff08] transition-[background-color,box-shadow] duration-200 hover:bg-[#2a2a2a] hover:shadow-[0_4px_20px_#00000026,inset_0_1px_0_#ffffff0c] data-popup-open:bg-[#2a2a2a] motion-reduce:transition-none sm:w-64 sm:pr-3"}>
    <span className={`grid shrink-0 place-items-center text-white/55 transition-colors group-hover:text-white/85 ${compact ? "size-3.5" : "size-9 rounded-full bg-white/[0.035]"}`}><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" className={compact ? "size-3.5" : "size-[19px]"}><circle cx="10.75" cy="10.75" r="6.25" /><path d="m15.5 15.5 4 4" /></svg></span>
    <span className="hidden flex-1 text-left text-[13px] font-medium tracking-[-0.025em] sm:block">Search</span>
    <kbd className="hidden h-7 items-center gap-1 rounded-lg bg-white/[0.045] px-2 font-sans text-[10px] leading-none text-white/35 sm:inline-flex"><span className="text-xs">⌘</span>K</kbd>
-  </DrawerTrigger>
-  <DrawerContent style={{ height: "min(65dvh, calc(100dvh - var(--app-header-height)))", maxHeight: "calc(100dvh - var(--app-header-height))" }} className="border-white/15 bg-[#111] text-white [--drawer-bleed-background:#111] [color-scheme:dark] data-[swipe-direction=down]:rounded-t-2xl">
-   <DrawerTitle className="sr-only">Search TrueOrigins</DrawerTitle>
-   <DrawerDescription className="sr-only">Search panel.</DrawerDescription>
-   <Command shouldFilter={false} label="Search TrueOrigins" className="flex min-h-0 flex-1 flex-col" vimBindings={false}>
-    <Command.Input value={query} onValueChange={setQuery} maxLength={120} placeholder="Search Pokémon, cards, passports…" aria-label="Search" className="h-16 shrink-0 border-b border-white/10 bg-transparent px-6 text-base text-white outline-none placeholder:text-white/35 sm:px-10" />
-    <Command.List aria-busy={loading} className="min-h-0 flex-1 overflow-y-auto px-4 py-4 sm:px-8">
-     {loading && <div role="status" className="px-3 py-6 text-sm text-white/40">Searching…</div>}
-     {error && <p role="alert" className="px-3 py-6 text-sm text-red-300">{error}</p>}
-     {!loading && !error && !results.length && <Command.Empty className="px-3 py-6 text-sm text-white/45">No matches. Try a name, card number, or certification number.</Command.Empty>}
-     {[...new Set(results.map(result => result.group))].map(group => <Command.Group key={group} heading={group} className="mb-5 [&_[cmdk-group-heading]]:px-3 [&_[cmdk-group-heading]]:pb-2 [&_[cmdk-group-heading]]:text-[10px] [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:text-white/35">
-      {results.filter(result => result.group === group).map(result => <Command.Item key={result.href} value={result.href} onSelect={() => { changeOpen(false); router.push(result.href); }} className="flex cursor-pointer items-center justify-between gap-4 rounded-xl px-3 py-3 text-white/80 data-[selected=true]:bg-white/[0.07] data-[selected=true]:text-white">
-       <span className="min-w-0"><span className="block truncate text-sm">{result.title}</span><span className="mt-1 block truncate text-xs text-white/40">{result.detail}</span></span><span aria-hidden="true" className="text-white/30">↗</span>
-      </Command.Item>)}
-     </Command.Group>)}
-     {passportsUnavailable && <p role="status" className="px-3 pb-3 text-xs text-white/40">Passport search is temporarily unavailable. Catalogue results are still available.</p>}
-    </Command.List>
-   </Command>
-  </DrawerContent>
- </Drawer>;
+  </Dialog.Trigger>
+  <Dialog.Portal>
+   <Dialog.Backdrop className="fixed inset-0 z-[120] bg-black/65 transition-opacity duration-200 data-starting-style:opacity-0 data-ending-style:opacity-0 motion-reduce:transition-none" />
+   <Dialog.Viewport className="pointer-events-none fixed inset-0 z-[121] grid place-items-center p-3 sm:p-8">
+    <Dialog.Popup initialFocus={inputRef} data-search-popup className="pointer-events-auto flex h-[60dvh] max-h-[540px] w-full max-w-[900px] flex-col overflow-hidden rounded-[18px] border border-[#292929] bg-[#090909] text-white shadow-[0_32px_120px_#00000080] transition-[opacity,transform] duration-200 ease-out data-starting-style:translate-y-2 data-starting-style:scale-[0.985] data-starting-style:opacity-0 data-ending-style:translate-y-2 data-ending-style:scale-[0.985] data-ending-style:opacity-0 motion-reduce:transition-none [color-scheme:dark]">
+     <Dialog.Title className="sr-only">Search TrueOrigin</Dialog.Title>
+     <Dialog.Description className="sr-only">Search collections, cards, Pokémon, public passports, and pages. Filter by category or ecosystem.</Dialog.Description>
+     <Command shouldFilter={false} label="Search TrueOrigin" className="flex min-h-0 flex-1 flex-col" vimBindings={false}>
+      <div className="flex h-14 shrink-0 items-center border-b border-[#242424] sm:h-16">
+       <Command.Input ref={inputRef} value={query} onValueChange={setQuery} maxLength={120} placeholder="Search TrueOrigin" aria-label="Search" className="h-full min-w-0 flex-1 bg-transparent px-4 text-lg font-normal tracking-[-0.025em] text-white outline-none placeholder:text-[#777] sm:px-5 sm:text-xl" />
+       <Dialog.Close aria-label="Close search" className="mr-3 grid h-8 cursor-pointer place-items-center rounded-md px-2 text-[11px] text-white/35 transition-colors hover:bg-white/5 hover:text-white sm:mr-4"><span aria-hidden="true">Esc</span></Dialog.Close>
+      </div>
+      <SearchResultsView results={results} loading={loading} error={error} passportsUnavailable={passportsUnavailable} query={query} onSelect={href => { changeOpen(false); router.push(href); }} />
+     </Command>
+    </Dialog.Popup>
+   </Dialog.Viewport>
+  </Dialog.Portal>
+ </Dialog.Root>;
 }

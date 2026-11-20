@@ -87,7 +87,7 @@ Integration tests use isolated temporary databases and verify ownership isolatio
 ## Local passport issuance
 
 Run the normal full stack with `pnpm dev`. Once an inspection is **Approved**, expand
-it in admin and select **Issue passport**. Enter the public item name and grade.
+it in admin and select **Issue passport**. Enter the category, subject/character, set, optional card number and printed total, and grade. The display title is generated from these structured facts (for example, `Venusaur — Base Set #15/102`); it is not an editable field. New metadata includes the structured facts and generated NFT `name`. Item data uses `{ type, schemaVersion, category, attributes }`. The versioned type definition drives field validation, staff forms, display labels and short/full titles. Trading cards are the first supported issuance type. Readers render primitive attributes for unknown future types or versions and retain their immutable metadata title; issuance rejects unsupported schemas. Certification, ownership and history remain separate from item attributes. This development data format requires a fresh local reset.
 The recipient is taken from the authenticated submission; the form cannot override it.
 Acceptance alone never issues an NFT.
 
@@ -177,9 +177,9 @@ and chain outages/resets. See the [recovery guide](../indexer/README.md).
 
 ## Platform activity
 
-`GET /v1/activity?kind=all&limit=30&cursor=...` is a signed public read endpoint for the Feed page. It exposes chain-derived passport issuance and ownership transfer events with original transaction timestamps, wallet addresses, public item facts, and stable IDs. Newest-first pagination uses block/log cursors. `kind` accepts `all`, `issued`, `transfer`, `sale`, or `listing`; the last two return empty results while the marketplace is unavailable. Transfers are not treated as sales. Metadata outages retain the event with `passport: null`. No submission contacts, private notes, or private photos are returned.
+`GET /v1/activity?kind=all&limit=30&cursor=...` is a signed public read endpoint for the Activity page. It exposes chain-derived passport issuance and ownership transfer events with original transaction timestamps, wallet addresses, public item facts, and stable IDs. Newest-first pagination uses block/log cursors. `kind` accepts `all`, `issued`, `transfer`, `sale`, or `listing`; the last two return empty results while the marketplace is unavailable. Transfers are not treated as sales. Metadata outages retain the event with `passport: null`. No submission contacts, private notes, or private photos are returned.
 
-The customer Feed refreshes the newest page every 15 seconds, applies filters without navigation, and pauses automatic updates while viewing older events. It labels previously loaded data when updates fail. The recovery integration test verifies feed ordering, filtering, pagination, privacy, metadata outages, and reconstruction from an empty database.
+The customer Activity refreshes the newest page every 15 seconds, applies filters without navigation, and pauses automatic updates while viewing older events. It labels previously loaded data when updates fail. The recovery integration test verifies activity ordering, filtering, pagination, privacy, metadata outages, and reconstruction from an empty database.
 
 ### Manual physical handovers
 
@@ -201,6 +201,12 @@ The shared definitions in `packages/api-client/src/handovers.ts` own method labe
 
 Handover details, actor IDs and receipt timestamps stay private in `submission_handovers` in the submissions SQLite database. Schema v4 migrates existing v3 delivery records, retaining their details, timestamps and status; the legacy table is retained as a migration backup and is no longer used. Back up this database: chain reconstruction restores public passports and ownership, not private handover records.
 
-NFT issuance and physical return are independent. Receipt confirmation is the customer's assertion, not carrier verification or a guarantee of physical possession. Handover details and receipt assertions are never published in NFT metadata or the public activity feed.
+NFT issuance and physical return are independent. Receipt confirmation is the customer's assertion, not carrier verification or a guarantee of physical possession. Handover details and receipt assertions are never published in NFT metadata or the public activity stream.
 
-Development startup initializes only the local passport contract, not any NFTs. This lets Ponder serve empty Registry, Feed and Collection results before the first issuance. Initialization retries while Anvil is starting. Set `PASSPORT_LOCAL_BOOTSTRAP=false` to keep deployment lazy until an explicit issuance; production never runs this local bootstrap.
+`make dev` sets `TRUEORIGIN_DEV_SEED=true` and seeds development data after local services are ready: eight real passport NFTs, twelve submissions with card photos, three on-chain transfers, and four return records (two with receipt confirmed). The API entrypoint uses authenticated API operations and the regular durable issuance worker; no records are injected into the index. Public WebP artwork is uploaded to local IPFS, content-checked, and backed up with its CAR archive before minting. Metadata explicitly marks the records as fictional local demos. Existing SVG passport images remain supported.
+
+The dataset is defined in `src/development/fixtures.ts`. It uses deterministic request IDs and fictional certification numbers, and rerunning against the same chain/database is idempotent. Owners are Anvil test wallets, not fabricated signed-in customer accounts. On a fork, the seed removes only EIP-7702 delegations from those known demo wallets through the local Anvil RPC; unexpected contract code is left intact and reported. `.dev-data/api/development-seed.json` records public item IDs, owners, and CIDs. Pending/rejected requests remain private workflow data.
+
+Use `TRUEORIGIN_DEV_SEED=false make dev` for an empty run. Plain `pnpm dev` does not enable seeding unless the flag is set explicitly. Seeding refuses production, non-loopback services, and RPCs reporting a chain other than 31337. Bootstrap and production issuance guards remain unchanged.
+
+`pnpm --filter @0xhq/api test:seed` runs an isolated Anvil/API/IPFS/Ponder integration test. It verifies on-chain token URIs, byte-for-byte IPFS card images, workflow states, returns, transfer activity, restart idempotency, raster backup serving, and automatic startup wiring.

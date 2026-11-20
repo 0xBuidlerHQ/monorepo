@@ -1,3 +1,4 @@
+import type { PassportItem } from "./passport-item.ts";
 import type { PhysicalHandover } from "./handovers.ts";
 export const certifiers = [{ id: "PSA", name: "PSA" }, { id: "CGC", name: "CGC" }, { id: "BGS", name: "Beckett" }] as const;
 export type Certifier = typeof certifiers[number]["id"];
@@ -29,7 +30,7 @@ export const staffTransitions: Partial<Record<SubmissionStatus, SubmissionStatus
 
 export type PassportIssuance = {
 	inspectionApprovedAt?: string;
-	itemId: string; title: string; grade: string; certifier: Certifier; certificationNumber: string;
+	itemId: string; item: PassportItem; title: string; grade: string; certifier: Certifier; certificationNumber: string;
 	recipientAddress: string; chainId: 31337; contractAddress: string | null; tokenId: string | null;
 	metadataURI: string | null; imageURI: string | null; transactionHash: string | null;
 	status: "queued" | "prepared" | "submitted" | "confirmed" | "failed";
@@ -37,7 +38,7 @@ export type PassportIssuance = {
 };
 
 export type PublicPassport = {
-	itemId: string; title: string; grade: string; certifier: Certifier; certificationNumber: string;
+	itemId: string; item: PassportItem; title: string; grade: string; certifier: Certifier; certificationNumber: string;
 	chainId: 31337; contractAddress: string; tokenId: string; metadataURI: string; imageURI: string | null;
 	transactionHash: string; issuedTo: string; issuedAt: string;
 	inspection: { status: "approved" | "not_recorded"; approvedAt: string | null; revocationSupported: false };
@@ -57,7 +58,7 @@ export type AssetActivity = {
 	id: string; kind: Exclude<ActivityKind, "all">; itemId: string; tokenId: string;
 	contractAddress: string; from: string; to: string; transactionHash: string;
 	blockNumber: string; logIndex: number; timestamp: string;
-	passport: PublicPassport | null;
+	passport: PublicPassport | null; category?: string | null;
 };
 export type ActivityPage = { events: AssetActivity[]; nextCursor: string | null };
 

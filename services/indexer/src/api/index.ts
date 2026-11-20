@@ -66,6 +66,15 @@ app.get("/v1/passports/:itemId", async (c) => {
 	return c.json(replaceBigInts({ ...row, history }, (n) => n.toString()));
 });
 const zeroAddress = "0x0000000000000000000000000000000000000000" as const;
+app.get("/v1/activity/:hash/:logIndex", async c => {
+ const hash = c.req.param("hash"), logIndex = c.req.param("logIndex");
+ if (!/^0x[0-9a-f]{64}$/i.test(hash) || !/^(0|[1-9][0-9]{0,9})$/.test(logIndex) || Number(logIndex) > 2147483647) return c.json({ error: "Invalid event ID." }, 400);
+ const [row] = await db.select({ event: transfer, passport }).from(transfer)
+  .innerJoin(passport, eq(transfer.passportId, passport.id))
+  .where(and(eq(transfer.transactionHash, hash.toLowerCase() as `0x${string}`), eq(transfer.logIndex, Number(logIndex)))).limit(1);
+ if (!row) return c.json({ error: "Event not found." }, 404);
+ return c.json(replaceBigInts(row, n => n.toString()));
+});
 app.get("/v1/activity", async c => {
 	const kind = c.req.query("kind") ?? "all";
 	const cursor = c.req.query("cursor") ?? "";

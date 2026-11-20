@@ -10,7 +10,8 @@
     "dev": "NODE_ENV=development node --watch src/index.ts",
     "start": "NODE_ENV=production node src/index.ts",
     "admin:password": "node src/admin-password.ts",
-    "test:issuance": "node --conditions=react-server --test src/passports.integration.ts"
+    "test:issuance": "node --conditions=react-server --test src/passports.integration.ts",
+    "test:seed": "node --conditions=react-server --test src/development-seed.integration.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "2.6.4",

@@ -8,7 +8,7 @@ export function SetHeader({ name, logo, releaseDate, series, language, cardCount
  const formattedDate = date && !Number.isNaN(date.getTime()) ? new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }).format(date) : releaseDate;
  const details = [formattedDate, series, cardCount !== undefined ? `${cardCount} cards` : null, language].filter((value): value is string => Boolean(value));
  return <div>
-  <div className="relative isolate [&_#set-title]:font-serif">
+  <div className="relative isolate">
    <PageHeader title={name} titleId="set-title" adornment={<FloatingTypeSymbols />} actions={logo ? <div className="relative h-10 w-20 sm:h-14 sm:w-28"><Image src={logo} alt={`${name} logo`} fill preload sizes="112px" className="object-contain" /></div> : undefined} />
   </div>
   <div className="mt-9 flex flex-wrap items-center justify-between gap-4 pb-3">

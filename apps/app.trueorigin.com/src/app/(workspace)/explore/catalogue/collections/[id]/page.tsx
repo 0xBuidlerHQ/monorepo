@@ -48,7 +48,7 @@ async function SetProfile(props: Props) {
 			<SetHeader name={set.name} logo={setArtwork[set.id]?.src} releaseDate={set.releaseDate} series={set.series} language={language === "fr" ? "Français" : "English"} cardCount={allCards.length} />
 
 				<SetChecklist set={set} cards={allCards} sections={sections} />
-			<footer className="mt-10 flex flex-wrap items-center justify-between gap-5 border-t border-white/10 pt-6"><Link href={catalogHref("/explore/pokemon", language)} className="text-sm text-white/55 hover:text-white">← Browse card collections</Link><a href={language === "fr" ? "https://tcgdex.dev/" : "https://github.com/PokemonTCG/pokemon-tcg-data"} target="_blank" rel="noreferrer" className="text-[10px] text-white/30 hover:text-white">Reference data: {language === "fr" ? "TCGdex" : "Pokémon TCG Data"} ↗</a></footer>
+			<footer className="mt-10 flex flex-wrap items-center justify-between gap-5 border-t border-white/10 pt-6"><Link href={catalogHref("/explore/pokemon", language)} className="text-sm text-white/55 hover:text-white">← Browse card collections</Link></footer>
 		</article>
 	);
 }
