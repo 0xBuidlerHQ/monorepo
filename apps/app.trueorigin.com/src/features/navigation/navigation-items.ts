@@ -4,7 +4,7 @@ export const navigationItems: NavigationItem[] = [
 	{ name: "Explore", icon: "Explore", href: "/explore" },
 	{ name: "Collection", icon: "My Collection", href: "/collection" },
 	{ name: "Activity", icon: "Activity", href: "/activity" },
-	{ name: "Registry", icon: "Registry", href: "/registry" },
+	{ name: "Passports", icon: "Passports", href: "/passports" },
 	{ name: "Authenticate", icon: "Submit", href: "/submit" },
 	{ name: "Transfers", icon: "Transfers", href: "/transfers" },
 	{ name: "Verify", icon: "Verify", href: "/verify" },

@@ -10,6 +10,7 @@ import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { DatabaseSync } from "node:sqlite";
 import { randomUUID } from "node:crypto";
+import { createActivityId } from "@0xhq/trueorigin-sdk/activity";
 import { signedHeaders } from "@0xhq/api-client/protocol";
 import type { PassportIssuance, Submission } from "@0xhq/api-client/types";
 import { createApiService } from "./server.ts";
@@ -91,7 +92,7 @@ test("real local issuance, CAR restoration, restart idempotency, and external NF
 			const update = await call(`/v1/submissions/${submission.id}/status`, "PATCH", { status, version: submission.version, note: "" }, true);
 			assert.equal(update.status, 200); submission = await update.json();
 		}
-		const queued = await call(path, "POST", { item: { type: "trading-card", schemaVersion: 1, category: "pokemon", attributes: { subject: "Charizard", set: "Base Set", number: "4", total: "102" } }, grade: "10", version: submission.version }, true);
+		const queued = await call(path, "POST", { item: { type: "card", schemaVersion: 1, universe: "pokemon", attributes: { subject: "Charizard", set: "Base Set", number: "4", total: "102" } }, grade: "10", version: submission.version }, true);
 		assert.equal(queued.status, 202);
 		const first = await queued.json() as PassportIssuance;
 		assert.equal((await (await call(path, "POST", {}, true)).json()).itemId, first.itemId);
@@ -105,7 +106,7 @@ test("real local issuance, CAR restoration, restart idempotency, and external NF
 		assert(minted?.transactionHash && minted.contractAddress && minted.metadataURI && minted.imageURI);
 		assert.equal(minted.tokenId, "1");
   assert.equal(minted.title, "Charizard — Base Set #4/102");
-  assert.deepEqual(minted.item, { type: "trading-card", schemaVersion: 1, category: "pokemon", attributes: { subject: "Charizard", set: "Base Set", number: "4", total: "102" } });
+  assert.deepEqual(minted.item, { type: "card", schemaVersion: 1, universe: "pokemon", attributes: { subject: "Charizard", set: "Base Set", number: "4", total: "102" } });
 		await waitIndexed(wallet);
 		assert.notEqual(await rpc("eth_getCode", [minted.contractAddress, "latest"]), "0x");
 		assert.equal((await (await call(`/v1/passports?wallet=${wallet}`)).json()).length, 1);
@@ -115,11 +116,17 @@ test("real local issuance, CAR restoration, restart idempotency, and external NF
 		assert.equal(issuedActivity.events[0].itemId, minted.itemId); assert.equal(issuedActivity.events[0].passport.title, minted.title);
 		assert.equal(issuedActivity.nextCursor, null);
   const registrationId = issuedActivity.events[0].id;
+  assert.match(registrationId, /^[A-Za-z0-9_-]{22}$/);
+  assert.equal(registrationId, createActivityId(31337, issuedActivity.events[0].transactionHash, issuedActivity.events[0].logIndex));
+  assert.equal(issuedActivity.events[0].chainId, 31337);
+  assert.equal((await call(`/v1/activity/evt_${registrationId}`)).status, 400);
+  const legacyId = `31337:${issuedActivity.events[0].transactionHash}:${issuedActivity.events[0].logIndex}`;
+  assert.equal((await call(`/v1/activity/${encodeURIComponent(legacyId)}`)).status, 400);
   const registrationDetail = await call(`/v1/activity/${encodeURIComponent(registrationId)}`);
   assert.equal(registrationDetail.status, 200);
   assert.deepEqual(await registrationDetail.json(), issuedActivity.events[0]);
   assert.equal((await call("/v1/activity/invalid")).status, 400);
-  assert.equal((await call(`/v1/activity/${encodeURIComponent(`31337:0x${"f".repeat(64)}:0`)}`)).status, 404);
+  assert.equal((await call(`/v1/activity/${"A".repeat(22)}`)).status, 404);
 		for (const query of ["kind=unknown", "cursor=broken", "cursor=9999999999999999999:1", "limit=51", "limit=-1"]) assert.equal((await call(`/v1/activity?${query}`)).status, 400);
 		for (const privateValue of ["private@example.com", "Never publish", "raw_tx", "submission_id"]) assert(!JSON.stringify(issuedActivity).includes(privateValue));
 
@@ -242,7 +249,7 @@ test("real local issuance, CAR restoration, restart idempotency, and external NF
 		assert.equal((await call(`${publicPath}/metadata`)).status, 200);
 		assert.deepEqual(await (await call("/v1/submissions")).json(), []);
 		await assert.rejects(readFile(join(directory, "api-empty", "passport-chain", "issuer-key.txt")), { code: "ENOENT" });
-		console.log("Rebuilt registry, collection, item facts, approval date, images, and transfer history without submission SQLite or API backups.");
+		console.log("Rebuilt passport index, collection, item facts, approval date, images, and transfer history without submission SQLite or API backups.");
 
 		await rpc("anvil_reset");
 		assert.equal((await call(publicPath)).status, 503, "Anvil reset must not serve stale public passports");

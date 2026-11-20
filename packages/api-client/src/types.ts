@@ -55,10 +55,10 @@ export const activityKinds = ["all", "sale", "listing", "transfer", "issued"] as
 export type ActivityKind = typeof activityKinds[number];
 export type ActivityQuery = { kind?: ActivityKind; cursor?: string; limit?: number };
 export type AssetActivity = {
-	id: string; kind: Exclude<ActivityKind, "all">; itemId: string; tokenId: string;
+	id: string; chainId: number; kind: Exclude<ActivityKind, "all">; itemId: string; tokenId: string;
 	contractAddress: string; from: string; to: string; transactionHash: string;
 	blockNumber: string; logIndex: number; timestamp: string;
-	passport: PublicPassport | null; category?: string | null;
+	passport: PublicPassport | null; universe?: string | null;
 };
 export type ActivityPage = { events: AssetActivity[]; nextCursor: string | null };
 

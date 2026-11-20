@@ -117,7 +117,7 @@ export async function seedDevelopmentData({ apiURL, rpcURL, keys, adminPassword,
  await wait(async () => {
   const rows = await api<PublicPassport[]>("/v1/passports/public");
   return passports.every(passport => rows.some(row => row.itemId === passport.itemId)) ? true : null;
- }, "waiting for the public registry");
+ }, "waiting for the public passports");
  await wait(async () => {
   const pending = new Set(passports.map(passport => `${passport.itemId}:issued`));
   for (const row of records.filter(record => record.fixture.transfer)) {
@@ -136,6 +136,6 @@ export async function seedDevelopmentData({ apiURL, rpcURL, keys, adminPassword,
  }, "waiting for indexed issuance and transfer activity");
  const result = { version: 1, chainId: 31337, wallets: demoWallets, passports, submissions: records.map(row => ({ id: row.submission.id, certificationNumber: row.fixture.certificationNumber, status: row.fixture.status })) };
  await durableWrite(manifest, Buffer.from(JSON.stringify(result, null, 2)));
- log(`Development data ready: ${passports.length} real NFTs with IPFS card images, ${records.length} submissions, ${fixtures.filter(row => row.transfer).length} transfers. Registry and Activity are populated.`);
+ log(`Development data ready: ${passports.length} real NFTs with IPFS card images, ${records.length} submissions, ${fixtures.filter(row => row.transfer).length} transfers. Passports and Activity are populated.`);
  return result;
 }

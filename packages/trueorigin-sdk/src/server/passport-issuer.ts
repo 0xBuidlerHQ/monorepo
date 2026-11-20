@@ -73,7 +73,7 @@ export async function createLocalPassportIssuer(directory: string, rpcUrl = "htt
 			try { manifest = JSON.parse(await readFile(deploymentsFile, "utf8")); } catch (error) { if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error; }
 			if (manifest.chainId !== 31337) throw new Error("Deployment manifest chain mismatch.");
 			const known = manifest.contracts.find(c => c.address.toLowerCase() === address.toLowerCase());
-			if (known && known.blockHash !== mined.blockHash) throw new Error("The chain changed; preserve the old deployment manifest before starting a new local registry.");
+			if (known && known.blockHash !== mined.blockHash) throw new Error("The chain changed; preserve the old deployment manifest before starting a new local passport index.");
 			if (!known) {
 				manifest.contracts.push({ address, startBlock: Number(mined.blockNumber), blockHash: mined.blockHash });
 				await mkdir(dirname(deploymentsFile), { recursive: true });

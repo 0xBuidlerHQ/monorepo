@@ -1,4 +1,5 @@
 import { ActivityFilters } from "./activity-filters";
+import styles from "./activity-table.module.css";
 export function ActivitySkeleton({ toolbar = false }: { toolbar?: boolean }) {
 	return (
 		<div role="status" aria-busy="true" aria-label="Loading asset activity">
@@ -14,9 +15,10 @@ export function ActivitySkeleton({ toolbar = false }: { toolbar?: boolean }) {
 				{[0, 1, 2, 3, 4].map((index) => (
 					<div
 						key={index}
-						className="grid min-w-[1260px] grid-cols-[6rem_8.5rem_5rem_6.5rem_3rem_6.5rem_6.5rem_6.5rem_6.5rem_5rem_2rem] items-center justify-between gap-x-4 border-b border-white/[0.05] px-4 py-2"
+						className={`${styles.grid} border-b border-white/[0.045] px-4 py-2 even:bg-white/[0.012]`}
 					>
 						<div className="h-6 w-16 rounded-md bg-white/[0.04]" />
+						<div className="h-3 w-20 rounded bg-white/[0.03]" />
 						<div className="flex min-w-0 items-center gap-2">
 							<div className="size-7 shrink-0 rounded bg-white/[0.04]" />
 							<div className="h-3 w-32 max-w-full rounded bg-white/[0.04]" />

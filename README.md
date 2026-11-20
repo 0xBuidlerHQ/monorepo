@@ -30,7 +30,7 @@ Implemented:
 - [x] Submission by certifier and certification number, with authenticated receiving wallet and progress tracking.
 - [x] Admin acceptance, arrival recording, inspection, approval, and rejection.
 - [x] Local ERC-721 passport issuance with immutable IPFS metadata and file backups.
-- [x] Individual passport pages, Registry, Verify, Collection, and an issuance/transfer Activity.
+- [x] Individual passport pages, Passports, Verify, Collection, and an issuance/transfer Activity.
 - [x] Manual returns from TrueOrigin by hand-to-hand or delivery, with customer receipt confirmation.
 - [x] Simple NFT transfers: pick an item, enter a receiving wallet, review, authorize, and show confirmation. Live ownership checks and pending operation recovery protect execution.
 - [x] App-wide on-chain transfer tracking in Activity, passport history, and Collection, including external NFT transfers.
@@ -87,15 +87,15 @@ Hub-assisted escrow is a later capability to design explicitly. Current returns 
 | Collection / set | `/explore/catalogue/collections/:id` | Browse a set’s cards, release details, and type/rarity filters. | Base Set contains 102 card references. |
 | Card | `/explore/catalogue/:setId/:number` | Describe a specific catalogue card, its printings, and its Pokémon links. | Example: `/explore/catalogue/base-set/2`. Printing options reuse the reference image for now. |
 | Activity | `/activity` | Follow passport issuance and NFT transfers across the platform. | On-chain activity is indexed; an NFT transfer is not classified as a sale. Sales/listing filters await the marketplace. |
-| Registry | `/registry` | Browse individual objects with issued TrueOrigin passports, regardless of owner. | Public passport records, distinct from reference catalogue entries. |
-| Passport | `/items/:id` | Inspect one registered object’s authentication record, current NFT owner, metadata, and ownership history. | Physical possession is explicitly separate from NFT ownership. |
+| Passports | `/passports` | Browse individual objects with issued TrueOrigin passports, regardless of owner. | Public passport records, distinct from reference catalogue entries. |
+| Passport | `/passports/:id` | Inspect one registered object’s authentication record, current NFT owner, metadata, and ownership history. | Physical possession is explicitly separate from NFT ownership. |
 | Authenticate | `/submit` | Request an inspection, supply the certifier and certification number, and follow the submission through issuance and return. | Available in the header/pill and through **Add an item** in Collection. Requires sign-in; the receiving wallet comes from the account. |
 | Collection | `/collection` | See the passports currently owned by the signed-in user and open or transfer them. | Reflects indexed NFT ownership, including transfers made outside TrueOrigin. |
 | Verify | `/verify` | Check an existing item by entering its passport or certification number, scanning a QR code with the camera, or uploading a QR image. | Public lookup. Supports passport QR codes, raw certification numbers, and PSA verification links; scanning does not authenticate the physical object. |
 | Transfers | `/transfers` | Send an owned NFT to another wallet: select an item, enter the recipient, review, authorize, and confirm. | A simple NFT transfer; no payment, sale classification, or physical handover workflow. |
 | Scan shortcut | `/scan` | Open the scanning method within Verify. | Redirects to `/verify?method=scan`; there is no separate Scan page or navigation item. |
 
-**Explore describes a card; Registry shows actual registered copies; Collection shows the copies you own; Marketplace will show copies offered for sale; Transfers moves NFT ownership.**
+**Explore describes a card; Passports show actual registered copies; Collection shows the copies you own; Marketplace will show copies offered for sale; Transfers moves NFT ownership.**
 
 Account management and the shared search are drawers, not separate pages. Search controls and Cmd/Ctrl+K open the same drawer; live results include app pages, Pokémon, collections, cards, and public passports. Private submissions are excluded. The empty Sealed section is hidden; `/explore/pokemon/sealed` redirects to Catalogue. The root `/` redirects to Explore, and `/explore/pokemon` opens Catalogue. Older Pokémon and set routes redirect to their current destinations. Magic, One Piece, and Yu-Gi-Oh! have placeholder universe pages outside the current release scope.
 
@@ -127,7 +127,7 @@ The Ethereum fork needs an archive-capable upstream RPC. Configure `ETHEREUM_RPC
 | Admin app | http://localhost:3002 | Inspection, issuance, and manual returns |
 | IPFS service | http://localhost:3003 | Local file pinning, gateway, and archives |
 | API | http://localhost:3004 | Private operational data and public passport reads |
-| Ponder indexer | http://localhost:3005 | Public registry and activity projection |
+| Ponder indexer | http://localhost:3005 | Public passports and activity projection |
 | Bundler | http://localhost:4337 | Local ERC-4337 user operations |
 | Anvil | http://127.0.0.1:8545 | Ethereum fork, chain ID **31337** |
 

@@ -11,9 +11,9 @@ import {
 } from "./passport-item.ts";
 
 const item = {
-	type: "trading-card",
+	type: "card",
 	schemaVersion: 1,
-	category: "pokemon",
+	universe: "pokemon",
 	attributes: {
 		subject: "Venusaur",
 		set: "Base Set",
@@ -42,7 +42,7 @@ test("one schema drives short, compact and full titles and ordered display field
 		"Venusaur — Base Set #TG01/TG30",
 	);
 });
-test("issuance validates schema versions, category, field types and cross-field requirements", () => {
+test("issuance validates schema versions, universe, field types and cross-field requirements", () => {
 	assert.deepEqual(
 		parsePassportItem({
 			...item,
@@ -55,7 +55,7 @@ test("issuance validates schema versions, category, field types and cross-field 
 		[],
 		{ ...item, type: "watch" },
 		{ ...item, schemaVersion: 2 },
-		{ ...item, category: "unknown" },
+		{ ...item, universe: "unknown" },
 		{ ...item, attributes: { ...item.attributes, subject: "" } },
 		{ ...item, attributes: { ...item.attributes, set: "" } },
 		{ ...item, attributes: { ...item.attributes, number: "" } },
@@ -63,7 +63,7 @@ test("issuance validates schema versions, category, field types and cross-field 
 		{ ...item, attributes: { ...item.attributes, subject: "bad\ntext" } },
 		{ ...item, attributes: { ...item.attributes, subject: "a".repeat(101) } },
 		{ ...item, attributes: { ...item.attributes, mystery: "no" } },
-		{ category: "pokemon", subject: "Legacy flat shape" },
+		{ universe: "pokemon", subject: "Legacy flat shape" },
 	])
 		assert.throws(() => parsePassportItem(value));
 });
@@ -71,7 +71,7 @@ test("readers render unknown types and versions without assuming card fields", (
 	const watch = {
 		type: "watch",
 		schemaVersion: 2,
-		category: "watches",
+		universe: "watches",
 		attributes: { brand: "Rolex", caseDiameterMm: 40, waterResistant: true },
 	};
 	assert.deepEqual(readPassportItem(watch), watch);
@@ -94,5 +94,106 @@ test("readers render unknown types and versions without assuming card fields", (
 	assert.deepEqual(
 		readPassportItem({ ...item, schemaVersion: 9 }).schemaVersion,
 		9,
+	);
+});
+
+test("universe is independent of object type and metadata includes both", () => {
+	const book = parsePassportItem({
+		type: "book",
+		schemaVersion: 1,
+		universe: "pokemon",
+		attributes: {
+			title: "Pokémon Adventures",
+			author: "Hidenori Kusaka",
+			isbn: "9781421530543",
+		},
+	});
+	assert.equal(itemDisplayTitle(book, "short"), "Pokémon Adventures");
+	assert.equal(itemDisplayTitle(book), "Pokémon Adventures — Hidenori Kusaka");
+	assert.deepEqual(itemMetadataAttributes(book).slice(0, 2), [
+		{ trait_type: "Universe", value: "Pokémon" },
+		{ trait_type: "Type", value: "Book" },
+	]);
+	const sealed = parsePassportItem({
+		type: "box",
+		schemaVersion: 1,
+		universe: "magic",
+		attributes: {
+			name: "Collector Booster Box",
+			set: "Foundations",
+			format: "Booster box",
+		},
+	});
+	assert.equal(itemDisplayTitle(sealed), "Collector Booster Box — Foundations");
+	assert.deepEqual(
+		itemAttributeDetails(sealed).map((field) => field.label),
+		["Name", "Set", "Product format"],
+	);
+	for (const invalid of [
+		{ ...book, attributes: { title: "Missing author" } },
+		{ ...book, attributes: { ...book.attributes, number: "15" } },
+		{ ...sealed, attributes: { name: "Missing format" } },
+		{ ...sealed, universe: "unknown" },
+		{
+			type: "card",
+			schemaVersion: 1,
+			category: "pokemon",
+			attributes: item.attributes,
+		},
+	])
+		assert.throws(() => parsePassportItem(invalid));
+});
+
+test("factory seal is a boolean attribute independent of object type", () => {
+	for (const source of [
+		item,
+		{
+			type: "book",
+			schemaVersion: 1,
+			universe: "pokemon",
+			attributes: { title: "Guide", author: "Author" },
+		},
+		{
+			type: "box",
+			schemaVersion: 1,
+			universe: "pokemon",
+			attributes: { name: "Base Set", format: "Booster box" },
+		},
+	]) {
+		for (const sealed of [true, false]) {
+			const parsed = parsePassportItem({
+				...source,
+				attributes: { ...source.attributes, sealed },
+			});
+			assert.equal(parsed.attributes.sealed, sealed);
+			assert.ok(
+				itemMetadataAttributes(parsed).some(
+					(trait) =>
+						trait.trait_type === "Factory sealed" && trait.value === sealed,
+				),
+			);
+			assert.ok(
+				itemAttributeDetails(parsed).some(
+					(field) =>
+						field.label === "Factory sealed" &&
+						field.value === (sealed ? "Yes" : "No"),
+				),
+			);
+		}
+		assert.equal(parsePassportItem(source).attributes.sealed, undefined);
+		assert.throws(() =>
+			parsePassportItem({
+				...source,
+				attributes: { ...source.attributes, sealed: "true" },
+			}),
+		);
+	}
+	assert.throws(() =>
+		parsePassportItem({
+			type: "sealed",
+			schemaVersion: 1,
+			universe: "pokemon",
+			attributes: { name: "Box", format: "Booster box" },
+		}),
 	);
 });

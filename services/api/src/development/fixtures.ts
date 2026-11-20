@@ -14,7 +14,7 @@ const cards = [
 export const developmentFixtures = [
  ...cards.map((card, index) => ({ ...card, status: "approved" as SubmissionStatus, issue: true, owner: index % demoWallets.length, transfer: index < 3 })),
  ...(["requested", "accepted", "under_inspection", "rejected"] as SubmissionStatus[]).map((status, index) => ({ ...cards[index], status, issue: false, owner: index % demoWallets.length, transfer: false })),
-].map((fixture, index) => ({ ...fixture, item: { type: "trading-card", schemaVersion: 1, category: "pokemon", attributes: { subject: fixture.name, set: "Base Set", number: fixture.number, total: "102" } }, title: itemDisplayTitle({ type: "trading-card", schemaVersion: 1, category: "pokemon", attributes: { subject: fixture.name, set: "Base Set", number: fixture.number, total: "102" } }), certifier: "PSA" as const, certificationNumber: `99000000${String(index + 1).padStart(4, "0")}`, requestId: `00000000-0000-4000-8000-${String(index + 1).padStart(12, "0")}` }));
+].map((fixture, index) => ({ ...fixture, item: { type: "card", schemaVersion: 1, universe: "pokemon", attributes: { sealed: false, subject: fixture.name, set: "Base Set", number: fixture.number, total: "102" } }, title: itemDisplayTitle({ type: "card", schemaVersion: 1, universe: "pokemon", attributes: { sealed: false, subject: fixture.name, set: "Base Set", number: fixture.number, total: "102" } }), certifier: "PSA" as const, certificationNumber: `99000000${String(index + 1).padStart(4, "0")}`, requestId: `00000000-0000-4000-8000-${String(index + 1).padStart(12, "0")}` }));
 export async function fixtureImage(fixture: { number: string }) {
  return readFile(new URL(`../../../../apps/app.trueorigin.com/public/images/cards/base1-${fixture.number}.webp`, import.meta.url));
 }

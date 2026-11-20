@@ -5,7 +5,7 @@ const dotColors: Record<ActivityKind, string> = { all: "bg-current", issued: "bg
 
 const filters: { kind: ActivityKind; label: string }[] = [
 	{ kind: "all", label: "All" },
-	{ kind: "issued", label: "Registrations" },
+	{ kind: "issued", label: "Created" },
 	{ kind: "transfer", label: "Transfers" },
 ];
 export function ActivityFilters({

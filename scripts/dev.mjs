@@ -26,7 +26,7 @@ try {
 	if (existsSync(rootEnv)) process.loadEnvFile(rootEnv);
 	const { directory, env } = await freshDevelopmentEnvironment(workspace);
 	console.log(`Starting a fresh development environment: ${directory}`);
-	console.log(env.TRUEORIGIN_DEV_SEED === "true" ? "The same .dev-data directory is reset on each launch. Local demo submissions, NFTs, card images, and activity are seeded once the services are ready." : "The same .dev-data directory is reset on each launch. Demo seeding is disabled; the registry starts empty.");
+	console.log(env.TRUEORIGIN_DEV_SEED === "true" ? "The same .dev-data directory is reset on each launch. Local demo submissions, NFTs, card images, and activity are seeded once the services are ready." : "The same .dev-data directory is reset on each launch. Demo seeding is disabled; the passport index starts empty.");
 	const args = ["dev"];
 	if (trueoriginOnly) for (const name of ["app.trueorigin.com", "admin.trueorigin.com", "api", "ipfs", "indexer", "trueorigin-sdk"]) args.push(`--filter=@0xhq/${name}`);
 	const child = spawn("pnpm", args, { cwd: workspace, env, stdio: "inherit", detached: true });

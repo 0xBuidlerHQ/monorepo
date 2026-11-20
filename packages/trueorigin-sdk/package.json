@@ -18,6 +18,7 @@
     "@0xhq/contracts.trueorigin.com": "workspace:*"
   },
   "exports": {
+    "./activity": "./src/activity.ts",
     "./transfers": "./src/transfers.ts",
     "./account": "./src/account.ts",
     "./config": "./src/config.ts",

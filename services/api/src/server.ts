@@ -4,7 +4,7 @@ import { mkdir, readFile, writeFile, rename } from "node:fs/promises";
 import { join } from "node:path";
 import { randomUUID } from "node:crypto";
 import { digest, verifySignature, type ServiceKeys } from "@0xhq/api-client/protocol";
-import { parseActivityId } from "@0xhq/api-client/activity";
+import { isPublicActivityId } from "@0xhq/api-client/activity";
 import { activityKinds, type ActivityKind } from "@0xhq/api-client/types";
 import type { PhotoSide } from "@0xhq/api-client/types";
 import { openStore, type Actor } from "./store.ts";
@@ -72,7 +72,7 @@ export async function createApiService({ directory, keys, adminPassword, port = 
   if (url.pathname.startsWith("/v1/activity/") && method === "GET") {
    let id: string;
    try { id = decodeURIComponent(url.pathname.slice("/v1/activity/".length)); } catch { throw new HttpError(400, "Invalid event ID."); }
-   if (!parseActivityId(id)) throw new HttpError(400, "Invalid event ID.");
+   if (!isPublicActivityId(id)) throw new HttpError(400, "Invalid event ID.");
    send(response, 200, await publicPassports.activityEvent(id)); return;
   }
 		if (url.pathname === "/v1/activity" && method === "GET") {

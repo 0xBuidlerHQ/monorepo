@@ -22,7 +22,7 @@ export function createPassportWorkflow(directory: string, store: SubmissionStore
                 bootstrapped = true;
                 console.log("Local passport contract ready. The public index can start before the first issuance.");
             } catch (error) {
-                if (!bootstrapWarning) console.warn("Waiting for local passport contract initialization. Registry and activity will become available once the local chain is ready.");
+                if (!bootstrapWarning) console.warn("Waiting for local passport contract initialization. Passports and activity will become available once the local chain is ready.");
                 bootstrapWarning = true;
                 throw error;
             }

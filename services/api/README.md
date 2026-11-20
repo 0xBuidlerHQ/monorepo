@@ -87,7 +87,7 @@ Integration tests use isolated temporary databases and verify ownership isolatio
 ## Local passport issuance
 
 Run the normal full stack with `pnpm dev`. Once an inspection is **Approved**, expand
-it in admin and select **Issue passport**. Enter the category, subject/character, set, optional card number and printed total, and grade. The display title is generated from these structured facts (for example, `Venusaur — Base Set #15/102`); it is not an editable field. New metadata includes the structured facts and generated NFT `name`. Item data uses `{ type, schemaVersion, category, attributes }`. The versioned type definition drives field validation, staff forms, display labels and short/full titles. Trading cards are the first supported issuance type. Readers render primitive attributes for unknown future types or versions and retain their immutable metadata title; issuance rejects unsupported schemas. Certification, ownership and history remain separate from item attributes. This development data format requires a fresh local reset.
+it in admin and select **Issue passport**. Choose a universe (for example Pokémon) and a type (Card, Book, or Box), then complete its fields and grade. The display title is generated from these structured facts (for example, `Venusaur — Base Set #15/102`); it is not an editable field. New metadata includes the structured facts and generated NFT `name`. Item data uses `{ type, schemaVersion, universe, attributes }`. The versioned type definition drives field validation, staff forms, display labels and short/full titles. Cards use subject, set, number and printed total; books use title, author, ISBN, edition and publisher; boxes use name, set, product format, edition and language. All types support an optional boolean `attributes.sealed` for factory-seal status; it is independent of type and is never inferred for an unspecified object. The catalogue describes shared references; a passport identifies one physical copy with its own certification, owner and history. Readers render primitive attributes for unknown future types or versions and retain their immutable metadata title; issuance rejects unsupported schemas. Certification, ownership and history remain separate from item attributes. This development data format requires a fresh local reset.
 The recipient is taken from the authenticated submission; the form cannot override it.
 Acceptance alone never issues an NFT.
 
@@ -124,7 +124,7 @@ After confirmation, the customer's Collection lists passports currently owned by
 their server-derived wallet. Ownership is read from the contract, so standard NFT
 transfers outside TrueOrigin remove the NFT from the old wallet's Collection and
 include it in the new wallet's Collection. Physical handover is not inferred from a
-blockchain transfer. Registry discovery and collection membership use the public
+blockchain transfer. Passport discovery and collection membership use the public
 [Ponder index](../indexer/README.md), with live contract verification before asserting ownership.
 
 ### Verification
@@ -178,6 +178,8 @@ and chain outages/resets. See the [recovery guide](../indexer/README.md).
 ## Platform activity
 
 `GET /v1/activity?kind=all&limit=30&cursor=...` is a signed public read endpoint for the Activity page. It exposes chain-derived passport issuance and ownership transfer events with original transaction timestamps, wallet addresses, public item facts, and stable IDs. Newest-first pagination uses block/log cursors. `kind` accepts `all`, `issued`, `transfer`, `sale`, or `listing`; the last two return empty results while the marketplace is unavailable. Transfers are not treated as sales. Metadata outages retain the event with `passport: null`. No submission contacts, private notes, or private photos are returned.
+
+Public event links use `/activity/<eventId>` and `GET /v1/activity/<eventId>`. IDs are a versioned SHA-256 digest of canonical chain ID, transaction hash and log index, truncated to 128 bits and encoded as base64url. The indexer uses this derived ID as the event primary key, so rebuilding produces identical IDs without a separate mapping table. Source identifiers remain separate fields, including `chainId`. Only the prefix-free public ID format is accepted; no legacy ID routes or redirects are provided.
 
 The customer Activity refreshes the newest page every 15 seconds, applies filters without navigation, and pauses automatic updates while viewing older events. It labels previously loaded data when updates fail. The recovery integration test verifies activity ordering, filtering, pagination, privacy, metadata outages, and reconstruction from an empty database.
 

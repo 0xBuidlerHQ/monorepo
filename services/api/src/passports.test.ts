@@ -14,7 +14,7 @@ const wallet = "0x1111111111111111111111111111111111111111" as const;
 const contract = "0x2222222222222222222222222222222222222222" as const;
 const metadataURI = "ipfs://bafy-test/metadata.json";
 const imageURI = "ipfs://bafy-image/passport.svg";
-const item = { type: "trading-card", schemaVersion: 1, category: "pokemon", attributes: { subject: "Charizard", set: "Base Set", number: "4", total: "102" } };
+const item = { type: "card", schemaVersion: 1, universe: "pokemon", attributes: { subject: "Charizard", set: "Base Set", number: "4", total: "102" } };
 const password = "test-password-for-passports";
 function approved(store: ReturnType<typeof openStore>) {
 	let submission = store.create({ requestId: randomUUID(), gradingCompany: "PSA", certificationNumber: "12345678", contactEmail: "private-owner@example.com", recipientAddress: wallet, notes: "Private inspection information" }, customer);

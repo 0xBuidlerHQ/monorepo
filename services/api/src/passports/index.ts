@@ -1,4 +1,4 @@
-import { parseActivityId } from "@0xhq/api-client/activity";
+import { isPublicActivityId } from "@0xhq/api-client/activity";
 import type { AssetActivity } from "@0xhq/api-client/types";
 import { readPassportItem, itemDisplayTitle, getItemSchema, itemMetadataAttributes } from "@0xhq/api-client/passport-item";
 import { HttpError } from "../errors.ts";
@@ -150,17 +150,16 @@ export function createPassportIndex(
 			const facts = new Map<string, Promise<PublicPassport | null>>();
 			return { nextCursor: page.nextCursor, events: await Promise.all(page.events.map(async row => {
 				if (!facts.has(row.passport.itemId)) facts.set(row.passport.itemId, hydrate(row.passport).catch(() => null));
-				return { id: `31337:${row.event.transactionHash}:${row.event.logIndex}`, kind: /^0x0{40}$/i.test(row.event.from) ? "issued" as const : "transfer" as const,
+				return { id: row.event.id, chainId: 31337, kind: /^0x0{40}$/i.test(row.event.from) ? "issued" as const : "transfer" as const,
 					itemId: row.passport.itemId, tokenId: row.passport.tokenId, contractAddress: row.passport.contractAddress,
 					from: row.event.from, to: row.event.to, transactionHash: row.event.transactionHash, blockNumber: row.event.blockNumber, logIndex: row.event.logIndex,
 					timestamp: new Date(row.event.timestamp * 1000).toISOString(), passport: await facts.get(row.passport.itemId) ?? null };
 			})) };
 		},
   async activityEvent(id: string): Promise<AssetActivity> {
-   const parsed = parseActivityId(id);
-   if (!parsed) throw new HttpError(400, "Invalid event ID.");
-   const row: { event: { transactionHash: string; logIndex: number; blockNumber: string; timestamp: number; from: string; to: string }; passport: IndexedPassport } = await request(`/v1/activity/${parsed.transactionHash}/${parsed.logIndex}`);
-   return { id: `${parsed.chainId}:${row.event.transactionHash}:${row.event.logIndex}`, kind: /^0x0{40}$/i.test(row.event.from) ? "issued" : "transfer",
+   if (!isPublicActivityId(id)) throw new HttpError(400, "Invalid event ID.");
+   const row: { event: { id: string; transactionHash: string; logIndex: number; blockNumber: string; timestamp: number; from: string; to: string }; passport: IndexedPassport } = await request(`/v1/activity/${id}`);
+   return { id: row.event.id, chainId: 31337, kind: /^0x0{40}$/i.test(row.event.from) ? "issued" : "transfer",
     itemId: row.passport.itemId, tokenId: row.passport.tokenId, contractAddress: row.passport.contractAddress,
     from: row.event.from, to: row.event.to, transactionHash: row.event.transactionHash, blockNumber: row.event.blockNumber, logIndex: row.event.logIndex,
     timestamp: new Date(row.event.timestamp * 1000).toISOString(), passport: await hydrate(row.passport).catch(() => null) };

@@ -1,3 +1,4 @@
+import { isPublicActivityId } from "@0xhq/api-client/activity";
 import { printingNames } from "../pokemon/card-printings.ts";
 import { navigationItems } from "./navigation-items.ts";
 import { pokemonCategories } from "../pokemon/categories.ts";
@@ -87,14 +88,13 @@ export function breadcrumbTrail(
  if (path.startsWith("/activity/")) {
   let id: string;
   try { id = decodeURIComponent(path.slice("/activity/".length)); } catch { id = ""; }
-  const parts = id.split(":");
-  const label = parts.length === 3 ? `${parts[1].slice(0, 6)}…${parts[1].slice(-4)} · ${parts[2]}` : "Event";
+  const label = isPublicActivityId(id) ? `${id.slice(0, 6)}…${id.slice(-4)}` : "Event";
   return [{ label: "Activity", href: "/activity" }, { label, href: path }];
  }
 
-	if (path.startsWith("/registry/"))
+	if (path.startsWith("/passports/"))
 		return [
-			{ label: "Registry", href: "/registry" },
+			{ label: "Passports", href: "/passports" },
 			{ label: `${path.split("/").at(-1)?.slice(0, 6)}…${path.slice(-4)}`, href: path, copyValue: path.split("/").at(-1) },
 		];
 	const universe = {

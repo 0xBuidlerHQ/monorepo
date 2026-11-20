@@ -61,8 +61,8 @@ try {
  await a.ev(`document.querySelector('details[open] input[type=checkbox]').click()`);await a.click('Confirm receipt');await a.wait(`document.body?.innerText.includes('Receipt confirmed by you.')`);
  console.log('Hand-to-hand physical return and owner receipt recorded separately');
  await a.nav('/collection');await a.wait(`document.body?.innerText.includes(${JSON.stringify(title)})`);
- await a.wait(`!!document.querySelector('main a[href^="/registry/"]')`);
- const itemHref=await a.ev(`document.querySelector('main a[href^="/registry/"]').getAttribute('href')`);
+ await a.wait(`!!document.querySelector('main a[href^="/passports/"]')`);
+ const itemHref=await a.ev(`document.querySelector('main a[href^="/passports/"]').getAttribute('href')`);
  const itemId=itemHref.split('/').at(-1);
  await a.nav('/verify');await a.wait(`!!document.querySelector('input[name=q]')`);await a.fill('input[name=q]',cert);await a.ev(`document.querySelector('input[name=q]').form.requestSubmit()`);await a.wait(`location.pathname===${JSON.stringify(itemHref)}`);await a.wait(`document.body?.innerText.toLowerCase().includes(${JSON.stringify(walletA.toLowerCase())})`);
  console.log('Collection and Verify resolve issued passport to user A');
@@ -81,8 +81,8 @@ try {
  await a.nav('/collection');await a.wait(`document.body?.innerText.includes('Your objects, together.')`);
  await b.nav(itemHref);await b.wait(`document.body?.innerText.toLowerCase().includes(${JSON.stringify(walletB.toLowerCase())})`);
  await b.nav('/activity');await b.wait(`document.body?.innerText.includes(${JSON.stringify(title)})`);
- await b.nav('/registry');await b.wait(`document.body?.innerText.includes(${JSON.stringify(title)})`);
- console.log('Ownership updated across both Collections, passport, Activity, and Registry');
+ await b.nav('/passports');await b.wait(`document.body?.innerText.includes(${JSON.stringify(title)})`);
+ console.log('Ownership updated across both Collections, passport, Activity, and Passports');
  await b.ev(`document.querySelector('[data-header-search]').click()`);await b.wait(`!!document.querySelector('[cmdk-input]')`);await b.fill('[cmdk-input]',cert);await b.wait(`!!document.querySelector('[cmdk-item]')`);assert(await b.ev(`document.querySelector('[cmdk-item]').textContent.includes(${JSON.stringify(title)})`));
  console.log('Live search finds public passport by certification number');
  const activity = await b.ev(`fetch('/api/activity').then(r=>r.json())`);

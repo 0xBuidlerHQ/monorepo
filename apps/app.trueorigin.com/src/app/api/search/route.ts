@@ -24,7 +24,7 @@ export async function GET(request: Request) {
  let passportsUnavailable = false;
  let passports: SearchResult[] = [];
  try {
-  passports = (await publicPassports(AbortSignal.any([request.signal, AbortSignal.timeout(2500)]))).map(passport => ({ title: passport.title, detail: `${passport.certifier} ${passport.certificationNumber} · Passport #${passport.tokenId}`, href: `/registry/${passport.itemId}`, group: "Passports", keywords: `${passport.itemId} ${passport.tokenId}`, image: `/api/passports/${passport.itemId}/image` }));
+  passports = (await publicPassports(AbortSignal.any([request.signal, AbortSignal.timeout(2500)]))).map(passport => ({ title: passport.title, detail: `${passport.certifier} ${passport.certificationNumber} · Passport #${passport.tokenId}`, href: `/passports/${passport.itemId}`, group: "Passports", keywords: `${passport.itemId} ${passport.tokenId}`, image: `/api/passports/${passport.itemId}/image` }));
  } catch { passportsUnavailable = true; }
  const results = query ? rankSearchResults([...pages, ...catalogue, ...passports], query) : [...featured, ...passports.slice(0, 6), ...pages].map(({ keywords: _keywords, ...result }) => result);
  return Response.json({ results, passportsUnavailable }, { headers });

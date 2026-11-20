@@ -20,7 +20,7 @@ function HeaderLinks({ pathname, actions = false }: { pathname: string; actions?
     ? `inline-flex h-8 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-lg border px-1.5 text-xs font-medium transition-colors duration-200 lg:px-3 ${item.href === "/verify" ? "border-white bg-white text-[#141414] hover:border-[#dedede] hover:bg-[#dedede]" : "border-white/25 bg-transparent text-white/85 hover:border-white/45 hover:bg-white/[0.07] hover:text-white"}`
     : `relative inline-flex h-7 shrink-0 items-center gap-1.5 whitespace-nowrap border-r border-white/[0.07] px-3 text-[11px] transition-colors hover:text-white ${isNavigationActive(item.href, pathname) ? "text-white" : "text-[#969696]"}`}>
    <NavigationIcon name={item.icon} className={actions ? "size-[18px] shrink-0" : "size-3.5 shrink-0"} />
-   <span className={actions ? "sr-only lg:not-sr-only" : undefined}>{item.href === "/verify" ? "Trace" : item.name}</span>
+   <span className={actions ? "sr-only lg:not-sr-only" : undefined}>{item.name}</span>
   </Link>)}
  </nav>;
 }

@@ -96,8 +96,8 @@ The local upload service and gateway live in [services/ipfs](../../services/ipfs
 
 ## Passport pages and Verify
 
-`/registry` lists confirmed issued passports; `/collection` links owned NFTs to
-`/items/<permanent-item-id>`. Item pages use the real registry and blockchain,
+`/passports` lists confirmed issued passports; `/collection` links owned NFTs to
+`/passports/<permanent-item-id>`. Item pages use the public passport index and blockchain,
 replacing the previous static demo item route. They show the item, TrueOrigin's
 recorded inspection approval, live NFT owner, mint/transfer history, and the block
 checked. Physical possession and delivery are explicitly unconfirmed. This contract
@@ -107,7 +107,7 @@ version's lack of revocation tracking is shown separately from on-chain verifica
 certification number. Matching records lead to the canonical passport page. A
 missing record is not presented as proof that the physical item is counterfeit;
 service/chain errors are shown as unavailable, not successful verification. Visitors
-can use Registry, Verify, and passport pages without signing in. Passport image and
+can use Passports, Verify, and passport pages without signing in. Passport image and
 metadata routes serve the public integrity-checked archives, not private submission
 photos or contact information.
 

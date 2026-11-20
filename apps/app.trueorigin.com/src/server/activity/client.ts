@@ -1,7 +1,7 @@
 import "server-only";
 import { ApiError, apiJson } from "@0xhq/api-client";
-import { parseActivityId } from "@0xhq/api-client/activity";
-import { itemCategoryLabel } from "@0xhq/api-client/passport-item";
+import { isPublicActivityId } from "@0xhq/api-client/activity";
+import { itemUniverseLabel } from "@0xhq/api-client/passport-item";
 import type {
 	ActivityPage,
 	ActivityQuery,
@@ -26,9 +26,9 @@ export async function publicActivity(query: ActivityQuery = {}) {
 		...page,
 		events: page.events.map((event) => ({
 			...event,
-			category: event.passport?.item
-				? itemCategoryLabel(event.passport.item.category)
-				: (event.category ?? null),
+			universe: event.passport?.item
+				? itemUniverseLabel(event.passport.item.universe)
+				: (event.universe ?? null),
 		})),
 	};
 }
@@ -41,7 +41,7 @@ export const getActivityEvent = cache(async (id: string) => {
 	} catch {
 		return null;
 	}
-	if (!parseActivityId(eventId)) return null;
+	if (!isPublicActivityId(eventId)) return null;
 	try {
 		const event = await apiJson<AssetActivity>(
 			"customer",
@@ -50,9 +50,9 @@ export const getActivityEvent = cache(async (id: string) => {
 		);
 		return {
 			...event,
-			category: event.passport?.item
-				? itemCategoryLabel(event.passport.item.category)
-				: (event.category ?? null),
+			universe: event.passport?.item
+				? itemUniverseLabel(event.passport.item.universe)
+				: (event.universe ?? null),
 		};
 	} catch (error) {
 		if (error instanceof ApiError && error.status === 404) return null;

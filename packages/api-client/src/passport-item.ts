@@ -1,4 +1,4 @@
-export const itemCategories = {
+export const itemUniverses = {
 	pokemon: "Pokémon",
 	magic: "Magic: The Gathering",
 	"one-piece": "One Piece",
@@ -9,7 +9,7 @@ export type AttributeValue = string | number | boolean;
 export type VersionedItem = {
 	type: string;
 	schemaVersion: number;
-	category: string;
+	universe: string;
 	attributes: Record<string, AttributeValue>;
 };
 export type PassportItem = VersionedItem;
@@ -27,7 +27,7 @@ export type ItemSchema = {
 	type: string;
 	version: number;
 	label: string;
-	categories: readonly string[];
+	universes: readonly string[];
 	fields: readonly ItemField[];
 	validate: (attributes: Record<string, AttributeValue>) => void;
 	title: (
@@ -35,12 +35,18 @@ export type ItemSchema = {
 		format: TitleFormat,
 	) => string;
 };
-const tradingCardV1: ItemSchema = {
-	type: "trading-card",
+const sealedField: ItemField = {
+	key: "sealed",
+	label: "Factory sealed",
+	type: "boolean",
+};
+const cardV1: ItemSchema = {
+	type: "card",
 	version: 1,
-	label: "Trading card",
-	categories: Object.keys(itemCategories),
+	label: "Card",
+	universes: Object.keys(itemUniverses),
 	fields: [
+		sealedField,
 		{
 			key: "subject",
 			label: "Subject",
@@ -84,8 +90,76 @@ const tradingCardV1: ItemSchema = {
 			: title;
 	},
 };
-// Add new versions alongside old definitions; never replace an issued version.
-export const itemSchemas: readonly ItemSchema[] = [tradingCardV1];
+const bookV1: ItemSchema = {
+	type: "book",
+	version: 1,
+	label: "Book",
+	universes: Object.keys(itemUniverses),
+	fields: [
+		sealedField,
+		{
+			key: "title",
+			label: "Title",
+			type: "text",
+			required: true,
+			maxLength: 200,
+		},
+		{
+			key: "author",
+			label: "Author",
+			type: "text",
+			required: true,
+			maxLength: 200,
+		},
+		{ key: "isbn", label: "ISBN", type: "text", maxLength: 17 },
+		{ key: "edition", label: "Edition", type: "text", maxLength: 100 },
+		{ key: "publisher", label: "Publisher", type: "text", maxLength: 100 },
+	],
+	validate() {},
+	title(attributes, format) {
+		return format === "short"
+			? String(attributes.title)
+			: `${attributes.title} — ${attributes.author}`;
+	},
+};
+const boxV1: ItemSchema = {
+	type: "box",
+	version: 1,
+	label: "Box",
+	universes: Object.keys(itemUniverses),
+	fields: [
+		sealedField,
+		{
+			key: "name",
+			label: "Name",
+			type: "text",
+			required: true,
+			maxLength: 200,
+		},
+		{ key: "set", label: "Set", type: "text", maxLength: 100 },
+		{
+			key: "format",
+			label: "Product format",
+			type: "text",
+			required: true,
+			maxLength: 100,
+			placeholder: "Booster box",
+		},
+		{ key: "edition", label: "Edition", type: "text", maxLength: 100 },
+		{ key: "language", label: "Language", type: "text", maxLength: 100 },
+	],
+	validate() {},
+	title(attributes, format) {
+		return format === "short" || !attributes.set
+			? String(attributes.name)
+			: `${attributes.name} — ${attributes.set}`;
+	},
+};
+// Each type defines the identity fields shared by its catalogue entries.
+export const itemSchemas: readonly ItemSchema[] = [cardV1, bookV1, boxV1];
+export function itemTypeLabel(item: PassportItem) {
+	return getItemSchema(item)?.label ?? item.type;
+}
 export function getItemSchema(item: PassportItem) {
 	const normalized = item;
 	return itemSchemas.find(
@@ -94,10 +168,10 @@ export function getItemSchema(item: PassportItem) {
 			schema.version === normalized.schemaVersion,
 	);
 }
-export function itemCategoryLabel(category: string) {
-	return Object.hasOwn(itemCategories, category)
-		? itemCategories[category as keyof typeof itemCategories]
-		: category;
+export function itemUniverseLabel(universe: string) {
+	return Object.hasOwn(itemUniverses, universe)
+		? itemUniverses[universe as keyof typeof itemUniverses]
+		: universe;
 }
 function object(value: unknown): Record<string, unknown> {
 	if (!value || typeof value !== "object" || Array.isArray(value))
@@ -111,10 +185,10 @@ function readVersionedItem(value: unknown): VersionedItem {
 		!/^[a-z][a-z0-9-]{0,63}$/.test(data.type) ||
 		!Number.isSafeInteger(data.schemaVersion) ||
 		Number(data.schemaVersion) < 1 ||
-		typeof data.category !== "string" ||
-		!/^[a-z][a-z0-9-]{0,63}$/.test(data.category)
+		typeof data.universe !== "string" ||
+		!/^[a-z][a-z0-9-]{0,63}$/.test(data.universe)
 	)
-		throw new Error("Invalid item type, version or category.");
+		throw new Error("Invalid item type, version or universe.");
 	const attributes = object(data.attributes);
 	if (Object.keys(attributes).length > 50)
 		throw new Error("Too many item attributes.");
@@ -131,7 +205,7 @@ function readVersionedItem(value: unknown): VersionedItem {
 	return {
 		type: data.type,
 		schemaVersion: Number(data.schemaVersion),
-		category: data.category,
+		universe: data.universe,
 		attributes: { ...attributes } as Record<string, AttributeValue>,
 	};
 }
@@ -140,8 +214,8 @@ export function parsePassportItem(value: unknown): VersionedItem {
 	const item = readVersionedItem(value);
 	const schema = getItemSchema(item);
 	if (!schema) throw new Error("Unsupported item type or schema version.");
-	if (!schema.categories.includes(item.category))
-		throw new Error("Choose a valid category.");
+	if (!schema.universes.includes(item.universe))
+		throw new Error("Choose a valid universe.");
 	if (
 		Object.keys(item.attributes).some(
 			(key) => !schema.fields.some((field) => field.key === key),
@@ -178,7 +252,7 @@ export function itemDisplayTitle(
 	const normalized = item;
 	return (
 		getItemSchema(item)?.title(normalized.attributes, format) ??
-		`${itemCategoryLabel(normalized.category)} — ${normalized.type}`
+		`${itemUniverseLabel(normalized.universe)} — ${normalized.type}`
 	);
 }
 export function itemAttributeDetails(item: PassportItem) {
@@ -209,7 +283,8 @@ export function itemMetadataAttributes(item: PassportItem) {
 		schema?.fields ??
 		Object.keys(normalized.attributes).map((key) => ({ key, label: key }));
 	return [
-		{ trait_type: "Category", value: itemCategoryLabel(item.category) },
+		{ trait_type: "Universe", value: itemUniverseLabel(item.universe) },
+		{ trait_type: "Type", value: itemTypeLabel(item) },
 		...fields.map((field) => ({
 			trait_type: field.label,
 			value: normalized.attributes[field.key] ?? "",

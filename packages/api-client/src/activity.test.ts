@@ -1,21 +1,19 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { parseActivityId } from "./activity.ts";
+import { isPublicActivityId } from "./activity.ts";
 
-test("event IDs identify a chain transaction and log without ambiguity", () => {
-	const hash = `0x${"a".repeat(64)}`;
-	assert.deepEqual(parseActivityId(`31337:${hash}:0`), {
-		chainId: 31337,
-		transactionHash: hash,
-		logIndex: 0,
-	});
-	for (const id of [
-		`1:${hash}:0`,
-		`31337:${hash}:-1`,
-		`31337:${hash}:01`,
-		`31337:${hash}:2147483648`,
+test("event IDs use the prefix-free canonical format", () => {
+	const id = "0afXGWv-XD2S1zW4dVq31Q";
+	assert.equal(isPublicActivityId(id), true);
+	assert.equal(isPublicActivityId(`evt_${"A".repeat(18)}`), true);
+	for (const value of [
 		"invalid",
-		`31337:${hash}:0/extra`,
+		"evt_",
+		`evt_${id}`,
+		`31337:0x${"a".repeat(64)}:0`,
+		`${"A".repeat(21)}B`,
+		"A".repeat(23),
+		`${id}/path`,
 	])
-		assert.equal(parseActivityId(id), null);
+		assert.equal(isPublicActivityId(value), false);
 });

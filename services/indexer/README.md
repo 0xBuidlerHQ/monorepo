@@ -7,7 +7,7 @@ Ponder indexes the trusted TrueOrigin Passport contracts. Its database is a disp
 Run `make dev` from the repository root for a fresh environment on every launch, or
 `pnpm dev` to use the configured service data directories. The indexer listens on **127.0.0.1:3005** and uses embedded PGlite; no PostgreSQL installation is needed locally.
 
-On a fresh development environment, the API initializes the local passport contract at startup (without minting an NFT). The indexer waits for that deployment manifest, then starts even when the registry is empty. The issuer writes `deployments/local.json`, containing only the chain ID, trusted contract addresses, deployment blocks, and their block hashes. The indexer starts automatically and restarts when this manifest changes. Existing local deployments are discovered read-only from the saved deployment receipt, without reading submission SQLite, creating a signer, or minting anything.
+On a fresh development environment, the API initializes the local passport contract at startup (without minting an NFT). The indexer waits for that deployment manifest, then starts even when the passport index is empty. The issuer writes `deployments/local.json`, containing only the chain ID, trusted contract addresses, deployment blocks, and their block hashes. The indexer starts automatically and restarts when this manifest changes. Existing local deployments are discovered read-only from the saved deployment receipt, without reading submission SQLite, creating a signer, or minting anything.
 
 To run it separately:
 
@@ -15,7 +15,7 @@ To run it separately:
 pnpm --filter @0xhq/indexer dev
 ```
 
-The API uses `PASSPORT_INDEXER_URL` (default `http://127.0.0.1:3005`). It returns an unavailable response while the index is offline or historical indexing is incomplete, rather than falling back to the private issuance cache. After a new mint or external transfer there can be a short indexing delay. Collection ownership and passport verification are also checked directly against the current chain. A chain reset or deployment block-hash mismatch makes indexed data unavailable; it is never silently treated as the current registry.
+The API uses `PASSPORT_INDEXER_URL` (default `http://127.0.0.1:3005`). It returns an unavailable response while the index is offline or historical indexing is incomplete, rather than falling back to the private issuance cache. After a new mint or external transfer there can be a short indexing delay. Collection ownership and passport verification are also checked directly against the current chain. A chain reset or deployment block-hash mismatch makes indexed data unavailable; it is never silently treated as the current passport index.
 
 ## What can be reconstructed
 
@@ -52,7 +52,7 @@ These loopback-only endpoints contain public data and require no private-service
 
 - `GET /ready`: Ponder historical indexing readiness.
 - `GET /status`: indexed chain checkpoint.
-- `GET /v1/passports?owner=0x…`: chain-derived registry entries, optionally filtered by indexed owner.
+- `GET /v1/passports?owner=0x…`: chain-derived passport records, optionally filtered by indexed owner.
 - `GET /v1/passports/0x…`: one item and its indexed NFT transfer history.
 
 ## Activity
@@ -60,3 +60,5 @@ These loopback-only endpoints contain public data and require no private-service
 `GET /v1/activity?kind=all&limit=30&cursor=<block>:<log-index>` joins indexed transfers to registered passports. Results are ordered by block and log index, newest first; the opaque cursor identifies the last returned event. Limits are capped at 50. Filters support `issued` and `transfer`. Sales and listings remain empty until actual marketplace contracts/events are integrated; a standard NFT transfer is never classified as a purchase or sale.
 
 The shared API exposes the same signed public endpoint. Item metadata is hydrated once per asset per page; an IPFS outage leaves the chain event visible with fallback item information. Activity events and stable event IDs are reconstructed when rebuilding the index.
+
+`GET /v1/activity/:id` reads a single event by its 22-character public ID. The transfer primary key is deterministically generated from the chain, normalized transaction hash and log index using the shared SDK helper. It survives full reindexing; transaction hashes and log indexes remain separate source fields.

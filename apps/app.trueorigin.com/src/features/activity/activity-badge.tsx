@@ -8,7 +8,7 @@ const tones: Record<ActivityKind, string> = {
 	listing: "bg-indigo-400/[0.03] text-indigo-300",
 };
 const labels = {
-	issued: "Registered",
+	issued: "Created",
 	transfer: "Transfer",
 	sale: "Sale",
 	listing: "Listing",
@@ -26,7 +26,7 @@ export function ActivityBadge({
 			className={activityBadgeClass(kind)}
 			title={
 				kind === "issued"
-					? "Object registered and digital passport issued"
+					? "Passport created"
 					: kind === "transfer"
 						? "Passport ownership transferred"
 						: labels[kind]

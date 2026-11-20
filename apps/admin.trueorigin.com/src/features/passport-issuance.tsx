@@ -3,14 +3,14 @@
 import { useActionState, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { Submission } from "@0xhq/api-client/types";
-import { itemCategoryLabel, itemSchemas, getItemSchema, parsePassportItem, itemDisplayTitle, type PassportItem } from "@0xhq/api-client/passport-item";
+import { itemUniverseLabel, itemSchemas, getItemSchema, parsePassportItem, itemDisplayTitle, type PassportItem } from "@0xhq/api-client/passport-item";
 import { issuePassport } from "@/actions/staff";
 
 export function PassportIssuanceForm({ submission }: { submission: Submission }) {
 	const router = useRouter();
 	const [state, action, pending] = useActionState(issuePassport, {});
 	const passport = submission.passport;
- const [item, setItem] = useState<PassportItem>(passport?.item ?? { type: "trading-card", schemaVersion: 1, category: "pokemon", attributes: { subject: "", set: "", number: "", total: "" } });
+ const [item, setItem] = useState<PassportItem>(passport?.item ?? { type: "card", schemaVersion: 1, universe: "pokemon", attributes: { subject: "", set: "", number: "", total: "" } });
  const schema = getItemSchema(item);
  let preview = "Complete the item details";
  try { preview = itemDisplayTitle(parsePassportItem(item)); } catch { /* Keep the preview pending until required fields are complete. */ }
@@ -29,11 +29,11 @@ export function PassportIssuanceForm({ submission }: { submission: Submission })
    <fieldset disabled={!!passport} className="grid gap-4 sm:grid-cols-2">
     <label className="block text-xs text-white/50">Item type<select name="itemType" value={`${item.type}:${item.schemaVersion}`} onChange={event => {
      const selected = itemSchemas.find(entry => `${entry.type}:${entry.version}` === event.target.value);
-     if (selected) setItem({ type: selected.type, schemaVersion: selected.version, category: selected.categories[0], attributes: {} });
+     if (selected) setItem({ type: selected.type, schemaVersion: selected.version, universe: selected.universes.includes(item.universe) ? item.universe : selected.universes[0], attributes: {} });
     }} className={inputClass}>{itemSchemas.map(entry => <option key={`${entry.type}:${entry.version}`} value={`${entry.type}:${entry.version}`}>{entry.label}</option>)}</select></label>
-    <label className="block text-xs text-white/50">Category<select name="category" value={item.category} onChange={event => setItem({ ...item, category: event.target.value })} className={inputClass}>{schema?.categories.map(id => <option key={id} value={id}>{itemCategoryLabel(id)}</option>)}</select></label>
+    <label className="block text-xs text-white/50">Universe<select name="universe" value={item.universe} onChange={event => setItem({ ...item, universe: event.target.value })} className={inputClass}>{schema?.universes.map(id => <option key={id} value={id}>{itemUniverseLabel(id)}</option>)}</select></label>
     {schema?.fields.map(field => <label key={field.key} className="block text-xs text-white/50">{field.label}{field.unit ? ` (${field.unit})` : ""}
-     <input name={field.key} type={field.type === "boolean" ? "checkbox" : field.type === "number" ? "number" : "text"} required={field.type !== "boolean" && !passport && field.required} maxLength={field.maxLength} placeholder={field.placeholder} value={field.type === "boolean" ? undefined : String(item.attributes[field.key] ?? "")} checked={field.type === "boolean" ? Boolean(item.attributes[field.key]) : undefined} onChange={event => setItem({ ...item, attributes: { ...item.attributes, [field.key]: field.type === "boolean" ? event.target.checked : field.type === "number" ? event.target.valueAsNumber : event.target.value } })} className={inputClass} />
+     <input name={field.key} type={field.type === "boolean" ? "checkbox" : field.type === "number" ? "number" : "text"} required={field.type !== "boolean" && !passport && field.required} maxLength={field.maxLength} placeholder={field.placeholder} value={field.type === "boolean" ? undefined : String(item.attributes[field.key] ?? "")} checked={field.type === "boolean" ? Boolean(item.attributes[field.key]) : undefined} onChange={event => setItem({ ...item, attributes: { ...item.attributes, [field.key]: field.type === "boolean" ? event.target.checked : field.type === "number" ? event.target.valueAsNumber : event.target.value } })} className={field.type === "boolean" ? "mt-2 block size-4 accent-white" : inputClass} />
     </label>)}
    </fieldset>
    <p className="text-xs text-white/60">Display title: <span className="font-medium text-white">{passport?.title ?? preview}</span></p>

@@ -14,61 +14,10 @@ import { PageHeader } from "@/features/shell/page-header";
 import { ActivityBadge } from "./activity-badge";
 import { ActivityFilters } from "./activity-filters";
 import { ActivitySkeleton } from "./activity-skeleton";
+import styles from "./activity-table.module.css";
+import { IdentifierCopy } from "./identifier-copy";
 import { relativeActivityTime } from "./relative-time";
 
-const shorten = (value: string) => `${value.slice(0, 6)}…${value.slice(-4)}`;
-function IdentifierCopy({
-	value,
-	label,
-	display,
-}: {
-	value: string;
-	label: string;
-	display?: string;
-}) {
-	const [status, setStatus] = useState<"idle" | "copied" | "error">("idle");
-	useEffect(() => {
-		if (status === "idle") return;
-		const timer = setTimeout(() => setStatus("idle"), 1800);
-		return () => clearTimeout(timer);
-	}, [status]);
-	return (
-		<button
-			type="button"
-			title={value}
-			aria-label={`Copy ${label}`}
-			onClick={async () => {
-				try {
-					await navigator.clipboard.writeText(value);
-					setStatus("copied");
-				} catch {
-					setStatus("error");
-				}
-			}}
-			className="relative z-20 flex cursor-pointer items-center gap-2 justify-self-start whitespace-nowrap rounded px-1 py-1 font-mono text-[11px] text-white/60 transition-colors hover:bg-white/5 hover:text-white"
-		>
-			<span role="status">
-				{status === "copied"
-					? "Copied ✓"
-					: status === "error"
-						? "Copy failed"
-						: (display ?? (value.length > 10 ? shorten(value) : value))}
-			</span>
-			{status === "idle" && (
-				<svg
-					aria-hidden="true"
-					viewBox="0 0 16 16"
-					fill="none"
-					stroke="currentColor"
-					className="size-3 text-white/25"
-				>
-					<rect x="6" y="6" width="7" height="7" rx="1" />
-					<path d="M10 6V3H3v7h3" />
-				</svg>
-			)}
-		</button>
-	);
-}
 function ActivityRow({
 	event,
 	now,
@@ -85,12 +34,15 @@ function ActivityRow({
 		.replace("T", " ")
 		.replace(/\.\d{3}Z$/, " UTC");
 	return (
-		<li className="group relative grid min-w-[1260px] grid-cols-[6rem_8.5rem_5rem_6.5rem_3rem_6.5rem_6.5rem_6.5rem_6.5rem_5rem_2rem] items-center justify-between gap-x-4 border-b border-white/[0.06] px-4 py-2 transition-colors hover:bg-white/[0.035]">
+		<li
+			className={`group relative ${styles.grid} border-b border-white/[0.045] px-4 py-2 transition-colors duration-150 even:bg-white/[0.012] hover:bg-white/[0.035] focus-within:bg-white/[0.025] motion-reduce:transition-none`}
+		>
 			<ActivityBadge kind={event.kind} />
+			<IdentifierCopy value={event.id} label="event ID" />
 			<Link
-				href={`/registry/${event.itemId}`}
+				href={`/passports/${event.itemId}`}
 				title={title}
-				className="relative z-20 flex w-fit min-w-0 max-w-full items-center gap-2 rounded-sm focus-visible:outline-2 focus-visible:outline-white"
+				className="group/object relative z-20 flex w-fit min-w-0 max-w-full items-center gap-2 rounded-sm focus-visible:outline-2 focus-visible:outline-white"
 			>
 				<span className="grid size-7 shrink-0 place-items-center">
 					{event.passport?.imageURI ? (
@@ -104,7 +56,7 @@ function ActivityRow({
 						/>
 					) : (
 						<NavigationIcon
-							name="Registry"
+							name="Passports"
 							className="size-3.5 text-white/25"
 						/>
 					)}
@@ -120,14 +72,14 @@ function ActivityRow({
 					strokeWidth="1.5"
 					strokeLinecap="round"
 					strokeLinejoin="round"
-					className="ml-auto size-3.5 shrink-0 -translate-x-1.5 translate-y-1.5 text-white/60 opacity-0 transition-[opacity,translate] duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-x-0 group-focus-within:translate-y-0 group-focus-within:opacity-100 motion-reduce:translate-x-0 motion-reduce:translate-y-0 motion-reduce:transition-none"
+					className="ml-auto hidden size-3.5 sm:block shrink-0 -translate-x-1.5 translate-y-1.5 text-white/60 opacity-0 transition-[opacity,translate] duration-300 ease-out group-hover/object:translate-x-0 group-hover/object:translate-y-0 group-hover/object:opacity-100 group-focus-visible/object:translate-x-0 group-focus-visible/object:translate-y-0 group-focus-visible/object:opacity-100 motion-reduce:translate-x-0 motion-reduce:translate-y-0 motion-reduce:transition-none"
 				>
 					<path d="m5 15 10-10M5 5h10v10" />
 				</svg>
 			</Link>
 			<span className="flex min-w-0 items-center gap-1.5 text-[11px] text-white/65">
-				<span className="truncate">{event.category ?? "—"}</span>
-				{event.category === "Pokémon" && (
+				<span className="truncate">{event.universe ?? "—"}</span>
+				{event.universe === "Pokémon" && (
 					<Image
 						src="/pika.png"
 						alt=""
@@ -137,7 +89,7 @@ function ActivityRow({
 					/>
 				)}
 			</span>
-			<IdentifierCopy value={event.itemId} label="item ID" />
+			<IdentifierCopy value={event.itemId} label="passport ID" />
 			{event.passport?.certifier === "PSA" ? (
 				// Official white logo: https://store.psacard.com/cdn/shop/files/logo_white.png
 				<Image
@@ -185,7 +137,6 @@ function ActivityRow({
 			<Link
 				href={`/activity/${encodeURIComponent(event.id)}`}
 				aria-label={`Inspect event for ${title}`}
-				title="Inspect event"
 				className="grid size-7 items-center justify-items-center justify-self-end rounded-md text-white/50 after:absolute after:inset-0 after:z-10 after:cursor-pointer transition-colors hover:text-white/90 focus-visible:text-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none"
 			>
 				<svg
@@ -329,15 +280,16 @@ export function ActivityStream({ initial }: { initial: ActivityPage | null }) {
 					<div className="overflow-x-auto">
 						<div
 							aria-hidden="true"
-							className="grid min-w-[1260px] grid-cols-[6rem_8.5rem_5rem_6.5rem_3rem_6.5rem_6.5rem_6.5rem_6.5rem_5rem_2rem] items-center justify-between gap-x-4 border-y border-white/[0.08] px-4 py-3 text-[10px] font-medium uppercase tracking-[0.07em] text-white/50"
+							className={`${styles.grid} border-y border-white/[0.08] bg-white/[0.018] px-4 py-3 text-[10px] font-medium uppercase tracking-[0.09em] text-white/45`}
 						>
 							<span>Event</span>
+							<span>ID</span>
 							<span>Object</span>
-							<span>Category</span>
-							<span>Item ID</span>
+							<span>Universe</span>
+							<span>Passport ID</span>
 
 							<span>Certifier</span>
-							<span>Certification ID</span>
+							<span>Cert. ID</span>
 							<span>From</span>
 							<span>To</span>
 							<span>Transaction</span>
@@ -370,7 +322,7 @@ export function ActivityStream({ initial }: { initial: ActivityPage | null }) {
 								{market
 									? "Marketplace is coming soon. Marketplace activity will appear here once buying and selling are available."
 									: kind === "issued"
-										? "New passports will appear here as they’re issued."
+										? "New passports will appear here as they’re created."
 										: kind === "transfer"
 											? "Ownership transfers will appear here as they’re recorded."
 											: "New passports and ownership changes will appear here as they happen."}

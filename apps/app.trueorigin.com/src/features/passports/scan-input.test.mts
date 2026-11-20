@@ -4,8 +4,8 @@ import {verificationInputFromScan} from "./scan-input.ts";
 const id=`0x${"a".repeat(64)}`;
 test("passport QR codes resolve to an internal item identity",()=>{
  assert.deepEqual(verificationInputFromScan(`https://app.trueorigin.com/items/${id}`),{query:id});
- assert.deepEqual(verificationInputFromScan(`https://app.trueorigin.com/registry/${id}`),{query:id});
- assert.deepEqual(verificationInputFromScan(`/registry/${id}`),{query:id});
+ assert.deepEqual(verificationInputFromScan(`https://app.trueorigin.com/passports/${id}`),{query:id});
+ assert.deepEqual(verificationInputFromScan(`/passports/${id}`),{query:id});
  assert.deepEqual(verificationInputFromScan(id.toUpperCase().replace("0X","0x")),{query:id});
 });
 test("certification numbers and PSA verification links use the existing lookup",()=>{

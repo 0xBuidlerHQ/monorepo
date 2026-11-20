@@ -9,9 +9,11 @@ import type { ReactNode } from "react";
 const MotionLink = motion.create(Link);
 const defaultSizes = "(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw";
 
-export function ExploreCard({ name, brand, brandMono = false, expressive = false, href, image, alt, sizes = defaultSizes, placeholder, description, nameAdornment, inlineMetadata = false, imageLayout = "square", headingAs: Heading = "h3" }: {
+export function ExploreCard({ name, nameTitle, brand, brandMono = false, expressive = false, href, image, alt, sizes = defaultSizes, placeholder, description, nameAdornment, inlineMetadata = false, imageLayout = "square", unoptimized = false, headingAs: Heading = "h3" }: {
+	unoptimized?: boolean;
 	name: string;
-	brand: string;
+ nameTitle?: string;
+	brand: ReactNode;
 	brandMono?: boolean;
 	expressive?: boolean;
 	href: string;
@@ -40,12 +42,12 @@ export function ExploreCard({ name, brand, brandMono = false, expressive = false
 				{image && <motion.div aria-hidden="true" className="pointer-events-none absolute inset-0 blur-2xl"
 					variants={{ rest: { opacity: 0, scale: 1.1 }, active: { opacity: inlineMetadata ? 0.25 : 0.85, scale: 1.1 } }}
 					transition={{ duration: reducedMotion ? 0 : 0.35, ease: "easeOut" }}>
-					<Image src={image} alt="" fill sizes="96px" loading="lazy" decoding="async" className="object-contain" />
+					<Image unoptimized={unoptimized} src={image} alt="" fill sizes="96px" loading="lazy" decoding="async" className="object-contain" />
 				</motion.div>}
-				{image ? <RevealImage src={image} alt={alt} fill sizes={sizes} loading="lazy" decoding="async" className={inlineMetadata ? "rounded-[9px] object-contain" : imageLayout === "portrait" || name === "Yu-Gi-Oh!" ? "object-contain" : "object-contain p-2"} /> : <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center">{placeholder ?? <svg aria-hidden="true" viewBox="0 0 100 100" fill="none" className="size-[58%] text-white/[0.045]"><circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="2" /><path d="M10 50h28m24 0h28" stroke="currentColor" strokeWidth="2" /><circle cx="50" cy="50" r="12" stroke="currentColor" strokeWidth="2" /></svg>}</div>}
+				{image ? <RevealImage unoptimized={unoptimized} src={image} alt={alt} fill sizes={sizes} loading="lazy" decoding="async" className={inlineMetadata ? "rounded-[9px] object-contain" : imageLayout === "portrait" || name === "Yu-Gi-Oh!" ? "object-contain" : "object-contain p-2"} /> : <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center">{placeholder ?? <svg aria-hidden="true" viewBox="0 0 100 100" fill="none" className="size-[58%] text-white/[0.045]"><circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="2" /><path d="M10 50h28m24 0h28" stroke="currentColor" strokeWidth="2" /><circle cx="50" cy="50" r="12" stroke="currentColor" strokeWidth="2" /></svg>}</div>}
 			</motion.div>
 			{inlineMetadata ? <div className="relative mt-1.5 flex min-h-9 min-w-0 items-center gap-1.5 px-1.5">
-                <Heading title={name} className="min-w-0 truncate text-[14px] font-medium leading-5 tracking-[-0.02em] text-white/85 transition-colors group-hover:text-white">{name}</Heading>
+                <Heading title={nameTitle ?? name} className="min-w-0 truncate text-[14px] font-medium leading-5 tracking-[-0.02em] text-white/85 transition-colors group-hover:text-white">{name}</Heading>
                 {nameAdornment && <span className="inline-flex shrink-0 items-center gap-1">{nameAdornment}</span>}
                 {description && <span className="inline-flex shrink-0 items-center text-xs text-white/40">{description}</span>}
                 <span className="ml-auto shrink-0 font-mono text-[10px] leading-5 tabular-nums text-white/35 transition-colors group-hover:text-white/60">{brand}</span>
@@ -53,7 +55,7 @@ export function ExploreCard({ name, brand, brandMono = false, expressive = false
 			<div className={`relative flex items-end justify-between gap-3 pt-4 ${imageLayout === "portrait" ? "px-2 pb-2" : ""}`}>
 				<div className="min-w-0">
 					{!brandMono && <p className={expressive ? "text-[11px] leading-tight text-white/40" : "text-xs leading-tight text-white/65"}>{brand}</p>}
-					<Heading className="mt-1 text-lg font-medium leading-tight tracking-[-0.035em]">{name}{nameAdornment && <span className="ml-2 inline-flex items-center gap-1 align-middle">{nameAdornment}</span>}</Heading>
+					<Heading title={nameTitle ?? name} className="mt-1 text-lg font-medium leading-tight tracking-[-0.035em]">{name}{nameAdornment && <span className="ml-2 inline-flex items-center gap-1 align-middle">{nameAdornment}</span>}</Heading>
 					{description && <p className="mt-2 text-xs leading-5 text-white/40">{description}</p>}
 				</div>
 				{brandMono && <p className="shrink-0 font-mono text-xs leading-tight text-white/65">{brand}</p>}

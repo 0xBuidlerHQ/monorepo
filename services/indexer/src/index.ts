@@ -1,3 +1,4 @@
+import { createActivityId } from "@0xhq/trueorigin-sdk/activity";
 import { ponder } from "ponder:registry";
 import { passport, transfer } from "ponder:schema";
 import { trueOriginPassportAbi } from "@0xhq/trueorigin-sdk/passport";
@@ -31,7 +32,7 @@ ponder.on("Passport:Transfer", async ({ event, context }) => {
 	await context.db
 		.insert(transfer)
 		.values({
-			id: event.id,
+			id: createActivityId(context.chain.id, event.transaction.hash, event.log.logIndex),
 			passportId: id,
 			from: event.args.from,
 			to: event.args.to,

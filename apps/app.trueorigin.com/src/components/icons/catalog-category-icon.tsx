@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 const drawings: Record<string, ReactNode> = {
+ books: <path d="M12 5v15M3 4h5a4 4 0 0 1 4 2 4 4 0 0 1 4-2h5v15h-5a4 4 0 0 0-4 2 4 4 0 0 0-4-2H3Z" />,
 	pokedex: <><rect x="5" y="3" width="14" height="18" rx="3" /><circle cx="12" cy="11" r="4" /><path d="M8 11h8M9 18h6" /><circle cx="12" cy="11" r="1" fill="currentColor" stroke="none" /></>,
 	cards: <><rect x="8" y="5" width="12" height="16" rx="2" /><path d="M5 18H4a1 1 0 0 1-1-1V4a2 2 0 0 1 2-2h10M12 10h4m-4 4h4" /></>,
 	sets: <><rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" /><rect x="3" y="14" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" /></>,
